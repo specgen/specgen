@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:is="http://purl.org/ontology/is/core#"
+  xml:base="http://purl.org/ontology/is/core#">
+  <owl:Ontology rdf:about="http://purl.org/ontology/is/core#">
+    <owl:imports rdf:resource="http://www.w3.org/2003/06/sw-vocab-status/ns"/>
+    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2010-06-30T18:57:52+01:00</dc:date>
+    <dc:description xml:lang="en">The Information Service Ontology Specification provides basic concepts and properties 
+for describing different information services, e.g. Wikipedia, MusicBrainz, Freebase or Discogs, on/ for 
+the Semantic Web. This document contains a RDF description of the Information Service Ontology.</dc:description>
+    <owl:imports rdf:resource="http://purl.org/dc/terms/"/>
+    <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    <owl:versionInfo xml:lang="en">Revision: 0.5.1</owl:versionInfo>
+    <dc:title>The Information Service Ontology</dc:title>
+    <owl:imports rdf:resource="http://purl.org/dc/elements/1.1/"/>
+    <dc:creator rdf:resource="http://foaf.me/zazi#me"/>
+  </owl:Ontology>
+  <owl:Class rdf:about="http://purl.org/ontology/is/core#InfoServiceType">
+    <vs:term_status xml:lang="en">testing</vs:term_status>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label xml:lang="en">Information Service Type</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/is/core#"/>
+    <rdfs:comment xml:lang="en">This concept is for describing the type of an information service, e.g. 'social network service', 
+'recommender service' or 'encyclopedia'. Please feel free to define further information service types for categorization.
+Please use therefore the namespace "http://purl.org/ontology/is/types/".</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/ontology/is/core#InfoServiceQuality">
+    <vs:term_status xml:lang="en">testing</vs:term_status>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label xml:lang="en">Information Service Quality</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/is/core#"/>
+    <rdfs:comment xml:lang="en">This concept is for describing specific quality levels or ratings, e.g. good or bad or more detailed ones, of 
+information services. Please feel free to use this concept as hook for more complex and detailed information service quality description 
+modellings in sub ontologies. Please use therefore the domain "http://purl.org/ontology/is/quality/".Futhermore, such information 
+service ratings could be done by different information service rating agencies, so that the customer of such ratings could select 
+its information service ratings agency of choice.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/ontology/is/core#InfoServiceContributorType">
+    <vs:term_status xml:lang="en">testing</vs:term_status>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label xml:lang="en">Information Service Contributor Type</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/is/core#"/>
+    <rdfs:comment xml:lang="en">This concept is for describing the different contributor types of information services, e.g. expert, 
+community or mixed. Please feel free to define further information service contributor types.
+Please use therefore the namespace "http://purl.org/ontology/is/ctypes/".</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/ontology/is/core#InfoService">
+    <vs:term_status xml:lang="en">unstable</vs:term_status>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label xml:lang="en">Information Service</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/is/core#"/>
+    <rdfs:comment xml:lang="en">Extended definition:
+
+	"An Information Service is this part of an Information System that serves data/knowledge/information to customers and collects it 
+	from its contributors, to manage and store it by optionally using administrators."
+
+Please refer also this article[1] about the definition of the term 'Information Service'.
+
+This concept is for linking a piece of information of a specific concept instance (or at least website links or other data representations 
+of this concept instance), e.g. a foaf:Agent, a mo:Track or a mo:MusicArtist to a related website of a specific information service (modelled 
+as individual of is:InfoService), e.g. Wikipedia, MySpace, MusicBrainz, Discogs, Last.fm, Pandora, BBC, ... . With this concept it is possible 
+to describe the underlying information services of that knowledge representation more in detail, so that the client, which consumes that 
+'linked data' could choose, which source it likes to use by evaluating the description of the information service of that website link or 
+other data representation.
+Please use for further is:InfoService instances the namespace "http://purl.org/ontology/is/inst/".
+
+
+[1] https://infoserviceonto.wordpress.com/2010/06/23/what-is-an-information-service/</rdfs:comment>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://purl.org/ontology/is/core#info_service_quality">
+    <vs:term_status xml:lang="en">testing</vs:term_status>
+    <owl:inverseOf>
+      <owl:ObjectProperty>
+        <rdfs:label xml:lang="en">is info service quality of</rdfs:label>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="http://purl.org/ontology/is/core#InfoServiceQuality"/>
+    <rdfs:label xml:lang="en">has info service quality</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/is/core#"/>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/is/core#InfoService"/>
+    <rdfs:comment xml:lang="en">With this property it is possible to associate a specific quality level or information service rating
+to an is:InfoService instance</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/ontology/is/core#info_service_type">
+    <vs:term_status xml:lang="en">testing</vs:term_status>
+    <owl:inverseOf>
+      <owl:ObjectProperty>
+        <rdfs:label xml:lang="en">is info service type of</rdfs:label>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="http://purl.org/ontology/is/core#InfoServiceType"/>
+    <rdfs:label xml:lang="en">has info service type</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/is/core#"/>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/is/core#InfoService"/>
+    <rdfs:comment xml:lang="en">With this property it is possible to associate a specific information service type, e.g. 'social network service', 
+'recommender service' or 'encyclopedia', to an is:InfoService instance. This property could be used multiple times that means an 
+is:InfoService instance could be for example of the information service type 'social network site' and 'recommender system'.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/ontology/is/core#main_subject">
+    <vs:term_status xml:lang="en">testing</vs:term_status>
+    <owl:inverseOf>
+      <owl:ObjectProperty>
+        <rdfs:label xml:lang="en">is main subject of</rdfs:label>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/subject"/>
+    <rdfs:label xml:lang="en">main subject</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/is/core#"/>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/is/core#InfoService"/>
+    <rdfs:comment xml:lang="en">This property is for defining the main subject of an is:InfoService instance that means this 
+info service address mainly this concern.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/ontology/is/core#info_service">
+    <vs:term_status xml:lang="en">unstable</vs:term_status>
+    <owl:inverseOf>
+      <owl:ObjectProperty>
+        <rdfs:label xml:lang="en">is info service of</rdfs:label>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="http://purl.org/ontology/is/core#InfoService"/>
+    <rdfs:label xml:lang="en">has info service</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/is/core#"/>
+    <rdfs:comment xml:lang="en">This property could be used to associate a semantic graph description or especially
+a website link, e.g. typed as foaf:Document, to the specific is:InfoService individual. This enables the consumer of this resource
+to retrieve more information (descriptions, ratings) about the underlying information service of this resource.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/ontology/is/core#info_service_contributor_type">
+    <vs:term_status xml:lang="en">testing</vs:term_status>
+    <owl:inverseOf>
+      <owl:ObjectProperty>
+        <rdfs:label xml:lang="en">is info service contributor type of</rdfs:label>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="http://purl.org/ontology/is/core#InfoServiceContributorType"/>
+    <rdfs:label xml:lang="en">has info service contributor type</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/is/core#"/>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/is/core#InfoService"/>
+    <rdfs:comment xml:lang="en">With this property it is possible to associate a specific information service contributor type, e.g. expert, 
+community or mixed, to an is:InfoService instance.</rdfs:comment>
+  </owl:ObjectProperty>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

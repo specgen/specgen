@@ -1,0 +1,92 @@
+# Saved by TopBraid on Fri Jul 09 20:05:45 CEST 2010
+# baseURI: http://purl.org/ontology/co/core#
+# imports: http://purl.org/NET/c4dm/event.owl
+# imports: http://purl.org/dc/elements/1.1/
+# imports: http://www.w3.org/2003/06/sw-vocab-status/ns
+
+@prefix co:      <http://purl.org/ontology/co/core#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+co:   rdf:type owl:Ontology ;
+      dc:creator <http://foaf.me/zazi#me> , <http://moustaki.org/foaf.rdf#moustaki> , <http://foaf.me/intrz#me> ;
+      dc:date "2010-07-09T19:01:52+01:00"^^xsd:dateTime ;
+      dc:description """The Counter Ontology specification provides basic concepts and properties 
+for describing a general counter concept and some important sub counters, e.g. an event counter, on/ for 
+the Semantic Web. This document contains a RDF description of the Counter Ontology."""@en ;
+      dc:title "The Counter Ontology"@en ;
+      owl:imports dc: , <http://purl.org/NET/c4dm/event.owl> , <http://www.w3.org/2003/06/sw-vocab-status/ns> ;
+      owl:versionInfo "0.6"^^xsd:string .
+
+co:Counter
+      rdf:type rdfs:Class , owl:Class ;
+      rdfs:comment "Counter of a given object/ given objects, which are related to that counter."@en ;
+      rdfs:isDefinedBy co: ;
+      rdfs:label "Counter"@en ;
+      rdfs:subClassOf owl:Thing ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                owl:onProperty co:count
+              ] ;
+      vs:term_status "stable"@en .
+
+co:ScrobbleEvent
+      rdf:type rdfs:Class , owl:Class ;
+      rdfs:comment """An event corresponding to a scrobbling (counting an activity, which includes at least a specific factor and 
+a specific agent), e.g. a track being played by someone, a video watched by someone, a book read by 
+someone, a sporting activity by someone, ..."""@en ;
+      rdfs:isDefinedBy co: ;
+      rdfs:label "Scrobble Event"@en ;
+      rdfs:subClassOf event:Event ;
+      vs:term_status "unstable"@en .
+
+co:count
+      rdf:type rdf:Property , owl:FunctionalProperty ;
+      rdfs:comment "Links a counter resource to the actual count"@en ;
+      rdfs:domain co:Counter ;
+      rdfs:isDefinedBy co: ;
+      rdfs:label "has count"@en ;
+      rdfs:range xsd:integer ;
+      vs:term_status "stable"@en .
+
+co:counter
+      rdf:type rdf:Property , owl:ObjectProperty ;
+      rdfs:comment "Links an object to a counter resource. Please feel free to create further sub properties with more restricted domains."@en ;
+      rdfs:isDefinedBy co: ;
+      rdfs:label "has counter"@en ;
+      rdfs:range co:Counter ;
+      vs:term_status "stable"@en .
+
+co:event
+      rdf:type rdf:Property , owl:ObjectProperty ;
+      rdfs:comment "Links counter resources to related events."@en ;
+      rdfs:isDefinedBy co: ;
+      rdfs:label "has event"@en ;
+      rdfs:range event:Event ;
+      rdfs:subPropertyOf co:object ;
+      owl:inverseOf co:event_counter ;
+      vs:term_status "testing"@en .
+
+co:event_counter
+      rdf:type rdf:Property , owl:ObjectProperty ;
+      rdfs:comment "Links events to a counter resource, where they where counted in."@en ;
+      rdfs:domain event:Event ;
+      rdfs:isDefinedBy co: ;
+      rdfs:label "has event counter"@en ;
+      rdfs:subPropertyOf co:counter ;
+      vs:term_status "unstable"@en .
+
+co:object
+      rdf:type rdf:Property , owl:ObjectProperty ;
+      rdfs:comment "Links a counter resource to an object. Please feel free to create further sub properties with more restricted ranges."@en ;
+      rdfs:domain co:Counter ;
+      rdfs:isDefinedBy co: ;
+      rdfs:label "has object"@en ;
+      owl:inverseOf co:counter ;
+      vs:term_status "testing"@en .

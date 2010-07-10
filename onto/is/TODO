@@ -1,0 +1,5 @@
+- enable multiple info service quality ratings, e.g. by using http://purl.org/stuff/rev#
+- add is:recommendation property
+- create examples, e.g. recommendations with a defined source, e.g. by using rdfs:isDefinedBy
+- create a reference implementation of an Info Service Quality Ontology based on 
+  http://w3.cyu.edu.tw/ccwei/PAPER/ERP/data%20quality%28JMIS%29.pdf

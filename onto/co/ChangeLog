@@ -1,0 +1,56 @@
+=========================
+Version 0.6 (July 2010)
+=========================
+ * ADDED: rdfs:Class to each owl:Class based concept
+ * ADDED: rdf:Property to each property
+
+=========================
+Version 0.5.2 (June 2010)
+=========================
+ * FIXED: wrong rdf:subPropertyOf definition of co:event
+
+=========================
+Version 0.5.1 (June 2010)
+=========================
+ * MODIFIED: small typos at rdfs:labels
+
+=========================
+Version 0.5 (June 2010)
+=========================
+ * CHANGED: base URI to http://purl.org/ontology/co/core#
+ * CHANGED: co:counter_of to co:object + removed its rdfs:range
+ * CHANGED: co:event_counter_of to co:event
+ * CHANGED: co:counter - removed its rdfs:domain
+ * ADDED: restriction on co:count - owl:cardinality "1"
+ * CHANGED: co:count from owl:DatatypeProperty to owl:FunctionalProperty
+
+=========================
+Version 0.4 (June 2010)
+=========================
+ * MODIFIED: co:count rdfs:range to xsd:integer
+ * ADDED: co:counter_of as explicit inverse property of co:counter
+ * ADDED: co:event_counter_of as explicit inverse property of co:event_counter
+ * REMOVED: FOAF and DCTerms from owl:imports
+ * MODIFIED: dc:date datatype to xsd:dataTime
+ * MODIFIED: foaf:maker to dc:creator
+
+=========================
+Version 0.3 (June 2010)
+=========================
+ * MODIFIED: co:Counter rdfs:subClassOf owl:Thing (don't why that was missing)
+ * MODIFIED: all xsd:string typed literals to @en for language utilisation
+ 
+=========================
+Version 0.2 (June 2010)
+=========================
+ * ADDED: co:ScrobbleEvent as general purpose scrobbling event
+ 
+=========================
+Version 0.1 (June 2010)
+=========================
+ * ADDED: co:Counter as general purpose counter
+ * ADDED: co:counter to enable the association to an co:Counter instance from an arbitrary owl:Thing based concept
+ * ADDED: co:count as the datatype property for the counter number
+ * ADDED: co:event_counter as specific counter association for event:Event based concepts
+ * NOTE: this ontology is based on the concepts of the playcount ontology created by Yves Raimond and was generalised 
+         by Mats Skillingstad and Bob Ferris 

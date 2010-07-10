@@ -1,0 +1,48 @@
+=========================
+Version 0.6 (June 2010)
+=========================
+ * CHANGED: base URI to http://purl.org/ontology/olo/core#
+ * FIXED: bad typo of owl:inverseOf
+ * ADDED: olo:previous as explicit inverse property of olo:next
+ * ADDED: olo:ordered_list as explicit inverse property of olo:slot
+ * MODIFIED: correct setting of restrictions now (used owl:Restriction)
+ * REMOVED: owl:someValuesFrom from olo:length + olo:index
+ 
+=========================
+Version 0.5 (June 2010)
+=========================
+ * MODIFIED: olo:item - removed rdfs:range.
+ * MODIFIED: dc:date - used xsd:dateTime datatype.
+ * MODIFIED: changed foaf:maker to dc:creator.
+ * REMOVED: DCTerms and FOAF from owl:imports.
+  
+=========================
+Version 0.4 (June 2010)
+=========================
+ * MODIFIED: olo:length - back to rdfs:range xsd:nonNegativeInteger.
+ * MODIFIED: olo:length + olo:index now with owl:someValuesFrom.
+
+=========================
+Version 0.3 (June 2010)
+=========================
+ * ADDED: olo:next - to associate the next slot of a slot in an ordered list.
+ * MODIFIED: olo:length - to enable a single length association to an ordered list.
+ * MODIFIED: olo:length - rdfs:range xsd:positiveInteger.
+ * MODIFIED: olo:index - to enable a single index association to a slot in an ordered list.
+ * MODIFIED: anonymous inverse property of olo:slot to rdfs:type owl:FunctionalProperty.
+
+=========================
+Version 0.2 (June 2010)
+=========================
+ * MODIFIED: olo:index - rdfs:range to xsd:positiveInteger
+ * MODIFIED: olo:length - rdfs:range to nongativeInteger
+
+=========================
+Version 0.1 (June 2010)
+=========================
+ * ADDED: olo:OrderedList - a concept for ordered lists
+ * ADDED: olo:Slot - a slot in an ordered list
+ * ADDED: olo:slot - associates an ordered list to its slots
+ * ADDED: olo:length - the length of an ordered list
+ * ADDED: olo:index - an index of a slot in an ordered list
+ * ADDED: olo:item - an item of an slot in an ordered list

@@ -1,0 +1,365 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:foaf="http://xmlns.com/foaf/0.1/"
+xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+xmlns:owl="http://www.w3.org/2002/07/owl#"
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:co="http://purl.org/ontology/co/core#">
+<head>
+  <title>The Counter Ontology Specification</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <link href="http://xmlns.com/xmlns-style.css" rel="stylesheet"  type="text/css" />
+  <link href="style.css" rel="stylesheet"  type="text/css" />
+  <link href="http://purl.org/ontology/co/counterontology.owl" rel="alternate"  type="application/rdf+xml" />
+</head>
+
+<body>
+  <h1>The Counter Ontology Specification 0.5.2<br /></h1>
+
+  <h2>Namespace Document 30 June 2010</h2>
+
+  <dl>
+    <dt>This version:</dt>
+    <dd><a href="http://xmlns.com/foaf/spec/20100101.html">http://xmlns.com/foaf/spec/20100101.html</a> (<a href="20100101.rdf">rdf</a>)</dd>
+
+    <dt>Latest version:</dt>
+    <dd><a href="http://xmlns.com/foaf/spec/">http://xmlns.com/foaf/spec/</a> (<a href="index.rdf">rdf</a>)</dd>
+
+    <dt>Previous version:</dt>
+    <dd><a href="http://xmlns.com/foaf/spec/20091215.html">http://xmlns.com/foaf/spec/20091215.html</a> (<a href="20091215.rdf">rdf</a>)</dd>
+
+    <dt>Authors:</dt>
+    <dd><a href="mailto:nick@example.org">Yves Raimond</a>,
+    <a href="mailto:nick@example.org">Mats Skillingstad</a>,
+    <a href="mailto:nick@example.org">Bob Ferris</a></dd>
+  </dl>
+
+  <p class="copyright">Copyright &#169; 2010 Yves Raimond, Mats Skillingstad and Bob Ferris</p>
+
+  <div about=""  resource="http://www.w3.org/TR/rdfa-syntax"  rel="dct:conformsTo" />
+  <p about=""><a href="http://validator.w3.org/check?uri=referer"><img style="border: 0; float: right; padding: 5px;" 
+        src="http://www.w3.org/Icons/valid-xhtml-rdfa-blue"   alt="Valid XHTML + RDFa"  /></a>
+
+  <!-- Creative Commons License -->
+   <a href="http://creativecommons.org/licenses/by/1.0/"><img alt=
+  "Creative Commons License" style="border: 0; float: right; padding: 5px;" src=
+  "somerights.gif" /></a> This work is licensed under a <a  rel="license" href= 
+  "http://creativecommons.org/licenses/by/1.0/">Creative Commons
+  Attribution License</a>. This copyright applies to the <em>Counter Ontology Specification</em> 
+  and accompanying documentation in RDF.
+ Regarding underlying technology, the Counter Ontology uses W3C's <a href="http://www.w3.org/RDF/">RDF</a> technology, an
+  open Web standard that can be freely used by anyone.</p>
+  
+  <hr />
+
+
+<h2 id="sec-status">Abstract</h2>
+<p>
+TODO  
+</p>
+
+  <div class="status">
+    <h2>Status of This Document</h2>
+
+    <p>
+TODO
+</p>
+
+
+<p> This document is created by combining the <a href="index.rdf">RDFS/OWL</a> machine-readable
+    Counter Ontology with a human-readable <em>HTML</em> representation. Future versions may 
+    incorporate <em>multilingual translations</em> of the 
+    term definitions. The RDF version of the specification is also embedded in the HTML of this 
+    document, or available directly from the namespace URI by content negotiation. 
+</p>
+    <p>The authors welcome comments on this document, preferably via 
+    TODO
+   </p>
+
+
+<p>This revision of the specification includes the following changes:</p>
+
+TODO: automated
+
+<p>
+As usual, see the <a href="#sec-changes">changes</a> section for details of the changes in this version of the specification.
+</p>
+
+
+  <h2 id="sec-toc">Table of Contents</h2>
+
+  <ul>
+    <li><a href="#sec-glance">Counter Ontology at a glance</a></li>
+    <li><a href="#sec-intro">Introduction</a></li>
+    <li><a href="#sec-for">What's the Counter Ontology for?</a></li>
+    <li><a href="#sec-bg">Background</a></li>
+    <li><a href="#sec-standards">The Counter Ontology and Standards</a></li>
+    <li><a href="#sec-evolution">Evolution and Extension of the Counter Ontology</a></li>
+    <li><a href="#sec-crossref">The Counter Ontology cross-reference: Listing the Counter Ontology Classes and Properties</a></li>
+    <li><a href="#sec-extrefs">External Vocabulary References</a></li>
+    <li><a href="#sec-ack">Acknowledgments</a></li>
+    <li><a href="#sec-changes">Recent Changes</a></li>
+  </ul>
+
+
+  <a id="sec-glance"></a>
+  <h2 id="glance">The Counter Ontology at a glance</h2>
+ 
+ <p>An a-z index of Counter Ontology terms, by class (categories or types) and by property.</p>
+ 
+ 
+ %s
+
+  <div style="clear: left;"></div>
+
+  <h2 id="sec-example">Example</h2>
+
+  <p>Here is a very basic document describing a person:</p>
+
+  <div class="example">
+    <pre>
+TODO
+</pre>
+  </div>
+
+  <p>Description TODO</p>
+
+  <div style="clear: left;"></div>
+
+
+  <!-- ================================================================== -->
+
+
+ <h2 id="sec-intro">1 Introduction: Counter Ontology Basics</h2>
+
+
+  <h2 id="sec-for">What's the Counter Ontology for?</h2>
+
+  <p>TODO</p>
+
+  <h2 id="sec-bg">Background</h2>
+
+  <p>TODO</p>
+
+  <h2 id="sec-standards">The Counter Ontology and Standards</h2>
+
+  <p>TODO</p>
+
+  <p>TODO</p>
+
+  <h2 id="sec-nsdoc">The Counter Ontology Vocabulary Description</h2>
+
+  <p>This specification serves as the FOAF "namespace document". As
+  such it describes the FOAF vocabulary and the terms (<a href=
+  "http://www.w3.org/RDF/">RDF</a> classes and properties) that
+  constitute it, so that <a href=
+  "http://www.w3.org/2001/sw/">Semantic Web</a> applications can
+  use those terms in a variety of RDF-compatible document formats
+  and applications.</p>
+
+  <p>This document presents FOAF as a <a href=
+  "http://www.w3.org/2001/sw/">Semantic Web</a> vocabulary or
+  <em>Ontology</em>. The FOAF vocabulary is pretty simple,
+  pragmatic and designed to allow simultaneous deployment and
+  extension. FOAF is intended for widescale use, but its authors
+  make no commitments regarding its suitability for any particular
+  purpose.</p>
+
+  <h3 id="sec-evolution">Evolution and Extension of FOAF</h3>
+
+  <p>The FOAF vocabulary is identified by the namespace URI
+  '<code>http://xmlns.com/foaf/0.1/</code>'. Revisions and
+  extensions of FOAF are conducted through edits to this document,
+  which by convention is accessible in the Web via the namespace URI.
+  For practical and deployment reasons, note that <b>we do not 
+  update the namespace URI as the vocabulary matures</b>.
+  </p>
+
+<p>
+  The evolution of FOAF is best considered in terms of the
+  stability of individual vocabulary terms, rather than the
+  specification as a whole. As terms stabilise in usage and
+  documentation, they progress through the categories
+  '<strong>unstable</strong>', '<strong>testing</strong>' and
+  '<strong>stable</strong>'. Older terms are marked '<strong>archaic</strong>' which allows the possibility of older forms to become modern again.</p><!--STATUSINFO-->
+  </div>
+
+  <p>...although of course change the <em>URL</em> to point to your
+  own FOAF document. See also: more on <a href=
+  "http://web.archive.org/web/20040416181630/rdfweb.org/mt/foaflog/archives/000041.html">FOAF
+  autodiscovery</a> and services that make use of it.</p>
+
+  <h2 id="sec-foafandrdf">FOAF and RDF</h2>
+
+  <p>Why does FOAF use <a href=
+  "http://www.w3.org/RDF/">RDF</a>?</p>
+
+  <p>FOAF is an application of the Resource Description Framework
+  (RDF) because the subject area we're describing -- people -- has
+  so many competing requirements that a standalone format could not
+  do them all justice. By using RDF, FOAF gains a powerful
+  extensibility mechanism, allowing FOAF-based descriptions can be
+  mixed with claims made in <em>any other RDF vocabulary</em>.</p>
+
+  <p>In summary then, RDF is self-documenting in ways which enable
+  the creation and combination of vocabularies in a decentralised
+  manner. This is particularly important for a vocabulary which
+  describes people, since people connect to many other domains of
+  interest and activity, and a single project cannot possibly cover everything.
+</p>
+
+
+  <h2 id="sec-crossref">FOAF cross-reference: Listing FOAF Classes and
+  Properties</h2>
+
+  <p>FOAF introduces the following classes and properties. There is a link at the 
+top of this document to the RDF/XML version.</p>
+
+  <!-- the following is the script-generated list of classes and properties -->
+ 
+
+<!-- this is the a-z listing -->
+%s
+
+<!-- and this is the bulk of the vocab descriptions -->
+%s
+
+
+<h2 id="sec-extrefs">External Vocabulary References</h2>
+
+<p>
+The description of the terms in the FOAF 'dictionary' often make reference to classes and properties elsewhere. This section of the FOAF 
+specification provides a placeholder reference for any FOAF mention of externally defined terms. For example, sometimes we might say that FOAF property has 
+a domain or range of an externally defined class, or that a FOAF class is a sub-class of an external class, or 'disjoint with' such a class (ie. has no 
+common members). Such claims help fix the intended meaning of FOAF terms in relationship to other 'peer' vocabularies. 
+</p>
+
+
+<h3 id="extns_status">Status Vocabulary</h3>
+
+<p>
+Each term in FOAF is annotated with properties from the <a href="http://www.w3.org/2003/06/sw-vocab-status/note">SemWeb Vocab Status Ontology</a>
+</p>
+
+<p>
+This was created as an experiment in documenting FOAF's term-centric versioning model, in which a common fixed namespace URI is used, while 
+term definitions slowly and independently evolve through different stability levels. This contrasts with other approaches to versioning which
+attach versioning information to larger sets of terms.
+</p>
+<p>
+Note that this mechanism is itself somewhat experimental and evolvin. The definitions of 'stable', 'unstable', 'archaic' and 'testing' cannot
+ be defined as global absolutes, but only in relationship to the practices, expectations and social structures around some vocabulary. For their use in 
+ FOAF, future versions of this specification could usefully offer more detail about what to expect from a term labelled 'stable'. 
+ </p>
+
+<dl>
+<dt>vs:term_status</dt>
+<dd>The vs:term_status property indicates the status of a vocabulary term, one of 'stable','unstable','testing' or 'archaic'. </dd>
+</dl>
+
+<h3 id="extns_w3ccore">RDF Vocabulary Description - core concepts</h3>
+
+<p>
+The FOAF dictionary of terms is defined using a family of W3C standards: RDF, RDF Schema and OWL. These share a data model and general approach, and 
+provide for increasing levels of expressivity. Here we introduce the core OWL and RDF/S terms used directly in the machine-readable description of FOAF. See 
+<a href="http://www.w3.org/2001/sw/">W3C's site</a> for the latest and most authoritative OWL and RDF specifications.
+</p>
+
+<p>
+FOAF is based on the exchange of free-form descriptions that are structured in terms of things having properties, where the value of each property is 
+expressed as either textually (eg. a name or number), or by reference to another thing. FOAF (as an application of RDF) uses URI identifiers wherever 
+possible to talk about things of interest, whether they are Web pages, classes of thing, properties of things, or even people. See the W3C Web Architecture specification for <a href="http://www.w3.org/TR/webarch/#identification">more background on URIs</a>.
+</p>
+<p>
+From core RDF, FOAF takes the notion that we are talking about things, and they fall into categories; we call these 'classes'. The core machinery we 
+use from the RDF Schema and OWL technologies simply give us some built-in terminology for talking about things, classes and properties. Here we introduce
+some of these and discuss briefly how they relate to FOAF's approach to describing things.
+</p>
+
+<dl>
+<dt id="term_Thing">owl:Thing</dt>
+<dd>OWL introduces the class 'Thing' as a name for the universal class of all things. This is sometimes useful when
+we want to express universality of property use, eg. that anything can be the value of <a href="#term_depicts">foaf:depicts</a>.</dd>
+<dt>rdf:Property</dt>
+<dd>RDF has a built-in class called rdf:Property. This is the class of all things like foaf:homepage or dc:creator which define named kinds of 
+relationship between pairs of things, or between things and textually-expressed information.</dd>
+<dt>owl:DatatypeProperty</dt>
+<dd>The OWL specifications give a name for those properties whose values are textually-expressed: "DataTypeProperty". RDF allows these to be either plain literal values (these can also carry an indicator of their language, via xml:lang), or else "data-typed", which means they are marked with a URI indicating 
+their type (but no language tagging).</dd>
+<dt>owl:ObjectProperty</dt>
+<dd>ObjectProperty is OWL's name for those properties which are not textually-expressed; instead, they are used when mentioning or referring to 
+some other thing. OWL encourages vocabularies to avoid using a single named property in both 'ObjectProperty' and 'DataTypeProperty' styles. However
+earlier usage, notably in the Dublin Core community, does just this. Each FOAF property is either an Object Property or DataType Property.
+</dd>
+<dt>rdf:type</dt>
+<dd>One of the most commonly used built-in relationships in RDF is 'type'. RDF type relates something to a class that it is in.</dd>
+<dt>rdfs:subClassOf</dt>
+<dd>RDFS gives a name for the relationship between some specific class and its more general superclass: 'subClassOf'. It would have perhaps been 
+simpler if this was called 'superProperty'. So for example we say that foaf:Person has an rdfs:subClassOf property whose value is foaf:Agent.
+</dd>
+
+
+<dt>rdfs:Class</dt>
+<dd>RDFS gives the name 'Class' to those things that represent classes of thing, ie. which are values of rdf:type for their members. The 
+OWL language also (for technical reasons) defines owl:Class for essentially the same notion. OWL also includes powerful machinery for defining the 
+membership rules for classes. This is not heavily used in FOAF, beyond the experimental mechanisms associated with foaf:Group.
+</dd>
+
+<dt>rdfs:subClassOf</dt>
+<dd>RDFS gives a name for the relationship between some particular class and its more general superclass: 'subClassOf'. It would have perhaps been 
+simpler if this was called 'superProperty'. So for example we say that foaf:Person has a subPropertyOf property whose value is foaf:Agent.
+</dd>
+
+
+<dt>rdfs:subPropertyOf</dt>
+<dd>Similar to subClassOf but for hierarchies of properties, we can use rdfs:subPropertyOf to point to a more general super-property, for example
+we say foaf:aimChatID rdfs:subPropertyOf foaf:nick.
+</dd>
+
+<dt>rdfs:domain</dt>
+<dd>The RDFS specification introduced the notion of a property's domain. This is a way of saying, for some property, something about the 
+kind of classes it is used with. If you know the domain or domains for some property, you know that whenever you see that property applied to something,
+then that thing ought to be a member of those classes. Note that this does not mean that every description using the property is compelled to mention
+all those classes, just that the meaning of the property implies also the type of the thing the property is applied to. 
+</dd>
+<dt>rdfs:range</dt>
+<dd>RDFS also defines a property of properties called 'range'; this works just like rdfs:domain, except for the values of a property. If you know the
+range of some property, you know what kinds of thing are reasonable values for it.
+</dd>
+<dt>owl:FunctionalProperty</dt>
+<dd>OWL provides even more useful information about properties, such as the ability to say that a property is 'functional'. This means simply that
+for any particular thing, you can expect at most one value for that property. It is simplest to think of this as 
+contextualised to any given time; although OWL doesn't talk about time explicitly. So we might say that 'age' is functional, even though a series of 
+FOAF documents might be published, each truthfully giving different values for my 'age' which made sense in their original context. At the time of 
+writing, the only W3C technology that can take a larger perspective on such different perspectives / views (or 'graphs') is SPARQL. If you have two 
+different values for a given functional property, you know you have a problem; perhaps one is out-of-date, for example. Or perhaps they only differ in
+trivial detail (eg. date syntax, whitespace). 
+</dd>
+<dt>owl:InverseFunctionalProperty</dt>
+<dd>
+OWL also gives a name for properties where common values tell us something about the identity of the thing having the property. On the Web this
+can be very useful. OWL tells us that two descriptions are of the same thing, if they include truthful mention of some 'inverse functional property'
+that has the same value. The classic FOAF example could be two mentions of a person having some particular foaf:homepage. This OWL construct is very useful for reasoning about identity and merging scattered and partial descriptions.
+</dd>
+
+<dt>owl:inverseOf</dt>
+<dd>OWL provides a property 'inverseOf' that holds between inverse properties; for example, any two things related by foaf:maker are related in 
+the reverse direction by foaf:made.</dd>
+
+</dl>
+
+  <h3 id="sec-ack">Acknowledgments</h3>
+
+  <p>TODO</p>
+
+<h2 id="sec-changes">Recent Changes</h2>
+
+TODO
+
+</body>
+</html>
+
+

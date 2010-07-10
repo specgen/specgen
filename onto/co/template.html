@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+xmlns:owl="http://www.w3.org/2002/07/owl#"
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:co="http://purl.org/ontology/co/core#"
+xmlns:event="http://purl.org/NET/c4dm/event.owl#"
+xmlns:vann="http://purl.org/vocab/vann/"
+xmlns:bibo="http://purl.org/ontology/bibo/"
+xmlns:foaf="http://xmlns.com/foaf/0.1/"
+typeof="bibo:Document"
+about="http://purl.org/ontology/co/counterontology.html">
+<head>
+  <title about="http://purl.org/ontology/co/counterontology.html" property="dc:title">The Counter Ontology Specification</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <link href="../../css/xmlns-style.css" rel="stylesheet"  type="text/css" />
+  <link about="http://purl.org/ontology/co/core#" typeof="owl:Ontology" rel="dc:creator" href="http://moustaki.org/foaf.rdf#moustaki" />
+  <link about="http://purl.org/ontology/co/core#" rel="dc:creator" href="http://foaf.me/intrz#me" />
+  <link about="http://purl.org/ontology/co/core#" rel="dc:creator" href="http://foaf.me/zazi#me" />
+  <link about="http://purl.org/ontology/co/counterontology.html" rel="dc:creator" href="http://foaf.me/zazi#me" />
+  <link about="http://purl.org/ontology/co/counterontology.html" rel="foaf:primaryTopic" rev="foaf:isPrimaryTopicOf" href="http://purl.org/ontology/co/core#" />
+  <link href="../../css/style.css" rel="stylesheet"  type="text/css" />
+  <link about="http://purl.org/ontology/co/counterontology.html" href="http://purl.org/ontology/co/counterontology.owl" rel="alternate dcterms:hasFormat"  type="application/rdf+xml" />
+  <link about="http://purl.org/ontology/co/counterontology.html" href="http://purl.org/ontology/co/counterontology.n3" rel="alternate dcterms:hasFormat"  type="application/rdf+n3" />
+</head>
+
+<body>
+  <h1><span about="http://purl.org/ontology/co/core#" property="dc:title">The Counter Ontology</span> <span about="http://purl.org/ontology/co/core#" property="owl:versionInfo">0.6</span></h1>
+
+  <h2>Namespace Document <span about="http://purl.org/ontology/co/core#" property="dc:date" content="2010-07-09T19:01:52+01:00" datatype="xsd:dateTime">09 July 2010</span></h2>
+
+  <dl>
+    <dt>This version:</dt>
+    <dd><a about="http://purl.org/ontology/co/counterontology.html" rel="dc:hasVersion" 
+rev="dc:isVersionOf" href="http://purl.org/ontology/co/20100709/counterontology.html">http://purl.org/ontology/co/20100709/counterontology.html</a> (<a href="http://purl.org/ontology/co/20100709/counterontology.owl">OWL</a>, <a href="http://purl.org/ontology/co/20100709/counterontology.n3">N3</a>)</dd>
+
+    <dt>Latest version:</dt>
+    <dd><a href="http://purl.org/ontology/co/core#">http://purl.org/ontology/co/core#</a> (<a href="http://purl.org/ontology/co/counterontology.owl">OWL</a>, <a href="http://purl.org/ontology/co/counterontology.n3">N3</a>)</dd>
+
+    <dt>Previous version:</dt>
+    <dd><a href="http://purl.org/ontology/co/20100630/counterontology.html">http://purl.org/ontology/co/20100630/counterontology.html</a> (<a href="http://purl.org/ontology/co/20100630/counterontology.owl">OWL</a>, <a href="http://purl.org/ontology/co/20100630/counterontology.n3">N3</a>)</dd>
+
+    <dt>Authors:</dt>
+    <dd><a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://moustaki.org/">Yves Raimond</a> (<a href="http://www.bbc.co.uk">BBC</a>),<br/>
+    <a href="mailto:nick@example.org">Mats Skillingstad</a> (COMPANY),<br/>
+    <a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://smiy.wordpress.com/author/zazi0815/">Bob Ferris</a> (<a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://smiy.wordpress.com/">SMI</a>)</dd>
+  </dl>
+
+  <p class="copyright"><span about="http://purl.org/ontology/co/core#" property="dc:rights">Copyright &#169; 2010 Yves Raimond, Mats Skillingstad and Bob Ferris</span></p>
+
+  <div about="http://purl.org/ontology/co/counterontology.html" rel="dc:conformsTo"
+     resource="http://www.w3.org/TR/rdfa-syntax"></div>
+  <p>
+    <a href="http://validator.w3.org/check?uri=referer"><img style="border: 0; float: right; padding: 5px;"
+        src="http://www.w3.org/Icons/valid-xhtml-rdfa"
+        alt="Valid XHTML + RDFa" height="31" width="88" /></a>
+
+  <!-- Creative Commons License -->
+   <a href="http://creativecommons.org/licenses/by/1.0/"><img alt=
+  "Creative Commons License" style="border: 0; float: right; padding: 5px;" src=
+  "http://i.creativecommons.org/l/by/3.0/88x31.png" /></a> This work is licensed under a <a about="http://purl.org/ontology/co/counterontology.html" rel="license dc:license" href= 
+  "http://creativecommons.org/licenses/by/3.0/" title="Creative Commons
+  Attribution License">Creative Commons
+  Attribution License</a>. This copyright applies to the <em>Counter Ontology Specification</em> 
+  and accompanying documentation in RDF.
+ Regarding underlying technology, the Counter Ontology uses W3C's <a href="http://www.w3.org/RDF/">RDF</a> technology, an
+  open Web standard that can be freely used by anyone.</p>
+  
+  <hr />
+
+
+<h2 id="sec-status">Abstract</h2>
+<p about="http://purl.org/ontology/co/core#" property="dc:decription">
+The Counter Ontology specification provides basic concepts and properties 
+for describing a general counter concept and some important sub counters, e.g. an event counter, on/ for 
+the Semantic Web. This document contains a RDFa description of the Counter Ontology and some additional information and examples.
+</p>
+
+  <div class="status">
+    <h2>Status of This Document</h2>
+
+    <p>
+The Counter Ontology is a generalisation of the <a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://motools.svn.sourceforge.net/viewvc/motools/dbtune/playcount/playcount.n3">Playcount Ontology</a> from 
+<a href="http://moustaki.org/">Yves Raimond</a>. The template of this specification is derived from the 
+<a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://xmlns.com/foaf/spec/">FOAF Vocabulary
+Specification</a>, which was created by <a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://danbri.org/">Dan Brickley</a> and 
+<a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://nicecupoftea.org/">Libby Miller</a>. It was modified and extended by Bob Ferris. Furthermore,
+a modified and extended version of <a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://svn.foaf-project.org/foaftown/specgen/">Danbri's SpecGen version</a>
+was used to generate most of the RDFa statements of the Counter Ontology for this specification.
+</p>
+
+
+<p> This document is created by combining the <a href="http://purl.org/ontology/co/counterontology.owl">RDFS/OWL</a> machine-readable
+    Counter Ontology with a human-readable <em>HTML</em> representation that includes RDFa annotations. Future versions may 
+    incorporate <em>multilingual translations</em> of term definitions. The RDF/XML version of the specification is also available directly from the namespace URI. RDF/N3 representations could be access via the links above.
+</p>
+    <p>The authors welcome comments on this document, preferably via 
+    TODO
+   </p>
+
+  <h2 id="sec-toc">Table of Contents</h2>
+
+  <ul>
+    <li><a href="#sec-glance">Counter Ontology at a glance</a></li>
+    <li><a href="#sec-intro">Introduction</a></li>
+    <li><a href="#sec-for">What's the Counter Ontology for?</a></li>
+    <li><a href="#sec-bg">Background</a></li>
+    <li><a href="#sec-standards">The Counter Ontology and Standards</a></li>
+    <li><a href="#sec-evolution">Evolution and Extension of the Counter Ontology</a></li>
+    <li><a href="#sec-crossref">The Counter Ontology cross-reference: Listing the Counter Ontology Classes and Properties</a></li>
+    <li><a href="#sec-extrefs">External Vocabulary References</a></li>
+    <li><a href="#sec-ack">Acknowledgments</a></li>
+    <li><a href="#sec-changes">Recent Changes</a></li>
+  </ul>
+
+
+  <a id="sec-glance"></a>
+  <h2 id="glance">The Counter Ontology at a glance</h2>
+
+<div about="http://purl.org/ontology/co/core#" rel="rdfs:seeAlso">
+<img src="../gfx/co_-_Counter_graph.gif" title="The counter concept as graph with relations" alt="The counter concept as graph with relations" />
+The counter concept as graph with relations</div> 
+ <p>An a-z index of Counter Ontology terms, by class (categories or types) and by property.</p>
+ 
+ 
+ %s
+
+  <div style="clear: left;"></div>
+
+  <h2 id="sec-example">Example</h2>
+
+  <p>Here is a very basic document describing a person:</p>
+
+  <div class="example">
+    <pre>
+TODO
+</pre>
+  </div>
+
+  <p>Description TODO</p>
+
+  <div style="clear: left;"></div>
+
+
+  <!-- ================================================================== -->
+
+
+ <h2 id="sec-intro">1 Introduction: Counter Ontology Basics</h2>
+
+
+  <h2 id="sec-for">What's the Counter Ontology for?</h2>
+
+  <p>The Counter Ontology includes a general multiple purpose counter concept. This concept could be uses to associate any concept to a <em><a href="#Counter">co:Counter</a></em> instance(s) with the property <em><a href="#counter">co:counter</a></em> or a specific sub property of it. The second property of <em><a href="#Counter">co:Counter</a></em> is <em><a href="#count">co:count</a></em>, which is a simple <em>xsd:integer</em> based datatype property. That means you could use this concept for things like for example play counter, skip counter or website hit counter.
+Furthermore, this ontology includes already a predefined property to associate event specific (<em><a href="http://motools.sourceforge.net/event/event.html#term_Event">event:Event</a></em>) counter to its related events (<em><a href="#event_counter">co:event_counter</a></em>,), e.g. a <em><a href="#ScrobbleEvent">co:ScrobbleEvent</a></em> to scrobble something. This enables the opportunity to trace back all related events, which are responsible for a specific count. Of course, this is also possible with all other concepts ;) </p>
+
+  <h2 id="sec-bg">Background</h2>
+
+  <p>TODO</p>
+
+  <h2 id="sec-standards">The Counter Ontology and Standards</h2>
+
+  <p>TODO</p>
+
+  <p>TODO</p>
+
+  <h2 id="sec-nsdoc">The Counter Ontology Description</h2>
+
+  <p>This specification serves as the Counter Ontology "namespace document". As
+  such it describes the Counter Ontology vocabulary and the terms (<a href=
+  "http://www.w3.org/RDF/">RDF</a> classes and properties) that
+  constitute it, so that <a href=
+  "http://www.w3.org/2001/sw/">Semantic Web</a> applications can
+  use those terms in a variety of RDF-compatible document formats
+  and applications.</p>
+
+  <p>This document presents the Counter Ontology as a <a href=
+  "http://www.w3.org/2001/sw/">Semantic Web</a> vocabulary or
+  <em>Ontology</em>. The Counter Ontology vocabulary is pretty simple,
+  pragmatic and designed to allow simultaneous deployment and
+  extension. The Counter Ontology is intended for widescale use, but its authors
+  make no commitments regarding its suitability for any particular
+  purpose.</p>
+
+  <h3 id="sec-evolution">Evolution and Extension of the Counter Ontology</h3>
+
+  <p>The Counter Ontology vocabulary is identified by the namespace URI
+  '<code about="http://purl.org/ontology/co/core#" property="vann:preferredNamespaceUri">http://purl.org/ontology/co/core#</code>'. Revisions and
+  extensions of Counter Ontology are conducted through edits to this document,
+  which by convention is accessible in the Web via the namespace URI.
+  For practical and deployment reasons, note that <b>we do not 
+  update the namespace URI as the vocabulary matures</b>.
+  </p>
+
+<p>
+  The evolution of the Counter Ontology is best considered in terms of the
+  stability of individual vocabulary terms, rather than the
+  specification as a whole. As terms stabilise in usage and
+  documentation, they progress through the categories
+  '<strong>unstable</strong>', '<strong>testing</strong>' and
+  '<strong>stable</strong>'. Older terms are marked '<strong>archaic</strong>' which allows the possibility of older forms to become modern again.</p><!--STATUSINFO-->
+  </div>
+
+  <h2 id="sec-crossref">The Counter Ontology cross-reference: Listing the Counter Ontology Classes and
+  Properties</h2>
+
+  <p>The Counter Ontology introduces the following classes and properties. There is a link at the 
+top of this document to the RDF/XML and RDF/N3 versions.</p>
+
+  <!-- the following is the script-generated list of classes and properties -->
+ 
+
+<!-- this is the a-z listing -->
+%s
+
+<!-- and this is the bulk of the vocab descriptions -->
+%s
+
+
+<h2 id="sec-extrefs">External Vocabulary References</h2>
+
+<p>
+The description of the terms in the Counter Ontology 'dictionary' make reference to classes and properties elsewhere. This section of the Counter Ontology 
+specification provides a placeholder reference for any Counter Ontology mention of externally defined terms. For example, sometimes we might say that Counter Ontology property has 
+a domain or range of an externally defined class, or that a Counter Ontology class is a sub-class of an external class, or 'disjoint with' such a class (ie. has no 
+common members). Such claims help fix the intended meaning of Counter Ontology terms in relationship to other 'peer' vocabularies.
+Currently, the Counter Ontology sub classes:</p>
+<dl>
+<dt><a about="http://purl.org/ontology/co/core#" rel="rdfs:seeAlso" href="http://www.w3.org/TR/2004/REC-owl-ref-20040210/#Class">owl:Thing</a></dt>
+<dd>The class extension of owl:Thing is the set of all individuals.
+</dd>
+<dt><a about="http://purl.org/ontology/co/core#" rel="rdfs:seeAlso" href="http://motools.sourceforge.net/event/event.html#term_Event">event:Event</a></dt>
+<dd>An arbitrary classification of a space/time region, by a cognitive agent. An event may have actively participating agents, passive factors, products, and a location in space/time.
+</dd>
+</dl>
+
+
+<h3 id="extns_status">Status Vocabulary</h3>
+
+<p>
+Each term in the Counter Ontology is annotated with properties from the <a href="http://www.w3.org/2003/06/sw-vocab-status/note">SemWeb Vocab Status Ontology</a>
+</p>
+<p>
+Note that this mechanism is itself somewhat experimental and evolvin. The definitions of 'stable', 'unstable', 'archaic' and 'testing' cannot
+ be defined as global absolutes, but only in relationship to the practices, expectations and social structures around some vocabulary. For their use in 
+ the Counter Ontology, future versions of this specification could usefully offer more detail about what to expect from a term labelled 'stable'. 
+ </p>
+
+<dl>
+<dt>vs:term_status</dt>
+<dd>The vs:term_status property indicates the status of a vocabulary term, one of 'stable','unstable','testing' or 'archaic'. </dd>
+</dl>
+
+  <h3 id="sec-ack">Acknowledgments</h3>
+
+  <p>I would like to thank very much Yves Raimond and Mats Skillingstad to help to establish this multiple purpose counter ontology. Furthermore, Dan Brickley and Libby Miller to provide the basis for this
+specification, and last but not least, Toby Inkster for providing the web counter example.</p>
+
+<h2 id="sec-changes">Recent Changes</h2>
+
+<pre>=========================
+Version 0.6 (July 2010)
+=========================
+ * ADDED: rdfs:Class to each owl:Class based concept
+ * ADDED: rdf:Property to each property
+
+=========================
+Version 0.5.2 (June 2010)
+=========================
+ * FIXED: wrong rdf:subPropertyOf definition of co:event
+
+=========================
+Version 0.5.1 (June 2010)
+=========================
+ * MODIFIED: small typos at rdfs:labels
+
+=========================
+Version 0.5 (June 2010)
+=========================
+ * CHANGED: base URI to http://purl.org/ontology/co/core#
+ * CHANGED: co:counter_of to co:object + removed its rdfs:range
+ * CHANGED: co:event_counter_of to co:event
+ * CHANGED: co:counter - removed its rdfs:domain
+ * ADDED: restriction on co:count - owl:cardinality "1"
+ * CHANGED: co:count from owl:DatatypeProperty to owl:FunctionalProperty
+
+=========================
+Version 0.4 (June 2010)
+=========================
+ * MODIFIED: co:count rdfs:range to xsd:integer
+ * ADDED: co:counter_of as explicit inverse property of co:counter
+ * ADDED: co:event_counter_of as explicit inverse property of co:event_counter
+ * REMOVED: FOAF and DCTerms from owl:imports
+ * MODIFIED: dc:date datatype to xsd:dataTime
+ * MODIFIED: foaf:maker to dc:creator
+
+=========================
+Version 0.3 (June 2010)
+=========================
+ * MODIFIED: co:Counter rdfs:subClassOf owl:Thing (don't why that was missing)
+ * MODIFIED: all xsd:string typed literals to @en for language utilisation
+ 
+=========================
+Version 0.2 (June 2010)
+=========================
+ * ADDED: co:ScrobbleEvent as general purpose scrobbling event
+ 
+=========================
+Version 0.1 (June 2010)
+=========================
+ * ADDED: co:Counter as general purpose counter
+ * ADDED: co:counter to enable the association to an co:Counter instance from an arbitrary owl:Thing based concept
+ * ADDED: co:count as the datatype property for the counter number
+ * ADDED: co:event_counter as specific counter association for event:Event based concepts
+ * NOTE: this ontology is based on the concepts of the playcount ontology created by Yves Raimond and was generalised 
+         by Mats Skillingstad and Bob Ferris 
+</pre>
+
+</body>
+</html>
+
+
