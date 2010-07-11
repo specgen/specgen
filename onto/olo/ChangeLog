@@ -1,4 +1,11 @@
 =========================
+Version 0.7 (June 2010)
+=========================
+ * MODIFIED: olo:OrderedList and olo:Slot now sub class of owl:Thing
+ * MODIFIED: olo:OrderedList and olo:Slot now of the type rdf:Class and owl:Class
+ * MODIFIED: every property is now also of the type rdf:Property
+
+=========================
 Version 0.6 (June 2010)
 =========================
  * CHANGED: base URI to http://purl.org/ontology/olo/core#

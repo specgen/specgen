@@ -1,4 +1,4 @@
-# Saved by TopBraid on Wed Jun 30 23:48:26 CEST 2010
+# Saved by TopBraid on Sun Jul 11 16:52:42 CEST 2010
 # baseURI: http://purl.org/ontology/olo/core#
 # imports: http://purl.org/dc/elements/1.1/
 # imports: http://www.w3.org/2003/06/sw-vocab-status/ns
@@ -12,38 +12,43 @@
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 
 olo:  rdf:type owl:Ontology ;
-      dc:creator <http://foaf.me/zazi#me> , "Samer Abdallah"^^xsd:string ;
-      dc:date "2010-06-28T19:19:52+01:00"^^xsd:dateTime ;
+      dc:creator "Samer Abdallah"^^xsd:string , <http://foaf.me/zazi#me> ;
+      dc:date "2010-07-11T15:48:52+01:00"^^xsd:dateTime ;
       dc:description """The Ordered Lists Ontology Specification provides basic concepts and properties 
 for describing ordered lists as semantic graph. This document contains a RDF description of the Ordered Lists Ontology
 as proposed by Samer Abdallah."""@en ;
-      dc:title "The Ordered Lists Ontology" ;
-      owl:imports <http://www.w3.org/2003/06/sw-vocab-status/ns> , dc: ;
-      owl:versionInfo "Revision: 0.6"@en .
+      dc:title "The Ordered Lists Ontology"@en ;
+      owl:imports dc: , <http://www.w3.org/2003/06/sw-vocab-status/ns> ;
+      owl:versionInfo "0.7"^^xsd:string .
 
 olo:OrderedList
-      rdf:type rdfs:Class ;
+      rdf:type owl:Class , rdfs:Class ;
       rdfs:comment "An ordered list with a given length an indexed items."@en ;
       rdfs:isDefinedBy olo: ;
       rdfs:label "Ordered List"@en ;
-      rdfs:subClassOf owl:Class ;
+      rdfs:subClassOf owl:Thing ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
                 owl:cardinality "1"^^xsd:nonNegativeInteger ;
                 owl:onProperty olo:length
               ] ;
-      vs:term_status "unstable"@en .
+      vs:term_status "stable"@en .
 
 olo:Slot
-      rdf:type rdfs:Class ;
+      rdf:type owl:Class , rdfs:Class ;
       rdfs:comment "A slot in an ordered list with a fixed index."@en ;
       rdfs:isDefinedBy olo: ;
       rdfs:label "Slot"@en ;
-      rdfs:subClassOf owl:Class ;
+      rdfs:subClassOf owl:Thing ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
                 owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
                 owl:onProperty olo:ordered_list
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+                owl:onProperty olo:item
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
@@ -60,53 +65,48 @@ olo:Slot
                 owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
                 owl:onProperty olo:previous
               ] ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-                owl:onProperty olo:item
-              ] ;
-      vs:term_status "unstable"@en .
+      vs:term_status "stable"@en .
 
 olo:index
-      rdf:type owl:FunctionalProperty ;
+      rdf:type rdf:Property , owl:FunctionalProperty ;
       rdfs:comment "An index of a slot in an ordered list."@en ;
       rdfs:domain olo:Slot ;
       rdfs:isDefinedBy olo: ;
       rdfs:label "has index"@en ;
       rdfs:range xsd:positiveInteger ;
       owl:inverseOf
-              [ rdf:type owl:ObjectProperty ;
+              [ rdf:type rdf:Property , owl:ObjectProperty ;
                 rdfs:label "is index of"@en
               ] ;
-      vs:term_status "unstable"@en .
+      vs:term_status "stable"@en .
 
 olo:item
-      rdf:type owl:ObjectProperty ;
+      rdf:type rdf:Property , owl:ObjectProperty ;
       rdfs:comment "An item of a slot in an ordered list."@en ;
       rdfs:domain olo:Slot ;
       rdfs:isDefinedBy olo: ;
       rdfs:label "has item"@en ;
       owl:inverseOf
-              [ rdf:type owl:ObjectProperty ;
+              [ rdf:type owl:ObjectProperty , rdf:Property ;
                 rdfs:label "is item of"@en
               ] ;
-      vs:term_status "unstable"@en .
+      vs:term_status "stable"@en .
 
 olo:length
-      rdf:type owl:FunctionalProperty ;
+      rdf:type rdf:Property , owl:FunctionalProperty ;
       rdfs:comment "The length of an ordered list."@en ;
       rdfs:domain olo:OrderedList ;
       rdfs:isDefinedBy olo: ;
       rdfs:label "has length"@en ;
       rdfs:range xsd:nonNegativeInteger ;
       owl:inverseOf
-              [ rdf:type owl:ObjectProperty ;
+              [ rdf:type owl:ObjectProperty , rdf:Property ;
                 rdfs:label "is length of"@en
               ] ;
-      vs:term_status "unstable"@en .
+      vs:term_status "stable"@en .
 
 olo:next
-      rdf:type owl:FunctionalProperty ;
+      rdf:type rdf:Property , owl:FunctionalProperty ;
       rdfs:comment "Associates the next slot in an ordered list."@en ;
       rdfs:domain olo:Slot ;
       rdfs:isDefinedBy olo: ;
@@ -115,7 +115,7 @@ olo:next
       vs:term_status "testing"@en .
 
 olo:ordered_list
-      rdf:type owl:FunctionalProperty ;
+      rdf:type rdf:Property , owl:FunctionalProperty ;
       rdfs:comment "An ordered list of an slot."@en ;
       rdfs:domain olo:Slot ;
       rdfs:isDefinedBy olo: ;
@@ -125,7 +125,7 @@ olo:ordered_list
       vs:term_status "testing"@en .
 
 olo:previous
-      rdf:type owl:InverseFunctionalProperty ;
+      rdf:type rdf:Property , owl:InverseFunctionalProperty ;
       rdfs:comment "Associates the previous slot in an ordered list"@en ;
       rdfs:domain olo:Slot ;
       rdfs:isDefinedBy olo: ;
@@ -135,10 +135,10 @@ olo:previous
       vs:term_status "testing"@en .
 
 olo:slot
-      rdf:type owl:ObjectProperty ;
+      rdf:type rdf:Property , owl:ObjectProperty ;
       rdfs:comment "A slot in an ordered list."@en ;
       rdfs:domain olo:OrderedList ;
       rdfs:isDefinedBy olo: ;
       rdfs:label "has slot"@en ;
       rdfs:range olo:Slot ;
-      vs:term_status "unstable"@en .
+      vs:term_status "stable"@en .
