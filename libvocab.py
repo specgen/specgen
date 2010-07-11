@@ -4,10 +4,10 @@
 #
 # modifications and extensions: Bob Ferris, July 2010
 #		+ multiple property and class types 
-#		+ simple restrictions modelling
+#		+ muttiple restrictions modelling
 #		+ rdfs:label, rdfs:comment
 #		+ classes and properties from other namespaces
-#		+ inverse properties
+#		+ inverse properties (explicit and anonymous)
 #		+ sub properties
 #
 #		Copyright 2010 Bob Ferris <http://smiy.wordpress.com/author/zazi0815/>
@@ -257,7 +257,8 @@ class Vocab(object):
 					"http://www.w3.org/2003/01/geo/wgs84_pos#"      : "geo",
 					"http://www.w3.org/2004/02/skos/core#"          : "skos",
 					"http://purl.org/NET/c4dm/event.owl#"           : "event",
-					"http://purl.org/ontology/co/core#"             : "co"
+					"http://purl.org/ontology/co/core#"             : "co",
+					"http://purl.org/ontology/olo/core#"            : "olo"
 		}
 
 
@@ -594,6 +595,7 @@ class VocabReport(object):
   				q1 = 'SELECT ?sc WHERE {<%s> rdfs:subClassOf ?sc } ' % (term.uri)
   				
   				relations = g.query(q1)
+  				ordone = False
   				for (subclass) in relations:
   					subclassnice = self.vocab.niceName(subclass)
   					# print "subclass ",subclass
@@ -605,48 +607,101 @@ class VocabReport(object):
   						termStr = """<span rel="rdfs:subClassOf" href="%s"><a href="%s">%s</a></span>\n""" % (subclass, subclass, subclassnice)
   						contentStr = "%s %s" % (contentStr, termStr)
   						print "must be super class from another ns"
-  					else:
-  						#q2 = 'SELECT ?or ?orv ?orop WHERE {_:%s rdf:type <http://www.w3.org/2002/07/owl#Restriction> . _:%s ?or ?orv . _:%s <http://www.w3.org/2002/07/owl#onProperty> ?orop }' % (subclass, subclass, subclass)
+  					elif (ordone == False):
+  						# with that query I get all restrictions of a concept :\
+  						# TODO: enable a query with bnodes (_:bnode currently doesn't work :( )
+  						# that's why the following code isn't really nice
   						q2 = 'SELECT ?orsc ?or ?orv WHERE { <%s> rdfs:subClassOf ?orsc . ?orsc rdf:type <http://www.w3.org/2002/07/owl#Restriction> . ?orsc ?or ?orv }' % (term.uri)
   						
   						print "try to fetch owl:Restrictions with query ",q2
   						orrelations = g.query(q2)
-  						startStr2 = '<tr><th>Restriction</th>\n'
+  						startStr2 = '<tr><th class="restrictions">Restriction(s):</th>\n'
+  						orpcounter = 0
   						orsubclass = ''
+  						contentStr3 = ''
+  						termStr1 = ''
+  						termStr2 = ''
+  						prop = ''
+  						oronproperty = ''
   						orproperty = ''
   						orpropertyvalue = ''
-  						oronproperty = ''
   						orscope = ''
-  						prop = ''
   						for (orsc, orp, orpv) in orrelations:
-  							orsubclass = orsc
+  							orproperty2 = ''
+  							orpropertyvalue2 = ''
+  							orscope2 = ''
+  							if (orsubclass == ""):
+  								print "initialize orsubclass with ",orsc
+  								orsubclass = orsc
+  							if(orsubclass != orsc):
+  								termStr1 = """<span about="%s" rel="rdfs:subClassOf" resource="[_:%s]"></span>\n""" % (term.uri, orsubclass)
+  								termStr2 = """<span about="[_:%s]" typeof="owl:Restriction"></span>The property 
+  									<span about="[_:%s]" rel="owl:onProperty" href="%s"><a href="#%s">%s</a></span> must be set <em>%s</em> 
+  									<span about="[_:%s]" property="%s" >%s</span> time(s)""" % (orsubclass, orsubclass, oronproperty, prop.id, prop.type, orscope, orsubclass, orproperty, orpropertyvalue)
+  								
+  								contentStr2 = "%s %s %s %s<br/>" % (contentStr2, termStr1, termStr2, contentStr3)
+  								print "change orsubclass to",orsc
+  								orsubclass = orsc
+  								contentStr3 = ''
+  								orpcounter = 0
+  								termStr1 = ''
+  								termStr2 = ''
+  								prop = ''
+  								oronproperty = ''
+  								orproperty = ''
+  								orpropertyvalue = ''
+  								orscope = ''
+  								
   							print "orp ",orp
   							print "orpv",orpv
-  							print "found owl:Restriction"
-  							if str(orp) == "http://www.w3.org/2002/07/owl#onProperty":
+  							if (str(orp) == "http://www.w3.org/2002/07/owl#onProperty" ):
   								oronproperty = orpv
   								prop = Term(orpv)
   								prop.type = self.vocab.niceName(orpv)
+  								print "found new owl:Restriction"
   								print "write onproperty property"
   							elif ((str(orp) != "http://www.w3.org/1999/02/22-rdf-syntax-ns#type") & (str(orp) != "http://www.w3.org/2002/07/owl#onProperty")):
-  								orproperty = self.vocab.niceName(orp)
-  								# <- that must be the specific cardinality restriction
-  								orpropertyvalue = orpv
-  								if (str(orp) == "http://www.w3.org/2002/07/owl#cardinality"):
-  									orscope = "exactly"
-  								if (str(orp) == "http://www.w3.org/2002/07/owl#minCardinality"):
-  									orscope = "at least"
-  								if (str(orp) == "http://www.w3.org/2002/07/owl#maxCardinality"):
-  									orscope = "at most"	
-  								print "write cardinality of restriction"
+  								if (orpcounter == 0):
+  									orproperty = self.vocab.niceName(orp)
+  									# <- that must be a specific cardinality restriction
+  									orpropertyvalue = orpv
+  									if (str(orp) == "http://www.w3.org/2002/07/owl#cardinality"):
+  										orscope = "exactly"
+  									if (str(orp) == "http://www.w3.org/2002/07/owl#minCardinality"):
+  										orscope = "at least"
+  									if (str(orp) == "http://www.w3.org/2002/07/owl#maxCardinality"):
+  										orscope = "at most"
+  									print "write 1st cardinality of restriction"
+  								else:
+  									orproperty2 = self.vocab.niceName(orp)
+  									# <- that must be another specific cardinality restriction
+  									orpropertyvalue2 = orpv
+  									if (str(orp) == "http://www.w3.org/2002/07/owl#cardinality"):
+  										orscope2 = "exactly"
+  									if (str(orp) == "http://www.w3.org/2002/07/owl#minCardinality"):
+  										orscope2 = "at least"
+  									if (str(orp) == "http://www.w3.org/2002/07/owl#maxCardinality"):
+  										orscope2 = "at most"	
+  									print "write another cardinality of restriction"
+  								orpcounter = orpcounter + 1
   							else:
   								print "here I am with ",orp
   								
-  						termStr1 = """<span rel="rdfs:subClassOf" resource="[_:%s]"></span>\n""" % (orsubclass)
+  							if (str(orproperty2) != ""):
+  								termStr3 = """ and <em>%s</em> 
+  										<span about="[_:%s]" property="%s" >%s</span> time(s)""" % (orscope2, orsubclass, orproperty2, orpropertyvalue2)
+  								contentStr3 = "%s %s" % (contentStr3, termStr3)
+  						
+  						# write also last/one restriction
+  						termStr1 = """<span about ="%s" rel="rdfs:subClassOf" resource="[_:%s]"></span>\n""" % (term.uri, orsubclass)
   						termStr2 = """<span about="[_:%s]" typeof="owl:Restriction"></span>The property 
   									<span about="[_:%s]" rel="owl:onProperty" href="%s"><a href="#%s">%s</a></span> must be set <em>%s</em> 
-  									<span about="[_:%s]" property="%s" >%s</span> time(s)\n""" % (orsubclass, orsubclass, oronproperty, prop.id, prop.type, orscope, orsubclass, orproperty, orpropertyvalue)
-  						contentStr2 = "%s %s %s" % (contentStr2, termStr1, termStr2)
+  									<span about="[_:%s]" property="%s" >%s</span> time(s)""" % (orsubclass, orsubclass, oronproperty, prop.id, prop.type, orscope, orsubclass, orproperty, orpropertyvalue)
+  								
+  						contentStr2 = "%s %s %s %s\n" % (contentStr2, termStr1, termStr2, contentStr3)
+  						
+  						ordone = True
+  						print "owl restriction modelling done for",term.uri
   				
   				if contentStr != "":
   					subClassOf = "%s <td> %s </td></tr>" % (startStr, contentStr)
@@ -909,8 +964,48 @@ class VocabReport(object):
 
   			contentStr = ''
   			for (inverseproperty, label) in relations:
-  				inverse = Term(inverseproperty)
-  				termStr = """<span rel="owl:inverseOf" href="%s"><a href="#%s">%s</a></span>\n""" % (inverseproperty, inverse.id, label)
+  				ipnice = self.vocab.niceName(inverseproperty)
+  				colon = ipnice.find(':')
+  				# check wether explicite defined inverse property or anonymous defined inverse property
+  				if colon > 0:
+  					inverse = Term(inverseproperty)
+  					termStr = """<span rel="owl:inverseOf" href="%s"><a href="#%s">%s</a></span>\n""" % (inverseproperty, inverse.id, label)
+  					print "inverse property must be explicitly defined"
+  				else:
+  					q2 = 'SELECT ?ipt WHERE {<%s> <http://www.w3.org/2002/07/owl#inverseOf> ?ip . ?ip rdfs:label ?l . ?ip rdf:type ?ipt } ' % (term.uri)
+  					relations2 = g.query(q2)
+  					
+  					contentStr2 = ''
+  					iptcounter = 0
+  					termStr2 = ''
+  					for (inversepropertytype) in relations2:
+  						print "inversepropertytype ",inversepropertytype
+  						iptype = ''
+  						termStr3 = ''
+  						iptypenice = self.vocab.niceName(inversepropertytype)
+  						if (str(inversepropertytype) == "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"):
+  							iptype = "RDF Property"
+  						if (str(inversepropertytype) == "http://www.w3.org/2002/07/owl#ObjectProperty"):
+  							iptype = "Object Property"
+  						if (str(inversepropertytype) == "http://www.w3.org/2002/07/owl#DatatypeProperty"):
+  							iptype = "Datatype Property"
+  						if (str(inversepropertytype) == "http://www.w3.org/2002/07/owl#InverseFunctionalProperty"):
+  							iptype = "Inverse Functional Property"
+  						if (str(inversepropertytype) == "http://www.w3.org/2002/07/owl#FunctionalProperty"):
+  							iptype = "Functional Property"
+  						if (iptype != ""):
+  							termStr3 = """<span about="[_:%s]" typeof="%s"><strong>%s</strong></span>""" % (inverseproperty, iptypenice, iptype)
+  							if (iptcounter > 0):
+  								termStr2 = "%s, %s" % (termStr2, termStr3)
+  							else:
+  								termStr2 = termStr3
+  							iptcounter = iptcounter + 1
+  					if (termStr2 != ""):
+  						contentStr2 = "(%s)" % (termStr2)
+  					termStr = """<span rel="owl:inverseOf" resource="[_:%s]">the anonymous defined property with the label
+  							 \'<em about="[_:%s]" property="rdfs:label">%s</em>\'</span>\n""" % (inverseproperty, inverseproperty, label)
+  					termStr = "%s %s" % (termStr, contentStr2)
+  					print "inverse property must be anonymous defined"
   				contentStr = "%s %s" % (contentStr, termStr)
 
   			if contentStr != "":

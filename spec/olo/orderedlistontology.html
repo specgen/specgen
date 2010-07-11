@@ -125,7 +125,12 @@ The counter concept as graph with relations</div>
  <p>An a-z index of Ordered List Ontology terms, by class (categories or types) and by property.</p>
  
  
- %s
+ <div class="azlist">
+<p>Classes: | <a href="#OrderedList">OrderedList</a> |  <a href="#Slot">Slot</a> | 
+</p>
+<p>Properties: | <a href="#index">index</a> |  <a href="#item">item</a> |  <a href="#length">length</a> |  <a href="#next">next</a> |  <a href="#ordered_list">ordered_list</a> |  <a href="#previous">previous</a> |  <a href="#slot">slot</a> | 
+</p>
+</div>
 
   <div style="clear: left;"></div>
 
@@ -212,10 +217,240 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  
 
 <!-- this is the a-z listing -->
-%s
+<div class="azlist">
+<p>Classes: | <a href="#OrderedList">OrderedList</a> |  <a href="#Slot">Slot</a> | 
+</p>
+<p>Properties: | <a href="#index">index</a> |  <a href="#item">item</a> |  <a href="#length">length</a> |  <a href="#next">next</a> |  <a href="#ordered_list">ordered_list</a> |  <a href="#previous">previous</a> |  <a href="#slot">slot</a> | 
+</p>
+</div>
 
 <!-- and this is the bulk of the vocab descriptions -->
-%s
+<div class="termlist"><h3>Classes and Properties (full detail)</h3>
+<div class='termdetails'><br />
+
+<h2>Classes</h2>
+ 
+
+<div class="specterm" id="OrderedList" about="http://purl.org/ontology/olo/core#OrderedList" typeof="rdfs:Class">
+  			<h3>Class: olo:OrderedList</h3> 
+  			<em property="rdfs:label" >Ordered List</em> - <span property="rdfs:comment" >An ordered list with a given length an indexed items.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#slot">slot</a>
+ <a href="#length">length</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#ordered_list">ordered_list</a>
+</td></tr> <tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://www.w3.org/2002/07/owl#Class"><a href="http://www.w3.org/2002/07/owl#Class">owl:Class</a></span>
+ </td></tr><tr><th class="restrictions">Restriction(s):</th>
+ <td>  <span about ="http://purl.org/ontology/olo/core#OrderedList" rel="rdfs:subClassOf" resource="[_:MEzJIcCb3]"></span>
+ <span about="[_:MEzJIcCb3]" typeof="owl:Restriction"></span>The property 
+  									<span about="[_:MEzJIcCb3]" rel="owl:onProperty" href="http://purl.org/ontology/olo/core#length"><a href="#length">olo:length</a></span> must be set <em>exactly</em> 
+  									<span about="[_:MEzJIcCb3]" property="owl:cardinality" >1</span> time(s) 
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/olo/core#"></span>
+ </td></tr><tr><th colspan="2">RDFS Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#OrderedList">#</a>] <!-- OrderedList --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Slot" about="http://purl.org/ontology/olo/core#Slot" typeof="rdfs:Class">
+  			<h3>Class: olo:Slot</h3> 
+  			<em property="rdfs:label" >Slot</em> - <span property="rdfs:comment" >A slot in an ordered list with a fixed index.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#ordered_list">ordered_list</a>
+ <a href="#item">item</a>
+ <a href="#index">index</a>
+ <a href="#previous">previous</a>
+ <a href="#next">next</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#slot">slot</a>
+ <a href="#previous">previous</a>
+ <a href="#next">next</a>
+</td></tr> <tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://www.w3.org/2002/07/owl#Class"><a href="http://www.w3.org/2002/07/owl#Class">owl:Class</a></span>
+ </td></tr><tr><th class="restrictions">Restriction(s):</th>
+ <td>  <span about="http://purl.org/ontology/olo/core#Slot" rel="rdfs:subClassOf" resource="[_:MEzJIcCb7]"></span>
+ <span about="[_:MEzJIcCb7]" typeof="owl:Restriction"></span>The property 
+  									<span about="[_:MEzJIcCb7]" rel="owl:onProperty" href="http://purl.org/ontology/olo/core#ordered_list"><a href="#ordered_list">olo:ordered_list</a></span> must be set <em>at most</em> 
+  									<span about="[_:MEzJIcCb7]" property="owl:maxCardinality" >1</span> time(s) <br/> <span about="http://purl.org/ontology/olo/core#Slot" rel="rdfs:subClassOf" resource="[_:MEzJIcCb8]"></span>
+ <span about="[_:MEzJIcCb8]" typeof="owl:Restriction"></span>The property 
+  									<span about="[_:MEzJIcCb8]" rel="owl:onProperty" href="http://purl.org/ontology/olo/core#next"><a href="#next">olo:next</a></span> must be set <em>at most</em> 
+  									<span about="[_:MEzJIcCb8]" property="owl:maxCardinality" >1</span> time(s) <br/> <span about="http://purl.org/ontology/olo/core#Slot" rel="rdfs:subClassOf" resource="[_:MEzJIcCb6]"></span>
+ <span about="[_:MEzJIcCb6]" typeof="owl:Restriction"></span>The property 
+  									<span about="[_:MEzJIcCb6]" rel="owl:onProperty" href="http://purl.org/ontology/olo/core#item"><a href="#item">olo:item</a></span> must be set <em>at least</em> 
+  									<span about="[_:MEzJIcCb6]" property="owl:minCardinality" >1</span> time(s) <br/> <span about="http://purl.org/ontology/olo/core#Slot" rel="rdfs:subClassOf" resource="[_:MEzJIcCb5]"></span>
+ <span about="[_:MEzJIcCb5]" typeof="owl:Restriction"></span>The property 
+  									<span about="[_:MEzJIcCb5]" rel="owl:onProperty" href="http://purl.org/ontology/olo/core#previous"><a href="#previous">olo:previous</a></span> must be set <em>at most</em> 
+  									<span about="[_:MEzJIcCb5]" property="owl:maxCardinality" >1</span> time(s) <br/> <span about ="http://purl.org/ontology/olo/core#Slot" rel="rdfs:subClassOf" resource="[_:MEzJIcCb4]"></span>
+ <span about="[_:MEzJIcCb4]" typeof="owl:Restriction"></span>The property 
+  									<span about="[_:MEzJIcCb4]" rel="owl:onProperty" href="http://purl.org/ontology/olo/core#index"><a href="#index">olo:index</a></span> must be set <em>exactly</em> 
+  									<span about="[_:MEzJIcCb4]" property="owl:cardinality" >1</span> time(s) 
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/olo/core#"></span>
+ </td></tr><tr><th colspan="2">RDFS Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#Slot">#</a>] <!-- Slot --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div>
+<h2>Properties</h2>
+ 
+<div class="specterm" id="next" about="http://purl.org/ontology/olo/core#next" typeof="owl:FunctionalProperty">
+  			<h3>Property: olo:next</h3> 
+  			<em property="rdfs:label" >has next</em> - <span property="rdfs:comment" >Associates the next slot in an ordered list.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td> <span rel="rdfs:domain" href="http://purl.org/ontology/olo/core#Slot"><a href="#Slot">Slot</a></span>
+</td></tr>
+  			<tr><th>Range:</th>
+ <td> <span rel="rdfs:range" href="http://purl.org/ontology/olo/core#Slot"><a href="#Slot">Slot</a></span>
+</td>	</tr><tr><th>Has inverse property</th>
+ <td>  <a href="#previous">has previous</a>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/olo/core#"></span>
+ </td></tr><tr><th colspan="2">Functional Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#next">#</a>] <!-- next --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="ordered_list" about="http://purl.org/ontology/olo/core#ordered_list" typeof="owl:FunctionalProperty">
+  			<h3>Property: olo:ordered_list</h3> 
+  			<em property="rdfs:label" >has ordered list</em> - <span property="rdfs:comment" >An ordered list of an slot.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td> <span rel="rdfs:domain" href="http://purl.org/ontology/olo/core#Slot"><a href="#Slot">Slot</a></span>
+</td></tr>
+  			<tr><th>Range:</th>
+ <td> <span rel="rdfs:range" href="http://purl.org/ontology/olo/core#OrderedList"><a href="#OrderedList">Ordered List</a></span>
+</td>	</tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" href="http://purl.org/ontology/olo/core#slot"><a href="#slot">has slot</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/olo/core#"></span>
+ </td></tr><tr><th colspan="2">Functional Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#ordered_list">#</a>] <!-- ordered_list --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="previous" about="http://purl.org/ontology/olo/core#previous" typeof="owl:InverseFunctionalProperty">
+  			<h3>Property: olo:previous</h3> 
+  			<em property="rdfs:label" >has previous</em> - <span property="rdfs:comment" >Associates the previous slot in an ordered list</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td> <span rel="rdfs:domain" href="http://purl.org/ontology/olo/core#Slot"><a href="#Slot">Slot</a></span>
+</td></tr>
+  			<tr><th>Range:</th>
+ <td> <span rel="rdfs:range" href="http://purl.org/ontology/olo/core#Slot"><a href="#Slot">Slot</a></span>
+</td>	</tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" href="http://purl.org/ontology/olo/core#next"><a href="#next">has next</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/olo/core#"></span>
+ </td></tr><tr><th colspan="2">Inverse Functional Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#previous">#</a>] <!-- previous --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div>
+<div class="specterm" id="index" about="http://purl.org/ontology/olo/core#index" typeof="owl:FunctionalProperty">
+  			<h3>Property: olo:index</h3> 
+  			<em property="rdfs:label" >has index</em> - <span property="rdfs:comment" >An index of a slot in an ordered list.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td> <span rel="rdfs:domain" href="http://purl.org/ontology/olo/core#Slot"><a href="#Slot">Slot</a></span>
+</td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2001/XMLSchema#positiveInteger"><a href="http://www.w3.org/2001/XMLSchema#positiveInteger">xsd:positiveInteger</a></span>
+ </td></tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" resource="[_:MEzJIcCb9]">the anonymous defined property with the label
+  							 '<em about="[_:MEzJIcCb9]" property="rdfs:label">is index of</em>'</span>
+ (<span about="[_:MEzJIcCb9]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/olo/core#"></span>
+ </td></tr><tr><th colspan="2">Functional Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#index">#</a>] <!-- index --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="item" about="http://purl.org/ontology/olo/core#item" typeof="owl:ObjectProperty">
+  			<h3>Property: olo:item</h3> 
+  			<em property="rdfs:label" >has item</em> - <span property="rdfs:comment" >An item of a slot in an ordered list.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td> <span rel="rdfs:domain" href="http://purl.org/ontology/olo/core#Slot"><a href="#Slot">Slot</a></span>
+</td></tr>
+  			<tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" resource="[_:MEzJIcCb10]">the anonymous defined property with the label
+  							 '<em about="[_:MEzJIcCb10]" property="rdfs:label">is item of</em>'</span>
+ (<span about="[_:MEzJIcCb10]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/olo/core#"></span>
+ </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#item">#</a>] <!-- item --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="length" about="http://purl.org/ontology/olo/core#length" typeof="owl:FunctionalProperty">
+  			<h3>Property: olo:length</h3> 
+  			<em property="rdfs:label" >has length</em> - <span property="rdfs:comment" >The length of an ordered list.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td> <span rel="rdfs:domain" href="http://purl.org/ontology/olo/core#OrderedList"><a href="#OrderedList">Ordered List</a></span>
+</td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"><a href="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">xsd:nonNegativeInteger</a></span>
+ </td></tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" resource="[_:MEzJIcCb11]">the anonymous defined property with the label
+  							 '<em about="[_:MEzJIcCb11]" property="rdfs:label">is length of</em>'</span>
+ (<span about="[_:MEzJIcCb11]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/olo/core#"></span>
+ </td></tr><tr><th colspan="2">Functional Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#length">#</a>] <!-- length --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="slot" about="http://purl.org/ontology/olo/core#slot" typeof="owl:ObjectProperty">
+  			<h3>Property: olo:slot</h3> 
+  			<em property="rdfs:label" >has slot</em> - <span property="rdfs:comment" >A slot in an ordered list.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td> <span rel="rdfs:domain" href="http://purl.org/ontology/olo/core#OrderedList"><a href="#OrderedList">Ordered List</a></span>
+</td></tr>
+  			<tr><th>Range:</th>
+ <td> <span rel="rdfs:range" href="http://purl.org/ontology/olo/core#Slot"><a href="#Slot">Slot</a></span>
+</td>	</tr><tr><th>Has inverse property</th>
+ <td>  <a href="#ordered_list">has ordered list</a>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/olo/core#"></span>
+ </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#slot">#</a>] <!-- slot --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div>
+
+
+
+</div>
+</div>
 
 
 <h2 id="sec-extrefs">External Vocabulary References</h2>
