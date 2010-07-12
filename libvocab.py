@@ -637,7 +637,7 @@ class VocabReport(object):
   								termStr1 = """<span about="%s" rel="rdfs:subClassOf" resource="[_:%s]"></span>\n""" % (term.uri, orsubclass)
   								termStr2 = """<span about="[_:%s]" typeof="owl:Restriction"></span>The property 
   									<span about="[_:%s]" rel="owl:onProperty" href="%s"><a href="#%s">%s</a></span> must be set <em>%s</em> 
-  									<span about="[_:%s]" property="%s" >%s</span> time(s)""" % (orsubclass, orsubclass, oronproperty, prop.id, prop.type, orscope, orsubclass, orproperty, orpropertyvalue)
+  									<span about="[_:%s]" property="%s" datatype="xsd:nonNegativeInteger" >%s</span> time(s)""" % (orsubclass, orsubclass, oronproperty, prop.id, prop.type, orscope, orsubclass, orproperty, orpropertyvalue)
   								
   								contentStr2 = "%s %s %s %s<br/>" % (contentStr2, termStr1, termStr2, contentStr3)
   								print "change orsubclass to",orsc
@@ -696,7 +696,7 @@ class VocabReport(object):
   						termStr1 = """<span about ="%s" rel="rdfs:subClassOf" resource="[_:%s]"></span>\n""" % (term.uri, orsubclass)
   						termStr2 = """<span about="[_:%s]" typeof="owl:Restriction"></span>The property 
   									<span about="[_:%s]" rel="owl:onProperty" href="%s"><a href="#%s">%s</a></span> must be set <em>%s</em> 
-  									<span about="[_:%s]" property="%s" >%s</span> time(s)""" % (orsubclass, orsubclass, oronproperty, prop.id, prop.type, orscope, orsubclass, orproperty, orpropertyvalue)
+  									<span about="[_:%s]" property="%s" datatype="xsd:nonNegativeInteger" >%s</span> time(s)""" % (orsubclass, orsubclass, oronproperty, prop.id, prop.type, orscope, orsubclass, orproperty, orpropertyvalue)
   								
   						contentStr2 = "%s %s %s %s\n" % (contentStr2, termStr1, termStr2, contentStr3)
   						

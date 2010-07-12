@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -11,24 +12,27 @@ xmlns:event="http://purl.org/NET/c4dm/event.owl#"
 xmlns:vann="http://purl.org/vocab/vann/"
 xmlns:bibo="http://purl.org/ontology/bibo/"
 xmlns:foaf="http://xmlns.com/foaf/0.1/"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
 typeof="bibo:Document"
-about="http://purl.org/ontology/co/counterontology.html">
+about="http://purl.org/ontology/co/counterontology.html"
+version="XHTML+RDFa 1.0">
 <head>
   <title about="http://purl.org/ontology/co/counterontology.html" property="dc:title">The Counter Ontology Specification</title>
-  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-  <link href="../../css/xmlns-style.css" rel="stylesheet"  type="text/css" />
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+  <base href="http://purl.org/ontology/co/counterontology.html" />
+  <link href="http://smiy.sourceforge.net/css/xmlns-style.css" rel="stylesheet"  type="text/css" />
   <link about="http://purl.org/ontology/co/core#" typeof="owl:Ontology" rel="dc:creator" href="http://moustaki.org/foaf.rdf#moustaki" />
   <link about="http://purl.org/ontology/co/core#" rel="dc:creator" href="http://foaf.me/intrz#me" />
   <link about="http://purl.org/ontology/co/core#" rel="dc:creator" href="http://foaf.me/zazi#me" />
   <link about="http://purl.org/ontology/co/counterontology.html" rel="dc:creator" href="http://foaf.me/zazi#me" />
   <link about="http://purl.org/ontology/co/counterontology.html" rel="foaf:primaryTopic" rev="foaf:isPrimaryTopicOf" href="http://purl.org/ontology/co/core#" />
-  <link href="../../css/style.css" rel="stylesheet"  type="text/css" />
+  <link href="http://smiy.sourceforge.net/css/style.css" rel="stylesheet"  type="text/css" />
   <link about="http://purl.org/ontology/co/counterontology.html" href="http://purl.org/ontology/co/counterontology.owl" rel="alternate dcterms:hasFormat"  type="application/rdf+xml" />
   <link about="http://purl.org/ontology/co/counterontology.html" href="http://purl.org/ontology/co/counterontology.n3" rel="alternate dcterms:hasFormat"  type="application/rdf+n3" />
 </head>
 
 <body>
-  <h1><span about="http://purl.org/ontology/co/core#" property="dc:title">The Counter Ontology</span> <span about="http://purl.org/ontology/co/core#" property="owl:versionInfo">0.6</span></h1>
+  <h1><span about="http://purl.org/ontology/co/core#" property="dc:title">The Counter Ontology</span> <span about="http://purl.org/ontology/co/core#" property="owl:versionInfo" datatype="xsd:decimal">0.6</span></h1>
 
   <h2>Namespace Document <span about="http://purl.org/ontology/co/core#" property="dc:date" content="2010-07-09T19:01:52+01:00" datatype="xsd:dateTime">09 July 2010</span></h2>
 
@@ -121,7 +125,7 @@ was used to generate most of the RDFa statements of the Counter Ontology for thi
   <h2 id="glance">The Counter Ontology at a glance</h2>
 
 <div about="http://purl.org/ontology/co/core#" rel="rdfs:seeAlso">
-<img src="../gfx/co_-_Counter_graph.gif" title="The counter concept as graph with relations" alt="The counter concept as graph with relations" />
+<img src="http://smiy.sourceforge.net/co/gfx/co_-_Counter_graph.gif" title="The counter concept as graph with relations" alt="The counter concept as graph with relations" />
 The counter concept as graph with relations</div> 
  <p>An a-z index of Counter Ontology terms, by class (categories or types) and by property.</p>
  
