@@ -34,8 +34,9 @@ Status:
 TODO:
  - enable more OWL features, especially an automated construction of owl:Ontology (currently this must be
    done manually in the template)
- - enable more support for other namespaces
+ - enable more support for other namespaces (super classes and super properties from other namespaces already possible)
  - restructure the code !!!
+ - write a cool parser for the "\n"'s and "\t"'s etc. in the parsed comments (e.g. "\n" to <br/> ...)
 
 
 ISSUES

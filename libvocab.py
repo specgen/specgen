@@ -250,7 +250,7 @@ class Vocab(object):
 					"http://rdfs.org/sioc/ns#"                      : "sioc",
 					"http://xmlns.com/foaf/0.1/"                    : "foaf",
 					"http://purl.org/dc/elements/1.1/"              : "dc",
-					"http://purl.org/dc/terms/"                     : "dct",
+					"http://purl.org/dc/terms/"                     : "dcterms",
 					"http://usefulinc.com/ns/doap#"                 : "doap",
 					"http://www.w3.org/2003/06/sw-vocab-status/ns#" : "vs",
 					"http://purl.org/rss/1.0/modules/content/"      : "content",
@@ -258,7 +258,8 @@ class Vocab(object):
 					"http://www.w3.org/2004/02/skos/core#"          : "skos",
 					"http://purl.org/NET/c4dm/event.owl#"           : "event",
 					"http://purl.org/ontology/co/core#"             : "co",
-					"http://purl.org/ontology/olo/core#"            : "olo"
+					"http://purl.org/ontology/olo/core#"            : "olo",
+					"http://purl.org/ontology/is/core#"             : "is"
 		}
 
 
@@ -593,7 +594,7 @@ class VocabReport(object):
   				subClassOf = "%s <td> %s </td></tr>" % (startStr, contentStr)
   			else:
   				q1 = 'SELECT ?sc WHERE {<%s> rdfs:subClassOf ?sc } ' % (term.uri)
-  				
+
   				relations = g.query(q1)
   				ordone = False
   				for (subclass) in relations:
@@ -612,8 +613,8 @@ class VocabReport(object):
   						# TODO: enable a query with bnodes (_:bnode currently doesn't work :( )
   						# that's why the following code isn't really nice
   						q2 = 'SELECT ?orsc ?or ?orv WHERE { <%s> rdfs:subClassOf ?orsc . ?orsc rdf:type <http://www.w3.org/2002/07/owl#Restriction> . ?orsc ?or ?orv }' % (term.uri)
-  						
-  						print "try to fetch owl:Restrictions with query ",q2
+
+  						print "try to fetch owl:Restrictions with query ", q2
   						orrelations = g.query(q2)
   						startStr2 = '<tr><th class="restrictions">Restriction(s):</th>\n'
   						orpcounter = 0
@@ -631,16 +632,16 @@ class VocabReport(object):
   							orpropertyvalue2 = ''
   							orscope2 = ''
   							if (orsubclass == ""):
-  								print "initialize orsubclass with ",orsc
+  								print "initialize orsubclass with ", orsc
   								orsubclass = orsc
   							if(orsubclass != orsc):
   								termStr1 = """<span about="%s" rel="rdfs:subClassOf" resource="[_:%s]"></span>\n""" % (term.uri, orsubclass)
   								termStr2 = """<span about="[_:%s]" typeof="owl:Restriction"></span>The property 
   									<span about="[_:%s]" rel="owl:onProperty" href="%s"><a href="#%s">%s</a></span> must be set <em>%s</em> 
   									<span about="[_:%s]" property="%s" datatype="xsd:nonNegativeInteger" >%s</span> time(s)""" % (orsubclass, orsubclass, oronproperty, prop.id, prop.type, orscope, orsubclass, orproperty, orpropertyvalue)
-  								
+
   								contentStr2 = "%s %s %s %s<br/>" % (contentStr2, termStr1, termStr2, contentStr3)
-  								print "change orsubclass to",orsc
+  								print "change orsubclass to", orsc
   								orsubclass = orsc
   								contentStr3 = ''
   								orpcounter = 0
@@ -651,10 +652,10 @@ class VocabReport(object):
   								orproperty = ''
   								orpropertyvalue = ''
   								orscope = ''
-  								
-  							print "orp ",orp
-  							print "orpv",orpv
-  							if (str(orp) == "http://www.w3.org/2002/07/owl#onProperty" ):
+
+  							print "orp ", orp
+  							print "orpv", orpv
+  							if (str(orp) == "http://www.w3.org/2002/07/owl#onProperty"):
   								oronproperty = orpv
   								prop = Term(orpv)
   								prop.type = self.vocab.niceName(orpv)
@@ -681,31 +682,31 @@ class VocabReport(object):
   									if (str(orp) == "http://www.w3.org/2002/07/owl#minCardinality"):
   										orscope2 = "at least"
   									if (str(orp) == "http://www.w3.org/2002/07/owl#maxCardinality"):
-  										orscope2 = "at most"	
+  										orscope2 = "at most"
   									print "write another cardinality of restriction"
   								orpcounter = orpcounter + 1
   							else:
-  								print "here I am with ",orp
-  								
+  								print "here I am with ", orp
+
   							if (str(orproperty2) != ""):
   								termStr3 = """ and <em>%s</em> 
   										<span about="[_:%s]" property="%s" >%s</span> time(s)""" % (orscope2, orsubclass, orproperty2, orpropertyvalue2)
   								contentStr3 = "%s %s" % (contentStr3, termStr3)
-  						
+
   						# write also last/one restriction
   						termStr1 = """<span about ="%s" rel="rdfs:subClassOf" resource="[_:%s]"></span>\n""" % (term.uri, orsubclass)
   						termStr2 = """<span about="[_:%s]" typeof="owl:Restriction"></span>The property 
   									<span about="[_:%s]" rel="owl:onProperty" href="%s"><a href="#%s">%s</a></span> must be set <em>%s</em> 
   									<span about="[_:%s]" property="%s" datatype="xsd:nonNegativeInteger" >%s</span> time(s)""" % (orsubclass, orsubclass, oronproperty, prop.id, prop.type, orscope, orsubclass, orproperty, orpropertyvalue)
-  								
+
   						contentStr2 = "%s %s %s %s\n" % (contentStr2, termStr1, termStr2, contentStr3)
-  						
+
   						ordone = True
-  						print "owl restriction modelling done for",term.uri
-  				
+  						print "owl restriction modelling done for", term.uri
+
   				if contentStr != "":
   					subClassOf = "%s <td> %s </td></tr>" % (startStr, contentStr)
-  				
+
   				if contentStr2 != "":
   					restriction = "%s <td> %s </td></tr>" % (startStr2, contentStr2)
 
@@ -726,18 +727,18 @@ class VocabReport(object):
   				hasSubClass = "%s <td> %s </td></tr>" % (startStr, contentStr)
   			else:
   				q = 'SELECT ?sc WHERE {?sc rdfs:subClassOf <%s> } ' % (term.uri)
-  				
+
   				relations = g.query(q)
   				for (subclass) in relations:
   					subclassnice = self.vocab.niceName(subclass)
-  					print "has subclass ",subclass
-  					print "has subclassnice ",subclassnice
+  					print "has subclass ", subclass
+  					print "has subclassnice ", subclassnice
   					# check niceName result
   					colon = subclassnice.find(':')
   					if colon > 0:
   						termStr = """<a href="%s">%s</a>\n""" % (subclass, subclassnice)
   						contentStr = "%s %s" % (contentStr, termStr)
-  				
+
   				if contentStr != "":
   					hasSubClass = "%s <td> %s </td></tr>" % (startStr, contentStr)
 
@@ -873,7 +874,7 @@ class VocabReport(object):
   				domainsOfProperty = "%s <td>%s</td></tr>" % (startStr, contentStr)
   			else:
   				q = 'SELECT ?d WHERE {<%s> rdfs:domain ?d } ' % (term.uri)
-  				
+
   				relations = g.query(q)
   				for (domain) in relations:
   					domainnice = self.vocab.niceName(domain)
@@ -885,7 +886,7 @@ class VocabReport(object):
   					if colon > 0:
   						termStr = """<span rel="rdfs:domain" href="%s"><a href="%s">%s</a></span>\n""" % (domain, domain, domainnice)
   						contentStr = "%s %s" % (contentStr, termStr)
-  				
+
   				if contentStr != "":
   					domainsOfProperty = "%s <td> %s </td></tr>" % (startStr, contentStr)
 
@@ -904,7 +905,7 @@ class VocabReport(object):
   				rangesOfProperty = "%s <td>%s</td>	</tr>" % (startStr, contentStr)
   			else:
   				q = 'SELECT ?r WHERE {<%s> rdfs:range ?r } ' % (term.uri)
-  				
+
   				relations = g.query(q)
   				for (range) in relations:
   					rangenice = self.vocab.niceName(range)
@@ -916,7 +917,7 @@ class VocabReport(object):
   					if colon > 0:
   						termStr = """<span rel="rdfs:range" href="%s"><a href="%s">%s</a></span>\n""" % (range, range, rangenice)
   						contentStr = "%s %s" % (contentStr, termStr)
-  				
+
   				if contentStr != "":
   					rangesOfProperty = "%s <td> %s </td></tr>" % (startStr, contentStr)
 
@@ -936,6 +937,21 @@ class VocabReport(object):
 
   			if contentStr != "":
   				subPropertyOf = "%s <td> %s </td></tr>" % (startStr, contentStr)
+  			else:
+  				q1 = 'SELECT ?sp WHERE {<%s> rdfs:subPropertyOf ?sp } ' % (term.uri)
+  				
+  				relations = g.query(q1)
+  				for (subproperty) in relations:
+  					subpropertynice = self.vocab.niceName(subproperty)
+  					# check niceName result
+  					colon = subpropertynice.find(':')
+  					if colon > 0:
+  						termStr = """<span rel="rdfs:subPropertyOf" href="%s"><a href="%s">%s</a></span>\n""" % (subproperty, subproperty, subpropertynice)
+  						contentStr = "%s %s" % (contentStr, termStr)
+  						print "must be super property from another ns"
+  				
+  				if contentStr != "":
+  					subPropertyOf = "%s <td> %s </td></tr>" % (startStr, contentStr)
 
   			# property has sub property -> only for property included in this ontology specification
   			hasSubProperty = ''
@@ -974,12 +990,12 @@ class VocabReport(object):
   				else:
   					q2 = 'SELECT ?ipt WHERE {<%s> <http://www.w3.org/2002/07/owl#inverseOf> ?ip . ?ip rdfs:label ?l . ?ip rdf:type ?ipt } ' % (term.uri)
   					relations2 = g.query(q2)
-  					
+
   					contentStr2 = ''
   					iptcounter = 0
   					termStr2 = ''
   					for (inversepropertytype) in relations2:
-  						print "inversepropertytype ",inversepropertytype
+  						print "inversepropertytype ", inversepropertytype
   						iptype = ''
   						termStr3 = ''
   						iptypenice = self.vocab.niceName(inversepropertytype)
