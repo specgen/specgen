@@ -19,7 +19,7 @@ for describing ordered lists as semantic graph. This document contains a RDF des
 as proposed by Samer Abdallah."""@en ;
       dc:title "The Ordered Lists Ontology"@en ;
       owl:imports dc: , <http://www.w3.org/2003/06/sw-vocab-status/ns> ;
-      owl:versionInfo "0.7"^^xsd:string .
+      owl:versionInfo "0.7"^^xsd:decimal .
 
 olo:OrderedList
       rdf:type owl:Class , rdfs:Class ;

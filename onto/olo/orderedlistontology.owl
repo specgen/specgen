@@ -18,7 +18,7 @@ as proposed by Samer Abdallah.</dc:description>
     <dc:title xml:lang="en">The Ordered Lists Ontology</dc:title>
     <owl:imports rdf:resource="http://purl.org/dc/elements/1.1/"/>
     <owl:imports rdf:resource="http://www.w3.org/2003/06/sw-vocab-status/ns"/>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.7</owl:versionInfo>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.7</owl:versionInfo>
   </owl:Ontology>
   <owl:Class rdf:about="http://purl.org/ontology/olo/core#OrderedList">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>

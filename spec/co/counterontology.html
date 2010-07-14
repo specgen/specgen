@@ -93,7 +93,8 @@ The Counter Ontology is a generalisation of the <a about="http://purl.org/ontolo
 Specification</a>, which was created by <a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://danbri.org/">Dan Brickley</a> and 
 <a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://nicecupoftea.org/">Libby Miller</a>. It was modified and extended by Bob Ferris. Furthermore,
 a modified and extended version of <a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://svn.foaf-project.org/foaftown/specgen/">Danbri's SpecGen version</a>
-was used to generate most of the RDFa statements of the Counter Ontology for this specification.
+was used to generate most of the RDFa statements of the Counter Ontology for this specification (see <a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" 
+href="http://smiy.svn.sourceforge.net/viewvc/smiy/specgen/trunk/">here</a> for SpecGen version 6 by Bob Ferris).
 </p>
 
 
@@ -157,7 +158,7 @@ TODO
   <!-- ================================================================== -->
 
 
- <h2 id="sec-intro">1 Introduction: Counter Ontology Basics</h2>
+ <h2 id="sec-intro">Introduction: Counter Ontology Basics</h2>
 
 
   <h2 id="sec-for">What's the Counter Ontology for?</h2>
@@ -234,36 +235,36 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
 <div class='termdetails'><br />
 
 <h2>Classes</h2>
- <div class="specterm" id="Counter" about="http://purl.org/ontology/co/core#Counter" typeof="owl:Class">
+ <div class="specterm" id="Counter" about="http://purl.org/ontology/co/core#Counter" typeof="rdfs:Class">
   			<h3>Class: co:Counter</h3> 
   			<em property="rdfs:label" >Counter</em> - <span property="rdfs:comment" >Counter of a given object/ given objects, which are related to that counter.</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
   			<td><span property="vs:status" >stable</span></td></tr>
   			<tr><th>Properties include:</th>
- <td>  <a href="#count">count</a>
- <a href="#object">object</a>
+ <td>  <a href="#object">object</a>
+ <a href="#count">count</a>
  </td></tr>
   			<tr><th>Used with:</th>
  <td>  <a href="#counter">counter</a>
 </td></tr> <tr><th>Sub class of</th>
  <td>  <span rel="rdfs:subClassOf" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
  </td></tr><tr><th class="restrictions">Restriction(s):</th>
- <td>  <span about ="http://purl.org/ontology/co/core#Counter" rel="rdfs:subClassOf" resource="[_:Rgxxjnyz3]"></span>
- <span about="[_:Rgxxjnyz3]" typeof="owl:Restriction"></span>The property 
-  									<span about="[_:Rgxxjnyz3]" rel="owl:onProperty" href="http://purl.org/ontology/co/core#count"><a href="#count">co:count</a></span> must be set <em>exactly</em> 
-  									<span about="[_:Rgxxjnyz3]" property="owl:cardinality" datatype="xsd:nonNegativeInteger" >1</span> time(s) 
+ <td>  <span about ="http://purl.org/ontology/co/core#Counter" rel="rdfs:subClassOf" resource="[_:PyQpFQub3]"></span>
+ <span about="[_:PyQpFQub3]" typeof="owl:Restriction"></span>The property 
+  									<span about="[_:PyQpFQub3]" rel="owl:onProperty" href="http://purl.org/ontology/co/core#count"><a href="#count">co:count</a></span> must be set <em>exactly</em> 
+  									<span about="[_:PyQpFQub3]" property="owl:cardinality" datatype="xsd:nonNegativeInteger" >1</span> time(s) 
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/co/core#"></span>
  </td></tr><tr><th colspan="2">OWL Class</th>
- <td>  </td></tr><tr><th colspan="2">RDFS Class</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/2000/01/rdf-schema#Class"></span> </td></tr>
+ <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#Class"></span> </td></tr><tr><th colspan="2">RDFS Class</th>
+ <td>  </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#Counter">#</a>] <!-- Counter --> [<a href="#glance">back to top</a>]</p>
   			<br/>
   			</div>
 
-<div class="specterm" id="ScrobbleEvent" about="http://purl.org/ontology/co/core#ScrobbleEvent" typeof="owl:Class">
+<div class="specterm" id="ScrobbleEvent" about="http://purl.org/ontology/co/core#ScrobbleEvent" typeof="rdfs:Class">
   			<h3>Class: co:ScrobbleEvent</h3> 
   			<em property="rdfs:label" >Scrobble Event</em> - <span property="rdfs:comment" >An event corresponding to a scrobbling (counting an activity, which includes at least a specific factor and \na specific agent), e.g. a track being played by someone, a video watched by someone, a book read by \nsomeone, a sporting activity by someone, ...</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -274,15 +275,15 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/co/core#"></span>
  </td></tr><tr><th colspan="2">OWL Class</th>
- <td>  </td></tr><tr><th colspan="2">RDFS Class</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/2000/01/rdf-schema#Class"></span> </td></tr>
+ <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#Class"></span> </td></tr><tr><th colspan="2">RDFS Class</th>
+ <td>  </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#ScrobbleEvent">#</a>] <!-- ScrobbleEvent --> [<a href="#glance">back to top</a>]</p>
   			<br/>
   			</div>
 <h2>Properties</h2>
- <div class="specterm" id="count" about="http://purl.org/ontology/co/core#count" typeof="rdf:Property">
+ <div class="specterm" id="count" about="http://purl.org/ontology/co/core#count" typeof="owl:FunctionalProperty">
   			<h3>Property: co:count</h3> 
   			<em property="rdfs:label" >has count</em> - <span property="rdfs:comment" >Links a counter resource to the actual count</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -295,13 +296,13 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/co/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
- <td>  </td></tr><tr><th colspan="2">Functional Property</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#FunctionalProperty"></span> </td></tr>
+ <td> <span rel="rdf:type" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"></span> </td></tr><tr><th colspan="2">Functional Property</th>
+ <td>  </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#count">#</a>] <!-- count --> [<a href="#glance">back to top</a>]</p>
   			<br/>
-  			</div><div class="specterm" id="counter" about="http://purl.org/ontology/co/core#counter" typeof="rdf:Property">
+  			</div><div class="specterm" id="counter" about="http://purl.org/ontology/co/core#counter" typeof="owl:ObjectProperty">
   			<h3>Property: co:counter</h3> 
   			<em property="rdfs:label" >has counter</em> - <span property="rdfs:comment" >Links an object to a counter resource. Please feel free to create further sub properties with more restricted domains.</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -316,14 +317,14 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/co/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
- <td>  </td></tr><tr><th colspan="2">Object Property</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#ObjectProperty"></span> </td></tr>
+ <td> <span rel="rdf:type" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"></span> </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#counter">#</a>] <!-- counter --> [<a href="#glance">back to top</a>]</p>
   			<br/>
   			</div>
-<div class="specterm" id="event" about="http://purl.org/ontology/co/core#event" typeof="rdf:Property">
+<div class="specterm" id="event" about="http://purl.org/ontology/co/core#event" typeof="owl:ObjectProperty">
   			<h3>Property: co:event</h3> 
   			<em property="rdfs:label" >has event</em> - <span property="rdfs:comment" >Links counter resources to related events.</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -338,13 +339,13 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/co/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
- <td>  </td></tr><tr><th colspan="2">Object Property</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#ObjectProperty"></span> </td></tr>
+ <td> <span rel="rdf:type" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"></span> </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#event">#</a>] <!-- event --> [<a href="#glance">back to top</a>]</p>
   			<br/>
-  			</div><div class="specterm" id="object" about="http://purl.org/ontology/co/core#object" typeof="rdf:Property">
+  			</div><div class="specterm" id="object" about="http://purl.org/ontology/co/core#object" typeof="owl:ObjectProperty">
   			<h3>Property: co:object</h3> 
   			<em property="rdfs:label" >has object</em> - <span property="rdfs:comment" >Links a counter resource to an object. Please feel free to create further sub properties with more restricted ranges.</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -359,14 +360,14 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/co/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
- <td>  </td></tr><tr><th colspan="2">Object Property</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#ObjectProperty"></span> </td></tr>
+ <td> <span rel="rdf:type" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"></span> </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#object">#</a>] <!-- object --> [<a href="#glance">back to top</a>]</p>
   			<br/>
   			</div>
-<div class="specterm" id="event_counter" about="http://purl.org/ontology/co/core#event_counter" typeof="rdf:Property">
+<div class="specterm" id="event_counter" about="http://purl.org/ontology/co/core#event_counter" typeof="owl:ObjectProperty">
   			<h3>Property: co:event_counter</h3> 
   			<em property="rdfs:label" >has event counter</em> - <span property="rdfs:comment" >Links events to a counter resource, where they where counted in.</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -381,8 +382,8 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/co/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
- <td>  </td></tr><tr><th colspan="2">Object Property</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#ObjectProperty"></span> </td></tr>
+ <td> <span rel="rdf:type" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"></span> </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#event_counter">#</a>] <!-- event_counter --> [<a href="#glance">back to top</a>]</p>

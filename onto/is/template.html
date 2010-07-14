@@ -19,11 +19,11 @@ version="XHTML+RDFa 1.0">
   <title about="http://purl.org/ontology/is/infoservice.html" property="dc:title">The Info Service Ontology Specification</title>
   <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
   <base href="http://purl.org/ontology/is/infoservice.html" />
-  <link href="http://smiy.sourceforge.net/css/xmlns-style.css" rel="stylesheet"  type="text/css" />
+  <link href="http://infoserviceonto.sourceforge.net/css/xmlns-style.css" rel="stylesheet"  type="text/css" />
   <link about="http://purl.org/ontology/is/core#" typeof="owl:Ontology" rel="dc:creator" href="http://foaf.me/zazi#me" />
   <link about="http://purl.org/ontology/is/infoservice.html" rel="dc:creator" href="http://foaf.me/zazi#me" />
   <link about="http://purl.org/ontology/is/infoservice.html" rel="foaf:primaryTopic" rev="foaf:isPrimaryTopicOf" href="http://purl.org/ontology/is/core#" />
-  <link href="http://smiy.sourceforge.net/css/style.css" rel="stylesheet"  type="text/css" />
+  <link href="http://infoserviceonto.sourceforge.net/css/style.css" rel="stylesheet"  type="text/css" />
   <link about="http://purl.org/ontology/is/infoservice.html" href="http://purl.org/ontology/is/infoservice.owl" rel="alternate dcterms:hasFormat"  type="application/rdf+xml" />
   <link about="http://purl.org/ontology/is/infoservice.html" href="http://purl.org/ontology/is/infoservice.n3" rel="alternate dcterms:hasFormat"  type="application/rdf+n3" />
 </head>
@@ -36,13 +36,13 @@ version="XHTML+RDFa 1.0">
   <dl>
     <dt>This version:</dt>
     <dd><a about="http://purl.org/ontology/is/infoservice.html" rel="dc:hasVersion" 
-rev="dc:isVersionOf" href="http://purl.org/ontology/is/20100712/counterontology.html">http://purl.org/ontology/is/20100712/counterontology.html</a> (<a href="http://purl.org/ontology/is/20100712/infoservice.owl">OWL</a>, <a href="http://purl.org/ontology/is/20100712/infoservice.n3">N3</a>)</dd>
+rev="dc:isVersionOf" href="http://purl.org/ontology/is/20100712/infoservice.html">http://purl.org/ontology/is/20100712/infoservice.html</a> (<a href="http://purl.org/ontology/is/20100712/infoservice.owl">OWL</a>, <a href="http://purl.org/ontology/is/20100712/infoservice.n3">N3</a>)</dd>
 
     <dt>Latest version:</dt>
     <dd><a href="http://purl.org/ontology/is/core#">http://purl.org/ontology/is/core#</a> (<a href="http://purl.org/ontology/is/infoservice.owl">OWL</a>, <a href="http://purl.org/ontology/is/infoservice.n3">N3</a>)</dd>
 
     <dt>Previous version:</dt>
-    <dd><a href="http://purl.org/ontology/is/20100630/counterontology.html">http://purl.org/ontology/is/20100630/counterontology.html</a> (<a href="http://purl.org/ontology/is/20100630/infoservice.owl">OWL</a>, <a href="http://purl.org/ontology/is/20100630/infoservice.n3">N3</a>)</dd>
+    <dd><a href="http://purl.org/ontology/is/20100630/infoservice.html">http://purl.org/ontology/is/20100630/infoservice.html</a> (<a href="http://purl.org/ontology/is/20100630/infoservice.owl">OWL</a>, <a href="http://purl.org/ontology/is/20100630/infoservice.n3">N3</a>)</dd>
 
     <dt>Authors:</dt>
     <dd><a about="http://purl.org/ontology/is/infoservice.html" rel="rdfs:seeAlso" href="http://smiy.wordpress.com/author/zazi0815/">Bob Ferris</a> (<a about="http://purl.org/ontology/is/infoservice.html" rel="rdfs:seeAlso" href="http://smiy.wordpress.com/">SMI</a>)</dd>
@@ -82,16 +82,23 @@ the Semantic Web. This document contains a RDF description of the Information Se
     <h2>Status of This Document</h2>
 
     <p>
-TODO
+The template of this specification is derived from the  <a about="http://purl.org/ontology/is/infoservice.html" rel="rdfs:seeAlso" href="http://xmlns.com/foaf/spec/">FOAF Vocabulary
+Specification</a>, which was created by <a about="http://purl.org/ontology/is/infoservice.html" rel="rdfs:seeAlso" href="http://danbri.org/">Dan Brickley</a> and 
+<a about="http://purl.org/ontology/is/infoservice.html" rel="rdfs:seeAlso" href="http://nicecupoftea.org/">Libby Miller</a>. It was modified and extended by Bob Ferris. Furthermore,
+a modified and extended version of <a about="http://purl.org/ontology/is/infoservice.html" rel="rdfs:seeAlso" href="http://svn.foaf-project.org/foaftown/specgen/">Danbri's SpecGen version</a>
+was used to generate most of the RDFa statements of the Info Service Ontology for this specification (see <a about="http://purl.org/ontology/is/infoservice.html" rel="rdfs:seeAlso" 
+href="http://smiy.svn.sourceforge.net/viewvc/smiy/specgen/trunk/">here</a> for SpecGen version 6 by Bob Ferris).
 </p>
 
 
 <p> This document is created by combining the <a href="http://purl.org/ontology/is/infoservice.owl">RDFS/OWL</a> machine-readable
     Info Service Ontology with a human-readable <em>HTML</em> representation that includes RDFa annotations. Future versions may 
-    incorporate <em>multilingual translations</em> of term definitions. The RDF/XML version of the specification is also available directly from the namespace URI. RDF/N3 representations could be access via the links above.
+    incorporate <em>multilingual translations</em> of term definitions. The RDF/XML version of the specification is also available 
+    directly from the namespace URI. RDF/N3 representations could be access via the links above.
 </p>
-    <p>The authors welcome comments on this document, preferably via 
-    TODO
+    <p>The authors welcome comments on this document, preferably via the <a about="http://purl.org/ontology/is/infoservice.html" rel="rdfs:seeAlso" 
+    href="http://groups.google.com/group/info-service-ontology-specification-group/">Info Service Ontology Specification Group mailing list</a> or the 
+    <a about="http://purl.org/ontology/is/infoservice.html" rel="rdfs:seeAlso" href="http://infoserviceonto.wordpress.com/">Info Service Ontology blog</a>.
    </p>
 
   <h2 id="sec-toc">Table of Contents</h2>
@@ -112,10 +119,11 @@ TODO
 
   <a id="sec-glance"></a>
   <h2 id="glance">The Info Service Ontology at a glance</h2>
-
+  
+  <p>The <a href="http://purl.org/ontology/is/infoservice.html#InfoService"><em>is:InfoService</em></a> concept as graph with relations:</p>
 <div about="http://purl.org/ontology/is/core#" rel="rdfs:seeAlso">
-<img src="http://smiy.sourceforge.net/is/gfx/co_-_Counter_graph.gif" title="The counter concept as graph with relations" alt="The counter concept as graph with relations" />
-The counter concept as graph with relations</div> 
+<img src="http://infoserviceonto.sourceforge.net/is/gfx/infoservice.gif" title="The info service concept as graph with relations" alt="The info service concept as graph with relations" /></div>
+ 
  <p>An a-z index of Info Service Ontology terms, by class (categories or types) and by property.</p>
  
  
@@ -125,15 +133,75 @@ The counter concept as graph with relations</div>
 
   <h2 id="sec-example">Example</h2>
 
-  <p>Here is a very basic document describing a person:</p>
+  <p>RDF/Turtle representation of a webpage linked to an <em>Information Service</em>:</p>
 
   <div class="example">
     <pre>
-TODO
+@prefix foaf:    &lt;http://xmlns.com/foaf/0.1/&gt; .
+@prefix is:      &lt;http://purl.org/ontology/is/core#&gt; .
+@prefix isi:     &lt;http://purl.org/ontology/is/inst/&gt; .
+&nbsp;
+isi:musicbrainz a is:InfoService .
+&nbsp;
+&lt;http://musicbrainz.org/artist/8a1fe33d-6029-462e-bcb7-08e0ebaba6dd.html&gt;
+&nbsp;&nbsp;&nbsp;a foaf:Document ;
+&nbsp;&nbsp;&nbsp;is:info_service isi:musicbrainz .
 </pre>
   </div>
 
-  <p>Description TODO</p>
+  <p>The initial intention behind designing this ontology was to add some knowledge re. linked websites 
+  from different information services, e.g. <a href="http://wikipedia.org/">
+  <em>Wikipedia</em></a> or <a href="http://musicbrainz.org/"><em>MusicBrainz</em></a>, in semantic graphs 
+  (as proposed in the <a href="http://wiki.foaf-project.org/w/FOAF_and_InformationServices">FOAF wiki</a>). This is shown in the example above for 
+  a document taken from <em>MusicBrainz</em>.</p>
+  
+  <p>A graphic of <em>MusicBrainz</em> modelled as <em>Information Service</em>:</p>
+  
+    <div about="http://purl.org/ontology/is/infoservice.html" rel="rdfs:seeAlso">
+<img src="http://infoserviceonto.sourceforge.net/is/gfx/is_-_musicbrainz_example.gif" title="The Info Service Ontology - MusicBrainz example" 
+alt="The Info Service Ontology - MusicBrainz example" /></div>
+  
+  <p>RDF/Turtle representation of <em>MusicBrainz</em> modelled as <em>Information Service</em>:</p>
+
+  <div class="example">
+    <pre about="http://purl.org/ontology/is/infoservice.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/is/inst/musicbrainz">
+@prefix dc:      &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+@prefix foaf:    &lt;http://xmlns.com/foaf/0.1/&gt; .
+@prefix is:      &lt;http://purl.org/ontology/is/core#&gt; .
+@prefix ist:     &lt;http://purl.org/ontology/is/types/&gt; .
+@prefix isct:    &lt;http://purl.org/ontology/is/ctypes/&gt; .
+@prefix isq:     &lt;http://purl.org/ontology/is/quality/&gt; .
+@prefix isi:     &lt;http://purl.org/ontology/is/inst/&gt; .
+@prefix rdf:     &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs:    &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix xsd:     &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+&nbsp;
+isi:musicbrainz
+&nbsp;&nbsp;&nbsp;rdf:type is:InfoService ;
+&nbsp;&nbsp;&nbsp;rdfs:isDefinedBy isi: ;
+&nbsp;&nbsp;&nbsp;dc:description "An open content music database. Modelled here as information service."@en ;
+&nbsp;&nbsp;&nbsp;dc:title "MusicBrainz"^^xsd:string ;
+&nbsp;&nbsp;&nbsp;dcterms:subject &lt;http://dbpedia.org/resource/Category:Metadata_registry&gt; , 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;http://dbpedia.org/resource/Category:Acoustic_fingerprinting&gt; , 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;http://dbpedia.org/resource/Category:MusicBrainz&gt; , 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;http://dbpedia.org/resource/Category:Library_2.0&gt; , 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;http://dbpedia.org/resource/Category:Online_encyclopedias&gt; , 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;http://dbpedia.org/resource/Category:Online_music_and_lyrics_databases&gt; , 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;http://dbpedia.org/resource/Category:Free_websites&gt; ;
+&nbsp;&nbsp;&nbsp;is:info_service_contributor_type
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isct:mixed ;
+&nbsp;&nbsp;&nbsp;is:info_service_quality
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isq:good ;
+&nbsp;&nbsp;&nbsp;is:info_service_type
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ist:encyclopedia , ist:knowledge_base ;
+&nbsp;&nbsp;&nbsp;is:main_subject &lt;http://dbpedia.org/resource/Category:Music&gt; ;
+&nbsp;&nbsp;&nbsp;foaf:homepage &lt;http://musicbrainz.org/&gt; .</pre>
+  </div>
+
+  <p>This is an <a href="http://purl.org/ontology/is/infoservice.html#InfoService"><em>is:InfoService</em></a> individual for <em>MusicBrainz</em> as proof-of-concept example. Therefore, 
+I used also some category definitions from <a href="http://dbpedia.org/"><em>DBpedia</em></a> (important 
+is also the property <a href="http://purl.org/ontology/is/infoservice.html#main_subject"><em>is:main_subject</em></a> for associating a main subject of an info service).</p>
 
   <div style="clear: left;"></div>
 
@@ -141,8 +209,30 @@ TODO
   <!-- ================================================================== -->
 
 
- <h2 id="sec-intro">1 Introduction: Info Service Ontology Basics</h2>
+ <h2 id="sec-intro">Introduction: Info Service Ontology Basics</h2>
 
+<h3>Info Service Ontology Namespaces, Domains and Prefixes</h3>
+
+<p>For representing the different issues of the <em>Info Service Ontology</em>, it was necessary to assign several namespaces/domains, which are the following ones:</p>
+<ul>
+	<li><a href="http://purl.org/ontology/is/core#">http://purl.org/ontology/is/core#</a><br />&nbsp;&nbsp;&nbsp;includes the core ontology specification<br />
+	&nbsp;&nbsp;&nbsp;preferred prefix: <strong>is</strong></li>
+	<li><a about="http://purl.org/ontology/is/core#" rel="rdfs:seeAlso" href="http://purl.org/ontology/is/types/">http://purl.org/ontology/is/types/</a><br />
+	&nbsp;&nbsp;&nbsp;the domain, which should be used for defining <a href="http://purl.org/ontology/is/infoservice.html#InfoServiceType"><em>is:InfoServiceType</em></a>
+	 individuals<br />&nbsp;&nbsp;&nbsp;preferred prefix: <strong>ist</strong></li>
+	<li><a about="http://purl.org/ontology/is/core#" rel="rdfs:seeAlso" href="http://purl.org/ontology/is/ctypes/">http://purl.org/ontology/is/ctypes/</a><br />
+	&nbsp;&nbsp;&nbsp;the domain, which should be used for defining <a href="http://purl.org/ontology/is/infoservice.html#InfoServiceContributorType"><em>is:InfoServiceContributorType</em></a> 
+	individuals<br />
+	&nbsp;&nbsp;&nbsp;preferred prefix: <strong>isct</strong></li>
+	<li><a about="http://purl.org/ontology/is/core#" rel="rdfs:seeAlso" href="http://purl.org/ontology/is/quality/">http://purl.org/ontology/is/quality/</a><br />
+	&nbsp;&nbsp;&nbsp;the domain, which should be used for defining information service quality ontologies<br />
+	&nbsp;&nbsp;&nbsp;preferred prefix: <strong>isq</strong></li>
+	<li><a about="http://purl.org/ontology/is/core#" rel="rdfs:seeAlso" href="http://purl.org/ontology/is/inst/">http://purl.org/ontology/is/inst/</a><br />
+	&nbsp;&nbsp;&nbsp;the domain, which should be used for defining <a href="http://purl.org/ontology/is/infoservice.html#InfoService"><em>is:InfoService</em></a>
+	 individuals<br />&nbsp;&nbsp;&nbsp;preferred prefix: <strong>isi</strong></li>
+</ul>
+
+<p>Please use them as intended ;)</p>
 
   <h2 id="sec-for">What's the Info Service Ontology for?</h2>
 
@@ -150,7 +240,96 @@ TODO
 
   <h2 id="sec-bg">Background</h2>
 
-  <p>TODO</p>
+	<h3>What is an Information Service?</h3>
+
+  <p>A very simple definition is:</p>
+<blockquote><p>An <strong>Information Service</strong> is a service, which provides (<span class="uli">serves</span>) <span class="uli">data/knowledge/information</span> somehow.</p></blockquote>
+<p>However, this definition is not strong enough to describe the range and domain of an <em>Information Service</em>. Therefore, it is necessary to define the term <em>Information 
+Service</em> in a specific context. Fortunately, <a href="http://www.wikipedia.org/"><em>Wikipedia</em></a> delivers, or better saying <strong>serves</strong>, a good definition 
+of this context, which is called <a href="http://en.wikipedia.org/wiki/Information_system"><em>Information System</em></a>.</p>
+<blockquote><p>An <strong>Information System</strong> is any <em>combination</em> of <span class="uli">information technology</span> and <span class="uli">people</span>'s activities using that technology 
+to support operations, management, and decision-making.</p></blockquote>
+<p>The definition continues with explaining the term from a bit more <em>technical</em> view:</p>
+<blockquote><p>In a very broad sense, the term <em>Information System</em> is frequently used to refer to the <span class="uli">interaction</span> between people, algorithmic processes, 
+<span class="uli">data</span> and technology.</p></blockquote>
+<p>Regarding the first part of this definition, an <em>Information Service</em> is an instance of <em>Information Technology</em>. Hence, an <em>Information Service</em> is a part of 
+an <em>Information System</em>. The second role in this definition is <em>people</em>. This term must be substituted by the term <em>agent</em>, which could be an <em>administrator</em> 
+and/or an <em>user</em>. An <em>user</em> could be a <em>customer</em> and/or <em>contributor</em>. In addition, an <em>agent</em> could be a <em>human</em> or a <em>machine</em>.
+ The <em>interaction</em> is that an <em>Information Service</em>, which <em>collects</em> (retrieves), <em>manages</em> (structures) and <em>stores</em> the <em>data/knowledge/information</em> 
+ (maybe with the help of an <em>administrator</em>), <em>serves</em> this <em>data/knowledge/information</em> to an <em>user</em>.
+The outcome of this, is the following definition:</p>
+<blockquote><p>An <strong>Information Service</strong> is this part of an <em>Information System</em> that <span class="uli">serves</span> <span class="uli">data/knowledge/information</span>* to 
+<span class="uli">customers</span> and <span class="uli">collects</span> it from its <span class="uli">contributors</span>, to <span class="uli">manage</span> and <span class="uli">store</span> it by optionally using 
+<em>administrators</em>.</p></blockquote>
+
+<p>This should be a <strong>technology independent</strong>** definition of the term <em>Information Service</em>. That means an <em>Information Service</em> could be</p>
+<ul>
+	<li>an <a href="http://en.wikipedia.org/wiki/Encyclopedia"><em>encyclopedia</em></a> (
+<ul>
+	<li>domain specific, e.g.
+<ul>
+	<li><a href="http://musicbrainz.org/"><em>MusicBrainz</em></a> or</li>
+	<li><a href="http://www.oxfordmusiconline.com/public/book/omo_t237"><em>The Oxford Dictionary of Music</em></a> (amongst other things, available as book or <em>online</em>)</li>
+</ul>
+, or</li>
+	<li>domain independent, e.g.
+<ul>
+	<li><a href="http://www.wikipedia.org/"><em>Wikipedia</em></a> or</li>
+	<li><a href="http://www.brockhaus-enzyklopaedie.de/"><em>Brockhaus</em></a> (amongst other things, available as book collection or <em>online</em>)</li>
+</ul>
+</li>
+</ul>
+),</li>
+	<li>a <a href="http://en.wikipedia.org/wiki/Social_network_service"><em>social network service</em></a> (
+<ul>
+	<li>domain specific, e.g.
+<ul>
+	<li><a href="http://www.myspace.com/"><em>MySpace</em></a></li>
+</ul>
+, or</li>
+	<li>domain independent, e.g.
+<ul>
+	<li><a href="http://www.facebook.com/"><em>FaceBook</em></a></li>
+</ul>
+</li>
+</ul>
+),</li>
+	<li>a <a href="http://en.wikipedia.org/wiki/Recommender_system"><em>recommender system</em></a> (e.g.
+<ul>
+	<li><a href="http://last.fm/"><em>Last.fm</em></a></li></ul>),</li>
+	<li>a <a href="http://en.wikipedia.org/wiki/Library"><em>library</em></a>, which stores books etc., or</li>
+	<li>a <a href="http://en.wikipedia.org/wiki/Book"><em>book</em></a>, which stores its knowledge in each page</li>
+	<li>a <a href="http://en.wikipedia.org/wiki/Blog"><em>blog</em></a>,</li>
+	<li>a <a href="http://en.wikipedia.org/wiki/Human"><em>human</em></a>, which stores his/her own knowledge in his/her brain,</li>
+</ul>
+<p>independently of its representation form and/or carrier/transmission medium/form, e.g. a book (paper) or the Internet.<br/>
+Although, the term <em>Information Service</em> could cover a broad range of <em>things</em>, the usage of it might 
+concentrates for the beginning on the <a href="http://en.wikipedia.org/wiki/Internet"><em>Internet</em></a> and there 
+especially on the <a href="http://en.wikipedia.org/wiki/World_Wide_Web"><em>Web</em></a>, with a focus on <em>Information 
+Services</em>, which have/deliver a huge amount of data/knowledge/information (of a specific domain or domain independent)****. 
+Hence, one could say: "let's define the term <em>Web Information Service</em> as a subset and a specific kind of <em>Information 
+Service</em>" (cf. definition of <a href="http://en.wikipedia.org/wiki/Web_Information_System"><em>Web Information 
+System</em></a>). However, since the <em>Web</em> delivers only another kind of carrier/transmission medium/form, it should be 
+enough to say that an <em>Information Service</em> simply uses this carrier/transmission medium/form next to other carrier/transmission 
+mediums/forms.<br/>
+<br/>
+PS: This definition is based on the community/expert power of <a href="http://www.wikipedia.org/"><em>Wikipedia</em></a> and a 
+<a href="http://bit.ly/ahzAHH">good discussion</a> with Olaf Hartig.<br/>
+<br/>
+*) <em>knowledge</em> is <strong>all</strong> meaning of <em>data</em>, and <em>information</em> is a <strong>subset</strong> of 
+<em>knowledge</em> to a <strong>concrete</strong> question or domain (see <a href="http://en.wikipedia.org/wiki/Information">Information</a> 
+definition on <a href="http://www.wikipedia.org/"><em>Wikipedia</em></a>).<br/>
+<br/>
+**) That means, it includes <em>non-computer</em> (sometimes also referred as <em>offline</em>***) related things, e.g. a book or a library,
+ and <em>computer</em> (sometimes also referred as <em>online</em>***) related things, e.g. a <em>website</em>.<br/>
+<br/>
+***) Although, the terms <em>offline</em> and <em>online</em> should be in general used for <em>computer</em> related things. They express 
+whether data/knowledge/information is available via Internet (<em>online</em>) or not (<em>offline</em>).<br/>
+<br/>
+****) However, the society tends more and more into the <a href="http://en.wikipedia.org/wiki/Long_Tail"><em>Long Tail</em></a>. Hence, 
+it might be interesting to describe and rate also all these very subjective <em>Information Services</em>, e.g. a personal <em>blog</em> or 
+<em>website</em>. It depends all on the subjective <em>mutual trust</em> each <em>Information Service</em> <em>consumer</em> has to the specific 
+<em>Information Services</em>. Its at least a <em>mutual trust</em> between <em>consumers</em> and <em>producers</em> of an <em>Information Service</em>.</p>
 
   <h2 id="sec-standards">The Info Service Ontology and Standards</h2>
 
