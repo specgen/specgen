@@ -131,16 +131,53 @@ The counter concept as graph with relations</div>
   <div style="clear: left;"></div>
 
   <h2 id="sec-example">Example</h2>
+  
+    <p>A graphic of a simple example of an use case of the Ordered List Ontology - a music playlist:</p>
+  
+    <div about="http://purl.org/ontology/olo/orderedlistontology.html" rel="rdfs:seeAlso">
+<img src="http://smiy.sourceforge.net/olo/gfx/olo_-_orderedlist_example.gif" title="The Ordered List Ontology - music playlist example" 
+alt="The Ordered List Ontology - music playlist example" /></div>
 
-  <p>Here is a very basic document describing a person:</p>
+  <p>RDF/Turtle representation of a simple example of an use case of the Ordered List Ontology - a music playlist:</p>
 
   <div class="example">
-    <pre>
-TODO
+    <pre about="http://purl.org/ontology/olo/orderedlist.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/olo/examples/RDF/orderedlist_-_example.owl">
+@prefix xsd:     &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix dc:      &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix olo:     &lt;http://purl.org/ontology/olo/core#&gt; .
+@prefix mo:      &lt;http://purl.org/ontology/mo/&gt; .
+@prefix ex:      &lt;http://example.org/&gt; .
+@prefix rdf:     &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+&nbsp;
+ex:FunkyPlaylist a olo:OrderedList ;
+&nbsp;&nbsp;&nbsp;dc:title "Funky Playlist"^^xsd:string ;
+&nbsp;&nbsp;&nbsp;dc:description "A playlist full of funky legends"^^xsd:string ;
+&nbsp;&nbsp;&nbsp;dc:creator &lt;http://foaf.me/zazi#me&gt; ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:length 2 ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:slot [   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:index 1 ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:item ex:SexMachine
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:slot [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:index 2 ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:item ex:GoodFoot
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] .
+&nbsp;
+ex:SexMachine a mo:Track ;
+&nbsp;&nbsp;&nbsp;dc:title "Sex Machine"^^xsd:string ;
+&nbsp;&nbsp;&nbsp;dc:creator &lt;http://dbpedia.org/resource/James_Brown&gt; .
+&nbsp;
+ex:GoodFoot a mo:Track ;
+&nbsp;&nbsp;&nbsp;dc:title "Good Foot"^^xsd:string .	
 </pre>
   </div>
 
-  <p>Description TODO</p>
+  <p>The whole music playlist is an <a href="http://purl.org/ontology/olo/orderedlist.html#OrderedList"><em>olo:OrderedList</em></a>* instance and could be annotated with further
+ editoral metadata, e.g. a title, a description and a creator. Each track of the music playlist is embedded into an <a href="http://purl.org/ontology/olo/orderedlist.html#Slot">
+ <em>olo:Slot</em></a> instance. The music playlist has a fixed length (<a href="http://purl.org/ontology/olo/orderedlist.html#length"><em>olo:length</em></a>) and each slot has a 
+ fixed index (<a href="http://purl.org/ontology/olo/orderedlist.html#index"><em>olo:index</em></a>) in the ordered list it belongs to.<br/>
+ <br/>
+ *) Of course, one could also sub class <a href="http://purl.org/ontology/olo/orderedlist.html#OrderedList"><em>olo:OrderedList</em></a> for a more specific playlist concept</p>
 
   <div style="clear: left;"></div>
 
