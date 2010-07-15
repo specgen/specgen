@@ -67,7 +67,7 @@ rev="dc:isVersionOf" href="http://purl.org/ontology/olo/20100711/orderedlistonto
   Attribution License">Creative Commons
   Attribution License</a>. This copyright applies to the <em>Ordered List Ontology Specification</em> 
   and accompanying documentation in RDF.
- Regarding underlying technology, the Ordered List Ontology uses W3C's <a href="http://www.w3.org/RDF/">RDF</a> technology, an
+ Regarding underlying technology, the <em>Ordered List Ontology</em> uses W3C's <a href="http://www.w3.org/RDF/">RDF</a> technology, an
   open Web standard that can be freely used by anyone.</p>
   
   <hr />
@@ -75,8 +75,8 @@ rev="dc:isVersionOf" href="http://purl.org/ontology/olo/20100711/orderedlistonto
 
 <h2 id="sec-status">Abstract</h2>
 <p about="http://purl.org/ontology/olo/core#" property="dc:decription">
-The Ordered Lists Ontology Specification provides basic concepts and properties 
-for describing ordered lists as semantic graph. This document contains a RDFa description of the Ordered Lists Ontology
+The <em>Ordered List Ontology Specification</em> provides basic concepts and properties 
+for describing ordered lists as semantic graph. This document contains a RDFa description of the <em>Ordered Lists Ontology</em>
 as proposed by Samer A. Abdallah and some additional information and examples.
 </p>
 
@@ -88,14 +88,15 @@ The template of this specification is derived from the  <a about="http://purl.or
 Specification</a>, which was created by <a about="http://purl.org/ontology/olo/orderedlistontology.html" rel="rdfs:seeAlso" href="http://danbri.org/">Dan Brickley</a> and 
 <a about="http://purl.org/ontology/olo/orderedlistontology.html" rel="rdfs:seeAlso" href="http://nicecupoftea.org/">Libby Miller</a>. It was modified and extended by Bob Ferris. Furthermore,
 a modified and extended version of <a about="http://purl.org/ontology/olo/orderedlistontology.html" rel="rdfs:seeAlso" href="http://svn.foaf-project.org/foaftown/specgen/">Danbri's SpecGen version</a>
-was used to generate most of the RDFa statements of the Ordered List Ontology for this specification (see <a about="http://purl.org/ontology/olo/orderedlistontology.html" rel="rdfs:seeAlso" 
+was used to generate most of the RDFa statements of the <em>Ordered List Ontology</em> for this specification (see <a about="http://purl.org/ontology/olo/orderedlistontology.html" rel="rdfs:seeAlso" 
 href="http://smiy.svn.sourceforge.net/viewvc/smiy/specgen/trunk/">here</a> for SpecGen version 6 by Bob Ferris).
 </p>
 
 
 <p> This document is created by combining the <a href="http://purl.org/ontology/olo/orderedlistontology.owl">RDFS/OWL</a> machine-readable
-    Ordered List Ontology with a human-readable <em>HTML</em> representation that includes RDFa annotations. Future versions may 
-    incorporate <em>multilingual translations</em> of term definitions. The RDF/XML version of the specification is also available directly from the namespace URI. RDF/N3 representations could be access via the links above.
+    <em>Ordered List Ontology</em> with a human-readable <em>HTML</em> representation that includes RDFa annotations. Future versions may 
+    incorporate <em>multilingual translations</em> of term definitions. The RDF/XML version of the specification is also available directly from the namespace URI. 
+    RDF/N3 representations could be access via the links above.
 </p>
     <p>The authors welcome comments on this document, preferably via 
     TODO
@@ -105,6 +106,7 @@ href="http://smiy.svn.sourceforge.net/viewvc/smiy/specgen/trunk/">here</a> for S
 
   <ul>
     <li><a href="#sec-glance">The Ordered List Ontology at a glance</a></li>
+    <li><a href="#sec-example">Examples</a></li>
     <li><a href="#sec-intro">Introduction</a></li>
     <li><a href="#sec-for">What's the Ordered List Ontology for?</a></li>
     <li><a href="#sec-bg">Background</a></li>
@@ -119,11 +121,12 @@ href="http://smiy.svn.sourceforge.net/viewvc/smiy/specgen/trunk/">here</a> for S
 
   <a id="sec-glance"></a>
   <h2 id="glance">The Ordered List Ontology at a glance</h2>
-
+  
+  <p>The <a href="http://purl.org/ontology/olo/orderedlistontology.html#OrderedList"><em>olo:OrderedList</em></a> concept as graph with relations:</p>
 <div about="http://purl.org/ontology/olo/core#" rel="rdfs:seeAlso">
-<img src="../gfx/co_-_Counter_graph.gif" title="The counter concept as graph with relations" alt="The counter concept as graph with relations" />
-The counter concept as graph with relations</div> 
- <p>An a-z index of Ordered List Ontology terms, by class (categories or types) and by property.</p>
+<img src="http://smiy.sourceforge.net/olo/gfx/olo_-_orderedlist.gif" title="The ordered list concept as graph with relations" alt="The ordered list concept as graph with relations" /></div>
+ 
+ <p>An a-z index of <em>Ordered List Ontology</em> terms, by class (categories or types) and by property.</p>
  
  
  %s
@@ -132,22 +135,23 @@ The counter concept as graph with relations</div>
 
   <h2 id="sec-example">Example</h2>
   
-    <p>A graphic of a simple example of an use case of the Ordered List Ontology - a music playlist:</p>
+    <p>A graphic of a simple example of an use case of the <em>Ordered List Ontology</em> - a music playlist:</p>
   
     <div about="http://purl.org/ontology/olo/orderedlistontology.html" rel="rdfs:seeAlso">
 <img src="http://smiy.sourceforge.net/olo/gfx/olo_-_orderedlist_example.gif" title="The Ordered List Ontology - music playlist example" 
 alt="The Ordered List Ontology - music playlist example" /></div>
 
-  <p>RDF/Turtle representation of a simple example of an use case of the Ordered List Ontology - a music playlist:</p>
+  <p>RDF/Turtle representation of a simple example of an use case of the <em>Ordered List Ontology</em> - a music playlist (see also <a about="http://purl.org/ontology/olo/orderedlistontology.html" 
+  rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/olo/examples/RDF/orderedlist_-_example.rdf">RDF</a> and <a about="http://purl.org/ontology/olo/orderedlistontology.html" 
+  rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/olo/examples/N3/orderedlist_-_example.n3">N3</a> for downloadable representations of this example):</p>
 
   <div class="example">
-    <pre about="http://purl.org/ontology/olo/orderedlist.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/olo/examples/RDF/orderedlist_-_example.owl">
+    <pre>
 @prefix xsd:     &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 @prefix dc:      &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix olo:     &lt;http://purl.org/ontology/olo/core#&gt; .
 @prefix mo:      &lt;http://purl.org/ontology/mo/&gt; .
 @prefix ex:      &lt;http://example.org/&gt; .
-@prefix rdf:     &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 &nbsp;
 ex:FunkyPlaylist a olo:OrderedList ;
 &nbsp;&nbsp;&nbsp;dc:title "Funky Playlist"^^xsd:string ;
@@ -172,12 +176,12 @@ ex:GoodFoot a mo:Track ;
 </pre>
   </div>
 
-  <p>The whole music playlist is an <a href="http://purl.org/ontology/olo/orderedlist.html#OrderedList"><em>olo:OrderedList</em></a>* instance and could be annotated with further
- editoral metadata, e.g. a title, a description and a creator. Each track of the music playlist is embedded into an <a href="http://purl.org/ontology/olo/orderedlist.html#Slot">
- <em>olo:Slot</em></a> instance. The music playlist has a fixed length (<a href="http://purl.org/ontology/olo/orderedlist.html#length"><em>olo:length</em></a>) and each slot has a 
- fixed index (<a href="http://purl.org/ontology/olo/orderedlist.html#index"><em>olo:index</em></a>) in the ordered list it belongs to.<br/>
+  <p>The whole music playlist is an <a href="http://purl.org/ontology/olo/orderedlistontology.html#OrderedList"><em>olo:OrderedList</em></a>* instance and could be annotated with further
+ editoral metadata, e.g. a title, a description and a creator. Each track of the music playlist is embedded into an <a href="http://purl.org/ontology/olo/orderedlistontology.html#Slot">
+ <em>olo:Slot</em></a> instance. The music playlist has a fixed length (<a href="http://purl.org/ontology/olo/orderedlistontology.html#length"><em>olo:length</em></a>) and each slot has a 
+ fixed index (<a href="http://purl.org/ontology/olo/orderedlistontology.html#index"><em>olo:index</em></a>) in the ordered list it belongs to.<br/>
  <br/>
- *) Of course, one could also sub class <a href="http://purl.org/ontology/olo/orderedlist.html#OrderedList"><em>olo:OrderedList</em></a> for a more specific playlist concept</p>
+ *) Of course, one could also sub class <a href="http://purl.org/ontology/olo/orderedlistontology.html#OrderedList"><em>olo:OrderedList</em></a> for a more specific playlist concept</p>
 
   <div style="clear: left;"></div>
 
@@ -204,34 +208,34 @@ ex:GoodFoot a mo:Track ;
 
   <h2 id="sec-nsdoc">The Ordered List Ontology Description</h2>
 
-  <p>This specification serves as the Ordered List Ontology "namespace document". As
-  such it describes the Ordered List Ontology vocabulary and the terms (<a href=
+  <p>This specification serves as the <em>Ordered List Ontology</em> "namespace document". As
+  such it describes the <em>Ordered List Ontology</em> and the terms (<a href=
   "http://www.w3.org/RDF/">RDF</a> classes and properties) that
   constitute it, so that <a href=
   "http://www.w3.org/2001/sw/">Semantic Web</a> applications can
   use those terms in a variety of RDF-compatible document formats
   and applications.</p>
 
-  <p>This document presents the Ordered List Ontology as a <a href=
-  "http://www.w3.org/2001/sw/">Semantic Web</a> vocabulary or
-  <em>Ontology</em>. The Ordered List Ontology vocabulary is pretty simple,
+  <p>This document presents the <em>Ordered List Ontology</em> as a <a href=
+  "http://www.w3.org/2001/sw/">Semantic Web</a> or
+  <em>Ontology</em>. The <em>Ordered List Ontology</em> is pretty simple,
   pragmatic and designed to allow simultaneous deployment and
-  extension. The Ordered List Ontology is intended for widescale use, but its authors
+  extension. The <em>Ordered List Ontology</em> is intended for widescale use, but its authors
   make no commitments regarding its suitability for any particular
   purpose.</p>
 
   <h3 id="sec-evolution">Evolution and Extension of the Ordered List Ontology</h3>
 
-  <p>The Ordered List Ontology vocabulary is identified by the namespace URI
+  <p>The <em>Ordered List Ontology</em> is identified by the namespace URI
   '<code about="http://purl.org/ontology/olo/core#" property="vann:preferredNamespaceUri" datatype="xsd:anyURI">http://purl.org/ontology/olo/core#</code>'. Revisions and
-  extensions of Ordered List Ontology are conducted through edits to this document,
+  extensions of the <em>Ordered List Ontology</em> are conducted through edits to this document,
   which by convention is accessible in the Web via the namespace URI.
   For practical and deployment reasons, note that <b>we do not 
   update the namespace URI as the vocabulary matures</b>.
   </p>
 
 <p>
-  The evolution of the Ordered List Ontology is best considered in terms of the
+  The evolution of the <em>Ordered List Ontology</em> is best considered in terms of the
   stability of individual vocabulary terms, rather than the
   specification as a whole. As terms stabilise in usage and
   documentation, they progress through the categories
@@ -242,7 +246,7 @@ ex:GoodFoot a mo:Track ;
   <h2 id="sec-crossref">The Ordered List Ontology cross-reference: Listing the Ordered List Ontology Classes and
   Properties</h2>
 
-  <p>The Ordered List Ontology introduces the following classes and properties. There is a link at the 
+  <p>The <em>Ordered List Ontology</em> introduces the following classes and properties. There is a link at the 
 top of this document to the RDF/XML and RDF/N3 versions.</p>
 
   <!-- the following is the script-generated list of classes and properties -->
@@ -258,11 +262,11 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
 <h2 id="sec-extrefs">External Vocabulary References</h2>
 
 <p>
-The description of the terms in the Ordered List Ontology 'dictionary' make reference to classes and properties elsewhere. This section of the Ordered List Ontology 
-specification provides a placeholder reference for any Ordered List Ontology mention of externally defined terms. For example, sometimes we might say that Ordered List Ontology property has 
-a domain or range of an externally defined class, or that a Ordered List Ontology class is a sub-class of an external class, or 'disjoint with' such a class (ie. has no 
-common members). Such claims help fix the intended meaning of Ordered List Ontology terms in relationship to other 'peer' vocabularies.
-Currently, the Ordered List Ontology sub classes:</p>
+The description of the terms in the <em>Ordered List Ontology</em> 'dictionary' make reference to classes and properties elsewhere. This section of the <em>Ordered List Ontology</em> 
+specification provides a placeholder reference for any <em>Ordered List Ontology</em> mention of externally defined terms. For example, sometimes we might say that <em>Ordered List Ontology</em> property has 
+a domain or range of an externally defined class, or that a <em>Ordered List Ontology</em> class is a sub-class of an external class, or 'disjoint with' such a class (ie. has no 
+common members). Such claims help fix the intended meaning of <em>Ordered List Ontology</em> terms in relationship to other 'peer' vocabularies.
+Currently, the <em>Ordered List Ontology</em> sub classes:</p>
 <dl>
 <dt><a about="http://purl.org/ontology/olo/core#" rel="rdfs:seeAlso" href="http://www.w3.org/TR/2004/REC-owl-ref-20040210/#Class">owl:Thing</a></dt>
 <dd>The class extension of owl:Thing is the set of all individuals.
@@ -273,12 +277,12 @@ Currently, the Ordered List Ontology sub classes:</p>
 <h3 id="extns_status">Status Vocabulary</h3>
 
 <p>
-Each term in the Ordered List Ontology is annotated with properties from the <a href="http://www.w3.org/2003/06/sw-vocab-status/note">SemWeb Vocab Status Ontology</a>
+Each term in the <em>Ordered List Ontology</em> is annotated with properties from the <a href="http://www.w3.org/2003/06/sw-vocab-status/note">SemWeb Vocab Status Ontology</a>
 </p>
 <p>
 Note that this mechanism is itself somewhat experimental and evolvin. The definitions of 'stable', 'unstable', 'archaic' and 'testing' cannot
  be defined as global absolutes, but only in relationship to the practices, expectations and social structures around some vocabulary. For their use in 
- the Ordered List Ontology, future versions of this specification could usefully offer more detail about what to expect from a term labelled 'stable'. 
+ the <em>Ordered List Ontology</em>, future versions of this specification could usefully offer more detail about what to expect from a term labelled 'stable'. 
  </p>
 
 <dl>
@@ -289,7 +293,7 @@ Note that this mechanism is itself somewhat experimental and evolvin. The defini
   <h3 id="sec-ack">Acknowledgments</h3>
 
   <p>I would like to thank very much Samer A. Abdallah (!), Yves Raimond, Kurt Jacbson and Aldo Gangemi
- to help to establish this multiple purpose Ordered List Ontology. Furthermore, Dan Brickley and Libby Miller to provide the basis for this
+ to help to establish this multiple purpose ordered list ontology. Furthermore, Dan Brickley and Libby Miller to provide the basis for this
 specification.</p>
 
 <h2 id="sec-changes">Recent Changes</h2>

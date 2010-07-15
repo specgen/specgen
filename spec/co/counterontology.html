@@ -70,7 +70,7 @@ rev="dc:isVersionOf" href="http://purl.org/ontology/co/20100709/counterontology.
   Attribution License">Creative Commons
   Attribution License</a>. This copyright applies to the <em>Counter Ontology Specification</em> 
   and accompanying documentation in RDF.
- Regarding underlying technology, the Counter Ontology uses W3C's <a href="http://www.w3.org/RDF/">RDF</a> technology, an
+ Regarding underlying technology, the <em>Counter Ontology</em> uses W3C's <a href="http://www.w3.org/RDF/">RDF</a> technology, an
   open Web standard that can be freely used by anyone.</p>
   
   <hr />
@@ -78,29 +78,30 @@ rev="dc:isVersionOf" href="http://purl.org/ontology/co/20100709/counterontology.
 
 <h2 id="sec-status">Abstract</h2>
 <p about="http://purl.org/ontology/co/core#" property="dc:decription">
-The Counter Ontology specification provides basic concepts and properties 
+The <em>Counter Ontology</em> specification provides basic concepts and properties 
 for describing a general counter concept and some important sub counters, e.g. an event counter, on/ for 
-the Semantic Web. This document contains a RDFa description of the Counter Ontology and some additional information and examples.
+the Semantic Web. This document contains a RDFa description of the <em>Counter Ontology</em> and some additional information and examples.
 </p>
 
   <div class="status">
     <h2>Status of This Document</h2>
 
     <p>
-The Counter Ontology is a generalisation of the <a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://motools.svn.sourceforge.net/viewvc/motools/dbtune/playcount/playcount.n3">Playcount Ontology</a> from 
-<a href="http://moustaki.org/">Yves Raimond</a>. The template of this specification is derived from the 
-<a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://xmlns.com/foaf/spec/">FOAF Vocabulary
+The <em>Counter Ontology</em> is a generalisation of the <a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" 
+href="http://motools.svn.sourceforge.net/viewvc/motools/dbtune/playcount/playcount.n3">Playcount Ontology</a> from <a href="http://moustaki.org/">Yves Raimond</a>. The template 
+of this specification is derived from the <a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://xmlns.com/foaf/spec/">FOAF Vocabulary
 Specification</a>, which was created by <a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://danbri.org/">Dan Brickley</a> and 
 <a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://nicecupoftea.org/">Libby Miller</a>. It was modified and extended by Bob Ferris. Furthermore,
-a modified and extended version of <a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://svn.foaf-project.org/foaftown/specgen/">Danbri's SpecGen version</a>
-was used to generate most of the RDFa statements of the Counter Ontology for this specification (see <a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" 
-href="http://smiy.svn.sourceforge.net/viewvc/smiy/specgen/trunk/">here</a> for SpecGen version 6 by Bob Ferris).
+a modified and extended version of <a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://svn.foaf-project.org/foaftown/specgen/">Danbri's 
+SpecGen version</a> was used to generate most of the RDFa statements of the Counter Ontology for this specification (see <a about="http://purl.org/ontology/co/counterontology.html" 
+rel="rdfs:seeAlso" href="http://smiy.svn.sourceforge.net/viewvc/smiy/specgen/trunk/">here</a> for SpecGen version 6 by Bob Ferris).
 </p>
 
 
 <p> This document is created by combining the <a href="http://purl.org/ontology/co/counterontology.owl">RDFS/OWL</a> machine-readable
-    Counter Ontology with a human-readable <em>HTML</em> representation that includes RDFa annotations. Future versions may 
-    incorporate <em>multilingual translations</em> of term definitions. The RDF/XML version of the specification is also available directly from the namespace URI. RDF/N3 representations could be access via the links above.
+    <em>Counter Ontology</em> with a human-readable <em>HTML</em> representation that includes RDFa annotations. Future versions may 
+    incorporate <em>multilingual translations</em> of term definitions. The RDF/XML version of the specification is also available directly 
+    from the namespace URI. RDF/N3 representations could be access via the links above.
 </p>
     <p>The authors welcome comments on this document, preferably via 
     TODO
@@ -110,6 +111,7 @@ href="http://smiy.svn.sourceforge.net/viewvc/smiy/specgen/trunk/">here</a> for S
 
   <ul>
     <li><a href="#sec-glance">The Counter Ontology at a glance</a></li>
+    <li><a href="#sec-example">Examples</a></li>
     <li><a href="#sec-intro">Introduction</a></li>
     <li><a href="#sec-for">What's the Counter Ontology for?</a></li>
     <li><a href="#sec-bg">Background</a></li>
@@ -125,10 +127,11 @@ href="http://smiy.svn.sourceforge.net/viewvc/smiy/specgen/trunk/">here</a> for S
   <a id="sec-glance"></a>
   <h2 id="glance">The Counter Ontology at a glance</h2>
 
+<p>The <a href="http://purl.org/ontology/co/counterontology.html#Counter"><em>co:Counter</em></a> concept as graph with relations:</p>
 <div about="http://purl.org/ontology/co/core#" rel="rdfs:seeAlso">
-<img src="http://smiy.sourceforge.net/co/gfx/co_-_Counter_graph.gif" title="The counter concept as graph with relations" alt="The counter concept as graph with relations" />
-The counter concept as graph with relations</div> 
- <p>An a-z index of Counter Ontology terms, by class (categories or types) and by property.</p>
+<img src="http://smiy.sourceforge.net/co/gfx/co_-_Counter_graph.gif" title="The counter concept as graph with relations" alt="The counter concept as graph with relations" /></div>
+
+ <p>An a-z index of <em>Counter Ontology</em> terms, by class (categories or types) and by property.</p>
  
  
  <div class="azlist">
@@ -140,17 +143,85 @@ The counter concept as graph with relations</div>
 
   <div style="clear: left;"></div>
 
-  <h2 id="sec-example">Example</h2>
+  <h2 id="sec-example">Examples</h2>
 
-  <p>Here is a very basic document describing a person:</p>
+  <p>RDF/Turtle representation of a webpage counter created with the <em>Counter Ontology</em> (see also <a about="http://purl.org/ontology/co/counterontology.html" 
+  rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/co/examples/RDF/webpagecounter_-_example.rdf">RDF</a> and <a about="http://purl.org/ontology/co/counterontology.html" 
+  rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/co/examples/N3/webpagecounter_-_example.n3">N3</a> for downloadable representations of this example):</p>
 
   <div class="example">
     <pre>
-TODO
+@prefix bibo:    &lt;http://purl.org/ontology/bibo/&gt; .
+@prefix xsd:     &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix dc:      &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix co:      &lt;http://purl.org/ontology/co/core#&gt; .
+@prefix ex:      &lt;http://example.org/&gt; .
+&nbsp;
+ex:WebpageCounter a co:Counter ;
+&nbsp;&nbsp;&nbsp;dc:title "Webpage Counter"^^xsd:string ;
+&nbsp;&nbsp;&nbsp;dc:creator &lt;http://foaf.me/zazi#me&gt; ;
+&nbsp;&nbsp;&nbsp;dc:description "A counter of a specific web page"^^xsd:string ;
+&nbsp;&nbsp;&nbsp;co:count "10"^^xsd:integer .
+&nbsp;
+&lt;http://smiy.wordpress.com/&gt; a bibo:Document ;
+&nbsp;&nbsp;&nbsp;co:counter ex:WebpageCounter .
 </pre>
   </div>
 
-  <p>Description TODO</p>
+  <p>This examples shows, how a <a href="http://purl.org/ontology/co/counterontology.html#Counter"><em>co:Counter</em></a> instance could be used as a counter for
+ a specific webpage (here of the type <a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" 
+ href="http://bibotools.googlecode.com/svn/bibo-ontology/trunk/doc/classes/Document___-538479979.html"><em>bibo:Document</em></a>). 
+ <a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://tobyinkster.co.uk/">Toby Inkster</a> implemented an example of a webpage 
+ counter based on the <em>Counter Ontology</em> in PHP, which is available <a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" 
+ href="http://buzzword.org.uk/2010/counter/">here</a>.</p>
+ 
+   <p>RDF/Turtle representation of a play back counter created with the <em>Counter Ontology</em> (see also <a about="http://purl.org/ontology/co/counterontology.html" 
+  rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/co/examples/RDF/playbackcounter_-_example.rdf">RDF</a> and <a about="http://purl.org/ontology/co/counterontology.html" 
+  rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/co/examples/N3/playbackcounter_-_example.n3">N3</a> for downloadable representations of this example):</p>
+
+  <div class="example">
+    <pre>
+@prefix xsd:     &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix dc:      &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix co:      &lt;http://purl.org/ontology/co/core#&gt; .
+@prefix mo:      &lt;http://purl.org/ontology/mo/&gt; .
+@prefix ex:      &lt;http://example.org/&gt; .
+@prefix event:   &lt;http://purl.org/NET/c4dm/event.owl#&gt; .
+@prefix time:    &lt;http://www.w3.org/2006/time#&gt; .
+&nbsp;
+ex:PlayBackCounter a co:Counter ;
+&nbsp;&nbsp;&nbsp;dc:title "Play Back Counter"^^xsd:string ;
+&nbsp;&nbsp;&nbsp;dc:creator &lt;http://foaf.me/zazi#me&gt; ;
+&nbsp;&nbsp;&nbsp;dc:description "A play back counter of a specific music track"^^xsd:string ;
+&nbsp;&nbsp;&nbsp;co:count "2"^^xsd:integer ;
+&nbsp;&nbsp;&nbsp;co:object ex:SexMachine .
+&nbsp;
+ex:SexMachine a mo:Track ;
+&nbsp;&nbsp;&nbsp;dc:title "Sex Machine"^^xsd:string ;
+&nbsp;&nbsp;&nbsp;dc:creator &lt;http://dbpedia.org/resource/James_Brown&gt; .
+&nbsp;
+ex:SexMachineSE1 a co:ScrobbleEvent ;
+&nbsp;&nbsp;&nbsp;event:time [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a time:Instant ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time:inXSDDateTime "2010-07-15T11:21:52+01:00"^^xsd:dateTime 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;event:agent &lt;http://foaf.me/zazi#me&gt; ; 
+&nbsp;&nbsp;&nbsp;co:event_counter ex:PlayBackCounter .
+&nbsp;
+ex:SexMachineSE2 a co:ScrobbleEvent ;
+&nbsp;&nbsp;&nbsp;event:time [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a time:Instant ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time:inXSDDateTime "2010-07-15T11:27:52+01:00"^^xsd:dateTime
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;event:agent &lt;http://foaf.me/zazi#me&gt; ; 
+&nbsp;&nbsp;&nbsp;co:event_counter ex:PlayBackCounter .
+</pre>
+  </div>
+
+  <p>This examples shows, how a <a href="http://purl.org/ontology/co/counterontology.html#Counter"><em>co:Counter</em></a> instance could be used as a play back counter 
+  for a specific music track (here of the type <a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://musicontology.com/#term_Track">
+ <em>mo:Track</em></a>). Each time, when this specific music track was played, a <a href="http://purl.org/ontology/co/counterontology.html#ScrobbleEvent"><em>co:ScrobbleEvent</em></a> 
+ instance was created and linked to its playback counter with the property <a href="http://purl.org/ontology/co/counterontology.html#event_counter"><em>co:event_counter</em></a>.</p>
 
   <div style="clear: left;"></div>
 
@@ -163,8 +234,16 @@ TODO
 
   <h2 id="sec-for">What's the Counter Ontology for?</h2>
 
-  <p>The Counter Ontology includes a general multiple purpose counter concept. This concept could be uses to associate any concept to a <em><a href="#Counter">co:Counter</a></em> instance(s) with the property <em><a href="#counter">co:counter</a></em> or a specific sub property of it. The second property of <em><a href="#Counter">co:Counter</a></em> is <em><a href="#count">co:count</a></em>, which is a simple <em>xsd:integer</em> based datatype property. That means you could use this concept for things like for example play counter, skip counter or website hit counter.
-Furthermore, this ontology includes already a predefined property to associate event specific (<em><a href="http://motools.sourceforge.net/event/event.html#term_Event">event:Event</a></em>) counter to its related events (<em><a href="#event_counter">co:event_counter</a></em>,), e.g. a <em><a href="#ScrobbleEvent">co:ScrobbleEvent</a></em> to scrobble something. This enables the opportunity to trace back all related events, which are responsible for a specific count. Of course, this is also possible with all other concepts ;) </p>
+  <p>The <em>Counter Ontology</em> includes a general multiple purpose counter concept. This concept could be uses to associate any concept to a <em>
+  <a href="http://purl.org/ontology/co/counterontology.html#Counter">co:Counter</a></em> instance(s) with the property <em>
+  <a href="http://purl.org/ontology/co/counterontology.html#counter">co:counter</a></em> or a specific sub property of it. The second property of 
+  <em><a href="http://purl.org/ontology/co/counterontology.html#Counter">co:Counter</a></em> is <em><a href="http://purl.org/ontology/co/counterontology.html#count">
+  co:count</a></em>, which is a simple <em>xsd:integer</em> based datatype property. That means you could use this concept for things like for example play counter, 
+  skip counter or website hit counter.<br/>
+Furthermore, this ontology includes already a predefined property to associate event specific (<em><a href="http://motools.sourceforge.net/event/event.html#term_Event">
+event:Event</a></em>) counter to its related events (<em><a href="http://purl.org/ontology/co/counterontology.html#event_counter">co:event_counter</a></em>,), e.g. a 
+<em><a href="http://purl.org/ontology/co/counterontology.html#ScrobbleEvent">co:ScrobbleEvent</a></em> to scrobble something. This enables the opportunity to trace back 
+all related events, which are responsible for a specific count. Of course, this is also possible with all other concepts ;) </p>
 
   <h2 id="sec-bg">Background</h2>
 
@@ -178,34 +257,34 @@ Furthermore, this ontology includes already a predefined property to associate e
 
   <h2 id="sec-nsdoc">The Counter Ontology Description</h2>
 
-  <p>This specification serves as the Counter Ontology "namespace document". As
-  such it describes the Counter Ontology vocabulary and the terms (<a href=
+  <p>This specification serves as the <em>Counter Ontology</em> "namespace document". As
+  such it describes the <em>Counter Ontology</em> and the terms (<a href=
   "http://www.w3.org/RDF/">RDF</a> classes and properties) that
   constitute it, so that <a href=
   "http://www.w3.org/2001/sw/">Semantic Web</a> applications can
   use those terms in a variety of RDF-compatible document formats
   and applications.</p>
 
-  <p>This document presents the Counter Ontology as a <a href=
+  <p>This document presents the <em>Counter Ontology</em> as a <a href=
   "http://www.w3.org/2001/sw/">Semantic Web</a> vocabulary or
-  <em>Ontology</em>. The Counter Ontology vocabulary is pretty simple,
+  <em>Ontology</em>. The <em>Counter Ontology</em> is pretty simple,
   pragmatic and designed to allow simultaneous deployment and
-  extension. The Counter Ontology is intended for widescale use, but its authors
+  extension. The <em>Counter Ontology</em> is intended for widescale use, but its authors
   make no commitments regarding its suitability for any particular
   purpose.</p>
 
   <h3 id="sec-evolution">Evolution and Extension of the Counter Ontology</h3>
 
-  <p>The Counter Ontology vocabulary is identified by the namespace URI
+  <p>The <em>Counter Ontology</em> is identified by the namespace URI
   '<code about="http://purl.org/ontology/co/core#" property="vann:preferredNamespaceUri" datatype="xsd:anyURI">http://purl.org/ontology/co/core#</code>'. Revisions and
-  extensions of Counter Ontology are conducted through edits to this document,
+  extensions of the <em>Counter Ontology</em> are conducted through edits to this document,
   which by convention is accessible in the Web via the namespace URI.
   For practical and deployment reasons, note that <b>we do not 
   update the namespace URI as the vocabulary matures</b>.
   </p>
 
 <p>
-  The evolution of the Counter Ontology is best considered in terms of the
+  The evolution of the <em>Counter Ontology</em> is best considered in terms of the
   stability of individual vocabulary terms, rather than the
   specification as a whole. As terms stabilise in usage and
   documentation, they progress through the categories
@@ -216,7 +295,7 @@ Furthermore, this ontology includes already a predefined property to associate e
   <h2 id="sec-crossref">The Counter Ontology cross-reference: Listing the Counter Ontology Classes and
   Properties</h2>
 
-  <p>The Counter Ontology introduces the following classes and properties. There is a link at the 
+  <p>The <em>Counter Ontology</em> introduces the following classes and properties. There is a link at the 
 top of this document to the RDF/XML and RDF/N3 versions.</p>
 
   <!-- the following is the script-generated list of classes and properties -->
@@ -249,10 +328,10 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
 </td></tr> <tr><th>Sub class of</th>
  <td>  <span rel="rdfs:subClassOf" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
  </td></tr><tr><th class="restrictions">Restriction(s):</th>
- <td>  <span about ="http://purl.org/ontology/co/core#Counter" rel="rdfs:subClassOf" resource="[_:PyQpFQub3]"></span>
- <span about="[_:PyQpFQub3]" typeof="owl:Restriction"></span>The property 
-  									<span about="[_:PyQpFQub3]" rel="owl:onProperty" href="http://purl.org/ontology/co/core#count"><a href="#count">co:count</a></span> must be set <em>exactly</em> 
-  									<span about="[_:PyQpFQub3]" property="owl:cardinality" datatype="xsd:nonNegativeInteger" >1</span> time(s) 
+ <td>  <span about ="http://purl.org/ontology/co/core#Counter" rel="rdfs:subClassOf" resource="[_:fgUBooxk3]"></span>
+ <span about="[_:fgUBooxk3]" typeof="owl:Restriction"></span>The property 
+  									<span about="[_:fgUBooxk3]" rel="owl:onProperty" href="http://purl.org/ontology/co/core#count"><a href="#count">co:count</a></span> must be set <em>exactly</em> 
+  									<span about="[_:fgUBooxk3]" property="owl:cardinality" datatype="xsd:nonNegativeInteger" >1</span> time(s) 
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/co/core#"></span>
  </td></tr><tr><th colspan="2">OWL Class</th>
@@ -283,7 +362,7 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			<br/>
   			</div>
 <h2>Properties</h2>
- <div class="specterm" id="count" about="http://purl.org/ontology/co/core#count" typeof="owl:FunctionalProperty">
+ <div class="specterm" id="count" about="http://purl.org/ontology/co/core#count" typeof="rdf:Property">
   			<h3>Property: co:count</h3> 
   			<em property="rdfs:label" >has count</em> - <span property="rdfs:comment" >Links a counter resource to the actual count</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -296,13 +375,13 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/co/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"></span> </td></tr><tr><th colspan="2">Functional Property</th>
- <td>  </td></tr>
+ <td>  </td></tr><tr><th colspan="2">Functional Property</th>
+ <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#FunctionalProperty"></span> </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#count">#</a>] <!-- count --> [<a href="#glance">back to top</a>]</p>
   			<br/>
-  			</div><div class="specterm" id="counter" about="http://purl.org/ontology/co/core#counter" typeof="owl:ObjectProperty">
+  			</div><div class="specterm" id="counter" about="http://purl.org/ontology/co/core#counter" typeof="rdf:Property">
   			<h3>Property: co:counter</h3> 
   			<em property="rdfs:label" >has counter</em> - <span property="rdfs:comment" >Links an object to a counter resource. Please feel free to create further sub properties with more restricted domains.</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -317,14 +396,14 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/co/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"></span> </td></tr><tr><th colspan="2">Object Property</th>
- <td>  </td></tr>
+ <td>  </td></tr><tr><th colspan="2">Object Property</th>
+ <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#ObjectProperty"></span> </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#counter">#</a>] <!-- counter --> [<a href="#glance">back to top</a>]</p>
   			<br/>
   			</div>
-<div class="specterm" id="event" about="http://purl.org/ontology/co/core#event" typeof="owl:ObjectProperty">
+<div class="specterm" id="event" about="http://purl.org/ontology/co/core#event" typeof="rdf:Property">
   			<h3>Property: co:event</h3> 
   			<em property="rdfs:label" >has event</em> - <span property="rdfs:comment" >Links counter resources to related events.</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -339,13 +418,13 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/co/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"></span> </td></tr><tr><th colspan="2">Object Property</th>
- <td>  </td></tr>
+ <td>  </td></tr><tr><th colspan="2">Object Property</th>
+ <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#ObjectProperty"></span> </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#event">#</a>] <!-- event --> [<a href="#glance">back to top</a>]</p>
   			<br/>
-  			</div><div class="specterm" id="object" about="http://purl.org/ontology/co/core#object" typeof="owl:ObjectProperty">
+  			</div><div class="specterm" id="object" about="http://purl.org/ontology/co/core#object" typeof="rdf:Property">
   			<h3>Property: co:object</h3> 
   			<em property="rdfs:label" >has object</em> - <span property="rdfs:comment" >Links a counter resource to an object. Please feel free to create further sub properties with more restricted ranges.</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -360,14 +439,14 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/co/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"></span> </td></tr><tr><th colspan="2">Object Property</th>
- <td>  </td></tr>
+ <td>  </td></tr><tr><th colspan="2">Object Property</th>
+ <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#ObjectProperty"></span> </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#object">#</a>] <!-- object --> [<a href="#glance">back to top</a>]</p>
   			<br/>
   			</div>
-<div class="specterm" id="event_counter" about="http://purl.org/ontology/co/core#event_counter" typeof="owl:ObjectProperty">
+<div class="specterm" id="event_counter" about="http://purl.org/ontology/co/core#event_counter" typeof="rdf:Property">
   			<h3>Property: co:event_counter</h3> 
   			<em property="rdfs:label" >has event counter</em> - <span property="rdfs:comment" >Links events to a counter resource, where they where counted in.</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -382,8 +461,8 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/co/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"></span> </td></tr><tr><th colspan="2">Object Property</th>
- <td>  </td></tr>
+ <td>  </td></tr><tr><th colspan="2">Object Property</th>
+ <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#ObjectProperty"></span> </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#event_counter">#</a>] <!-- event_counter --> [<a href="#glance">back to top</a>]</p>
@@ -399,11 +478,11 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
 <h2 id="sec-extrefs">External Vocabulary References</h2>
 
 <p>
-The description of the terms in the Counter Ontology 'dictionary' make reference to classes and properties elsewhere. This section of the Counter Ontology 
-specification provides a placeholder reference for any Counter Ontology mention of externally defined terms. For example, sometimes we might say that Counter Ontology property has 
-a domain or range of an externally defined class, or that a Counter Ontology class is a sub-class of an external class, or 'disjoint with' such a class (ie. has no 
-common members). Such claims help fix the intended meaning of Counter Ontology terms in relationship to other 'peer' vocabularies.
-Currently, the Counter Ontology sub classes:</p>
+The description of the terms in the <em>Counter Ontology</em> 'dictionary' make reference to classes and properties elsewhere. This section of the <em>Counter Ontology</em> 
+specification provides a placeholder reference for any <em>Counter Ontology</em> mention of externally defined terms. For example, sometimes we might say that <em>Counter 
+Ontology</em> property has a domain or range of an externally defined class, or that a <em>Counter Ontology</em> class is a sub-class of an external class, or 'disjoint with' 
+such a class (ie. has no common members). Such claims help fix the intended meaning of <em>Counter Ontology</em> terms in relationship to other 'peer' vocabularies.<br/>
+Currently, the <em>Counter Ontology</em> sub classes:</p>
 <dl>
 <dt><a about="http://purl.org/ontology/co/core#" rel="rdfs:seeAlso" href="http://www.w3.org/TR/2004/REC-owl-ref-20040210/#Class">owl:Thing</a></dt>
 <dd>The class extension of owl:Thing is the set of all individuals.
@@ -417,7 +496,7 @@ Currently, the Counter Ontology sub classes:</p>
 <h3 id="extns_status">Status Vocabulary</h3>
 
 <p>
-Each term in the Counter Ontology is annotated with properties from the <a href="http://www.w3.org/2003/06/sw-vocab-status/note">SemWeb Vocab Status Ontology</a>
+Each term in the <em>Counter Ontology</em> is annotated with properties from the <a href="http://www.w3.org/2003/06/sw-vocab-status/note">SemWeb Vocab Status Ontology</a>
 </p>
 <p>
 Note that this mechanism is itself somewhat experimental and evolvin. The definitions of 'stable', 'unstable', 'archaic' and 'testing' cannot

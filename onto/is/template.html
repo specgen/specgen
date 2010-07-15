@@ -65,7 +65,7 @@ rev="dc:isVersionOf" href="http://purl.org/ontology/is/20100712/infoservice.html
   Attribution License">Creative Commons
   Attribution License</a>. This copyright applies to the <em>Info Service Ontology Specification</em> 
   and accompanying documentation in RDF.
- Regarding underlying technology, the Info Service Ontology uses W3C's <a href="http://www.w3.org/RDF/">RDF</a> technology, an
+ Regarding underlying technology, the <em>Info Service Ontology</em> uses W3C's <a href="http://www.w3.org/RDF/">RDF</a> technology, an
   open Web standard that can be freely used by anyone.</p>
   
   <hr />
@@ -73,9 +73,9 @@ rev="dc:isVersionOf" href="http://purl.org/ontology/is/20100712/infoservice.html
 
 <h2 id="sec-status">Abstract</h2>
 <p about="http://purl.org/ontology/is/core#" property="dc:decription">
-The Information Service Ontology Specification provides basic concepts and properties 
+The <em>Information Service Ontology Specification</em> provides basic concepts and properties 
 for describing different information services, e.g. Wikipedia, MusicBrainz, Freebase or Discogs, on/ for 
-the Semantic Web. This document contains a RDF description of the Information Service Ontology.
+the Semantic Web. This document contains a RDFa description of the <em>Information Service Ontology</em>.
 </p>
 
   <div class="status">
@@ -86,13 +86,13 @@ The template of this specification is derived from the  <a about="http://purl.or
 Specification</a>, which was created by <a about="http://purl.org/ontology/is/infoservice.html" rel="rdfs:seeAlso" href="http://danbri.org/">Dan Brickley</a> and 
 <a about="http://purl.org/ontology/is/infoservice.html" rel="rdfs:seeAlso" href="http://nicecupoftea.org/">Libby Miller</a>. It was modified and extended by Bob Ferris. Furthermore,
 a modified and extended version of <a about="http://purl.org/ontology/is/infoservice.html" rel="rdfs:seeAlso" href="http://svn.foaf-project.org/foaftown/specgen/">Danbri's SpecGen version</a>
-was used to generate most of the RDFa statements of the Info Service Ontology for this specification (see <a about="http://purl.org/ontology/is/infoservice.html" rel="rdfs:seeAlso" 
+was used to generate most of the RDFa statements of the <em>Info Service Ontology</em> for this specification (see <a about="http://purl.org/ontology/is/infoservice.html" rel="rdfs:seeAlso" 
 href="http://smiy.svn.sourceforge.net/viewvc/smiy/specgen/trunk/">here</a> for SpecGen version 6 by Bob Ferris).
 </p>
 
 
 <p> This document is created by combining the <a href="http://purl.org/ontology/is/infoservice.owl">RDFS/OWL</a> machine-readable
-    Info Service Ontology with a human-readable <em>HTML</em> representation that includes RDFa annotations. Future versions may 
+    <em>Info Service Ontology</em> with a human-readable <em>HTML</em> representation that includes RDFa annotations. Future versions may 
     incorporate <em>multilingual translations</em> of term definitions. The RDF/XML version of the specification is also available 
     directly from the namespace URI. RDF/N3 representations could be access via the links above.
 </p>
@@ -105,6 +105,7 @@ href="http://smiy.svn.sourceforge.net/viewvc/smiy/specgen/trunk/">here</a> for S
 
   <ul>
     <li><a href="#sec-glance">The Info Service Ontology at a glance</a></li>
+    <li><a href="#sec-example">Examples</a></li>
     <li><a href="#sec-intro">Introduction</a></li>
     <li><a href="#sec-for">What's the Info Service Ontology for?</a></li>
     <li><a href="#sec-bg">Background</a></li>
@@ -124,7 +125,7 @@ href="http://smiy.svn.sourceforge.net/viewvc/smiy/specgen/trunk/">here</a> for S
 <div about="http://purl.org/ontology/is/core#" rel="rdfs:seeAlso">
 <img src="http://infoserviceonto.sourceforge.net/is/gfx/infoservice.gif" title="The info service concept as graph with relations" alt="The info service concept as graph with relations" /></div>
  
- <p>An a-z index of Info Service Ontology terms, by class (categories or types) and by property.</p>
+ <p>An a-z index of <em>Info Service Ontology</em> terms, by class (categories or types) and by property.</p>
  
  
  %s
@@ -161,7 +162,9 @@ isi:musicbrainz a is:InfoService .
 <img src="http://infoserviceonto.sourceforge.net/is/gfx/is_-_musicbrainz_example.gif" title="The Info Service Ontology - MusicBrainz example" 
 alt="The Info Service Ontology - MusicBrainz example" /></div>
   
-  <p>RDF/Turtle representation of <em>MusicBrainz</em> modelled as <em>Information Service</em>:</p>
+  <p>RDF/Turtle representation of <em>MusicBrainz</em> modelled as <em>Information Service</em> (see also <a about="http://purl.org/ontology/is/infoservice.html" 
+  rel="rdfs:seeAlso" href="http://infoserviceonto.sourceforge.net/is/examples/RDF/infoserviceindividuals.rdf">RDF</a> and <a about="http://purl.org/ontology/is/infoservice.html" 
+  rel="rdfs:seeAlso" href="http://infoserviceonto.sourceforge.net/is/examples/N3/infoserviceindividuals.n3">N3</a> for downloadable representations of this example):</p>
 
   <div class="example">
     <pre about="http://purl.org/ontology/is/infoservice.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/is/inst/musicbrainz">
@@ -201,7 +204,7 @@ isi:musicbrainz
 
   <p>This is an <a href="http://purl.org/ontology/is/infoservice.html#InfoService"><em>is:InfoService</em></a> individual for <em>MusicBrainz</em> as proof-of-concept example. Therefore, 
 I used also some category definitions from <a href="http://dbpedia.org/"><em>DBpedia</em></a> (important 
-is also the property <a href="http://purl.org/ontology/is/infoservice.html#main_subject"><em>is:main_subject</em></a> for associating a main subject of an info service).</p>
+is also the property <a href="http://purl.org/ontology/is/infoservice.html#main_subject"><em>is:main_subject</em></a> for associating a main subject of an <em>Information Service</em>).</p>
 
   <div style="clear: left;"></div>
 
@@ -339,34 +342,34 @@ it might be interesting to describe and rate also all these very subjective <em>
 
   <h2 id="sec-nsdoc">The Info Service Ontology Description</h2>
 
-  <p>This specification serves as the Info Service Ontology "namespace document". As
-  such it describes the Info Service Ontology vocabulary and the terms (<a href=
+  <p>This specification serves as the <em>Info Service Ontology</em> "namespace document". As
+  such it describes the <em>Info Service Ontology</em> and the terms (<a href=
   "http://www.w3.org/RDF/">RDF</a> classes and properties) that
   constitute it, so that <a href=
   "http://www.w3.org/2001/sw/">Semantic Web</a> applications can
   use those terms in a variety of RDF-compatible document formats
   and applications.</p>
 
-  <p>This document presents the Info Service Ontology as a <a href=
+  <p>This document presents the <em>Info Service Ontology</em> as a <a href=
   "http://www.w3.org/2001/sw/">Semantic Web</a> vocabulary or
-  <em>Ontology</em>. The Info Service Ontology vocabulary is pretty simple,
+  <em>Ontology</em>. The <em>Info Service Ontology</em> is pretty simple,
   pragmatic and designed to allow simultaneous deployment and
-  extension. The Info Service Ontology is intended for widescale use, but its authors
+  extension. The <em>Info Service Ontology</em> is intended for widescale use, but its authors
   make no commitments regarding its suitability for any particular
   purpose.</p>
 
   <h3 id="sec-evolution">Evolution and Extension of the Info Service Ontology</h3>
 
-  <p>The Info Service Ontology vocabulary is identified by the namespace URI
+  <p>The <em>Info Service Ontology</em> vocabulary is identified by the namespace URI
   '<code about="http://purl.org/ontology/is/core#" property="vann:preferredNamespaceUri" datatype="xsd:anyURI">http://purl.org/ontology/is/core#</code>'. Revisions and
-  extensions of Info Service Ontology are conducted through edits to this document,
+  extensions of the <em>Info Service Ontology</em> are conducted through edits to this document,
   which by convention is accessible in the Web via the namespace URI.
   For practical and deployment reasons, note that <b>we do not 
   update the namespace URI as the vocabulary matures</b>.
   </p>
 
 <p>
-  The evolution of the Info Service Ontology is best considered in terms of the
+  The evolution of the <em>Info Service Ontology</em> is best considered in terms of the
   stability of individual vocabulary terms, rather than the
   specification as a whole. As terms stabilise in usage and
   documentation, they progress through the categories
@@ -377,7 +380,7 @@ it might be interesting to describe and rate also all these very subjective <em>
   <h2 id="sec-crossref">The Info Service Ontology cross-reference: Listing the Info Service Ontology Classes and
   Properties</h2>
 
-  <p>The Info Service Ontology introduces the following classes and properties. There is a link at the 
+  <p>The <em>Info Service Ontology</em> introduces the following classes and properties. There is a link at the 
 top of this document to the RDF/XML and RDF/N3 versions.</p>
 
   <!-- the following is the script-generated list of classes and properties -->
@@ -393,11 +396,11 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
 <h2 id="sec-extrefs">External Vocabulary References</h2>
 
 <p>
-The description of the terms in the Info Service Ontology 'dictionary' make reference to classes and properties elsewhere. This section of the Info Service Ontology 
-specification provides a placeholder reference for any Info Service Ontology mention of externally defined terms. For example, sometimes we might say that Info Service Ontology property has 
-a domain or range of an externally defined class, or that a Info Service Ontology class is a sub-class of an external class, or 'disjoint with' such a class (ie. has no 
-common members). Such claims help fix the intended meaning of Info Service Ontology terms in relationship to other 'peer' vocabularies.
-Currently, the Info Service Ontology sub classes:</p>
+The description of the terms in the <em>Info Service Ontology</em> 'dictionary' make reference to classes and properties elsewhere. This section of the <em>Info Service Ontology</em> 
+specification provides a placeholder reference for any <em>Info Service Ontology</em> mention of externally defined terms. For example, sometimes we might say that <em>Info Service Ontology</em> property has 
+a domain or range of an externally defined class, or that a <em>Info Service Ontology</em> class is a sub-class of an external class, or 'disjoint with' such a class (ie. has no 
+common members). Such claims help fix the intended meaning of <em>Info Service Ontology</em> terms in relationship to other 'peer' vocabularies.
+Currently, the <em>Info Service Ontology</em> sub classes:</p>
 <dl>
 <dt><a about="http://purl.org/ontology/is/core#" rel="rdfs:seeAlso" href="http://www.w3.org/TR/2004/REC-owl-ref-20040210/#Class">owl:Thing</a></dt>
 <dd>The class extension of owl:Thing is the set of all individuals.
@@ -408,12 +411,12 @@ Currently, the Info Service Ontology sub classes:</p>
 <h3 id="extns_status">Status Vocabulary</h3>
 
 <p>
-Each term in the Info Service Ontology is annotated with properties from the <a href="http://www.w3.org/2003/06/sw-vocab-status/note">SemWeb Vocab Status Ontology</a>
+Each term in the <em>Info Service Ontology</em> is annotated with properties from the <a href="http://www.w3.org/2003/06/sw-vocab-status/note">SemWeb Vocab Status Ontology</a>
 </p>
 <p>
 Note that this mechanism is itself somewhat experimental and evolvin. The definitions of 'stable', 'unstable', 'archaic' and 'testing' cannot
  be defined as global absolutes, but only in relationship to the practices, expectations and social structures around some vocabulary. For their use in 
- the Info Service Ontology, future versions of this specification could usefully offer more detail about what to expect from a term labelled 'stable'. 
+ the <em>Info Service Ontology</em>, future versions of this specification could usefully offer more detail about what to expect from a term labelled 'stable'. 
  </p>
 
 <dl>
@@ -423,7 +426,7 @@ Note that this mechanism is itself somewhat experimental and evolvin. The defini
 
   <h3 id="sec-ack">Acknowledgments</h3>
 
-  <p>I would like to thank very much Olaf Hartig (!) and Mats Skillingstad to help to establish this multiple purpose Info Service Ontology. Furthermore, Dan Brickley and Libby Miller to provide the basis for this
+  <p>I would like to thank very much Olaf Hartig (!) and Mats Skillingstad to help to establish this multiple purpose <em>Information Service</em> ontology. Furthermore, Dan Brickley and Libby Miller to provide the basis for this
 specification.</p>
 
 <h2 id="sec-changes">Recent Changes</h2>
