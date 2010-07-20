@@ -1,4 +1,4 @@
-# Saved by TopBraid on Tue Jul 13 12:01:03 CEST 2010
+# Saved by TopBraid on Tue Jul 20 18:01:52 CEST 2010
 # baseURI: http://purl.org/ontology/co/core#
 # imports: http://purl.org/NET/c4dm/event.owl
 # imports: http://purl.org/dc/elements/1.1/
@@ -15,13 +15,13 @@
 
 co:   rdf:type owl:Ontology ;
       dc:creator <http://foaf.me/zazi#me> , <http://moustaki.org/foaf.rdf#moustaki> , <http://foaf.me/intrz#me> ;
-      dc:date "2010-07-09T19:01:52+01:00"^^xsd:dateTime ;
+      dc:date "2010-07-20T17:01:52+01:00"^^xsd:dateTime ;
       dc:description """The Counter Ontology specification provides basic concepts and properties 
 for describing a general counter concept and some important sub counters, e.g. an event counter, on/ for 
 the Semantic Web. This document contains a RDF description of the Counter Ontology."""@en ;
       dc:title "The Counter Ontology"@en ;
       owl:imports dc: , <http://www.w3.org/2003/06/sw-vocab-status/ns> , <http://purl.org/NET/c4dm/event.owl> ;
-      owl:versionInfo "0.6"^^xsd:decimal .
+      owl:versionInfo 0.61 .
 
 co:Counter
       rdf:type owl:Class , rdfs:Class ;
@@ -47,7 +47,7 @@ someone, a sporting activity by someone, ..."""@en ;
       vs:term_status "unstable"@en .
 
 co:count
-      rdf:type owl:FunctionalProperty , rdf:Property ;
+      rdf:type owl:DatatypeProperty , owl:FunctionalProperty , rdf:Property ;
       rdfs:comment "Links a counter resource to the actual count"@en ;
       rdfs:domain co:Counter ;
       rdfs:isDefinedBy co: ;

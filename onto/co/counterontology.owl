@@ -13,7 +13,7 @@
     <dc:creator rdf:resource="http://foaf.me/intrz#me"/>
     <dc:creator rdf:resource="http://foaf.me/zazi#me"/>
     <dc:creator rdf:resource="http://moustaki.org/foaf.rdf#moustaki"/>
-    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-07-09T19:01:52+01:00</dc:date>
+    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-07-20T17:01:52+01:00</dc:date>
     <dc:description xml:lang="en">The Counter Ontology specification provides basic concepts and properties 
 for describing a general counter concept and some important sub counters, e.g. an event counter, on/ for 
 the Semantic Web. This document contains a RDF description of the Counter Ontology.</dc:description>
@@ -21,7 +21,7 @@ the Semantic Web. This document contains a RDF description of the Counter Ontolo
     <owl:imports rdf:resource="http://purl.org/NET/c4dm/event.owl"/>
     <owl:imports rdf:resource="http://purl.org/dc/elements/1.1/"/>
     <owl:imports rdf:resource="http://www.w3.org/2003/06/sw-vocab-status/ns"/>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.6</owl:versionInfo>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.61</owl:versionInfo>
   </owl:Ontology>
   <owl:Class rdf:about="http://purl.org/ontology/co/core#Counter">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -47,15 +47,16 @@ someone, a sporting activity by someone, ...</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
     <vs:term_status xml:lang="en">unstable</vs:term_status>
   </owl:Class>
-  <owl:FunctionalProperty rdf:about="http://purl.org/ontology/co/core#count">
+  <owl:DatatypeProperty rdf:about="http://purl.org/ontology/co/core#count">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     <rdfs:comment xml:lang="en">Links a counter resource to the actual count</rdfs:comment>
     <rdfs:domain rdf:resource="http://purl.org/ontology/co/core#Counter"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/co/core#"/>
     <rdfs:label xml:lang="en">has count</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     <vs:term_status xml:lang="en">stable</vs:term_status>
-  </owl:FunctionalProperty>
+  </owl:DatatypeProperty>
   <owl:ObjectProperty rdf:about="http://purl.org/ontology/co/core#counter">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment xml:lang="en">Links an object to a counter resource. Please feel free to create further sub properties with more restricted domains.</rdfs:comment>

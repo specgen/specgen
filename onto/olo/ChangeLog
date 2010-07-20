@@ -1,5 +1,12 @@
 =========================
-Version 0.7 (June 2010)
+Version 0.71 (July 2010)
+=========================
+ * MODIFIED: added owl:DatatypeProperty to rdf:type of olo:index
+ * MODIFIED: added owl:DatatypeProperty to rdf:type of olo:length
+ * REMOVED: anonymous defined inverse properties from olo:index and olo:length
+ 
+=========================
+Version 0.7 (July 2010)
 =========================
  * MODIFIED: olo:OrderedList and olo:Slot now sub class of owl:Thing
  * MODIFIED: olo:OrderedList and olo:Slot now of the type rdf:Class and owl:Class

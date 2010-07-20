@@ -30,22 +30,22 @@ version="XHTML+RDFa 1.0">
 </head>
 
 <body>
-  <h1><span about="http://purl.org/ontology/olo/core#" property="dc:title">The Ordered List Ontology</span> <span about="http://purl.org/ontology/olo/core#" property="owl:versionInfo" datatype="xsd:decimal">0.7</span></h1>
+  <h1><span about="http://purl.org/ontology/olo/core#" property="dc:title">The Ordered List Ontology</span> <span about="http://purl.org/ontology/olo/core#" property="owl:versionInfo" datatype="xsd:decimal">0.71</span></h1>
 
-  <h2>Namespace Document <span about="http://purl.org/ontology/olo/core#" property="dc:date" content="2010-07-11T15:48:52+01:00" datatype="xsd:dateTime">11 July 2010</span></h2>
+  <h2>Namespace Document <span about="http://purl.org/ontology/olo/core#" property="dc:date" content="2010-07-20T17:12:52+01:00" datatype="xsd:dateTime">20 July 2010</span></h2>
 <table class="header" border="0">
   <tr>
     <td>
 		<dl>
 			<dt>This version:</dt>
 			<dd><a about="http://purl.org/ontology/olo/orderedlistontology.html" rel="dc:hasVersion" 
-				rev="dc:isVersionOf" href="http://purl.org/ontology/olo/20100711/orderedlistontology.html">http://purl.org/ontology/olo/20100711/orderedlistontology.html</a> (<a href="http://purl.org/ontology/olo/20100711/orderedlistontology.owl">OWL</a>, <a href="http://purl.org/ontology/olo/20100711/orderedlistontology.n3">N3</a>)</dd>
+				rev="dc:isVersionOf" href="http://purl.org/ontology/olo/20100720/orderedlistontology.html">http://purl.org/ontology/olo/20100720/orderedlistontology.html</a> (<a href="http://purl.org/ontology/olo/20100720/orderedlistontology.owl">OWL</a>, <a href="http://purl.org/ontology/olo/20100720/orderedlistontology.n3">N3</a>)</dd>
 
 			<dt>Latest version:</dt>
 			<dd><a href="http://purl.org/ontology/olo/core#">http://purl.org/ontology/olo/core#</a> (<a href="http://purl.org/ontology/olo/orderedlistontology.owl">OWL</a>, <a href="http://purl.org/ontology/olo/orderedlistontology.n3">N3</a>)</dd>
 
 			<dt>Previous version:</dt>
-			<dd><a href="http://purl.org/ontology/olo/20100628/orderedlistontology.html">http://purl.org/ontology/olo/20100628/orderedlistontology.html</a> (<a href="http://purl.org/ontology/olo/20100628/orderedlistontology.owl">OWL</a>, <a href="http://purl.org/ontology/olo/20100628/orderedlistontology.n3">N3</a>)</dd>
+			<dd><a href="http://purl.org/ontology/olo/20100711/orderedlistontology.html">http://purl.org/ontology/olo/20100711/orderedlistontology.html</a> (<a href="http://purl.org/ontology/olo/20100711/orderedlistontology.owl">OWL</a>, <a href="http://purl.org/ontology/olo/20100711/orderedlistontology.n3">N3</a>)</dd>
 
 			<dt>Authors:</dt>
 			<dd><a about="http://purl.org/ontology/olo/orderedlistontology.html" rel="rdfs:seeAlso" href="http://www.elec.qmul.ac.uk/people/samer/">Samer A. Abdallah</a> (<a href="http://www.elec.qmul.ac.uk/digitalmusic/">Centre for Digital Music, Queen Mary, University of London</a>),<br/>
@@ -335,6 +335,13 @@ specification.</p>
 <h2 id="sec-changes">Recent Changes</h2>
 
 <pre>=========================
+Version 0.71 (July 2010)
+=========================
+ * MODIFIED: added owl:DatatypeProperty to rdf:type of olo:index
+ * MODIFIED: added owl:DatatypeProperty to rdf:type of olo:length
+ * REMOVED: anonymous defined inverse properties from olo:index and olo:length
+ 
+=========================
 Version 0.7 (July 2010)
 =========================
  * MODIFIED: olo:OrderedList and olo:Slot now sub class of owl:Thing

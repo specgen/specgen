@@ -1,4 +1,9 @@
 =========================
+Version 0.61 (July 2010)
+=========================
+ * MODIFIED: added owl:DatatypeProperty to co:count
+
+=========================
 Version 0.6 (July 2010)
 =========================
  * ADDED: rdfs:Class to each owl:Class based concept
