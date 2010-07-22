@@ -1,0 +1,21 @@
+=========================
+Version 0.21 (July 2010)
+=========================
+ * REMOVED: wrongly set owl:inverseOf properties from all rdf:Property typed properties (ao:genre, ao:mood, ao:occasion)
+ 
+=========================
+Version 0.2 (July 2010)
+=========================
+ * REMOVED: ao:association - moved to this property to the Similarity Ontology (http://purl.org/ontology/similarity/)
+ * ADDED: ao:included_association - to enable the composition of association statements or to reuse them, e.g. to make 
+          them likeable in a specific context
+ * ADDED: ao:LikeableAssociation - to enable voting, reviewing, feedbacking on association statements in a specific context
+
+=========================
+Version 0.1 (July 2010)
+=========================
+ * ADDED: ao:association - to related a sim:Association to something
+ * ADDED: ao:likeminded - to related likeminded people (foaf:Agent) to a sim:Association
+ * ADDED: ao:genre - to have multiple purpose, general genre relation
+ * ADDED: ao:mood - to have a multiple purpose, general mood relation
+ * ADDED: ao:occasion - to have a multiple purpose, general occasion relation

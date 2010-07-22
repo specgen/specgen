@@ -259,7 +259,10 @@ class Vocab(object):
 					"http://purl.org/NET/c4dm/event.owl#"           : "event",
 					"http://purl.org/ontology/co/core#"             : "co",
 					"http://purl.org/ontology/olo/core#"            : "olo",
-					"http://purl.org/ontology/is/core#"             : "is"
+					"http://purl.org/ontology/is/core#"             : "is",
+					"http://purl.org/ontology/similarity/"          : "sim",
+					"http://purl.org/stuff/rev#"                    : "rev",
+					"http://purl.org/ontology/ao/core#"             : "ao"
 		}
 
 
