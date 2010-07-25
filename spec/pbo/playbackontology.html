@@ -173,7 +173,12 @@ alt="The play back and skip counter concept as graph with relations" /></div>
  <p>An a-z index of <em>Play Back Ontology</em> terms, by class (categories or types) and by property.</p>
  
  
- %s
+ <div class="azlist">
+<p>Classes: | <a href="#FixedPlaylist">FixedPlaylist</a> |  <a href="#MediaActionCounter">MediaActionCounter</a> |  <a href="#PlayBackCounter">PlayBackCounter</a> |  <a href="#Playlist">Playlist</a> |  <a href="#PlaylistSlot">PlaylistSlot</a> |  <a href="#SkipCounter">SkipCounter</a> | 
+</p>
+<p>Properties: | <a href="#media_object">media_object</a> |  <a href="#playlist">playlist</a> |  <a href="#playlist_item">playlist_item</a> |  <a href="#playlist_slot">playlist_slot</a> | 
+</p>
+</div>
 
   <div style="clear: left;"></div>
 
@@ -408,10 +413,238 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  
 
 <!-- this is the a-z listing -->
-%s
+<div class="azlist">
+<p>Classes: | <a href="#FixedPlaylist">FixedPlaylist</a> |  <a href="#MediaActionCounter">MediaActionCounter</a> |  <a href="#PlayBackCounter">PlayBackCounter</a> |  <a href="#Playlist">Playlist</a> |  <a href="#PlaylistSlot">PlaylistSlot</a> |  <a href="#SkipCounter">SkipCounter</a> | 
+</p>
+<p>Properties: | <a href="#media_object">media_object</a> |  <a href="#playlist">playlist</a> |  <a href="#playlist_item">playlist_item</a> |  <a href="#playlist_slot">playlist_slot</a> | 
+</p>
+</div>
 
 <!-- and this is the bulk of the vocab descriptions -->
-%s
+<div class="termlist"><h3>Classes and Properties (full detail)</h3>
+<div class='termdetails'><br />
+
+<h2>Classes</h2>
+ 
+<div class="specterm" id="FixedPlaylist" about="http://purl.org/ontology/pbo/core#FixedPlaylist" typeof="owl:Class">
+  			<h3>Class: pbo:FixedPlaylist</h3> 
+  			<em property="rdfs:label" >Fixed Playlist</em> - <span property="rdfs:comment" >A (sub) playlist of a fixed length and a fixed order. This concept should be used to express static relations, \ne.g. "those three music tracks must always be played in a row".</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://purl.org/ontology/pbo/core#Playlist"><a href="#Playlist">Playlist</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/pbo/core#"></span>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#FixedPlaylist">#</a>] <!-- FixedPlaylist --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="PlaylistSlot" about="http://purl.org/ontology/pbo/core#PlaylistSlot" typeof="owl:Class">
+  			<h3>Class: pbo:PlaylistSlot</h3> 
+  			<em property="rdfs:label" >Playlist Slot</em> - <span property="rdfs:comment" >A playlist slot. It could contain e.g. a music track, a video or a slide, and maybe related with some \nadditional properties. However, it could maybe also included a "sub" playlist, e.g. to keep a fixed sequence of some tracks.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#playlist_item">playlist_item</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#playlist_slot">playlist_slot</a>
+</td></tr> <tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://purl.org/ontology/olo/core#Slot"><a href="http://purl.org/ontology/olo/core#Slot">olo:Slot</a></span>
+ </td></tr><tr><th class="restrictions">Restriction(s):</th>
+ <td>  <span about ="http://purl.org/ontology/pbo/core#PlaylistSlot" rel="rdfs:subClassOf" resource="[_:xQjMxmWA3]"></span>
+ <span about="[_:xQjMxmWA3]" typeof="owl:Restriction"></span>The property 
+  									<span about="[_:xQjMxmWA3]" rel="owl:onProperty" href="http://purl.org/ontology/pbo/core#playlist_item"><a href="#playlist_item">pbo:playlist_item</a></span> must be set <em>at least</em> 
+  									<span about="[_:xQjMxmWA3]" property="owl:minCardinality" datatype="xsd:nonNegativeInteger" >1</span> time(s) 
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/pbo/core#"></span>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#PlaylistSlot">#</a>] <!-- PlaylistSlot --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div>
+<div class="specterm" id="MediaActionCounter" about="http://purl.org/ontology/pbo/core#MediaActionCounter" typeof="owl:Class">
+  			<h3>Class: pbo:MediaActionCounter</h3> 
+  			<em property="rdfs:label" >Media Action Counter</em> - <span property="rdfs:comment" >A media action counter. Media actions are for example play back or skip events.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#media_object">media_object</a>
+ </td></tr>
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://purl.org/ontology/co/core#Counter"><a href="http://purl.org/ontology/co/core#Counter">co:Counter</a></span>
+ </td></tr><tr><th>Has sub class</th>
+ <td>  <a href="#SkipCounter">Skip Counter</a>
+ <a href="#PlayBackCounter">Play Back Counter</a>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/pbo/core#"></span>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#MediaActionCounter">#</a>] <!-- MediaActionCounter --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="PlayBackCounter" about="http://purl.org/ontology/pbo/core#PlayBackCounter" typeof="owl:Class">
+  			<h3>Class: pbo:PlayBackCounter</h3> 
+  			<em property="rdfs:label" >Play Back Counter</em> - <span property="rdfs:comment" >A play back counter, e.g. to count the playback of a media object.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://purl.org/ontology/pbo/core#MediaActionCounter"><a href="#MediaActionCounter">Media Action Counter</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/pbo/core#"></span>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#PlayBackCounter">#</a>] <!-- PlayBackCounter --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Playlist" about="http://purl.org/ontology/pbo/core#Playlist" typeof="owl:Class">
+  			<h3>Class: pbo:Playlist</h3> 
+  			<em property="rdfs:label" >Playlist</em> - <span property="rdfs:comment" >A playlist of specific media items, e.g. music tracks, videos or slides.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#playlist_slot">playlist_slot</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#playlist">playlist</a>
+</td></tr> <tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://purl.org/ontology/olo/core#OrderedList"><a href="http://purl.org/ontology/olo/core#OrderedList">olo:OrderedList</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/ontology/bibo/Document"><a href="http://purl.org/ontology/bibo/Document">bibo:Document</a></span>
+ </td></tr><tr><th>Has sub class</th>
+ <td>  <a href="#FixedPlaylist">Fixed Playlist</a>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/pbo/core#"></span>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#Playlist">#</a>] <!-- Playlist --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="SkipCounter" about="http://purl.org/ontology/pbo/core#SkipCounter" typeof="owl:Class">
+  			<h3>Class: pbo:SkipCounter</h3> 
+  			<em property="rdfs:label" >Skip Counter</em> - <span property="rdfs:comment" >A skip counter, e.g. to count skip events of a media object.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://purl.org/ontology/pbo/core#MediaActionCounter"><a href="#MediaActionCounter">Media Action Counter</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/pbo/core#"></span>
+ </td></tr><tr><th colspan="2">OWL Class</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#SkipCounter">#</a>] <!-- SkipCounter --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div>
+<h2>Properties</h2>
+ 
+<div class="specterm" id="playlist" about="http://purl.org/ontology/pbo/core#playlist" typeof="owl:ObjectProperty">
+  			<h3>Property: pbo:playlist</h3> 
+  			<em property="rdfs:label" >has playlist</em> - <span property="rdfs:comment" >Associates a playlist to something.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td> <span rel="rdfs:range" href="http://purl.org/ontology/pbo/core#Playlist"><a href="#Playlist">Playlist</a></span>
+</td>	</tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/pbo/core#"></span>
+ </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#playlist">#</a>] <!-- playlist --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="playlist_slot" about="http://purl.org/ontology/pbo/core#playlist_slot" typeof="owl:ObjectProperty">
+  			<h3>Property: pbo:playlist_slot</h3> 
+  			<em property="rdfs:label" >has playlist slot</em> - <span property="rdfs:comment" >A specific slot in a playlist.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td> <span rel="rdfs:domain" href="http://purl.org/ontology/pbo/core#Playlist"><a href="#Playlist">Playlist</a></span>
+</td></tr>
+  			<tr><th>Range:</th>
+ <td> <span rel="rdfs:range" href="http://purl.org/ontology/pbo/core#PlaylistSlot"><a href="#PlaylistSlot">Playlist Slot</a></span>
+</td>	</tr><tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:subPropertyOf" href="http://purl.org/ontology/olo/core#slot"><a href="http://purl.org/ontology/olo/core#slot">olo:slot</a></span>
+ </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#playlist_slot">#</a>] <!-- playlist_slot --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div>
+<div class="specterm" id="media_object" about="http://purl.org/ontology/pbo/core#media_object" typeof="owl:ObjectProperty">
+  			<h3>Property: pbo:media_object</h3> 
+  			<em property="rdfs:label" >has media object</em> - <span property="rdfs:comment" >Associates a media object to its related counter.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td> <span rel="rdfs:domain" href="http://purl.org/ontology/pbo/core#MediaActionCounter"><a href="#MediaActionCounter">Media Action Counter</a></span>
+</td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" resource="[_:xQjMxmWA4]"></span>
+  									<span about="[_:xQjMxmWA4]" typeof="owl:Class"></span>
+  									<span about="[_:xQjMxmWA4]" rel="owl:unionOf" resource="[_:xQjMxmWA5]"></span>  <span about="[_:xQjMxmWA5]" typeof="rdf:Description"></span>
+  									<span about="[_:xQjMxmWA5]" rel="rdf:first" href="http://purl.org/ontology/bibo/Document"><a href="http://purl.org/ontology/bibo/Document">bibo:Document</a></span>
+  									<span about="[_:xQjMxmWA5]" rel="rdf:rest" resource="[_:xQjMxmWA6]"></span> or <span about="[_:xQjMxmWA6]" typeof="rdf:Description"></span>
+  														<span about="[_:xQjMxmWA6]" rel="rdf:first" href="http://purl.org/vocab/frbr/core#Endeavour"><a href="http://purl.org/vocab/frbr/core#Endeavour">frbr:Endeavour</a></span> <span about="[_:xQjMxmWA6]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr><tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:subPropertyOf" href="http://purl.org/ontology/co/core#object"><a href="http://purl.org/ontology/co/core#object">co:object</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/pbo/core#"></span>
+ </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#media_object">#</a>] <!-- media_object --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="playlist_item" about="http://purl.org/ontology/pbo/core#playlist_item" typeof="owl:ObjectProperty">
+  			<h3>Property: pbo:playlist_item</h3> 
+  			<em property="rdfs:label" >has playlist item</em> - <span property="rdfs:comment" >A specific playlist item, e.g. a music track, video or slides. The range types of this property must be \nbased on bibo:Document or frbr:Endeavour (to keep it somehow media based).</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td> <span rel="rdfs:domain" href="http://purl.org/ontology/pbo/core#PlaylistSlot"><a href="#PlaylistSlot">Playlist Slot</a></span>
+</td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" resource="[_:xQjMxmWA7]"></span>
+  									<span about="[_:xQjMxmWA7]" typeof="owl:Class"></span>
+  									<span about="[_:xQjMxmWA7]" rel="owl:unionOf" resource="[_:xQjMxmWA8]"></span>  <span about="[_:xQjMxmWA8]" typeof="rdf:Description"></span>
+  									<span about="[_:xQjMxmWA8]" rel="rdf:first" href="http://purl.org/ontology/bibo/Document"><a href="http://purl.org/ontology/bibo/Document">bibo:Document</a></span>
+  									<span about="[_:xQjMxmWA8]" rel="rdf:rest" resource="[_:xQjMxmWA9]"></span> or <span about="[_:xQjMxmWA9]" typeof="rdf:Description"></span>
+  														<span about="[_:xQjMxmWA9]" rel="rdf:first" href="http://purl.org/vocab/frbr/core#Endeavour"><a href="http://purl.org/vocab/frbr/core#Endeavour">frbr:Endeavour</a></span> <span about="[_:xQjMxmWA9]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr><tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:subPropertyOf" href="http://purl.org/ontology/olo/core#item"><a href="http://purl.org/ontology/olo/core#item">olo:item</a></span>
+ </td></tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" resource="[_:xQjMxmWA10]">the anonymous defined property with the label
+  							 '<em about="[_:xQjMxmWA10]" property="rdfs:label">is playlist item of</em>'</span>
+ (<span about="[_:xQjMxmWA10]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/pbo/core#"></span>
+ </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#playlist_item">#</a>] <!-- playlist_item --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div>
+
+
+
+
+
+
+
+</div>
+</div>
 
 
 <h2 id="sec-extrefs">External Vocabulary References</h2>

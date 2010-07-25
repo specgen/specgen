@@ -11,17 +11,17 @@
   <owl:Ontology rdf:about="http://purl.org/ontology/olo/core#">
     <dc:creator rdf:resource="http://foaf.me/zazi#me"/>
     <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Samer Abdallah</dc:creator>
-    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-07-20T17:12:52+01:00</dc:date>
+    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-07-23T13:30:52+01:00</dc:date>
     <dc:description xml:lang="en">The Ordered Lists Ontology Specification provides basic concepts and properties 
 for describing ordered lists as semantic graph. This document contains a RDF description of the Ordered Lists Ontology
 as proposed by Samer Abdallah.</dc:description>
     <dc:title xml:lang="en">The Ordered Lists Ontology</dc:title>
     <owl:imports rdf:resource="http://purl.org/dc/elements/1.1/"/>
     <owl:imports rdf:resource="http://www.w3.org/2003/06/sw-vocab-status/ns"/>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.71</owl:versionInfo>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.72</owl:versionInfo>
   </owl:Ontology>
-  <owl:Class rdf:about="http://purl.org/ontology/olo/core#OrderedList">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  <rdfs:Class rdf:about="http://purl.org/ontology/olo/core#OrderedList">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:comment xml:lang="en">An ordered list with a given length an indexed items.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/olo/core#"/>
     <rdfs:label xml:lang="en">Ordered List</rdfs:label>
@@ -33,7 +33,7 @@ as proposed by Samer Abdallah.</dc:description>
       </owl:Restriction>
     </rdfs:subClassOf>
     <vs:term_status xml:lang="en">stable</vs:term_status>
-  </owl:Class>
+  </rdfs:Class>
   <owl:Class rdf:about="http://purl.org/ontology/olo/core#Slot">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdfs:comment xml:lang="en">A slot in an ordered list with a fixed index.</rdfs:comment>
@@ -48,18 +48,6 @@ as proposed by Samer Abdallah.</dc:description>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://purl.org/ontology/olo/core#previous"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-        <owl:onProperty rdf:resource="http://purl.org/ontology/olo/core#item"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
         <owl:onProperty rdf:resource="http://purl.org/ontology/olo/core#index"/>
       </owl:Restriction>
@@ -70,53 +58,52 @@ as proposed by Samer Abdallah.</dc:description>
         <owl:onProperty rdf:resource="http://purl.org/ontology/olo/core#ordered_list"/>
       </owl:Restriction>
     </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+        <owl:onProperty rdf:resource="http://purl.org/ontology/olo/core#previous"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
     <vs:term_status xml:lang="en">stable</vs:term_status>
   </owl:Class>
-  <owl:DatatypeProperty rdf:about="http://purl.org/ontology/olo/core#index">
+  <owl:FunctionalProperty rdf:about="http://purl.org/ontology/olo/core#index">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:comment xml:lang="en">An index of a slot in an ordered list.</rdfs:comment>
     <rdfs:domain rdf:resource="http://purl.org/ontology/olo/core#Slot"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/olo/core#"/>
     <rdfs:label xml:lang="en">has index</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
     <vs:term_status xml:lang="en">stable</vs:term_status>
-  </owl:DatatypeProperty>
+  </owl:FunctionalProperty>
   <rdf:Property rdf:about="http://purl.org/ontology/olo/core#item">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:comment xml:lang="en">An item of a slot in an ordered list.</rdfs:comment>
     <rdfs:domain rdf:resource="http://purl.org/ontology/olo/core#Slot"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/olo/core#"/>
     <rdfs:label xml:lang="en">has item</rdfs:label>
-    <owl:inverseOf>
-      <owl:ObjectProperty>
-        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-        <rdfs:label xml:lang="en">is item of</rdfs:label>
-      </owl:ObjectProperty>
-    </owl:inverseOf>
     <vs:term_status xml:lang="en">stable</vs:term_status>
   </rdf:Property>
-  <owl:DatatypeProperty rdf:about="http://purl.org/ontology/olo/core#length">
+  <owl:FunctionalProperty rdf:about="http://purl.org/ontology/olo/core#length">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:comment xml:lang="en">The length of an ordered list.</rdfs:comment>
     <rdfs:domain rdf:resource="http://purl.org/ontology/olo/core#OrderedList"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/olo/core#"/>
     <rdfs:label xml:lang="en">has length</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     <vs:term_status xml:lang="en">stable</vs:term_status>
-  </owl:DatatypeProperty>
-  <rdf:Property rdf:about="http://purl.org/ontology/olo/core#next">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://purl.org/ontology/olo/core#next">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment xml:lang="en">Associates the next slot in an ordered list.</rdfs:comment>
     <rdfs:domain rdf:resource="http://purl.org/ontology/olo/core#Slot"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/olo/core#"/>
     <rdfs:label xml:lang="en">has next</rdfs:label>
     <rdfs:range rdf:resource="http://purl.org/ontology/olo/core#Slot"/>
     <vs:term_status xml:lang="en">testing</vs:term_status>
-  </rdf:Property>
-  <rdf:Property rdf:about="http://purl.org/ontology/olo/core#ordered_list">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://purl.org/ontology/olo/core#ordered_list">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment xml:lang="en">An ordered list of an slot.</rdfs:comment>
     <rdfs:domain rdf:resource="http://purl.org/ontology/olo/core#Slot"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/olo/core#"/>
@@ -124,9 +111,9 @@ as proposed by Samer Abdallah.</dc:description>
     <rdfs:range rdf:resource="http://purl.org/ontology/olo/core#OrderedList"/>
     <owl:inverseOf rdf:resource="http://purl.org/ontology/olo/core#slot"/>
     <vs:term_status xml:lang="en">testing</vs:term_status>
-  </rdf:Property>
-  <rdf:Property rdf:about="http://purl.org/ontology/olo/core#previous">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </owl:FunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:about="http://purl.org/ontology/olo/core#previous">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment xml:lang="en">Associates the previous slot in an ordered list</rdfs:comment>
     <rdfs:domain rdf:resource="http://purl.org/ontology/olo/core#Slot"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/olo/core#"/>
@@ -134,14 +121,14 @@ as proposed by Samer Abdallah.</dc:description>
     <rdfs:range rdf:resource="http://purl.org/ontology/olo/core#Slot"/>
     <owl:inverseOf rdf:resource="http://purl.org/ontology/olo/core#next"/>
     <vs:term_status xml:lang="en">testing</vs:term_status>
-  </rdf:Property>
-  <rdf:Property rdf:about="http://purl.org/ontology/olo/core#slot">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:InverseFunctionalProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/ontology/olo/core#slot">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment xml:lang="en">A slot in an ordered list.</rdfs:comment>
     <rdfs:domain rdf:resource="http://purl.org/ontology/olo/core#OrderedList"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/olo/core#"/>
     <rdfs:label xml:lang="en">has slot</rdfs:label>
     <rdfs:range rdf:resource="http://purl.org/ontology/olo/core#Slot"/>
     <vs:term_status xml:lang="en">stable</vs:term_status>
-  </rdf:Property>
+  </owl:ObjectProperty>
 </rdf:RDF>

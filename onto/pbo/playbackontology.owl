@@ -15,7 +15,7 @@
    xml:base="http://purl.org/ontology/pbo/core#">
   <owl:Ontology rdf:about="http://purl.org/ontology/pbo/core#">
     <dc:creator rdf:resource="http://foaf.me/zazi#me"/>
-    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-07-20T15:21:52+01:00</dc:date>
+    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-07-25T17:56:52+01:00</dc:date>
     <dc:description xml:lang="en">The Play Back Ontology specification provides basic concepts and properties 
 for describing a concepts that are related to the play back domain, e.g. an playlist, play back count and skip counter 
 on/ for the Semantic Web. This document contains a RDF description of the Play Back Ontology.</dc:description>
@@ -26,7 +26,7 @@ on/ for the Semantic Web. This document contains a RDF description of the Play B
     <owl:imports rdf:resource="http://purl.org/ontology/olo/core"/>
     <owl:imports rdf:resource="http://purl.org/vocab/frbr/core"/>
     <owl:imports rdf:resource="http://www.w3.org/2003/06/sw-vocab-status/ns"/>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.3</owl:versionInfo>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.42</owl:versionInfo>
   </owl:Ontology>
   <owl:Class rdf:about="http://purl.org/ontology/pbo/core#FixedPlaylist">
     <rdfs:comment xml:lang="en">A (sub) playlist of a fixed length and a fixed order. This concept should be used to express static relations, 
@@ -35,6 +35,20 @@ e.g. "those three music tracks must always be played in a row".</rdfs:comment>
     <rdfs:label xml:lang="en">Fixed Playlist</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://purl.org/ontology/pbo/core#Playlist"/>
     <vs:term_status xml:lang="en">testing</vs:term_status>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/ontology/pbo/core#MediaActionCounter">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A media action counter. Media actions are for example play back or skip events.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/pbo/core#"/>
+    <rdfs:label xml:lang="en">Media Action Counter</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/co/core#Counter"/>
+    <vs:term_status xml:lang="en">unstable</vs:term_status>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/ontology/pbo/core#PlayBackCounter">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A play back counter, e.g. to count the playback of a media object.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/pbo/core#"/>
+    <rdfs:label xml:lang="en">Play Back Counter</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/pbo/core#MediaActionCounter"/>
+    <vs:term_status xml:lang="en">unstable</vs:term_status>
   </owl:Class>
   <owl:Class rdf:about="http://purl.org/ontology/pbo/core#Playlist">
     <rdfs:comment xml:lang="en">A playlist of specific media items, e.g. music tracks, videos or slides.</rdfs:comment>
@@ -58,20 +72,20 @@ additional properties. However, it could maybe also included a "sub" playlist, e
     </rdfs:subClassOf>
     <vs:term_status xml:lang="en">testing</vs:term_status>
   </owl:Class>
-  <owl:ObjectProperty rdf:about="http://purl.org/ontology/pbo/core#play_back_counter">
-    <rdfs:comment xml:lang="en">Associates a play back counter of a specific object. A play back counter is related to  specific co:ScrobbleEvent 
-instances, which are the related play back events of an object.</rdfs:comment>
+  <owl:Class rdf:about="http://purl.org/ontology/pbo/core#SkipCounter">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A skip counter, e.g. to count skip events of a media object.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/pbo/core#"/>
-    <rdfs:label xml:lang="en">has play back Counter</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/co/core#event_counter"/>
-    <vs:term_status xml:lang="en">unstable</vs:term_status>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://purl.org/ontology/pbo/core#play_back_object">
-    <rdfs:comment xml:lang="en">Associates a play back object to its related play back counter.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Skip Counter</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/pbo/core#MediaActionCounter"/>
+    <vs:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unstable</vs:term_status>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://purl.org/ontology/pbo/core#media_object">
+    <rdfs:comment xml:lang="en">Associates a media object to its related counter.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/pbo/core#MediaActionCounter"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/pbo/core#"/>
-    <rdfs:label xml:lang="en">has play back object</rdfs:label>
+    <rdfs:label xml:lang="en">has media object</rdfs:label>
     <rdfs:range>
-      <rdf:Description>
+      <owl:Class>
         <owl:unionOf>
           <rdf:Description>
             <rdf:first rdf:resource="http://purl.org/ontology/bibo/Document"/>
@@ -83,13 +97,12 @@ instances, which are the related play back events of an object.</rdfs:comment>
             </rdf:rest>
           </rdf:Description>
         </owl:unionOf>
-      </rdf:Description>
+      </owl:Class>
     </rdfs:range>
     <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/co/core#object"/>
     <vs:term_status xml:lang="en">unstable</vs:term_status>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://purl.org/ontology/pbo/core#playlist">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment xml:lang="en">Associates a playlist to something.</rdfs:comment>
     <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/pbo/core#"/>
@@ -104,7 +117,7 @@ based on bibo:Document or frbr:Endeavour (to keep it somehow media based).</rdfs
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/pbo/core#"/>
     <rdfs:label xml:lang="en">has playlist item</rdfs:label>
     <rdfs:range>
-      <rdf:Description>
+      <owl:Class>
         <owl:unionOf>
           <rdf:Description>
             <rdf:first rdf:resource="http://purl.org/ontology/bibo/Document"/>
@@ -116,7 +129,7 @@ based on bibo:Document or frbr:Endeavour (to keep it somehow media based).</rdfs
             </rdf:rest>
           </rdf:Description>
         </owl:unionOf>
-      </rdf:Description>
+      </owl:Class>
     </rdfs:range>
     <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/olo/core#item"/>
     <owl:inverseOf>
@@ -127,41 +140,11 @@ based on bibo:Document or frbr:Endeavour (to keep it somehow media based).</rdfs
     <vs:term_status xml:lang="en">unstable</vs:term_status>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://purl.org/ontology/pbo/core#playlist_slot">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A specific slot in a playlist.</rdfs:comment>
+    <rdfs:comment xml:lang="en">A specific slot in a playlist.</rdfs:comment>
     <rdfs:domain rdf:resource="http://purl.org/ontology/pbo/core#Playlist"/>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has playlist slot</rdfs:label>
+    <rdfs:label xml:lang="en">has playlist slot</rdfs:label>
     <rdfs:range rdf:resource="http://purl.org/ontology/pbo/core#PlaylistSlot"/>
     <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/olo/core#slot"/>
-    <vs:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">testing</vs:term_status>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://purl.org/ontology/pbo/core#skip_counter">
-    <rdfs:comment xml:lang="en">Associates a skip counter of a specific object. A skip counter is related to  specific co:ScrobbleEvent 
-instances, which are the related skip events of an object.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/pbo/core#"/>
-    <rdfs:label xml:lang="en">has skip counter</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/co/core#event_counter"/>
-    <vs:term_status xml:lang="en">unstable</vs:term_status>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://purl.org/ontology/pbo/core#skip_object">
-    <rdfs:comment xml:lang="en">Associates a skip object to its related skip counter.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/pbo/core#"/>
-    <rdfs:label xml:lang="en">has skip object</rdfs:label>
-    <rdfs:range>
-      <rdf:Description>
-        <owl:unionOf>
-          <rdf:Description>
-            <rdf:first rdf:resource="http://purl.org/ontology/bibo/Document"/>
-            <rdf:rest>
-              <rdf:Description>
-                <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Endeavour"/>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-              </rdf:Description>
-            </rdf:rest>
-          </rdf:Description>
-        </owl:unionOf>
-      </rdf:Description>
-    </rdfs:range>
-    <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/co/core#object"/>
-    <vs:term_status xml:lang="en">unstable</vs:term_status>
+    <vs:term_status xml:lang="en">testing</vs:term_status>
   </owl:ObjectProperty>
 </rdf:RDF>

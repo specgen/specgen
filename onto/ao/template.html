@@ -124,11 +124,11 @@ about="http://purl.org/ontology/ao/associationontology.html" rel="rdfs:seeAlso" 
 of this specification is derived from the <a about="http://purl.org/ontology/ao/associationontology.html" rel="rdfs:seeAlso" href="http://xmlns.com/foaf/spec/">FOAF Vocabulary
 Specification</a>, which was created by <a about="http://purl.org/ontology/ao/associationontology.html" rel="rdfs:seeAlso" href="http://danbri.org/">Dan Brickley</a> and 
 <a about="http://purl.org/ontology/ao/associationontology.html" rel="rdfs:seeAlso" href="http://nicecupoftea.org/">Libby Miller</a>, and the <a 
-about="http://purl.org/ontology/ao/associationontology.html" rel="rdfs:seeAlso" href="http://musicontology.com/">Music Ontology Specification</a>, which was created by Yves Raimond. 
-It was modified and extended by Bob Ferris. Furthermore, a modified and extended version of <a about="http://purl.org/ontology/ao/associationontology.html" rel="rdfs:seeAlso" 
-href="http://svn.foaf-project.org/foaftown/specgen/">Danbri's SpecGen version</a> was used to generate most of the RDFa statements of the Association Ontology for this specification 
-(see <a about="http://purl.org/ontology/ao/associationontology.html" rel="rdfs:seeAlso" href="http://smiy.svn.sourceforge.net/viewvc/smiy/specgen/trunk/">here</a> for SpecGen version 
-6 by Bob Ferris).
+about="http://purl.org/ontology/ao/associationontology.html" rel="rdfs:seeAlso" href="http://musicontology.com/">Music Ontology Specification</a>, which was created by <a 
+about="http://purl.org/ontology/ao/associationontology.html" rel="rdfs:seeAlso" href="http://moustaki.org/">Yves Raimond</a>. It was modified and extended by Bob Ferris. Furthermore, a 
+modified and extended version of <a about="http://purl.org/ontology/ao/associationontology.html" rel="rdfs:seeAlso" href="http://svn.foaf-project.org/foaftown/specgen/">Danbri's SpecGen 
+version</a> was used to generate most of the RDFa statements of the Association Ontology for this specification (see <a about="http://purl.org/ontology/ao/associationontology.html" 
+rel="rdfs:seeAlso" href="http://smiy.svn.sourceforge.net/viewvc/smiy/specgen/trunk/">here</a> for SpecGen version 6 by Bob Ferris).
 </p>
 
 
@@ -160,7 +160,9 @@ href="http://svn.foaf-project.org/foaftown/specgen/">Danbri's SpecGen version</a
   <a id="sec-glance"></a>
   <h2 id="glance">The Association Ontology at a glance</h2>
 
-<p>The <a href="http://purl.org/ontology/similarity/Association"><em>sim:Association</em></a> concept, as graph with relations, as it is extended by this ontology:</p>
+<p>The <a about="http://purl.org/ontology/ao/associationontology.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/similarity/Association"><em>sim:Association</em></a> concept, as 
+graph with relations, as it is extended by this ontology (incl. the relation to <a about="http://purl.org/ontology/ao/associationontology.html" rel="rdfs:seeAlso" 
+href="http://purl.org/stuff/rev#Review"><em>rev:Review</em></a>):</p>
 <div about="http://purl.org/ontology/ao/core#" rel="rdfs:seeAlso">
 <img src="http://smiy.sourceforge.net/ao/gfx/ao_-_association_concept.gif" title="The association concept as graph with relations" alt="The association concept as graph with relations" /></div>
 
@@ -241,16 +243,15 @@ about="http://purl.org/ontology/ao/associationontology.html" rel="rdfs:seeAlso" 
 (<a href="http://purl.org/ontology/ao/associationontology.html#mood"><em>ao:mood</em></a>) categorisations as simple string typed literals. <br/>
 The second association statement (<em>ex:BobsAssociationInUse</em>) is an <a href="http://purl.org/ontology/ao/associationontology.html#LikeableAssociation"><em>ao:LikeableAssociation</em></a> 
 instance that includes (<a href="http://purl.org/ontology/ao/associationontology.html#included_association"><em>ao:included_association</em></a>) a reuseable association statement 
-(<em>ex:BobsAssociation</em>). As the domain specific (but abstract) association relations - <a href="http://purl.org/ontology/ao/associationontology.html#genre"><em>ao:genre</em></a> for 
-genres of all kind, <a href="http://purl.org/ontology/ao/associationontology.html#mood"><em>ao:mood</em></a> for mood description, <a 
-href="http://purl.org/ontology/ao/associationontology.html#occasion"><em>ao:occasion</em></a> for occasion descriptions - have no range, sub properties with specific ranges could be 
-created from them (e.g. <a about="http://purl.org/ontology/ao/associationontology.html" rel="rdfs:seeAlso" href="http://musicontology.com/#term_genre"><em>mo:genre</em></a> for music 
-genres/styles (this isn't currently the case)). To illustrate this use case, the example includes a specific <a about="http://purl.org/ontology/ao/associationontology.html" rel="rdfs:seeAlso" 
-href="http://musicontology.com/#term_Genre"><em>mo:Genre</em></a> instance (<em>ex:Funk</em>) to <em>ex:BobsAssociation</em>.
-Finally, because <em>ex:BobsAssociationInUse</em> is a likeable association statement in the context of the described music playlist (<em>ex:FunkyPlaylist</em>), other people could expressed 
-that they like this association - as it is done in the example by using the relation <a href="http://purl.org/ontology/ao/associationontology.html#likeminded"><em>ao:likeminded</em></a> - or 
-they are able to feedback (e.g. <a about="http://purl.org/ontology/ao/associationontology.html" rel="rdfs:seeAlso" href="http://purl.org/stuff/rev#Feedback"><em>rev:Feedback</em></a>) 
-or rate (<a about="http://purl.org/ontology/ao/associationontology.html" rel="rdfs:seeAlso" href="http://purl.org/stuff/rev#rating"><em>rev:rating</em></a>) it.</p>
+(<em>ex:BobsAssociation</em>). As the domain specific (but abstract) association relations - <a href="http://purl.org/ontology/ao/associationontology.html#genre"><em>ao:genre</em></a>, 
+<a href="http://purl.org/ontology/ao/associationontology.html#mood"><em>ao:mood</em></a>, <a href="http://purl.org/ontology/ao/associationontology.html#occasion"><em>ao:occasion</em></a> - 
+have no range, sub properties with specific ranges could be created from them (e.g. <a about="http://purl.org/ontology/ao/associationontology.html" rel="rdfs:seeAlso" 
+href="http://musicontology.com/#term_genre"><em>mo:genre</em></a> for music genres/styles (this isn't currently the case)). To illustrate this use case, the example includes a specific 
+<a about="http://purl.org/ontology/ao/associationontology.html" rel="rdfs:seeAlso" href="http://musicontology.com/#term_Genre"><em>mo:Genre</em></a> instance (<em>ex:Funk</em>) to 
+<em>ex:BobsAssociation</em>. Finally, because <em>ex:BobsAssociationInUse</em> is a likeable association statement in the context of the described music playlist (<em>ex:FunkyPlaylist</em>), 
+other people could expressed that they like this association - as it is done in the example by using the relation <a href="http://purl.org/ontology/ao/associationontology.html#likeminded">
+<em>ao:likeminded</em></a> - or they are able to feedback (e.g. <a about="http://purl.org/ontology/ao/associationontology.html" rel="rdfs:seeAlso" href="http://purl.org/stuff/rev#Feedback">
+<em>rev:Feedback</em></a>) or rate (<a about="http://purl.org/ontology/ao/associationontology.html" rel="rdfs:seeAlso" href="http://purl.org/stuff/rev#rating"><em>rev:rating</em></a>) it.</p>
 
   <div style="clear: left;"></div>
 
@@ -263,7 +264,34 @@ or rate (<a about="http://purl.org/ontology/ao/associationontology.html" rel="rd
 
   <h2 id="sec-for">What's the Association Ontology for?</h2>
 
-  <p>TODO</p>
+  <p>The <em>Association Ontology</em> combines features of the <a href="http://purl.org/ontology/similarity/">Similarity Ontology</a>, the <a href="http://purl.org/stuff/rev#">Review 
+Ontology</a> and <a href="http://dublincore.org/documents/dcmi-terms/">DCMI Metadata Terms</a>. The intend behind this ontology is to provide a mechanism to append (personal) 
+association statements (<a href="http://purl.org/ontology/similarity/Association"><em>sim:Association</em></a>) to something by using the relation <a 
+href="http://purl.org/ontology/similarity/association"><em>sim:association</em></a>. This step of indirection is neccessary to enable:</p>
+<ul>
+	<li>reusable association statements and</li>
+	<li>voting, rating and reviewing of association statements in a specific context.</li>
+</ul>
+<p>Therefore, the sub class <a href="http://purl.org/ontology/ao/associationontology.html#LikeableAssociation"><em>ao:LikeableAssociation</em></a> was created, which combines the concepts of 
+<a href="http://purl.org/ontology/similarity/Association"><em>sim:Association</em></a> and <a href="http://purl.org/stuff/rev#Review"><em>rev:Review</em></a>. Simple voting (the "like button") 
+can be realized by using the property <a href="http://purl.org/ontology/ao/associationontology.html#likeminded"><em>ao:likeminded</em></a>, which creates a relation between an association statement
+and an individuum (<a href="http://xmlns.com/foaf/spec/#term_Agent"><em>foaf:Agent</em></a>). Ratings and reviews can be realized by using the features of the <a 
+href="http://purl.org/stuff/rev#">Review Ontology</a>, e.g. <a href="http://purl.org/stuff/rev#rating"><em>rev:rating</em></a> or <a href="http://purl.org/stuff/rev#Feedback">
+<em>rev:Feedback</em></a>.<br/>
+To address associations of a specific domain, e.g. genre, mood or occasion, new sub properties based on <a about="http://purl.org/ontology/ao/associationontology.html" rel="rdfs:seeAlso" 
+href="http://dublincore.org/documents/dcmi-terms/#terms-subject"><em>dcterms:subject</em></a> were created. These are:</p>
+<ul>
+	<li><a href="http://purl.org/ontology/ao/associationontology.html#genre"><em>ao:genre</em></a>: a hook for genres descriptions of all kind,</li>
+	<li><a href="http://purl.org/ontology/ao/associationontology.html#mood"><em>ao:mood</em></a>: a hook for mood descriptions and</li>
+	<li><a href="http://purl.org/ontology/ao/associationontology.html#occasion"><em>ao:occasion</em></a>: a hook for occasion descriptions.</li>
+</ul>
+<p>They are intendend to be an abstact and general hook into their specific domains (genre, mood, occasion). Furthermore, new, more specific sub properties based on these properties should 
+be created to provide a hook in more specific domains, e.g. <a href="http://musicontology.com/#term_genre"><em>mo:genre</em></a> for music genres/styles (this sub property relation isn't 
+currently the case).<br/>
+To enable voting, rating and reviewing of a reusable association statement in a specific context, the property <a 
+href="http://purl.org/ontology/ao/associationontology.html#included_association"><em>ao:included_association</em></a> was created. By using this relation one can include a reusable association 
+statement into another association statement (preferable based on <a href="http://purl.org/ontology/ao/associationontology.html#LikeableAssociation"><em>ao:LikeableAssociation</em></a>). 
+Please have also a look at the <a href="#sec-example">example in this document</a>, which illstrates this use case.</p>
 
   <h2 id="sec-bg">Background</h2>
 

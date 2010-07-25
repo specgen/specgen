@@ -1,6 +1,13 @@
 =========================
+Version 0.72 (July 2010)
+=========================
+ * MODIFIED: removed owl:ObjectProperty type and owl:inverseOf from olo:item
+ * MODIFIED: olo:Slot - removed restriction on olo:item
+
+=========================
 Version 0.71 (July 2010)
 =========================
+
  * MODIFIED: added owl:DatatypeProperty to rdf:type of olo:index
  * MODIFIED: added owl:DatatypeProperty to rdf:type of olo:length
  * REMOVED: anonymous defined inverse properties from olo:index and olo:length

@@ -1,0 +1,47 @@
+=========================
+Version 0.42 (July 2010)
+=========================
+ * MODIFIED: pbo:playlist - removed rdf:Property from property types
+
+=========================
+Version 0.41 (July 2010)
+=========================
+ * ADDED: owl:Class as type to all owl:unionOf statements
+
+=========================
+Version 0.4 (July 2010)
+=========================
+ * CHANGED: (back) pbo:play_back_counter to pbo:PlayBackCounter, which is a sub class of co:Counter
+ * CHANGED: (back) pbo:skip_counter to pbo:SkipCounter, which is a sub class of co:Counter
+ * CHANGED: pbo:play_back_object and pbo:skip_object are now merged into one property: pbo:media_object (range: bibo:Document + frbr:Endeavour)
+ * ADDED: pbo:MediaActionCounter - as abstract concept for media action counters
+ 
+=========================
+Version 0.3 (July 2010)
+=========================
+* ADDED: pbo:FixedPlaylist - to express static relations, e.g. "those three music tracks must always be played in a row"
+* REMOVED: pbo:occassion - outsourced to Association Ontology (http://purl.org/ontology/ao/core#)
+
+=========================
+Version 0.2 (July 2010)
+=========================
+ * CHANGED: pbo:PlayBackCounter to pbo:play_back_counter, which is a owl:ObjectProperty
+ * CHANGED: pbo:SkipCounter to pbo:skip_counter, which is a owl:ObjectProperty
+ * ADDED: pbo:play_back_object - to associate a specific play back object to its play back counter
+ * ADDED: pbo:skip_counter_object - to associate a specific skip object to its skip counter
+ * MODIFIED: pbo:Playlist now also a sub class of bibo:Document
+ * MODIFIED: removed pbo:Playlist from union range of pbo:playlist_item
+ * ADDED: pbo:playlist_slot - to associate pbo:PlaylistSlot instances to a pbo:Playlist instance
+ * ADDED: pbo:playlist - to associate a pbo:Playlist instance to owl:Thing (based )instances, which are related to this pbo:Playlist
+          instance
+
+=========================
+Version 0.1 (July 2010)
+=========================
+ * ADDED: pbo:PlayBackCounter - a explicitly named play back counter
+ * ADDED: pbo:SkipCounter - a explicitly named skip counter
+ * ADDED: pbo:Playlist - a playlist concept modelled as ordered list, with additional properties, e.g. genre, mood, occasion
+ * ADDED: pbo:PlaylistSlot - a playlist slot, with probably additional properties and specifically typed items inside
+ * ADDED: pbo:playlist_item - a property to related specifically typed items to a playlist (currently bibo:Document, 
+          frbr:Endeavour, pbo:Playlist)
+ * ADDED: pbo:occasion - an occasion for which a playlist was created

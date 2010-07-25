@@ -1,4 +1,10 @@
 =========================
+Version 0.7 (July 2010)
+=========================
+ * ADDED: co:application -for relating applications to a scrobble event
+ * ADDED: co:device - for relating devices to a scrobble event
+ 
+=========================
 Version 0.61 (July 2010)
 =========================
  * MODIFIED: added owl:DatatypeProperty to co:count

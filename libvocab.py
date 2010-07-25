@@ -9,6 +9,7 @@
 #		+ classes and properties from other namespaces
 #		+ inverse properties (explicit and anonymous)
 #		+ sub properties
+#		+ union ranges
 #
 #		Copyright 2010 Bob Ferris <http://smiy.wordpress.com/author/zazi0815/>
 #
@@ -262,7 +263,10 @@ class Vocab(object):
 					"http://purl.org/ontology/is/core#"             : "is",
 					"http://purl.org/ontology/similarity/"          : "sim",
 					"http://purl.org/stuff/rev#"                    : "rev",
-					"http://purl.org/ontology/ao/core#"             : "ao"
+					"http://purl.org/ontology/ao/core#"             : "ao",
+					"http://purl.org/ontology/bibo/"                : "bibo",
+					"http://purl.org/vocab/frbr/core#"              : "frbr",
+					"http://purl.org/ontology/pbo/core#"            : "pbo"
 		}
 
 
@@ -915,11 +919,78 @@ class VocabReport(object):
   					# print "range ",range
   					# print "rangenice ",rangenice
   					# check niceName result
-  					# TODO: handle other range types (owl:Union, ...)
+  					# TODO: handle other range types
   					colon = rangenice.find(':')
   					if colon > 0:
   						termStr = """<span rel="rdfs:range" href="%s"><a href="%s">%s</a></span>\n""" % (range, range, rangenice)
   						contentStr = "%s %s" % (contentStr, termStr)
+  					else:
+  						# that will be a huge hack now
+  						# 1st: pick out the union range and its list bnode
+  						q2 = 'SELECT ?r ?url ?urli ?urlipt WHERE {<%s> rdfs:range ?r . ?r <http://www.w3.org/2002/07/owl#unionOf> ?url . ?url ?urlipt ?urli } ' % (term.uri)
+  						print "try to fetch union range with ", q2
+  						relations2 = g.query(q2)
+  						
+  						contentStr2 = ''
+  						termStr2 = ''
+  						listbnode = ''
+  						urfirstlistitem = ''
+  						urnextlistbnode = ''
+  						urfirstlistitemnice = ''
+  						rangebnode = ''
+  						for (range, list, listitem, listitempropertytype) in relations2:
+  							# print "list ", list , " :: listitem " , listitem , " :: listitempropertytype " , listitempropertytype
+  							listbnode = list
+  							rangebnode = range
+  							if (str(listitempropertytype) == "http://www.w3.org/1999/02/22-rdf-syntax-ns#first"):
+  								urfirstlistitem = listitem
+  								urfirstlistitemnice = self.vocab.niceName(urfirstlistitem)
+  								print "listitem ", urfirstlistitem
+  							if (str(listitempropertytype) == "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"):
+  								urnextlistbnode = listitem
+  								print "urnextlistbnode ", urnextlistbnode
+  						
+  						termStr2 = """<span about="[_:%s]" typeof="rdf:Description"></span>
+  									<span about="[_:%s]" rel="rdf:first" href="%s"><a href="%s">%s</a></span>
+  									<span about="[_:%s]" rel="rdf:rest" resource="[_:%s]"></span>""" % (listbnode, listbnode, urfirstlistitem, urfirstlistitem, urfirstlistitemnice, listbnode, urnextlistbnode)
+  						contentStr2 = "%s %s" % (contentStr2, termStr2)
+  						
+  						# 2nd: go down the list and collect all list items
+  						if(urnextlistbnode != ""):
+  							oldlistbnode = ''
+  							termstr3 = ''
+  							while (str(urnextlistbnode) != "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"):
+  								q3 = 'SELECT ?urnlbn ?urlipt ?urli WHERE {?lbn <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <%s> . ?lbn <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> ?urnlbn . ?urnlbn ?urlipt ?urli } ' % (urfirstlistitem)
+  								print "try to fetch more lists with " , q3
+  								relations3 = g.query(q3)
+  									
+  								oldlistbnode = urnextlistbnode
+  								for (urnlbn, listitempropertytype, listitem) in relations3:
+  									print "what to do next with urnlbn " , urnlbn , " :: listitempropertytype " , listitempropertytype , " :: listitem " , listitem , " :: urnextlistbnode " , urnextlistbnode
+  									# to check the bnode of the list in the union range
+  									if(str(urnlbn) == str(oldlistbnode)):
+  										if (str(listitempropertytype) == "http://www.w3.org/1999/02/22-rdf-syntax-ns#first"):
+  											urfirstlistitem = listitem
+  											urfirstlistitemnice = self.vocab.niceName(urfirstlistitem)
+  											termStr2 = """<span about="[_:%s]" typeof="rdf:Description"></span>
+  														<span about="[_:%s]" rel="rdf:first" href="%s"><a href="%s">%s</a></span>""" % (oldlistbnode, oldlistbnode, urfirstlistitem, urfirstlistitem, urfirstlistitemnice)
+  											print "new listitem ", urfirstlistitem
+  										if (str(listitempropertytype) == "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"):
+  											urnextlistbnode = listitem
+  											if(str(urnextlistbnode) != "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"):
+  												termStr3 = """<span about="[_:%s]" rel="rdf:rest" resource="[_:%s]"></span>""" % (oldlistbnode, urnextlistbnode)
+  											else:
+  												termStr3 = """<span about="[_:%s]" rel="rdf:rest" href="%s"></span>""" % (oldlistbnode, urnextlistbnode)
+  											print "new urnextlistbnode ", urnextlistbnode
+  								
+  								contentStr2 = "%s or %s %s" % (contentStr2, termStr2, termStr3)
+  							
+  							print "here I am"
+  						
+  						termStr = """<span rel="rdfs:range" resource="[_:%s]"></span>
+  									<span about="[_:%s]" typeof="owl:Class"></span>
+  									<span about="[_:%s]" rel="owl:unionOf" resource="[_:%s]"></span>""" % (rangebnode, rangebnode, rangebnode, listbnode)
+  						contentStr = "%s %s %s" % (contentStr, termStr, contentStr2)
 
   				if contentStr != "":
   					rangesOfProperty = "%s <td> %s </td></tr>" % (startStr, contentStr)

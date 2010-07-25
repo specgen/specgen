@@ -32,22 +32,22 @@ version="XHTML+RDFa 1.0">
 </head>
 
 <body>
-  <h1><span about="http://purl.org/ontology/co/core#" property="dc:title">The Counter Ontology</span> <span about="http://purl.org/ontology/co/core#" property="owl:versionInfo" datatype="xsd:decimal">0.61</span></h1>
+  <h1><span about="http://purl.org/ontology/co/core#" property="dc:title">The Counter Ontology</span> <span about="http://purl.org/ontology/co/core#" property="owl:versionInfo" datatype="xsd:decimal">0.7</span></h1>
 
-  <h2>Namespace Document <span about="http://purl.org/ontology/co/core#" property="dc:date" content="2010-07-20T17:01:52+01:00" datatype="xsd:dateTime">20 July 2010</span></h2>
+  <h2>Namespace Document <span about="http://purl.org/ontology/co/core#" property="dc:date" content="2010-07-24T16:00:52+01:00" datatype="xsd:dateTime">24 July 2010</span></h2>
 <table class="header" border="0">
   <tr>
     <td>
   		<dl>
     		<dt>This version:</dt>
     		<dd><a about="http://purl.org/ontology/co/counterontology.html" rel="dc:hasVersion" 
-			rev="dc:isVersionOf" href="http://purl.org/ontology/co/20100720/counterontology.html">http://purl.org/ontology/co/20100720/counterontology.html</a> (<a href="http://purl.org/ontology/co/20100720/counterontology.owl">OWL</a>, <a href="http://purl.org/ontology/co/20100720/counterontology.n3">N3</a>)</dd>
+			rev="dc:isVersionOf" href="http://purl.org/ontology/co/20100724/counterontology.html">http://purl.org/ontology/co/20100724/counterontology.html</a> (<a href="http://purl.org/ontology/co/20100724/counterontology.owl">OWL</a>, <a href="http://purl.org/ontology/co/20100724/counterontology.n3">N3</a>)</dd>
 
     		<dt>Latest version:</dt>
     		<dd><a href="http://purl.org/ontology/co/core#">http://purl.org/ontology/co/core#</a> (<a href="http://purl.org/ontology/co/counterontology.owl">OWL</a>, <a href="http://purl.org/ontology/co/counterontology.n3">N3</a>)</dd>
 
     		<dt>Previous version:</dt>
-    		<dd><a href="http://purl.org/ontology/co/20100709/counterontology.html">http://purl.org/ontology/co/20100709/counterontology.html</a> (<a href="http://purl.org/ontology/co/20100709/counterontology.owl">OWL</a>, <a href="http://purl.org/ontology/co/20100709/counterontology.n3">N3</a>)</dd>
+    		<dd><a href="http://purl.org/ontology/co/20100720/counterontology.html">http://purl.org/ontology/co/20100720/counterontology.html</a> (<a href="http://purl.org/ontology/co/20100720/counterontology.owl">OWL</a>, <a href="http://purl.org/ontology/co/20100720/counterontology.n3">N3</a>)</dd>
 
     		<dt>Authors:</dt>
     		<dd><a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://moustaki.org/">Yves Raimond</a> (<a href="http://www.bbc.co.uk">BBC</a>),<br/>
@@ -166,6 +166,10 @@ href="http://svn.foaf-project.org/foaftown/specgen/">Danbri's SpecGen version</a
 <p>The <a href="http://purl.org/ontology/co/counterontology.html#Counter"><em>co:Counter</em></a> concept as graph with relations:</p>
 <div about="http://purl.org/ontology/co/core#" rel="rdfs:seeAlso">
 <img src="http://smiy.sourceforge.net/co/gfx/co_-_Counter_graph.gif" title="The counter concept as graph with relations" alt="The counter concept as graph with relations" /></div>
+
+<p>The <a href="http://purl.org/ontology/co/counterontology.html#ScrobbleEvent"><em>co:ScrobbleEvent</em></a> concept as graph with relations:</p>
+<div about="http://purl.org/ontology/co/core#" rel="rdfs:seeAlso">
+<img src="http://smiy.sourceforge.net/co/gfx/co_-_ScrobbleEvent.gif" title="The scrobble event concept as graph with relations" alt="The scrobble event concept as graph with relations" /></div>
 
  <p>An a-z index of <em>Counter Ontology</em> terms, by class (categories or types) and by property.</p>
  
@@ -381,6 +385,12 @@ specification, and last but not least, Toby Inkster for providing the web counte
 <h2 id="sec-changes">Recent Changes</h2>
 
 <pre>=========================
+Version 0.7 (July 2010)
+=========================
+ * ADDED: co:application -for relating applications to a scrobble event
+ * ADDED: co:device - for relating devices to a scrobble event
+ 
+=========================
 Version 0.61 (July 2010)
 =========================
  * MODIFIED: added owl:DatatypeProperty to co:count
