@@ -1,4 +1,9 @@
 =========================
+Version 0.5 (July 2010)
+=========================
+ * ADDED: pbo:SkipEvent - to describe skip event specific things.
+ * ADDED: pbo:skip_time - to describe the skip time of a media object, e.g. an instant of a timeline of an audio signal
+=========================
 Version 0.42 (July 2010)
 =========================
  * MODIFIED: pbo:playlist - removed rdf:Property from property types

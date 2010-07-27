@@ -1,6 +1,7 @@
-# Saved by TopBraid on Sun Jul 25 18:56:49 CEST 2010
+# Saved by TopBraid on Tue Jul 27 18:12:11 CEST 2010
 # baseURI: http://purl.org/ontology/pbo/core#
 # imports: http://purl.org/ontology/olo/core
+# imports: http://purl.org/NET/c4dm/event.owl
 # imports: http://purl.org/ontology/bibo/
 # imports: http://purl.org/dc/elements/1.1/
 # imports: http://www.w3.org/2003/06/sw-vocab-status/ns
@@ -19,16 +20,17 @@
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix time:	<http://www.w3.org/2006/time#> .
 
 pbo:  rdf:type owl:Ontology ;
       dc:creator <http://foaf.me/zazi#me> ;
-      dc:date "2010-07-25T17:56:52+01:00"^^xsd:dateTime ;
+      dc:date "2010-07-27T16:50:52+01:00"^^xsd:dateTime ;
       dc:description """The Play Back Ontology specification provides basic concepts and properties 
-for describing a concepts that are related to the play back domain, e.g. an playlist, play back count and skip counter 
+for describing concepts that are related to the play back domain, e.g. an playlist, play back count and skip counter 
 on/ for the Semantic Web. This document contains a RDF description of the Play Back Ontology."""@en ;
       dc:title "The Play Back Ontology"@en ;
-      owl:imports bibo: , <http://purl.org/ontology/olo/core> , <http://www.w3.org/2003/06/sw-vocab-status/ns> , <http://purl.org/vocab/frbr/core> , <http://purl.org/ontology/co/core> , dc: ;
-      owl:versionInfo 0.42 .
+      owl:imports <http://purl.org/NET/c4dm/event.owl> , bibo: , <http://purl.org/ontology/olo/core> , <http://www.w3.org/2003/06/sw-vocab-status/ns> , <http://purl.org/vocab/frbr/core> , <http://purl.org/ontology/co/core> , dc: ;
+      owl:versionInfo 0.5 .
 
 pbo:FixedPlaylist
       rdf:type owl:Class ;
@@ -60,7 +62,7 @@ pbo:Playlist
       rdfs:comment "A playlist of specific media items, e.g. music tracks, videos or slides."@en ;
       rdfs:isDefinedBy pbo: ;
       rdfs:label "Playlist"@en ;
-      rdfs:subClassOf olo:OrderedList , bibo:Document ;
+      rdfs:subClassOf bibo:Document , olo:OrderedList ;
       vs:term_status "unstable"@en .
 
 pbo:PlaylistSlot
@@ -84,6 +86,14 @@ pbo:SkipCounter
       rdfs:label "Skip Counter"^^xsd:string ;
       rdfs:subClassOf pbo:MediaActionCounter ;
       vs:term_status "unstable"^^xsd:string .
+
+pbo:SkipEvent
+      rdf:type owl:Class ;
+      rdfs:comment "A specific skip event of something."^^xsd:string ;
+      rdfs:isDefinedBy pbo: ;
+      rdfs:label "Skip Event"^^xsd:string ;
+      rdfs:subClassOf co:ScrobbleEvent ;
+      vs:term_status "testing"^^xsd:string .
 
 pbo:media_object
       rdf:type owl:ObjectProperty ;
@@ -133,3 +143,13 @@ pbo:playlist_slot
       rdfs:range pbo:PlaylistSlot ;
       rdfs:subPropertyOf olo:slot ;
       vs:term_status "testing"@en .
+
+pbo:skip_time
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The moment, when someone skipped the media object, e.g. an instant of a timeline of an audio signal."^^xsd:string ;
+      rdfs:domain pbo:SkipEvent ;
+      rdfs:isDefinedBy pbo: ;
+      rdfs:label "has skip time"^^xsd:string ;
+      rdfs:range <http://www.w3.org/2006/time#TemporalEntity> ;
+      rdfs:subPropertyOf <http://purl.org/NET/c4dm/event.owl#factor> ;
+      vs:term_status "testing"^^xsd:string .

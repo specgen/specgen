@@ -266,6 +266,7 @@ class Vocab(object):
 					"http://purl.org/ontology/ao/core#"             : "ao",
 					"http://purl.org/ontology/bibo/"                : "bibo",
 					"http://purl.org/vocab/frbr/core#"              : "frbr",
+					"http://www.w3.org/2006/time#"                  : "time",
 					"http://purl.org/ontology/pbo/core#"            : "pbo"
 		}
 
