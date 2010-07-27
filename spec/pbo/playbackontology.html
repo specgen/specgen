@@ -109,7 +109,7 @@ version="XHTML+RDFa 1.0">
 <h2 id="sec-status">Abstract</h2>
 <p about="http://purl.org/ontology/pbo/core#" property="dc:decription">
 The <em>Play Back Ontology</em> specification provides basic concepts and properties 
-for describing a concepts that are related to the play back domain, e.g. an playlist, play back count and skip counter, on/ for 
+for describing concepts that are related to the play back domain, e.g. an playlist, play back count and skip counter, on/ for 
 the Semantic Web. This document contains a RDFa description of the <em>Play Back Ontology</em> and some additional information and examples.
 </p>
 
@@ -242,7 +242,7 @@ ex:Funk a mo:Genre .
 </pre>
   </div>
 
-  <p>This examples shows a music playlist, which is modelled as <a href="http://purl.org/ontology/pbo/playbackontology.html#Playlist"><em>pbo:Playlist</em></a> instance. The playlist is 
+  <p>This examples shows a music playlist, which is modeled as <a href="http://purl.org/ontology/pbo/playbackontology.html#Playlist"><em>pbo:Playlist</em></a> instance. The playlist is 
 annotated with further editoral metadata, e.g. a title, a description and a creator, and has a fixed length (<a about="http://purl.org/ontology/pbo/playbackontology.html" rel="rdfs:seeAlso" 
 href="http://purl.org/ontology/olo/orderedlistontology.html#length"><em>olo:length</em></a>) that represents the number of slots this specific ordered list (<a 
 about="http://purl.org/ontology/pbo/playbackontology.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/olo/orderedlistontology.html#OrderedList"><em>olo:OrderedList</em></a>) instance 
@@ -250,11 +250,11 @@ consist of. Each slot is modelled as <a href="http://purl.org/ontology/pbo/playb
 about="http://purl.org/ontology/pbo/playbackontology.html" rel="rdfs:seeAlso" href="http://bibotools.googlecode.com/svn/bibo-ontology/trunk/doc/classes/Document___-538479979.html">
 <em>bibo:Document</em></a> or <a about="http://purl.org/ontology/pbo/playbackontology.html" rel="rdfs:seeAlso" href="http://vocab.org/frbr/core.html#Endeavour"><em>frbr:Endeavour</em></a> 
 based concepts) are in the playlist. This is especially realized by the range restriction of <a href="http://purl.org/ontology/pbo/playbackontology.html#playlist_item"><em>pbo:playlist_item</em></a>. 
-In the example this items are <a about="http://purl.org/ontology/pbo/playbackontology.html" rel="rdfs:seeAlso" href="http://musicontology.com/#term_Track"><em>mo:Track</em></a> instances. 
+In the example these items are <a about="http://purl.org/ontology/pbo/playbackontology.html" rel="rdfs:seeAlso" href="http://musicontology.com/#term_Track"><em>mo:Track</em></a> instances. 
 Furthermore, a playlist can be annotated with association statements (<a about="http://purl.org/ontology/pbo/playbackontology.html" rel="rdfs:seeAlso" 
 href="http://purl.org/ontology/similarity/Association"><em>sim:Association</em></a> based) related by <a about="http://purl.org/ontology/pbo/playbackontology.html" rel="rdfs:seeAlso" 
 href="http://purl.org/ontology/similarity/association"><em>sim:association</em></a>. Please have a look at the <a about="http://purl.org/ontology/pbo/playbackontology.html" rel="rdfs:seeAlso" 
-href="http://purl.org/ontology/ao/associationontology.html#sec-example">example on the <em>Association Ontology</em> specification</a> for an explaination of these statements.</p>
+href="http://purl.org/ontology/ao/associationontology.html#sec-example">example on the <em>Association Ontology</em> specification</a> for an explanation of these statements.</p>
  
    <p>RDF/Turtle representation of a play back and skip counter created with the <em>Play Back Ontology</em> (see also <a about="http://purl.org/ontology/pbo/playbackontology.html" 
   rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/pbo/examples/RDF/playback_and_skip_counter_-_example.rdf">RDF</a> and <a about="http://purl.org/ontology/pbo/playbackontology.html" 
@@ -270,8 +270,8 @@ href="http://purl.org/ontology/ao/associationontology.html#sec-example">example 
 @prefix ex:      &lt;http://example.org/&gt; .
 @prefix event:   &lt;http://purl.org/NET/c4dm/event.owl#&gt; .
 @prefix time:    &lt;http://www.w3.org/2006/time#&gt; .
-@prefix am:      &lt;http://vocab.deri.ie/am#&lt; .
-@prefix owl:     &lt;http://www.w3.org/2002/07/owl#&lt; .
+@prefix am:      &lt;http://vocab.deri.ie/am#&gt; .
+@prefix owl:     &lt;http://www.w3.org/2002/07/owl#&gt; .
 &nbsp;
 ex:PlayBackCounter a pbo:PlayBackCounter ;
 &nbsp;&nbsp;&nbsp;dc:title "Play Back Counter"^^xsd:string ;
@@ -336,7 +336,7 @@ href="http://purl.org/ontology/co/counterontology.html#ScrobbleEvent"><em>co:Scr
 about="http://purl.org/ontology/pbo/playbackontology.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/co/counterontology.html#event_counter"><em>co:event_counter</em></a>. This 
 happened also, when this specific music track was skipped. The only difference is that such an event is related to its skip counter <a 
 href="http://purl.org/ontology/pbo/playbackontology.html#SkipCounter"><em>pbo:SkipCounter</em></a>.<br/>
-To describe a scrobble events more in detail (besides <a about="http://purl.org/ontology/pbo/playbackontology.html" rel="rdfs:seeAlso" 
+To describe scrobble events more in detail (besides <a about="http://purl.org/ontology/pbo/playbackontology.html" rel="rdfs:seeAlso" 
 href="http://motools.sourceforge.net/event/event.html#term_time"><em>event:time</em></a> and <a about="http://purl.org/ontology/pbo/playbackontology.html" rel="rdfs:seeAlso" 
 href="http://motools.sourceforge.net/event/event.html#term_agent"><em>event:agent</em></a>), one can add properties such as <a about="http://purl.org/ontology/pbo/playbackontology.html" 
 rel="rdfs:seeAlso" href="http://purl.org/ontology/co/counterontology.html#application"><em>co:application</em></a> (to describe the application, which is related to the scrobbling activity, 
@@ -354,7 +354,39 @@ e.g. <em>ex:iTunes</em>) or <a about="http://purl.org/ontology/pbo/playbackontol
 
   <h2 id="sec-for">What's the Play Back Ontology for?</h2>
 
-  <p>TODO</p>
+  <p>The <em>Play Back Ontology</em> provides basic concepts and properties for describing concepts that are related to the <em>play back domain</em>, e.g. a <a 
+  href="http://purl.org/ontology/pbo/playbackontology.html#Playlist">playlist</a>, <a href="http://purl.org/ontology/pbo/playbackontology.html#PlayBackCounter">play back</a> and <a 
+  href="http://purl.org/ontology/pbo/playbackontology.html#SkipCounter">skip counter</a>, on/ for the Semantic Web.</p>
+
+<blockquote>The <strong>play back domain</strong> could be seen as a subset of the <em>media domain</em> - it deals with playing back some media, e.g. videos, music tracks or slideshows, 
+somehow.</blockquote>
+
+<p>On the basis of this definition the objects that are included into this domain are <em>media objects</em>. That means all concepts of the <em>Play Back Ontology</em> are somehow related to 
+at least one <em>media object</em>. The range of these <em>media objects</em> is currently restricted to the concepts <a 
+href="http://bibotools.googlecode.com/svn/bibo-ontology/trunk/doc/classes/Document___-538479979.html"><em>bibo:Document</em></a> and <a href="http://vocab.org/frbr/core.html#Endeavour">
+<em>frbr:Endeavour</em></a>, incl. all their sub classes, e.g. <a href="http://musicontology.com/#term_Track"><em>mo:Track</em></a>.<br/>
+The <a href="http://purl.org/ontology/pbo/playbackontology.html#Playlist"><em>pbo:Playlist</em></a> concept is a sub class of <a 
+href="http://purl.org/ontology/olo/orderedlistontology.html#OrderedList"><em>olo:OrderedList</em></a> and hence, a specialized ordered list of the <em>media domain</em>. Therefore, a <a 
+href="http://purl.org/ontology/pbo/playbackontology.html#Playlist"><em>pbo:Playlist</em></a> instance consists of <a href="http://purl.org/ontology/pbo/playbackontology.html#PlaylistSlot">
+<em>pbo:PlaylistSlot</em></a> instances (related by <a href="http://purl.org/ontology/pbo/playbackontology.html#playlist_slot"><em>pbo:playlist_slot</em></a>), which are related to at least 
+one <em>media item</em> by using the property <a href="http://purl.org/ontology/pbo/playbackontology.html#playlist_item"><em>pbo:playlist_item</em></a>. <a 
+href="http://purl.org/ontology/pbo/playbackontology.html#Playlist"><em>pbo:Playlist</em></a> has a further sub class, <a 
+href="http://purl.org/ontology/pbo/playbackontology.html#FixedPlaylist"><em>pbo:FixedPlaylist</em></a>, to described playlists or sections of playlists, which have a strict order, e.g. a 
+section of music tracks that should be played always one after another, or that are somehow related to each other. Furthermore, <a 
+href="http://purl.org/ontology/pbo/playbackontology.html#Playlist"><em>pbo:Playlist</em></a> instances can be related to something by using the property <a 
+href="http://purl.org/ontology/pbo/playbackontology.html#playlist"><em>pbo:playlist</em></a>.<br/>
+The <em>Play Back Ontology</em> consists further more of a couple of <em>media action counters</em>, which are represented by <a 
+href="http://purl.org/ontology/pbo/playbackontology.html#MediaActionCounter"><em>pbo:MediaActionCounter</em></a>. Sub classes of this concept are <a 
+href="http://purl.org/ontology/pbo/playbackontology.html#PlayBackCounter"><em>pbo:PlayBackCounter</em></a> and <a href="http://purl.org/ontology/pbo/playbackontology.html#SkipCounter">
+<em>pbo:SkipCounter</em></a>. Due to the property <a href="http://purl.org/ontology/pbo/playbackontology.html#media_object"><em>pbo:media_object</em></a>, which is a sub property of <a 
+href="http://purl.org/ontology/co/counterontology.html#object"><em>co:object</em></a>, it is possible to only associate <em>media objects</em> to <a 
+href="http://purl.org/ontology/pbo/playbackontology.html#MediaActionCounter"><em>pbo:MediaActionCounter</em></a> instances.<br/>
+The <em>Play Back Ontology</em> and the illustrated examples above demonstrates the reutilization, specialization and application of concepts of existing ontologies (<a 
+href="http://smiy.wordpress.com/2010/07/15/the-ordered-list-ontology/"><em>Ordered List Ontology</em></a>, <a href="http://smiy.wordpress.com/2010/07/26/the-counter-ontology/"><em>Counter 
+Ontology</em></a>, <a href="http://smiy.wordpress.com/2010/07/26/the-association-ontology/"><em>Association Ontology</em></a>, <a href="http://musicontology.com/"><em>Music Ontology</em></a>, 
+<a href="http://purl.org/ontology/similarity/"><em>Similarity Ontology</em></a>, <a href="http://dublincore.org/documents/dcmi-terms/"><em>DCMI Metadata Terms</em></a>, ...). Please feel free 
+to create further, more specialized concepts and properties, which are based on the introduced ontologies, e.g. describing transition of music tracks in dj mixes (as discussed <a 
+href="http://groups.google.com/group/music-ontology-specification-group/browse_thread/thread/74fca26198abf7ee">here</a>).</p>
 
   <h2 id="sec-bg">Background</h2>
 
@@ -455,10 +487,10 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
 </td></tr> <tr><th>Sub class of</th>
  <td>  <span rel="rdfs:subClassOf" href="http://purl.org/ontology/olo/core#Slot"><a href="http://purl.org/ontology/olo/core#Slot">olo:Slot</a></span>
  </td></tr><tr><th class="restrictions">Restriction(s):</th>
- <td>  <span about ="http://purl.org/ontology/pbo/core#PlaylistSlot" rel="rdfs:subClassOf" resource="[_:xQjMxmWA3]"></span>
- <span about="[_:xQjMxmWA3]" typeof="owl:Restriction"></span>The property 
-  									<span about="[_:xQjMxmWA3]" rel="owl:onProperty" href="http://purl.org/ontology/pbo/core#playlist_item"><a href="#playlist_item">pbo:playlist_item</a></span> must be set <em>at least</em> 
-  									<span about="[_:xQjMxmWA3]" property="owl:minCardinality" datatype="xsd:nonNegativeInteger" >1</span> time(s) 
+ <td>  <span about ="http://purl.org/ontology/pbo/core#PlaylistSlot" rel="rdfs:subClassOf" resource="[_:igcXGTba3]"></span>
+ <span about="[_:igcXGTba3]" typeof="owl:Restriction"></span>The property 
+  									<span about="[_:igcXGTba3]" rel="owl:onProperty" href="http://purl.org/ontology/pbo/core#playlist_item"><a href="#playlist_item">pbo:playlist_item</a></span> must be set <em>at least</em> 
+  									<span about="[_:igcXGTba3]" property="owl:minCardinality" datatype="xsd:nonNegativeInteger" >1</span> time(s) 
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/pbo/core#"></span>
  </td></tr><tr><th colspan="2">OWL Class</th>
@@ -479,8 +511,8 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			<tr><th>Sub class of</th>
  <td>  <span rel="rdfs:subClassOf" href="http://purl.org/ontology/co/core#Counter"><a href="http://purl.org/ontology/co/core#Counter">co:Counter</a></span>
  </td></tr><tr><th>Has sub class</th>
- <td>  <a href="#SkipCounter">Skip Counter</a>
- <a href="#PlayBackCounter">Play Back Counter</a>
+ <td>  <a href="#PlayBackCounter">Play Back Counter</a>
+ <a href="#SkipCounter">Skip Counter</a>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/pbo/core#"></span>
  </td></tr><tr><th colspan="2">OWL Class</th>
@@ -516,8 +548,8 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			<tr><th>Used with:</th>
  <td>  <a href="#playlist">playlist</a>
 </td></tr> <tr><th>Sub class of</th>
- <td>  <span rel="rdfs:subClassOf" href="http://purl.org/ontology/olo/core#OrderedList"><a href="http://purl.org/ontology/olo/core#OrderedList">olo:OrderedList</a></span>
- <span rel="rdfs:subClassOf" href="http://purl.org/ontology/bibo/Document"><a href="http://purl.org/ontology/bibo/Document">bibo:Document</a></span>
+ <td>  <span rel="rdfs:subClassOf" href="http://purl.org/ontology/bibo/Document"><a href="http://purl.org/ontology/bibo/Document">bibo:Document</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/ontology/olo/core#OrderedList"><a href="http://purl.org/ontology/olo/core#OrderedList">olo:OrderedList</a></span>
  </td></tr><tr><th>Has sub class</th>
  <td>  <a href="#FixedPlaylist">Fixed Playlist</a>
  </td></tr>
@@ -593,12 +625,12 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  <td> <span rel="rdfs:domain" href="http://purl.org/ontology/pbo/core#MediaActionCounter"><a href="#MediaActionCounter">Media Action Counter</a></span>
 </td></tr>
   			<tr><th>Range:</th>
- <td>  <span rel="rdfs:range" resource="[_:xQjMxmWA4]"></span>
-  									<span about="[_:xQjMxmWA4]" typeof="owl:Class"></span>
-  									<span about="[_:xQjMxmWA4]" rel="owl:unionOf" resource="[_:xQjMxmWA5]"></span>  <span about="[_:xQjMxmWA5]" typeof="rdf:Description"></span>
-  									<span about="[_:xQjMxmWA5]" rel="rdf:first" href="http://purl.org/ontology/bibo/Document"><a href="http://purl.org/ontology/bibo/Document">bibo:Document</a></span>
-  									<span about="[_:xQjMxmWA5]" rel="rdf:rest" resource="[_:xQjMxmWA6]"></span> or <span about="[_:xQjMxmWA6]" typeof="rdf:Description"></span>
-  														<span about="[_:xQjMxmWA6]" rel="rdf:first" href="http://purl.org/vocab/frbr/core#Endeavour"><a href="http://purl.org/vocab/frbr/core#Endeavour">frbr:Endeavour</a></span> <span about="[_:xQjMxmWA6]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr><tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:range" resource="[_:igcXGTba4]"></span>
+  									<span about="[_:igcXGTba4]" typeof="owl:Class"></span>
+  									<span about="[_:igcXGTba4]" rel="owl:unionOf" resource="[_:igcXGTba5]"></span>  <span about="[_:igcXGTba5]" typeof="rdf:Description"></span>
+  									<span about="[_:igcXGTba5]" rel="rdf:first" href="http://purl.org/ontology/bibo/Document"><a href="http://purl.org/ontology/bibo/Document">bibo:Document</a></span>
+  									<span about="[_:igcXGTba5]" rel="rdf:rest" resource="[_:igcXGTba6]"></span> or <span about="[_:igcXGTba6]" typeof="rdf:Description"></span>
+  														<span about="[_:igcXGTba6]" rel="rdf:first" href="http://purl.org/vocab/frbr/core#Endeavour"><a href="http://purl.org/vocab/frbr/core#Endeavour">frbr:Endeavour</a></span> <span about="[_:igcXGTba6]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr><tr><th>Sub property of</th>
  <td>  <span rel="rdfs:subPropertyOf" href="http://purl.org/ontology/co/core#object"><a href="http://purl.org/ontology/co/core#object">co:object</a></span>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/pbo/core#"></span>
@@ -617,17 +649,17 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  <td> <span rel="rdfs:domain" href="http://purl.org/ontology/pbo/core#PlaylistSlot"><a href="#PlaylistSlot">Playlist Slot</a></span>
 </td></tr>
   			<tr><th>Range:</th>
- <td>  <span rel="rdfs:range" resource="[_:xQjMxmWA7]"></span>
-  									<span about="[_:xQjMxmWA7]" typeof="owl:Class"></span>
-  									<span about="[_:xQjMxmWA7]" rel="owl:unionOf" resource="[_:xQjMxmWA8]"></span>  <span about="[_:xQjMxmWA8]" typeof="rdf:Description"></span>
-  									<span about="[_:xQjMxmWA8]" rel="rdf:first" href="http://purl.org/ontology/bibo/Document"><a href="http://purl.org/ontology/bibo/Document">bibo:Document</a></span>
-  									<span about="[_:xQjMxmWA8]" rel="rdf:rest" resource="[_:xQjMxmWA9]"></span> or <span about="[_:xQjMxmWA9]" typeof="rdf:Description"></span>
-  														<span about="[_:xQjMxmWA9]" rel="rdf:first" href="http://purl.org/vocab/frbr/core#Endeavour"><a href="http://purl.org/vocab/frbr/core#Endeavour">frbr:Endeavour</a></span> <span about="[_:xQjMxmWA9]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr><tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:range" resource="[_:igcXGTba7]"></span>
+  									<span about="[_:igcXGTba7]" typeof="owl:Class"></span>
+  									<span about="[_:igcXGTba7]" rel="owl:unionOf" resource="[_:igcXGTba8]"></span>  <span about="[_:igcXGTba8]" typeof="rdf:Description"></span>
+  									<span about="[_:igcXGTba8]" rel="rdf:first" href="http://purl.org/ontology/bibo/Document"><a href="http://purl.org/ontology/bibo/Document">bibo:Document</a></span>
+  									<span about="[_:igcXGTba8]" rel="rdf:rest" resource="[_:igcXGTba9]"></span> or <span about="[_:igcXGTba9]" typeof="rdf:Description"></span>
+  														<span about="[_:igcXGTba9]" rel="rdf:first" href="http://purl.org/vocab/frbr/core#Endeavour"><a href="http://purl.org/vocab/frbr/core#Endeavour">frbr:Endeavour</a></span> <span about="[_:igcXGTba9]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr><tr><th>Sub property of</th>
  <td>  <span rel="rdfs:subPropertyOf" href="http://purl.org/ontology/olo/core#item"><a href="http://purl.org/ontology/olo/core#item">olo:item</a></span>
  </td></tr><tr><th>Inverse property of</th>
- <td>  <span rel="owl:inverseOf" resource="[_:xQjMxmWA10]">the anonymous defined property with the label
-  							 '<em about="[_:xQjMxmWA10]" property="rdfs:label">is playlist item of</em>'</span>
- (<span about="[_:xQjMxmWA10]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
+ <td>  <span rel="owl:inverseOf" resource="[_:igcXGTba10]">the anonymous defined property with the label
+  							 '<em about="[_:igcXGTba10]" property="rdfs:label">is playlist item of</em>'</span>
+ (<span about="[_:igcXGTba10]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/pbo/core#"></span>
  </td></tr><tr><th colspan="2">Object Property</th>
  <td>  </td></tr>
@@ -686,7 +718,9 @@ Note that this mechanism is itself somewhat experimental and evolvin. The defini
 
   <h3 id="sec-ack">Acknowledgments</h3>
 
-  <p>I would like to thank very much the whole Music Ontology Specification mailing list group to help to establish this multiple purpose play back ontology. Furthermore, Dan Brickley and Libby Miller to provide the basis for this
+  <p>
+I would like to thank very much the whole Music Ontology Specification mailing list group to help to establish this multiple purpose play back ontology and especially Kurt Jacobson for providing everytime new input and ideas. 
+Furthermore, Dan Brickley and Libby Miller to provide the basis for this
 specification.</p>
 
 <h2 id="sec-changes">Recent Changes</h2>

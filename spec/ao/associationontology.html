@@ -109,7 +109,7 @@ version="XHTML+RDFa 1.0">
 <h2 id="sec-status">Abstract</h2>
 <p about="http://purl.org/ontology/ao/core#" property="dc:decription">
 The <em>Association Ontology</em> specification provides basic concepts and properties 
-for describing specific associations to something, e.g. an occasion, a genre or a mood, and enables furthermore, a mechanism to like/rate and feedback
+for describing specific association statements to something, e.g. an occasion, a genre or a mood, and enables furthermore, a mechanism to like/rate and feedback
 these associations in context to something on/ for the Semantic Web. This document contains a RDFa description of the <em>Association Ontology</em> and 
 some additional information and examples.
 </p>
@@ -243,8 +243,8 @@ href="http://purl.org/ontology/pbo/playbackontology.html">Play Back Ontology</a>
 href="http://purl.org/ontology/olo/orderedlistontology.html">Ordered List Ontology</a>. Each music track is a <a about="http://purl.org/ontology/ao/associationontology.html" 
 rel="rdfs:seeAlso" href="http://musicontology.com/#term_Track"><em>mo:Track</em></a> instance. The playlist has two association statements related by <a 
 about="http://purl.org/ontology/ao/associationontology.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/similarity/association"><em>sim:association</em></a>. The first one 
-(<em>ex:ZazisAssocation</em>) is modelled as an association to a specific occasion, which is related by <a href="http://purl.org/ontology/ao/associationontology.html#occasion">
-<em>ao:occasion</em></a>. Furthermore, this association includes (music) genre (<a href="http://purl.org/ontology/ao/associationontology.html#genre"><em>ao:genre</em></a>) and mood 
+(<em>ex:ZazisAssocation</em>) is modeled as an association to a specific occasion, which is related by <a href="http://purl.org/ontology/ao/associationontology.html#occasion">
+<em>ao:occasion</em></a>. Furthermore, this association statement includes (music) genre (<a href="http://purl.org/ontology/ao/associationontology.html#genre"><em>ao:genre</em></a>) and mood 
 (<a href="http://purl.org/ontology/ao/associationontology.html#mood"><em>ao:mood</em></a>) categorisations as simple string typed literals. <br/>
 The second association statement (<em>ex:BobsAssociationInUse</em>) is an <a href="http://purl.org/ontology/ao/associationontology.html#LikeableAssociation"><em>ao:LikeableAssociation</em></a> 
 instance that includes (<a href="http://purl.org/ontology/ao/associationontology.html#included_association"><em>ao:included_association</em></a>) a reuseable association statement 
@@ -293,7 +293,7 @@ href="http://dublincore.org/documents/dcmi-terms/#terms-subject"><em>dcterms:sub
 <p>They are intendend to be an abstact and general hook into their specific domains (genre, mood, occasion). Furthermore, new, more specific sub properties based on these properties should 
 be created to provide a hook in more specific domains, e.g. <a href="http://musicontology.com/#term_genre"><em>mo:genre</em></a> for music genres/styles (this sub property relation isn't 
 currently the case).<br/>
-To enable voting, rating and reviewing of a reusable association statement in a specific context, the property <a 
+To enable voting, rating and reviewing of a reusable association statements in a specific context, the property <a 
 href="http://purl.org/ontology/ao/associationontology.html#included_association"><em>ao:included_association</em></a> was created. By using this relation one can include a reusable association 
 statement into another association statement (preferable based on <a href="http://purl.org/ontology/ao/associationontology.html#LikeableAssociation"><em>ao:LikeableAssociation</em></a>). 
 Please have also a look at the <a href="#sec-example">example in this document</a>, which illstrates this use case.</p>
@@ -398,9 +398,9 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			<tr><th>Range:</th>
  <td>  <span rel="rdfs:range" href="http://purl.org/ontology/similarity/Association"><a href="http://purl.org/ontology/similarity/Association">sim:Association</a></span>
  </td></tr><tr><th>Inverse property of</th>
- <td>  <span rel="owl:inverseOf" resource="[_:eYOWykao3]">the anonymous defined property with the label
-  							 '<em about="[_:eYOWykao3]" property="rdfs:label">is included association of</em>'</span>
- (<span about="[_:eYOWykao3]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
+ <td>  <span rel="owl:inverseOf" resource="[_:UQSljVHu3]">the anonymous defined property with the label
+  							 '<em about="[_:UQSljVHu3]" property="rdfs:label">is included association of</em>'</span>
+ (<span about="[_:UQSljVHu3]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/ao/core#"></span>
  </td></tr><tr><th colspan="2">Object Property</th>
  <td>  </td></tr>
@@ -419,9 +419,9 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			<tr><th>Range:</th>
  <td>  <span rel="rdfs:range" href="http://xmlns.com/foaf/0.1/Agent"><a href="http://xmlns.com/foaf/0.1/Agent">foaf:Agent</a></span>
  </td></tr><tr><th>Inverse property of</th>
- <td>  <span rel="owl:inverseOf" resource="[_:eYOWykao4]">the anonymous defined property with the label
-  							 '<em about="[_:eYOWykao4]" property="rdfs:label">is likeminded of</em>'</span>
- (<span about="[_:eYOWykao4]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
+ <td>  <span rel="owl:inverseOf" resource="[_:UQSljVHu4]">the anonymous defined property with the label
+  							 '<em about="[_:UQSljVHu4]" property="rdfs:label">is likeminded of</em>'</span>
+ (<span about="[_:UQSljVHu4]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/ao/core#"></span>
  </td></tr><tr><th colspan="2">Object Property</th>
  <td>  </td></tr>
