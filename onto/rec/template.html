@@ -204,6 +204,7 @@ graph with relations:</p>
 &nbsp;
 ex:AMusicRecommendation a rec:RankedRecommendation ;
 &nbsp;&nbsp;&nbsp;rec:recommender isi:lastfm ;
+&nbsp;&nbsp;&nbsp;sim:subject &lt;http://dbtune.org/musicbrainz/resource/track/008e72df-6469-4557-8b5b-c54c3285fbd3&lt; ;
 &nbsp;&nbsp;&nbsp;rec:ranked_recommendation_object [
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a olo:Slot ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:item &lt;http://dbtune.org/musicbrainz/resource/track/097c362d-72b7-4a53-96e2-d9ff02f8be1f&gt; ;
@@ -330,7 +331,7 @@ ex:Association10 a sim:Similarity ;
 </pre>
   </div>
 
-  <p>This examples shows an extended music artist recommendation modeled as <a href="http://purl.org/ontology/rec/recommendationontology.html#RankedRecommendation">
+  <p>This example shows an extended music artist recommendation modeled as <a href="http://purl.org/ontology/rec/recommendationontology.html#RankedRecommendation">
 <em>rec:RankedRecommendation</em></a> instance. It is based on the <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso"
 href="http://bit.ly/bcjFcR">music artists recommendations of James Brown</a> from <a href="http://last.fm"><em>Last.fm</em></a>. Hence, the <a 
 about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://dbtune.org/musicbrainz/resource/track/008e72df-6469-4557-8b5b-c54c3285fbd3">subject</a> of 
@@ -369,6 +370,54 @@ is associated to the <a about="http://purl.org/ontology/rec/recommendationontolo
 href="http://infoserviceonto.wordpress.com/2010/06/23/what-is-an-information-service/"></a><em>Information Service</em> <a about="http://purl.org/ontology/rec/recommendationontology.html" 
 rel="rdfs:seeAlso" href="http://purl.org/ontology/is/inst/lastfm"><em>Last.fm</em></a>.</p>
 
+
+  <p>RDF/Turtle representation of an extended music artist recommendation example from <a about="http://purl.org/ontology/rec/recommendationontology.html" 
+  rel="rdfs:seeAlso" href="http://last.fm"><em>Last.fm</em></a> modeled with the <em>Recommendation Ontology</em> (see also <a about="http://purl.org/ontology/rec/recommendationontology.html" 
+  rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/rec/examples/RDF/music_rec_-_example.rdf">RDF</a> and <a about="http://purl.org/ontology/rec/recommendationontology.html" 
+  rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/rec/examples/N3/music_rec_-_example.n3">N3</a> for downloadable representations of this example):</p>
+
+  <div class="example">
+    <pre>
+@prefix xsd:     &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix dc:      &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix rec:     &lt;http://purl.org/ontology/rec/core#&gt; .
+@prefix ex:      &lt;http://example.org/&gt; .
+@prefix isi:     &lt;http://purl.org/ontology/is/inst/&gt; .
+@prefix ao:      &lt;http://purl.org/ontology/ao/core#&gt; .
+@prefix sim:     &lt;http://purl.org/ontology/similarity/&gt; .
+@prefix is:      &lt;http://purl.org/ontology/is/core#&gt; .
+@prefix foaf:    &lt;http://xmlns.com/foaf/0.1/&gt; .
+&nbsp;
+ex:AMusicRecommendation a rec:RankedRecommendation ;
+&nbsp;&nbsp;&nbsp;rec:for &lt;http://dbtune.org/musicbrainz/resource/track/008e72df-6469-4557-8b5b-c54c3285fbd3&gt; ;
+&nbsp;&nbsp;&nbsp;rec:recommender isi:lastfm ;
+&nbsp;&nbsp;&nbsp;rec:recommendation_audience ex:FunkyPeople ;
+&nbsp;&nbsp;&nbsp;sim:subject &lt;http://dbtune.org/musicbrainz/resource/track/008e72df-6469-4557-8b5b-c54c3285fbd3&lt; ;
+&nbsp;&nbsp;&nbsp;rec:recommendation_object &lt;http://dbtune.org/musicbrainz/resource/track/097c362d-72b7-4a53-96e2-d9ff02f8be1f&gt; ;
+&nbsp;&nbsp;&nbsp;rec:recommendation_object &lt;http://dbtune.org/musicbrainz/resource/track/161d35d9-3e31-41e9-8392-cf5d2c03b31d&gt; ;
+&nbsp;&nbsp;&nbsp;rec:recommendation_object &lt;http://dbtune.org/musicbrainz/resource/track/093c1742-ebda-45cd-a50c-734e5d92e7f2&gt; ;
+&nbsp;&nbsp;&nbsp;rec:recommendation_object &lt;http://dbtune.org/musicbrainz/resource/track/0a208327-525a-429b-8e79-51669bfb81f7&gt; ;
+&nbsp;&nbsp;&nbsp;rec:recommendation_object &lt;http://dbtune.org/musicbrainz/resource/track/0161855d-0b98-4f2d-b2ab-446dbd8d6759&gt; ;
+&nbsp;&nbsp;&nbsp;rec:recommendation_object &lt;http://dbtune.org/musicbrainz/resource/track/014f2510-e653-43e9-862a-880ac6388bb1&gt; ;
+&nbsp;&nbsp;&nbsp;rec:recommendation_object &lt;http://dbtune.org/musicbrainz/resource/track/0ab210b0-18c6-4c52-aee7-78f6012b9192&gt; ;
+&nbsp;&nbsp;&nbsp;rec:recommendation_object &lt;http://dbtune.org/musicbrainz/resource/track/027326ef-1455-48c9-8543-ac908eb71925&gt; ;
+&nbsp;&nbsp;&nbsp;rec:recommendation_object &lt;http://dbtune.org/musicbrainz/resource/track/04dc3d0b-dff4-41a0-8bf3-12b4b34460a6&gt; ;
+&nbsp;&nbsp;&nbsp;rec:recommendation_object &lt;http://dbtune.org/musicbrainz/resource/track/0348eea1-8178-4dc1-8a37-d09b5897ace2&gt; ;
+&nbsp;&nbsp;&nbsp;sim:method ex:lfmTrackSimilarity .
+&nbsp;
+ex:lfmTrackSimilarity a sim:AssociationMethod ;
+&nbsp;&nbsp;&nbsp;is:info_service isi:lastfm .
+&nbsp;
+ex:FunkyPeople a foaf:Group .
+</pre>
+  </div>
+
+  <p>This example is a simplified one from the extended music artist recommendation example above. It is simply stripped down to its high level recommendation. The target, where the 
+recommendation is for, is now related by the inverse property of <a href="http://purl.org/ontology/rec/recommendationontology.html#recommendation"><em>rec:recommendation</em></a>, 
+<a href="http://purl.org/ontology/rec/recommendationontology.html#for"><em>rec:for</em></a>. Furthermore, it includes a fictional audience group (<em>ex:FunkyPeople</em>), which is 
+related by the property <a href="http://purl.org/ontology/rec/recommendationontology.html#recommendation_audience"><em>rec:recommendation_audience</em></a>. Finally, the recommendation 
+objects are now simply related by the property <a href="http://purl.org/ontology/rec/recommendationontology.html#recommendation_object"><em>rec:recommendation_object</em></a>. Of course, 
+this doesn't include the ranking, it is now an unordered list. However, it still includes the relation to its similarity method (<em>ex:lfmTrackSimilarity</em>).</p>
   <div style="clear: left;"></div>
 
 
