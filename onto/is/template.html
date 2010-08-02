@@ -29,22 +29,22 @@ version="XHTML+RDFa 1.0">
 </head>
 
 <body>
-  <h1><span about="http://purl.org/ontology/is/core#" property="dc:title">The Info Service Ontology</span> <span about="http://purl.org/ontology/is/core#" property="owl:versionInfo" datatype="xsd:decimal">0.6</span></h1>
+  <h1><span about="http://purl.org/ontology/is/core#" property="dc:title">The Info Service Ontology</span> <span about="http://purl.org/ontology/is/core#" property="owl:versionInfo" datatype="xsd:decimal">0.7</span></h1>
 
-  <h2>Namespace Document <span about="http://purl.org/ontology/is/core#" property="dc:date" content="2010-07-12T15:00:52+01:00" datatype="xsd:dateTime">12 July 2010</span></h2>
+  <h2>Namespace Document <span about="http://purl.org/ontology/is/core#" property="dc:date" content="2010-07-31T19:15:52+01:00" datatype="xsd:dateTime">31 July 2010</span></h2>
 <table class="header" border="0">
   <tr>
     <td>
 		<dl>
 			<dt>This version:</dt>
 			<dd><a about="http://purl.org/ontology/is/infoservice.html" rel="dc:hasVersion" 
-				rev="dc:isVersionOf" href="http://purl.org/ontology/is/20100712/infoservice.html">http://purl.org/ontology/is/20100712/infoservice.html</a> (<a href="http://purl.org/ontology/is/20100712/infoservice.owl">OWL</a>, <a href="http://purl.org/ontology/is/20100712/infoservice.n3">N3</a>)</dd>
+				rev="dc:isVersionOf" href="http://purl.org/ontology/is/20100731/infoservice.html">http://purl.org/ontology/is/20100731/infoservice.html</a> (<a href="http://purl.org/ontology/is/20100731/infoservice.owl">OWL</a>, <a href="http://purl.org/ontology/is/20100731/infoservice.n3">N3</a>)</dd>
 
 			<dt>Latest version:</dt>
 			<dd><a href="http://purl.org/ontology/is/core#">http://purl.org/ontology/is/core#</a> (<a href="http://purl.org/ontology/is/infoservice.owl">OWL</a>, <a href="http://purl.org/ontology/is/infoservice.n3">N3</a>)</dd>
 
 			<dt>Previous version:</dt>
-			<dd><a href="http://purl.org/ontology/is/20100630/infoservice.html">http://purl.org/ontology/is/20100630/infoservice.html</a> (<a href="http://purl.org/ontology/is/20100630/infoservice.owl">OWL</a>, <a href="http://purl.org/ontology/is/20100630/infoservice.n3">N3</a>)</dd>
+			<dd><a href="http://purl.org/ontology/is/20100712/infoservice.html">http://purl.org/ontology/is/20100712/infoservice.html</a> (<a href="http://purl.org/ontology/is/20100712/infoservice.owl">OWL</a>, <a href="http://purl.org/ontology/is/20100712/infoservice.n3">N3</a>)</dd>
 
 			<dt>Authors:</dt>
 			<dd><a about="http://purl.org/ontology/is/infoservice.html" rel="rdfs:seeAlso" href="http://smiy.wordpress.com/author/zazi0815/">Bob Ferris</a> (<a about="http://purl.org/ontology/is/infoservice.html" rel="rdfs:seeAlso" href="http://smiy.wordpress.com/">SMI</a>)</dd>
@@ -482,6 +482,16 @@ specification.</p>
 <h2 id="sec-changes">Recent Changes</h2>
 
 <pre>=========================
+Version 0.7 (July 2010)
+=========================
+ * MODIFIED: is:InfoService - added dcterms:Agent as super class 
+ * MODIFIED: is:info_service - added dcterms:publisher as super property
+ * MODIFIED: is:info_service_type - is now sub property of dc:type
+ * MODIFIED: is:info_service_contributor_type - is now sub property of dc:type
+ * MODIFIED: is:InfoServiceContributorType - added dcterms:AgentClass as rdf:type
+ * MODIFIED: is:InfoServiceType - added dcterms:AgentClass as rdf:type
+ 
+=========================
 Version 0.6 (July 2010)
 =========================
  * MODIFIED: all concepts now also with rdfs:Class typed

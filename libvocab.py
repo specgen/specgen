@@ -267,7 +267,8 @@ class Vocab(object):
 					"http://purl.org/ontology/bibo/"                : "bibo",
 					"http://purl.org/vocab/frbr/core#"              : "frbr",
 					"http://www.w3.org/2006/time#"                  : "time",
-					"http://purl.org/ontology/pbo/core#"            : "pbo"
+					"http://purl.org/ontology/pbo/core#"            : "pbo",
+					"http://purl.org/ontology/rec/core#"            : "rec"
 		}
 
 
@@ -600,22 +601,25 @@ class VocabReport(object):
 
   			if contentStr != "":
   				subClassOf = "%s <td> %s </td></tr>" % (startStr, contentStr)
-  			else:
-  				q1 = 'SELECT ?sc WHERE {<%s> rdfs:subClassOf ?sc } ' % (term.uri)
-
-  				relations = g.query(q1)
-  				ordone = False
-  				for (subclass) in relations:
-  					subclassnice = self.vocab.niceName(subclass)
-  					# print "subclass ",subclass
-  					# print "subclassnice ",subclassnice
-  					# check niceName result
-  					# TODO: handle other sub class types (...) currently owl:Restriction only
-  					colon = subclassnice.find(':')
-  					if colon > 0:
+  			# else:
+  			q1 = 'SELECT ?sc WHERE {<%s> rdfs:subClassOf ?sc } ' % (term.uri)
+  			
+  			relations = g.query(q1)
+  			ordone = False
+  			for (subclass) in relations:
+  				subclassnice = self.vocab.niceName(subclass)
+  				# print "subclass ",subclass
+  				# print "subclassnice ",subclassnice
+  				# check niceName result
+  				# TODO: handle other sub class types (...) currently owl:Restriction only
+  				colon = subclassnice.find(':')
+  				print "ns uri ", str(self.vocab._get_uri())
+  				# if ((colon > 0) & (subclass.find(self.vocab._uri) < 1)):
+  				if(subclass.find(str(self.vocab._get_uri())) < 0):
+  					if (colon > 0):
   						termStr = """<span rel="rdfs:subClassOf" href="%s"><a href="%s">%s</a></span>\n""" % (subclass, subclass, subclassnice)
   						contentStr = "%s %s" % (contentStr, termStr)
-  						print "must be super class from another ns"
+  						print "must be super class from another ns: ", subclassnice
   					elif (ordone == False):
   						# with that query I get all restrictions of a concept :\
   						# TODO: enable a query with bnodes (_:bnode currently doesn't work :( )
@@ -810,6 +814,20 @@ class VocabReport(object):
   					termStr = """<span rel="rdf:type" href="http://www.w3.org/2000/01/rdf-schema#Class"></span>"""
   				rc = "%s <td> %s </td></tr>" % (startStr, termStr)
 
+
+  			# dcterms agent class
+  			dctac = ''
+  			termStr = ''
+
+  			q = 'SELECT * WHERE { <%s> rdf:type <http://purl.org/dc/terms/AgentClass> } ' % (term.uri)
+  			relations = g.query(q)
+  			startStr = '<tr><th colspan="2">DCTerms Agent Class</th>\n'
+
+  			if (len(relations) > 0):
+  				if (str(term.type) != "dcterms:AgentClass"):
+  					termStr = """<span rel="rdf:type" href="ttp://purl.org/dc/terms/AgentClass"></span>"""
+  				dctac = "%s <td> %s </td></tr>" % (startStr, termStr)
+
   			# end
 
   			dn = os.path.join(self.basedir, "doc")
@@ -836,7 +854,7 @@ class VocabReport(object):
   			s = termlink(s)
 
   			# danbri added another term.id 20010101 and removed term.status
-  			zz = eg % (term.id, term.uri, term.type, "Class", sn, term.label, term.comment, term.status, domainsOfClass, rangesOfClass + subClassOf + restriction + hasSubClass + classIsDefinedBy + isDisjointWith + oc + rc, s, term.id, term.id)
+  			zz = eg % (term.id, term.uri, term.type, "Class", sn, term.label, term.comment, term.status, domainsOfClass, rangesOfClass + subClassOf + restriction + hasSubClass + classIsDefinedBy + isDisjointWith + oc + rc + dctac, s, term.id, term.id)
 
   			## we add to the relevant string - stable, unstable, testing or archaic
   			if(term.status == "stable"):

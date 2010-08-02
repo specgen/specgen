@@ -1,0 +1,127 @@
+# Saved by TopBraid on Mon Aug 02 16:02:58 CEST 2010
+# baseURI: http://purl.org/ontology/rec/core#
+# imports: http://purl.org/ontology/ao/core
+# imports: http://purl.org/ontology/olo/core#
+# imports: http://purl.org/dc/elements/1.1/
+# imports: http://purl.org/ontology/similarity/
+# imports: http://www.w3.org/2003/06/sw-vocab-status/ns
+# imports: http://xmlns.com/foaf/0.1/
+# imports: http://purl.org/dc/terms/
+
+@prefix ao:      <http://purl.org/ontology/ao/core#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix olo:     <http://purl.org/ontology/olo/core#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rec:     <http://purl.org/ontology/rec/core#> .
+@prefix sim:     <http://purl.org/ontology/similarity/> .
+@prefix vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+rec:  rdf:type owl:Ontology ;
+      dc:creator <http://kurtisrandom.com/foaf.rdf#kurtjx> , <http://foaf.me/zazi#me> ;
+      dc:date "2010-08-02T09:31:52+01:00"^^xsd:dateTime ;
+      dc:description """The Recommendation Ontology specification provides basic concepts and properties 
+for describing recommendations on/ for the Semantic Web. This document contains a RDF description of the Recommendation Ontology."""@en ;
+      dc:title "The Recommendation Ontology"@en ;
+      owl:imports <http://purl.org/ontology/ao/core> , dc: , dcterms: , olo: , sim: , foaf: , <http://www.w3.org/2003/06/sw-vocab-status/ns> ;
+      owl:versionInfo 0.3 .
+
+rec:RankedRecommendation
+      rdf:type rdfs:Class , owl:Class ;
+      rdfs:comment "A ranked recommendation that includes an ordered list of recommendations."@en ;
+      rdfs:isDefinedBy rec: ;
+      rdfs:label "Ranked Recommendation"@en ;
+      rdfs:subClassOf rec:Recommendation , olo:OrderedList ;
+      vs:term_status "testing"@en .
+
+rec:Recommendation
+      rdf:type owl:Class , rdfs:Class ;
+      rdfs:comment "A recommendation of something for someone or a specific audience by a recommender."@en ;
+      rdfs:isDefinedBy rec: ;
+      rdfs:label "Recommendation"@en ;
+      rdfs:subClassOf ao:LikeableAssociation ;
+      vs:term_status "unstable"@en .
+
+rec:for
+      rdf:type rdf:Property , owl:ObjectProperty ;
+      rdfs:comment "Relates a recommendation to someone or something."@en ;
+      rdfs:domain rec:Recommendation ;
+      rdfs:isDefinedBy rec: ;
+      rdfs:label "for"@en ;
+      rdfs:range owl:Thing ;
+      owl:inverseOf rec:recommendation ;
+      vs:term_status "unstable"@en .
+
+rec:ranked_recommendation_object
+      rdf:type rdf:Property , owl:ObjectProperty ;
+      rdfs:comment "A ranked recommendation object in a ranked recommendation"@en ;
+      rdfs:domain rec:RankedRecommendation ;
+      rdfs:isDefinedBy rec: ;
+      rdfs:label "ranked recommendation object"@en ;
+      rdfs:subPropertyOf rec:recommendation_object , olo:slot ;
+      vs:term_status "testing"@en .
+
+rec:recommendation
+      rdf:type owl:ObjectProperty , rdf:Property ;
+      rdfs:comment "A recommendation for someone or something."@en ;
+      rdfs:domain owl:Thing ;
+      rdfs:isDefinedBy rec: ;
+      rdfs:label "has recommendation"@en ;
+      rdfs:range rec:Recommendation ;
+      rdfs:subPropertyOf sim:association ;
+      vs:term_status "unstable"@en .
+
+rec:recommendation_audience
+      rdf:type rdf:Property ;
+      rdfs:comment "An audience for a specific recommendation."@en ;
+      rdfs:domain rec:Recommendation ;
+      rdfs:isDefinedBy rec: ;
+      rdfs:label "has recommendation audience"@en ;
+      rdfs:range
+              [ rdf:type owl:Class ;
+                owl:unionOf (dcterms:AgentClass foaf:Group)
+              ] ;
+      vs:term_status "unstable"@en .
+
+rec:recommendation_object
+      rdf:type owl:ObjectProperty , rdf:Property ;
+      rdfs:comment "A recommendation object that is part of a specific recommendation."@en ;
+      rdfs:domain rec:Recommendation ;
+      rdfs:isDefinedBy rec: ;
+      rdfs:label "has recommendation object"@en ;
+      rdfs:range owl:Thing ;
+      rdfs:subPropertyOf sim:object ;
+      vs:term_status "unstable"@en .
+
+rec:recommended_in
+      rdf:type owl:ObjectProperty , rdf:Property ;
+      rdfs:comment "A thing, which is recommended in a recommendation."@en ;
+      rdfs:domain owl:Thing ;
+      rdfs:isDefinedBy rec: ;
+      rdfs:label "recommended in"@en ;
+      rdfs:range rec:Recommendation ;
+      owl:inverseOf rec:recommendation_object ;
+      vs:term_status "unstable"@en .
+
+rec:recommender
+      rdf:type rdf:Property , owl:ObjectProperty ;
+      rdfs:comment "An agent, which provided/calculated this recommendation."@en ;
+      rdfs:domain rec:Recommendation ;
+      rdfs:isDefinedBy rec: ;
+      rdfs:label "has recommender"@en ;
+      rdfs:subPropertyOf dcterms:creator ;
+      vs:term_status "unstable"@en .
+
+rec:recommends
+      rdf:type rdf:Property , owl:ObjectProperty ;
+      rdfs:comment "An agent recommends a recommendation to someone or a recommendation audience."@en ;
+      rdfs:domain dcterms:Agent ;
+      rdfs:isDefinedBy rec: ;
+      rdfs:label "recommends"@en ;
+      rdfs:range rec:Recommendation ;
+      owl:inverseOf rec:recommender ;
+      vs:term_status "unstable"@en .

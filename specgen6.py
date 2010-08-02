@@ -55,8 +55,7 @@ import getopt
 
 # Make a spec
 def makeSpec(indir, uri, shortName,outdir,outfile, template, templatedir,indexrdfdir, ontofile):
-  spec = Vocab( indexrdfdir, ontofile)
-  spec.uri = uri
+  spec = Vocab( indexrdfdir, ontofile, uri)
   spec.addShortName(shortName)
   spec.index() # slurp info from sources
 

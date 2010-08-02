@@ -1,4 +1,4 @@
-# Saved by TopBraid on Tue Jul 13 11:57:20 CEST 2010
+# Saved by TopBraid on Mon Aug 02 11:07:31 CEST 2010
 # baseURI: http://purl.org/ontology/is/core#
 # imports: http://purl.org/dc/elements/1.1/
 # imports: http://www.w3.org/2003/06/sw-vocab-status/ns
@@ -15,13 +15,13 @@
 
 is:   rdf:type owl:Ontology ;
       dc:creator <http://foaf.me/zazi#me> ;
-      dc:date "2010-07-12T15:00:52+01:00"^^xsd:dateTime ;
+      dc:date "2010-07-31T19:15:52+01:00"^^xsd:dateTime ;
       dc:description """The Information Service Ontology Specification provides basic concepts and properties 
 for describing different information services, e.g. Wikipedia, MusicBrainz, Freebase or Discogs, on/ for 
 the Semantic Web. This document contains a RDF description of the Information Service Ontology."""@en ;
-      dc:title "The Information Service Ontology" ;
+      dc:title "The Information Service Ontology"@en ;
       owl:imports dc: , dcterms: , <http://www.w3.org/2003/06/sw-vocab-status/ns> ;
-      owl:versionInfo "0.6"^^xsd:decimal .
+      owl:versionInfo 0.7 .
 
 is:InfoService
       rdf:type owl:Class , rdfs:Class ;
@@ -44,11 +44,11 @@ Please use for further is:InfoService instances the namespace \"http://purl.org/
 [1] https://infoserviceonto.wordpress.com/2010/06/23/what-is-an-information-service/"""@en ;
       rdfs:isDefinedBy is: ;
       rdfs:label "Information Service"@en ;
-      rdfs:subClassOf owl:Thing ;
+      rdfs:subClassOf owl:Thing , dcterms:Agent ;
       vs:term_status "unstable"@en .
 
 is:InfoServiceContributorType
-      rdf:type owl:Class , rdfs:Class ;
+      rdf:type dcterms:AgentClass , owl:Class , rdfs:Class ;
       rdfs:comment """This concept is for describing the different contributor types of information services, e.g. expert, 
 community or mixed. Please feel free to define further information service contributor types.
 Please use therefore the namespace \"http://purl.org/ontology/is/ctypes/\"."""@en ;
@@ -61,7 +61,7 @@ is:InfoServiceQuality
       rdf:type owl:Class , rdfs:Class ;
       rdfs:comment """This concept is for describing specific quality levels or ratings, e.g. good or bad or more detailed ones, of 
 information services. Please feel free to use this concept as hook for more complex and detailed information service quality description 
-modellings in sub ontologies. Please use therefore the domain \"http://purl.org/ontology/is/quality/\".Futhermore, such information 
+modellings in sub ontologies. Please use therefore the domain \"http://purl.org/ontology/is/quality/\". Futhermore, such information 
 service ratings could be done by different information service rating agencies, so that the customer of such ratings could select 
 its information service ratings agency of choice."""@en ;
       rdfs:isDefinedBy is: ;
@@ -70,7 +70,7 @@ its information service ratings agency of choice."""@en ;
       vs:term_status "testing"@en .
 
 is:InfoServiceType
-      rdf:type owl:Class , rdfs:Class ;
+      rdf:type dcterms:AgentClass , owl:Class , rdfs:Class ;
       rdfs:comment """This concept is for describing the type of an information service, e.g. 'social network service', 
 'recommender service' or 'encyclopedia'. Please feel free to define further information service types for categorization.
 Please use therefore the namespace \"http://purl.org/ontology/is/types/\"."""@en ;
@@ -81,12 +81,11 @@ Please use therefore the namespace \"http://purl.org/ontology/is/types/\"."""@en
 
 is:info_service
       rdf:type owl:ObjectProperty , rdf:Property ;
-      rdfs:comment """This property could be used to associate a semantic graph description or especially
-a website link, e.g. typed as foaf:Document, to the specific is:InfoService individual. This enables the consumer of this resource
-to retrieve more information (descriptions, ratings) about the underlying information service of this resource."""@en ;
+      rdfs:comment "Every subject related by this property is made available by an is:InfoService individual. This property could be used to associate a semantic graph based description or especially a website link, e.g. typed as foaf:Document, to the specific is:InfoService individual. This enables the consumer of this resource to retrieve more information (descriptions, ratings) about the underlying information service of this resource."@en ;
       rdfs:isDefinedBy is: ;
       rdfs:label "has info service"@en ;
       rdfs:range is:InfoService ;
+      rdfs:subPropertyOf dcterms:publisher ;
       owl:inverseOf
               [ rdf:type rdf:Property , owl:ObjectProperty ;
                 rdfs:label "is info service of"@en
@@ -101,6 +100,7 @@ community or mixed, to an is:InfoService instance."""@en ;
       rdfs:isDefinedBy is: ;
       rdfs:label "has info service contributor type"@en ;
       rdfs:range is:InfoServiceContributorType ;
+      rdfs:subPropertyOf dc:type ;
       owl:inverseOf
               [ rdf:type rdf:Property , owl:ObjectProperty ;
                 rdfs:label "is info service contributor type of"@en
@@ -109,8 +109,8 @@ community or mixed, to an is:InfoService instance."""@en ;
 
 is:info_service_quality
       rdf:type owl:ObjectProperty , rdf:Property ;
-      rdfs:comment """With this property it is possible to associate a specific quality level or information service rating
-to an is:InfoService instance"""@en ;
+      rdfs:comment """With this property it is possible to associate a specific quality level, information service quality rating
+or an extended information service quality description to an is:InfoService instance"""@en ;
       rdfs:domain is:InfoService ;
       rdfs:isDefinedBy is: ;
       rdfs:label "has info service quality"@en ;
@@ -130,6 +130,7 @@ is:InfoService instance could be for example of the information service type 'so
       rdfs:isDefinedBy is: ;
       rdfs:label "has info service type"@en ;
       rdfs:range is:InfoServiceType ;
+      rdfs:subPropertyOf dc:type ;
       owl:inverseOf
               [ rdf:type rdf:Property , owl:ObjectProperty ;
                 rdfs:label "is info service type of"@en

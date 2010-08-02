@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+xmlns:owl="http://www.w3.org/2002/07/owl#"
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:ao="http://purl.org/ontology/ao/core#"
+xmlns:rec="http://purl.org/ontology/rec/core#"
+xmlns:olo="http://purl.org/ontology/olo/core#"
+xmlns:vann="http://purl.org/vocab/vann/"
+xmlns:bibo="http://purl.org/ontology/bibo/"
+xmlns:foaf="http://xmlns.com/foaf/0.1/"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+xmlns:sim="http://purl.org/ontology/similarity/"
+xmlns:rev="http://purl.org/stuff/rev#"
+typeof="bibo:Document"
+about="http://purl.org/ontology/rec/recommendationontology.html"
+version="XHTML+RDFa 1.0">
+<head>
+  <title about="http://purl.org/ontology/rec/recommendationontology.html" property="dc:title">The Recommendation Ontology Specification</title>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+  <base href="http://purl.org/ontology/rec/recommendationontology.html" />
+  <link href="http://smiy.sourceforge.net/css/xmlns-style.css" rel="stylesheet"  type="text/css" />
+  <link about="http://purl.org/ontology/rec/core#" typeof="owl:Ontology" rel="dc:creator" href="http://foaf.me/zazi#me" />
+  <link about="http://purl.org/ontology/rec/core#" rel="dc:creator" href="http://kurtisrandom.com/foaf.rdf#kurtjx" />
+  <link about="http://purl.org/ontology/rec/recommendationontology.html" rel="foaf:primaryTopic" rev="foaf:isPrimaryTopicOf" href="http://purl.org/ontology/rec/core#" />
+  <link href="http://smiy.sourceforge.net/css/style.css" rel="stylesheet" type="text/css" />
+  <link about="http://purl.org/ontology/rec/recommendationontology.html" href="http://purl.org/ontology/rec/recommendationontology.owl" rel="alternate dcterms:hasFormat"  type="application/rdf+xml" />
+  <link about="http://purl.org/ontology/rec/recommendationontology.html" href="http://purl.org/ontology/rec/recommendationontology.n3" rel="alternate dcterms:hasFormat"  type="application/rdf+n3" />
+</head>
+
+<body>
+  <h1><span about="http://purl.org/ontology/rec/core#" property="dc:title">The Recommendation Ontology</span> <span about="http://purl.org/ontology/rec/core#" property="owl:versionInfo" datatype="xsd:decimal">0.3</span></h1>
+
+  <h2>Namespace Document <span about="http://purl.org/ontology/rec/core#" property="dc:date" content="2010-08-02T09:31:52+01:00" datatype="xsd:dateTime">02 August 2010</span></h2>
+<table class="header" border="0">
+  <tr>
+    <td>
+  		<dl>
+    		<dt>This version:</dt>
+    		<dd><a about="http://purl.org/ontology/rec/recommendationontology.html" rel="dc:hasVersion" 
+			rev="dc:isVersionOf" href="http://purl.org/ontology/rec/20100802/recommendationontology.html">http://purl.org/ontology/rec/20100802/recommendationontology.html</a> (<a href="http://purl.org/ontology/rec/20100802/counterontology.owl">OWL</a>, <a href="http://purl.org/ontology/rec/20100802/recommendationontology.n3">N3</a>)</dd>
+
+    		<dt>Latest version:</dt>
+    		<dd><a href="http://purl.org/ontology/rec/core#">http://purl.org/ontology/rec/core#</a> (<a href="http://purl.org/ontology/rec/recommendationontology.owl">OWL</a>, <a href="http://purl.org/ontology/rec/recommendationontology.n3">N3</a>)</dd>
+
+    		<dt>Authors:</dt>
+    		<dd><a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://smiy.wordpress.com/author/zazi0815/">Bob Ferris</a> (<a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://smiy.wordpress.com/">SMI</a>), <br/>
+    		<a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://kurtisrandom.blogspot.com/">Kurt Jacobson</a> (<a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href=http://www.elec.qmul.ac.uk/digitalmusic/">Centre for Digital Music Queen Mary University of London</a>)</dd>
+  			</dl>
+
+  			<p class="copyright"><span about="http://purl.org/ontology/rec/core#" property="dc:rights">Copyright &#169; 2010 Kurt Jacobson and Bob Ferris</span></p>
+	</td>
+    <td align="right">
+		<table class="infobox">
+			<tr>
+				<td rowspan="2">
+					<img src="http://wfnm.sourceforge.net/images/sourceforge_logo.jpg" width="150" alt="Sourceforge"/>
+				</td>
+				<td align="center">
+					<b>Recommendation Ontology repository</b>
+				</td>
+			</tr>
+			<tr>
+				<td align="center">
+					<a href="http://smiy.svn.sourceforge.net/viewvc/smiy/recommendationonto/">Source code, examples, graphics, ...</a>
+				</td>
+			</tr>
+			<tr>
+				<td rowspan="2">
+					<img src="http://s.wordpress.org/about/images/buttons/buttonw-blue.png" width="150" alt="Wordpress" />
+				</td>
+				<td align="center">
+					<b>Recommendation Ontology at SMI</b>
+				</td>
+			</tr>
+			<tr>
+				<td align="center">
+					<a href="http://smiy.wordpress.com/">Announcements, descriptions, use cases, ...</a>
+				</td>
+			</tr>
+		</table>
+	</td>
+  </tr>
+</table>
+
+  <div about="http://purl.org/ontology/rec/recommendationontology.html" rel="dc:conformsTo"
+     resource="http://www.w3.org/TR/rdfa-syntax"></div>
+  <p>
+    <a href="http://validator.w3.org/check?uri=referer"><img style="border: 0; float: right; padding: 5px;"
+        src="http://www.w3.org/Icons/valid-xhtml-rdfa"
+        alt="Valid XHTML + RDFa" height="31" width="88" /></a>
+
+  <!-- Creative Commons License -->
+   <a href="http://creativecommons.org/licenses/by/1.0/"><img alt=
+  "Creative Commons License" style="border: 0; float: right; padding: 5px;" src=
+  "http://i.creativecommons.org/l/by/3.0/88x31.png" /></a> This work is licensed under a <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="license dc:license" href= 
+  "http://creativecommons.org/licenses/by/3.0/" title="Creative Commons
+  Attribution License">Creative Commons
+  Attribution License</a>. This copyright applies to the <em>Recommendation Ontology Specification</em> 
+  and accompanying documentation in RDF.
+ Regarding underlying technology, the <em>Recommendation Ontology</em> uses W3C's <a href="http://www.w3.org/RDF/">RDF</a> technology, an
+  open Web standard that can be freely used by anyone.</p>
+  
+  <hr />
+
+
+<h2 id="sec-status">Abstract</h2>
+<p about="http://purl.org/ontology/rec/core#" property="dc:decription">
+The <em>Recommendation Ontology</em> specification provides basic concepts and properties 
+for describing recommendations on/ for the Semantic Web. This document contains a RDFa description of the <em>Recommendation Ontology</em> and 
+some additional information and examples.
+</p>
+
+  <div class="status">
+    <h2>Status of This Document</h2>
+
+    <p>
+The <em>Recommendation Ontology</em> hooks up parts of the <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/similarity/">
+Similarity Ontology</a>, the <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://dublincore.org/documents/dcmi-terms/">DCMI Metadata Terms</a>, 
+the <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/ao/associationontology.html">Association Ontology</a> and the <a 
+about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/olo/orderedlistontology.html">Ordered List Ontology</a>. The template 
+of this specification is derived from the <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://xmlns.com/foaf/spec/">FOAF Vocabulary
+Specification</a>, which was created by <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://danbri.org/">Dan Brickley</a> and 
+<a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://nicecupoftea.org/">Libby Miller</a>, and the <a 
+about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://musicontology.com/">Music Ontology Specification</a>, which was created by <a 
+about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://moustaki.org/">Yves Raimond</a>. It was modified and extended by Bob Ferris. Furthermore, a 
+modified and extended version of <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://svn.foaf-project.org/foaftown/specgen/">Danbri's SpecGen 
+version</a> was used to generate most of the RDFa statements of the Recommendation Ontology for this specification (see <a about="http://purl.org/ontology/rec/recommendationontology.html" 
+rel="rdfs:seeAlso" href="http://smiy.svn.sourceforge.net/viewvc/smiy/specgen/trunk/">here</a> for SpecGen version 6 by Bob Ferris).
+</p>
+
+
+<p> This document is created by combining the <a href="http://purl.org/ontology/rec/recommendationontology.owl">RDFS/OWL</a> machine-readable
+    <em>Recommendation Ontology</em> with a human-readable <em>HTML</em> representation that includes RDFa annotations. Future versions may 
+    incorporate <em>multilingual translations</em> of term definitions. The RDF/XML version of the specification is also available directly 
+    from the namespace URI. RDF/N3 representations could be access via the links above.
+</p>
+    <p>The authors welcome comments on this document, preferably via the author's email addresses.
+   </p>
+
+  <h2 id="sec-toc">Table of Contents</h2>
+
+  <ul>
+    <li><a href="#sec-glance">The Recommendation Ontology at a glance</a></li>
+    <li><a href="#sec-example">Examples</a></li>
+    <li><a href="#sec-intro">Introduction</a></li>
+    <li><a href="#sec-for">What's the Recommendation Ontology for?</a></li>
+    <li><a href="#sec-bg">Background</a></li>
+    <li><a href="#sec-standards">The Recommendation Ontology and Standards</a></li>
+    <li><a href="#sec-evolution">Evolution and Extension of the Recommendation Ontology</a></li>
+    <li><a href="#sec-crossref">The Recommendation Ontology cross-reference: Listing the Recommendation Ontology Classes and Properties</a></li>
+    <li><a href="#sec-extrefs">External Vocabulary References</a></li>
+    <li><a href="#sec-ack">Acknowledgments</a></li>
+    <li><a href="#sec-changes">Recent Changes</a></li>
+  </ul>
+
+
+  <a id="sec-glance"></a>
+  <h2 id="glance">The Recommendation Ontology at a glance</h2>
+
+<p>The <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/rec/core#"><em>rec:Recommendation</em></a> concept, as 
+graph with relations:</p>
+<div about="http://purl.org/ontology/rec/core#" rel="rdfs:seeAlso">
+<img src="http://smiy.sourceforge.net/rec/gfx/rec_-_recommendation.gif" title="The recommendation concept as graph with relations" alt="The recommendation concept as graph with relations" /></div>
+
+
+<p>The <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/rec/core#"><em>rec:RankedRecommendation</em></a> concept, as 
+graph with relations:</p>
+<div about="http://purl.org/ontology/rec/core#" rel="rdfs:seeAlso">
+<img src="http://smiy.sourceforge.net/rec/gfx/rec_-_ranked_recommendation.gif" title="The ranked recommendation concept as graph with relations" alt="The ranked recommendation concept as graph with relations" /></div>
+
+ <p>An a-z index of <em>Recommendation Ontology</em> terms, by class (categories or types) and by property.</p>
+ 
+ 
+ %s
+
+  <div style="clear: left;"></div>
+
+  <h2 id="sec-example">Examples</h2>
+
+  <p>RDF/Turtle representation of an extended music artist recommendation example from <a about="http://purl.org/ontology/rec/recommendationontology.html" 
+  rel="rdfs:seeAlso" href="http://last.fm"><em>Last.fm</em></a> modeled with the <em>Recommendation Ontology</em> (see also <a about="http://purl.org/ontology/rec/recommendationontology.html" 
+  rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/rec/examples/RDF/music_rec_-_example.rdf">RDF</a> and <a about="http://purl.org/ontology/rec/recommendationontology.html" 
+  rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/rec/examples/N3/music_rec_-_example.n3">N3</a> for downloadable representations of this example):</p>
+
+  <div class="example">
+    <pre>
+@prefix xsd:     &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix dc:      &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix rec:     &lt;http://purl.org/ontology/rec/core#&gt; .
+@prefix ex:      &lt;http://example.org/&gt; .
+@prefix olo:     &lt;http://purl.org/ontology/olo/core#&gt; .
+@prefix isi:     &lt;http://purl.org/ontology/is/inst/&gt; .
+@prefix ao:      &lt;http://purl.org/ontology/ao/core#&gt; .
+@prefix sim:     &lt;http://purl.org/ontology/similarity/&gt; .
+@prefix is:      &lt;http://purl.org/ontology/is/core#&gt; .
+&nbsp;
+&lt;http://dbtune.org/musicbrainz/resource/track/008e72df-6469-4557-8b5b-c54c3285fbd3&gt; 
+&nbsp;&nbsp;&nbsp;rec:recommendation ex:AMusicRecommendation .
+&nbsp;
+ex:AMusicRecommendation a rec:RankedRecommendation ;
+&nbsp;&nbsp;&nbsp;rec:recommender isi:lastfm ;
+&nbsp;&nbsp;&nbsp;rec:ranked_recommendation_object [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a olo:Slot ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:item &lt;http://dbtune.org/musicbrainz/resource/track/097c362d-72b7-4a53-96e2-d9ff02f8be1f&gt; ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:index 1
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;rec:ranked_recommendation_object [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a olo:Slot ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:item &lt;http://dbtune.org/musicbrainz/resource/track/161d35d9-3e31-41e9-8392-cf5d2c03b31d&gt; ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:index 2
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;rec:ranked_recommendation_object [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a olo:Slot ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:item &lt;http://dbtune.org/musicbrainz/resource/track/093c1742-ebda-45cd-a50c-734e5d92e7f2&gt; ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:index 3
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;rec:ranked_recommendation_object [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a olo:Slot ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:item &lt;http://dbtune.org/musicbrainz/resource/track/0a208327-525a-429b-8e79-51669bfb81f7&gt; ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:index 4
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;rec:ranked_recommendation_object [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a olo:Slot ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:item &lt;http://dbtune.org/musicbrainz/resource/track/0161855d-0b98-4f2d-b2ab-446dbd8d6759&gt; ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:index 5
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;rec:ranked_recommendation_object [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a olo:Slot ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:item &lt;http://dbtune.org/musicbrainz/resource/track/014f2510-e653-43e9-862a-880ac6388bb1&gt; ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:index 6
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;rec:ranked_recommendation_object [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a olo:Slot ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:item &lt;http://dbtune.org/musicbrainz/resource/track/0ab210b0-18c6-4c52-aee7-78f6012b9192&gt; ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:index 7
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;rec:ranked_recommendation_object [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a olo:Slot ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:item &lt;http://dbtune.org/musicbrainz/resource/track/027326ef-1455-48c9-8543-ac908eb71925&gt; ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:index 8
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;rec:ranked_recommendation_object [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a olo:Slot ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:item &lt;http://dbtune.org/musicbrainz/resource/track/04dc3d0b-dff4-41a0-8bf3-12b4b34460a6&gt; ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:index 9
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;rec:ranked_recommendation_object [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a olo:Slot ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:item &lt;http://dbtune.org/musicbrainz/resource/track/0348eea1-8178-4dc1-8a37-d09b5897ace2&gt; ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:index 10
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;ao:included_association ex:SimAssociation01 ;
+&nbsp;&nbsp;&nbsp;ao:included_association ex:SimAssociation02 ;
+&nbsp;&nbsp;&nbsp;ao:included_association ex:SimAssociation03 ;
+&nbsp;&nbsp;&nbsp;ao:included_association ex:SimAssociation04 ;
+&nbsp;&nbsp;&nbsp;ao:included_association ex:SimAssociation05 ;
+&nbsp;&nbsp;&nbsp;ao:included_association ex:SimAssociation06 ;
+&nbsp;&nbsp;&nbsp;ao:included_association ex:SimAssociation07 ;
+&nbsp;&nbsp;&nbsp;ao:included_association ex:SimAssociation08 ;
+&nbsp;&nbsp;&nbsp;ao:included_association ex:SimAssociation09 ;
+&nbsp;&nbsp;&nbsp;ao:included_association ex:SimAssociation10 .
+&nbsp;
+ex:lfmTrackSimilarity a sim:AssociationMethod ;
+&nbsp;&nbsp;&nbsp;is:info_service isi:lastfm .	
+&nbsp;
+ex:Association01 a sim:Similarity ;
+&nbsp;&nbsp;&nbsp;sim:subject &lt;http://dbtune.org/musicbrainz/resource/track/008e72df-6469-4557-8b5b-c54c3285fbd3&gt; ;
+&nbsp;&nbsp;&nbsp;sim:object &lt;http://dbtune.org/musicbrainz/resource/track/097c362d-72b7-4a53-96e2-d9ff02f8be1f&gt; ;
+&nbsp;&nbsp;&nbsp;sim:weight 1.0 ;
+&nbsp;&nbsp;&nbsp;sim:method ex:lfmTrackSimilarity .
+&nbsp;
+ex:Association02 a sim:Similarity ;
+&nbsp;&nbsp;&nbsp;sim:subject &lt;http://dbtune.org/musicbrainz/resource/track/008e72df-6469-4557-8b5b-c54c3285fbd3&gt; ;
+&nbsp;&nbsp;&nbsp;sim:object &lt;http://dbtune.org/musicbrainz/resource/track/161d35d9-3e31-41e9-8392-cf5d2c03b31d&gt; ;
+&nbsp;&nbsp;&nbsp;sim:weight 0.968842 ;
+&nbsp;&nbsp;&nbsp;sim:method ex:lfmTrackSimilarity .
+&nbsp;
+ex:Association03 a sim:Similarity ;
+&nbsp;&nbsp;&nbsp;sim:subject &lt;http://dbtune.org/musicbrainz/resource/track/008e72df-6469-4557-8b5b-c54c3285fbd3&gt; ;
+&nbsp;&nbsp;&nbsp;sim:object &lt;http://dbtune.org/musicbrainz/resource/track/093c1742-ebda-45cd-a50c-734e5d92e7f2&gt; ;
+&nbsp;&nbsp;&nbsp;sim:weight 0.547951 ;
+&nbsp;&nbsp;&nbsp;sim:method ex:lfmTrackSimilarity .
+&nbsp;
+ex:Association04 a sim:Similarity ;
+&nbsp;&nbsp;&nbsp;sim:subject &lt;http://dbtune.org/musicbrainz/resource/track/008e72df-6469-4557-8b5b-c54c3285fbd3&gt; ;
+&nbsp;&nbsp;&nbsp;sim:object &lt;http://dbtune.org/musicbrainz/resource/track/0a208327-525a-429b-8e79-51669bfb81f7&gt; ;
+&nbsp;&nbsp;&nbsp;sim:weight 0.449539 ;
+&nbsp;&nbsp;&nbsp;sim:method ex:lfmTrackSimilarity .
+&nbsp;
+ex:Association05 a sim:Similarity ;
+&nbsp;&nbsp;&nbsp;sim:subject &lt;http://dbtune.org/musicbrainz/resource/track/008e72df-6469-4557-8b5b-c54c3285fbd3&gt; ;
+&nbsp;&nbsp;&nbsp;sim:object &lt;http://dbtune.org/musicbrainz/resource/track/0161855d-0b98-4f2d-b2ab-446dbd8d6759&gt; ;
+&nbsp;&nbsp;&nbsp;sim:weight 0.401746 ;
+&nbsp;&nbsp;&nbsp;sim:method ex:lfmTrackSimilarity .
+&nbsp;
+ex:Association06 a sim:Similarity ;
+&nbsp;&nbsp;&nbsp;sim:subject &lt;http://dbtune.org/musicbrainz/resource/track/008e72df-6469-4557-8b5b-c54c3285fbd3&gt; ;
+&nbsp;&nbsp;&nbsp;sim:object &lt;http://dbtune.org/musicbrainz/resource/track/014f2510-e653-43e9-862a-880ac6388bb1&gt; ;
+&nbsp;&nbsp;&nbsp;sim:weight 0.36673 ;
+&nbsp;&nbsp;&nbsp;sim:method ex:lfmTrackSimilarity .
+&nbsp;
+ex:Association07 a sim:Similarity ;
+&nbsp;&nbsp;&nbsp;sim:subject &lt;http://dbtune.org/musicbrainz/resource/track/008e72df-6469-4557-8b5b-c54c3285fbd3&gt; ;
+&nbsp;&nbsp;&nbsp;sim:object &lt;http://dbtune.org/musicbrainz/resource/track/0ab210b0-18c6-4c52-aee7-78f6012b9192&gt; ;
+&nbsp;&nbsp;&nbsp;sim:weight 0.36142 ;
+&nbsp;&nbsp;&nbsp;sim:method ex:lfmTrackSimilarity .
+&nbsp;
+ex:Association08 a sim:Similarity ;
+&nbsp;&nbsp;&nbsp;sim:subject &lt;http://dbtune.org/musicbrainz/resource/track/008e72df-6469-4557-8b5b-c54c3285fbd3&gt; ;
+&nbsp;&nbsp;&nbsp;sim:object &lt;http://dbtune.org/musicbrainz/resource/track/027326ef-1455-48c9-8543-ac908eb71925&gt; ;
+&nbsp;&nbsp;&nbsp;sim:weight 0.351277 ;
+&nbsp;&nbsp;&nbsp;sim:method ex:lfmTrackSimilarity .
+&nbsp;
+ex:Association09 a sim:Similarity ;
+&nbsp;&nbsp;&nbsp;sim:subject &lt;http://dbtune.org/musicbrainz/resource/track/008e72df-6469-4557-8b5b-c54c3285fbd3&gt; ;
+&nbsp;&nbsp;&nbsp;sim:object &lt;http://dbtune.org/musicbrainz/resource/track/04dc3d0b-dff4-41a0-8bf3-12b4b34460a6&gt; ;
+&nbsp;&nbsp;&nbsp;sim:weight 0.350151 ;
+&nbsp;&nbsp;&nbsp;sim:method ex:lfmTrackSimilarity .
+&nbsp;
+ex:Association10 a sim:Similarity ;
+&nbsp;&nbsp;&nbsp;sim:subject &lt;http://dbtune.org/musicbrainz/resource/track/008e72df-6469-4557-8b5b-c54c3285fbd3&gt; ;
+&nbsp;&nbsp;&nbsp;sim:object &lt;http://dbtune.org/musicbrainz/resource/track/0348eea1-8178-4dc1-8a37-d09b5897ace2&gt; ;
+&nbsp;&nbsp;&nbsp;sim:weight 0.336997 ;
+&nbsp;&nbsp;&nbsp;sim:method ex:lfmTrackSimilarity .
+</pre>
+  </div>
+
+  <p>This examples shows an extended music artist recommendation modeled as <a href="http://purl.org/ontology/rec/recommendationontology.html#RankedRecommendation">
+<em>rec:RankedRecommendation</em></a> instance. It is based on the <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso"
+href="http://bit.ly/bcjFcR">music artists recommendations of James Brown</a> from <a href="http://last.fm"><em>Last.fm</em></a>. Hence, the <a 
+about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://dbtune.org/musicbrainz/resource/track/008e72df-6469-4557-8b5b-c54c3285fbd3">subject</a> of 
+the <a href="http://purl.org/ontology/rec/recommendationontology.html#recommendation"><em>rec:recommendation</em></a> relation is a resolvable <em>URI</em> to a description of <a 
+about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://musicbrainz.org/artist/20ff3303-4fe2-4a47-a1b6-291e26aa3438.html">James Brown</a> at <a 
+about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://musicbrainz.org/"><em>MusicBrainz</em></a>, modeled and represented as <em>Semantic 
+Graph</em> and provided by <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://dbtune.org/"><em>DBTune</em></a>.<br/>
+Since a <a href="http://purl.org/ontology/rec/recommendationontology.html#RankedRecommendation"><em>rec:RankedRecommendation</em></a> is a sub class of <a
+ href="http://purl.org/ontology/rec/recommendationontology.html#Recommendation"><em>rec:Recommendation</em></a> and <a about="http://purl.org/ontology/rec/recommendationontology.html" 
+rel="rdfs:seeAlso" href="http://purl.org/ontology/olo/orderedlistontology.html#OrderedList"><em>olo:OrderedList</em></a>, it can also make use of ordered list features. That means, this 
+enables the opportunity to also provide an ordered (/ranked) list of recommendation objects (related by <a 
+href="http://purl.org/ontology/rec/recommendationontology.html#ranked_recommendation_object"><em>rec:ranked_recommendation_object</em></a>), by hiding the details of their ranking features 
+on this level. These details are provided by further association statements (here <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" 
+href="http://purl.org/ontology/similarity/Similarity"><em>sim:Similarity</em></a>) related by using the <a about="http://purl.org/ontology/rec/recommendationontology.html" 
+rel="rdfs:seeAlso" href="http://purl.org/ontology/ao/associationontology.html#included_association"><em>ao:included_association</em></a> property.<br/>
+Each slot item (related by <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/olo/orderedlistontology.html#item">
+<em>olo:item</em></a>) is also a music artist description at <a href="http://musicbrainz.org/"><em>MusicBrainz</em></a>, modeled and represented as <em>Semantic Graph</em> and provided by <a 
+href="http://dbtune.org/"><em>DBTune</em></a>. Furthermore, each similarity statement (<a href="http://purl.org/ontology/similarity/Similarity"><em>sim:Similarity</em></a>) includes</p>
+
+<ul> 
+<li>the seed music artist (related by <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/similarity/subject">
+<em>sim:subject</em></a>), on which this similarity calculation is based on,</li>
+<li>the other music artist (related by <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/similarity/object">
+<em>sim:object</em></a>),</li>
+<li>the weight of the similarity (related by <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/similarity/weight">
+<em>sim:weight</em></a>) and</li>
+<li>the association (here similarity) method (related by <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" 
+href="http://purl.org/ontology/similarity/method"><em>sim:method</em></a>) of the similarity calculation.</li>
+</ul>
+ 
+<p>This association method (<a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/similarity/AssociationMethod">
+<em>sim:AssociationMethod</em></a>) can not be further specified here, because it is based on a proprietary algoritm from <a href="http://last.fm"><em>Last.fm</em></a>. Therefore, the 
+complete recommendation (related by <a href="http://purl.org/ontology/rec/recommendationontology.html#recommender"><em>rec:recommender</em></a>) and also the association method itself 
+(related by <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/is/infoservice.html#info_service"><em>is:info_service</em></a>) 
+is associated to the <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" 
+href="http://infoserviceonto.wordpress.com/2010/06/23/what-is-an-information-service/"></a><em>Information Service</em> <a about="http://purl.org/ontology/rec/recommendationontology.html" 
+rel="rdfs:seeAlso" href="http://purl.org/ontology/is/inst/lastfm"><em>Last.fm</em></a>.</p>
+
+  <div style="clear: left;"></div>
+
+
+  <!-- ================================================================== -->
+
+
+ <h2 id="sec-intro">Introduction: Recommendation Ontology Basics</h2>
+
+
+  <h2 id="sec-for">What's the Recommendation Ontology for?</h2>
+
+  <p>TODO</p>
+
+  <h2 id="sec-bg">Background</h2>
+
+  <p>TODO</p>
+
+  <h2 id="sec-standards">The Recommendation Ontology and Standards</h2>
+
+  <p>TODO</p>
+
+  <p>TODO</p>
+
+  <h2 id="sec-nsdoc">The Recommendation Ontology Description</h2>
+
+  <p>This specification serves as the <em>Recommendation Ontology</em> "namespace document". As
+  such it describes the <em>Recommendation Ontology</em> and the terms (<a href=
+  "http://www.w3.org/RDF/">RDF</a> classes and properties) that
+  constitute it, so that <a href=
+  "http://www.w3.org/2001/sw/">Semantic Web</a> applications can
+  use those terms in a variety of RDF-compatible document formats
+  and applications.</p>
+
+  <p>This document presents the <em>Recommendation Ontology</em> as a <a href=
+  "http://www.w3.org/2001/sw/">Semantic Web</a> vocabulary or
+  <em>Ontology</em>. The <em>Recommendation Ontology</em> is pretty simple,
+  pragmatic and designed to allow simultaneous deployment and
+  extension. The <em>Recommendation Ontology</em> is intended for widescale use, but its authors
+  make no commitments regarding its suitability for any particular
+  purpose.</p>
+
+  <h3 id="sec-evolution">Evolution and Extension of the Recommendation Ontology</h3>
+
+  <p>The <em>Recommendation Ontology</em> is identified by the namespace URI
+  '<code about="http://purl.org/ontology/rec/core#" property="vann:preferredNamespaceUri" datatype="xsd:anyURI">http://purl.org/ontology/rec/core#</code>'. Revisions and
+  extensions of the <em>Recommendation Ontology</em> are conducted through edits to this document,
+  which by convention is accessible in the Web via the namespace URI.
+  For practical and deployment reasons, note that <b>we do not 
+  update the namespace URI as the vocabulary matures</b>.
+  </p>
+
+<p>
+  The evolution of the <em>Recommendation Ontology</em> is best considered in terms of the
+  stability of individual vocabulary terms, rather than the
+  specification as a whole. As terms stabilise in usage and
+  documentation, they progress through the categories
+  '<strong>unstable</strong>', '<strong>testing</strong>' and
+  '<strong>stable</strong>'. Older terms are marked '<strong>archaic</strong>' which allows the possibility of older forms to become modern again.</p><!--STATUSINFO-->
+  </div>
+
+  <h2 id="sec-crossref">The Recommendation Ontology cross-reference: Listing the Recommendation Ontology Classes and
+  Properties</h2>
+
+  <p>The <em>Recommendation Ontology</em> introduces the following classes and properties. There is a link at the 
+top of this document to the RDF/XML and RDF/N3 versions.</p>
+
+  <!-- the following is the script-generated list of classes and properties -->
+ 
+
+<!-- this is the a-z listing -->
+%s
+
+<!-- and this is the bulk of the vocab descriptions -->
+%s
+
+
+<h2 id="sec-extrefs">External Vocabulary References</h2>
+
+<p>
+The description of the terms in the <em>Recommendation Ontology</em> 'dictionary' make reference to classes and properties elsewhere. This section of the <em>Recommendation Ontology</em> 
+specification provides a placeholder reference for any <em>Recommendation Ontology</em> mention of externally defined terms. For example, sometimes we might say that <em>Counter 
+Ontology</em> property has a domain or range of an externally defined class, or that a <em>Recommendation Ontology</em> class is a sub-class of an external class, or 'disjoint with' 
+such a class (ie. has no common members). Such claims help fix the intended meaning of <em>Recommendation Ontology</em> terms in relationship to other 'peer' vocabularies.<br/>
+Currently, the <em>Recommendation Ontology</em> sub classes:</p>
+<dl>
+<dt><a about="http://purl.org/ontology/rec/core#" rel="rdfs:seeAlso" href="http://purl.org/ontology/ao/associationontology.html#LikeableAssociation">ao:LikeableAssociation</a></dt>
+<dd>A likeable association. That means this association type is intended to be used for voting (ao:likeminded), feedbacking (rev:Feedback), reviewing (e.g. rev:rating) an association 
+statement (related by ao:included_association) in the context of something. 
+</dd>
+<dt><a about="http://purl.org/ontology/rec/core#" rel="rdfs:seeAlso" href="http://purl.org/ontology/olo/orderedlistontology.html#OrderedList">olo:OrderedList</a></dt>
+<dd>An ordered list with a given length an indexed items. 
+</dd>
+</dl>
+
+
+<h3 id="extns_status">Status Vocabulary</h3>
+
+<p>
+Each term in the <em>Recommendation Ontology</em> is annotated with properties from the <a href="http://www.w3.org/2003/06/sw-vocab-status/note">SemWeb Vocab Status Ontology</a>
+</p>
+<p>
+Note that this mechanism is itself somewhat experimental and evolvin. The definitions of 'stable', 'unstable', 'archaic' and 'testing' cannot
+ be defined as global absolutes, but only in relationship to the practices, expectations and social structures around some vocabulary. For their use in 
+ the Recommendation Ontology, future versions of this specification could usefully offer more detail about what to expect from a term labelled 'stable'. 
+ </p>
+
+<dl>
+<dt>vs:term_status</dt>
+<dd>The vs:term_status property indicates the status of a vocabulary term, one of 'stable','unstable','testing' or 'archaic'. </dd>
+</dl>
+
+  <h3 id="sec-ack">Acknowledgments</h3>
+
+  <p>I would like to thank very much Kurt Jacobson to help to establish this multiple purpose Recommendation Ontology. Furthermore, Dan Brickley and Libby Miller 
+ to provide the basis for this specification.</p>
+
+<h2 id="sec-changes">Recent Changes</h2>
+
+<pre>=========================
+Version 0.3 (July 2010)
+=========================
+ * ADDED: rec:for - relates a recommendation to someone or something; is inverse property of rec:recommendation
+ * MODIFIED: rec:recommender - sub property of dcterms:creator
+ * MODIFIED: rec:recommended_object - sub property of sim:object
+
+=========================
+Version 0.2 (July 2010)
+=========================
+ * ADDED: rec:RankedRecommendation - a ranked recommendation that includes an ordered list of recommendations
+ * ADDED: rec:ranked_recommendation_object - a ranked recommendation object in a ranked recommendation
+
+=========================
+Version 0.1 (July 2010)
+=========================
+ * ADDED: rec:Recommendation - a recommendation of something for someone or a specific audience by a recommender
+ * ADDED: rec:recommendation - a recommendation for someone or something
+ * ADDED: rec:recommendation_object - a recommendation object that is part of a specific recommendation
+ * ADDED: rec:recommender - an agent, which provided/calculated this recommendation
+ * ADDED: rec:recommended_in - a thing, which is recommended in a recommendation (inverse of rec:recommendation_object)
+ * ADDED: rec:recommends - an agent recommends a recommendation to someone or a recommendation audience
+</pre>
+
+</body>
+</html>
+
+
