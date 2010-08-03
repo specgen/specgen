@@ -162,13 +162,13 @@ rel="rdfs:seeAlso" href="http://smiy.svn.sourceforge.net/viewvc/smiy/specgen/tru
   <a id="sec-glance"></a>
   <h2 id="glance">The Recommendation Ontology at a glance</h2>
 
-<p>The <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/rec/core#"><em>rec:Recommendation</em></a> concept, as 
+<p>The <a href="http://purl.org/ontology/rec/recommendationontology.html#Recommendation"><em>rec:Recommendation</em></a> concept, as 
 graph with relations:</p>
 <div about="http://purl.org/ontology/rec/core#" rel="rdfs:seeAlso">
 <img src="http://smiy.sourceforge.net/rec/gfx/rec_-_recommendation.gif" title="The recommendation concept as graph with relations" alt="The recommendation concept as graph with relations" /></div>
 
 
-<p>The <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/rec/core#"><em>rec:RankedRecommendation</em></a> concept, as 
+<p>The <a href="http://purl.org/ontology/rec/recommendationontology.html#RankedRecommendation"><em>rec:RankedRecommendation</em></a> concept, as 
 graph with relations:</p>
 <div about="http://purl.org/ontology/rec/core#" rel="rdfs:seeAlso">
 <img src="http://smiy.sourceforge.net/rec/gfx/rec_-_ranked_recommendation.gif" title="The ranked recommendation concept as graph with relations" alt="The ranked recommendation concept as graph with relations" /></div>
@@ -186,16 +186,21 @@ graph with relations:</p>
   <div style="clear: left;"></div>
 
   <h2 id="sec-example">Examples</h2>
+  
+  <ul>
+  		<li><a href="#sec-ext-music-rec-example">Extended Music Recommendation Example</a></li>
+  		<li><a href="#sec-simple-music-rec-example">Simple Music Recommendation Example</a></li>
+  </ul>
 
-  <p>RDF/Turtle representation of an extended music artist recommendation example from <a about="http://purl.org/ontology/rec/recommendationontology.html" 
+  <h3 id="sec-ext-music-rec-example">Extended Music Recommendation Example</h3>
+
+  <p>RDF/Turtle representation of an extended music track recommendation example from <a about="http://purl.org/ontology/rec/recommendationontology.html" 
   rel="rdfs:seeAlso" href="http://last.fm"><em>Last.fm</em></a> modeled with the <em>Recommendation Ontology</em> (see also <a about="http://purl.org/ontology/rec/recommendationontology.html" 
   rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/rec/examples/RDF/music_rec_-_example.rdf">RDF</a> and <a about="http://purl.org/ontology/rec/recommendationontology.html" 
   rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/rec/examples/N3/music_rec_-_example.n3">N3</a> for downloadable representations of this example):</p>
 
   <div class="example">
     <pre>
-@prefix xsd:     &lt;http://www.w3.org/2001/XMLSchema#&gt; .
-@prefix dc:      &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix rec:     &lt;http://purl.org/ontology/rec/core#&gt; .
 @prefix ex:      &lt;http://example.org/&gt; .
 @prefix olo:     &lt;http://purl.org/ontology/olo/core#&gt; .
@@ -338,12 +343,13 @@ ex:Association10 a sim:Similarity ;
 
   <p>This example shows an extended music artist recommendation modeled as <a href="http://purl.org/ontology/rec/recommendationontology.html#RankedRecommendation">
 <em>rec:RankedRecommendation</em></a> instance. It is based on the <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso"
-href="http://bit.ly/bcjFcR">music artists recommendations of James Brown</a> from <a href="http://last.fm"><em>Last.fm</em></a>. Hence, the <a 
+href="http://bit.ly/bcjFcR">music track recommendations of James Brown's "Get Up (I Feel Like Being a) Sex Machine"</a> from <a href="http://last.fm"><em>Last.fm</em></a>. Hence, the <a 
 about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://dbtune.org/musicbrainz/resource/track/008e72df-6469-4557-8b5b-c54c3285fbd3">subject</a> of 
 the <a href="http://purl.org/ontology/rec/recommendationontology.html#recommendation"><em>rec:recommendation</em></a> relation is a resolvable <em>URI</em> to a description of <a 
-about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://musicbrainz.org/artist/20ff3303-4fe2-4a47-a1b6-291e26aa3438.html">James Brown</a> at <a 
-about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://musicbrainz.org/"><em>MusicBrainz</em></a>, modeled and represented as <em>Semantic 
-Graph</em> and provided by <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://dbtune.org/"><em>DBTune</em></a>.<br/>
+about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://musicbrainz.org/artist/20ff3303-4fe2-4a47-a1b6-291e26aa3438.html">James Brown's 
+"Get Up (I Feel Like Being a) Sex Machine"</a> at <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://musicbrainz.org/">
+<em>MusicBrainz</em></a>, modeled and represented as <em>Semantic Graph</em> and provided by <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" 
+href="http://dbtune.org/"><em>DBTune</em></a>.<br/>
 Since a <a href="http://purl.org/ontology/rec/recommendationontology.html#RankedRecommendation"><em>rec:RankedRecommendation</em></a> is a sub class of <a
  href="http://purl.org/ontology/rec/recommendationontology.html#Recommendation"><em>rec:Recommendation</em></a> and <a about="http://purl.org/ontology/rec/recommendationontology.html" 
 rel="rdfs:seeAlso" href="http://purl.org/ontology/olo/orderedlistontology.html#OrderedList"><em>olo:OrderedList</em></a>, it can also make use of ordered list features. That means, this 
@@ -353,13 +359,13 @@ on this level. These details are provided by further association statements (her
 href="http://purl.org/ontology/similarity/Similarity"><em>sim:Similarity</em></a>) related by using the <a about="http://purl.org/ontology/rec/recommendationontology.html" 
 rel="rdfs:seeAlso" href="http://purl.org/ontology/ao/associationontology.html#included_association"><em>ao:included_association</em></a> property.<br/>
 Each slot item (related by <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/olo/orderedlistontology.html#item">
-<em>olo:item</em></a>) is also a music artist description at <a href="http://musicbrainz.org/"><em>MusicBrainz</em></a>, modeled and represented as <em>Semantic Graph</em> and provided by <a 
+<em>olo:item</em></a>) is also a music track description at <a href="http://musicbrainz.org/"><em>MusicBrainz</em></a>, modeled and represented as <em>Semantic Graph</em> and provided by <a 
 href="http://dbtune.org/"><em>DBTune</em></a>. Furthermore, each similarity statement (<a href="http://purl.org/ontology/similarity/Similarity"><em>sim:Similarity</em></a>) includes</p>
 
 <ul> 
-<li>the seed music artist (related by <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/similarity/subject">
+<li>the seed music track (related by <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/similarity/subject">
 <em>sim:subject</em></a>), on which this similarity calculation is based on,</li>
-<li>the other music artist (related by <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/similarity/object">
+<li>the other music track (related by <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/similarity/object">
 <em>sim:object</em></a>),</li>
 <li>the weight of the similarity (related by <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/similarity/weight">
 <em>sim:weight</em></a>) and</li>
@@ -373,22 +379,20 @@ complete recommendation (related by <a href="http://purl.org/ontology/rec/recomm
 (related by <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/is/infoservice.html#info_service"><em>is:info_service</em></a>) 
 is associated to the <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" 
 href="http://infoserviceonto.wordpress.com/2010/06/23/what-is-an-information-service/"></a><em>Information Service</em> <a about="http://purl.org/ontology/rec/recommendationontology.html" 
-rel="rdfs:seeAlso" href="http://purl.org/ontology/is/inst/lastfm"><em>Last.fm</em></a>.</p>
+rel="rdfs:seeAlso" href="http://purl.org/ontology/is/inst/"><em>Last.fm</em></a>.</p>
 
+  <h3 id="sec-simple-music-rec-example">Simple Music Recommendation Example</h3>
 
-  <p>RDF/Turtle representation of an extended music artist recommendation example from <a about="http://purl.org/ontology/rec/recommendationontology.html" 
-  rel="rdfs:seeAlso" href="http://last.fm"><em>Last.fm</em></a> modeled with the <em>Recommendation Ontology</em> (see also <a about="http://purl.org/ontology/rec/recommendationontology.html" 
-  rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/rec/examples/RDF/music_rec_-_example.rdf">RDF</a> and <a about="http://purl.org/ontology/rec/recommendationontology.html" 
-  rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/rec/examples/N3/music_rec_-_example.n3">N3</a> for downloadable representations of this example):</p>
+  <p>RDF/Turtle representation of a simple music track recommendation example from <a href="http://last.fm"><em>Last.fm</em></a> modeled with the <em>Recommendation Ontology</em> (see also 
+<a about="http://purl.org/ontology/rec/recommendationontology.html"  rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/rec/examples/RDF/music_rec_-_simple_example.rdf">RDF</a> and <a 
+about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/rec/examples/N3/music_rec_-_simple_example.n3">N3</a> for downloadable 
+representations of this example):</p>
 
   <div class="example">
     <pre>
-@prefix xsd:     &lt;http://www.w3.org/2001/XMLSchema#&gt; .
-@prefix dc:      &lt;http://purl.org/dc/elements/1.1/&gt; .
 @prefix rec:     &lt;http://purl.org/ontology/rec/core#&gt; .
 @prefix ex:      &lt;http://example.org/&gt; .
 @prefix isi:     &lt;http://purl.org/ontology/is/inst/&gt; .
-@prefix ao:      &lt;http://purl.org/ontology/ao/core#&gt; .
 @prefix sim:     &lt;http://purl.org/ontology/similarity/&gt; .
 @prefix is:      &lt;http://purl.org/ontology/is/core#&gt; .
 @prefix foaf:    &lt;http://xmlns.com/foaf/0.1/&gt; .
@@ -397,7 +401,7 @@ ex:AMusicRecommendation a rec:RankedRecommendation ;
 &nbsp;&nbsp;&nbsp;rec:for &lt;http://dbtune.org/musicbrainz/resource/track/008e72df-6469-4557-8b5b-c54c3285fbd3&gt; ;
 &nbsp;&nbsp;&nbsp;rec:recommender isi:lastfm ;
 &nbsp;&nbsp;&nbsp;rec:recommendation_audience ex:FunkyPeople ;
-&nbsp;&nbsp;&nbsp;sim:subject &lt;http://dbtune.org/musicbrainz/resource/track/008e72df-6469-4557-8b5b-c54c3285fbd3&lt; ;
+&nbsp;&nbsp;&nbsp;sim:subject &lt;http://dbtune.org/musicbrainz/resource/track/008e72df-6469-4557-8b5b-c54c3285fbd3&gt; ;
 &nbsp;&nbsp;&nbsp;rec:recommendation_object &lt;http://dbtune.org/musicbrainz/resource/track/097c362d-72b7-4a53-96e2-d9ff02f8be1f&gt; ;
 &nbsp;&nbsp;&nbsp;rec:recommendation_object &lt;http://dbtune.org/musicbrainz/resource/track/161d35d9-3e31-41e9-8392-cf5d2c03b31d&gt; ;
 &nbsp;&nbsp;&nbsp;rec:recommendation_object &lt;http://dbtune.org/musicbrainz/resource/track/093c1742-ebda-45cd-a50c-734e5d92e7f2&gt; ;
@@ -417,7 +421,7 @@ ex:FunkyPeople a foaf:Group .
 </pre>
   </div>
 
-  <p>This example is a simplified one from the extended music artist recommendation example above. It is simply stripped down to its high level recommendation. The target, where the 
+  <p>This example is a simplified one from the extended music track recommendation example above. It is simply stripped down to its high level recommendation. The target, where the 
 recommendation is for, is now related by the inverse property of <a href="http://purl.org/ontology/rec/recommendationontology.html#recommendation"><em>rec:recommendation</em></a>, 
 <a href="http://purl.org/ontology/rec/recommendationontology.html#for"><em>rec:for</em></a>. Furthermore, it includes a fictional audience group (<em>ex:FunkyPeople</em>), which is 
 related by the property <a href="http://purl.org/ontology/rec/recommendationontology.html#recommendation_audience"><em>rec:recommendation_audience</em></a>. Finally, the recommendation 
@@ -527,20 +531,20 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			<p style="float: right; font-size: small;">[<a href="#RankedRecommendation">#</a>] <!-- RankedRecommendation --> [<a href="#glance">back to top</a>]</p>
   			<br/>
   			</div>
-<div class="specterm" id="Recommendation" about="http://purl.org/ontology/rec/core#Recommendation" typeof="rdfs:Class">
+<div class="specterm" id="Recommendation" about="http://purl.org/ontology/rec/core#Recommendation" typeof="owl:Class">
   			<h3>Class: rec:Recommendation</h3> 
   			<em property="rdfs:label" >Recommendation</em> - <span property="rdfs:comment" >A recommendation of something for someone or a specific audience by a recommender.</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
   			<td><span property="vs:status" >unstable</span></td></tr>
   			<tr><th>Properties include:</th>
- <td>  <a href="#recommender">recommender</a>
+ <td>  <a href="#for">for</a>
  <a href="#recommendation_object">recommendation_object</a>
- <a href="#for">for</a>
+ <a href="#recommender">recommender</a>
  <a href="#recommendation_audience">recommendation_audience</a>
  </td></tr>
   			<tr><th>Used with:</th>
- <td>  <a href="#recommended_in">recommended_in</a>
- <a href="#recommendation">recommendation</a>
+ <td>  <a href="#recommendation">recommendation</a>
+ <a href="#recommended_in">recommended_in</a>
  <a href="#recommends">recommends</a>
 </td></tr> <tr><th>Sub class of</th>
  <td>  <span rel="rdfs:subClassOf" href="http://purl.org/ontology/ao/core#LikeableAssociation"><a href="http://purl.org/ontology/ao/core#LikeableAssociation">ao:LikeableAssociation</a></span>
@@ -549,8 +553,8 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/rec/core#"></span>
  </td></tr><tr><th colspan="2">OWL Class</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#Class"></span> </td></tr><tr><th colspan="2">RDFS Class</th>
- <td>  </td></tr>
+ <td>  </td></tr><tr><th colspan="2">RDFS Class</th>
+ <td> <span rel="rdf:type" href="http://www.w3.org/2000/01/rdf-schema#Class"></span> </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#Recommendation">#</a>] <!-- Recommendation --> [<a href="#glance">back to top</a>]</p>
@@ -568,6 +572,7 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
 </td></tr>
   			<tr><th>Sub property of</th>
  <td>  <span rel="rdfs:subPropertyOf" href="http://purl.org/ontology/rec/core#recommendation_object"><a href="#recommendation_object">has recommendation object</a></span>
+ <span rel="rdfs:subPropertyOf" href="http://purl.org/ontology/olo/core#slot"><a href="http://purl.org/ontology/olo/core#slot">olo:slot</a></span>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/rec/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
@@ -608,8 +613,8 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  <td>  <span rel="rdfs:domain" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
  </td></tr>
   			<tr><th>Range:</th>
- <td> <span rel="rdfs:range" href="http://purl.org/ontology/rec/core#Recommendation"><a href="#Recommendation">Recommendation</a></span>
-</td>	</tr><tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:range" href="http://purl.org/ontology/rec/core#Recommendation"><a href="#Recommendation">Recommendation</a></span>
+ </td></tr><tr><th>Sub property of</th>
  <td>  <span rel="rdfs:subPropertyOf" href="http://purl.org/ontology/similarity/association"><a href="http://purl.org/ontology/similarity/association">sim:association</a></span>
  </td></tr><tr><th>Has inverse property</th>
  <td>  <a href="#for">for</a>
@@ -631,12 +636,12 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  <td> <span rel="rdfs:domain" href="http://purl.org/ontology/rec/core#Recommendation"><a href="#Recommendation">Recommendation</a></span>
 </td></tr>
   			<tr><th>Range:</th>
- <td>  <span rel="rdfs:range" resource="[_:HQOXGmDA3]"></span>
-  									<span about="[_:HQOXGmDA3]" typeof="owl:Class"></span>
-  									<span about="[_:HQOXGmDA3]" rel="owl:unionOf" resource="[_:HQOXGmDA4]"></span>  <span about="[_:HQOXGmDA4]" typeof="rdf:Description"></span>
-  									<span about="[_:HQOXGmDA4]" rel="rdf:first" href="http://purl.org/dc/terms/AgentClass"><a href="http://purl.org/dc/terms/AgentClass">dcterms:AgentClass</a></span>
-  									<span about="[_:HQOXGmDA4]" rel="rdf:rest" resource="[_:HQOXGmDA5]"></span> or <span about="[_:HQOXGmDA5]" typeof="rdf:Description"></span>
-  														<span about="[_:HQOXGmDA5]" rel="rdf:first" href="http://xmlns.com/foaf/0.1/Group"><a href="http://xmlns.com/foaf/0.1/Group">foaf:Group</a></span> <span about="[_:HQOXGmDA5]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr>
+ <td>  <span rel="rdfs:range" resource="[_:ZlXYWVxs3]"></span>
+  									<span about="[_:ZlXYWVxs3]" typeof="owl:Class"></span>
+  									<span about="[_:ZlXYWVxs3]" rel="owl:unionOf" resource="[_:ZlXYWVxs4]"></span>  <span about="[_:ZlXYWVxs4]" typeof="rdf:Description"></span>
+  									<span about="[_:ZlXYWVxs4]" rel="rdf:first" href="http://purl.org/dc/terms/AgentClass"><a href="http://purl.org/dc/terms/AgentClass">dcterms:AgentClass</a></span>
+  									<span about="[_:ZlXYWVxs4]" rel="rdf:rest" resource="[_:ZlXYWVxs5]"></span> or <span about="[_:ZlXYWVxs5]" typeof="rdf:Description"></span>
+  														<span about="[_:ZlXYWVxs5]" rel="rdf:first" href="http://xmlns.com/foaf/0.1/Group"><a href="http://xmlns.com/foaf/0.1/Group">foaf:Group</a></span> <span about="[_:ZlXYWVxs5]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/rec/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
  <td>  </td></tr>
@@ -678,8 +683,8 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  <td>  <span rel="rdfs:domain" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
  </td></tr>
   			<tr><th>Range:</th>
- <td> <span rel="rdfs:range" href="http://purl.org/ontology/rec/core#Recommendation"><a href="#Recommendation">Recommendation</a></span>
-</td>	</tr><tr><th>Inverse property of</th>
+ <td>  <span rel="rdfs:range" href="http://purl.org/ontology/rec/core#Recommendation"><a href="#Recommendation">Recommendation</a></span>
+ </td></tr><tr><th>Inverse property of</th>
  <td>  <span rel="owl:inverseOf" href="http://purl.org/ontology/rec/core#recommendation_object"><a href="#recommendation_object">has recommendation object</a></span>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/rec/core#"></span>
@@ -720,8 +725,8 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  <td>  <span rel="rdfs:domain" href="http://purl.org/dc/terms/Agent"><a href="http://purl.org/dc/terms/Agent">dcterms:Agent</a></span>
  </td></tr>
   			<tr><th>Range:</th>
- <td> <span rel="rdfs:range" href="http://purl.org/ontology/rec/core#Recommendation"><a href="#Recommendation">Recommendation</a></span>
-</td>	</tr><tr><th>Inverse property of</th>
+ <td>  <span rel="rdfs:range" href="http://purl.org/ontology/rec/core#Recommendation"><a href="#Recommendation">Recommendation</a></span>
+ </td></tr><tr><th>Inverse property of</th>
  <td>  <span rel="owl:inverseOf" href="http://purl.org/ontology/rec/core#recommender"><a href="#recommender">has recommender</a></span>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/rec/core#"></span>

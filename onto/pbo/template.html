@@ -163,14 +163,16 @@ href="http://svn.foaf-project.org/foaftown/specgen/">Danbri's SpecGen version</a
   <a id="sec-glance"></a>
   <h2 id="glance">The Play Back Ontology at a glance</h2>
 
-<p>The <a href="http://purl.org/ontology/pbo/playbackontology.html#Playlist"><em>pbo:Playlist</em></a> concept as graph with relations:</p>
+<p>The <a href="http://purl.org/ontology/pbo/playbackontology.html#Playlist"><em>pbo:Playlist</em></a> concept as graph with relations (click <a about="http://purl.org/ontology/pbo/core#" 
+rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/pbo/gfx/pbo_-_playlist_concept.gif">here</a> to get an extended version of that graph):</p>
 <div about="http://purl.org/ontology/pbo/core#" rel="rdfs:seeAlso">
-<img src="http://smiy.sourceforge.net/pbo/gfx/pbo_-_playlist_concept.gif" title="The playlist concept as graph with relations" alt="The playlist concept as graph with relations" /></div>
+<img src="http://smiy.sourceforge.net/pbo/gfx/pbo_-_playlist_concept_-_simple.gif" title="The playlist concept as graph with relations" alt="The playlist concept as graph with relations" /></div>
 
 <p>The <a href="http://purl.org/ontology/pbo/playbackontology.html#PlayBackCounter"><em>pbo:PlayBackCounter</em></a> and <a 
-href="http://purl.org/ontology/pbo/playbackontology.html#SkipCounter"><em>pbo:SkipCounter</em></a> concept as graph with relations:</p>
+href="http://purl.org/ontology/pbo/playbackontology.html#SkipCounter"><em>pbo:SkipCounter</em></a> concept as graph with relations(click <a about="http://purl.org/ontology/pbo/core#" 
+rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/pbo/gfx/pbo_-_play_back_and_skip_counter_concepts.gif">here</a> to get an extended version of that graph):</p>
 <div about="http://purl.org/ontology/pbo/core#" rel="rdfs:seeAlso">
-<img src="http://smiy.sourceforge.net/pbo/gfx/pbo_-_play_back_and_skip_counter_concepts.gif" title="The play back and skip counter concept as graph with relations" 
+<img src="http://smiy.sourceforge.net/pbo/gfx/pbo_-_play_back_and_skip_counter_concepts_-_simple.gif" title="The play back and skip counter concept as graph with relations" 
 alt="The play back and skip counter concept as graph with relations" /></div>
 
  <p>An a-z index of <em>Play Back Ontology</em> terms, by class (categories or types) and by property.</p>
@@ -213,10 +215,12 @@ ex:FunkyPlaylist a pbo:Playlist ;
 &nbsp;&nbsp;&nbsp;sim:association ex:ZazisAssociation ;
 &nbsp;&nbsp;&nbsp;sim:association ex:BobsAssociationInUse ;
 &nbsp;&nbsp;&nbsp;pbo:playlist_slot [   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a olo:Slot ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:index 1 ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pbo:playlist_item ex:SexMachine
 &nbsp;&nbsp;&nbsp;] ;
 &nbsp;&nbsp;&nbsp;pbo:playlist_slot [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a olo:Slot ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:index 2 ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pbo:playlist_item ex:GoodFoot
 &nbsp;&nbsp;&nbsp;] .

@@ -163,14 +163,16 @@ href="http://svn.foaf-project.org/foaftown/specgen/">Danbri's SpecGen version</a
   <a id="sec-glance"></a>
   <h2 id="glance">The Play Back Ontology at a glance</h2>
 
-<p>The <a href="http://purl.org/ontology/pbo/playbackontology.html#Playlist"><em>pbo:Playlist</em></a> concept as graph with relations:</p>
+<p>The <a href="http://purl.org/ontology/pbo/playbackontology.html#Playlist"><em>pbo:Playlist</em></a> concept as graph with relations (click <a about="http://purl.org/ontology/pbo/core#" 
+rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/pbo/gfx/pbo_-_playlist_concept.gif">here</a> to get an extended version of that graph):</p>
 <div about="http://purl.org/ontology/pbo/core#" rel="rdfs:seeAlso">
-<img src="http://smiy.sourceforge.net/pbo/gfx/pbo_-_playlist_concept.gif" title="The playlist concept as graph with relations" alt="The playlist concept as graph with relations" /></div>
+<img src="http://smiy.sourceforge.net/pbo/gfx/pbo_-_playlist_concept_-_simple.gif" title="The playlist concept as graph with relations" alt="The playlist concept as graph with relations" /></div>
 
 <p>The <a href="http://purl.org/ontology/pbo/playbackontology.html#PlayBackCounter"><em>pbo:PlayBackCounter</em></a> and <a 
-href="http://purl.org/ontology/pbo/playbackontology.html#SkipCounter"><em>pbo:SkipCounter</em></a> concept as graph with relations:</p>
+href="http://purl.org/ontology/pbo/playbackontology.html#SkipCounter"><em>pbo:SkipCounter</em></a> concept as graph with relations(click <a about="http://purl.org/ontology/pbo/core#" 
+rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/pbo/gfx/pbo_-_play_back_and_skip_counter_concepts.gif">here</a> to get an extended version of that graph):</p>
 <div about="http://purl.org/ontology/pbo/core#" rel="rdfs:seeAlso">
-<img src="http://smiy.sourceforge.net/pbo/gfx/pbo_-_play_back_and_skip_counter_concepts.gif" title="The play back and skip counter concept as graph with relations" 
+<img src="http://smiy.sourceforge.net/pbo/gfx/pbo_-_play_back_and_skip_counter_concepts_-_simple.gif" title="The play back and skip counter concept as graph with relations" 
 alt="The play back and skip counter concept as graph with relations" /></div>
 
  <p>An a-z index of <em>Play Back Ontology</em> terms, by class (categories or types) and by property.</p>
@@ -218,10 +220,12 @@ ex:FunkyPlaylist a pbo:Playlist ;
 &nbsp;&nbsp;&nbsp;sim:association ex:ZazisAssociation ;
 &nbsp;&nbsp;&nbsp;sim:association ex:BobsAssociationInUse ;
 &nbsp;&nbsp;&nbsp;pbo:playlist_slot [   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a olo:Slot ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:index 1 ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pbo:playlist_item ex:SexMachine
 &nbsp;&nbsp;&nbsp;] ;
 &nbsp;&nbsp;&nbsp;pbo:playlist_slot [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a olo:Slot ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:index 2 ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pbo:playlist_item ex:GoodFoot
 &nbsp;&nbsp;&nbsp;] .
@@ -253,7 +257,7 @@ ex:Funk a mo:Genre .
 </pre>
   </div>
 
-  <p>This examples shows a music playlist, which is modeled as <a href="http://purl.org/ontology/pbo/playbackontology.html#Playlist"><em>pbo:Playlist</em></a> instance. The playlist is 
+  <p>This example shows a music playlist, which is modeled as <a href="http://purl.org/ontology/pbo/playbackontology.html#Playlist"><em>pbo:Playlist</em></a> instance. The playlist is 
 annotated with further editoral metadata, e.g. a title, a description and a creator, and has a fixed length (<a about="http://purl.org/ontology/pbo/playbackontology.html" rel="rdfs:seeAlso" 
 href="http://purl.org/ontology/olo/orderedlistontology.html#length"><em>olo:length</em></a>) that represents the number of slots this specific ordered list (<a 
 about="http://purl.org/ontology/pbo/playbackontology.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/olo/orderedlistontology.html#OrderedList"><em>olo:OrderedList</em></a>) instance 
@@ -577,10 +581,10 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
 </td></tr> <tr><th>Sub class of</th>
  <td>  <span rel="rdfs:subClassOf" href="http://purl.org/ontology/olo/core#Slot"><a href="http://purl.org/ontology/olo/core#Slot">olo:Slot</a></span>
  </td></tr><tr><th class="restrictions">Restriction(s):</th>
- <td>  <span about ="http://purl.org/ontology/pbo/core#PlaylistSlot" rel="rdfs:subClassOf" resource="[_:BeLoWODh3]"></span>
- <span about="[_:BeLoWODh3]" typeof="owl:Restriction"></span>The property 
-  									<span about="[_:BeLoWODh3]" rel="owl:onProperty" href="http://purl.org/ontology/pbo/core#playlist_item"><a href="#playlist_item">pbo:playlist_item</a></span> must be set <em>at least</em> 
-  									<span about="[_:BeLoWODh3]" property="owl:minCardinality" datatype="xsd:nonNegativeInteger" >1</span> time(s) 
+ <td>  <span about ="http://purl.org/ontology/pbo/core#PlaylistSlot" rel="rdfs:subClassOf" resource="[_:siGYKJWL3]"></span>
+ <span about="[_:siGYKJWL3]" typeof="owl:Restriction"></span>The property 
+  									<span about="[_:siGYKJWL3]" rel="owl:onProperty" href="http://purl.org/ontology/pbo/core#playlist_item"><a href="#playlist_item">pbo:playlist_item</a></span> must be set <em>at least</em> 
+  									<span about="[_:siGYKJWL3]" property="owl:minCardinality" datatype="xsd:nonNegativeInteger" >1</span> time(s) 
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/pbo/core#"></span>
  </td></tr><tr><th colspan="2">OWL Class</th>
@@ -656,8 +660,8 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			<tr><th>Used with:</th>
  <td>  <a href="#playlist">playlist</a>
 </td></tr> <tr><th>Sub class of</th>
- <td>  <span rel="rdfs:subClassOf" href="http://purl.org/ontology/bibo/Document"><a href="http://purl.org/ontology/bibo/Document">bibo:Document</a></span>
- <span rel="rdfs:subClassOf" href="http://purl.org/ontology/olo/core#OrderedList"><a href="http://purl.org/ontology/olo/core#OrderedList">olo:OrderedList</a></span>
+ <td>  <span rel="rdfs:subClassOf" href="http://purl.org/ontology/olo/core#OrderedList"><a href="http://purl.org/ontology/olo/core#OrderedList">olo:OrderedList</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/ontology/bibo/Document"><a href="http://purl.org/ontology/bibo/Document">bibo:Document</a></span>
  </td></tr><tr><th>Has sub class</th>
  <td>  <a href="#FixedPlaylist">Fixed Playlist</a>
  </td></tr>
@@ -753,12 +757,12 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  <td> <span rel="rdfs:domain" href="http://purl.org/ontology/pbo/core#MediaActionCounter"><a href="#MediaActionCounter">Media Action Counter</a></span>
 </td></tr>
   			<tr><th>Range:</th>
- <td>  <span rel="rdfs:range" resource="[_:BeLoWODh4]"></span>
-  									<span about="[_:BeLoWODh4]" typeof="owl:Class"></span>
-  									<span about="[_:BeLoWODh4]" rel="owl:unionOf" resource="[_:BeLoWODh5]"></span>  <span about="[_:BeLoWODh5]" typeof="rdf:Description"></span>
-  									<span about="[_:BeLoWODh5]" rel="rdf:first" href="http://purl.org/ontology/bibo/Document"><a href="http://purl.org/ontology/bibo/Document">bibo:Document</a></span>
-  									<span about="[_:BeLoWODh5]" rel="rdf:rest" resource="[_:BeLoWODh6]"></span> or <span about="[_:BeLoWODh6]" typeof="rdf:Description"></span>
-  														<span about="[_:BeLoWODh6]" rel="rdf:first" href="http://purl.org/vocab/frbr/core#Endeavour"><a href="http://purl.org/vocab/frbr/core#Endeavour">frbr:Endeavour</a></span> <span about="[_:BeLoWODh6]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr><tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:range" resource="[_:siGYKJWL4]"></span>
+  									<span about="[_:siGYKJWL4]" typeof="owl:Class"></span>
+  									<span about="[_:siGYKJWL4]" rel="owl:unionOf" resource="[_:siGYKJWL5]"></span>  <span about="[_:siGYKJWL5]" typeof="rdf:Description"></span>
+  									<span about="[_:siGYKJWL5]" rel="rdf:first" href="http://purl.org/ontology/bibo/Document"><a href="http://purl.org/ontology/bibo/Document">bibo:Document</a></span>
+  									<span about="[_:siGYKJWL5]" rel="rdf:rest" resource="[_:siGYKJWL6]"></span> or <span about="[_:siGYKJWL6]" typeof="rdf:Description"></span>
+  														<span about="[_:siGYKJWL6]" rel="rdf:first" href="http://purl.org/vocab/frbr/core#Endeavour"><a href="http://purl.org/vocab/frbr/core#Endeavour">frbr:Endeavour</a></span> <span about="[_:siGYKJWL6]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr><tr><th>Sub property of</th>
  <td>  <span rel="rdfs:subPropertyOf" href="http://purl.org/ontology/co/core#object"><a href="http://purl.org/ontology/co/core#object">co:object</a></span>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/pbo/core#"></span>
@@ -777,17 +781,17 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  <td> <span rel="rdfs:domain" href="http://purl.org/ontology/pbo/core#PlaylistSlot"><a href="#PlaylistSlot">Playlist Slot</a></span>
 </td></tr>
   			<tr><th>Range:</th>
- <td>  <span rel="rdfs:range" resource="[_:BeLoWODh7]"></span>
-  									<span about="[_:BeLoWODh7]" typeof="owl:Class"></span>
-  									<span about="[_:BeLoWODh7]" rel="owl:unionOf" resource="[_:BeLoWODh8]"></span>  <span about="[_:BeLoWODh8]" typeof="rdf:Description"></span>
-  									<span about="[_:BeLoWODh8]" rel="rdf:first" href="http://purl.org/ontology/bibo/Document"><a href="http://purl.org/ontology/bibo/Document">bibo:Document</a></span>
-  									<span about="[_:BeLoWODh8]" rel="rdf:rest" resource="[_:BeLoWODh9]"></span> or <span about="[_:BeLoWODh9]" typeof="rdf:Description"></span>
-  														<span about="[_:BeLoWODh9]" rel="rdf:first" href="http://purl.org/vocab/frbr/core#Endeavour"><a href="http://purl.org/vocab/frbr/core#Endeavour">frbr:Endeavour</a></span> <span about="[_:BeLoWODh9]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr><tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:range" resource="[_:siGYKJWL7]"></span>
+  									<span about="[_:siGYKJWL7]" typeof="owl:Class"></span>
+  									<span about="[_:siGYKJWL7]" rel="owl:unionOf" resource="[_:siGYKJWL8]"></span>  <span about="[_:siGYKJWL8]" typeof="rdf:Description"></span>
+  									<span about="[_:siGYKJWL8]" rel="rdf:first" href="http://purl.org/ontology/bibo/Document"><a href="http://purl.org/ontology/bibo/Document">bibo:Document</a></span>
+  									<span about="[_:siGYKJWL8]" rel="rdf:rest" resource="[_:siGYKJWL9]"></span> or <span about="[_:siGYKJWL9]" typeof="rdf:Description"></span>
+  														<span about="[_:siGYKJWL9]" rel="rdf:first" href="http://purl.org/vocab/frbr/core#Endeavour"><a href="http://purl.org/vocab/frbr/core#Endeavour">frbr:Endeavour</a></span> <span about="[_:siGYKJWL9]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr><tr><th>Sub property of</th>
  <td>  <span rel="rdfs:subPropertyOf" href="http://purl.org/ontology/olo/core#item"><a href="http://purl.org/ontology/olo/core#item">olo:item</a></span>
  </td></tr><tr><th>Inverse property of</th>
- <td>  <span rel="owl:inverseOf" resource="[_:BeLoWODh10]">the anonymous defined property with the label
-  							 '<em about="[_:BeLoWODh10]" property="rdfs:label">is playlist item of</em>'</span>
- (<span about="[_:BeLoWODh10]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
+ <td>  <span rel="owl:inverseOf" resource="[_:siGYKJWL10]">the anonymous defined property with the label
+  							 '<em about="[_:siGYKJWL10]" property="rdfs:label">is playlist item of</em>'</span>
+ (<span about="[_:siGYKJWL10]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/pbo/core#"></span>
  </td></tr><tr><th colspan="2">Object Property</th>
  <td>  </td></tr>

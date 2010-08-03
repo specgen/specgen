@@ -614,7 +614,6 @@ class VocabReport(object):
   				# TODO: handle other sub class types (...) currently owl:Restriction only
   				colon = subclassnice.find(':')
   				print "ns uri ", str(self.vocab._get_uri())
-  				# if ((colon > 0) & (subclass.find(self.vocab._uri) < 1)):
   				if(subclass.find(str(self.vocab._get_uri())) < 0):
   					if (colon > 0):
   						termStr = """<span rel="rdfs:subClassOf" href="%s"><a href="%s">%s</a></span>\n""" % (subclass, subclass, subclassnice)
@@ -737,16 +736,17 @@ class VocabReport(object):
 
   			if contentStr != "":
   				hasSubClass = "%s <td> %s </td></tr>" % (startStr, contentStr)
-  			else:
-  				q = 'SELECT ?sc WHERE {?sc rdfs:subClassOf <%s> } ' % (term.uri)
+  				
+  			q = 'SELECT ?sc WHERE {?sc rdfs:subClassOf <%s> } ' % (term.uri)
 
-  				relations = g.query(q)
-  				for (subclass) in relations:
-  					subclassnice = self.vocab.niceName(subclass)
-  					print "has subclass ", subclass
-  					print "has subclassnice ", subclassnice
-  					# check niceName result
-  					colon = subclassnice.find(':')
+  			relations = g.query(q)
+  			for (subclass) in relations:
+  				subclassnice = self.vocab.niceName(subclass)
+  				print "has subclass ", subclass
+  				print "has subclassnice ", subclassnice
+  				# check niceName result
+  				colon = subclassnice.find(':')
+  				if(subclass.find(str(self.vocab._get_uri())) < 0):
   					if colon > 0:
   						termStr = """<a href="%s">%s</a>\n""" % (subclass, subclassnice)
   						contentStr = "%s %s" % (contentStr, termStr)
@@ -929,17 +929,18 @@ class VocabReport(object):
 
   			if contentStr != "":
   				rangesOfProperty = "%s <td>%s</td>	</tr>" % (startStr, contentStr)
-  			else:
-  				q = 'SELECT ?r WHERE {<%s> rdfs:range ?r } ' % (term.uri)
+  				
+  			q = 'SELECT ?r WHERE {<%s> rdfs:range ?r } ' % (term.uri)
 
-  				relations = g.query(q)
-  				for (range) in relations:
-  					rangenice = self.vocab.niceName(range)
-  					# print "range ",range
-  					# print "rangenice ",rangenice
-  					# check niceName result
-  					# TODO: handle other range types
-  					colon = rangenice.find(':')
+  			relations = g.query(q)
+  			for (range) in relations:
+  				rangenice = self.vocab.niceName(range)
+  				# print "range ",range
+  				# print "rangenice ",rangenice
+  				# check niceName result
+  				# TODO: handle other range types
+  				colon = rangenice.find(':')
+  				if(range.find(str(self.vocab._get_uri())) < 0):
   					if colon > 0:
   						termStr = """<span rel="rdfs:range" href="%s"><a href="%s">%s</a></span>\n""" % (range, range, rangenice)
   						contentStr = "%s %s" % (contentStr, termStr)
@@ -1030,14 +1031,15 @@ class VocabReport(object):
 
   			if contentStr != "":
   				subPropertyOf = "%s <td> %s </td></tr>" % (startStr, contentStr)
-  			else:
-  				q1 = 'SELECT ?sp WHERE {<%s> rdfs:subPropertyOf ?sp } ' % (term.uri)
   				
-  				relations = g.query(q1)
-  				for (subproperty) in relations:
-  					subpropertynice = self.vocab.niceName(subproperty)
-  					# check niceName result
-  					colon = subpropertynice.find(':')
+  			q1 = 'SELECT ?sp WHERE {<%s> rdfs:subPropertyOf ?sp } ' % (term.uri)
+  				
+  			relations = g.query(q1)
+  			for (subproperty) in relations:
+  				subpropertynice = self.vocab.niceName(subproperty)
+  				# check niceName result
+  				colon = subpropertynice.find(':')
+  				if(subproperty.find(str(self.vocab._get_uri())) < 0):
   					if colon > 0:
   						termStr = """<span rel="rdfs:subPropertyOf" href="%s"><a href="%s">%s</a></span>\n""" % (subproperty, subproperty, subpropertynice)
   						contentStr = "%s %s" % (contentStr, termStr)
