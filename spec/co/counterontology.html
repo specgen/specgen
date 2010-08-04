@@ -32,22 +32,22 @@ version="XHTML+RDFa 1.0">
 </head>
 
 <body>
-  <h1><span about="http://purl.org/ontology/co/core#" property="dc:title">The Counter Ontology</span> <span about="http://purl.org/ontology/co/core#" property="owl:versionInfo" datatype="xsd:decimal">0.7</span></h1>
+  <h1><span about="http://purl.org/ontology/co/core#" property="dc:title">The Counter Ontology</span> <span about="http://purl.org/ontology/co/core#" property="owl:versionInfo" datatype="xsd:decimal">0.8</span></h1>
 
-  <h2>Namespace Document <span about="http://purl.org/ontology/co/core#" property="dc:date" content="2010-07-24T16:00:52+01:00" datatype="xsd:dateTime">24 July 2010</span></h2>
+  <h2>Namespace Document <span about="http://purl.org/ontology/co/core#" property="dc:date" content="2010-08-04T14:24:52+01:00" datatype="xsd:dateTime">04 August 2010</span></h2>
 <table class="header" border="0">
   <tr>
     <td>
   		<dl>
     		<dt>This version:</dt>
     		<dd><a about="http://purl.org/ontology/co/counterontology.html" rel="dc:hasVersion" 
-			rev="dc:isVersionOf" href="http://purl.org/ontology/co/20100724/counterontology.html">http://purl.org/ontology/co/20100724/counterontology.html</a> (<a href="http://purl.org/ontology/co/20100724/counterontology.owl">OWL</a>, <a href="http://purl.org/ontology/co/20100724/counterontology.n3">N3</a>)</dd>
+			rev="dc:isVersionOf" href="http://purl.org/ontology/co/20100804/counterontology.html">http://purl.org/ontology/co/20100804/counterontology.html</a> (<a href="http://purl.org/ontology/co/20100804/counterontology.owl">OWL</a>, <a href="http://purl.org/ontology/co/20100804/counterontology.n3">N3</a>)</dd>
 
     		<dt>Latest version:</dt>
     		<dd><a href="http://purl.org/ontology/co/core#">http://purl.org/ontology/co/core#</a> (<a href="http://purl.org/ontology/co/counterontology.owl">OWL</a>, <a href="http://purl.org/ontology/co/counterontology.n3">N3</a>)</dd>
 
     		<dt>Previous version:</dt>
-    		<dd><a href="http://purl.org/ontology/co/20100720/counterontology.html">http://purl.org/ontology/co/20100720/counterontology.html</a> (<a href="http://purl.org/ontology/co/20100720/counterontology.owl">OWL</a>, <a href="http://purl.org/ontology/co/20100720/counterontology.n3">N3</a>)</dd>
+    		<dd><a href="http://purl.org/ontology/co/20100724/counterontology.html">http://purl.org/ontology/co/20100724/counterontology.html</a> (<a href="http://purl.org/ontology/co/20100724/counterontology.owl">OWL</a>, <a href="http://purl.org/ontology/co/20100724/counterontology.n3">N3</a>)</dd>
 
     		<dt>Authors:</dt>
     		<dd><a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://moustaki.org/">Yves Raimond</a> (<a href="http://www.bbc.co.uk">BBC</a>),<br/>
@@ -163,9 +163,10 @@ href="http://svn.foaf-project.org/foaftown/specgen/">Danbri's SpecGen version</a
   <a id="sec-glance"></a>
   <h2 id="glance">The Counter Ontology at a glance</h2>
 
-<p>The <a href="http://purl.org/ontology/co/counterontology.html#Counter"><em>co:Counter</em></a> concept as graph with relations:</p>
+<p>The <a href="http://purl.org/ontology/co/counterontology.html#Counter"><em>co:Counter</em></a> concept as graph with relations (click <a about="http://purl.org/ontology/co/core#" 
+rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/co/gfx/co_-_Counter_graph.gif">here</a> to get an extended version of that graph):</p>
 <div about="http://purl.org/ontology/co/core#" rel="rdfs:seeAlso">
-<img src="http://smiy.sourceforge.net/co/gfx/co_-_Counter_graph.gif" title="The counter concept as graph with relations" alt="The counter concept as graph with relations" /></div>
+<img src="http://smiy.sourceforge.net/co/gfx/co_-_Counter_graph_-_simple.gif" title="The counter concept as graph with relations" alt="The counter concept as graph with relations" /></div>
 
 <p>The <a href="http://purl.org/ontology/co/counterontology.html#ScrobbleEvent"><em>co:ScrobbleEvent</em></a> concept as graph with relations:</p>
 <div about="http://purl.org/ontology/co/core#" rel="rdfs:seeAlso">
@@ -177,7 +178,7 @@ href="http://svn.foaf-project.org/foaftown/specgen/">Danbri's SpecGen version</a
  <div class="azlist">
 <p>Classes: | <a href="#Counter">Counter</a> |  <a href="#ScrobbleEvent">ScrobbleEvent</a> | 
 </p>
-<p>Properties: | <a href="#application">application</a> |  <a href="#count">count</a> |  <a href="#counter">counter</a> |  <a href="#device">device</a> |  <a href="#event">event</a> |  <a href="#event_counter">event_counter</a> |  <a href="#object">object</a> | 
+<p>Properties: | <a href="#application">application</a> |  <a href="#count">count</a> |  <a href="#counter">counter</a> |  <a href="#device">device</a> |  <a href="#event">event</a> |  <a href="#event_counter">event_counter</a> |  <a href="#object">object</a> |  <a href="#scrobble_object">scrobble_object</a> | 
 </p>
 </div>
 
@@ -345,7 +346,7 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
 <div class="azlist">
 <p>Classes: | <a href="#Counter">Counter</a> |  <a href="#ScrobbleEvent">ScrobbleEvent</a> | 
 </p>
-<p>Properties: | <a href="#application">application</a> |  <a href="#count">count</a> |  <a href="#counter">counter</a> |  <a href="#device">device</a> |  <a href="#event">event</a> |  <a href="#event_counter">event_counter</a> |  <a href="#object">object</a> | 
+<p>Properties: | <a href="#application">application</a> |  <a href="#count">count</a> |  <a href="#counter">counter</a> |  <a href="#device">device</a> |  <a href="#event">event</a> |  <a href="#event_counter">event_counter</a> |  <a href="#object">object</a> |  <a href="#scrobble_object">scrobble_object</a> | 
 </p>
 </div>
 
@@ -354,51 +355,52 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
 <div class='termdetails'><br />
 
 <h2>Classes</h2>
- <div class="specterm" id="Counter" about="http://purl.org/ontology/co/core#Counter" typeof="rdfs:Class">
+ <div class="specterm" id="Counter" about="http://purl.org/ontology/co/core#Counter" typeof="owl:Class">
   			<h3>Class: co:Counter</h3> 
   			<em property="rdfs:label" >Counter</em> - <span property="rdfs:comment" >Counter of a given object/ given objects, which are related to that counter.</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
   			<td><span property="vs:status" >stable</span></td></tr>
   			<tr><th>Properties include:</th>
- <td>  <a href="#count">count</a>
- <a href="#object">object</a>
+ <td>  <a href="#object">object</a>
+ <a href="#count">count</a>
  </td></tr>
   			<tr><th>Used with:</th>
  <td>  <a href="#counter">counter</a>
 </td></tr> <tr><th>Sub class of</th>
  <td>  <span rel="rdfs:subClassOf" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
  </td></tr><tr><th class="restrictions">Restriction(s):</th>
- <td>  <span about ="http://purl.org/ontology/co/core#Counter" rel="rdfs:subClassOf" resource="[_:ugnhxfjH3]"></span>
- <span about="[_:ugnhxfjH3]" typeof="owl:Restriction"></span>The property 
-  									<span about="[_:ugnhxfjH3]" rel="owl:onProperty" href="http://purl.org/ontology/co/core#count"><a href="#count">co:count</a></span> must be set <em>exactly</em> 
-  									<span about="[_:ugnhxfjH3]" property="owl:cardinality" datatype="xsd:nonNegativeInteger" >1</span> time(s) 
+ <td>  <span about ="http://purl.org/ontology/co/core#Counter" rel="rdfs:subClassOf" resource="[_:sOEDsbqP3]"></span>
+ <span about="[_:sOEDsbqP3]" typeof="owl:Restriction"></span>The property 
+  									<span about="[_:sOEDsbqP3]" rel="owl:onProperty" href="http://purl.org/ontology/co/core#count"><a href="#count">co:count</a></span> must be set <em>exactly</em> 
+  									<span about="[_:sOEDsbqP3]" property="owl:cardinality" datatype="xsd:nonNegativeInteger" >1</span> time(s) 
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/co/core#"></span>
  </td></tr><tr><th colspan="2">OWL Class</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#Class"></span> </td></tr><tr><th colspan="2">RDFS Class</th>
- <td>  </td></tr>
+ <td>  </td></tr><tr><th colspan="2">RDFS Class</th>
+ <td> <span rel="rdf:type" href="http://www.w3.org/2000/01/rdf-schema#Class"></span> </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#Counter">#</a>] <!-- Counter --> [<a href="#glance">back to top</a>]</p>
   			<br/>
   			</div>
 
-<div class="specterm" id="ScrobbleEvent" about="http://purl.org/ontology/co/core#ScrobbleEvent" typeof="rdfs:Class">
+<div class="specterm" id="ScrobbleEvent" about="http://purl.org/ontology/co/core#ScrobbleEvent" typeof="owl:Class">
   			<h3>Class: co:ScrobbleEvent</h3> 
   			<em property="rdfs:label" >Scrobble Event</em> - <span property="rdfs:comment" >An event corresponding to a scrobbling (counting an activity, which includes at least a specific factor and \na specific agent), e.g. a track being played by someone, a video watched by someone, a book read by \nsomeone, a sporting activity by someone, ...</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
   			<td><span property="vs:status" >unstable</span></td></tr>
   			<tr><th>Properties include:</th>
- <td>  <a href="#application">application</a>
+ <td>  <a href="#scrobble_object">scrobble_object</a>
  <a href="#device">device</a>
+ <a href="#application">application</a>
  </td></tr>
   			<tr><th>Sub class of</th>
  <td>  <span rel="rdfs:subClassOf" href="http://purl.org/NET/c4dm/event.owl#Event"><a href="http://purl.org/NET/c4dm/event.owl#Event">event:Event</a></span>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/co/core#"></span>
  </td></tr><tr><th colspan="2">OWL Class</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#Class"></span> </td></tr><tr><th colspan="2">RDFS Class</th>
- <td>  </td></tr>
+ <td>  </td></tr><tr><th colspan="2">RDFS Class</th>
+ <td> <span rel="rdf:type" href="http://www.w3.org/2000/01/rdf-schema#Class"></span> </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#ScrobbleEvent">#</a>] <!-- ScrobbleEvent --> [<a href="#glance">back to top</a>]</p>
@@ -432,8 +434,8 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			<td><span property="vs:status" >stable</span></td></tr>
   			
   			<tr><th>Range:</th>
- <td> <span rel="rdfs:range" href="http://purl.org/ontology/co/core#Counter"><a href="#Counter">Counter</a></span>
-</td>	</tr><tr><th>Has sub property</th>
+ <td>  <span rel="rdfs:range" href="http://purl.org/ontology/co/core#Counter"><a href="#Counter">Counter</a></span>
+ </td></tr><tr><th>Has sub property</th>
  <td>  <a href="#event_counter">has event counter</a>
  </td></tr><tr><th>Has inverse property</th>
  <td>  <a href="#object">has object</a>
@@ -490,7 +492,7 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			<p style="float: right; font-size: small;">[<a href="#object">#</a>] <!-- object --> [<a href="#glance">back to top</a>]</p>
   			<br/>
   			</div>
-<div class="specterm" id="application" about="http://purl.org/ontology/co/core#application" typeof="owl:ObjectProperty">
+<div class="specterm" id="application" about="http://purl.org/ontology/co/core#application" typeof="rdf:Property">
   			<h3>Property: co:application</h3> 
   			<em property="rdfs:label" >has application</em> - <span property="rdfs:comment" >An application that is related to a scrobble event, e.g. a iTunes to a play back event of a music track.</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -502,13 +504,14 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  <td>  <span rel="rdfs:subPropertyOf" href="http://purl.org/NET/c4dm/event.owl#factor"><a href="http://purl.org/NET/c4dm/event.owl#factor">event:factor</a></span>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/co/core#"></span>
- </td></tr><tr><th colspan="2">Object Property</th>
- <td>  </td></tr>
+ </td></tr><tr><th colspan="2">RDF Property</th>
+ <td>  </td></tr><tr><th colspan="2">Object Property</th>
+ <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#ObjectProperty"></span> </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#application">#</a>] <!-- application --> [<a href="#glance">back to top</a>]</p>
   			<br/>
-  			</div><div class="specterm" id="device" about="http://purl.org/ontology/co/core#device" typeof="owl:ObjectProperty">
+  			</div><div class="specterm" id="device" about="http://purl.org/ontology/co/core#device" typeof="rdf:Property">
   			<h3>Property: co:device</h3> 
   			<em property="rdfs:label" >has device</em> - <span property="rdfs:comment" >A device that is related to a scrobble event, e.g. a MP3 player to a play back event of a music track.</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -520,8 +523,9 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  <td>  <span rel="rdfs:subPropertyOf" href="http://purl.org/NET/c4dm/event.owl#factor"><a href="http://purl.org/NET/c4dm/event.owl#factor">event:factor</a></span>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/co/core#"></span>
- </td></tr><tr><th colspan="2">Object Property</th>
- <td>  </td></tr>
+ </td></tr><tr><th colspan="2">RDF Property</th>
+ <td>  </td></tr><tr><th colspan="2">Object Property</th>
+ <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#ObjectProperty"></span> </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#device">#</a>] <!-- device --> [<a href="#glance">back to top</a>]</p>
@@ -546,6 +550,25 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#event_counter">#</a>] <!-- event_counter --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="scrobble_object" about="http://purl.org/ontology/co/core#scrobble_object" typeof="rdf:Property">
+  			<h3>Property: co:scrobble_object</h3> 
+  			<em property="rdfs:label" >has scrobble object</em> - <span property="rdfs:comment" >A scrobble object of a scrobble event, e.g. a music track, a video or a described activity. That means a specific thing that is involved in this scrobbling action.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td> <span rel="rdfs:domain" href="http://purl.org/ontology/co/core#ScrobbleEvent"><a href="#ScrobbleEvent">Scrobble Event</a></span>
+</td></tr>
+  			<tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:subPropertyOf" href="http://purl.org/NET/c4dm/event.owl#factor"><a href="http://purl.org/NET/c4dm/event.owl#factor">event:factor</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/co/core#"></span>
+ </td></tr><tr><th colspan="2">RDF Property</th>
+ <td>  </td></tr><tr><th colspan="2">Object Property</th>
+ <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#ObjectProperty"></span> </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#scrobble_object">#</a>] <!-- scrobble_object --> [<a href="#glance">back to top</a>]</p>
   			<br/>
   			</div>
 
@@ -597,6 +620,12 @@ specification, and last but not least, Toby Inkster for providing the web counte
 <h2 id="sec-changes">Recent Changes</h2>
 
 <pre>=========================
+Version 0.8 (July 2010)
+=========================
+ * ADDED: co:scrobble_object - a scrobble object of scrobble event, e.g a music track, a video or a described activity
+ * MODIFIED: added rdf:Property as rdf:type of co:application and co:device
+
+=========================
 Version 0.7 (July 2010)
 =========================
  * ADDED: co:application -for relating applications to a scrobble event

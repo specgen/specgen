@@ -1,4 +1,10 @@
 =========================
+Version 0.8 (July 2010)
+=========================
+ * ADDED: co:scrobble_object - a scrobble object of scrobble event, e.g a music track, a video or a described activity
+ * MODIFIED: added rdf:Property as rdf:type of co:application and co:device
+
+=========================
 Version 0.7 (July 2010)
 =========================
  * ADDED: co:application -for relating applications to a scrobble event
