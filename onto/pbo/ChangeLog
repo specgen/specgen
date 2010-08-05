@@ -1,8 +1,14 @@
 =========================
+Version 0.55 (August 2010)
+=========================
+ * ADDED: pbo:media_scrobble_object - a media specific scrobble object, e.g. a video or a music track
+
+=========================
 Version 0.5 (July 2010)
 =========================
  * ADDED: pbo:SkipEvent - to describe skip event specific things.
  * ADDED: pbo:skip_time - to describe the skip time of a media object, e.g. an instant of a timeline of an audio signal
+ 
 =========================
 Version 0.42 (July 2010)
 =========================

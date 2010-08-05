@@ -49,7 +49,7 @@ version="XHTML+RDFa 1.0">
 
     		<dt>Authors:</dt>
     		<dd><a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://smiy.wordpress.com/author/zazi0815/">Bob Ferris</a> (<a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://smiy.wordpress.com/">SMI</a>), <br/>
-    		<a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://kurtisrandom.blogspot.com/">Kurt Jacobson</a> (<a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href=http://www.elec.qmul.ac.uk/digitalmusic/">Centre for Digital Music Queen Mary University of London</a>)</dd>
+    		<a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://kurtisrandom.blogspot.com/">Kurt Jacobson</a> (<a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://www.elec.qmul.ac.uk/digitalmusic/">Centre for Digital Music Queen Mary University of London</a>)</dd>
   			</dl>
 
   			<p class="copyright"><span about="http://purl.org/ontology/rec/core#" property="dc:rights">Copyright &#169; 2010 Kurt Jacobson and Bob Ferris</span></p>
@@ -537,15 +537,15 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			<tr><th>Status:</th>
   			<td><span property="vs:status" >unstable</span></td></tr>
   			<tr><th>Properties include:</th>
- <td>  <a href="#for">for</a>
- <a href="#recommendation_object">recommendation_object</a>
- <a href="#recommender">recommender</a>
+ <td>  <a href="#recommender">recommender</a>
+ <a href="#for">for</a>
  <a href="#recommendation_audience">recommendation_audience</a>
+ <a href="#recommendation_object">recommendation_object</a>
  </td></tr>
   			<tr><th>Used with:</th>
- <td>  <a href="#recommendation">recommendation</a>
+ <td>  <a href="#recommends">recommends</a>
  <a href="#recommended_in">recommended_in</a>
- <a href="#recommends">recommends</a>
+ <a href="#recommendation">recommendation</a>
 </td></tr> <tr><th>Sub class of</th>
  <td>  <span rel="rdfs:subClassOf" href="http://purl.org/ontology/ao/core#LikeableAssociation"><a href="http://purl.org/ontology/ao/core#LikeableAssociation">ao:LikeableAssociation</a></span>
  </td></tr><tr><th>Has sub class</th>
@@ -604,7 +604,7 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			
   			<p style="float: right; font-size: small;">[<a href="#for">#</a>] <!-- for --> [<a href="#glance">back to top</a>]</p>
   			<br/>
-  			</div><div class="specterm" id="recommendation" about="http://purl.org/ontology/rec/core#recommendation" typeof="rdf:Property">
+  			</div><div class="specterm" id="recommendation" about="http://purl.org/ontology/rec/core#recommendation" typeof="owl:ObjectProperty">
   			<h3>Property: rec:recommendation</h3> 
   			<em property="rdfs:label" >has recommendation</em> - <span property="rdfs:comment" >A recommendation for someone or something.</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -621,8 +621,8 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/rec/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
- <td>  </td></tr><tr><th colspan="2">Object Property</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#ObjectProperty"></span> </td></tr>
+ <td> <span rel="rdf:type" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"></span> </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#recommendation">#</a>] <!-- recommendation --> [<a href="#glance">back to top</a>]</p>
@@ -636,12 +636,12 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  <td> <span rel="rdfs:domain" href="http://purl.org/ontology/rec/core#Recommendation"><a href="#Recommendation">Recommendation</a></span>
 </td></tr>
   			<tr><th>Range:</th>
- <td>  <span rel="rdfs:range" resource="[_:ZlXYWVxs3]"></span>
-  									<span about="[_:ZlXYWVxs3]" typeof="owl:Class"></span>
-  									<span about="[_:ZlXYWVxs3]" rel="owl:unionOf" resource="[_:ZlXYWVxs4]"></span>  <span about="[_:ZlXYWVxs4]" typeof="rdf:Description"></span>
-  									<span about="[_:ZlXYWVxs4]" rel="rdf:first" href="http://purl.org/dc/terms/AgentClass"><a href="http://purl.org/dc/terms/AgentClass">dcterms:AgentClass</a></span>
-  									<span about="[_:ZlXYWVxs4]" rel="rdf:rest" resource="[_:ZlXYWVxs5]"></span> or <span about="[_:ZlXYWVxs5]" typeof="rdf:Description"></span>
-  														<span about="[_:ZlXYWVxs5]" rel="rdf:first" href="http://xmlns.com/foaf/0.1/Group"><a href="http://xmlns.com/foaf/0.1/Group">foaf:Group</a></span> <span about="[_:ZlXYWVxs5]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr>
+ <td>  <span rel="rdfs:range" resource="[_:EZaqlJAl3]"></span>
+  									<span about="[_:EZaqlJAl3]" typeof="owl:Class"></span>
+  									<span about="[_:EZaqlJAl3]" rel="owl:unionOf" resource="[_:EZaqlJAl4]"></span>  <span about="[_:EZaqlJAl4]" typeof="rdf:Description"></span>
+  									<span about="[_:EZaqlJAl4]" rel="rdf:first" href="http://purl.org/dc/terms/AgentClass"><a href="http://purl.org/dc/terms/AgentClass">dcterms:AgentClass</a></span>
+  									<span about="[_:EZaqlJAl4]" rel="rdf:rest" resource="[_:EZaqlJAl5]"></span> or <span about="[_:EZaqlJAl5]" typeof="rdf:Description"></span>
+  														<span about="[_:EZaqlJAl5]" rel="rdf:first" href="http://xmlns.com/foaf/0.1/Group"><a href="http://xmlns.com/foaf/0.1/Group">foaf:Group</a></span> <span about="[_:EZaqlJAl5]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/rec/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
  <td>  </td></tr>
@@ -649,7 +649,7 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			
   			<p style="float: right; font-size: small;">[<a href="#recommendation_audience">#</a>] <!-- recommendation_audience --> [<a href="#glance">back to top</a>]</p>
   			<br/>
-  			</div><div class="specterm" id="recommendation_object" about="http://purl.org/ontology/rec/core#recommendation_object" typeof="rdf:Property">
+  			</div><div class="specterm" id="recommendation_object" about="http://purl.org/ontology/rec/core#recommendation_object" typeof="owl:ObjectProperty">
   			<h3>Property: rec:recommendation_object</h3> 
   			<em property="rdfs:label" >has recommendation object</em> - <span property="rdfs:comment" >A recommendation object that is part of a specific recommendation.</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -668,13 +668,13 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/rec/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
- <td>  </td></tr><tr><th colspan="2">Object Property</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#ObjectProperty"></span> </td></tr>
+ <td> <span rel="rdf:type" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"></span> </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#recommendation_object">#</a>] <!-- recommendation_object --> [<a href="#glance">back to top</a>]</p>
   			<br/>
-  			</div><div class="specterm" id="recommended_in" about="http://purl.org/ontology/rec/core#recommended_in" typeof="rdf:Property">
+  			</div><div class="specterm" id="recommended_in" about="http://purl.org/ontology/rec/core#recommended_in" typeof="owl:ObjectProperty">
   			<h3>Property: rec:recommended_in</h3> 
   			<em property="rdfs:label" >recommended in</em> - <span property="rdfs:comment" >A thing, which is recommended in a recommendation.</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -689,8 +689,8 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/rec/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
- <td>  </td></tr><tr><th colspan="2">Object Property</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#ObjectProperty"></span> </td></tr>
+ <td> <span rel="rdf:type" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"></span> </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#recommended_in">#</a>] <!-- recommended_in --> [<a href="#glance">back to top</a>]</p>
