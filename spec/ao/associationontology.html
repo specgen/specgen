@@ -179,6 +179,13 @@ href="http://purl.org/stuff/rev#Review"><em>rev:Review</em></a>):</p>
   <div style="clear: left;"></div>
 
   <h2 id="sec-example">Examples</h2>
+  
+  <p>The music playlist example as graph (see also <a about="http://purl.org/ontology/ao/associationontology.html" 
+rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/ao/gfx/pbo_-_playlist_example.gif">here, for another graph view,</a> and <a 
+about="http://purl.org/ontology/ao/associationontology.html" rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/ao/gfx/pbo_-_playlist_example_-_extended.gif">here, for an extended graph 
+view,</a> of this example):</p>
+<div about="http://purl.org/ontology/pbo/playbackontology.html#" rel="rdfs:seeAlso">
+<img src="http://smiy.sourceforge.net/ao/gfx/pbo_-_playlist_example.png" title="The music playlist example as graph" alt="The music playlist example as graph" /></div>
 
   <p>RDF/Turtle representation of a playlist example that uses associations created with the <em>Association Ontology</em> (see also <a about="http://purl.org/ontology/ao/associationontology.html" 
   rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/ao/examples/RDF/playlist_-_example.rdf">RDF</a> and <a about="http://purl.org/ontology/ao/associationontology.html" 
@@ -203,10 +210,12 @@ ex:FunkyPlaylist a pbo:Playlist ;
 &nbsp;&nbsp;&nbsp;sim:association ex:ZazisAssociation ;
 &nbsp;&nbsp;&nbsp;sim:association ex:BobsAssociationInUse ;
 &nbsp;&nbsp;&nbsp;pbo:playlist_slot [   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a pbo:PlaylistSlot ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:index 1 ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pbo:playlist_item ex:SexMachine
 &nbsp;&nbsp;&nbsp;] ;
 &nbsp;&nbsp;&nbsp;pbo:playlist_slot [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a pbo:PlaylistSlot ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:index 2 ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pbo:playlist_item ex:GoodFoot
 &nbsp;&nbsp;&nbsp;] .
@@ -375,8 +384,10 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			<td><span property="vs:status" >testing</span></td></tr>
   			
   			<tr><th>Sub class of</th>
- <td>  <span rel="rdfs:subClassOf" href="http://purl.org/stuff/rev#Review"><a href="http://purl.org/stuff/rev#Review">rev:Review</a></span>
- <span rel="rdfs:subClassOf" href="http://purl.org/ontology/similarity/Association"><a href="http://purl.org/ontology/similarity/Association">sim:Association</a></span>
+ <td>  <span rel="rdfs:subClassOf" href="http://purl.org/ontology/similarity/Association"><a href="http://purl.org/ontology/similarity/Association">sim:Association</a></span>
+ <span rel="rdfs:subClassOf" href="http://purl.org/stuff/rev#Review"><a href="http://purl.org/stuff/rev#Review">rev:Review</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/ao/core#"></span>
  </td></tr><tr><th colspan="2">OWL Class</th>
  <td>  </td></tr>
   			</table>
@@ -398,9 +409,9 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			<tr><th>Range:</th>
  <td>  <span rel="rdfs:range" href="http://purl.org/ontology/similarity/Association"><a href="http://purl.org/ontology/similarity/Association">sim:Association</a></span>
  </td></tr><tr><th>Inverse property of</th>
- <td>  <span rel="owl:inverseOf" resource="[_:HiDviipE3]">the anonymous defined property with the label
-  							 '<em about="[_:HiDviipE3]" property="rdfs:label">is included association of</em>'</span>
- (<span about="[_:HiDviipE3]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
+ <td>  <span rel="owl:inverseOf" resource="[_:SctvQfmE3]">the anonymous defined property with the label
+  							 '<em about="[_:SctvQfmE3]" property="rdfs:label">is included association of</em>'</span>
+ (<span about="[_:SctvQfmE3]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/ao/core#"></span>
  </td></tr><tr><th colspan="2">Object Property</th>
  <td>  </td></tr>
@@ -419,9 +430,9 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			<tr><th>Range:</th>
  <td>  <span rel="rdfs:range" href="http://xmlns.com/foaf/0.1/Agent"><a href="http://xmlns.com/foaf/0.1/Agent">foaf:Agent</a></span>
  </td></tr><tr><th>Inverse property of</th>
- <td>  <span rel="owl:inverseOf" resource="[_:HiDviipE4]">the anonymous defined property with the label
-  							 '<em about="[_:HiDviipE4]" property="rdfs:label">is likeminded of</em>'</span>
- (<span about="[_:HiDviipE4]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
+ <td>  <span rel="owl:inverseOf" resource="[_:SctvQfmE4]">the anonymous defined property with the label
+  							 '<em about="[_:SctvQfmE4]" property="rdfs:label">is likeminded of</em>'</span>
+ (<span about="[_:SctvQfmE4]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/ao/core#"></span>
  </td></tr><tr><th colspan="2">Object Property</th>
  <td>  </td></tr>

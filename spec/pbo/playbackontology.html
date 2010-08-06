@@ -231,12 +231,12 @@ ex:FunkyPlaylist a pbo:Playlist ;
 &nbsp;&nbsp;&nbsp;sim:association ex:ZazisAssociation ;
 &nbsp;&nbsp;&nbsp;sim:association ex:BobsAssociationInUse ;
 &nbsp;&nbsp;&nbsp;pbo:playlist_slot [   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a olo:Slot ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a pbo:PlaylistSlot ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:index 1 ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pbo:playlist_item ex:SexMachine
 &nbsp;&nbsp;&nbsp;] ;
 &nbsp;&nbsp;&nbsp;pbo:playlist_slot [
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a olo:Slot ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a pbo:PlaylistSlot ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:index 2 ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pbo:playlist_item ex:GoodFoot
 &nbsp;&nbsp;&nbsp;] .
@@ -604,10 +604,10 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
 </td></tr> <tr><th>Sub class of</th>
  <td>  <span rel="rdfs:subClassOf" href="http://purl.org/ontology/olo/core#Slot"><a href="http://purl.org/ontology/olo/core#Slot">olo:Slot</a></span>
  </td></tr><tr><th class="restrictions">Restriction(s):</th>
- <td>  <span about ="http://purl.org/ontology/pbo/core#PlaylistSlot" rel="rdfs:subClassOf" resource="[_:FDcatlIa3]"></span>
- <span about="[_:FDcatlIa3]" typeof="owl:Restriction"></span>The property 
-  									<span about="[_:FDcatlIa3]" rel="owl:onProperty" href="http://purl.org/ontology/pbo/core#playlist_item"><a href="#playlist_item">pbo:playlist_item</a></span> must be set <em>at least</em> 
-  									<span about="[_:FDcatlIa3]" property="owl:minCardinality" datatype="xsd:nonNegativeInteger" >1</span> time(s) 
+ <td>  <span about ="http://purl.org/ontology/pbo/core#PlaylistSlot" rel="rdfs:subClassOf" resource="[_:CYUvslgR3]"></span>
+ <span about="[_:CYUvslgR3]" typeof="owl:Restriction"></span>The property 
+  									<span about="[_:CYUvslgR3]" rel="owl:onProperty" href="http://purl.org/ontology/pbo/core#playlist_item"><a href="#playlist_item">pbo:playlist_item</a></span> must be set <em>at least</em> 
+  									<span about="[_:CYUvslgR3]" property="owl:minCardinality" datatype="xsd:nonNegativeInteger" >1</span> time(s) 
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/pbo/core#"></span>
  </td></tr><tr><th colspan="2">OWL Class</th>
@@ -721,12 +721,12 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			<td><span property="vs:status" >testing</span></td></tr>
   			
   			<tr><th>Range:</th>
- <td>  <span rel="rdfs:range" resource="[_:FDcatlIa7]"></span>
-  									<span about="[_:FDcatlIa7]" typeof="owl:Class"></span>
-  									<span about="[_:FDcatlIa7]" rel="owl:unionOf" resource="[_:FDcatlIa8]"></span>  <span about="[_:FDcatlIa8]" typeof="rdf:Description"></span>
-  									<span about="[_:FDcatlIa8]" rel="rdf:first" href="http://purl.org/ontology/bibo/Document"><a href="http://purl.org/ontology/bibo/Document">bibo:Document</a></span>
-  									<span about="[_:FDcatlIa8]" rel="rdf:rest" resource="[_:FDcatlIa9]"></span> or <span about="[_:FDcatlIa9]" typeof="rdf:Description"></span>
-  														<span about="[_:FDcatlIa9]" rel="rdf:first" href="http://purl.org/vocab/frbr/core#Endeavour"><a href="http://purl.org/vocab/frbr/core#Endeavour">frbr:Endeavour</a></span> <span about="[_:FDcatlIa9]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr><tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:range" resource="[_:CYUvslgR7]"></span>
+  									<span about="[_:CYUvslgR7]" typeof="owl:Class"></span>
+  									<span about="[_:CYUvslgR7]" rel="owl:unionOf" resource="[_:CYUvslgR8]"></span>  <span about="[_:CYUvslgR8]" typeof="rdf:Description"></span>
+  									<span about="[_:CYUvslgR8]" rel="rdf:first" href="http://purl.org/ontology/bibo/Document"><a href="http://purl.org/ontology/bibo/Document">bibo:Document</a></span>
+  									<span about="[_:CYUvslgR8]" rel="rdf:rest" resource="[_:CYUvslgR9]"></span> or <span about="[_:CYUvslgR9]" typeof="rdf:Description"></span>
+  														<span about="[_:CYUvslgR9]" rel="rdf:first" href="http://purl.org/vocab/frbr/core#Endeavour"><a href="http://purl.org/vocab/frbr/core#Endeavour">frbr:Endeavour</a></span> <span about="[_:CYUvslgR9]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr><tr><th>Sub property of</th>
  <td>  <span rel="rdfs:subPropertyOf" href="http://purl.org/ontology/co/core#scrobble_object"><a href="http://purl.org/ontology/co/core#scrobble_object">co:scrobble_object</a></span>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/pbo/core#"></span>
@@ -802,12 +802,12 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  <td> <span rel="rdfs:domain" href="http://purl.org/ontology/pbo/core#MediaActionCounter"><a href="#MediaActionCounter">Media Action Counter</a></span>
 </td></tr>
   			<tr><th>Range:</th>
- <td>  <span rel="rdfs:range" resource="[_:FDcatlIa4]"></span>
-  									<span about="[_:FDcatlIa4]" typeof="owl:Class"></span>
-  									<span about="[_:FDcatlIa4]" rel="owl:unionOf" resource="[_:FDcatlIa5]"></span>  <span about="[_:FDcatlIa5]" typeof="rdf:Description"></span>
-  									<span about="[_:FDcatlIa5]" rel="rdf:first" href="http://purl.org/ontology/bibo/Document"><a href="http://purl.org/ontology/bibo/Document">bibo:Document</a></span>
-  									<span about="[_:FDcatlIa5]" rel="rdf:rest" resource="[_:FDcatlIa6]"></span> or <span about="[_:FDcatlIa6]" typeof="rdf:Description"></span>
-  														<span about="[_:FDcatlIa6]" rel="rdf:first" href="http://purl.org/vocab/frbr/core#Endeavour"><a href="http://purl.org/vocab/frbr/core#Endeavour">frbr:Endeavour</a></span> <span about="[_:FDcatlIa6]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr><tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:range" resource="[_:CYUvslgR4]"></span>
+  									<span about="[_:CYUvslgR4]" typeof="owl:Class"></span>
+  									<span about="[_:CYUvslgR4]" rel="owl:unionOf" resource="[_:CYUvslgR5]"></span>  <span about="[_:CYUvslgR5]" typeof="rdf:Description"></span>
+  									<span about="[_:CYUvslgR5]" rel="rdf:first" href="http://purl.org/ontology/bibo/Document"><a href="http://purl.org/ontology/bibo/Document">bibo:Document</a></span>
+  									<span about="[_:CYUvslgR5]" rel="rdf:rest" resource="[_:CYUvslgR6]"></span> or <span about="[_:CYUvslgR6]" typeof="rdf:Description"></span>
+  														<span about="[_:CYUvslgR6]" rel="rdf:first" href="http://purl.org/vocab/frbr/core#Endeavour"><a href="http://purl.org/vocab/frbr/core#Endeavour">frbr:Endeavour</a></span> <span about="[_:CYUvslgR6]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr><tr><th>Sub property of</th>
  <td>  <span rel="rdfs:subPropertyOf" href="http://purl.org/ontology/co/core#object"><a href="http://purl.org/ontology/co/core#object">co:object</a></span>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/pbo/core#"></span>
@@ -826,17 +826,17 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  <td> <span rel="rdfs:domain" href="http://purl.org/ontology/pbo/core#PlaylistSlot"><a href="#PlaylistSlot">Playlist Slot</a></span>
 </td></tr>
   			<tr><th>Range:</th>
- <td>  <span rel="rdfs:range" resource="[_:FDcatlIa10]"></span>
-  									<span about="[_:FDcatlIa10]" typeof="owl:Class"></span>
-  									<span about="[_:FDcatlIa10]" rel="owl:unionOf" resource="[_:FDcatlIa11]"></span>  <span about="[_:FDcatlIa11]" typeof="rdf:Description"></span>
-  									<span about="[_:FDcatlIa11]" rel="rdf:first" href="http://purl.org/ontology/bibo/Document"><a href="http://purl.org/ontology/bibo/Document">bibo:Document</a></span>
-  									<span about="[_:FDcatlIa11]" rel="rdf:rest" resource="[_:FDcatlIa12]"></span> or <span about="[_:FDcatlIa12]" typeof="rdf:Description"></span>
-  														<span about="[_:FDcatlIa12]" rel="rdf:first" href="http://purl.org/vocab/frbr/core#Endeavour"><a href="http://purl.org/vocab/frbr/core#Endeavour">frbr:Endeavour</a></span> <span about="[_:FDcatlIa12]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr><tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:range" resource="[_:CYUvslgR10]"></span>
+  									<span about="[_:CYUvslgR10]" typeof="owl:Class"></span>
+  									<span about="[_:CYUvslgR10]" rel="owl:unionOf" resource="[_:CYUvslgR11]"></span>  <span about="[_:CYUvslgR11]" typeof="rdf:Description"></span>
+  									<span about="[_:CYUvslgR11]" rel="rdf:first" href="http://purl.org/ontology/bibo/Document"><a href="http://purl.org/ontology/bibo/Document">bibo:Document</a></span>
+  									<span about="[_:CYUvslgR11]" rel="rdf:rest" resource="[_:CYUvslgR12]"></span> or <span about="[_:CYUvslgR12]" typeof="rdf:Description"></span>
+  														<span about="[_:CYUvslgR12]" rel="rdf:first" href="http://purl.org/vocab/frbr/core#Endeavour"><a href="http://purl.org/vocab/frbr/core#Endeavour">frbr:Endeavour</a></span> <span about="[_:CYUvslgR12]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr><tr><th>Sub property of</th>
  <td>  <span rel="rdfs:subPropertyOf" href="http://purl.org/ontology/olo/core#item"><a href="http://purl.org/ontology/olo/core#item">olo:item</a></span>
  </td></tr><tr><th>Inverse property of</th>
- <td>  <span rel="owl:inverseOf" resource="[_:FDcatlIa13]">the anonymous defined property with the label
-  							 '<em about="[_:FDcatlIa13]" property="rdfs:label">is playlist item of</em>'</span>
- (<span about="[_:FDcatlIa13]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
+ <td>  <span rel="owl:inverseOf" resource="[_:CYUvslgR13]">the anonymous defined property with the label
+  							 '<em about="[_:CYUvslgR13]" property="rdfs:label">is playlist item of</em>'</span>
+ (<span about="[_:CYUvslgR13]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/pbo/core#"></span>
  </td></tr><tr><th colspan="2">Object Property</th>
  <td>  </td></tr>
