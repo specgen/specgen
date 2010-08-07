@@ -162,15 +162,17 @@ rel="rdfs:seeAlso" href="http://smiy.svn.sourceforge.net/viewvc/smiy/specgen/tru
   <a id="sec-glance"></a>
   <h2 id="glance">The Recommendation Ontology at a glance</h2>
 
-<p>The <a href="http://purl.org/ontology/rec/recommendationontology.html#Recommendation"><em>rec:Recommendation</em></a> concept, as 
-graph with relations:</p>
+<p>The <a href="http://purl.org/ontology/rec/recommendationontology.html#Recommendation"><em>rec:Recommendation</em></a> concept (see also <a about="http://purl.org/ontology/rec/core#" 
+rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/rec/gfx/rec_-_recommendation_concept_extended.png">here, for an extended view,</a> and <a 
+about="http://purl.org/ontology/rec/core#" rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/rec/gfx/rec_-_recommendation.gif">here, for an extended graph 
+with relations,</a> of this concept):</p>
 <div about="http://purl.org/ontology/rec/core#" rel="rdfs:seeAlso">
-<img src="http://smiy.sourceforge.net/rec/gfx/rec_-_recommendation.gif" title="The recommendation concept as graph with relations" alt="The recommendation concept as graph with relations" /></div>
+<img src="http://smiy.sourceforge.net/rec/gfx/rec_-_recommendation_concept.png" title="The recommendation concept" alt="The recommendation concept" /></div>
 
 
 <p>The <a href="http://purl.org/ontology/rec/recommendationontology.html#RankedRecommendation"><em>rec:RankedRecommendation</em></a> concept, as 
 graph with relations (see also <a about="http://purl.org/ontology/rec/core#" 
-rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/rec/gfx/rec_-_ranked_recommendation.gif">here, for an extended graph view,</a> of this example):</p>
+rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/rec/gfx/rec_-_ranked_recommendation.gif">here, for an extended graph view,</a> of this concept):</p>
 <div about="http://purl.org/ontology/rec/core#" rel="rdfs:seeAlso">
 <img src="http://smiy.sourceforge.net/rec/gfx/rec_-_ranked_recommendation_-_simple.gif" title="The ranked recommendation concept as graph with relations" alt="The ranked recommendation concept as graph with relations" /></div>
 
@@ -210,7 +212,7 @@ rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/rec/gfx/rec_-_ranked_recomm
 &nbsp;
 ex:AMusicRecommendation a rec:RankedRecommendation ;
 &nbsp;&nbsp;&nbsp;rec:recommender isi:lastfm ;
-&nbsp;&nbsp;&nbsp;sim:subject &lt;http://dbtune.org/musicbrainz/resource/track/008e72df-6469-4557-8b5b-c54c3285fbd3&lt; ;
+&nbsp;&nbsp;&nbsp;sim:subject &lt;http://dbtune.org/musicbrainz/resource/track/008e72df-6469-4557-8b5b-c54c3285fbd3&gt; ;
 &nbsp;&nbsp;&nbsp;rec:ranked_recommendation_object [
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a olo:Slot ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;olo:item &lt;http://dbtune.org/musicbrainz/resource/track/097c362d-72b7-4a53-96e2-d9ff02f8be1f&gt; ;
@@ -370,7 +372,7 @@ href="http://purl.org/ontology/similarity/method"><em>sim:method</em></a>) of th
 </ul>
  
 <p>This association method (<a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/similarity/AssociationMethod">
-<em>sim:AssociationMethod</em></a>) can not be further specified here, because it is based on a proprietary algoritm from <a href="http://last.fm"><em>Last.fm</em></a>. Therefore, the 
+<em>sim:AssociationMethod</em></a>) can not be further specified here, because it is based on a proprietary algorithm from <a href="http://last.fm"><em>Last.fm</em></a>. Therefore, the 
 complete recommendation (related by <a href="http://purl.org/ontology/rec/recommendationontology.html#recommender"><em>rec:recommender</em></a>) and also the association method itself 
 (related by <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/is/infoservice.html#info_service"><em>is:info_service</em></a>) 
 is associated to the <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" 
@@ -434,7 +436,43 @@ this doesn't include the ranking, it is now an unordered list. However, it still
 
   <h2 id="sec-for">What's the Recommendation Ontology for?</h2>
 
-  <p>TODO</p>
+  <p>The <a href="http://purl.org/ontology/rec/recommendationontology.html"><em>Recommendation Ontology</em></a> is an ontology for modeling high level 
+recommendations on/ for the <em>Semantic Web</em>. Thereby, the ontology hook up parts of the <a href="http://purl.org/ontology/similarity/"><em>Similarity Ontology</em></a>, <a 
+href="http://dublincore.org/documents/dcmi-terms/"><em>DCMI Metadata Terms</em></a>, the <a href="http://smiy.wordpress.com/2010/07/26/the-association-ontology/"><em>Association 
+Ontology</em></a> and the <a href="http://smiy.wordpress.com/2010/07/15/the-ordered-list-ontology/"><em>Ordered List Ontology</em></a>.<br/>
+The core of the <em>Recommendation Ontology</em> is the <a href="http://purl.org/ontology/rec/recommendationontology.html#Recommendation"><em>rec:Recommendation</em></a> concept. A <a 
+href="http://purl.org/ontology/rec/recommendationontology.html#Recommendation"><em>rec:Recommendation</em></a> instance can consist of</p>
+<ul>
+	<li>an item or agent relation (<a href="http://purl.org/ontology/rec/recommendationontology.html#recommendation"><em>rec:Recommendation</em></a> or its inverse property <a 
+	href="http://purl.org/ontology/rec/recommendationontology.html#for"><em>rec:for</em></a>) to associate the resource, for which the recommendation was made</li>
+	<li>an recommender relation (<a href="http://purl.org/ontology/rec/recommendationontology.html#recommender"><em>rec:recommender</em></a> or its inverse property <a 
+href="http://purl.org/ontology/rec/recommendationontology.html#recommends"><em>rec:recommends</em></a>) to associate the instance, which provided or calculated the recommendation, e.g. 
+an <a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/is/infoservice.html#InfoService"><em>is:InfoService</em></a> instance</li>
+	<li>recommendation object relations (<a href="http://purl.org/ontology/rec/recommendationontology.html#recommendation_object"><em>rec:recommendation_object</em></a> or its inverse 
+property <a href="http://purl.org/ontology/rec/recommendationontology.html#recommended_in"><em>rec:recommended_in</em></a>) to associate appropriated objects to the recommendation subject</li>
+	<li>recommendation audience relations (<a href="http://purl.org/ontology/rec/recommendationontology.html#recommendation_audience"><em>rec:recommendation_audience</em></a> to associate 
+groups or stereotypes, which are probably appropriated as target group for this recommendation.</li>
+</ul>
+<p>
+Since <a href="http://purl.org/ontology/rec/recommendationontology.html#Recommendation"><em>rec:Recommendation</em></a> is a sub class of <a 
+about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/ao/associationontology.html#LikeableAssociation">
+<em>ao:LikeableAssociation</em></a>, it is also possible to like (<a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" 
+href="http://purl.org/ontology/ao/associationontology.html#likeminded"><em>ao:likeminded</em></a>), rate (<a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" 
+href="http://purl.org/stuff/rev#rating"><em>rev:rating</em></a>) or give a feedback (<a about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" 
+href="http://purl.org/stuff/rev#Feedback"><em>rev:Feedback</em></a>) to a recommendation. Furthermore, one can also relate detailed association (<a 
+about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso"
+href="http://grasstunes.net/ontology/similarity/0.2/musim.html#Association"><em>sim:Association</em></a>) or similarity statements (<a 
+href="http://grasstunes.net/ontology/similarity/0.2/musim.html#Similarity"><em>sim:Similarity</em></a>) to a recommendation by using the property <a 
+href="http://purl.org/ontology/ao/associationontology.html#included_association"><em>ao:included_association</em></a>.<br/>
+As an extension of <a href="http://purl.org/ontology/rec/recommendationontology.html#Recommendation"><em>rec:Recommendation</em></a>, we built the <a 
+href="http://purl.org/ontology/rec/recommendationontology.html#RankedRecommendation"><em>rec:RankedRecommendation</em></a> concept to enable also ordered (ranked) recommendations at a high 
+level. <a href="http://purl.org/ontology/rec/recommendationontology.html#RankedRecommendation"><em>rec:RankedRecommendation</em></a> is not only a sub class of <a 
+href="http://purl.org/ontology/rec/recommendationontology.html#Recommendation"><em>rec:Recommendation</em></a>. Furthermore, it is also a sub class of <a 
+href="http://purl.org/ontology/olo/orderedlistontology.html#OrderedList"><em>olo:OrderedList</em></a>, which enables all features of an ordered list also to this concept. Following this 
+design, a <a href="http://purl.org/ontology/rec/recommendationontology.html#ranked_recommendation_object"><em>rec:ranked_recommendation</em></a> is not only a sub property of <a 
+href="http://purl.org/ontology/rec/recommendationontology.html#recommendation_object"><em>rec:recommendation_object</em></a>, but also a sub property of <a 
+about="http://purl.org/ontology/rec/recommendationontology.html" rel="rdfs:seeAlso" href="http://purl.org/ontology/olo/orderedlistontology.html#slot"><em>olo:slot</em></a>. That means the 
+recommendation objects are now related by using the property <a href="http://purl.org/ontology/olo/orderedlistontology.html#item"><em>olo:item</em></a>.</p>
 
   <h2 id="sec-bg">Background</h2>
 
