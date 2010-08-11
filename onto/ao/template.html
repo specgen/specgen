@@ -31,19 +31,22 @@ version="XHTML+RDFa 1.0">
 </head>
 
 <body>
-  <h1><span about="http://purl.org/ontology/ao/core#" property="dc:title">The Association Ontology</span> <span about="http://purl.org/ontology/ao/core#" property="owl:versionInfo" datatype="xsd:decimal">0.21</span></h1>
+  <h1><span about="http://purl.org/ontology/ao/core#" property="dc:title">The Association Ontology</span> <span about="http://purl.org/ontology/ao/core#" property="owl:versionInfo" datatype="xsd:decimal">0.3</span></h1>
 
-  <h2>Namespace Document <span about="http://purl.org/ontology/ao/core#" property="dc:date" content="2010-07-22T22:35:52+01:00" datatype="xsd:dateTime">22 July 2010</span></h2>
+  <h2>Namespace Document <span about="http://purl.org/ontology/ao/core#" property="dc:date" content="2010-08-11T15:34:52+01:00" datatype="xsd:dateTime">11 August 2010</span></h2>
 <table class="header" border="0">
   <tr>
     <td>
   		<dl>
     		<dt>This version:</dt>
     		<dd><a about="http://purl.org/ontology/ao/associationontology.html" rel="dc:hasVersion" 
-			rev="dc:isVersionOf" href="http://purl.org/ontology/ao/20100722/associationontology.html">http://purl.org/ontology/ao/20100722/associationontology.html</a> (<a href="http://purl.org/ontology/ao/20100722/counterontology.owl">OWL</a>, <a href="http://purl.org/ontology/ao/20100722/associationontology.n3">N3</a>)</dd>
+			rev="dc:isVersionOf" href="http://purl.org/ontology/ao/20100811/associationontology.html">http://purl.org/ontology/ao/20100811/associationontology.html</a> (<a href="http://purl.org/ontology/ao/20100811/counterontology.owl">OWL</a>, <a href="http://purl.org/ontology/ao/20100811/associationontology.n3">N3</a>)</dd>
 
     		<dt>Latest version:</dt>
     		<dd><a href="http://purl.org/ontology/ao/core#">http://purl.org/ontology/ao/core#</a> (<a href="http://purl.org/ontology/ao/associationontology.owl">OWL</a>, <a href="http://purl.org/ontology/ao/associationontology.n3">N3</a>)</dd>
+
+			<dt>Previous version:</dt>
+			<dd><a href="http://purl.org/ontology/ao/20100722/associationontology.html">http://purl.org/ontology/ao/20100722/associationontology.html</a> (<a href="http://purl.org/ontology/ao/20100722/associationontology.owl">OWL</a>, <a href="http://purl.org/ontology/ao/20100722/associationontology.n3">N3</a>)</dd>
 
     		<dt>Authors:</dt>
     		<dd><a about="http://purl.org/ontology/ao/associationontology.html" rel="rdfs:seeAlso" href="http://smiy.wordpress.com/author/zazi0815/">Bob Ferris</a> (<a about="http://purl.org/ontology/ao/associationontology.html" rel="rdfs:seeAlso" href="http://smiy.wordpress.com/">SMI</a>), <br/>
@@ -407,6 +410,14 @@ Note that this mechanism is itself somewhat experimental and evolvin. The defini
 <h2 id="sec-changes">Recent Changes</h2>
 
 <pre>=========================
+Version 0.3 (July 2010)
+=========================
+ * ADDED: ao:context - a property to associate any context to an individual, e.g. a location, a time or an activity 
+ * ADDED: ao:activity - an activity, which is associated to an individual, e.g. dancing, sleeping, driving
+ * ADDED: ao:location - a location, which is associated to an individual, e.g. my house, my country, my current whereabouts
+ * ADDED: ao:time - a time, which is associated to an individual, e.g. morning, afternoon, evening
+
+=========================
 Version 0.21 (July 2010)
 =========================
  * REMOVED: wrongly set owl:inverseOf properties from all rdf:Property typed properties (ao:genre, ao:mood, ao:occasion)

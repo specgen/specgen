@@ -1,4 +1,12 @@
 =========================
+Version 0.3 (July 2010)
+=========================
+ * ADDED: ao:context - a property to associate any context to an individual, e.g. a location, a time or an activity 
+ * ADDED: ao:activity - an activity, which is associated to an individual, e.g. dancing, sleeping, driving
+ * ADDED: ao:location - a location, which is associated to an individual, e.g. my house, my country, my current whereabouts
+ * ADDED: ao:time - a time, which is associated to an individual, e.g. morning, afternoon, evening
+
+=========================
 Version 0.21 (July 2010)
 =========================
  * REMOVED: wrongly set owl:inverseOf properties from all rdf:Property typed properties (ao:genre, ao:mood, ao:occasion)

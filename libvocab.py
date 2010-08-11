@@ -10,6 +10,7 @@
 #		+ inverse properties (explicit and anonymous)
 #		+ sub properties
 #		+ union ranges
+#		+ euqivalent properties
 #
 #		Copyright 2010 Bob Ferris <http://smiy.wordpress.com/author/zazi0815/>
 #
@@ -1157,6 +1158,22 @@ class VocabReport(object):
   				propertyIsDefinedBy = "%s <tr><td> %s </td></tr>" % (startStr, contentStr)
 
 
+  			# equivalent property
+  			equivalentProperty = ''
+
+  			q = 'SELECT ?ep WHERE { <%s> <http://www.w3.org/2002/07/owl#equivalentProperty> ?ep  } ' % (term.uri)
+  			relations = g.query(q)
+  			startStr = '<tr><th>Equivalent Property</th>'
+
+  			contentStr = ''
+  			for (equiprop) in relations:
+  				equipropnice = self.vocab.niceName(equiprop)
+  				termStr = """<span rel="owl:equivalentProperty" href="%s"><a href="%s">%s</a></span>\n""" % (equiprop, equiprop, equipropnice)
+  				contentStr = "%s %s" % (contentStr, termStr)
+
+  			if contentStr != "":
+  				equivalentProperty = "%s <td> %s </td></tr>" % (startStr, contentStr)
+
   			# rdf property
   			rp = ''
   			termStr = ''
@@ -1241,7 +1258,7 @@ class VocabReport(object):
   			s = termlink(s)
 
   			# danbri added another term.id 20010101
-  			zz = eg % (term.id, term.uri, term.type, "Property", sn, term.label, term.comment, term.status, domainsOfProperty, rangesOfProperty + subPropertyOf + hasSubProperty + inverseOf + hasInverseProperty + propertyIsDefinedBy + rp + op + dp + ifp + fp, s, term.id, term.id)
+  			zz = eg % (term.id, term.uri, term.type, "Property", sn, term.label, term.comment, term.status, domainsOfProperty, rangesOfProperty + subPropertyOf + hasSubProperty + inverseOf + hasInverseProperty + propertyIsDefinedBy + equivalentProperty + rp + op + dp + ifp + fp, s, term.id, term.id)
 
   			## we add to the relevant string - stable, unstable, testing or archaic
   			if(term.status == "stable"):

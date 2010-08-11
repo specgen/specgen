@@ -14,9 +14,10 @@
    xml:base="http://purl.org/ontology/ao/core#">
   <owl:Ontology rdf:about="http://purl.org/ontology/ao/core#">
     <dc:creator rdf:resource="http://foaf.me/zazi#me"/>
-    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-07-22T22:35:52+01:00</dc:date>
+    <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;http://tobyinkster.co.uk/#i&gt;</dc:creator>
+    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-08-11T15:34:52+01:00</dc:date>
     <dc:description xml:lang="en">The Association Ontology specification provides basic properties 
-for describing specific associations to something, e.g. an occasion, a genre or a mood, and enables furthermore, a mechanism to 
+for describing specific associations to something, e.g. a context, an occasion, a genre or a mood, and enables furthermore, a mechanism to 
 like/rate and feedback these associations in context to something on/ for the Semantic Web. This document contains a RDF description 
 of the Association Ontology.</dc:description>
     <dc:title xml:lang="en">The Association Ontology</dc:title>
@@ -26,7 +27,7 @@ of the Association Ontology.</dc:description>
     <owl:imports rdf:resource="http://purl.org/stuff/rev"/>
     <owl:imports rdf:resource="http://www.w3.org/2003/06/sw-vocab-status/ns"/>
     <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.21</owl:versionInfo>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.3</owl:versionInfo>
   </owl:Ontology>
   <owl:Class rdf:about="http://purl.org/ontology/ao/core#LikeableAssociation">
     <rdfs:comment xml:lang="en">A likeable association. That means this association type is intended to be used for voting (ao:likeminded), 
@@ -38,6 +39,19 @@ context of something.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://purl.org/stuff/rev#Review"/>
     <vs:term_status xml:lang="en">testing</vs:term_status>
   </owl:Class>
+  <rdf:Property rdf:about="http://purl.org/ontology/ao/core#activity">
+    <rdfs:comment xml:lang="en">An activity, which is associated to an individual, e.g. dancing, sleeping, driving.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/ao/core#"/>
+    <rdfs:label xml:lang="en">activity</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/ao/core#context"/>
+    <vs:term_status xml:lang="en">testing</vs:term_status>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://purl.org/ontology/ao/core#context">
+    <rdfs:comment xml:lang="en">A property to associate any context to an individual, e.g. a location, a time or an activity. Hence, this property is intended that sub properties should be created from it.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/ao/core#"/>
+    <rdfs:label xml:lang="en">has context</rdfs:label>
+    <vs:term_status xml:lang="en">testing</vs:term_status>
+  </rdf:Property>
   <rdf:Property rdf:about="http://purl.org/ontology/ao/core#genre">
     <rdfs:comment xml:lang="en">An genre of something.</rdfs:comment>
     <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
@@ -73,6 +87,13 @@ in a specific context.</rdfs:comment>
     </owl:inverseOf>
     <vs:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">testing</vs:term_status>
   </owl:ObjectProperty>
+  <rdf:Property rdf:about="http://purl.org/ontology/ao/core#location">
+    <rdfs:comment xml:lang="en">A location, which is associated to an individual, e.g. my house, my country, my current whereabouts.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/ao/core#"/>
+    <rdfs:label xml:lang="en">location</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/ao/core#context"/>
+    <vs:term_status xml:lang="en">testing</vs:term_status>
+  </rdf:Property>
   <rdf:Property rdf:about="http://purl.org/ontology/ao/core#mood">
     <rdfs:comment xml:lang="en">A mood that should be created by something.</rdfs:comment>
     <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
@@ -88,5 +109,13 @@ in a specific context.</rdfs:comment>
     <rdfs:label xml:lang="en">has occassion</rdfs:label>
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/subject"/>
     <vs:term_status xml:lang="en">unstable</vs:term_status>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://purl.org/ontology/ao/core#time">
+    <rdfs:comment xml:lang="en">A time, which is associated to an individual, e.g. morning, afternoon, evening.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/ao/core#"/>
+    <rdfs:label xml:lang="en">time</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/ao/core#context"/>
+    <owl:equivalentProperty rdf:resource="http://purl.org/dc/elements/1.1/date"/>
+    <vs:term_status xml:lang="en">testing</vs:term_status>
   </rdf:Property>
 </rdf:RDF>

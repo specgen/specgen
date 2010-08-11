@@ -31,19 +31,22 @@ version="XHTML+RDFa 1.0">
 </head>
 
 <body>
-  <h1><span about="http://purl.org/ontology/ao/core#" property="dc:title">The Association Ontology</span> <span about="http://purl.org/ontology/ao/core#" property="owl:versionInfo" datatype="xsd:decimal">0.21</span></h1>
+  <h1><span about="http://purl.org/ontology/ao/core#" property="dc:title">The Association Ontology</span> <span about="http://purl.org/ontology/ao/core#" property="owl:versionInfo" datatype="xsd:decimal">0.3</span></h1>
 
-  <h2>Namespace Document <span about="http://purl.org/ontology/ao/core#" property="dc:date" content="2010-07-22T22:35:52+01:00" datatype="xsd:dateTime">22 July 2010</span></h2>
+  <h2>Namespace Document <span about="http://purl.org/ontology/ao/core#" property="dc:date" content="2010-08-11T15:34:52+01:00" datatype="xsd:dateTime">11 August 2010</span></h2>
 <table class="header" border="0">
   <tr>
     <td>
   		<dl>
     		<dt>This version:</dt>
     		<dd><a about="http://purl.org/ontology/ao/associationontology.html" rel="dc:hasVersion" 
-			rev="dc:isVersionOf" href="http://purl.org/ontology/ao/20100722/associationontology.html">http://purl.org/ontology/ao/20100722/associationontology.html</a> (<a href="http://purl.org/ontology/ao/20100722/counterontology.owl">OWL</a>, <a href="http://purl.org/ontology/ao/20100722/associationontology.n3">N3</a>)</dd>
+			rev="dc:isVersionOf" href="http://purl.org/ontology/ao/20100811/associationontology.html">http://purl.org/ontology/ao/20100811/associationontology.html</a> (<a href="http://purl.org/ontology/ao/20100811/counterontology.owl">OWL</a>, <a href="http://purl.org/ontology/ao/20100811/associationontology.n3">N3</a>)</dd>
 
     		<dt>Latest version:</dt>
     		<dd><a href="http://purl.org/ontology/ao/core#">http://purl.org/ontology/ao/core#</a> (<a href="http://purl.org/ontology/ao/associationontology.owl">OWL</a>, <a href="http://purl.org/ontology/ao/associationontology.n3">N3</a>)</dd>
+
+			<dt>Previous version:</dt>
+			<dd><a href="http://purl.org/ontology/ao/20100722/associationontology.html">http://purl.org/ontology/ao/20100722/associationontology.html</a> (<a href="http://purl.org/ontology/ao/20100722/associationontology.owl">OWL</a>, <a href="http://purl.org/ontology/ao/20100722/associationontology.n3">N3</a>)</dd>
 
     		<dt>Authors:</dt>
     		<dd><a about="http://purl.org/ontology/ao/associationontology.html" rel="rdfs:seeAlso" href="http://smiy.wordpress.com/author/zazi0815/">Bob Ferris</a> (<a about="http://purl.org/ontology/ao/associationontology.html" rel="rdfs:seeAlso" href="http://smiy.wordpress.com/">SMI</a>), <br/>
@@ -172,7 +175,7 @@ href="http://purl.org/stuff/rev#Review"><em>rev:Review</em></a>):</p>
  <div class="azlist">
 <p>Classes: | <a href="#LikeableAssociation">LikeableAssociation</a> | 
 </p>
-<p>Properties: | <a href="#genre">genre</a> |  <a href="#included_association">included_association</a> |  <a href="#likeminded">likeminded</a> |  <a href="#mood">mood</a> |  <a href="#occasion">occasion</a> | 
+<p>Properties: | <a href="#activity">activity</a> |  <a href="#context">context</a> |  <a href="#genre">genre</a> |  <a href="#included_association">included_association</a> |  <a href="#likeminded">likeminded</a> |  <a href="#location">location</a> |  <a href="#mood">mood</a> |  <a href="#occasion">occasion</a> |  <a href="#time">time</a> | 
 </p>
 </div>
 
@@ -367,7 +370,7 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
 <div class="azlist">
 <p>Classes: | <a href="#LikeableAssociation">LikeableAssociation</a> | 
 </p>
-<p>Properties: | <a href="#genre">genre</a> |  <a href="#included_association">included_association</a> |  <a href="#likeminded">likeminded</a> |  <a href="#mood">mood</a> |  <a href="#occasion">occasion</a> | 
+<p>Properties: | <a href="#activity">activity</a> |  <a href="#context">context</a> |  <a href="#genre">genre</a> |  <a href="#included_association">included_association</a> |  <a href="#likeminded">likeminded</a> |  <a href="#location">location</a> |  <a href="#mood">mood</a> |  <a href="#occasion">occasion</a> |  <a href="#time">time</a> | 
 </p>
 </div>
 
@@ -398,7 +401,41 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
 
 <h2>Properties</h2>
  
-<div class="specterm" id="included_association" about="http://purl.org/ontology/ao/core#included_association" typeof="owl:ObjectProperty">
+<div class="specterm" id="activity" about="http://purl.org/ontology/ao/core#activity" typeof="rdf:Property">
+  			<h3>Property: ao:activity</h3> 
+  			<em property="rdfs:label" >activity</em> - <span property="rdfs:comment" >An activity, which is associated to an individual, e.g. dancing, sleeping, driving.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			
+  			<tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:subPropertyOf" href="http://purl.org/ontology/ao/core#context"><a href="#context">has context</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/ao/core#"></span>
+ </td></tr><tr><th colspan="2">RDF Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#activity">#</a>] <!-- activity --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="context" about="http://purl.org/ontology/ao/core#context" typeof="rdf:Property">
+  			<h3>Property: ao:context</h3> 
+  			<em property="rdfs:label" >has context</em> - <span property="rdfs:comment" >A property to associate any context to an individual, e.g. a location, a time or an activity. Hence, this property is intended that sub properties should be created from it.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			
+  			<tr><th>Has sub property</th>
+ <td>  <a href="#location">location</a>
+ <a href="#activity">activity</a>
+ <a href="#time">time</a>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/ao/core#"></span>
+ </td></tr><tr><th colspan="2">RDF Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#context">#</a>] <!-- context --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="included_association" about="http://purl.org/ontology/ao/core#included_association" typeof="owl:ObjectProperty">
   			<h3>Property: ao:included_association</h3> 
   			<em property="rdfs:label" >has included association</em> - <span property="rdfs:comment" >This property could be used to compose association statements or to reuse them, e.g. to make them likeable \nin a specific context.</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -409,9 +446,9 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			<tr><th>Range:</th>
  <td>  <span rel="rdfs:range" href="http://purl.org/ontology/similarity/Association"><a href="http://purl.org/ontology/similarity/Association">sim:Association</a></span>
  </td></tr><tr><th>Inverse property of</th>
- <td>  <span rel="owl:inverseOf" resource="[_:SctvQfmE3]">the anonymous defined property with the label
-  							 '<em about="[_:SctvQfmE3]" property="rdfs:label">is included association of</em>'</span>
- (<span about="[_:SctvQfmE3]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
+ <td>  <span rel="owl:inverseOf" resource="[_:tNvRnOsT3]">the anonymous defined property with the label
+  							 '<em about="[_:tNvRnOsT3]" property="rdfs:label">is included association of</em>'</span>
+ (<span about="[_:tNvRnOsT3]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/ao/core#"></span>
  </td></tr><tr><th colspan="2">Object Property</th>
  <td>  </td></tr>
@@ -430,15 +467,48 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			<tr><th>Range:</th>
  <td>  <span rel="rdfs:range" href="http://xmlns.com/foaf/0.1/Agent"><a href="http://xmlns.com/foaf/0.1/Agent">foaf:Agent</a></span>
  </td></tr><tr><th>Inverse property of</th>
- <td>  <span rel="owl:inverseOf" resource="[_:SctvQfmE4]">the anonymous defined property with the label
-  							 '<em about="[_:SctvQfmE4]" property="rdfs:label">is likeminded of</em>'</span>
- (<span about="[_:SctvQfmE4]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
+ <td>  <span rel="owl:inverseOf" resource="[_:tNvRnOsT4]">the anonymous defined property with the label
+  							 '<em about="[_:tNvRnOsT4]" property="rdfs:label">is likeminded of</em>'</span>
+ (<span about="[_:tNvRnOsT4]" typeof="owl:ObjectProperty"><strong>Object Property</strong></span>) </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/ao/core#"></span>
  </td></tr><tr><th colspan="2">Object Property</th>
  <td>  </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#likeminded">#</a>] <!-- likeminded --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="location" about="http://purl.org/ontology/ao/core#location" typeof="rdf:Property">
+  			<h3>Property: ao:location</h3> 
+  			<em property="rdfs:label" >location</em> - <span property="rdfs:comment" >A location, which is associated to an individual, e.g. my house, my country, my current whereabouts.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			
+  			<tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:subPropertyOf" href="http://purl.org/ontology/ao/core#context"><a href="#context">has context</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/ao/core#"></span>
+ </td></tr><tr><th colspan="2">RDF Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#location">#</a>] <!-- location --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="time" about="http://purl.org/ontology/ao/core#time" typeof="rdf:Property">
+  			<h3>Property: ao:time</h3> 
+  			<em property="rdfs:label" >time</em> - <span property="rdfs:comment" >A time, which is associated to an individual, e.g. morning, afternoon, evening.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			
+  			<tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:subPropertyOf" href="http://purl.org/ontology/ao/core#context"><a href="#context">has context</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/ao/core#"></span>
+ </td></tr><tr><th>Equivalent Property</th> <td>  <span rel="owl:equivalentProperty" href="http://purl.org/dc/elements/1.1/date"><a href="http://purl.org/dc/elements/1.1/date">dc:date</a></span>
+ </td></tr><tr><th colspan="2">RDF Property</th>
+ <td>  </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#time">#</a>] <!-- time --> [<a href="#glance">back to top</a>]</p>
   			<br/>
   			</div>
 <div class="specterm" id="genre" about="http://purl.org/ontology/ao/core#genre" typeof="rdf:Property">
@@ -544,6 +614,14 @@ Note that this mechanism is itself somewhat experimental and evolvin. The defini
 <h2 id="sec-changes">Recent Changes</h2>
 
 <pre>=========================
+Version 0.3 (July 2010)
+=========================
+ * ADDED: ao:context - a property to associate any context to an individual, e.g. a location, a time or an activity 
+ * ADDED: ao:activity - an activity, which is associated to an individual, e.g. dancing, sleeping, driving
+ * ADDED: ao:location - a location, which is associated to an individual, e.g. my house, my country, my current whereabouts
+ * ADDED: ao:time - a time, which is associated to an individual, e.g. morning, afternoon, evening
+
+=========================
 Version 0.21 (July 2010)
 =========================
  * REMOVED: wrongly set owl:inverseOf properties from all rdf:Property typed properties (ao:genre, ao:mood, ao:occasion)
