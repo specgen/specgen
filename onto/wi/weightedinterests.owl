@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:event="http://purl.org/NET/c4dm/event.owl#"
+   xmlns:foaf="http://xmlns.com/foaf/0.1/"
+   xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:rev="http://purl.org/stuff/rev#"
+   xmlns:scovo="http://purl.org/NET/scovo#"
+   xmlns:status="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+   xmlns:time="http://www.w3.org/2006/time#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+   xmlns:wi="http://purl.org/ontology/wi/core#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+   xml:base="http://purl.org/ontology/wi/core#">
+  <owl:Ontology rdf:about="http://purl.org/ontology/wi/core#">
+    <dc:creator rdf:resource="http://danbri.org/foaf.rdf#danbri"/>
+    <dc:creator rdf:resource="http://foaf.me/zazi#me"/>
+    <dc:creator rdf:resource="http://semantictweet.com/der42#me"/>
+    <dc:creator rdf:resource="http://swordfish.rdfweb.org/people/libby/rdfweb/webwho.xrdf#me"/>
+    <dc:creator rdf:resource="http://tobyinkster.co.uk/#i"/>
+    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-08-12T12:25:52+01:00</dc:date>
+    <dc:description xml:lang="en">A vocabulary for describing preferences (interests) within contexts, their temporal dynamics and their origin</dc:description>
+    <dc:title xml:lang="en">Weighted Interests Vocabulary</dc:title>
+    <vann:preferredNamespacePrefix>wi</vann:preferredNamespacePrefix>
+    <vann:preferredNamespaceUri>http://purl.org/ontology/wi/core#</vann:preferredNamespaceUri>
+    <owl:imports rdf:resource="http://purl.org/NET/c4dm/event.owl"/>
+    <owl:imports rdf:resource="http://purl.org/NET/scovo"/>
+    <owl:imports rdf:resource="http://purl.org/dc/elements/1.1/"/>
+    <owl:imports rdf:resource="http://purl.org/dc/terms/"/>
+    <owl:imports rdf:resource="http://purl.org/stuff/rev"/>
+    <owl:imports rdf:resource="http://purl.org/vocab/vann/"/>
+    <owl:imports rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos"/>
+    <owl:imports rdf:resource="http://www.w3.org/2003/06/sw-vocab-status/ns"/>
+    <owl:imports rdf:resource="http://www.w3.org/2006/time"/>
+    <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.4</owl:versionInfo>
+  </owl:Ontology>
+  <owl:Class rdf:about="http://purl.org/ontology/wi/core#ComplexInterest">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/wi/core#"/>
+    <rdfs:label xml:lang="en">Complex Interest</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/wi/core#WeightedInterest"/>
+    <status:term_status xml:lang="en">unstable</status:term_status>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/ontology/wi/core#Context">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:comment xml:lang="en">A context object</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/wi/core#"/>
+    <rdfs:label xml:lang="en">Context</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <status:term_status xml:lang="en">unstable</status:term_status>
+  </owl:Class>
+  <scovo:Dimension rdf:about="http://purl.org/ontology/wi/core#ExplicitMining">
+    <dc:description xml:lang="en">An explicitly mined user interest</dc:description>
+    <dc:title xml:lang="en">Explicit Mining</dc:title>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/wi/core#"/>
+    <status:term_status xml:lang="en">testing</status:term_status>
+  </scovo:Dimension>
+  <scovo:Dimension rdf:about="http://purl.org/ontology/wi/core#ImplicitMining">
+    <dc:decription xml:lang="en">An implicitly mined user interest</dc:decription>
+    <dc:title xml:lang="en">Implicit Mining</dc:title>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/wi/core#"/>
+    <status:term_status xml:lang="en">testing</status:term_status>
+  </scovo:Dimension>
+  <rdfs:Class rdf:about="http://purl.org/ontology/wi/core#InterestDynamics">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">An event concept for describing dynamics of interests, e.g. weight changes, periods of interest.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/wi/core#"/>
+    <rdfs:label xml:lang="en">Interest Dynamics</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+    <status:term_status xml:lang="en">testing</status:term_status>
+  </rdfs:Class>
+  <owl:Class rdf:about="http://purl.org/ontology/wi/core#Scale">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:comment xml:lang="en">A concept for describing scales for weights.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/wi/core#"/>
+    <rdfs:label xml:lang="en">Scale</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/NET/scovo#Dimension"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <status:term_status xml:lang="en">unstable</status:term_status>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/ontology/wi/core#Weight">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:comment xml:lang="en">A weight class to enable timestamped weights.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/wi/core#"/>
+    <rdfs:label xml:lang="en">Weight</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/NET/scovo#Item"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+        <owl:onProperty rdf:resource="http://purl.org/ontology/wi/core#weight_value"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <status:term_status xml:lang="en">testing</status:term_status>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/ontology/wi/core#WeightedInterest">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:comment xml:lang="en">A weighted interest object</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/wi/core#"/>
+    <rdfs:label xml:lang="en">Weighted Interest</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <status:term_status xml:lang="en">unstable</status:term_status>
+  </owl:Class>
+  <rdf:Property rdf:about="http://purl.org/ontology/wi/core#agent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">A link from a mined interest to the related person</rdfs:comment>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/wi/core#WeightedInterest"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/wi/core#"/>
+    <rdfs:label xml:lang="en">has agent</rdfs:label>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <owl:inverseOf rdf:resource="http://purl.org/ontology/wi/core#preference"/>
+    <status:term_status xml:lang="en">testing</status:term_status>
+  </rdf:Property>
+  <owl:ObjectProperty rdf:about="http://purl.org/ontology/wi/core#appear_time">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:comment xml:lang="en">Tthe time when the interest appears in a certain kind of scenario.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/wi/core#InterestDynamics"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/wi/core#"/>
+    <rdfs:label xml:lang="en">has appear time</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2006/time#Interval"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#time"/>
+    <status:term_status xml:lang="en">testing</status:term_status>
+  </owl:ObjectProperty>
+  <rdf:Property rdf:about="http://purl.org/ontology/wi/core#attention_duration">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">An interval of attention for an interest.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/wi/core#ComplexInterest"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/wi/core#"/>
+    <rdfs:label xml:lang="en">has attention duration</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2006/time#Interval"/>
+    <status:term_status xml:lang="en">testing</status:term_status>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://purl.org/ontology/wi/core#context">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">A link between a WeightedInterest and Context</rdfs:comment>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/wi/core#WeightedInterest"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/wi/core#"/>
+    <rdfs:label xml:lang="en">has context</rdfs:label>
+    <status:term_status xml:lang="en">unstable</status:term_status>
+  </rdf:Property>
+  <owl:ObjectProperty rdf:about="http://purl.org/ontology/wi/core#device">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:comment xml:lang="en">A document describing a device</rdfs:comment>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/wi/core#Context"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/wi/core#"/>
+    <rdfs:label xml:lang="en">has device</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <status:term_status xml:lang="en">unstable</status:term_status>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/ontology/wi/core#evidence">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:comment xml:lang="en">A link between a context and evidence supporting the interpretation of preferences in a context</rdfs:comment>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/wi/core#Context"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/wi/core#"/>
+    <rdfs:label xml:lang="en">has evidence</rdfs:label>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+    <status:term_status xml:lang="en">unstable</status:term_status>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/ontology/wi/core#interest_dynamics">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:comment xml:lang="en">To relate a complex interest to its temporal dynamics.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/wi/core#ComplexInterest"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/wi/core#"/>
+    <rdfs:label xml:lang="en">has interest dynamics</rdfs:label>
+    <rdfs:range rdf:resource="http://purl.org/ontology/wi/core#InterestDynamics"/>
+    <status:term_status xml:lang="en">testing</status:term_status>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/ontology/wi/core#location">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:comment xml:lang="en">A context location</rdfs:comment>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/wi/core#Context"/>
+    <rdfs:label xml:lang="en">has location</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#location"/>
+    <status:term_status xml:lang="en">unstable</status:term_status>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/ontology/wi/core#longest_duration">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:comment xml:lang="en">The longest continuous interval of attention for an interest, e.g. for an interest, if it appears in the following years: 1990, 1991, 1995, 1996, 1997, 1998, 2001, then the longest duration is 4 years.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/wi/core#"/>
+    <rdfs:label xml:lang="en">has longest duration</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/wi/core#attention_duration"/>
+    <status:term_status xml:lang="en">testing</status:term_status>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://purl.org/ontology/wi/core#max_weight">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:comment xml:lang="en">A maximum weight of a scale.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/wi/core#Scale"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/wi/core#"/>
+    <rdfs:label xml:lang="en">has max weight</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/scovo#max"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/stuff/rev#maxRating"/>
+    <status:term_status xml:lang="en">unstable</status:term_status>
+  </owl:DatatypeProperty>
+  <rdf:Property rdf:about="http://purl.org/ontology/wi/core#min_weight">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:comment xml:lang="en">A minimum weight of a scale.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/wi/core#Scale"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/wi/core#"/>
+    <rdfs:label xml:lang="en">has min weight</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/scovo#min"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/stuff/rev#minRating"/>
+    <status:term_status xml:lang="en">unstable</status:term_status>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://purl.org/ontology/wi/core#not_interested_in">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">A link between an agent and a topic of no interest to them</rdfs:comment>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/wi/core#"/>
+    <rdfs:label xml:lang="en">not interested in</rdfs:label>
+    <status:term_status xml:lang="en">unstable</status:term_status>
+  </rdf:Property>
+  <owl:FunctionalProperty rdf:about="http://purl.org/ontology/wi/core#overall_weight">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">This weight reflects the overall interest in a topic and should be different from the actual weight of interest.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/wi/core#ComplexInterest"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/wi/core#"/>
+    <rdfs:label xml:lang="en">has overall weight</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/wi/core#weight"/>
+    <status:term_status xml:lang="en">testing</status:term_status>
+  </owl:FunctionalProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/ontology/wi/core#preference">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:comment xml:lang="en">A link between an agent and a weighted interest</rdfs:comment>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/wi/core#"/>
+    <rdfs:label xml:lang="en">has preference</rdfs:label>
+    <rdfs:range rdf:resource="http://purl.org/ontology/wi/core#WeightedInterest"/>
+    <status:term_status xml:lang="en">unstable</status:term_status>
+  </owl:ObjectProperty>
+  <owl:FunctionalProperty rdf:about="http://purl.org/ontology/wi/core#scale">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">A scale for the weighting of a interest.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/wi/core#Weight"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/wi/core#"/>
+    <rdfs:label xml:lang="en">has scale</rdfs:label>
+    <rdfs:range rdf:resource="http://purl.org/ontology/wi/core#Scale"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/scovo#dimension"/>
+    <status:term_status xml:lang="en">unstable</status:term_status>
+  </owl:FunctionalProperty>
+  <rdf:Property rdf:about="http://purl.org/ontology/wi/core#statistical_item">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">A link from an interest to statistics about itself</rdfs:comment>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/wi/core#WeightedInterest"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/wi/core#"/>
+    <rdfs:label xml:lang="en">has statistical item</rdfs:label>
+    <rdfs:range rdf:resource="http://purl.org/NET/scovo#Item"/>
+    <status:term_status xml:lang="en">testing</status:term_status>
+  </rdf:Property>
+  <owl:DatatypeProperty rdf:about="http://purl.org/ontology/wi/core#step_size">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:comment xml:lang="en">A predefined step size for weight of a specific scale.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/wi/core#Scale"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/wi/core#"/>
+    <rdfs:label xml:lang="en">has step size</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <status:term_status xml:lang="en">unstable</status:term_status>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/ontology/wi/core#temporal_context">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A temporal context of an interest.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/wi/core#InterestDynamics"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/wi/core#"/>
+    <rdfs:label xml:lang="en">has temporal context</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#factor"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/wi/core#context"/>
+    <status:term_status xml:lang="en">testing</status:term_status>
+  </owl:ObjectProperty>
+  <rdf:Property rdf:about="http://purl.org/ontology/wi/core#temporal_weight">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">A temporal weight of an interest that is valid for a specific period of time or was raised up in a specific period of time.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/wi/core#InterestDynamics"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/wi/core#"/>
+    <rdfs:label xml:lang="en">has temporal weight</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#factor"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/wi/core#weight"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://purl.org/ontology/wi/core#time_period">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">A time period of a context</rdfs:comment>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/wi/core#Context"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/wi/core#"/>
+    <rdfs:label xml:lang="en">has time period</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+    <status:term_status xml:lang="en">unstable</status:term_status>
+  </rdf:Property>
+  <owl:ObjectProperty rdf:about="http://purl.org/ontology/wi/core#topic">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:comment xml:lang="en">A topic of the weighted interest</rdfs:comment>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/wi/core#WeightedInterest"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/wi/core#"/>
+    <rdfs:label xml:lang="en">has topic</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/subject"/>
+    <status:term_status xml:lang="en">unstable</status:term_status>
+  </owl:ObjectProperty>
+  <rdf:Property rdf:about="http://purl.org/ontology/wi/core#ultimative_duration">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">The overall duration of attention for an interest, e.g. for an interest, if it appears in the following years: 1990, 1991, 1995, 1996, 1997, 1998, 2001, then the longest duration is 7 years.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/wi/core#"/>
+    <rdfs:label xml:lang="en">ultimative duration</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/wi/core#attention_duration"/>
+    <status:term_status xml:lang="en">testing</status:term_status>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://purl.org/ontology/wi/core#weight">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">The weight on the topic, which should normally reflect the actual interest in a topic.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/wi/core#WeightedInterest"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/wi/core#"/>
+    <rdfs:label xml:lang="en">has weight</rdfs:label>
+    <rdfs:range rdf:resource="http://purl.org/ontology/wi/core#Weight"/>
+    <status:term_status xml:lang="en">unstable</status:term_status>
+  </rdf:Property>
+  <owl:DatatypeProperty rdf:about="http://purl.org/ontology/wi/core#weight_value">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:comment xml:lang="en">The specific value of a weight - a decimal number.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/wi/core#Weight"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/wi/core#"/>
+    <rdfs:label xml:lang="en">has weight value</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <status:term_status xml:lang="en">testing</status:term_status>
+  </owl:DatatypeProperty>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/topic_interest">
+    <owl:propertyChainAxiom>
+      <rdf:Description>
+        <rdf:first rdf:resource="http://purl.org/ontology/wi/core#topic"/>
+        <rdf:rest>
+          <rdf:Description>
+            <rdf:first rdf:resource="http://purl.org/ontology/wi/core#preference"/>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          </rdf:Description>
+        </rdf:rest>
+      </rdf:Description>
+    </owl:propertyChainAxiom>
+  </rdf:Description>
+</rdf:RDF>

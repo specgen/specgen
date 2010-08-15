@@ -112,7 +112,7 @@ version="XHTML+RDFa 1.0">
 
 
 <h2 id="sec-status">Abstract</h2>
-<p about="http://purl.org/ontology/co/core#" property="dc:decription">
+<p about="http://purl.org/ontology/co/core#" property="dc:description">
 The <em>Counter Ontology</em> specification provides basic concepts and properties 
 for describing a general counter concept and some important sub counters, e.g. an event counter, on/ for 
 the Semantic Web. This document contains a RDFa description of the <em>Counter Ontology</em> and some additional information and examples.
@@ -369,10 +369,10 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
 </td></tr> <tr><th>Sub class of</th>
  <td>  <span rel="rdfs:subClassOf" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
  </td></tr><tr><th class="restrictions">Restriction(s):</th>
- <td>  <span about ="http://purl.org/ontology/co/core#Counter" rel="rdfs:subClassOf" resource="[_:sOEDsbqP3]"></span>
- <span about="[_:sOEDsbqP3]" typeof="owl:Restriction"></span>The property 
-  									<span about="[_:sOEDsbqP3]" rel="owl:onProperty" href="http://purl.org/ontology/co/core#count"><a href="#count">co:count</a></span> must be set <em>exactly</em> 
-  									<span about="[_:sOEDsbqP3]" property="owl:cardinality" datatype="xsd:nonNegativeInteger" >1</span> time(s) 
+ <td>  <span about ="http://purl.org/ontology/co/core#Counter" rel="rdfs:subClassOf" resource="[_:XmxEZLmY3]"></span>
+ <span about="[_:XmxEZLmY3]" typeof="owl:Restriction"></span>The property 
+  									<span about="[_:XmxEZLmY3]" rel="owl:onProperty" href="http://purl.org/ontology/co/core#count"><a href="#count">co:count</a></span> must be set <em>exactly</em> 
+  									<span about="[_:XmxEZLmY3]" property="owl:cardinality" datatype="xsd:nonNegativeInteger" >1</span> time(s) 
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/co/core#"></span>
  </td></tr><tr><th colspan="2">OWL Class</th>
@@ -390,9 +390,9 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			<tr><th>Status:</th>
   			<td><span property="vs:status" >unstable</span></td></tr>
   			<tr><th>Properties include:</th>
- <td>  <a href="#scrobble_object">scrobble_object</a>
- <a href="#device">device</a>
+ <td>  <a href="#device">device</a>
  <a href="#application">application</a>
+ <a href="#scrobble_object">scrobble_object</a>
  </td></tr>
   			<tr><th>Sub class of</th>
  <td>  <span rel="rdfs:subClassOf" href="http://purl.org/NET/c4dm/event.owl#Event"><a href="http://purl.org/NET/c4dm/event.owl#Event">event:Event</a></span>
@@ -407,7 +407,7 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			<br/>
   			</div>
 <h2>Properties</h2>
- <div class="specterm" id="count" about="http://purl.org/ontology/co/core#count" typeof="rdf:Property">
+ <div class="specterm" id="count" about="http://purl.org/ontology/co/core#count" typeof="owl:FunctionalProperty">
   			<h3>Property: co:count</h3> 
   			<em property="rdfs:label" >has count</em> - <span property="rdfs:comment" >Links a counter resource to the actual count</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -420,9 +420,9 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/co/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
- <td>  </td></tr><tr><th colspan="2">Datatype Property</th>
+ <td> <span rel="rdf:type" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"></span> </td></tr><tr><th colspan="2">Datatype Property</th>
  <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#DatatypeProperty"></span> </td></tr><tr><th colspan="2">Functional Property</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#FunctionalProperty"></span> </td></tr>
+ <td>  </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#count">#</a>] <!-- count --> [<a href="#glance">back to top</a>]</p>
@@ -492,7 +492,7 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			<p style="float: right; font-size: small;">[<a href="#object">#</a>] <!-- object --> [<a href="#glance">back to top</a>]</p>
   			<br/>
   			</div>
-<div class="specterm" id="application" about="http://purl.org/ontology/co/core#application" typeof="rdf:Property">
+<div class="specterm" id="application" about="http://purl.org/ontology/co/core#application" typeof="owl:ObjectProperty">
   			<h3>Property: co:application</h3> 
   			<em property="rdfs:label" >has application</em> - <span property="rdfs:comment" >An application that is related to a scrobble event, e.g. a iTunes to a play back event of a music track.</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -505,13 +505,13 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/co/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
- <td>  </td></tr><tr><th colspan="2">Object Property</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#ObjectProperty"></span> </td></tr>
+ <td> <span rel="rdf:type" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"></span> </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#application">#</a>] <!-- application --> [<a href="#glance">back to top</a>]</p>
   			<br/>
-  			</div><div class="specterm" id="device" about="http://purl.org/ontology/co/core#device" typeof="rdf:Property">
+  			</div><div class="specterm" id="device" about="http://purl.org/ontology/co/core#device" typeof="owl:ObjectProperty">
   			<h3>Property: co:device</h3> 
   			<em property="rdfs:label" >has device</em> - <span property="rdfs:comment" >A device that is related to a scrobble event, e.g. a MP3 player to a play back event of a music track.</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -524,8 +524,8 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/co/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
- <td>  </td></tr><tr><th colspan="2">Object Property</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#ObjectProperty"></span> </td></tr>
+ <td> <span rel="rdf:type" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"></span> </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#device">#</a>] <!-- device --> [<a href="#glance">back to top</a>]</p>
