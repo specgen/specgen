@@ -4,13 +4,14 @@
 #
 # modifications and extensions: Bob Ferris, July 2010
 #		+ multiple property and class types 
-#		+ muttiple restrictions modelling
+#		+ multiple restrictions modeling
 #		+ rdfs:label, rdfs:comment
 #		+ classes and properties from other namespaces
 #		+ inverse properties (explicit and anonymous)
 #		+ sub properties
 #		+ union ranges
-#		+ euqivalent properties
+#		+ equivalent properties
+#		+ simple individuals as optional feature
 #
 #		Copyright 2010 Bob Ferris <http://smiy.wordpress.com/author/zazi0815/>
 #
@@ -120,6 +121,7 @@ class Term(object):
 	 	self.id = b
 	 	self.ns = a
 	 	# print "namspace ",a
+	 	# print "concept ",b
 	 	if self.id == None:
 	 		speclog("Error parsing URI. " + uri)
 	 	if self.ns == None:
@@ -208,7 +210,9 @@ class Property(Term):
   	 	# print "Property.is_class called on "+self
   	 	return(False)
 
-
+	def is_individual(self):
+		# print "Property.is_property called on "+self
+		return(False)
 
 
 
@@ -225,6 +229,29 @@ class Class(Term):
   	def is_class(self):
   		# print "Class.is_class called on "+self
   		return(True)
+
+	def is_individual(self):
+		# print "Property.is_property called on "+self
+		return(False)
+
+
+
+# a Python class representing an RDFS/OWL individual.
+# 
+class Individual(Term):
+
+	# OK OK but how are we SUPPOSED to do this stuff in Python OO?. Stopgap.
+	def is_individual(self):
+		# print "Property.is_property called on "+self
+		return(True)
+
+  	def is_class(self):
+  	 	# print "Property.is_class called on "+self
+  	 	return(False)
+
+	def is_property(self):
+		# print "Class.is_property called on "+self
+		return(False)
 
 
 # A python class representing (a description of) some RDF vocabulary
@@ -269,7 +296,9 @@ class Vocab(object):
 					"http://purl.org/vocab/frbr/core#"              : "frbr",
 					"http://www.w3.org/2006/time#"                  : "time",
 					"http://purl.org/ontology/pbo/core#"            : "pbo",
-					"http://purl.org/ontology/rec/core#"            : "rec"
+					"http://purl.org/ontology/rec/core#"            : "rec",
+					"http://purl.org/ontology/wi/core#"             : "wi",
+					"http://purl.org/NET/scovo#"                    : "scovo"
 		}
 
 
@@ -313,8 +342,10 @@ class Vocab(object):
   		self.terms = []
   		self.properties = []
   		self.classes = []
+  		self.individuals = []
   		tmpclasses = []
   		tmpproperties = []
+  		tmpindividuals = []
 
   		g = self.graph
   		# extend query for different property types 
@@ -345,9 +376,24 @@ class Vocab(object):
   				self.classes.append(c)
   				tmpclasses.append(str(c))
 
+  		# ATTENTION: the owl:Ontology individual shouldn't be included into this list here
+  		query = 'SELECT ?x ?title ?description ?type WHERE { ?x <http://purl.org/dc/elements/1.1/title> ?title . ?x <http://purl.org/dc/elements/1.1/description> ?description . ?x rdf:type ?type . ?x a ?t  FILTER (?t != <http://www.w3.org/2002/07/owl#Ontology> ) }'
+  		relations = g.query(query)
+  		for (term, title, description, type) in relations:
+  			i = Individual(term)
+  			print "Made an individual! "+str(i) + " using label: "+str(title)
+  			i.label = str(title)
+  			i.comment = str(description)
+  			i.type = self.niceName(type)
+  			self.terms.append(i)
+  			if (not str(i) in tmpindividuals):
+  				tmpindividuals.append(str(i))
+  				self.individuals.append(i)
+
   		self.terms.sort(key = operator.attrgetter('id'))
   		self.classes.sort(key = operator.attrgetter('id'))
   		self.properties.sort(key = operator.attrgetter('id'))
+  		self.individuals.sort(key = operator.attrgetter('id'))
 
   		# http://www.w3.org/2003/06/sw-vocab-status/ns#"
   		query = 'SELECT ?x ?vs WHERE { ?x <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> ?vs }'
@@ -396,6 +442,7 @@ class Vocab(object):
    	def detect_types(self):
    		self.properties = []
    		self.classes = []
+   		self.individuals = []
    		for t in self.terms:
    			# print "Doing t: "+t+" which is of type " + str(t.__class__)
    			if t.is_property():
@@ -404,6 +451,9 @@ class Vocab(object):
    			if t.is_class():
    				# print "is_class."
    				self.classes.append(t)
+   			if t.is_individual():
+   				# print "is_individual."
+   				self.individuals.append(t)
 
 
 # CODE FROM ORIGINAL specgen:
@@ -431,13 +481,17 @@ class Vocab(object):
   		"""Builds the A-Z list of terms"""
   		c_ids = []
   		p_ids = []
+  		i_ids = []
   		for p in self.properties:
   			p_ids.append(str(p.id))
   		for c in self.classes:
   			c_ids.append(str(c.id))
+  		for i in self.individuals:
+  			i_ids.append(str(i.id))
   		c_ids.sort()
   		p_ids.sort()
-  		return (c_ids, p_ids)
+  		i_ids.sort()
+  		return (c_ids, p_ids, i_ids)
 
 
 
@@ -485,26 +539,40 @@ class VocabReport(object):
   		##    tpl = tpl % (azlist.encode("utf-8"), termlist.encode("utf-8"), rdfdata)
   		#
   		# IMPORTANT: this is the code, which is responsible for write code fragments to the template
-  		tpl = tpl % (azlist.encode("utf-8"), azlist.encode("utf-8"), termlist.encode("utf-8"))
+  		tpl = tpl % (self.concepttypes.encode("utf-8"), 
+					self.concepttypes2.encode("utf-8"), 
+					azlist.encode("utf-8"), 
+					self.concepttypes.encode("utf-8"), 
+					self.concepttypes3.encode("utf-8"), 
+					azlist.encode("utf-8"), 
+					termlist.encode("utf-8"))
   		#    tpl = tpl % (azlist.encode("utf-8"), termlist.encode("utf-8"))
   		return(tpl)
 
   	def az(self):
   		"""AZ List for html doc"""
-  		c_ids, p_ids = self.vocab.azlist()
+  		c_ids, p_ids , i_ids = self.vocab.azlist()
   		az = """<div class="azlist">"""
   		az = """%s\n<p>Classes: |""" % az
   		# print c_ids, p_ids
   		for c in c_ids:
   			# speclog("Class "+c+" in az generation.")
   			az = """%s <a href="#%s">%s</a> | """ % (az, str(c).replace(" ", ""), c)
-
   		az = """%s\n</p>""" % az
+
   		az = """%s\n<p>Properties: |""" % az
   		for p in p_ids:
   			# speclog("Property "+p+" in az generation.")
   			az = """%s <a href="#%s">%s</a> | """ % (az, str(p).replace(" ", ""), p)
   		az = """%s\n</p>""" % az
+
+  		if (len(self.vocab.individuals) > 0):
+  			az = """%s\n<p>Individuals: |""" % az
+  			for i in i_ids:
+  				# speclog("Individual "+p+" in az generation.")
+  				az = """%s <a href="#%s">%s</a> | """ % (az, str(i).replace(" ", ""), i)
+  			az = """%s\n</p>""" % az
+
   		az = """%s\n</div>""" % az
   		return(az)
 
@@ -516,9 +584,20 @@ class VocabReport(object):
   		archaicTxt = ''
 
   		queries = ''
-  		c_ids, p_ids = self.vocab.azlist()
+  		c_ids, p_ids, i_ids = self.vocab.azlist()
   		tl = """<div class="termlist">"""
-  		tl = """%s<h3>Classes and Properties (full detail)</h3>\n<div class='termdetails'><br />\n\n""" % tl
+
+  		# look, whether individuals are available
+  		if (len(self.vocab.individuals) > 0):
+  			tl = """%s<h3>Classes, Properties and Individuals (full detail)</h3>\n<div class='termdetails'><br />\n\n""" % tl
+  			self.concepttypes = "Classes, Properties and Individuals"
+  			self.concepttypes2 = "class (categories or types), by property and by individual"
+  			self.concepttypes3 = "classes, properties and individuals"
+  		else:
+  			tl = """%s<h3>Classes and Properties (full detail)</h3>\n<div class='termdetails'><br />\n\n""" % tl
+  			self.concepttypes = "Classes and Properties"
+  			self.concepttypes2 = "class (categories or types) and by property"
+  			self.concepttypes3 = "classes and properties"
 
 
   		# danbri hack 20100101 removed: href="http://www.w3.org/2003/06/sw-vocab-status/ns#%s" pending discussion w/ libby and leigh re URIs
@@ -530,6 +609,19 @@ class VocabReport(object):
   			<tr><th>Status:</th>
   			<td><span property="vs:status" >%s</span></td></tr>
   			%s
+  			%s
+  			</table>
+  			%s
+  			<p style="float: right; font-size: small;">[<a href="#%s">#</a>] <!-- %s --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div>"""
+
+  		# for individuals
+  		ig = """<div class="specterm" id="%s" about="%s" typeof="%s">
+  			<h3>%s: %s</h3> 
+  			<em property="dc:title" >%s</em> - <span property="dc:description" >%s</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >%s</span></td></tr>
   			%s
   			</table>
   			%s
@@ -855,6 +947,7 @@ class VocabReport(object):
   			s = termlink(s)
 
   			# danbri added another term.id 20010101 and removed term.status
+  			# ATTENTION: writing all class descriptions into template here
   			zz = eg % (term.id, term.uri, term.type, "Class", sn, term.label, term.comment, term.status, domainsOfClass, rangesOfClass + subClassOf + restriction + hasSubClass + classIsDefinedBy + isDisjointWith + oc + rc + dctac, s, term.id, term.id)
 
   			## we add to the relevant string - stable, unstable, testing or archaic
@@ -1258,6 +1351,7 @@ class VocabReport(object):
   			s = termlink(s)
 
   			# danbri added another term.id 20010101
+  			# ATTENTION: writing all property descriptions into template here
   			zz = eg % (term.id, term.uri, term.type, "Property", sn, term.label, term.comment, term.status, domainsOfProperty, rangesOfProperty + subPropertyOf + hasSubProperty + inverseOf + hasInverseProperty + propertyIsDefinedBy + equivalentProperty + rp + op + dp + ifp + fp, s, term.id, term.id)
 
   			## we add to the relevant string - stable, unstable, testing or archaic
@@ -1275,6 +1369,101 @@ class VocabReport(object):
   		## then add the whole thing to the main tl string
   		tl = "%s %s" % (tl, stableTxt + "\n" + testingTxt + "\n" + unstableTxt + "\n" + archaicTxt)
   		##    tl = "%s %s" % (tl, zz)
+
+
+  		# ATTENTION: let's begin with the individual stuff here
+  		# do this only, when individuals are available
+  		if (len(self.vocab.individuals) > 0):
+  			tl = tl + "<h2>Indvidiuals</h2>\n"
+
+  			# individuals
+  			stableTxt = ''
+  			testingTxt = ''
+  			unstableTxt = ''
+  			archaicTxt = ''
+
+  			for term in self.vocab.individuals:
+  				# individual has type
+  				hasType = ''
+  				
+  				q = 'SELECT ?t ?l WHERE {<%s> rdf:type ?t. ?t rdfs:label ?l } ' % (term.uri)
+  				relations = g.query(q)
+  				startStr = '<tr><th>Type:</th>\n'
+  				
+  				contentStr = ''
+  				for (type, label) in relations:
+  					t = Term(type)
+  					termStr = """<a href="#%s">%s</a>\n""" % (type.id, label)
+  					contentStr = "%s %s" % (contentStr, termStr)
+  					
+  				if contentStr != "":
+  					hasType = "%s <td> %s </td></tr>" % (startStr, contentStr)
+  				
+  				q = 'SELECT ?t WHERE {<%s> rdf:type ?t } ' % (term.uri)
+  				
+  				relations = g.query(q)
+  				for (type) in relations:
+  					typenice = self.vocab.niceName(type)
+  					print "has type ", type
+  					print "has typenice ", typenice
+  					# check niceName result
+  					colon = typenice.find(':')
+  					if(type.find(str(self.vocab._get_uri())) < 0):
+  						if colon > 0:
+  							termStr = """<a href="%s">%s</a>\n""" % (type, typenice)
+  							contentStr = "%s %s" % (contentStr, termStr)
+  					
+  					if contentStr != "":
+  						hasType = "%s <td> %s </td></tr>" % (startStr, contentStr)
+
+
+  				# is defined by
+  				individualIsDefinedBy = ''
+
+  				q = 'SELECT ?idb WHERE { <%s> rdfs:isDefinedBy ?idb  } ' % (term.uri)
+  				relations = g.query(q)
+  				startStr = '\n'
+
+  				contentStr = ''
+  				for (isdefinedby) in relations:
+  					termStr = """<span rel="rdfs:isDefinedBy" href="%s"></span>\n""" % (isdefinedby)
+  					contentStr = "%s %s" % (contentStr, termStr)
+
+  				if contentStr != "":
+  					individualIsDefinedBy = "%s <tr><td> %s </td></tr>" % (startStr, contentStr)
+
+  				# end
+
+  				dn = os.path.join(self.basedir, "doc")
+  				filename = os.path.join(dn, term.id + ".en")
+
+  				s = ''
+  				try:
+  					f = open (filename, "r")
+  					s = f.read()
+  				except:
+  					s = ''
+
+  				sn = self.vocab.niceName(term.uri)
+  				s = termlink(s)
+
+  				# ATTENTION: writing all individual descriptions into template here
+  				zz = ig % (term.id, term.uri, term.type, "Individual", sn, term.label, term.comment, term.status, hasType + individualIsDefinedBy, s, term.id, term.id)
+
+  				## we add to the relevant string - stable, unstable, testing or archaic
+  				if(term.status == "stable"):
+  					stableTxt = stableTxt + zz
+  				if(term.status == "testing"):
+  					testingTxt = testingTxt + zz
+  				if(term.status == "unstable"):
+  					unstableTxt = unstableTxt + zz
+  				if(term.status == "archaic"):
+  					archaicTxt = archaicTxt + zz
+  				if((term.status == None) or (term.status == "") or (term.status == "unknown")):
+  					archaicTxt = archaicTxt + zz
+  					
+  			## then add the whole thing to the main tl string
+  			tl = "%s %s" % (tl, stableTxt + "\n" + testingTxt + "\n" + unstableTxt + "\n" + archaicTxt)
 
   		## ensure termlist tag is closed
   		return(tl + "\n" + queries + "</div>\n</div>")

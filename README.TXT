@@ -28,7 +28,7 @@ See libvocab.py and specgen6.py for details.
 Status:
 
  - we load up and interpret the core RDFS/OWL 
- - we populate Vocab, Term (Class or Property) instances
+ - we populate Vocab, Term (Class, Property or Individual) instances
  - able to generate a XHTML/RDFa ontology specification with common concepts and properties from OWL, RDFS, RDF
 
 TODO:
