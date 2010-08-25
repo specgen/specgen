@@ -1374,7 +1374,7 @@ class VocabReport(object):
   		# ATTENTION: let's begin with the individual stuff here
   		# do this only, when individuals are available
   		if (len(self.vocab.individuals) > 0):
-  			tl = tl + "<h2>Indvidiuals</h2>\n"
+  			tl = tl + "<h2>Individuals</h2>\n"
 
   			# individuals
   			stableTxt = ''
