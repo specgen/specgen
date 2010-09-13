@@ -32,27 +32,27 @@ version="XHTML+RDFa 1.0">
 </head>
 
 <body>
-  <h1><span about="http://purl.org/ontology/co/core#" property="dc:title">The Counter Ontology</span> <span about="http://purl.org/ontology/co/core#" property="owl:versionInfo" datatype="xsd:decimal">0.8</span></h1>
+  <h1><span about="http://purl.org/ontology/co/core#" property="dc:title">The Counter Ontology</span> <span about="http://purl.org/ontology/co/core#" property="owl:versionInfo" datatype="xsd:decimal">0.81</span></h1>
 
-  <h2>Namespace Document <span about="http://purl.org/ontology/co/core#" property="dc:date" content="2010-08-04T14:24:52+01:00" datatype="xsd:dateTime">04 August 2010</span></h2>
+  <h2>Namespace Document <span about="http://purl.org/ontology/co/core#" property="dc:date" content="2010-09-13T16:11:52+01:00" datatype="xsd:dateTime">13 September 2010</span></h2>
 <table class="header" border="0">
   <tr>
     <td>
-  		<dl>
+  		<dl about="http://purl.org/ontology/co/counterontology.html">
     		<dt>This version:</dt>
-    		<dd><a about="http://purl.org/ontology/co/counterontology.html" rel="dc:hasVersion" 
-			rev="dc:isVersionOf" href="http://purl.org/ontology/co/20100804/counterontology.html">http://purl.org/ontology/co/20100804/counterontology.html</a> (<a href="http://purl.org/ontology/co/20100804/counterontology.owl">OWL</a>, <a href="http://purl.org/ontology/co/20100804/counterontology.n3">N3</a>)</dd>
+    		<dd><a rel="dc:hasVersion" 
+			rev="dc:isVersionOf" href="http://purl.org/ontology/co/20100913/counterontology.html">http://purl.org/ontology/co/20100913/counterontology.html</a> (<a href="http://purl.org/ontology/co/20100913/counterontology.owl">OWL</a>, <a href="http://purl.org/ontology/co/20100913/counterontology.n3">N3</a>)</dd>
 
     		<dt>Latest version:</dt>
     		<dd><a href="http://purl.org/ontology/co/core#">http://purl.org/ontology/co/core#</a> (<a href="http://purl.org/ontology/co/counterontology.owl">OWL</a>, <a href="http://purl.org/ontology/co/counterontology.n3">N3</a>)</dd>
 
     		<dt>Previous version:</dt>
-    		<dd><a href="http://purl.org/ontology/co/20100724/counterontology.html">http://purl.org/ontology/co/20100724/counterontology.html</a> (<a href="http://purl.org/ontology/co/20100724/counterontology.owl">OWL</a>, <a href="http://purl.org/ontology/co/20100724/counterontology.n3">N3</a>)</dd>
+    		<dd><a href="http://purl.org/ontology/co/20100804/counterontology.html">http://purl.org/ontology/co/20100804/counterontology.html</a> (<a href="http://purl.org/ontology/co/20100804/counterontology.owl">OWL</a>, <a href="http://purl.org/ontology/co/20100804/counterontology.n3">N3</a>)</dd>
 
     		<dt>Authors:</dt>
-    		<dd><a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://moustaki.org/">Yves Raimond</a> (<a href="http://www.bbc.co.uk">BBC</a>),<br/>
+    		<dd><a rel="rdfs:seeAlso" href="http://moustaki.org/">Yves Raimond</a> (<a rel="rdfs:seeAlso" href="http://www.bbc.co.uk">BBC</a>),<br/>
     			<a href="mailto:nick@example.org">Mats Skillingstad</a> (COMPANY),<br/>
-    			<a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://smiy.wordpress.com/author/zazi0815/">Bob Ferris</a> (<a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://smiy.wordpress.com/">SMI</a>)</dd>
+    			<a rel="rdfs:seeAlso" href="http://smiy.wordpress.com/author/zazi0815/">Bob Ferris</a> (<a rel="rdfs:seeAlso" href="http://smiy.wordpress.com/">SMI</a>)</dd>
   			</dl>
 
   			<p class="copyright"><span about="http://purl.org/ontology/co/core#" property="dc:rights">Copyright &#169; 2010 Yves Raimond, Mats Skillingstad and Bob Ferris</span></p>
@@ -69,7 +69,7 @@ version="XHTML+RDFa 1.0">
 			</tr>
 			<tr>
 				<td align="center">
-					<a href="http://smiy.svn.sourceforge.net/viewvc/smiy/counteronto/">Source code, examples, graphics, ...</a>
+					<a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://smiy.svn.sourceforge.net/viewvc/smiy/counteronto/">Source code, examples, graphics, ...</a>
 				</td>
 			</tr>
 			<tr>
@@ -121,17 +121,13 @@ the Semantic Web. This document contains a RDFa description of the <em>Counter O
   <div class="status">
     <h2>Status of This Document</h2>
 
-    <p>
-The <em>Counter Ontology</em> is a generalisation of the <a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" 
-href="http://motools.svn.sourceforge.net/viewvc/motools/dbtune/playcount/playcount.n3">Playcount Ontology</a> from <a href="http://moustaki.org/">Yves Raimond</a>. The template 
-of this specification is derived from the <a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://xmlns.com/foaf/spec/">FOAF Vocabulary
-Specification</a>, which was created by <a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://danbri.org/">Dan Brickley</a> and 
-<a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://nicecupoftea.org/">Libby Miller</a>, and the <a 
-about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://musicontology.com/">Music Ontology Specification</a>, which was created by Yves Raimond. 
-It was modified and extended by Bob Ferris. Furthermore, a modified and extended version of <a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" 
-href="http://svn.foaf-project.org/foaftown/specgen/">Danbri's SpecGen version</a> was used to generate most of the RDFa statements of the Counter Ontology for this specification 
-(see <a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://smiy.svn.sourceforge.net/viewvc/smiy/specgen/trunk/">here</a> for SpecGen version 
-6 by Bob Ferris).
+    <p about="http://purl.org/ontology/co/counterontology.html">
+The <em>Counter Ontology</em> is a generalisation of the <a rel="rdfs:seeAlso" href="http://motools.svn.sourceforge.net/viewvc/motools/dbtune/playcount/playcount.n3">Playcount Ontology</a> 
+from <a href="http://moustaki.org/">Yves Raimond</a>. The template of this specification is derived from the <a rel="rdfs:seeAlso" href="http://xmlns.com/foaf/spec/">FOAF Vocabulary 
+Specification</a>, which was created by <a rel="rdfs:seeAlso" href="http://danbri.org/">Dan Brickley</a> and <a rel="rdfs:seeAlso" href="http://nicecupoftea.org/">Libby Miller</a>, and the 
+<a rel="rdfs:seeAlso" href="http://musicontology.com/">Music Ontology Specification</a>, which was created by Yves Raimond. It was modified and extended by Bob Ferris. Furthermore, a 
+modified and extended version of <a rel="rdfs:seeAlso" href="http://svn.foaf-project.org/foaftown/specgen/">Danbri's SpecGen version</a> was used to generate most of the RDFa statements of 
+the Counter Ontology for this specification (see <a rel="rdfs:seeAlso" href="http://smiy.svn.sourceforge.net/viewvc/smiy/specgen/trunk/">here</a> for SpecGen version 6 by Bob Ferris).
 </p>
 
 
@@ -181,9 +177,9 @@ rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/co/gfx/co_-_Counter_graph.g
 
   <h2 id="sec-example">Examples</h2>
 
-  <p>RDF/Turtle representation of a webpage counter created with the <em>Counter Ontology</em> (see also <a about="http://purl.org/ontology/co/counterontology.html" 
-  rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/co/examples/RDF/webpagecounter_-_example.rdf">RDF</a> and <a about="http://purl.org/ontology/co/counterontology.html" 
-  rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/co/examples/N3/webpagecounter_-_example.n3">N3</a> for downloadable representations of this example):</p>
+  <p about="http://purl.org/ontology/co/counterontology.html">RDF/Turtle representation of a webpage counter created with the <em>Counter Ontology</em> (see also <a rel="rdfs:seeAlso" 
+href="http://smiy.sourceforge.net/co/examples/RDF/webpagecounter_-_example.rdf">RDF</a> and <a rel="rdfs:seeAlso" 
+href="http://smiy.sourceforge.net/co/examples/N3/webpagecounter_-_example.n3">N3</a> for downloadable representations of this example):</p>
 
   <div class="example">
     <pre>
@@ -204,16 +200,15 @@ ex:WebpageCounter a co:Counter ;
 </pre>
   </div>
 
-  <p>This examples shows, how a <a href="http://purl.org/ontology/co/counterontology.html#Counter"><em>co:Counter</em></a> instance could be used as a counter for
- a specific webpage (here of the type <a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" 
- href="http://bibotools.googlecode.com/svn/bibo-ontology/trunk/doc/classes/Document___-538479979.html"><em>bibo:Document</em></a>). 
- <a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" href="http://tobyinkster.co.uk/">Toby Inkster</a> implemented an example of a webpage 
- counter based on the <em>Counter Ontology</em> in PHP, which is available <a about="http://purl.org/ontology/co/counterontology.html" rel="rdfs:seeAlso" 
- href="http://buzzword.org.uk/2010/counter/">here</a>.</p>
+  <p about="http://purl.org/ontology/co/counterontology.html">This examples shows, how a <a href="http://purl.org/ontology/co/counterontology.html#Counter"><em>co:Counter</em></a> instance 
+could be used as a counter for a specific webpage (here of the type <a rel="rdfs:seeAlso" 
+href="http://bibotools.googlecode.com/svn/bibo-ontology/trunk/doc/classes/Document___-538479979.html"><em>bibo:Document</em></a>). <a rel="rdfs:seeAlso" href="http://tobyinkster.co.uk/">
+Toby Inkster</a> implemented an example of a webpage counter based on the <em>Counter Ontology</em> in PHP, which is available <a rel="rdfs:seeAlso" 
+href="http://buzzword.org.uk/2010/counter/">here</a>.</p>
  
-   <p>RDF/Turtle representation of a play back counter created with the <em>Counter Ontology</em> (see also <a about="http://purl.org/ontology/co/counterontology.html" 
-  rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/co/examples/RDF/playbackcounter_-_example.rdf">RDF</a> and <a about="http://purl.org/ontology/co/counterontology.html" 
-  rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/co/examples/N3/playbackcounter_-_example.n3">N3</a> for downloadable representations of this example):</p>
+   <p about="http://purl.org/ontology/co/counterontology.html">RDF/Turtle representation of a play back counter created with the <em>Counter Ontology</em> (see also <a rel="rdfs:seeAlso" 
+href="http://smiy.sourceforge.net/co/examples/RDF/playbackcounter_-_example.rdf">RDF</a> and <a rel="rdfs:seeAlso" 
+href="http://smiy.sourceforge.net/co/examples/N3/playbackcounter_-_example.n3">N3</a> for downloadable representations of this example):</p>
 
   <div class="example">
     <pre>
@@ -351,11 +346,11 @@ specification provides a placeholder reference for any <em>Counter Ontology</em>
 Ontology</em> property has a domain or range of an externally defined class, or that a <em>Counter Ontology</em> class is a sub-class of an external class, or 'disjoint with' 
 such a class (ie. has no common members). Such claims help fix the intended meaning of <em>Counter Ontology</em> terms in relationship to other 'peer' vocabularies.<br/>
 Currently, the <em>Counter Ontology</em> sub classes:</p>
-<dl>
-<dt><a about="http://purl.org/ontology/co/core#" rel="rdfs:seeAlso" href="http://www.w3.org/TR/2004/REC-owl-ref-20040210/#Class">owl:Thing</a></dt>
+<dl about="http://purl.org/ontology/co/core#">
+<dt><a rel="rdfs:seeAlso" href="http://www.w3.org/TR/2004/REC-owl-ref-20040210/#Class">owl:Thing</a></dt>
 <dd>The class extension of owl:Thing is the set of all individuals.
 </dd>
-<dt><a about="http://purl.org/ontology/co/core#" rel="rdfs:seeAlso" href="http://motools.sourceforge.net/event/event.html#term_Event">event:Event</a></dt>
+<dt><a rel="rdfs:seeAlso" href="http://motools.sourceforge.net/event/event.html#term_Event">event:Event</a></dt>
 <dd>An arbitrary classification of a space/time region, by a cognitive agent. An event may have actively participating agents, passive factors, products, and a location in space/time.
 </dd>
 </dl>
@@ -385,7 +380,13 @@ specification, and last but not least, Toby Inkster for providing the web counte
 <h2 id="sec-changes">Recent Changes</h2>
 
 <pre>=========================
-Version 0.8 (July 2010)
+Version 0.81 (September 2010)
+=========================
+ * REMOVED: co:device - moved to the Association Ontology
+ * REMOVED: co:application - moved to the Association Ontology
+
+=========================
+Version 0.8 (August 2010)
 =========================
  * ADDED: co:scrobble_object - a scrobble object of scrobble event, e.g a music track, a video or a described activity
  * MODIFIED: added rdf:Property as rdf:type of co:application and co:device
@@ -393,7 +394,7 @@ Version 0.8 (July 2010)
 =========================
 Version 0.7 (July 2010)
 =========================
- * ADDED: co:application -for relating applications to a scrobble event
+ * ADDED: co:application - for relating applications to a scrobble event
  * ADDED: co:device - for relating devices to a scrobble event
  
 =========================

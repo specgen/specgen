@@ -1,9 +1,10 @@
-# Saved by TopBraid on Wed Aug 04 18:33:52 CEST 2010
+# Saved by TopBraid on Mon Sep 13 19:18:17 CEST 2010
 # baseURI: http://purl.org/ontology/pbo/core#
 # imports: http://purl.org/ontology/olo/core
 # imports: http://purl.org/NET/c4dm/event.owl
 # imports: http://purl.org/ontology/bibo/
 # imports: http://purl.org/dc/elements/1.1/
+# imports: http://purl.org/ontology/similarity/
 # imports: http://www.w3.org/2003/06/sw-vocab-status/ns
 # imports: http://purl.org/ontology/co/core
 # imports: http://purl.org/vocab/frbr/core
@@ -18,19 +19,20 @@
 @prefix pbo:     <http://purl.org/ontology/pbo/core#> .
 @prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sim:     <http://purl.org/ontology/similarity/> .
 @prefix time:    <http://www.w3.org/2006/time#> .
 @prefix vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 
 pbo:  rdf:type owl:Ontology ;
-      dc:creator <http://foaf.me/zazi#me> ;
-      dc:date "2010-08-04T17:33:52+01:00"^^xsd:dateTime ;
+      dc:creator <http://foaf.me/zazi#me> , <http://kurtisrandom.com/foaf.rdf#kurtjx> ;
+      dc:date "2010-09-13T18:31:52+01:00"^^xsd:dateTime ;
       dc:description """The Play Back Ontology specification provides basic concepts and properties 
 for describing concepts that are related to the play back domain, e.g. an playlist, play back count and skip counter 
 on/ for the Semantic Web. This document contains a RDF description of the Play Back Ontology."""@en ;
       dc:title "The Play Back Ontology"@en ;
-      owl:imports <http://purl.org/NET/c4dm/event.owl> , bibo: , <http://purl.org/ontology/olo/core> , <http://www.w3.org/2003/06/sw-vocab-status/ns> , <http://purl.org/vocab/frbr/core> , <http://purl.org/ontology/co/core> , dc: ;
-      owl:versionInfo 0.55 .
+      owl:imports <http://purl.org/NET/c4dm/event.owl> , bibo: , <http://purl.org/ontology/olo/core> , sim: , <http://www.w3.org/2003/06/sw-vocab-status/ns> , <http://purl.org/vocab/frbr/core> , <http://purl.org/ontology/co/core> , dc: ;
+      owl:versionInfo 0.6 .
 
 pbo:FixedPlaylist
       rdf:type owl:Class ;
@@ -162,6 +164,14 @@ pbo:skip_time
       rdfs:domain pbo:SkipEvent ;
       rdfs:isDefinedBy pbo: ;
       rdfs:label "has skip time"^^xsd:string ;
-      rdfs:range time:TemporalEntity ;
-      rdfs:subPropertyOf <http://purl.org/NET/c4dm/event.owl#factor> ;
+      rdfs:subPropertyOf <http://purl.org/NET/c4dm/event.owl#time> ;
       vs:term_status "testing"^^xsd:string .
+
+pbo:transition
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "This relation directs to a description of a transition between two neighbouring playlist slots, e.g. two successive music tracks in a dj mix."@en ;
+      rdfs:domain pbo:PlaylistSlot ;
+      rdfs:isDefinedBy pbo: ;
+      rdfs:label "has transition"@en ;
+      rdfs:subPropertyOf sim:association ;
+      vs:term_status "testing"@en .

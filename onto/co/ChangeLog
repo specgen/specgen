@@ -1,5 +1,11 @@
 =========================
-Version 0.8 (July 2010)
+Version 0.81 (September 2010)
+=========================
+ * REMOVED: co:device - moved to the Association Ontology
+ * REMOVED: co:application - moved to the Association Ontology
+
+=========================
+Version 0.8 (August 2010)
 =========================
  * ADDED: co:scrobble_object - a scrobble object of scrobble event, e.g a music track, a video or a described activity
  * MODIFIED: added rdf:Property as rdf:type of co:application and co:device
@@ -7,7 +13,7 @@ Version 0.8 (July 2010)
 =========================
 Version 0.7 (July 2010)
 =========================
- * ADDED: co:application -for relating applications to a scrobble event
+ * ADDED: co:application - for relating applications to a scrobble event
  * ADDED: co:device - for relating devices to a scrobble event
  
 =========================

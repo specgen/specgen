@@ -1,5 +1,6 @@
-# Saved by TopBraid on Wed Aug 11 19:26:10 CEST 2010
+# Saved by TopBraid on Mon Sep 13 16:27:09 CEST 2010
 # baseURI: http://purl.org/ontology/ao/core#
+# imports: http://purl.org/NET/c4dm/event.owl
 # imports: http://purl.org/dc/elements/1.1/
 # imports: http://purl.org/ontology/similarity/
 # imports: http://www.w3.org/2003/06/sw-vocab-status/ns
@@ -10,6 +11,7 @@
 @prefix ao:      <http://purl.org/ontology/ao/core#> .
 @prefix dc:      <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
 @prefix foaf:    <http://xmlns.com/foaf/0.1/> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -20,15 +22,15 @@
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 
 ao:   rdf:type owl:Ontology ;
-      dc:creator <http://foaf.me/zazi#me> , "<http://tobyinkster.co.uk/#i>"^^xsd:string ;
-      dc:date "2010-08-11T15:34:52+01:00"^^xsd:dateTime ;
+      dc:creator <http://foaf.me/zazi#me> , <http://tobyinkster.co.uk/#i> ;
+      dc:date "2010-09-13T13:59:52+01:00"^^xsd:dateTime ;
       dc:description """The Association Ontology specification provides basic properties 
 for describing specific associations to something, e.g. a context, an occasion, a genre or a mood, and enables furthermore, a mechanism to 
 like/rate and feedback these associations in context to something on/ for the Semantic Web. This document contains a RDF description 
 of the Association Ontology."""@en ;
       dc:title "The Association Ontology"@en ;
-      owl:imports dcterms: , <http://purl.org/stuff/rev> , dc: , <http://www.w3.org/2003/06/sw-vocab-status/ns> , sim: , foaf: ;
-      owl:versionInfo 0.3 .
+      owl:imports dcterms: , <http://purl.org/stuff/rev> , dc: , <http://www.w3.org/2003/06/sw-vocab-status/ns> , sim: , foaf: , <http://purl.org/NET/c4dm/event.owl> ;
+      owl:versionInfo 0.4 .
 
 ao:LikeableAssociation
       rdf:type owl:Class ;
@@ -37,22 +39,39 @@ feedbacking (rev:Feedback), reviewing (e.g. rev:rating) an association statement
 context of something."""@en ;
       rdfs:isDefinedBy ao: ;
       rdfs:label "Likeable Association"@en ;
-      rdfs:subClassOf sim:Association , rev:Review ;
+      rdfs:subClassOf rev:Review , sim:Association ;
       vs:term_status "testing"@en .
 
 ao:activity
       rdf:type rdf:Property ;
       rdfs:comment "An activity, which is associated to an individual, e.g. dancing, sleeping, driving."@en ;
       rdfs:isDefinedBy ao: ;
-      rdfs:label "activity"@en ;
+      rdfs:label "has activity"@en ;
+      rdfs:subPropertyOf ao:context ;
+      vs:term_status "testing"@en .
+
+ao:application
+      rdf:type rdf:Property ;
+      rdfs:comment "An application, which is associated to an individual, e.g. a music player to a music track it's currently playing back."@en ;
+      rdfs:isDefinedBy ao: ;
+      rdfs:label "has application"@en ;
       rdfs:subPropertyOf ao:context ;
       vs:term_status "testing"@en .
 
 ao:context
       rdf:type rdf:Property ;
-      rdfs:comment "A property to associate any context to an individual, e.g. a location, a time or an activity. Hence, this property is intended that sub properties should be created from it."@en ;
+      rdfs:comment "A property to associate any environmental context to an individual, e.g. a location, a time or an activity. Hence, this property is intended that sub properties should be created from it."@en ;
+      rdfs:domain owl:Thing ;
       rdfs:isDefinedBy ao: ;
       rdfs:label "has context"@en ;
+      vs:term_status "testing"@en .
+
+ao:device
+      rdf:type rdf:Property ;
+      rdfs:comment "A device, which is associated with an individual, e.g. a CD player with a CD it's currently playing back."@en ;
+      rdfs:isDefinedBy ao: ;
+      rdfs:label "has device"@en ;
+      rdfs:subPropertyOf ao:context ;
       vs:term_status "testing"@en .
 
 ao:genre
@@ -95,7 +114,7 @@ ao:location
       rdf:type rdf:Property ;
       rdfs:comment "A location, which is associated to an individual, e.g. my house, my country, my current whereabouts."@en ;
       rdfs:isDefinedBy ao: ;
-      rdfs:label "location"@en ;
+      rdfs:label "has location"@en ;
       rdfs:subPropertyOf ao:context ;
       vs:term_status "testing"@en .
 
@@ -121,8 +140,24 @@ ao:time
       rdf:type rdf:Property ;
       rdfs:comment "A time, which is associated to an individual, e.g. morning, afternoon, evening."@en ;
       rdfs:isDefinedBy ao: ;
-      rdfs:label "time"@en ;
+      rdfs:label "has time"@en ;
       rdfs:subPropertyOf ao:context ;
       owl:equivalentProperty
               dc:date ;
       vs:term_status "testing"@en .
+
+ao:used_application
+      rdf:type rdf:Property , owl:ObjectProperty ;
+      rdfs:comment "An application that is related to an event, e.g. a iTunes to a play back event of a music track."@en ;
+      rdfs:isDefinedBy ao: ;
+      rdfs:label "has used application"@en ;
+      rdfs:subPropertyOf event:factor , ao:application ;
+      vs:term_status "unstable"@en .
+
+ao:used_device
+      rdf:type rdf:Property , owl:ObjectProperty ;
+      rdfs:comment "A device that is related to an event, e.g. a MP3 player to a play back event of a music track."@en ;
+      rdfs:isDefinedBy ao: ;
+      rdfs:label "has used device"@en ;
+      rdfs:subPropertyOf event:factor , ao:device ;
+      vs:term_status "unstable"@en .

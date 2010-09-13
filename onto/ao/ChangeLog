@@ -1,5 +1,14 @@
+============================
+Version 0.4 (September 2010)
+============================
+ * ADDED: ao:device - a device, which is associated with an individual, e.g. a CD player with a CD it's currently playing back
+ * ADDED: ao:application - an application, which is associated to an individual, e.g. a music player to a music track it's currently playing back
+ * ADDED: ao:used_device - moved from the Counter Ontology to AO, generalised the rdfs:domain to event:Event and marked as sub property of ao:device
+ * ADDED: ao:used_application - moved from the Counter Ontology to AO, generalised the rdfs:domain to event:Event and marked as sub property of ao:application
+ * MODIFIED: added owl:Thing as rdfs:domain of ao:context
+
 =========================
-Version 0.3 (July 2010)
+Version 0.3 (August 2010)
 =========================
  * ADDED: ao:context - a property to associate any context to an individual, e.g. a location, a time or an activity 
  * ADDED: ao:activity - an activity, which is associated to an individual, e.g. dancing, sleeping, driving

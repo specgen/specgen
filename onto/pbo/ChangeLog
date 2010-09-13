@@ -1,6 +1,12 @@
-=========================
+============================
+Version 0.6 (September 2010)
+============================
+ * MODIFIED: pbo:skip_time - now as a sub property of event:time
+ * ADDED: pbo:transition - to describe transitions between two neighbouring playlist slots
+
+==========================
 Version 0.55 (August 2010)
-=========================
+==========================
  * ADDED: pbo:media_scrobble_object - a media specific scrobble object, e.g. a video or a music track
 
 =========================

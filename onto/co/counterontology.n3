@@ -1,4 +1,4 @@
-# Saved by TopBraid on Wed Aug 04 15:36:27 CEST 2010
+# Saved by TopBraid on Mon Sep 13 17:11:58 CEST 2010
 # baseURI: http://purl.org/ontology/co/core#
 # imports: http://purl.org/NET/c4dm/event.owl
 # imports: http://purl.org/dc/elements/1.1/
@@ -15,16 +15,16 @@
 
 co:   rdf:type owl:Ontology ;
       dc:creator <http://foaf.me/zazi#me> , <http://moustaki.org/foaf.rdf#moustaki> , <http://foaf.me/intrz#me> ;
-      dc:date "2010-08-04T14:24:52+01:00"^^xsd:dateTime ;
+      dc:date "2010-09-13T16:11:52+01:00"^^xsd:dateTime ;
       dc:description """The Counter Ontology specification provides basic concepts and properties 
 for describing a general counter concept and some important sub counters, e.g. an event counter, on/ for 
 the Semantic Web. This document contains a RDF description of the Counter Ontology."""@en ;
       dc:title "The Counter Ontology"@en ;
       owl:imports dc: , <http://www.w3.org/2003/06/sw-vocab-status/ns> , <http://purl.org/NET/c4dm/event.owl> ;
-      owl:versionInfo 0.8 .
+      owl:versionInfo 0.81 .
 
 co:Counter
-      rdf:type owl:Class , rdfs:Class ;
+      rdf:type rdfs:Class , owl:Class ;
       rdfs:comment "Counter of a given object/ given objects, which are related to that counter."@en ;
       rdfs:isDefinedBy co: ;
       rdfs:label "Counter"@en ;
@@ -37,7 +37,7 @@ co:Counter
       vs:term_status "stable"@en .
 
 co:ScrobbleEvent
-      rdf:type owl:Class , rdfs:Class ;
+      rdf:type rdfs:Class , owl:Class ;
       rdfs:comment """An event corresponding to a scrobbling (counting an activity, which includes at least a specific factor and 
 a specific agent), e.g. a track being played by someone, a video watched by someone, a book read by 
 someone, a sporting activity by someone, ..."""@en ;
@@ -46,17 +46,8 @@ someone, a sporting activity by someone, ..."""@en ;
       rdfs:subClassOf event:Event ;
       vs:term_status "unstable"@en .
 
-co:application
-      rdf:type rdf:Property , owl:ObjectProperty ;
-      rdfs:comment "An application that is related to a scrobble event, e.g. a iTunes to a play back event of a music track."@en ;
-      rdfs:domain co:ScrobbleEvent ;
-      rdfs:isDefinedBy co: ;
-      rdfs:label "has application"@en ;
-      rdfs:subPropertyOf event:factor ;
-      vs:term_status "unstable"@en .
-
 co:count
-      rdf:type owl:DatatypeProperty , owl:FunctionalProperty , rdf:Property ;
+      rdf:type rdf:Property , owl:FunctionalProperty , owl:DatatypeProperty ;
       rdfs:comment "Links a counter resource to the actual count"@en ;
       rdfs:domain co:Counter ;
       rdfs:isDefinedBy co: ;
@@ -65,24 +56,15 @@ co:count
       vs:term_status "stable"@en .
 
 co:counter
-      rdf:type owl:ObjectProperty , rdf:Property ;
+      rdf:type rdf:Property , owl:ObjectProperty ;
       rdfs:comment "Links an object to a counter resource. Please feel free to create further sub properties with more restricted domains."@en ;
       rdfs:isDefinedBy co: ;
       rdfs:label "has counter"@en ;
       rdfs:range co:Counter ;
       vs:term_status "stable"@en .
 
-co:device
-      rdf:type rdf:Property , owl:ObjectProperty ;
-      rdfs:comment "A device that is related to a scrobble event, e.g. a MP3 player to a play back event of a music track."@en ;
-      rdfs:domain co:ScrobbleEvent ;
-      rdfs:isDefinedBy co: ;
-      rdfs:label "has device"@en ;
-      rdfs:subPropertyOf event:factor ;
-      vs:term_status "unstable"@en .
-
 co:event
-      rdf:type owl:ObjectProperty , rdf:Property ;
+      rdf:type rdf:Property , owl:ObjectProperty ;
       rdfs:comment "Links counter resources to related events."@en ;
       rdfs:isDefinedBy co: ;
       rdfs:label "has event"@en ;
@@ -92,7 +74,7 @@ co:event
       vs:term_status "testing"@en .
 
 co:event_counter
-      rdf:type owl:ObjectProperty , rdf:Property ;
+      rdf:type rdf:Property , owl:ObjectProperty ;
       rdfs:comment "Links events to a counter resource, where they where counted in."@en ;
       rdfs:domain event:Event ;
       rdfs:isDefinedBy co: ;
@@ -101,7 +83,7 @@ co:event_counter
       vs:term_status "unstable"@en .
 
 co:object
-      rdf:type owl:ObjectProperty , rdf:Property ;
+      rdf:type rdf:Property , owl:ObjectProperty ;
       rdfs:comment "Links a counter resource to an object. Please feel free to create further sub properties with more restricted ranges."@en ;
       rdfs:domain co:Counter ;
       rdfs:isDefinedBy co: ;
@@ -110,7 +92,7 @@ co:object
       vs:term_status "testing"@en .
 
 co:scrobble_object
-      rdf:type owl:ObjectProperty , rdf:Property ;
+      rdf:type rdf:Property , owl:ObjectProperty ;
       rdfs:comment "A scrobble object of a scrobble event, e.g. a music track, a video or a described activity. That means a specific thing that is involved in this scrobbling action."@en ;
       rdfs:domain co:ScrobbleEvent ;
       rdfs:isDefinedBy co: ;
