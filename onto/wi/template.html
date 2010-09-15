@@ -45,19 +45,22 @@ version="XHTML+RDFa 1.0">
 </head>
 
 <body>
-  <h1><span about="http://purl.org/ontology/wi/core#" property="dc:title">The Weighted Interests Vocabulary</span> <span about="http://purl.org/ontology/wi/core#" property="owl:versionInfo" datatype="xsd:decimal">0.4</span></h1>
+  <h1><span about="http://purl.org/ontology/wi/core#" property="dc:title">The Weighted Interests Vocabulary</span> <span about="http://purl.org/ontology/wi/core#" property="owl:versionInfo" datatype="xsd:decimal">0.5</span></h1>
 
-  <h2>Namespace Document <span about="http://purl.org/ontology/wi/core#" property="dc:date" content="2010-08-12T12:25:52+01:00" datatype="xsd:dateTime">12 August 2010</span></h2>
+  <h2>Namespace Document <span about="http://purl.org/ontology/wi/core#" property="dc:date" content="2010-09-14T15:20:52+01:00" datatype="xsd:dateTime">14 September 2010</span></h2>
 <table class="header" border="0">
   <tr>
     <td>
   		<dl>
     		<dt>This version:</dt>
     		<dd><a about="http://purl.org/ontology/wi/weightedinterests.html" rel="dc:hasVersion" 
-			rev="dc:isVersionOf" href="http://purl.org/ontology/wi/20100812/weightedinterests.html">http://purl.org/ontology/wi/20100812/weightedinterests.html</a> (<a href="http://purl.org/ontology/wi/20100812/weightedinterests.owl">OWL</a>, <a href="http://purl.org/ontology/wi/20100812/weightedinterests.n3">N3</a>)</dd>
+			rev="dc:isVersionOf" href="http://purl.org/ontology/wi/20100914/weightedinterests.html">http://purl.org/ontology/wi/20100914/weightedinterests.html</a> (<a href="http://purl.org/ontology/wi/20100914/weightedinterests.owl">OWL</a>, <a href="http://purl.org/ontology/wi/20100913/weightedinterests.n3">N3</a>)</dd>
 
     		<dt>Latest version:</dt>
     		<dd><a href="http://purl.org/ontology/wi/core#">http://purl.org/ontology/wi/core#</a> (<a href="http://purl.org/ontology/wi/weightedinterests.owl">OWL</a>, <a href="http://purl.org/ontology/wi/weightedinterests.n3">N3</a>)</dd>
+
+			<dt>Previous version:</dt>
+			<dd><a href="http://purl.org/ontology/wi/20100812/weightedinterests.html">http://purl.org/ontology/wi/20100812/weightedinterests.html</a> (<a href="http://purl.org/ontology/wi/20100812/weightedinterests.owl">OWL</a>, <a href="http://purl.org/ontology/wi/20100812/weightedinterests.n3">N3</a>)</dd>
 
     		<dt>Authors:</dt>
     		<dd about="http://purl.org/ontology/wi/weightedinterests.html"><a rel="rdfs:seeAlso" href="http://danbri.org/">Dan Brickley</a>,<br/>
@@ -88,7 +91,7 @@ version="XHTML+RDFa 1.0">
 			</tr>
 			<tr>
 				<td align="center">
-					<a href="http://smiy.svn.sourceforge.net/viewvc/smiy/weightedinterests/">Source code, examples, graphics, ...</a>
+					<a about="http://purl.org/ontology/wi/weightedinterests.html" rel="rdfs:seeAlso" href="http://smiy.svn.sourceforge.net/viewvc/smiy/weightedinterests/">Source code, examples, graphics, ...</a>
 				</td>
 			</tr>
 			<tr>
@@ -187,17 +190,9 @@ specification (see <a rel="rdfs:seeAlso" href="http://smiy.svn.sourceforge.net/v
 <div about="http://purl.org/ontology/wi/core#" rel="rdfs:seeAlso">
 <img src="http://smiy.sourceforge.net/wi/gfx/wi_-_weighted_interest.gif" title="The weighted interest concept as graph with relations" alt="The weighted interest concept as graph with relations" /></div>
 
-<p>The <a href="http://purl.org/ontology/wi/weightedinterests.html#ComplexInterest"><em>wi:ComplexInterest</em></a> concept as graph with relations:</p>
+<p>The <a href="http://purl.org/ontology/wi/weightedinterests.html#InterestDynamics"><em>wi:InterestDynamics</em></a> concept as graph with relations:</p>
 <div about="http://purl.org/ontology/wi/core#" rel="rdfs:seeAlso">
-<img src="http://smiy.sourceforge.net/wi/gfx/wi_-_complex_interest.gif" title="The complex interest concept as graph with relations" alt="The complex interest concept as graph with relations" /></div>
-
-<p>The <a href="http://purl.org/ontology/wi/weightedinterests.html#Scale"><em>wi:Scale</em></a> concept as graph with relations:</p>
-<div about="http://purl.org/ontology/wi/core#" rel="rdfs:seeAlso">
-<img src="http://smiy.sourceforge.net/wi/gfx/wi_-_scale.gif" title="The scale concept as graph with relations" alt="The scale concept as graph with relations" /></div>
-
-<p>The <a href="http://purl.org/ontology/wi/weightedinterests.html#Context"><em>wi:Context</em></a> concept as graph with relations:</p>
-<div about="http://purl.org/ontology/wi/core#" rel="rdfs:seeAlso">
-<img src="http://smiy.sourceforge.net/wi/gfx/wi_-_context.gif" title="The context concept as graph with relations" alt="The context concept as graph with relations" /></div>
+<img src="http://smiy.sourceforge.net/wi/gfx/wi_-_interest_dynamics.gif" title="The interest dynamics concept as graph with relations" alt="The interest dynamics concept as graph with relations" /></div>
 
  <p>An a-z index of <em>Weighted Interests Vocabulary</em> terms, by %s.</p>
  
@@ -217,85 +212,8 @@ specification (see <a rel="rdfs:seeAlso" href="http://smiy.svn.sourceforge.net/v
 
   <h3 id="sec-preferences-example">Preferences Example</h3>
 
-<p>This example is orginally taken from the first draft of the <a href="http://xmlns.notu.be/wi/">Weighted Interest Vocabulary</a> and was transformed into different variants, which are created 
-with the <em>Weighted Interests Vocabulary</em> in its current version.</p>
-
-  <ul>
-  		<li><a href="#sec-preferences-example-w-context">Preferences Example with Context</a></li>
-  		<li><a href="#sec-preferences-example-w-interest-dynamics">Preferences Example with Interest Dynamics</a></li>
-  </ul>
-
-  <h4 id="sec-preferences-example-w-context">Preferences Example with Context</h4>
-
-  <p about="http://purl.org/ontology/wi/weightedinterests.html">RDF/Turtle representation of a preferences example with context modelling created with the <em>Weighted Interests Vocabulary
-</em> (see also <a rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/wi/examples/RDF/wi_-_preference_example_-_w_context.rdf">RDF</a> and <a rel="rdfs:seeAlso" 
-href="http://smiy.sourceforge.net/wi/examples/N3/wi_-_preference_example_-_w_context.n3">N3</a> for downloadable representations of this example):</p>
-
-  <div class="example">
-    <pre>
-@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
-@prefix wi:   &lt;http://purl.org/ontology/wi/core#&gt; .
-@prefix days: &lt;http://ontologi.es/days#&gt; .
-@prefix tl:   &lt;http://perl.org/NET/c4dm/timeline.owl#&gt; .
-@prefix xsd:  &lt;http://www.w3.org/2001/XMLSchema#&gt; .
-@prefix ex:   &lt;http://example.org/&gt; .
-&nbsp;
-&lt;http://swordfish.rdfweb.org/people/libby/rdfweb/webwho.xrdf#me&gt;
-&nbsp;&nbsp;&nbsp;a foaf:Person ;
-&nbsp;&nbsp;&nbsp;foaf:name "Libby Miller" ;
-&nbsp;&nbsp;&nbsp;wi:preference [
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wi:WeightedInterest ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:topic &lt;http://www.bbc.co.uk/5live#service&gt; ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:weight [ 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wi:Weight ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:weight_value 3.0 ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:scale ex:AScale 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:context ex:Working
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
-&nbsp;&nbsp;&nbsp;wi:preference [
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wi:WeightedInterest ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:topic &lt;http://www.bbc.co.uk/radio4#service&gt; ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:weight [ 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wi:Weight ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:weight_value 7.0 ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:scale ex:AScale 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:context ex:Working
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] .
-&nbsp;
-ex:AScale a wi:Scale ;
-&nbsp;&nbsp;&nbsp;wi:min_weight 0.0 ;
-&nbsp;&nbsp;&nbsp;wi:max_weight 9.0 ;
-&nbsp;&nbsp;&nbsp;wi:step_size 1.0 .
-&nbsp;
-ex:Working a wi:Context ;
-&nbsp;&nbsp;&nbsp;wi:time_period [
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a days:WeekdayInterval ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tl:at "08:00:00"^^xsd:time ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tl:end "19:00:00"^^xsd:time 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] .
-</pre>
-  </div>
-
-  <p about="http://purl.org/ontology/wi/weightedinterests.html">This example shows a part of a preference model of a person (here Libby Miller). It consists of two preferences, each is 
-modeled as a <a href="http://purl.org/ontology/wi/weightedinterests.html#WeightedInterest"><em>wi:WeightedInterest</em></a> instance, which are related to the person by using the property 
-<a href="http://purl.org/ontology/wi/weightedinterests.html#preference"><em>wi:preference</em></a>. An interest itself consists here of a topic (<a 
-href="http://purl.org/ontology/wi/weightedinterests.html#topic"><em>wi:topic</em></a>), a weight (<a href="http://purl.org/ontology/wi/weightedinterests.html#weight"><em>wi:weight</em></a>) 
-and a context (<a href="http://purl.org/ontology/wi/weightedinterests.html#context"><em>wi:context</em></a>) relation. The topics of the weights are both a <a rel="rdfs:seeAlso" 
-href="http://www.bbc.co.uk/"><em>BBC</em></a> radio program. Every weight is modeled as a <a href="http://purl.org/ontology/wi/weightedinterests.html#Weight"><em>wi:Weight</em></a> instance, 
-which consists here of the weight value (<a href="http://purl.org/ontology/wi/weightedinterests.html#weight_value"><em>wi:weight_value</em></a>) and a link to a scale description (<a 
-href="http://purl.org/ontology/wi/weightedinterests.html#Scale"><em>wi:Scale</em></a>). A <a href="http://purl.org/ontology/wi/weightedinterests.html#Scale"><em>wi:Scale</em></a> instance 
-describes the range (<a href="http://purl.org/ontology/wi/weightedinterests.html#min_weight"><em>wi:min_weight</em></a> and <a 
-href="http://purl.org/ontology/wi/weightedinterests.html#max_weight"><em>wi:max_weight</em></a>) for the groups of weights, which are linked to it, and furthermore, the step size (<a 
-href="http://purl.org/ontology/wi/weightedinterests.html#step_size"><em>wi:step_size</em></a>), which is possible in this range. The context, a <a 
-href="http://purl.org/ontology/wi/weightedinterests.html#Context"><em>wi:Context</em></a> instance, in this example is a time period (<a rel="rdfs:seeAlso" 
-href="http://ontologi.es/days#WeekdayInterval"><em>days:WeekdayInterval</em></a>), which is related by the property <a href="http://purl.org/ontology/wi/weightedinterests.html#time_period">
-<em>wi:time_period</em></a>, that describes an interval (from 8am to 7pm), which occurs from Monday to Friday (weekdays).<br/>
-To sum up the example, the person Libby Miller prefers radio 4 over radio 5 when he is working (which is every weekday between 8am and 7pm).
-</p>
-
-  <h4 id="sec-preferences-example-w-interest-dynamics">Preferences Example with Interest Dynamics</h4>
+<p>This example is orginally taken from the first draft of the <a href="http://xmlns.notu.be/wi/">Weighted Interest Vocabulary</a> and was tranformed to be conform with the current version of 
+the <em>Weighted Interests Vocabulary</em>.</p>
 
    <p about="http://purl.org/ontology/wi/weightedinterests.html">RDF/Turtle representation of a preferences example with interest dynamics modelling created with the <em>Weighted Interests 
 Vocabulary</em> (see also <a rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/wi/examples/RDF/wi_-_preference_example_-_w_interest_dynamics.rdf">RDF</a> and <a rel="rdfs:seeAlso" 
@@ -305,6 +223,7 @@ href="http://smiy.sourceforge.net/wi/examples/N3/wi_-_preference_example_-_w_int
     <pre>
 @prefix foaf:  &lt;http://xmlns.com/foaf/0.1/&gt; .
 @prefix wi:    &lt;http://purl.org/ontology/wi/core#&gt; .
+@prefix wi:    &lt;http://purl.org/ontology/wo/core#&gt; .
 @prefix days:  &lt;http://ontologi.es/days#&gt; .
 @prefix tl:    &lt;http://perl.org/NET/c4dm/timeline.owl#&gt; .
 @prefix xsd:   &lt;http://www.w3.org/2001/XMLSchema#&gt; .
@@ -316,35 +235,35 @@ href="http://smiy.sourceforge.net/wi/examples/N3/wi_-_preference_example_-_w_int
 &nbsp;&nbsp;&nbsp;a foaf:Person ;
 &nbsp;&nbsp;&nbsp;foaf:name "Libby Miller" ;
 &nbsp;&nbsp;&nbsp;wi:preference [
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wi:ComplexInterest ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wi:WeightedInterest ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:topic &lt;http://www.bbc.co.uk/5live#service&gt; ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:weight [ 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wi:Weight ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:weight_value 3.0 ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:scale ex:AScale 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight [ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wo:Weight ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight_value 3.0 ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:scale ex:AScale 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:interest_dynamics ex:Working
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
 &nbsp;&nbsp;&nbsp;wi:preference [
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wi:ComplexInterest ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wi:WeightedInterest ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:topic &lt;http://www.bbc.co.uk/radio4#service&gt; ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:overall_weight [ 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wi:Weight ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:weight_value 7.0 ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:scale ex:AScale 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wo:Weight ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight_value 7.0 ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:scale ex:AScale 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:weight [ 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wi:Weight ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:weight_scale 5.0 ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:scale ex:AScale 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight [ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wo:Weight ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight_scale 5.0 ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:scale ex:AScale 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:interest_dynamics ex:Working
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] .
 &nbsp;
-ex:AScale a wi:Scale ;
-&nbsp;&nbsp;&nbsp;wi:min_weight 0.0 ;
-&nbsp;&nbsp;&nbsp;wi:max_weight 9.0 ;
-&nbsp;&nbsp;&nbsp;wi:step_size 1.0 .
+ex:AScale a wo:Scale ;
+&nbsp;&nbsp;&nbsp;wo:min_weight 0.0 ;
+&nbsp;&nbsp;&nbsp;wo:max_weight 9.0 ;
+&nbsp;&nbsp;&nbsp;wo:step_size 1.0 .
 &nbsp;
 ex:Working a wi:InterestDynamics ;
 &nbsp;&nbsp;&nbsp;wi:appear_time [
@@ -352,39 +271,37 @@ ex:Working a wi:InterestDynamics ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tl:at "08:00:00"^^xsd:time ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tl:end "19:00:00"^^xsd:time 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
-&nbsp;&nbsp;&nbsp;wi:temporal_weight [ 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wi:Weight ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:weight_value 9.0 ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:scale ex:AScale	
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;wo:weight_value 9.0 ;
+&nbsp;&nbsp;&nbsp;wo:scale ex:AScale ;
 &nbsp;&nbsp;&nbsp;event:place ex:MyWorkingPlace .
 &nbsp;
 ex:MyWorkingPlace a geo:Point .
 </pre>
   </div>
 
-  <p about="http://purl.org/ontology/wi/weightedinterests.html">This example is quite similar to the <a href="#sec-preferences-example-w-context">preferences example with context</a> above. 
-However, it shows a part of a more expressive preference model of a person (here Libby Miller). It consists again of two preferences, but each is modeled as a <a 
-href="http://purl.org/ontology/wi/weightedinterests.html#ComplexInterest"><em>wi:ComplexInterest</em></a> instance, which are related to the person by using the property <a 
+  <p about="http://purl.org/ontology/wi/weightedinterests.html">This example shows a part of a preference model of a person (here Libby Miller). It consists of two preferences, each is modeled as a <a 
+href="http://purl.org/ontology/wi/weightedinterests.html#WeightedInterest"><em>wi:WeightedInterest</em></a> instance, which are related to the person by using the property <a 
 href="http://purl.org/ontology/wi/weightedinterests.html#preference"><em>wi:preference</em></a>. An interest itself consists here at least of a topic (<a 
-href="http://purl.org/ontology/wi/weightedinterests.html#topic"><em>wi:topic</em></a>), a weight (<a href="http://purl.org/ontology/wi/weightedinterests.html#weight"><em>wi:weight</em></a>) 
-and an interest dynamics description (<a href="http://purl.org/ontology/wi/weightedinterests.html#interest_dynamics"><em>wi:interest_dynamics</em></a>) relation. Furthermore, in addition to 
-the standard weight relation (<a href="http://purl.org/ontology/wi/weightedinterests.html#weight"><em>wi:weight</em></a>), which should reflect the current interest in a topic, the overall 
-interest in a topic, can be related by using the property (<a href="http://purl.org/ontology/wi/weightedinterests.html#overall_weight"><em>wi:overall_weight</em></a>) with a <a 
-href="http://purl.org/ontology/wi/weightedinterests.html#ComplexInterest"><em>wi:ComplexInterest</em></a> instance as subject.<br/>
-The topics of the weights are both a <a href="http://www.bbc.co.uk/"><em>BBC</em></a> radio program. Every weight is modeled as a <a 
-href="http://purl.org/ontology/wi/weightedinterests.html#Weight"><em>wi:Weight</em></a> instance, which consists here of the weight value (<a 
-href="http://purl.org/ontology/wi/weightedinterests.html#weight_value"><em>wi:weight_value</em></a>) and a link to a scale description (<a 
-href="http://purl.org/ontology/wi/weightedinterests.html#Scale"><em>wi:Scale</em></a>). A <a href="http://purl.org/ontology/wi/weightedinterests.html#Scale"><em>wi:Scale</em></a> instance 
-describes the range (<a href="http://purl.org/ontology/wi/weightedinterests.html#min_weight"><em>wi:min_weight</em></a> and <a 
+href="http://purl.org/ontology/wi/weightedinterests.html#topic"><em>wi:topic</em></a>), a weight (<a rel="rdfs:seeAlso" href="http://purl.org/ontology/wo/weightingontology.html#weight">
+<em>wo:weight</em></a>) and an interest dynamics description (<a href="http://purl.org/ontology/wi/weightedinterests.html#interest_dynamics"><em>wi:interest_dynamics</em></a>) relation. 
+Furthermore, in addition to the standard weight relation (<a href="http://purl.org/ontology/wo/weightingontology.html#weight"><em>wo:weight</em></a>), which should reflect the current interest in a 
+topic, the overall interest in a topic, can be related by using the property (<a href="http://purl.org/ontology/wi/weightedinterests.html#overall_weight"><em>wi:overall_weight</em></a>) with a 
+<a href="http://purl.org/ontology/wi/weightedinterests.html#WeightedInterest"><em>wi:WeightedInterest</em></a> instance as subject.<br/>
+The topics of the weights are both a <a href="http://www.bbc.co.uk/"><em>BBC</em></a> radio program. Every weight is modeled as a <a rel="rdfs:seeAlso" 
+href="http://purl.org/ontology/wo/weightingontology.html#Weight"><em>wo:Weight</em></a> instance, which consists here of the weight value (<a rel="rdfs:seeAlso" 
+href="http://purl.org/ontology/wo/weightingontology.html#weight_value"><em>wo:weight_value</em></a>) and a link to a scale description (<a rel="rdfs:seeAlso" 
+href="http://purl.org/ontology/wo/weightingontology.html#Scale"><em>wo:Scale</em></a>). A <a href="http://purl.org/ontology/wo/weightingontology.html#Scale"><em>wo:Scale</em></a> instance 
+describes the range (<a rel="rdfs:seeAlso" href="http://purl.org/ontology/wo/weightingontology.html#min_weight"><em>wo:min_weight</em></a> and <a rel="rdfs:seeAlso"
 href="http://purl.org/ontology/wi/weightedinterests.html#max_weight"><em>wi:max_weight</em></a>) for the groups of weights, which are linked to it, and furthermore, the step size (<a 
-href="http://purl.org/ontology/wi/weightedinterests.html#step_size"><em>wi:step_size</em></a>), which is possible in this range. <br/>
-<a href="http://purl.org/ontology/wi/weightedinterests.html#ComplexInterest"><em>wi:ComplexInterest</em></a> instances can have different interest dynamics (<a 
+rel="rdfs:seeAlso" href="http://purl.org/ontology/wi/weightedinterests.html#step_size"><em>wi:step_size</em></a>), which is possible in this range. <br/>
+<a href="http://purl.org/ontology/wi/weightedinterests.html#WeightedInterest"><em>wi:WeightedInterest</em></a> instances can have different interest dynamics (<a 
 href="http://purl.org/ontology/wi/weightedinterests.html#InterestDynamics"><em>wi:InterestDynamics</em></a>) relations. These are specific events (<a 
  rel="rdfs:seeAlso" href="http://motools.sourceforge.net/event/event.html#term_Event"><em>event:Event</em></a>), which model 
-temporal interest statistics. Besides the already known time period (<a href="http://ontologi.es/days#WeekdayInterval"><em>days:WeekdayInterval</em></a>), which is related by the property <a 
-href="http://purl.org/ontology/wi/weightedinterests.html#appear_time"><em>wi:appear_time</em></a>, a temporal weight (related by <a 
-href="http://purl.org/ontology/wi/weightedinterests.html#temporal_weight"><em>wi:temporal_weight</em></a>) can describe the temporal interest in a topic to a context, which is here 
+temporal interest statistics. Besides the already known time period (<a rel="rdfs:seeAlso" href="http://ontologi.es/days#WeekdayInterval"><em>days:WeekdayInterval</em></a>), which is related 
+by the property <a href="http://purl.org/ontology/wi/weightedinterests.html#appear_time"><em>wi:appear_time</em></a>, a temporal weight (related by <a 
+href="http://purl.org/ontology/wo/weightingontology.html#weight_value"><em>wo:weight_value</em></a>, because <a 
+href="http://purl.org/ontology/wi/weightedinterests.html#InterestDynamics"><em>wi:InterestDynamics</em></a> is a sub class of <a 
+href="http://purl.org/ontology/wo/weightingontology.html#Weight"><em>wo:Weight</em></a>) can describe the temporal interest in a topic to a context, which is here 
 additionally described by a spatial relation (<a rel="rdfs:seeAlso" href="http://motools.sourceforge.net/event/event.html#term_place"><em>event:place</em></a>).<br/>
 To sum up the example, the person Libby Miller prefers radio 4 over radio 5 when he is working at his working place (which is every weekday between 8am and 7pm).</p>
 
@@ -427,11 +344,12 @@ href="http://smiy.sourceforge.net/wi/examples/N3/wi_-_scientific_research_intere
 @prefix tl:      &lt;http://purl.org/NET/c4dm/timeline.owl#&gt; .
 @prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
 @prefix wi:      &lt;http://purl.org/ontology/wi/&gt; .
+@prefix wo:      &lt;http://purl.org/ontology/wo/&gt; .
 @prefix ex:      &lt;http://example.org/&gt; .
 @prefix time:    &lt;http://www.w3.org/2006/time#&gt; .
 &nbsp;
 ex:ASpecificContext a wi:InterestDynamics ;
-&nbsp;&nbsp;&nbsp;wi:temporal_context &lt;http://dblp.uni-trier.de/rec/bibtex/conf/cikm/AlonsoGB09&gt; ;
+&nbsp;&nbsp;&nbsp;dcterms:subject &lt;http://dblp.uni-trier.de/rec/bibtex/conf/cikm/AlonsoGB09&gt; ;
 &nbsp;&nbsp;&nbsp;wi:appear_time [ 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a time:UTInstant ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time:inXSDDateTime "2009-11-15T05:30:00+08:00"^^xsd:dateTime 
@@ -443,15 +361,15 @@ ex:ASpecificContext a wi:InterestDynamics ;
 &nbsp;&nbsp;&nbsp;wi:preference ex:WebInterest ;
 &nbsp;&nbsp;&nbsp;foaf:name "Ricardo Baeza-Yates" .
 &nbsp;
-ex:WebInterest a wi:ComplexInterest ;
+ex:WebInterest a wi:WeightedInterest ;
 &nbsp;&nbsp;&nbsp;wi:topic &lt;http://www.wici-lab.org/wici/wiki/index.php/Web&gt; ;
 &nbsp;&nbsp;&nbsp;wi:overall_weight [ 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wi:Weight ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:weight_value 65.0 ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:scale ex:AScale ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wo:Weight ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight_value 65.0 ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:scale ex:AScale ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dcterms:modified "2009-12-22T23:30:00+08:00"^^xsd:dateTime
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
-&nbsp;&nbsp;&nbsp;wi:context &lt;http://dblp.uni-trier.de/rec/bibtex/conf/cikm/AlonsoGB09&gt; ;
+&nbsp;&nbsp;&nbsp;wo:interest_dynamics ex:ASpecificContext ;
 &nbsp;&nbsp;&nbsp;wi:ultimative_duration [ 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a tl:UTInterval ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tl:duration "P10Y"^^xsd:duration ;
@@ -462,22 +380,22 @@ ex:WebInterest a wi:ComplexInterest ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tl:duration "P9Y"^^xsd:duration ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dcterms:modified "2010-01-17T05:30:00+08:00"^^xsd:dateTime
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
-&nbsp;&nbsp;&nbsp;wi:weight [ 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wi:Weight ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:weight_value 7.81 ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:scale ex:AnotherScale ;
+&nbsp;&nbsp;&nbsp;wo:weight [ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wo:Weight ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight_value 7.81 ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:scale ex:AnotherScale ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dcterms:modified "2010-01-17T13:30:00+08:00"^^xsd:dateTime
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] .
 &nbsp;
-ex:AScale a wi:Scale ;
-&nbsp;&nbsp;&nbsp;wi:min_weight 0.0 ;
-&nbsp;&nbsp;&nbsp;wi:max_weight 100 ;
-&nbsp;&nbsp;&nbsp;wi:step_size 5.0 .
+ex:AScale a wo:Scale ;
+&nbsp;&nbsp;&nbsp;wo:min_weight 0.0 ;
+&nbsp;&nbsp;&nbsp;wo:max_weight 100 ;
+&nbsp;&nbsp;&nbsp;wo:step_size 5.0 .
 &nbsp;
-ex:AnotherScale a wi:Scale ;
-&nbsp;&nbsp;&nbsp;wi:min_weight 0.0 ;
-&nbsp;&nbsp;&nbsp;wi:max_weight 10.0 ;
-&nbsp;&nbsp;&nbsp;wi:step_size 0.01 .
+ex:AnotherScale a wo:Scale ;
+&nbsp;&nbsp;&nbsp;wo:min_weight 0.0 ;
+&nbsp;&nbsp;&nbsp;wo:max_weight 10.0 ;
+&nbsp;&nbsp;&nbsp;wo:step_size 0.01 .
 </pre>
   </div>
 
@@ -493,6 +411,7 @@ href="http://smiy.sourceforge.net/wi/examples/N3/wi_-_music_preference_example.n
     <pre>
 @prefix foaf:    &lt;http://xmlns.com/foaf/0.1/&gt; .
 @prefix wi:      &lt;http://purl.org/ontology/wi/core#&gt; .
+@prefix wo:      &lt;http://purl.org/ontology/wo/core#&gt; .
 @prefix days:    &lt;http://ontologi.es/days#&gt; .
 @prefix tl:      &lt;http://perl.org/NET/c4dm/timeline.owl#&gt; .
 @prefix xsd:     &lt;http://www.w3.org/2001/XMLSchema#&gt; .
@@ -502,33 +421,44 @@ href="http://smiy.sourceforge.net/wi/examples/N3/wi_-_music_preference_example.n
 &nbsp;
 &lt;http://foaf.me/zazi#me&gt;
 &nbsp;&nbsp;&nbsp;a foaf:Person ;
-&nbsp;&nbsp;&nbsp;oaf:name "Bob Ferris" ;
+&nbsp;&nbsp;&nbsp;foaf:name "Bob Ferris" ;
 &nbsp;&nbsp;&nbsp;wi:preference [
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wi:WeightedInterest ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:topic &lt;http://dbtune.org/musicbrainz/resource/artist/20ff3303-4fe2-4a47-a1b6-291e26aa3438&gt; ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:weight [ 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wi:Weight ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:weight_value 3.0 ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:scale ex:AScale 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight [ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wo:Weight ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight_value 3.0 ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:scale ex:AScale 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:context ex:Working
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:appear_time [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dc:title "working time" ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a days:WeekdayInterval ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tl:at "08:00:00"^^xsd:time ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tl:end "19:00:00"^^xsd:time ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dcterms:modified "2009-12-14T10:01:00+01:00"^^xsd:dateTime 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
 &nbsp;&nbsp;&nbsp;wi:preference [
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wi:ComplexInterest ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wi:WeightedInterest ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:topic &lt;http://dbtune.org/musicbrainz/resource/artist/470a4ced-1323-4c91-8fd5-0bb3fb4c932a&gt; ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:weight [ 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wi:Weight ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:weight_value 7.0 ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:scale ex:AScale ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight [ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wo:Weight ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight_value 7.0 ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:scale ex:AScale ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dcterms:modified "2010-06-18T09:34:00+01:00"^^xsd:dateTime 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:overall_weight [
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wi:Weight ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:weight_value 5.0 ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:scale ex:AScale ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wo:Weight ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight_value 5.0 ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:scale ex:AScale ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dcterms:modified "2010-07-02T22:20:00+01:00"^^xsd:dateTime
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:context ex:Party ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:appear_time [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dc:title "party time" ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a days:FridayInterval ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tl:at "23:00:00"^^xsd:time ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dcterms:modified "2010-03-21T18:40:00+01:00"^^xsd:dateTime 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:interest_dynamics ex:TechnoParty ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:interest_dynamics ex:BigFan ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:ultimative_duration [ 
@@ -547,25 +477,10 @@ href="http://smiy.sourceforge.net/wi/examples/N3/wi_-_music_preference_example.n
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:not_interested_in &lt;http://dbpedia.org/resource/Category:Schlager&gt; ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:not_interested_in &lt;http://dbpedia.org/resource/Category:German_folk_music&gt; .
 &nbsp;
-ex:AScale a wi:Scale ;
-&nbsp;&nbsp;&nbsp;wi:min_weight 0.0 ;
-&nbsp;&nbsp;&nbsp;wi:max_weight 9.0 ;
-&nbsp;&nbsp;&nbsp;wi:step_size 1.0 .
-&nbsp;
-ex:Working a wi:Context ;
-&nbsp;&nbsp;&nbsp;wi:time_period [
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a days:WeekdayInterval ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tl:at "08:00:00"^^xsd:time ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tl:end "19:00:00"^^xsd:time ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dcterms:modified "2009-12-14T10:01:00+01:00"^^xsd:dateTime 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] .
-&nbsp;
-ex:Party a wi:Context ;
-&nbsp;&nbsp;&nbsp;wi:time_period [
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a days:FridayInterval ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tl:at "23:00:00"^^xsd:time ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dcterms:modified "2010-03-21T18:40:00+01:00"^^xsd:dateTime 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] .
+ex:AScale a wo:Scale ;
+&nbsp;&nbsp;&nbsp;wo:min_weight 0.0 ;
+&nbsp;&nbsp;&nbsp;wo:max_weight 9.0 ;
+&nbsp;&nbsp;&nbsp;wo:step_size 1.0 .
 &nbsp;
 ex:TechnoParty a wi:InterestDynamics ;
 &nbsp;&nbsp;&nbsp;wi:appear_time [
@@ -573,13 +488,10 @@ ex:TechnoParty a wi:InterestDynamics ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tl:at "2010-04-03T23:30:00+01:00"^^xsd:dateTime ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tl:end "2010-04-04T05:30:00+01:00"^^xsd:dateTime
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
-&nbsp;&nbsp;&nbsp;wi:temporal_weight [
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wi:Weight ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:weight_value 9.0 ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:scale ex:AScale
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;wo:weight_value 9.0 ;
+&nbsp;&nbsp;&nbsp;wo:scale ex:AScale ;
 &nbsp;&nbsp;&nbsp;event:place &lt;http://dbpedia.org/resource/Tresor&gt; ;
-&nbsp;&nbsp;&nbsp;wi:temporal_context &lt;http://www.residentadvisor.net/event.aspx?151690&gt; .
+&nbsp;&nbsp;&nbsp;dcterms:subject &lt;http://www.residentadvisor.net/event.aspx?151690&gt; .
 &nbsp;
 ex:BigFan a wi:InterestDynamics ;
 &nbsp;&nbsp;&nbsp;wi:appear_time [
@@ -587,11 +499,8 @@ ex:BigFan a wi:InterestDynamics ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tl:at "2001-02-02T00:00:00+01:00"^^xsd:dateTime ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tl:end "2005-10-21T00:00:00+01:00"^^xsd:dateTime
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
-&nbsp;&nbsp;&nbsp;wi:temporal_weight [
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wi:Weight ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:weight_value 9.0 ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wi:scale ex:AScale
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] .
+&nbsp;&nbsp;&nbsp;wo:weight_value 9.0 ;
+&nbsp;&nbsp;&nbsp;wo:scale ex:AScale .
 </pre>
   </div>
 
@@ -679,14 +588,10 @@ Ontology</em> property has a domain or range of an externally defined class, or 
 such a class (ie. has no common members). Such claims help fix the intended meaning of <em>Weighted Interests Vocabulary</em> terms in relationship to other 'peer' vocabularies.<br/>
 Currently, the <em>Weighted Interests Vocabulary</em> sub classes:</p>
 <dl about="http://purl.org/ontology/wi/core#">
-<dt><a rel="rdfs:seeAlso" href="http://www.w3.org/TR/2004/REC-owl-ref-20040210/#Class">owl:Thing</a></dt>
-<dd>The class extension of owl:Thing is the set of all individuals.</dd>
-<dt><a rel="rdfs:seeAlso" href="http://motools.sourceforge.net/event/event.html#term_Event">event:Event</a></dt>
-<dd>An arbitrary classification of a space/time region, by a cognitive agent. An event may have actively participating agents, passive factors, products, and a location in space/time.</dd>
+<dt><a rel="rdfs:seeAlso" href="http://purl.org/ontology/wo/weightingontology.html#Weight">wo:Weight</a></dt>
+<dd>A weight class to enable timestamped (etc.) weights.</dd>
 <dt><a rel="rdfs:seeAlso" href="http://sw.joanneum.at/scovo/schema.html#body-Classes">scovo:Item</a></dt>
 <dd>A statistical data item; is a kind of <a href="http://motools.sourceforge.net/event/event.html#term_Event">Event.</a></dd>
-<dt><a href="http://sw.joanneum.at/scovo/schema.html#body-Classes">scovo:Dimension</a></dt>
-<dd>A dimension of a statistical data item.</dd>
 </dl>
 
 
@@ -713,7 +618,36 @@ Libby Miller, Toby Inkster, Yi Zeng, Yan Wang, Danica Damljanovic, Zhisheng Huan
 
 <h2 id="sec-changes">Recent Changes</h2>
 
-<pre>=========================
+<pre>============================
+Version 0.5 (September 2010)
+============================
+ * REMOVED: wi:Weight - outsourced to the Weighting Ontology and opened the rdfs:domain to owl:Thing
+ * REMOVED: wi:Scale - outsourced to the Weighting Ontology
+ * REMOVED: wi:weight - outsourced to the Weighting Ontology
+ * REMOVED: wi:scale - outsourced to the Weighting Ontology
+ * REMOVED: wi:weight_value - outsourced to the Weighting Ontology
+ * REMOVED: wi:min_weight - outsourced to the Weighting Ontology
+ * REMOVED: wi:max_weight - outsourced to the Weighting Ontology
+ * REMOVED: wi:step_size - outsourced to the Weighting Ontology
+ * REMOVED: wi:temporal_weight - wi:InterestDynamics is now a sub class of wo:Weight, so weightings can now relate directly via 
+            wo:weight_value
+ * REMOVED: wi:context - wi:WeightedInterest is now a sub class of scovo:Item and hence also an event:Event, further environmental 
+            context associations can be done via ao:context and its sub properties
+ * REMOVED: wi:temporal_context - wi:InterestDynamics is now a sub class of wo:Weight and hence also an event:Event, further 
+            environmental context associations can be done via ao:context and its sub properties
+ * REMOVED: wi:Context - wi:WeightedInterest is now a sub class of scovo:Item and hence also an event:Event, further environmental 
+            context associations can be done via ao:context and its sub properties  
+ * REMOVED: wi:device - this property is now available in a more generic form in the Association Ontology (ao:device or ao:used_device 
+            for events)
+ * REMOVED: wi:location - this property is now available in a more generic form in the Association Ontology (ao:location or event:place
+            for events) 
+ * REMOVED: wi:time_period - please use wi:appear_time instead
+ * REMOVED: wi:ComplexInterest - wi:WeightedInterest is enough and can now also be used for interest dynamics descriptions
+ * MODIFIED: wi:appear_time - removed rdfs:range of time:Interval to enable also time instants
+ * MODIFIED: wi:evidence - as sub property of event:factor with a domain of wi:WeightedInterest or wi:InterestDynamics
+ * MODIFIED: wi:appear_time - now with a domain of wi:WeightedInterest or wi:InterestDynamics
+ 
+=========================
 Version 0.4 (August 2010)
 =========================
  * MODIFIED: added rev:minRating as super property to wi:min_weight

@@ -1,6 +1,6 @@
-=========================
+============================
 Version 0.5 (September 2010)
-=========================
+============================
  * REMOVED: wi:Weight - outsourced to the Weighting Ontology and opened the rdfs:domain to owl:Thing
  * REMOVED: wi:Scale - outsourced to the Weighting Ontology
  * REMOVED: wi:weight - outsourced to the Weighting Ontology

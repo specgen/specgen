@@ -9,7 +9,7 @@
 #		+ classes and properties from other namespaces
 #		+ inverse properties (explicit and anonymous)
 #		+ sub properties
-#		+ union ranges
+#		+ union ranges and domains
 #		+ equivalent properties
 #		+ simple individuals as optional feature
 #
@@ -298,6 +298,7 @@ class Vocab(object):
 					"http://purl.org/ontology/pbo/core#"            : "pbo",
 					"http://purl.org/ontology/rec/core#"            : "rec",
 					"http://purl.org/ontology/wi/core#"             : "wi",
+					"http://purl.org/ontology/wo/core#"             : "wo",
 					"http://purl.org/NET/scovo#"                    : "scovo"
 		}
 
@@ -1001,8 +1002,6 @@ class VocabReport(object):
   				# check niceName result
   				# TODO: handle other domain types
   				colon = domainnice.find(':')
-  				
-  				TODO
   				if(domain.find(str(self.vocab._get_uri())) < 0):
   					if colon > 0:
   						termStr = """<span rel="rdfs:domain" href="%s"><a href="%s">%s</a></span>\n""" % (domain, domain, domainnice)
@@ -1076,7 +1075,8 @@ class VocabReport(object):
   						contentStr3 = "%s %s %s" % (contentStr3, termStr, contentStr2)
 
   			# merge together the results of both queries
-  			contentStr = "%s %s" % (contentStr, contentStr3)
+  			if contentStr3 != "":
+  				contentStr = "%s %s" % (contentStr, contentStr3)
   			if contentStr != "":
   				domainsOfProperty = "%s <td> %s </td></tr>" % (startStr, contentStr)
 
@@ -1175,7 +1175,8 @@ class VocabReport(object):
   						contentStr3 = "%s %s %s" % (contentStr3, termStr, contentStr2)
 
   			# merge together the results of both queries
-  			contentStr = "%s %s" % (contentStr, contentStr3)
+  			if contentStr3 != "":
+  				contentStr = "%s %s" % (contentStr, contentStr3)
   			if contentStr != "":
   				rangesOfProperty = "%s <td> %s </td></tr>" % (startStr, contentStr)
 
