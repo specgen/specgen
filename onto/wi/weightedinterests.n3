@@ -1,59 +1,44 @@
-# Saved by TopBraid on Sun Aug 22 12:39:20 CEST 2010
+# Saved by TopBraid on Tue Sep 14 19:32:26 CEST 2010
 # baseURI: http://purl.org/ontology/wi/core#
 # imports: http://purl.org/vocab/vann/
 # imports: http://www.w3.org/2006/time
 # imports: http://purl.org/NET/scovo
 # imports: http://purl.org/NET/c4dm/event.owl
 # imports: http://purl.org/dc/elements/1.1/
-# imports: http://www.w3.org/2003/01/geo/wgs84_pos
 # imports: http://www.w3.org/2003/06/sw-vocab-status/ns
-# imports: http://purl.org/stuff/rev
 # imports: http://xmlns.com/foaf/0.1/
+# imports: http://purl.org/ontology/wo/core
 # imports: http://purl.org/dc/terms/
 
 @prefix dc:      <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms:  <http://purl.org/dc/terms/> .
 @prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
 @prefix foaf:    <http://xmlns.com/foaf/0.1/> .
-@prefix geo:     <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix rev:     <http://purl.org/stuff/rev#> .
 @prefix scovo:   <http://purl.org/NET/scovo#> .
 @prefix status:  <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix time:    <http://www.w3.org/2006/time#> .
 @prefix vann:    <http://purl.org/vocab/vann/> .
 @prefix wi:      <http://purl.org/ontology/wi/core#> .
+@prefix wo:      <http://purl.org/ontology/wo/core#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 
 wi:   rdf:type owl:Ontology ;
       dc:creator "Danica Damljanovic"^^xsd:string , <http://swordfish.rdfweb.org/people/libby/rdfweb/webwho.xrdf#me> , "Yi Zeng"^^xsd:string , <http://danbri.org/foaf.rdf#danbri> , <http://apassant.net/alex> , <http://foaf.me/zazi#me> , <http://www.johnbreslin.com/foaf/foaf.rdf#me> , "Yan Wang"^^xsd:string , <http://tobyinkster.co.uk/#i> , <http://sw.deri.org/~sheila/foaf.rdf#me> , "Zhisheng Huang"^^xsd:string , <http://semantictweet.com/der42#me> ;
-      dc:date "2010-08-12T12:25:52+01:00"^^xsd:dateTime ;
+      dc:date "2010-09-14T15:20:52+01:00"^^xsd:dateTime ;
       dc:description "A vocabulary for describing preferences (interests) within contexts, their temporal dynamics and their origin"@en ;
       dc:title "Weighted Interests Vocabulary"@en ;
       vann:preferredNamespacePrefix
               "wi" ;
       vann:preferredNamespaceUri
               "http://purl.org/ontology/wi/core#" ;
-      owl:imports <http://purl.org/NET/c4dm/event.owl> , dc: , <http://www.w3.org/2003/01/geo/wgs84_pos> , dcterms: , foaf: , <http://purl.org/stuff/rev> , vann: , <http://purl.org/NET/scovo> , <http://www.w3.org/2006/time> , <http://www.w3.org/2003/06/sw-vocab-status/ns> ;
-      owl:versionInfo 0.4 .
+      owl:imports <http://purl.org/NET/c4dm/event.owl> , dc: , dcterms: , <http://purl.org/ontology/wo/core> , foaf: , vann: , <http://purl.org/NET/scovo> , <http://www.w3.org/2006/time> , <http://www.w3.org/2003/06/sw-vocab-status/ns> ;
+      owl:versionInfo 0.5 .
 
-wi:ComplexInterest
-      rdf:type rdfs:Class , owl:Class ;
-      rdfs:comment "A complex interest, which can have interest dynamics etc."^^xsd:string ;
-      rdfs:isDefinedBy wi: ;
-      rdfs:label "Complex Interest"@en ;
-      rdfs:subClassOf wi:WeightedInterest ;
-      status:term_status "unstable"@en .
-
-wi:Context
-      rdf:type rdfs:Class , owl:Class ;
-      rdfs:comment "A context object"@en ;
-      rdfs:isDefinedBy wi: ;
-      rdfs:label "Context"@en ;
-      rdfs:subClassOf owl:Thing ;
-      status:term_status "unstable"@en .
+wi:Class_1
+      rdf:type owl:Class .
 
 wi:ExplicitMining
       rdf:type scovo:Dimension ;
@@ -74,36 +59,15 @@ wi:InterestDynamics
       rdfs:comment "An event concept for describing dynamics of interests, e.g. weight changes, periods of interest."@en ;
       rdfs:isDefinedBy wi: ;
       rdfs:label "Interest Dynamics"@en ;
-      rdfs:subClassOf event:Event ;
-      status:term_status "testing"@en .
-
-wi:Scale
-      rdf:type rdfs:Class , owl:Class ;
-      rdfs:comment "A concept for describing scales for weights."@en ;
-      rdfs:isDefinedBy wi: ;
-      rdfs:label "Scale"@en ;
-      rdfs:subClassOf scovo:Dimension , owl:Thing ;
-      status:term_status "unstable"@en .
-
-wi:Weight
-      rdf:type rdfs:Class , owl:Class ;
-      rdfs:comment "A weight class to enable timestamped weights."@en ;
-      rdfs:isDefinedBy wi: ;
-      rdfs:label "Weight"@en ;
-      rdfs:subClassOf scovo:Item , owl:Thing ;
-      owl:equivalentClass
-              [ rdf:type owl:Restriction ;
-                owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                owl:onProperty wi:weight_value
-              ] ;
+      rdfs:subClassOf wo:Weight ;
       status:term_status "testing"@en .
 
 wi:WeightedInterest
       rdf:type rdfs:Class , owl:Class ;
-      rdfs:comment "A weighted interest object"@en ;
+      rdfs:comment "A weighted interest object, which also can have interest dynamics etc."@en ;
       rdfs:isDefinedBy wi: ;
       rdfs:label "Weighted Interest"@en ;
-      rdfs:subClassOf owl:Thing ;
+      rdfs:subClassOf scovo:Item ;
       status:term_status "unstable"@en .
 
 wi:agent
@@ -118,65 +82,47 @@ wi:agent
 
 wi:appear_time
       rdf:type rdf:Property , owl:ObjectProperty ;
-      rdfs:comment "Tthe time when the interest appears in a certain kind of scenario."@en ;
-      rdfs:domain wi:InterestDynamics ;
+      rdfs:comment "The time when the interest appears in a certain kind of scenario."@en ;
+      rdfs:domain
+              [ rdf:type owl:Class ;
+                owl:unionOf (wi:WeightedInterest wi:InterestDynamics)
+              ] ;
       rdfs:isDefinedBy wi: ;
       rdfs:label "has appear time"@en ;
-      rdfs:range time:Interval ;
       rdfs:subPropertyOf event:time ;
       status:term_status "testing"@en .
 
 wi:attention_duration
       rdf:type owl:ObjectProperty , rdf:Property ;
       rdfs:comment "An interval of attention for an interest."@en ;
-      rdfs:domain wi:ComplexInterest ;
+      rdfs:domain wi:WeightedInterest ;
       rdfs:isDefinedBy wi: ;
       rdfs:label "has attention duration"@en ;
       rdfs:range time:Interval ;
+      rdfs:subPropertyOf event:time ;
       status:term_status "testing"@en .
 
-wi:context
-      rdf:type owl:ObjectProperty , rdf:Property ;
-      rdfs:comment "A link between a WeightedInterest and Context"@en ;
-      rdfs:domain wi:WeightedInterest ;
-      rdfs:isDefinedBy wi: ;
-      rdfs:label "has context"@en ;
-      status:term_status "unstable"@en .
-
-wi:device
-      rdf:type rdf:Property , owl:ObjectProperty ;
-      rdfs:comment "A document describing a device"@en ;
-      rdfs:domain wi:Context ;
-      rdfs:isDefinedBy wi: ;
-      rdfs:label "has device"@en ;
-      rdfs:range owl:Thing ;
-      status:term_status "unstable"@en .
-
 wi:evidence
-      rdf:type rdf:Property , owl:ObjectProperty ;
+      rdf:type owl:ObjectProperty , rdf:Property ;
       rdfs:comment "A link between a context and evidence supporting the interpretation of preferences in a context"@en ;
-      rdfs:domain wi:Context ;
+      rdfs:domain
+              [ rdf:type owl:Class ;
+                owl:unionOf (wi:WeightedInterest wi:InterestDynamics)
+              ] ;
       rdfs:isDefinedBy wi: ;
       rdfs:label "has evidence"@en ;
-      rdfs:range foaf:Document ;
+      rdfs:subPropertyOf event:factor ;
       status:term_status "unstable"@en .
 
 wi:interest_dynamics
       rdf:type rdf:Property , owl:ObjectProperty ;
-      rdfs:comment "To relate a complex interest to its temporal dynamics."@en ;
-      rdfs:domain wi:ComplexInterest ;
+      rdfs:comment "To relate a weighted interest to its temporal dynamics."@en ;
+      rdfs:domain wi:WeightedInterest ;
       rdfs:isDefinedBy wi: ;
       rdfs:label "has interest dynamics"@en ;
       rdfs:range wi:InterestDynamics ;
+      rdfs:subPropertyOf event:sub_event ;
       status:term_status "testing"@en .
-
-wi:location
-      rdf:type rdf:Property , owl:ObjectProperty ;
-      rdfs:comment "A context location"@en ;
-      rdfs:domain wi:Context ;
-      rdfs:label "has location"@en ;
-      rdfs:subPropertyOf geo:location ;
-      status:term_status "unstable"@en .
 
 wi:longest_duration
       rdf:type rdf:Property , owl:ObjectProperty ;
@@ -185,26 +131,6 @@ wi:longest_duration
       rdfs:label "has longest duration"@en ;
       rdfs:subPropertyOf wi:attention_duration ;
       status:term_status "testing"@en .
-
-wi:max_weight
-      rdf:type owl:DatatypeProperty , rdf:Property , owl:FunctionalProperty ;
-      rdfs:comment "A maximum weight of a scale."@en ;
-      rdfs:domain wi:Scale ;
-      rdfs:isDefinedBy wi: ;
-      rdfs:label "has max weight"@en ;
-      rdfs:range xsd:decimal ;
-      rdfs:subPropertyOf rev:maxRating , scovo:max ;
-      status:term_status "unstable"@en .
-
-wi:min_weight
-      rdf:type rdf:Property , owl:FunctionalProperty , owl:DatatypeProperty ;
-      rdfs:comment "A minimum weight of a scale."@en ;
-      rdfs:domain wi:Scale ;
-      rdfs:isDefinedBy wi: ;
-      rdfs:label "has min weight"@en ;
-      rdfs:range xsd:decimal ;
-      rdfs:subPropertyOf rev:minRating , scovo:min ;
-      status:term_status "unstable"@en .
 
 wi:not_interested_in
       rdf:type owl:ObjectProperty , rdf:Property ;
@@ -217,10 +143,10 @@ wi:not_interested_in
 wi:overall_weight
       rdf:type owl:ObjectProperty , rdf:Property , owl:FunctionalProperty ;
       rdfs:comment "This weight reflects the overall interest in a topic and should be different from the actual weight of interest."@en ;
-      rdfs:domain wi:ComplexInterest ;
+      rdfs:domain wi:WeightedInterest ;
       rdfs:isDefinedBy wi: ;
       rdfs:label "has overall weight"@en ;
-      rdfs:subPropertyOf wi:weight ;
+      rdfs:subPropertyOf wo:weight ;
       status:term_status "testing"@en .
 
 wi:preference
@@ -232,16 +158,6 @@ wi:preference
       rdfs:range wi:WeightedInterest ;
       status:term_status "unstable"@en .
 
-wi:scale
-      rdf:type owl:FunctionalProperty , owl:ObjectProperty , rdf:Property ;
-      rdfs:comment "A scale for the weighting of a interest."@en ;
-      rdfs:domain wi:Weight ;
-      rdfs:isDefinedBy wi: ;
-      rdfs:label "has scale"@en ;
-      rdfs:range wi:Scale ;
-      rdfs:subPropertyOf scovo:dimension ;
-      status:term_status "unstable"@en .
-
 wi:statistical_item
       rdf:type owl:ObjectProperty , rdf:Property ;
       rdfs:comment "A link from an interest to statistics about itself"@en ;
@@ -250,42 +166,6 @@ wi:statistical_item
       rdfs:label "has statistical item"@en ;
       rdfs:range scovo:Item ;
       status:term_status "testing"@en .
-
-wi:step_size
-      rdf:type owl:FunctionalProperty , rdf:Property , owl:DatatypeProperty ;
-      rdfs:comment "A predefined step size for weight of a specific scale."@en ;
-      rdfs:domain wi:Scale ;
-      rdfs:isDefinedBy wi: ;
-      rdfs:label "has step size"@en ;
-      rdfs:range xsd:decimal ;
-      status:term_status "unstable"@en .
-
-wi:temporal_context
-      rdf:type rdf:Property , owl:ObjectProperty ;
-      rdfs:comment "A temporal context of an interest."^^xsd:string ;
-      rdfs:domain wi:InterestDynamics ;
-      rdfs:isDefinedBy wi: ;
-      rdfs:label "has temporal context"@en ;
-      rdfs:subPropertyOf wi:context , event:factor ;
-      status:term_status "testing"@en .
-
-wi:temporal_weight
-      rdf:type owl:FunctionalProperty , owl:ObjectProperty , rdf:Property ;
-      rdfs:comment "A temporal weight of an interest that is valid for a specific period of time or was raised up in a specific period of time."@en ;
-      rdfs:domain wi:InterestDynamics ;
-      rdfs:isDefinedBy wi: ;
-      rdfs:label "has temporal weight"@en ;
-      rdfs:subPropertyOf event:factor , wi:weight ;
-      status:term_status "testing"@en .
-
-wi:time_period
-      rdf:type owl:ObjectProperty , rdf:Property ;
-      rdfs:comment "A time period of a context"@en ;
-      rdfs:domain wi:Context ;
-      rdfs:isDefinedBy wi: ;
-      rdfs:label "has time period"@en ;
-      rdfs:range time:TemporalEntity ;
-      status:term_status "unstable"@en .
 
 wi:topic
       rdf:type rdf:Property , owl:ObjectProperty ;
@@ -304,24 +184,6 @@ wi:ultimative_duration
       rdfs:subPropertyOf wi:attention_duration ;
       status:term_status "testing"@en .
 
-wi:weight
-      rdf:type owl:ObjectProperty , rdf:Property ;
-      rdfs:comment "The weight on the topic, which should normally reflect the actual interest in a topic."@en ;
-      rdfs:domain wi:WeightedInterest ;
-      rdfs:isDefinedBy wi: ;
-      rdfs:label "has weight"@en ;
-      rdfs:range wi:Weight ;
-      status:term_status "unstable"@en .
-
-wi:weight_value
-      rdf:type rdf:Property , owl:FunctionalProperty , owl:DatatypeProperty ;
-      rdfs:comment "The specific value of a weight - a decimal number."@en ;
-      rdfs:domain wi:Weight ;
-      rdfs:isDefinedBy wi: ;
-      rdfs:label "has weight value"@en ;
-      rdfs:range xsd:decimal ;
-      status:term_status "testing"@en .
-
 foaf:topic_interest
       owl:propertyChainAxiom
-              (wi:topic wi:preference) .
+              (wi:preference wi:topic) .

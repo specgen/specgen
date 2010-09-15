@@ -977,7 +977,7 @@ class VocabReport(object):
   			domainsOfProperty = ''
   			rangesOfProperty = ''
 
-  			# domain of properties -> handles only simple domains
+  			# domain of properties
   			g = self.vocab.graph
   			q = 'SELECT ?d ?l WHERE {<%s> rdfs:domain ?d . ?d rdfs:label ?l } ' % (term.uri)
   			# print "term.uri before ", term.uri
@@ -985,45 +985,113 @@ class VocabReport(object):
   			startStr = '<tr><th>Domain:</th>\n'
 
   			contentStr = ''
+  			contentStr3 = ''
   			for (domain, label) in relations:
   				dom = Term(domain)
   				termStr = """<span rel="rdfs:domain" href="%s"><a href="#%s">%s</a></span>\n""" % (domain, dom.id, label)
   				contentStr = "%s %s" % (contentStr, termStr)
 
-  			if contentStr != "":
-  				domainsOfProperty = "%s <td>%s</td></tr>" % (startStr, contentStr)
-  			else:
-  				q = 'SELECT ?d WHERE {<%s> rdfs:domain ?d } ' % (term.uri)
+  			q = 'SELECT ?d WHERE {<%s> rdfs:domain ?d } ' % (term.uri)
 
-  				relations = g.query(q)
-  				for (domain) in relations:
-  					domainnice = self.vocab.niceName(domain)
-  					# print "domain ",domain
-  					# print "domainnice ",domainnice
-  					# check niceName result
-  					# TODO: handle other domain types (owl:Union, ...)
-  					colon = domainnice.find(':')
+  			relations = g.query(q)
+  			for (domain) in relations:
+  				domainnice = self.vocab.niceName(domain)
+  				# print "domain ",domain
+  				# print "domainnice ",domainnice
+  				# check niceName result
+  				# TODO: handle other domain types
+  				colon = domainnice.find(':')
+  				
+  				TODO
+  				if(domain.find(str(self.vocab._get_uri())) < 0):
   					if colon > 0:
   						termStr = """<span rel="rdfs:domain" href="%s"><a href="%s">%s</a></span>\n""" % (domain, domain, domainnice)
   						contentStr = "%s %s" % (contentStr, termStr)
+  					else:
+  						# that will be a huge hack now
+  						# 1st: pick out the union domain and its list bnode
+  						q2 = 'SELECT ?d ?url ?urli ?urlipt WHERE {<%s> rdfs:domain ?d . ?d <http://www.w3.org/2002/07/owl#unionOf> ?url . ?url ?urlipt ?urli } ' % (term.uri)
+  						print "try to fetch union domain with ", q2
+  						relations2 = g.query(q2)
+  						
+  						contentStr2 = ''
+  						termStr2 = ''
+  						listbnode = ''
+  						urfirstlistitem = ''
+  						urnextlistbnode = ''
+  						urfirstlistitemnice = ''
+  						domainbnode = ''
+  						for (domain, list, listitem, listitempropertytype) in relations2:
+  							# print "list ", list , " :: listitem " , listitem , " :: listitempropertytype " , listitempropertytype
+  							listbnode = list
+  							domainbnode = domain
+  							if (str(listitempropertytype) == "http://www.w3.org/1999/02/22-rdf-syntax-ns#first"):
+  								urfirstlistitem = listitem
+  								urfirstlistitemnice = self.vocab.niceName(urfirstlistitem)
+  								print "listitem ", urfirstlistitem
+  							if (str(listitempropertytype) == "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"):
+  								urnextlistbnode = listitem
+  								print "urnextlistbnode ", urnextlistbnode
+  						
+  						termStr2 = """<span about="[_:%s]" typeof="rdf:Description"></span>
+  									<span about="[_:%s]" rel="rdf:first" href="%s"><a href="%s">%s</a></span>
+  									<span about="[_:%s]" rel="rdf:rest" resource="[_:%s]"></span>""" % (listbnode, listbnode, urfirstlistitem, urfirstlistitem, urfirstlistitemnice, listbnode, urnextlistbnode)
+  						contentStr2 = "%s %s" % (contentStr2, termStr2)
+  						
+  						# 2nd: go down the list and collect all list items
+  						if(urnextlistbnode != ""):
+  							oldlistbnode = ''
+  							termstr3 = ''
+  							while (str(urnextlistbnode) != "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"):
+  								q3 = 'SELECT ?urnlbn ?urlipt ?urli WHERE {?lbn <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <%s> . ?lbn <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> ?urnlbn . ?urnlbn ?urlipt ?urli } ' % (urfirstlistitem)
+  								print "try to fetch more lists with " , q3
+  								relations3 = g.query(q3)
+  									
+  								oldlistbnode = urnextlistbnode
+  								for (urnlbn, listitempropertytype, listitem) in relations3:
+  									print "what to do next with urnlbn " , urnlbn , " :: listitempropertytype " , listitempropertytype , " :: listitem " , listitem , " :: urnextlistbnode " , urnextlistbnode
+  									# to check the bnode of the list in the union domain
+  									if(str(urnlbn) == str(oldlistbnode)):
+  										if (str(listitempropertytype) == "http://www.w3.org/1999/02/22-rdf-syntax-ns#first"):
+  											urfirstlistitem = listitem
+  											urfirstlistitemnice = self.vocab.niceName(urfirstlistitem)
+  											termStr2 = """<span about="[_:%s]" typeof="rdf:Description"></span>
+  														<span about="[_:%s]" rel="rdf:first" href="%s"><a href="%s">%s</a></span>""" % (oldlistbnode, oldlistbnode, urfirstlistitem, urfirstlistitem, urfirstlistitemnice)
+  											print "new listitem ", urfirstlistitem
+  										if (str(listitempropertytype) == "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"):
+  											urnextlistbnode = listitem
+  											if(str(urnextlistbnode) != "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"):
+  												termStr3 = """<span about="[_:%s]" rel="rdf:rest" resource="[_:%s]"></span>""" % (oldlistbnode, urnextlistbnode)
+  											else:
+  												termStr3 = """<span about="[_:%s]" rel="rdf:rest" href="%s"></span>""" % (oldlistbnode, urnextlistbnode)
+  											print "new urnextlistbnode ", urnextlistbnode
+  								
+  								contentStr2 = "%s or %s %s" % (contentStr2, termStr2, termStr3)
+  							
+  							print "here I am"
+  						
+  						termStr = """<span rel="rdfs:domain" resource="[_:%s]"></span>
+  									<span about="[_:%s]" typeof="owl:Class"></span>
+  									<span about="[_:%s]" rel="owl:unionOf" resource="[_:%s]"></span>""" % (domainbnode, domainbnode, domainbnode, listbnode)
+  						contentStr3 = "%s %s %s" % (contentStr3, termStr, contentStr2)
 
-  				if contentStr != "":
-  					domainsOfProperty = "%s <td> %s </td></tr>" % (startStr, contentStr)
+  			# merge together the results of both queries
+  			contentStr = "%s %s" % (contentStr, contentStr3)
+  			if contentStr != "":
+  				domainsOfProperty = "%s <td> %s </td></tr>" % (startStr, contentStr)
 
 
-  			# range of properties -> handles only simple ranges
+  			# range of properties
   			q2 = 'SELECT ?r ?l WHERE {<%s> rdfs:range ?r . ?r rdfs:label ?l } ' % (term.uri)
   			relations2 = g.query(q2)
   			startStr = '<tr><th>Range:</th>\n'
   			contentStr = ''
+  			contentStr3 = ''
   			for (range, label) in relations2:
   				ran = Term(range)
   				termStr = """<span rel="rdfs:range" href="%s"><a href="#%s">%s</a></span>\n""" % (range, ran.id, label)
   				contentStr = "%s %s" % (contentStr, termStr)
 
-  			if contentStr != "":
-  				rangesOfProperty = "%s <td>%s</td>	</tr>" % (startStr, contentStr)
-  				
   			q = 'SELECT ?r WHERE {<%s> rdfs:range ?r } ' % (term.uri)
 
   			relations = g.query(q)
@@ -1104,10 +1172,12 @@ class VocabReport(object):
   						termStr = """<span rel="rdfs:range" resource="[_:%s]"></span>
   									<span about="[_:%s]" typeof="owl:Class"></span>
   									<span about="[_:%s]" rel="owl:unionOf" resource="[_:%s]"></span>""" % (rangebnode, rangebnode, rangebnode, listbnode)
-  						contentStr = "%s %s %s" % (contentStr, termStr, contentStr2)
+  						contentStr3 = "%s %s %s" % (contentStr3, termStr, contentStr2)
 
-  				if contentStr != "":
-  					rangesOfProperty = "%s <td> %s </td></tr>" % (startStr, contentStr)
+  			# merge together the results of both queries
+  			contentStr = "%s %s" % (contentStr, contentStr3)
+  			if contentStr != "":
+  				rangesOfProperty = "%s <td> %s </td></tr>" % (startStr, contentStr)
 
   			# property sub property of -> only for property included in this ontology specification
   			subPropertyOf = ''

@@ -1,4 +1,33 @@
 =========================
+Version 0.5 (September 2010)
+=========================
+ * REMOVED: wi:Weight - outsourced to the Weighting Ontology and opened the rdfs:domain to owl:Thing
+ * REMOVED: wi:Scale - outsourced to the Weighting Ontology
+ * REMOVED: wi:weight - outsourced to the Weighting Ontology
+ * REMOVED: wi:scale - outsourced to the Weighting Ontology
+ * REMOVED: wi:weight_value - outsourced to the Weighting Ontology
+ * REMOVED: wi:min_weight - outsourced to the Weighting Ontology
+ * REMOVED: wi:max_weight - outsourced to the Weighting Ontology
+ * REMOVED: wi:step_size - outsourced to the Weighting Ontology
+ * REMOVED: wi:temporal_weight - wi:InterestDynamics is now a sub class of wo:Weight, so weightings can now relate directly via 
+            wo:weight_value
+ * REMOVED: wi:context - wi:WeightedInterest is now a sub class of scovo:Item and hence also an event:Event, further environmental 
+            context associations can be done via ao:context and its sub properties
+ * REMOVED: wi:temporal_context - wi:InterestDynamics is now a sub class of wo:Weight and hence also an event:Event, further 
+            environmental context associations can be done via ao:context and its sub properties
+ * REMOVED: wi:Context - wi:WeightedInterest is now a sub class of scovo:Item and hence also an event:Event, further environmental 
+            context associations can be done via ao:context and its sub properties  
+ * REMOVED: wi:device - this property is now available in a more generic form in the Association Ontology (ao:device or ao:used_device 
+            for events)
+ * REMOVED: wi:location - this property is now available in a more generic form in the Association Ontology (ao:location or event:place
+            for events) 
+ * REMOVED: wi:time_period - please use wi:appear_time instead
+ * REMOVED: wi:ComplexInterest - wi:WeightedInterest is enough and can now also be used for interest dynamics descriptions
+ * MODIFIED: wi:appear_time - removed rdfs:range of time:Interval to enable also time instants
+ * MODIFIED: wi:evidence - as sub property of event:factor with a domain of wi:WeightedInterest or wi:InterestDynamics
+ * MODIFIED: wi:appear_time - now with a domain of wi:WeightedInterest or wi:InterestDynamics
+ 
+=========================
 Version 0.4 (August 2010)
 =========================
  * MODIFIED: added rev:minRating as super property to wi:min_weight
