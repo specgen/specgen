@@ -1,0 +1,11 @@
+============================
+Version 0.1 (September 2010)
+============================
+ * ADDED: wo:Weight - outsourced from the Weighted Interests Vocabulary and opened the rdfs:domain to owl:Thing
+ * ADDED: wo:Scale - outsourced from the Weighted Interests Vocabulary
+ * ADDED: wo:weight - outsourced from the Weighted Interests Vocabulary
+ * ADDED: wo:scale - outsourced from the Weighted Interests Vocabulary
+ * ADDED: wo:weight_value - outsourced from the Weighted Interests Vocabulary
+ * ADDED: wo:min_weight - outsourced from the Weighted Interests Vocabulary
+ * ADDED: wo:max_weight - outsourced from the Weighted Interests Vocabulary
+ * ADDED: wo:step_size - outsourced from the Weighted Interests Vocabulary

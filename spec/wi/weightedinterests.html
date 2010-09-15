@@ -8,12 +8,11 @@ xmlns:owl="http://www.w3.org/2002/07/owl#"
 xmlns:dcterms="http://purl.org/dc/terms/"
 xmlns:dc="http://purl.org/dc/elements/1.1/"
 xmlns:wi="http://purl.org/ontology/wi/core#"
+xmlns:wo="http://purl.org/ontology/wo/core#"
 xmlns:event="http://purl.org/NET/c4dm/event.owl#"
 xmlns:vann="http://purl.org/vocab/vann/"
 xmlns:bibo="http://purl.org/ontology/bibo/"
 xmlns:foaf="http://xmlns.com/foaf/0.1/"
-xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
-xmlns:rev="http://purl.org/stuff/rev#"
 xmlns:scovo="http://purl.org/NET/scovo#"
 xmlns:time="http://www.w3.org/2006/time#"
 xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
@@ -152,9 +151,9 @@ href="http://vocamp.org/wiki/HypiosVoCampParisMay2010#User_.28weighted.29_Intere
 href="http://vocamp.org/wiki/HypiosVoCampParisMay2010">Hypios VoCamp Paris 2010</a>.<br/>
 The template of this specification is derived from the <a rel="rdfs:seeAlso" href="http://xmlns.com/foaf/spec/">FOAF Vocabulary Specification</a>, which was created by <a 
 href="http://danbri.org/">Dan Brickley</a> and <a href="http://nicecupoftea.org/">Libby Miller</a>, and the <a rel="rdfs:seeAlso" href="http://musicontology.com/">Music Ontology 
-Specification</a>, which was created by Yves Raimond. It was modified and extended by Bob Ferris. Furthermore, a modified and extended version of <a  rel="rdfs:seeAlso" 
-href="http://svn.foaf-project.org/foaftown/specgen/">Danbri's SpecGen version</a> was used to generate most of the RDFa statements of the Weighted Interests Vocabulary for this 
-specification (see <a rel="rdfs:seeAlso" href="http://smiy.svn.sourceforge.net/viewvc/smiy/specgen/trunk/">here</a> for SpecGen version 6 by Bob Ferris).
+Specification</a>, which was created by <a rel="rdfs:seeAlso" href="http://moustaki.org/">Yves Raimond</a>. It was modified and extended by Bob Ferris. Furthermore, a modified and extended 
+version of <a  rel="rdfs:seeAlso" href="http://svn.foaf-project.org/foaftown/specgen/">Danbri's SpecGen version</a> was used to generate most of the RDFa statements of the Weighted Interests 
+Vocabulary for this specification (see <a rel="rdfs:seeAlso" href="http://smiy.svn.sourceforge.net/viewvc/smiy/specgen/trunk/">here</a> for SpecGen version 6 by Bob Ferris).
 </p>
 
 
@@ -595,7 +594,7 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
 
 <h2>Classes</h2>
  
-<div class="specterm" id="InterestDynamics" about="http://purl.org/ontology/wi/core#InterestDynamics" typeof="rdfs:Class">
+<div class="specterm" id="InterestDynamics" about="http://purl.org/ontology/wi/core#InterestDynamics" typeof="owl:Class">
   			<h3>Class: wi:InterestDynamics</h3> 
   			<em property="rdfs:label" >Interest Dynamics</em> - <span property="rdfs:comment" >An event concept for describing dynamics of interests, e.g. weight changes, periods of interest.</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -608,25 +607,25 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/wi/core#"></span>
  </td></tr><tr><th colspan="2">OWL Class</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#Class"></span> </td></tr><tr><th colspan="2">RDFS Class</th>
- <td>  </td></tr>
+ <td>  </td></tr><tr><th colspan="2">RDFS Class</th>
+ <td> <span rel="rdf:type" href="http://www.w3.org/2000/01/rdf-schema#Class"></span> </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#InterestDynamics">#</a>] <!-- InterestDynamics --> [<a href="#glance">back to top</a>]</p>
   			<br/>
   			</div>
-<div class="specterm" id="WeightedInterest" about="http://purl.org/ontology/wi/core#WeightedInterest" typeof="rdfs:Class">
+<div class="specterm" id="WeightedInterest" about="http://purl.org/ontology/wi/core#WeightedInterest" typeof="owl:Class">
   			<h3>Class: wi:WeightedInterest</h3> 
   			<em property="rdfs:label" >Weighted Interest</em> - <span property="rdfs:comment" >A weighted interest object, which also can have interest dynamics etc.</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
   			<td><span property="vs:status" >unstable</span></td></tr>
   			<tr><th>Properties include:</th>
- <td>  <a href="#agent">agent</a>
- <a href="#topic">topic</a>
- <a href="#overall_weight">overall_weight</a>
- <a href="#interest_dynamics">interest_dynamics</a>
- <a href="#statistical_item">statistical_item</a>
+ <td>  <a href="#topic">topic</a>
  <a href="#attention_duration">attention_duration</a>
+ <a href="#agent">agent</a>
+ <a href="#overall_weight">overall_weight</a>
+ <a href="#statistical_item">statistical_item</a>
+ <a href="#interest_dynamics">interest_dynamics</a>
  </td></tr>
   			<tr><th>Used with:</th>
  <td>  <a href="#preference">preference</a>
@@ -635,8 +634,8 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/wi/core#"></span>
  </td></tr><tr><th colspan="2">OWL Class</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#Class"></span> </td></tr><tr><th colspan="2">RDFS Class</th>
- <td>  </td></tr>
+ <td>  </td></tr><tr><th colspan="2">RDFS Class</th>
+ <td> <span rel="rdf:type" href="http://www.w3.org/2000/01/rdf-schema#Class"></span> </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#WeightedInterest">#</a>] <!-- WeightedInterest --> [<a href="#glance">back to top</a>]</p>
@@ -671,12 +670,12 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			<tr><th>Status:</th>
   			<td><span property="vs:status" >testing</span></td></tr>
   			<tr><th>Domain:</th>
- <td>   <span rel="rdfs:domain" resource="[_:jTcsnRXO3]"></span>
-  									<span about="[_:jTcsnRXO3]" typeof="owl:Class"></span>
-  									<span about="[_:jTcsnRXO3]" rel="owl:unionOf" resource="[_:jTcsnRXO4]"></span>  <span about="[_:jTcsnRXO4]" typeof="rdf:Description"></span>
-  									<span about="[_:jTcsnRXO4]" rel="rdf:first" href="http://purl.org/ontology/wi/core#WeightedInterest"><a href="http://purl.org/ontology/wi/core#WeightedInterest">wi:WeightedInterest</a></span>
-  									<span about="[_:jTcsnRXO4]" rel="rdf:rest" resource="[_:jTcsnRXO5]"></span> or <span about="[_:jTcsnRXO5]" typeof="rdf:Description"></span>
-  														<span about="[_:jTcsnRXO5]" rel="rdf:first" href="http://purl.org/ontology/wi/core#InterestDynamics"><a href="http://purl.org/ontology/wi/core#InterestDynamics">wi:InterestDynamics</a></span> <span about="[_:jTcsnRXO5]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr>
+ <td>   <span rel="rdfs:domain" resource="[_:WwtIAwUZ3]"></span>
+  									<span about="[_:WwtIAwUZ3]" typeof="owl:Class"></span>
+  									<span about="[_:WwtIAwUZ3]" rel="owl:unionOf" resource="[_:WwtIAwUZ4]"></span>  <span about="[_:WwtIAwUZ4]" typeof="rdf:Description"></span>
+  									<span about="[_:WwtIAwUZ4]" rel="rdf:first" href="http://purl.org/ontology/wi/core#WeightedInterest"><a href="http://purl.org/ontology/wi/core#WeightedInterest">wi:WeightedInterest</a></span>
+  									<span about="[_:WwtIAwUZ4]" rel="rdf:rest" resource="[_:WwtIAwUZ5]"></span> or <span about="[_:WwtIAwUZ5]" typeof="rdf:Description"></span>
+  														<span about="[_:WwtIAwUZ5]" rel="rdf:first" href="http://purl.org/ontology/wi/core#InterestDynamics"><a href="http://purl.org/ontology/wi/core#InterestDynamics">wi:InterestDynamics</a></span> <span about="[_:WwtIAwUZ5]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr>
   			<tr><th>Sub property of</th>
  <td>  <span rel="rdfs:subPropertyOf" href="http://purl.org/NET/c4dm/event.owl#time"><a href="http://purl.org/NET/c4dm/event.owl#time">event:time</a></span>
  </td></tr>
@@ -750,7 +749,7 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			
   			<p style="float: right; font-size: small;">[<a href="#longest_duration">#</a>] <!-- longest_duration --> [<a href="#glance">back to top</a>]</p>
   			<br/>
-  			</div><div class="specterm" id="overall_weight" about="http://purl.org/ontology/wi/core#overall_weight" typeof="rdf:Property">
+  			</div><div class="specterm" id="overall_weight" about="http://purl.org/ontology/wi/core#overall_weight" typeof="owl:FunctionalProperty">
   			<h3>Property: wi:overall_weight</h3> 
   			<em property="rdfs:label" >has overall weight</em> - <span property="rdfs:comment" >This weight reflects the overall interest in a topic and should be different from the actual weight of interest.</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -763,9 +762,9 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/wi/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
- <td>  </td></tr><tr><th colspan="2">Object Property</th>
+ <td> <span rel="rdf:type" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"></span> </td></tr><tr><th colspan="2">Object Property</th>
  <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#ObjectProperty"></span> </td></tr><tr><th colspan="2">Functional Property</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#FunctionalProperty"></span> </td></tr>
+ <td>  </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#overall_weight">#</a>] <!-- overall_weight --> [<a href="#glance">back to top</a>]</p>
@@ -813,12 +812,12 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			<tr><th>Status:</th>
   			<td><span property="vs:status" >unstable</span></td></tr>
   			<tr><th>Domain:</th>
- <td>   <span rel="rdfs:domain" resource="[_:jTcsnRXO6]"></span>
-  									<span about="[_:jTcsnRXO6]" typeof="owl:Class"></span>
-  									<span about="[_:jTcsnRXO6]" rel="owl:unionOf" resource="[_:jTcsnRXO7]"></span>  <span about="[_:jTcsnRXO7]" typeof="rdf:Description"></span>
-  									<span about="[_:jTcsnRXO7]" rel="rdf:first" href="http://purl.org/ontology/wi/core#WeightedInterest"><a href="http://purl.org/ontology/wi/core#WeightedInterest">wi:WeightedInterest</a></span>
-  									<span about="[_:jTcsnRXO7]" rel="rdf:rest" resource="[_:jTcsnRXO8]"></span> or <span about="[_:jTcsnRXO8]" typeof="rdf:Description"></span>
-  														<span about="[_:jTcsnRXO8]" rel="rdf:first" href="http://purl.org/ontology/wi/core#InterestDynamics"><a href="http://purl.org/ontology/wi/core#InterestDynamics">wi:InterestDynamics</a></span> <span about="[_:jTcsnRXO8]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr>
+ <td>   <span rel="rdfs:domain" resource="[_:WwtIAwUZ6]"></span>
+  									<span about="[_:WwtIAwUZ6]" typeof="owl:Class"></span>
+  									<span about="[_:WwtIAwUZ6]" rel="owl:unionOf" resource="[_:WwtIAwUZ7]"></span>  <span about="[_:WwtIAwUZ7]" typeof="rdf:Description"></span>
+  									<span about="[_:WwtIAwUZ7]" rel="rdf:first" href="http://purl.org/ontology/wi/core#WeightedInterest"><a href="http://purl.org/ontology/wi/core#WeightedInterest">wi:WeightedInterest</a></span>
+  									<span about="[_:WwtIAwUZ7]" rel="rdf:rest" resource="[_:WwtIAwUZ8]"></span> or <span about="[_:WwtIAwUZ8]" typeof="rdf:Description"></span>
+  														<span about="[_:WwtIAwUZ8]" rel="rdf:first" href="http://purl.org/ontology/wi/core#InterestDynamics"><a href="http://purl.org/ontology/wi/core#InterestDynamics">wi:InterestDynamics</a></span> <span about="[_:WwtIAwUZ8]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr>
   			<tr><th>Sub property of</th>
  <td>  <span rel="rdfs:subPropertyOf" href="http://purl.org/NET/c4dm/event.owl#factor"><a href="http://purl.org/NET/c4dm/event.owl#factor">event:factor</a></span>
  </td></tr>
@@ -1050,12 +1049,6 @@ Version 0.2 (August 2010)
  * MODIFIED: added dcterms:subject as super class of wi:topic
  * ADDED: wi:ComplexInterest as hook for dynamic interests
 </pre>
-
-</body>
-</html>
-
-
-
 
 </body>
 </html>
