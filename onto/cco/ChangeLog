@@ -1,0 +1,24 @@
+============================
+Version 0.1 (September 2010)
+============================
+ * IMPORTED: all concepts and properties of the former Weighted Interests Vocabulary and introduced a new namespace cco:
+ * MODIFIED: renamed wi:interest_dynamics to cco:characteristic_dynamics
+ * MODIFIED: renamed wi:InterestDynamics to cco:CharacteristicDynamics
+ * MODIFIED: renamed wi:WeightedInterest to cco:CognitiveCharacteristic
+ * MODIFIED: renamed wi:preference to wi:habit
+ * ADDED: cco:cognitive_characteristic - this is the super property to describe cognitive characteristics of the user of the cognitive 
+          pattern dimension, e.g. interests, skills, or expertise
+ * ADDED: cco:competence - the competence to (be able to) do or know something. That means abilities, skills, knowledge, expertise, 
+          beliefs etc.
+ * ADDED: cco:belief - an uncertain relation for competence representation. That means beliefs, persuasions or opinions, which can also 
+          be misconceptions
+ * ADDED: cco:skill - the knowledge or expertise in a certain domain or topic, e.g. football, programming languages or music
+ * ADDED: cco:interest - this is the super property to describe cognitive characteristics of the user of the cognitive pattern 
+          dimension, e.g. interests, skills, or expertise
+ * ADDED: cco:setting - a certain setting or preference. Often re. a specific environment, e.g. an application
+ * ADDED: cco:activity - an activity, which is related to a topic of a cognitive charateristic description, e.g. if the topic is 
+          football a related activity can be playing or watching
+ * MODIFIED: cco:attention_duration - now also as a sub property of scovo:dimension
+ * MODIFIED: cco:overall_weight - now also as a sub property of scovo:dimension
+ * MODIFIED: cco:not_interested_in - added owl:Thing as rdfs:range
+ * MODIFIED: cco:topic - added owl:Thing as rdfs:range

@@ -18,7 +18,7 @@ typeof="bibo:Document"
 about="http://purl.org/ontology/wo/weightingontology.html"
 version="XHTML+RDFa 1.0">
 <head>
-  <title about="http://purl.org/ontology/wo/weightingontology.html" property="dc:title">The Counter Ontology Specification</title>
+  <title about="http://purl.org/ontology/wo/weightingontology.html" property="dc:title">The Weighting Ontology Specification</title>
   <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
   <base href="http://purl.org/ontology/wo/weightingontology.html" />
   <link href="http://smiy.sourceforge.net/css/xmlns-style.css" rel="stylesheet"  type="text/css" />
@@ -182,7 +182,7 @@ relations" /></div>
 
   <h2 id="sec-for">What's the Weighting Ontology for?</h2>
 
-  <p about="http://purl.org/ontology/wo/weightingontology.html">The <em>Weighting Ontology</em> includes a general multiple purpose weight concept. This concept could be uses to associate any 
+  <p about="http://purl.org/ontology/wo/weightingontology.html">The <em>Weighting Ontology</em> includes a general multiple purpose weight concept. This concept can be used to associate any 
 concept to a <em><a href="http://purl.org/ontology/wo/weightingontology.html#Weight">wo:Weight</a></em> instance(s) with the property <em><a 
 href="http://purl.org/ontology/wo/weightingontology.html#weight">wo:weight</a></em>. The second property of  <em><a 
 href="http://purl.org/ontology/wo/weightingontology.html#Weight">wo:Weight</a></em> is <em><a href="http://purl.org/ontology/wo/weightingontology.html#weight_value">wo:weight_value</a></em>, 
@@ -295,9 +295,9 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			<tr><th>Status:</th>
   			<td><span property="vs:status" >unstable</span></td></tr>
   			<tr><th>Properties include:</th>
- <td>  <a href="#min_weight">min_weight</a>
+ <td>  <a href="#max_weight">max_weight</a>
  <a href="#step_size">step_size</a>
- <a href="#max_weight">max_weight</a>
+ <a href="#min_weight">min_weight</a>
  </td></tr>
   			<tr><th>Used with:</th>
  <td>  <a href="#scale">scale</a>
@@ -315,7 +315,7 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			</div>
 <h2>Properties</h2>
  
-<div class="specterm" id="weight_value" about="http://purl.org/ontology/wo/core#weight_value" typeof="rdf:Property">
+<div class="specterm" id="weight_value" about="http://purl.org/ontology/wo/core#weight_value" typeof="owl:FunctionalProperty">
   			<h3>Property: wo:weight_value</h3> 
   			<em property="rdfs:label" >has weight value</em> - <span property="rdfs:comment" >The specific value of a weight.</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -328,15 +328,15 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/wo/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
- <td>  </td></tr><tr><th colspan="2">Datatype Property</th>
+ <td> <span rel="rdf:type" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"></span> </td></tr><tr><th colspan="2">Datatype Property</th>
  <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#DatatypeProperty"></span> </td></tr><tr><th colspan="2">Functional Property</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#FunctionalProperty"></span> </td></tr>
+ <td>  </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#weight_value">#</a>] <!-- weight_value --> [<a href="#glance">back to top</a>]</p>
   			<br/>
   			</div>
-<div class="specterm" id="max_weight" about="http://purl.org/ontology/wo/core#max_weight" typeof="rdf:Property">
+<div class="specterm" id="max_weight" about="http://purl.org/ontology/wo/core#max_weight" typeof="owl:FunctionalProperty">
   			<h3>Property: wo:max_weight</h3> 
   			<em property="rdfs:label" >has max weight</em> - <span property="rdfs:comment" >A maximum weight of a scale.</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -347,19 +347,19 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			<tr><th>Range:</th>
  <td>  <span rel="rdfs:range" href="http://www.w3.org/2001/XMLSchema#decimal"><a href="http://www.w3.org/2001/XMLSchema#decimal">xsd:decimal</a></span>
  </td></tr><tr><th>Sub property of</th>
- <td>  <span rel="rdfs:subPropertyOf" href="http://purl.org/stuff/rev#maxRating"><a href="http://purl.org/stuff/rev#maxRating">rev:maxRating</a></span>
- <span rel="rdfs:subPropertyOf" href="http://purl.org/NET/scovo#max"><a href="http://purl.org/NET/scovo#max">scovo:max</a></span>
+ <td>  <span rel="rdfs:subPropertyOf" href="http://purl.org/NET/scovo#max"><a href="http://purl.org/NET/scovo#max">scovo:max</a></span>
+ <span rel="rdfs:subPropertyOf" href="http://purl.org/stuff/rev#maxRating"><a href="http://purl.org/stuff/rev#maxRating">rev:maxRating</a></span>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/wo/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
- <td>  </td></tr><tr><th colspan="2">Datatype Property</th>
+ <td> <span rel="rdf:type" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"></span> </td></tr><tr><th colspan="2">Datatype Property</th>
  <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#DatatypeProperty"></span> </td></tr><tr><th colspan="2">Functional Property</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#FunctionalProperty"></span> </td></tr>
+ <td>  </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#max_weight">#</a>] <!-- max_weight --> [<a href="#glance">back to top</a>]</p>
   			<br/>
-  			</div><div class="specterm" id="min_weight" about="http://purl.org/ontology/wo/core#min_weight" typeof="rdf:Property">
+  			</div><div class="specterm" id="min_weight" about="http://purl.org/ontology/wo/core#min_weight" typeof="owl:FunctionalProperty">
   			<h3>Property: wo:min_weight</h3> 
   			<em property="rdfs:label" >has min weight</em> - <span property="rdfs:comment" >A minimum weight of a scale.</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -375,14 +375,14 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/wo/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
- <td>  </td></tr><tr><th colspan="2">Datatype Property</th>
+ <td> <span rel="rdf:type" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"></span> </td></tr><tr><th colspan="2">Datatype Property</th>
  <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#DatatypeProperty"></span> </td></tr><tr><th colspan="2">Functional Property</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#FunctionalProperty"></span> </td></tr>
+ <td>  </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#min_weight">#</a>] <!-- min_weight --> [<a href="#glance">back to top</a>]</p>
   			<br/>
-  			</div><div class="specterm" id="scale" about="http://purl.org/ontology/wo/core#scale" typeof="rdf:Property">
+  			</div><div class="specterm" id="scale" about="http://purl.org/ontology/wo/core#scale" typeof="owl:FunctionalProperty">
   			<h3>Property: wo:scale</h3> 
   			<em property="rdfs:label" >has scale</em> - <span property="rdfs:comment" >A scale for the weighting of some relation.</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -397,14 +397,14 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/wo/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
- <td>  </td></tr><tr><th colspan="2">Object Property</th>
+ <td> <span rel="rdf:type" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"></span> </td></tr><tr><th colspan="2">Object Property</th>
  <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#ObjectProperty"></span> </td></tr><tr><th colspan="2">Functional Property</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#FunctionalProperty"></span> </td></tr>
+ <td>  </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#scale">#</a>] <!-- scale --> [<a href="#glance">back to top</a>]</p>
   			<br/>
-  			</div><div class="specterm" id="step_size" about="http://purl.org/ontology/wo/core#step_size" typeof="rdf:Property">
+  			</div><div class="specterm" id="step_size" about="http://purl.org/ontology/wo/core#step_size" typeof="owl:FunctionalProperty">
   			<h3>Property: wo:step_size</h3> 
   			<em property="rdfs:label" >has step size</em> - <span property="rdfs:comment" >A predefined step size for weight of a specific scale.</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -417,9 +417,9 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/wo/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
- <td>  </td></tr><tr><th colspan="2">Datatype Property</th>
+ <td> <span rel="rdf:type" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"></span> </td></tr><tr><th colspan="2">Datatype Property</th>
  <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#DatatypeProperty"></span> </td></tr><tr><th colspan="2">Functional Property</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#FunctionalProperty"></span> </td></tr>
+ <td>  </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#step_size">#</a>] <!-- step_size --> [<a href="#glance">back to top</a>]</p>

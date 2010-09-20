@@ -9,7 +9,7 @@
 #		+ classes and properties from other namespaces
 #		+ inverse properties (explicit and anonymous)
 #		+ sub properties
-#		+ union ranges and domains
+#		+ union ranges and domains (appear only in the property descriptions, not on the class descriptions)
 #		+ equivalent properties
 #		+ simple individuals as optional feature
 #
@@ -299,6 +299,7 @@ class Vocab(object):
 					"http://purl.org/ontology/rec/core#"            : "rec",
 					"http://purl.org/ontology/wi/core#"             : "wi",
 					"http://purl.org/ontology/wo/core#"             : "wo",
+					"http://purl.org/ontology/cco/core#"             : "cco",
 					"http://purl.org/NET/scovo#"                    : "scovo"
 		}
 
