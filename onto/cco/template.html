@@ -336,7 +336,9 @@ href="http://smiy.sourceforge.net/cco/examples/N3/cco_-_hate_example.n3">N3</a> 
 </pre>
   </div>
 
-  <p>This examples shows, </p>
+  <p about="http://purl.org/ontology/cco/cognitivecharacteristics.html">This example describes a person (here Libby Miller), who is not interested in (<a 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#not_interested_in"><em>cco:not_interest_in</em></a>) a specific topic (here <a rel="rdfs:seeAlso" 
+href="http://dbpedia.org/resource/The_X_Factor_(UK)">"The X-Factor"</a>).</p>
 
   <h3 id="sec-scientific-research-interests-example">Scientific Research Interests Example</h3>
 
@@ -353,8 +355,8 @@ href="http://smiy.sourceforge.net/cco/examples/N3/cco_-_scientific_research_inte
 @prefix foaf:     &lt;http://xmlns.com/foaf/0.1/&gt; .
 @prefix tl:       &lt;http://purl.org/NET/c4dm/timeline.owl#&gt; .
 @prefix dcterms:  &lt;http://purl.org/dc/terms/&gt; .
-@prefix cco:      &lt;http://purl.org/ontology/cco/&gt; .
-@prefix wo:       &lt;http://purl.org/ontology/wo/&gt; .
+@prefix cco:      &lt;http://purl.org/ontology/cco/core#&gt; .
+@prefix wo:       &lt;http://purl.org/ontology/wo/core#&gt; .
 @prefix ex:       &lt;http://example.org/&gt; .
 @prefix time:     &lt;http://www.w3.org/2006/time#&gt; .
 &nbsp;
@@ -409,7 +411,18 @@ ex:AnotherScale a wo:Scale ;
 </pre>
   </div>
 
-  <p>This examples shows, </p>
+  <p about="http://purl.org/ontology/cco/cognitivecharacteristics.html">This example describes a person (here Ricardo Baeza-Yates), who is interested in (<a 
+href="http://xmlns.com/foaf/spec/#term_topic_interest"><em>foaf:topic_interest</em></a>) a specific topic (here <a 
+href="http://dbpedia.org/resource/World_Wide_Web"><em>"The World Wide Web"</em></a>). This interest is described more in detail with help of a <a 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CognitiveCharacteristic"><em>cco:CognitiveCharacteristic</em></a> instance (<em>ex:WebInterest</em>). It has a current weight 
+(<a href="http://purl.org/ontology/wo/weightingontology.html#weight"><em>wo:weight</em></a>), a total weight (<a 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#overall_weight"><em>cco:overall_weight</em></a>) and two attention durations - a ultimative duration 
+(<a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#ultimative_duration"><em>cco:ultimative_duratation</em></a>) and a longest duration (<a 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#longest_duration"><em>cco:longest_duration</em></a>). All these values can be timestamped, e.g. re. their date of modification 
+(<a rel="rdfs:seeAlso" href="http://dublincore.org/documents/dcmi-terms/#terms-modified"><em>dcterms:modifified</em></a>). A <a 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CognitiveCharacteristic"><em>cco:CognitiveCharacteristic</em></a> instance (<em>ex:ASpecificConcext</em>) describes the 
+appearing of this interest in a certain context (here a <a rel="rdfs:seeAlso" href="http://dblp.uni-trier.de/rec/bibtex/conf/cikm/AlonsoGB09"><em>specific paper</em></a>). To describe the 
+different weightings, different scales can be associated to them.</p>
 
   <h3 id="sec-simple-music-preferences-example">Music Preferences Example</h3>
 
@@ -515,6 +528,20 @@ ex:BigFan a cco:CharacteristicDynamics ;
 &nbsp;&nbsp;&nbsp;wo:scale ex:AScale .
 </pre>
   </div>
+  
+<p about="http://purl.org/ontology/cco/cognitivecharacteristics.html">This example describes a person (here Bob Ferris), who is interested (<a 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#interest"><em>cco:interest</em></a>) in some music artists (<a rel="rdfs:seeAlso" 
+href="http://dbtune.org/musicbrainz/resource/artist/20ff3303-4fe2-4a47-a1b6-291e26aa3438"><em>James Brown</em></a> and <a rel="rdfs:seeAlso" 
+href="http://dbtune.org/musicbrainz/resource/artist/470a4ced-1323-4c91-8fd5-0bb3fb4c932a"><em>Jeff Mills</em></a>) and does not like (<a 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#not_interested_in"><em>cco:not_interested_in</em></a>) some music genres (<a rel="rdfs:seeAlso" 
+href="http://dbpedia.org/resource/Category:Schlager"><em>Schlager</em></a> and <a rel="rdfs:seeAlso" href="http://dbpedia.org/resource/Category:German_folk_music"><em>German Folk Music</em></a>). 
+Besides, the detailed interests descriptions (<a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CognitiveCharacteristic"><em>cco:CognitiveCharacteristic</em></a>) with a 
+characteristical common appear time (<a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#appear_time"><em>cco:appear_time</em></a>), further characteristic dynamics (<a 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CharacteristicDynamics"><em>cco:CharacteristicDynamics</em></a>) with separate weightings are added to them, e.g. a description 
+of a specific Techno party (<em>ex:TechnoParty</em>), where Jeff Mills played, with a specific <a rel="rdfs:seeAlso" href="http://dbpedia.org/resource/Tresor"><em>location</em></a> (related by 
+<a href="http://motools.sourceforge.net/event/event.html#term_place"><em>event:place</em></a>), an <a href="http://www.residentadvisor.net/event.aspx?151690"><em>event description</em></a> 
+(related by <a rel="rdfs:seeAlso" href="http://dublincore.org/documents/dcmi-terms/#terms-subject"><em>dcterms:subject</em></a>), and a period of time, where Bob was a big fan of him 
+(<em>ex:BigFan</em>).</p>
   
   <h3 id="sec-cognitive-patterns-example">Cognitive Patterns Example</h3>
 
