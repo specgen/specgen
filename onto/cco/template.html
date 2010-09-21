@@ -213,6 +213,7 @@ concept as graph with relations" /></div>
   		<li><a href="#sec-scientific-research-interests-example">Scientific Research Interests Example</a></li>
   		<li><a href="#sec-simple-music-preferences-example">Music Preferences Example</a></li>
   		<li><a href="#sec-cognitive-patterns-example">Cognitive Patterns Example</a></li>
+  		<li><a href="#sec-UMIRL-example">UMIRL Example</a></li>
   </ul>
 
   <h3 id="sec-preferences-example">Preferences Example</h3>
@@ -345,9 +346,9 @@ href="http://dbpedia.org/resource/The_X_Factor_(UK)">"The X-Factor"</a>).</p>
 <p>This example is orginally taken from the <a href="http://wiki.larkc.eu/e-foaf:interest">E-foaf:interest Vocabulary Specification 0.2</a> and was tranformed to be conform with the current 
 version of the <em>Cognitive Characteristics Ontology</em>.</p>
 
-  <p about="http://purl.org/ontology/cco/cognitivecharacteristics.html">RDF/Turtle representation of a scientific research interests created with the <em>Cognitive Characteristics Ontology</em> 
-(see also <a rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/cco/examples/RDF/cco_-_scientific_research_interests_example.rdf">RDF</a> and <a rel="rdfs:seeAlso" 
-href="http://smiy.sourceforge.net/cco/examples/N3/cco_-_scientific_research_interests_example.n3">N3</a> for downloadable representations of this example):</p>
+  <p about="http://purl.org/ontology/cco/cognitivecharacteristics.html">RDF/Turtle representation of a scientific research interests example created with the 
+<em>Cognitive Characteristics Ontology</em> (see also <a rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/cco/examples/RDF/cco_-_scientific_research_interests_example.rdf">RDF</a> and <a 
+rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/cco/examples/N3/cco_-_scientific_research_interests_example.n3">N3</a> for downloadable representations of this example):</p>
 
   <div class="example">
     <pre>
@@ -545,8 +546,8 @@ of a specific Techno party (<em>ex:TechnoParty</em>), where Jeff Mills played, w
   
   <h3 id="sec-cognitive-patterns-example">Cognitive Patterns Example</h3>
 
-   <p about="http://purl.org/ontology/cco/cognitivecharacteristics.html">RDF/Turtle representation of a cognitive patterns example with created with the 
-<em>Cognitive Characteristics Ontology</em> (see also <a rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/cco/examples/RDF/cco_-_cognitive_patterns.rdf">RDF</a> and <a rel="rdfs:seeAlso" 
+   <p about="http://purl.org/ontology/cco/cognitivecharacteristics.html">RDF/Turtle representation of a cognitive patterns example created with the <em>Cognitive Characteristics Ontology</em> 
+(see also <a rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/cco/examples/RDF/cco_-_cognitive_patterns.rdf">RDF</a> and <a rel="rdfs:seeAlso" 
 href="http://smiy.sourceforge.net/cco/examples/N3/cco_-_cognitive_patterns.n3">N3</a> for downloadable representations of this example):</p>
 
   <div class="example">
@@ -635,6 +636,172 @@ href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CognitiveCharac
 characteristic dynamics can be described in the same manner. To summarize the description above one can say: Bob Ferris is interested in <em>Knowledge Representation</em>, has some expertise in 
 <em>Ontologies</em>, some skills in handling (<em>Knowledge Engineering</em>) <em>Ontologies in the topic of Information Science</em> and a certain belief in the <em>Named Graphs</em> 
 approach.</p>
+
+  <h3 id="sec-UMIRL-example">UMIRL Example</h3>
+  
+<p>This example was originally modelled with help of <a href="http://www.media.mit.edu/~chaiwei/papers/usermodeling.pdf"><em>UMIRL</em></a> and is now recreated with the 
+<em>Cognitive Characteristics Ontology</em>.</p>
+
+   <p about="http://purl.org/ontology/cco/cognitivecharacteristics.html">RDF/Turtle representation of a part of an user profile example created with the 
+<em>Cognitive Characteristics Ontology</em> (see also <a rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/cco/examples/RDF/cco_-_UMIRL_example.rdf">RDF</a> and <a rel="rdfs:seeAlso" 
+href="http://smiy.sourceforge.net/cco/examples/N3/cco_-_UMIRL_example.n3">N3</a> for downloadable representations of this example):</p>
+
+  <div class="example">
+    <pre>
+@prefix foaf:      &lt;http://xmlns.com/foaf/0.1/&gt; .
+@prefix cco:       &lt;http://purl.org/ontology/cco/core#&gt; .
+@prefix wo:        &lt;http://purl.org/ontology/wo/core#&gt; .
+@prefix days:      &lt;http://ontologi.es/days#&gt; .
+@prefix tl:        &lt;http://perl.org/NET/c4dm/timeline.owl#&gt; .
+@prefix xsd:       &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix ex:        &lt;http://example.org/&gt; .
+@prefix rdf:       &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs:      &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix owl:       &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix dc:        &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix ov:        &lt;http://open.vocab.org/&gt; .
+@prefix cv:        &lt;http://kaste.lv/~captsolo/semweb/resume/cv.rdfs#&gt; .
+@prefix cvbase:    &lt;http://kaste.lv/~captsolo/semweb/resume/base.rdfs#&gt; .
+@prefix countries: &lt;http://www.daml.org/2001/09/countries/countries.daml#&gt; .
+@prefix sim:       &lt;http://purl.org/ontology/similarity/&gt; .
+@prefix ao:        &lt;http://purl.org/ontology/ao/core#&gt; .
+&nbsp;
+ex:APerson
+&nbsp;&nbsp;&nbsp;a foaf:Person , cv:Person ;
+&nbsp;&nbsp;&nbsp;foaf:name "John White" ;
+&nbsp;&nbsp;&nbsp;foaf:birthday "1974-07-09"^^xsd:date ;
+&nbsp;&nbsp;&nbsp;foaf:gender "male" ;
+&nbsp;&nbsp;&nbsp;cv:hasCitizenship countries:US ;
+&nbsp;&nbsp;&nbsp;cco:skill &lt;http://dbpedia.org/resource/Piano&gt; ;
+&nbsp;&nbsp;&nbsp;cco:skill &lt;http://dbpedia.org/resource/Vocal&gt; ;
+&nbsp;&nbsp;&nbsp;cco:expertise &lt;http://dbpedia.org/resource/Music&gt; ;
+&nbsp;&nbsp;&nbsp;cco:interest &lt;http://dbpedia.org/page/Category:Classical_music&gt; ;
+&nbsp;&nbsp;&nbsp;cco:interest &lt;http://dbpedia.org/page/Category:Blues&gt; ;
+&nbsp;&nbsp;&nbsp;cco:interest &lt;http://dbpedia.org/page/Category:Pop_music&gt; ;
+&nbsp;&nbsp;&nbsp;cco:interest &lt;http://dbpedia.org/page/Category:Rock_music&gt; ;
+&nbsp;&nbsp;&nbsp;cco:interest &lt;http://dbpedia.org/resource/Wolfgang_Amadeus_Mozart&gt; ;
+&nbsp;&nbsp;&nbsp;cco:interest &lt;http://dbpedia.org/resource/The_Beatles&gt; ;
+&nbsp;&nbsp;&nbsp;cco:interest  &lt;http://dbtune.org/musicbrainz/page/signal/8aefa373-2858-4643-b691-cad4ac7c971a&gt; ;
+&nbsp;&nbsp;&nbsp;cco:interest ex:IdiosyncraticGenre1 ;
+&nbsp;&nbsp;&nbsp;cco:interest ex:IdiosyncraticGenre2 ;
+&nbsp;&nbsp;&nbsp;cco:habit [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a cco:CognitiveCharacteristic ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:topic &lt;http://dbpedia.org/resource/Piano&gt; ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight [ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wo:Weight ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight_value 6.0 ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:scale ex:AScale 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:activity &lt;http://sw.opencyc.org/concept/Mx4rvVjUJ5wpEbGdrcN5Y29ycA&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;cco:habit [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a cco:CognitiveCharacteristic ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:topic &lt;http://dbpedia.org/resource/Vocal&gt; ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight [ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wo:Weight ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight_value 7.0 ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:scale ex:AScale 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:activity &lt;http://dbpedia.org/resource/Category:Singing&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;cco:habit [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a cco:CognitiveCharacteristic ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:topic &lt;http://dbpedia.org/resource/Music&gt; ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight [ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wo:Weight ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight_value 0.0 ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:scale ex:AScale 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;cco:habit [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a cco:CognitiveCharacteristic ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:topic &lt;http://dbpedia.org/page/Category:Classical_music&gt; ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight [ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wo:Weight ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight_value 7.0 ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:scale ex:AScale 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;cco:habit [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a cco:CognitiveCharacteristic ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:topic &lt;http://dbpedia.org/page/Category:Blues&gt; ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight [ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wo:Weight ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight_value 9.0 ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:scale ex:AScale 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;cco:habit [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a cco:CognitiveCharacteristic ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:topic &lt;http://dbpedia.org/page/Category:Pop_music&gt; ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight [ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wo:Weight ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight_value 5.0 ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:scale ex:AScale 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;cco:habit [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a cco:CognitiveCharacteristic ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:topic &lt;http://dbpedia.org/page/Category:Rock_music&gt; ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight [ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wo:Weight ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight_value 8.0 ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:scale ex:AScale 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;cco:habit [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a cco:CognitiveCharacteristic ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:topic ex:IdiosyncraticGenre2 ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight [ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wo:Weight ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight_value 7.0 ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:scale ex:AScale 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:appear_time [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a days:WeekdayInterval ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dc:title "bedtime" ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tl:at "23:00:00"^^xsd:time 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] .
+&nbsp;
+ex:ACV
+&nbsp;&nbsp;&nbsp;a cv:CV ;
+&nbsp;&nbsp;&nbsp;cv:aboutPerson ex:APerson ;
+&nbsp;&nbsp;&nbsp;cv:hasEducation [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a cv:Education ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cv:degreeType cvbase:EduMaster 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;cv:hasWorkHistory ex:AWorkHistory .
+&nbsp;
+ex:AWorkHistory
+&nbsp;&nbsp;&nbsp;a cv:WorkHistory ;
+&nbsp;&nbsp;&nbsp;cv:careerLevel cvbase:Student .
+&nbsp;
+ex:tempo
+&nbsp;&nbsp;&nbsp;a rdf:Propery , owl:DatatypeProperty ;
+&nbsp;&nbsp;&nbsp;rdfs:range xsd:string ;
+&nbsp;&nbsp;&nbsp;rdfs:subPropertyOf ao:context .
+&nbsp;
+ex:IdiosyncraticGenre1
+&nbsp;&nbsp;&nbsp;a sim:Association ;
+&nbsp;&nbsp;&nbsp;dc:title "happy music" ;
+&nbsp;&nbsp;&nbsp;ao:genre &lt;http://dbpedia.org/page/Category:Pop_music&gt; ;
+&nbsp;&nbsp;&nbsp;ex:tempo "allegro" ;
+&nbsp;&nbsp;&nbsp;ao:mood "happy" .
+&nbsp;
+ex:IdiosyncraticGenre2
+&nbsp;&nbsp;&nbsp;a sim:Association ;
+&nbsp;&nbsp;&nbsp;dc:title "romantic music" ;
+&nbsp;&nbsp;&nbsp;ex:tempo "largo" .
+&nbsp;
+ex:AScale a wo:Scale ;
+&nbsp;&nbsp;&nbsp;wo:min_weight 0.0 ;
+&nbsp;&nbsp;&nbsp;wo:max_weight 9.0 ;
+&nbsp;&nbsp;&nbsp;wo:step_size 1.0 .
+</pre>
+  </div>
+
+  <p>TODO</p>
 
   <!-- ================================================================== -->
 

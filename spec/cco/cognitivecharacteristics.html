@@ -220,6 +220,7 @@ concept as graph with relations" /></div>
   		<li><a href="#sec-scientific-research-interests-example">Scientific Research Interests Example</a></li>
   		<li><a href="#sec-simple-music-preferences-example">Music Preferences Example</a></li>
   		<li><a href="#sec-cognitive-patterns-example">Cognitive Patterns Example</a></li>
+  		<li><a href="#sec-UMIRL-example">UMIRL Example</a></li>
   </ul>
 
   <h3 id="sec-preferences-example">Preferences Example</h3>
@@ -352,9 +353,9 @@ href="http://dbpedia.org/resource/The_X_Factor_(UK)">"The X-Factor"</a>).</p>
 <p>This example is orginally taken from the <a href="http://wiki.larkc.eu/e-foaf:interest">E-foaf:interest Vocabulary Specification 0.2</a> and was tranformed to be conform with the current 
 version of the <em>Cognitive Characteristics Ontology</em>.</p>
 
-  <p about="http://purl.org/ontology/cco/cognitivecharacteristics.html">RDF/Turtle representation of a scientific research interests created with the <em>Cognitive Characteristics Ontology</em> 
-(see also <a rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/cco/examples/RDF/cco_-_scientific_research_interests_example.rdf">RDF</a> and <a rel="rdfs:seeAlso" 
-href="http://smiy.sourceforge.net/cco/examples/N3/cco_-_scientific_research_interests_example.n3">N3</a> for downloadable representations of this example):</p>
+  <p about="http://purl.org/ontology/cco/cognitivecharacteristics.html">RDF/Turtle representation of a scientific research interests example created with the 
+<em>Cognitive Characteristics Ontology</em> (see also <a rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/cco/examples/RDF/cco_-_scientific_research_interests_example.rdf">RDF</a> and <a 
+rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/cco/examples/N3/cco_-_scientific_research_interests_example.n3">N3</a> for downloadable representations of this example):</p>
 
   <div class="example">
     <pre>
@@ -552,8 +553,8 @@ of a specific Techno party (<em>ex:TechnoParty</em>), where Jeff Mills played, w
   
   <h3 id="sec-cognitive-patterns-example">Cognitive Patterns Example</h3>
 
-   <p about="http://purl.org/ontology/cco/cognitivecharacteristics.html">RDF/Turtle representation of a cognitive patterns example with created with the 
-<em>Cognitive Characteristics Ontology</em> (see also <a rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/cco/examples/RDF/cco_-_cognitive_patterns.rdf">RDF</a> and <a rel="rdfs:seeAlso" 
+   <p about="http://purl.org/ontology/cco/cognitivecharacteristics.html">RDF/Turtle representation of a cognitive patterns example created with the <em>Cognitive Characteristics Ontology</em> 
+(see also <a rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/cco/examples/RDF/cco_-_cognitive_patterns.rdf">RDF</a> and <a rel="rdfs:seeAlso" 
 href="http://smiy.sourceforge.net/cco/examples/N3/cco_-_cognitive_patterns.n3">N3</a> for downloadable representations of this example):</p>
 
   <div class="example">
@@ -642,6 +643,172 @@ href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CognitiveCharac
 characteristic dynamics can be described in the same manner. To summarize the description above one can say: Bob Ferris is interested in <em>Knowledge Representation</em>, has some expertise in 
 <em>Ontologies</em>, some skills in handling (<em>Knowledge Engineering</em>) <em>Ontologies in the topic of Information Science</em> and a certain belief in the <em>Named Graphs</em> 
 approach.</p>
+
+  <h3 id="sec-UMIRL-example">UMIRL Example</h3>
+  
+<p>This example was originally modelled with help of <a href="http://www.media.mit.edu/~chaiwei/papers/usermodeling.pdf"><em>UMIRL</em></a> and is now recreated with the 
+<em>Cognitive Characteristics Ontology</em>.</p>
+
+   <p about="http://purl.org/ontology/cco/cognitivecharacteristics.html">RDF/Turtle representation of a part of an user profile example created with the 
+<em>Cognitive Characteristics Ontology</em> (see also <a rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/cco/examples/RDF/cco_-_UMIRL_example.rdf">RDF</a> and <a rel="rdfs:seeAlso" 
+href="http://smiy.sourceforge.net/cco/examples/N3/cco_-_UMIRL_example.n3">N3</a> for downloadable representations of this example):</p>
+
+  <div class="example">
+    <pre>
+@prefix foaf:      &lt;http://xmlns.com/foaf/0.1/&gt; .
+@prefix cco:       &lt;http://purl.org/ontology/cco/core#&gt; .
+@prefix wo:        &lt;http://purl.org/ontology/wo/core#&gt; .
+@prefix days:      &lt;http://ontologi.es/days#&gt; .
+@prefix tl:        &lt;http://perl.org/NET/c4dm/timeline.owl#&gt; .
+@prefix xsd:       &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix ex:        &lt;http://example.org/&gt; .
+@prefix rdf:       &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs:      &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix owl:       &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix dc:        &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix ov:        &lt;http://open.vocab.org/&gt; .
+@prefix cv:        &lt;http://kaste.lv/~captsolo/semweb/resume/cv.rdfs#&gt; .
+@prefix cvbase:    &lt;http://kaste.lv/~captsolo/semweb/resume/base.rdfs#&gt; .
+@prefix countries: &lt;http://www.daml.org/2001/09/countries/countries.daml#&gt; .
+@prefix sim:       &lt;http://purl.org/ontology/similarity/&gt; .
+@prefix ao:        &lt;http://purl.org/ontology/ao/core#&gt; .
+&nbsp;
+ex:APerson
+&nbsp;&nbsp;&nbsp;a foaf:Person , cv:Person ;
+&nbsp;&nbsp;&nbsp;foaf:name "John White" ;
+&nbsp;&nbsp;&nbsp;foaf:birthday "1974-07-09"^^xsd:date ;
+&nbsp;&nbsp;&nbsp;foaf:gender "male" ;
+&nbsp;&nbsp;&nbsp;cv:hasCitizenship countries:US ;
+&nbsp;&nbsp;&nbsp;cco:skill &lt;http://dbpedia.org/resource/Piano&gt; ;
+&nbsp;&nbsp;&nbsp;cco:skill &lt;http://dbpedia.org/resource/Vocal&gt; ;
+&nbsp;&nbsp;&nbsp;cco:expertise &lt;http://dbpedia.org/resource/Music&gt; ;
+&nbsp;&nbsp;&nbsp;cco:interest &lt;http://dbpedia.org/page/Category:Classical_music&gt; ;
+&nbsp;&nbsp;&nbsp;cco:interest &lt;http://dbpedia.org/page/Category:Blues&gt; ;
+&nbsp;&nbsp;&nbsp;cco:interest &lt;http://dbpedia.org/page/Category:Pop_music&gt; ;
+&nbsp;&nbsp;&nbsp;cco:interest &lt;http://dbpedia.org/page/Category:Rock_music&gt; ;
+&nbsp;&nbsp;&nbsp;cco:interest &lt;http://dbpedia.org/resource/Wolfgang_Amadeus_Mozart&gt; ;
+&nbsp;&nbsp;&nbsp;cco:interest &lt;http://dbpedia.org/resource/The_Beatles&gt; ;
+&nbsp;&nbsp;&nbsp;cco:interest  &lt;http://dbtune.org/musicbrainz/page/signal/8aefa373-2858-4643-b691-cad4ac7c971a&gt; ;
+&nbsp;&nbsp;&nbsp;cco:interest ex:IdiosyncraticGenre1 ;
+&nbsp;&nbsp;&nbsp;cco:interest ex:IdiosyncraticGenre2 ;
+&nbsp;&nbsp;&nbsp;cco:habit [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a cco:CognitiveCharacteristic ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:topic &lt;http://dbpedia.org/resource/Piano&gt; ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight [ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wo:Weight ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight_value 6.0 ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:scale ex:AScale 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:activity &lt;http://sw.opencyc.org/concept/Mx4rvVjUJ5wpEbGdrcN5Y29ycA&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;cco:habit [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a cco:CognitiveCharacteristic ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:topic &lt;http://dbpedia.org/resource/Vocal&gt; ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight [ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wo:Weight ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight_value 7.0 ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:scale ex:AScale 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:activity &lt;http://dbpedia.org/resource/Category:Singing&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;cco:habit [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a cco:CognitiveCharacteristic ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:topic &lt;http://dbpedia.org/resource/Music&gt; ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight [ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wo:Weight ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight_value 0.0 ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:scale ex:AScale 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;cco:habit [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a cco:CognitiveCharacteristic ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:topic &lt;http://dbpedia.org/page/Category:Classical_music&gt; ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight [ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wo:Weight ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight_value 7.0 ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:scale ex:AScale 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;cco:habit [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a cco:CognitiveCharacteristic ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:topic &lt;http://dbpedia.org/page/Category:Blues&gt; ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight [ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wo:Weight ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight_value 9.0 ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:scale ex:AScale 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;cco:habit [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a cco:CognitiveCharacteristic ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:topic &lt;http://dbpedia.org/page/Category:Pop_music&gt; ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight [ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wo:Weight ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight_value 5.0 ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:scale ex:AScale 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;cco:habit [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a cco:CognitiveCharacteristic ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:topic &lt;http://dbpedia.org/page/Category:Rock_music&gt; ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight [ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wo:Weight ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight_value 8.0 ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:scale ex:AScale 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;cco:habit [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a cco:CognitiveCharacteristic ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:topic ex:IdiosyncraticGenre2 ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight [ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wo:Weight ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight_value 7.0 ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:scale ex:AScale 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:appear_time [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a days:WeekdayInterval ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dc:title "bedtime" ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tl:at "23:00:00"^^xsd:time 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] .
+&nbsp;
+ex:ACV
+&nbsp;&nbsp;&nbsp;a cv:CV ;
+&nbsp;&nbsp;&nbsp;cv:aboutPerson ex:APerson ;
+&nbsp;&nbsp;&nbsp;cv:hasEducation [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a cv:Education ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cv:degreeType cvbase:EduMaster 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
+&nbsp;&nbsp;&nbsp;cv:hasWorkHistory ex:AWorkHistory .
+&nbsp;
+ex:AWorkHistory
+&nbsp;&nbsp;&nbsp;a cv:WorkHistory ;
+&nbsp;&nbsp;&nbsp;cv:careerLevel cvbase:Student .
+&nbsp;
+ex:tempo
+&nbsp;&nbsp;&nbsp;a rdf:Propery , owl:DatatypeProperty ;
+&nbsp;&nbsp;&nbsp;rdfs:range xsd:string ;
+&nbsp;&nbsp;&nbsp;rdfs:subPropertyOf ao:context .
+&nbsp;
+ex:IdiosyncraticGenre1
+&nbsp;&nbsp;&nbsp;a sim:Association ;
+&nbsp;&nbsp;&nbsp;dc:title "happy music" ;
+&nbsp;&nbsp;&nbsp;ao:genre &lt;http://dbpedia.org/page/Category:Pop_music&gt; ;
+&nbsp;&nbsp;&nbsp;ex:tempo "allegro" ;
+&nbsp;&nbsp;&nbsp;ao:mood "happy" .
+&nbsp;
+ex:IdiosyncraticGenre2
+&nbsp;&nbsp;&nbsp;a sim:Association ;
+&nbsp;&nbsp;&nbsp;dc:title "romantic music" ;
+&nbsp;&nbsp;&nbsp;ex:tempo "largo" .
+&nbsp;
+ex:AScale a wo:Scale ;
+&nbsp;&nbsp;&nbsp;wo:min_weight 0.0 ;
+&nbsp;&nbsp;&nbsp;wo:max_weight 9.0 ;
+&nbsp;&nbsp;&nbsp;wo:step_size 1.0 .
+</pre>
+  </div>
+
+  <p>TODO</p>
 
   <!-- ================================================================== -->
 
@@ -795,11 +962,11 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			<tr><th>Properties include:</th>
  <td>  <a href="#activity">activity</a>
  <a href="#overall_weight">overall_weight</a>
- <a href="#characteristic_dynamics">characteristic_dynamics</a>
- <a href="#agent">agent</a>
+ <a href="#statistical_item">statistical_item</a>
  <a href="#topic">topic</a>
  <a href="#attention_duration">attention_duration</a>
- <a href="#statistical_item">statistical_item</a>
+ <a href="#characteristic_dynamics">characteristic_dynamics</a>
+ <a href="#agent">agent</a>
  </td></tr>
   			<tr><th>Used with:</th>
  <td>  <a href="#habit">habit</a>
@@ -826,8 +993,8 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  <td>  <span rel="rdfs:domain" href="http://purl.org/ontology/cco/core#CognitiveCharacteristic"><a href="#CognitiveCharacteristic">Cognitive Characteristic</a></span>
  </td></tr>
   			<tr><th>Sub property of</th>
- <td>  <span rel="rdfs:subPropertyOf" href="http://purl.org/NET/c4dm/event.owl#factor"><a href="http://purl.org/NET/c4dm/event.owl#factor">event:factor</a></span>
- <span rel="rdfs:subPropertyOf" href="http://purl.org/ontology/ao/core#activity"><a href="http://purl.org/ontology/ao/core#activity">ao:activity</a></span>
+ <td>  <span rel="rdfs:subPropertyOf" href="http://purl.org/ontology/ao/core#activity"><a href="http://purl.org/ontology/ao/core#activity">ao:activity</a></span>
+ <span rel="rdfs:subPropertyOf" href="http://purl.org/NET/c4dm/event.owl#factor"><a href="http://purl.org/NET/c4dm/event.owl#factor">event:factor</a></span>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/cco/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
@@ -837,7 +1004,7 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			
   			<p style="float: right; font-size: small;">[<a href="#activity">#</a>] <!-- activity --> [<a href="#glance">back to top</a>]</p>
   			<br/>
-  			</div><div class="specterm" id="agent" about="http://purl.org/ontology/cco/core#agent" typeof="rdf:Property">
+  			</div><div class="specterm" id="agent" about="http://purl.org/ontology/cco/core#agent" typeof="owl:ObjectProperty">
   			<h3>Property: cco:agent</h3> 
   			<em property="rdfs:label" >has agent</em> - <span property="rdfs:comment" >A link from a mined cognitive characteristic to the related person</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -852,8 +1019,8 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/cco/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
- <td>  </td></tr><tr><th colspan="2">Object Property</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#ObjectProperty"></span> </td></tr>
+ <td> <span rel="rdf:type" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"></span> </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#agent">#</a>] <!-- agent --> [<a href="#glance">back to top</a>]</p>
@@ -864,12 +1031,12 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			<tr><th>Status:</th>
   			<td><span property="vs:status" >testing</span></td></tr>
   			<tr><th>Domain:</th>
- <td>   <span rel="rdfs:domain" resource="[_:NBYnmuyq3]"></span>
-  									<span about="[_:NBYnmuyq3]" typeof="owl:Class"></span>
-  									<span about="[_:NBYnmuyq3]" rel="owl:unionOf" resource="[_:NBYnmuyq4]"></span>  <span about="[_:NBYnmuyq4]" typeof="rdf:Description"></span>
-  									<span about="[_:NBYnmuyq4]" rel="rdf:first" href="http://purl.org/ontology/cco/core#CognitiveCharacteristic"><a href="http://purl.org/ontology/cco/core#CognitiveCharacteristic">cco:CognitiveCharacteristic</a></span>
-  									<span about="[_:NBYnmuyq4]" rel="rdf:rest" resource="[_:NBYnmuyq5]"></span> or <span about="[_:NBYnmuyq5]" typeof="rdf:Description"></span>
-  														<span about="[_:NBYnmuyq5]" rel="rdf:first" href="http://purl.org/ontology/cco/core#CharacteristicDynamics"><a href="http://purl.org/ontology/cco/core#CharacteristicDynamics">cco:CharacteristicDynamics</a></span> <span about="[_:NBYnmuyq5]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr>
+ <td>   <span rel="rdfs:domain" resource="[_:mAomrEdP3]"></span>
+  									<span about="[_:mAomrEdP3]" typeof="owl:Class"></span>
+  									<span about="[_:mAomrEdP3]" rel="owl:unionOf" resource="[_:mAomrEdP4]"></span>  <span about="[_:mAomrEdP4]" typeof="rdf:Description"></span>
+  									<span about="[_:mAomrEdP4]" rel="rdf:first" href="http://purl.org/ontology/cco/core#CognitiveCharacteristic"><a href="http://purl.org/ontology/cco/core#CognitiveCharacteristic">cco:CognitiveCharacteristic</a></span>
+  									<span about="[_:mAomrEdP4]" rel="rdf:rest" resource="[_:mAomrEdP5]"></span> or <span about="[_:mAomrEdP5]" typeof="rdf:Description"></span>
+  														<span about="[_:mAomrEdP5]" rel="rdf:first" href="http://purl.org/ontology/cco/core#CharacteristicDynamics"><a href="http://purl.org/ontology/cco/core#CharacteristicDynamics">cco:CharacteristicDynamics</a></span> <span about="[_:mAomrEdP5]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr>
   			<tr><th>Sub property of</th>
  <td>  <span rel="rdfs:subPropertyOf" href="http://purl.org/NET/c4dm/event.owl#time"><a href="http://purl.org/NET/c4dm/event.owl#time">event:time</a></span>
  </td></tr>
@@ -881,7 +1048,7 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			
   			<p style="float: right; font-size: small;">[<a href="#appear_time">#</a>] <!-- appear_time --> [<a href="#glance">back to top</a>]</p>
   			<br/>
-  			</div><div class="specterm" id="attention_duration" about="http://purl.org/ontology/cco/core#attention_duration" typeof="rdf:Property">
+  			</div><div class="specterm" id="attention_duration" about="http://purl.org/ontology/cco/core#attention_duration" typeof="owl:ObjectProperty">
   			<h3>Property: cco:attention_duration</h3> 
   			<em property="rdfs:label" >has attention duration</em> - <span property="rdfs:comment" >An interval of attention for a cognitive pattern.</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -892,16 +1059,16 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			<tr><th>Range:</th>
  <td>  <span rel="rdfs:range" href="http://www.w3.org/2006/time#Interval"><a href="http://www.w3.org/2006/time#Interval">time:Interval</a></span>
  </td></tr><tr><th>Sub property of</th>
- <td>  <span rel="rdfs:subPropertyOf" href="http://purl.org/NET/scovo#dimension"><a href="http://purl.org/NET/scovo#dimension">scovo:dimension</a></span>
- <span rel="rdfs:subPropertyOf" href="http://purl.org/NET/c4dm/event.owl#time"><a href="http://purl.org/NET/c4dm/event.owl#time">event:time</a></span>
+ <td>  <span rel="rdfs:subPropertyOf" href="http://purl.org/NET/c4dm/event.owl#time"><a href="http://purl.org/NET/c4dm/event.owl#time">event:time</a></span>
+ <span rel="rdfs:subPropertyOf" href="http://purl.org/NET/scovo#dimension"><a href="http://purl.org/NET/scovo#dimension">scovo:dimension</a></span>
  </td></tr><tr><th>Has sub property</th>
- <td>  <a href="#longest_duration">has longest duration</a>
- <a href="#ultimative_duration">has ultimative duration</a>
+ <td>  <a href="#ultimative_duration">has ultimative duration</a>
+ <a href="#longest_duration">has longest duration</a>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/cco/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
- <td>  </td></tr><tr><th colspan="2">Object Property</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#ObjectProperty"></span> </td></tr>
+ <td> <span rel="rdf:type" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"></span> </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#attention_duration">#</a>] <!-- attention_duration --> [<a href="#glance">back to top</a>]</p>
@@ -944,7 +1111,7 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			
   			<p style="float: right; font-size: small;">[<a href="#characteristic_dynamics">#</a>] <!-- characteristic_dynamics --> [<a href="#glance">back to top</a>]</p>
   			<br/>
-  			</div><div class="specterm" id="cognitive_characteristic" about="http://purl.org/ontology/cco/core#cognitive_characteristic" typeof="rdf:Property">
+  			</div><div class="specterm" id="cognitive_characteristic" about="http://purl.org/ontology/cco/core#cognitive_characteristic" typeof="owl:ObjectProperty">
   			<h3>Property: cco:cognitive_characteristic</h3> 
   			<em property="rdfs:label" >has cognitive characteristic</em> - <span property="rdfs:comment" >This is the super property to describe cognitive characteristics of the user of the cognitive pattern dimension, e.g. interests, skills, or expertise.</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -955,14 +1122,14 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			<tr><th>Range:</th>
  <td>  <span rel="rdfs:range" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
  </td></tr><tr><th>Has sub property</th>
- <td>  <a href="#interest">has interest</a>
+ <td>  <a href="#setting">has setting</a>
+ <a href="#interest">has interest</a>
  <a href="#competence">has competence</a>
- <a href="#setting">has setting</a>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/cco/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
- <td>  </td></tr><tr><th colspan="2">Object Property</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#ObjectProperty"></span> </td></tr>
+ <td> <span rel="rdf:type" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"></span> </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#cognitive_characteristic">#</a>] <!-- cognitive_characteristic --> [<a href="#glance">back to top</a>]</p>
@@ -1095,7 +1262,7 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			
   			<p style="float: right; font-size: small;">[<a href="#skill">#</a>] <!-- skill --> [<a href="#glance">back to top</a>]</p>
   			<br/>
-  			</div><div class="specterm" id="statistical_item" about="http://purl.org/ontology/cco/core#statistical_item" typeof="rdf:Property">
+  			</div><div class="specterm" id="statistical_item" about="http://purl.org/ontology/cco/core#statistical_item" typeof="owl:ObjectProperty">
   			<h3>Property: cco:statistical_item</h3> 
   			<em property="rdfs:label" >has statistical item</em> - <span property="rdfs:comment" >A link from a cognitive characteristic to statistics about itself</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -1108,13 +1275,13 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/cco/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
- <td>  </td></tr><tr><th colspan="2">Object Property</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#ObjectProperty"></span> </td></tr>
+ <td> <span rel="rdf:type" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"></span> </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#statistical_item">#</a>] <!-- statistical_item --> [<a href="#glance">back to top</a>]</p>
   			<br/>
-  			</div><div class="specterm" id="ultimative_duration" about="http://purl.org/ontology/cco/core#ultimative_duration" typeof="rdf:Property">
+  			</div><div class="specterm" id="ultimative_duration" about="http://purl.org/ontology/cco/core#ultimative_duration" typeof="owl:ObjectProperty">
   			<h3>Property: cco:ultimative_duration</h3> 
   			<em property="rdfs:label" >has ultimative duration</em> - <span property="rdfs:comment" >The overall duration of attention for a cognitive pattern, e.g. for an interest, if it appears in the following years: 1990, 1991, 1995, 1996, 1997, 1998, 2001, then the longest duration is 7 years.</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -1125,32 +1292,32 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/cco/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
- <td>  </td></tr><tr><th colspan="2">Object Property</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#ObjectProperty"></span> </td></tr>
+ <td> <span rel="rdf:type" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"></span> </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#ultimative_duration">#</a>] <!-- ultimative_duration --> [<a href="#glance">back to top</a>]</p>
   			<br/>
   			</div>
-<div class="specterm" id="evidence" about="http://purl.org/ontology/cco/core#evidence" typeof="rdf:Property">
+<div class="specterm" id="evidence" about="http://purl.org/ontology/cco/core#evidence" typeof="owl:ObjectProperty">
   			<h3>Property: cco:evidence</h3> 
   			<em property="rdfs:label" >has evidence</em> - <span property="rdfs:comment" >A link between a context and evidence supporting the interpretation of habits in a context</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
   			<td><span property="vs:status" >unstable</span></td></tr>
   			<tr><th>Domain:</th>
- <td>   <span rel="rdfs:domain" resource="[_:NBYnmuyq8]"></span>
-  									<span about="[_:NBYnmuyq8]" typeof="owl:Class"></span>
-  									<span about="[_:NBYnmuyq8]" rel="owl:unionOf" resource="[_:NBYnmuyq9]"></span>  <span about="[_:NBYnmuyq9]" typeof="rdf:Description"></span>
-  									<span about="[_:NBYnmuyq9]" rel="rdf:first" href="http://purl.org/ontology/cco/core#CognitiveCharacteristic"><a href="http://purl.org/ontology/cco/core#CognitiveCharacteristic">cco:CognitiveCharacteristic</a></span>
-  									<span about="[_:NBYnmuyq9]" rel="rdf:rest" resource="[_:NBYnmuyq10]"></span> or <span about="[_:NBYnmuyq10]" typeof="rdf:Description"></span>
-  														<span about="[_:NBYnmuyq10]" rel="rdf:first" href="http://purl.org/ontology/cco/core#CharacteristicDynamics"><a href="http://purl.org/ontology/cco/core#CharacteristicDynamics">cco:CharacteristicDynamics</a></span> <span about="[_:NBYnmuyq10]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr>
+ <td>   <span rel="rdfs:domain" resource="[_:mAomrEdP8]"></span>
+  									<span about="[_:mAomrEdP8]" typeof="owl:Class"></span>
+  									<span about="[_:mAomrEdP8]" rel="owl:unionOf" resource="[_:mAomrEdP9]"></span>  <span about="[_:mAomrEdP9]" typeof="rdf:Description"></span>
+  									<span about="[_:mAomrEdP9]" rel="rdf:first" href="http://purl.org/ontology/cco/core#CognitiveCharacteristic"><a href="http://purl.org/ontology/cco/core#CognitiveCharacteristic">cco:CognitiveCharacteristic</a></span>
+  									<span about="[_:mAomrEdP9]" rel="rdf:rest" resource="[_:mAomrEdP10]"></span> or <span about="[_:mAomrEdP10]" typeof="rdf:Description"></span>
+  														<span about="[_:mAomrEdP10]" rel="rdf:first" href="http://purl.org/ontology/cco/core#CharacteristicDynamics"><a href="http://purl.org/ontology/cco/core#CharacteristicDynamics">cco:CharacteristicDynamics</a></span> <span about="[_:mAomrEdP10]" rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></span> </td></tr>
   			<tr><th>Sub property of</th>
  <td>  <span rel="rdfs:subPropertyOf" href="http://purl.org/NET/c4dm/event.owl#factor"><a href="http://purl.org/NET/c4dm/event.owl#factor">event:factor</a></span>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/cco/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
- <td>  </td></tr><tr><th colspan="2">Object Property</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#ObjectProperty"></span> </td></tr>
+ <td> <span rel="rdf:type" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"></span> </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#evidence">#</a>] <!-- evidence --> [<a href="#glance">back to top</a>]</p>
@@ -1176,7 +1343,7 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
   			
   			<p style="float: right; font-size: small;">[<a href="#habit">#</a>] <!-- habit --> [<a href="#glance">back to top</a>]</p>
   			<br/>
-  			</div><div class="specterm" id="not_interested_in" about="http://purl.org/ontology/cco/core#not_interested_in" typeof="rdf:Property">
+  			</div><div class="specterm" id="not_interested_in" about="http://purl.org/ontology/cco/core#not_interested_in" typeof="owl:ObjectProperty">
   			<h3>Property: cco:not_interested_in</h3> 
   			<em property="rdfs:label" >is not interested in</em> - <span property="rdfs:comment" >A link between an agent and a topic of no interest to them</span> <br /><table style="th { float: top; }">
   			<tr><th>Status:</th>
@@ -1189,8 +1356,8 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  </td></tr>
  <tr><td>  <span rel="rdfs:isDefinedBy" href="http://purl.org/ontology/cco/core#"></span>
  </td></tr><tr><th colspan="2">RDF Property</th>
- <td>  </td></tr><tr><th colspan="2">Object Property</th>
- <td> <span rel="rdf:type" href="http://www.w3.org/2002/07/owl#ObjectProperty"></span> </td></tr>
+ <td> <span rel="rdf:type" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"></span> </td></tr><tr><th colspan="2">Object Property</th>
+ <td>  </td></tr>
   			</table>
   			
   			<p style="float: right; font-size: small;">[<a href="#not_interested_in">#</a>] <!-- not_interested_in --> [<a href="#glance">back to top</a>]</p>
