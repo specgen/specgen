@@ -243,7 +243,31 @@ ex:SettingReification a prv:PropertyReification ;
 
   <h2 id="sec-for">What's the Property Reification Vocabulary for?</h2>
 
-  <p about="http://purl.org/ontology/prv/propertyreification.html">TODO</p>
+  <p about="http://purl.org/ontology/prv/propertyreification.html">The <em>Property Reification Vocabulary</em> should enable a reasoning engine to apply the following implication, which is 
+represented as <a rel="rdfs:seeAlso" href="http://www.w3.org/DesignIssues/Notation3"><em>N3</em></a> rule (see also <a rel="rdfs:seeAlso" 
+href="http://smiy.sourceforge.net/prv/rdf/property_reification_rule.n3">N3</a> for a downloadable representation of this rule):</p>
+
+<div class="example">
+<pre>
+@prefix prv: &lt;http://purl.org/ontology/prv/core#&gt; .
+&nbsp;
+{
+&nbsp;&nbsp;&nbsp;?pr a prv:PropertyReification ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prv:shortcut ?sc ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prv:reification_class ?rc ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prv:shortcut_property ?scp ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prv:subject_property ?sp ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prv:object_property ?op .
+&nbsp;
+&nbsp;&nbsp;&nbsp;?r a ?rc ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?scp ?sc ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?sp ?s ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?op ?o .
+}
+=>
+{ ?s ?sc ?o } .
+</pre>
+</div>
 
   <h2 id="sec-bg">Background</h2>
 
@@ -323,8 +347,8 @@ top of this document to the RDF/XML and RDF/N3 versions.</p>
  <td>  <a href="#reification_class">reification_class</a>
  <a href="#subject_property">subject_property</a>
  <a href="#object_property">object_property</a>
- <a href="#shortcut_property">shortcut_property</a>
  <a href="#shortcut">shortcut</a>
+ <a href="#shortcut_property">shortcut_property</a>
  </td></tr>
   			<tr><th>Sub class of</th>
  <td>  <span rel="rdfs:subClassOf" href="http://www.w3.org/2000/01/rdf-schema#Class"><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a></span>
