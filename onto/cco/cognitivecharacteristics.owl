@@ -29,7 +29,7 @@
     <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yan Wang</dc:creator>
     <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yi Zeng</dc:creator>
     <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zhisheng Huang</dc:creator>
-    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-09-16T10:39:52+01:00</dc:date>
+    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-09-26T12:16:52+01:00</dc:date>
     <dc:description xml:lang="en">A vocabulary for describing cognitive pattern within contexts, their temporal dynamics and their origins</dc:description>
     <dc:title xml:lang="en">Cognitive Characteristics Ontology</dc:title>
     <vann:preferredNamespacePrefix>cco</vann:preferredNamespacePrefix>
@@ -44,24 +44,24 @@
     <owl:imports rdf:resource="http://www.w3.org/2003/06/sw-vocab-status/ns"/>
     <owl:imports rdf:resource="http://www.w3.org/2006/time"/>
     <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.1</owl:versionInfo>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.2</owl:versionInfo>
   </owl:Ontology>
-  <rdfs:Class rdf:about="http://purl.org/ontology/cco/core#CharacteristicDynamics">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <owl:Class rdf:about="http://purl.org/ontology/cco/core#CharacteristicDynamics">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdfs:comment xml:lang="en">An event concept for describing dynamics of characteristics, e.g. weight changes, periods of interest.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/cco/core#"/>
     <rdfs:label xml:lang="en">Characteristic Dynamics</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://purl.org/ontology/wo/core#Weight"/>
     <status:term_status xml:lang="en">testing</status:term_status>
-  </rdfs:Class>
-  <owl:Class rdf:about="http://purl.org/ontology/cco/core#CognitiveCharacteristic">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </owl:Class>
+  <rdfs:Class rdf:about="http://purl.org/ontology/cco/core#CognitiveCharacteristic">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:comment xml:lang="en">A cognitive characteristic object, which also can have weightings and characteristic dynamics etc. for describing a cognitive pattern.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/cco/core#"/>
     <rdfs:label xml:lang="en">Cognitive Characteristic</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://purl.org/NET/scovo#Item"/>
     <status:term_status xml:lang="en">unstable</status:term_status>
-  </owl:Class>
+  </rdfs:Class>
   <scovo:Dimension rdf:about="http://purl.org/ontology/cco/core#ExplicitMining">
     <dc:description xml:lang="en">An explicitly mined cognitive pattern</dc:description>
     <dc:title xml:lang="en">Explicit Mining</dc:title>
@@ -74,8 +74,8 @@
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/cco/core#"/>
     <status:term_status xml:lang="en">testing</status:term_status>
   </scovo:Dimension>
-  <owl:ObjectProperty rdf:about="http://purl.org/ontology/cco/core#activity">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  <rdf:Property rdf:about="http://purl.org/ontology/cco/core#activity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:comment xml:lang="en">An activity, which is related to a topic of a cognitive charateristic description, e.g. if the topic is football a related activity can be playing or watching.</rdfs:comment>
     <rdfs:domain rdf:resource="http://purl.org/ontology/cco/core#CognitiveCharacteristic"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/cco/core#"/>
@@ -83,9 +83,9 @@
     <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#factor"/>
     <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/ao/core#activity"/>
     <status:term_status xml:lang="en">testing</status:term_status>
-  </owl:ObjectProperty>
-  <rdf:Property rdf:about="http://purl.org/ontology/cco/core#agent">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Property>
+  <owl:ObjectProperty rdf:about="http://purl.org/ontology/cco/core#agent">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment xml:lang="en">A link from a mined cognitive characteristic to the related person</rdfs:comment>
     <rdfs:domain rdf:resource="http://purl.org/ontology/cco/core#CognitiveCharacteristic"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/cco/core#"/>
@@ -93,9 +93,9 @@
     <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
     <owl:inverseOf rdf:resource="http://purl.org/ontology/cco/core#habit"/>
     <status:term_status xml:lang="en">testing</status:term_status>
-  </rdf:Property>
-  <owl:ObjectProperty rdf:about="http://purl.org/ontology/cco/core#appear_time">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </owl:ObjectProperty>
+  <rdf:Property rdf:about="http://purl.org/ontology/cco/core#appear_time">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:comment xml:lang="en">The time when the cognitive pattern appears in a certain kind of scenario.</rdfs:comment>
     <rdfs:domain>
       <owl:Class>
@@ -116,7 +116,7 @@
     <rdfs:label xml:lang="en">has appear time</rdfs:label>
     <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#time"/>
     <status:term_status xml:lang="en">testing</status:term_status>
-  </owl:ObjectProperty>
+  </rdf:Property>
   <rdf:Property rdf:about="http://purl.org/ontology/cco/core#attention_duration">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:comment xml:lang="en">An interval of attention for a cognitive pattern.</rdfs:comment>
@@ -128,16 +128,25 @@
     <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/scovo#dimension"/>
     <status:term_status xml:lang="en">testing</status:term_status>
   </rdf:Property>
-  <owl:ObjectProperty rdf:about="http://purl.org/ontology/cco/core#belief">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  <rdf:Property rdf:about="http://purl.org/ontology/cco/core#belief">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:comment xml:lang="en">An uncertain relation for competence representation. That means beliefs, persuasions or opinions, which can also be misconceptions.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/cco/core#"/>
     <rdfs:label xml:lang="en">has belief</rdfs:label>
     <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/cco/core#competence"/>
     <status:term_status xml:lang="en">testing</status:term_status>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://purl.org/ontology/cco/core#characteristic_dynamics">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://purl.org/ontology/cco/core#characteristic">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:comment xml:lang="en">Relates to the applied cognitive characteristic (property), e.g. competence, belief, expertise, skill, interest or setting.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/cco/core#CognitiveCharacteristic"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/cco/core#"/>
+    <rdfs:label xml:lang="en">has characteristic</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <status:term_status xml:lang="en">testing</status:term_status>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://purl.org/ontology/cco/core#characteristic_dynamics">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:comment xml:lang="en">To relate a cognitive characteristic to its temporal dynamics.</rdfs:comment>
     <rdfs:domain rdf:resource="http://purl.org/ontology/cco/core#CognitiveCharacteristic"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/cco/core#"/>
@@ -145,9 +154,9 @@
     <rdfs:range rdf:resource="http://purl.org/ontology/cco/core#CharacteristicDynamics"/>
     <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#sub_event"/>
     <status:term_status xml:lang="en">testing</status:term_status>
-  </owl:ObjectProperty>
-  <rdf:Property rdf:about="http://purl.org/ontology/cco/core#cognitive_characteristic">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Property>
+  <owl:ObjectProperty rdf:about="http://purl.org/ontology/cco/core#cognitive_characteristic">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment xml:lang="en">This is the super property to describe cognitive characteristics of the user of the cognitive pattern dimension, e.g. interests, skills, or expertise.</rdfs:comment>
     <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/cco/core#"/>
@@ -165,17 +174,17 @@
       </rdf:Description>
     </owl:propertyChainAxiom>
     <status:term_status xml:lang="en">testing</status:term_status>
-  </rdf:Property>
-  <owl:ObjectProperty rdf:about="http://purl.org/ontology/cco/core#competence">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </owl:ObjectProperty>
+  <rdf:Property rdf:about="http://purl.org/ontology/cco/core#competence">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:comment xml:lang="en">The competence to (be able to) do or know something. That means abilities, skills, knowledge, expertise, beliefs etc.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/cco/core#"/>
     <rdfs:label xml:lang="en">has competence</rdfs:label>
     <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/cco/core#cognitive_characteristic"/>
     <status:term_status xml:lang="en">testing</status:term_status>
-  </owl:ObjectProperty>
-  <rdf:Property rdf:about="http://purl.org/ontology/cco/core#evidence">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Property>
+  <owl:ObjectProperty rdf:about="http://purl.org/ontology/cco/core#evidence">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment xml:lang="en">A link between a context and evidence supporting the interpretation of habits in a context</rdfs:comment>
     <rdfs:domain>
       <owl:Class>
@@ -196,50 +205,50 @@
     <rdfs:label xml:lang="en">has evidence</rdfs:label>
     <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#factor"/>
     <status:term_status xml:lang="en">unstable</status:term_status>
-  </rdf:Property>
-  <owl:ObjectProperty rdf:about="http://purl.org/ontology/cco/core#expertise">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </owl:ObjectProperty>
+  <rdf:Property rdf:about="http://purl.org/ontology/cco/core#expertise">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:comment xml:lang="en">The knowledge or expertise in a certain domain or specific topic, e.g. football, programming languages or music.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/cco/core#"/>
     <rdfs:label xml:lang="en">has expertise</rdfs:label>
     <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/cco/core#competence"/>
     <status:term_status xml:lang="en">testing</status:term_status>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://purl.org/ontology/cco/core#habit">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://purl.org/ontology/cco/core#habit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:comment xml:lang="en">A link between an agent and a cognitive characteristic description</rdfs:comment>
     <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/cco/core#"/>
     <rdfs:label xml:lang="en">has habit</rdfs:label>
     <rdfs:range rdf:resource="http://purl.org/ontology/cco/core#CognitiveCharacteristic"/>
     <status:term_status xml:lang="en">unstable</status:term_status>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://purl.org/ontology/cco/core#interest">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://purl.org/ontology/cco/core#interest">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:comment xml:lang="en">This property relates a certain area of interest or preference to an agent. That means this agent likes this topic somehow.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/cco/core#"/>
     <rdfs:label xml:lang="en">has interest</rdfs:label>
     <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/cco/core#cognitive_characteristic"/>
     <owl:equivalentProperty rdf:resource="http://xmlns.com/foaf/0.1/topic_interest"/>
     <status:term_status xml:lang="en">testing</status:term_status>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://purl.org/ontology/cco/core#longest_duration">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://purl.org/ontology/cco/core#longest_duration">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:comment xml:lang="en">The longest continuous interval of attention for a cognitive pattern, e.g. for an interest, if it appears in the following years: 1990, 1991, 1995, 1996, 1997, 1998, 2001, then the longest duration is 4 years.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/cco/core#"/>
     <rdfs:label xml:lang="en">has longest duration</rdfs:label>
     <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/cco/core#attention_duration"/>
     <status:term_status xml:lang="en">testing</status:term_status>
-  </owl:ObjectProperty>
-  <rdf:Property rdf:about="http://purl.org/ontology/cco/core#not_interested_in">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Property>
+  <owl:ObjectProperty rdf:about="http://purl.org/ontology/cco/core#not_interested_in">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment xml:lang="en">A link between an agent and a topic of no interest to them</rdfs:comment>
     <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/cco/core#"/>
     <rdfs:label xml:lang="en">is not interested in</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <status:term_status xml:lang="en">unstable</status:term_status>
-  </rdf:Property>
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://purl.org/ontology/cco/core#overall_weight">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
@@ -251,33 +260,33 @@
     <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/wo/core#weight"/>
     <status:term_status xml:lang="en">testing</status:term_status>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://purl.org/ontology/cco/core#setting">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  <rdf:Property rdf:about="http://purl.org/ontology/cco/core#setting">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:comment xml:lang="en">A certain setting or preference. Often re. a specific environment, e.g. an application.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/cco/core#"/>
     <rdfs:label xml:lang="en">has setting</rdfs:label>
     <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/cco/core#cognitive_characteristic"/>
     <status:term_status xml:lang="en">testing</status:term_status>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://purl.org/ontology/cco/core#skill">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://purl.org/ontology/cco/core#skill">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:comment xml:lang="en">The ability or skill to (be able to) do something, e.g. to walk, to play the piano or to work in a team.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/cco/core#"/>
     <rdfs:label xml:lang="en">has skill</rdfs:label>
     <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/cco/core#competence"/>
     <status:term_status xml:lang="en">testing</status:term_status>
-  </owl:ObjectProperty>
-  <rdf:Property rdf:about="http://purl.org/ontology/cco/core#statistical_item">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Property>
+  <owl:ObjectProperty rdf:about="http://purl.org/ontology/cco/core#statistical_item">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment xml:lang="en">A link from a cognitive characteristic to statistics about itself</rdfs:comment>
     <rdfs:domain rdf:resource="http://purl.org/ontology/cco/core#CognitiveCharacteristic"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/cco/core#"/>
     <rdfs:label xml:lang="en">has statistical item</rdfs:label>
     <rdfs:range rdf:resource="http://purl.org/NET/scovo#Item"/>
     <status:term_status xml:lang="en">testing</status:term_status>
-  </rdf:Property>
-  <owl:ObjectProperty rdf:about="http://purl.org/ontology/cco/core#topic">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </owl:ObjectProperty>
+  <rdf:Property rdf:about="http://purl.org/ontology/cco/core#topic">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:comment xml:lang="en">A topic of the cognitive characteristic.</rdfs:comment>
     <rdfs:domain rdf:resource="http://purl.org/ontology/cco/core#CognitiveCharacteristic"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/cco/core#"/>
@@ -285,13 +294,13 @@
     <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/subject"/>
     <status:term_status xml:lang="en">unstable</status:term_status>
-  </owl:ObjectProperty>
-  <rdf:Property rdf:about="http://purl.org/ontology/cco/core#ultimative_duration">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Property>
+  <owl:ObjectProperty rdf:about="http://purl.org/ontology/cco/core#ultimative_duration">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:comment xml:lang="en">The overall duration of attention for a cognitive pattern, e.g. for an interest, if it appears in the following years: 1990, 1991, 1995, 1996, 1997, 1998, 2001, then the longest duration is 7 years.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/cco/core#"/>
     <rdfs:label xml:lang="en">has ultimative duration</rdfs:label>
     <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/cco/core#attention_duration"/>
     <status:term_status xml:lang="en">testing</status:term_status>
-  </rdf:Property>
+  </owl:ObjectProperty>
 </rdf:RDF>
