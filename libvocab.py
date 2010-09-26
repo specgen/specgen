@@ -300,6 +300,7 @@ class Vocab(object):
 					"http://purl.org/ontology/wi/core#"             : "wi",
 					"http://purl.org/ontology/wo/core#"             : "wo",
 					"http://purl.org/ontology/cco/core#"             : "cco",
+					"http://purl.org/ontology/prv/core#"             : "prv",
 					"http://purl.org/NET/scovo#"                    : "scovo"
 		}
 

@@ -24,10 +24,10 @@ version="XHTML+RDFa 1.0">
   <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
   <base href="http://purl.org/ontology/cco/cognitivecharacteristics.html" />
   <link href="http://smiy.sourceforge.net/css/xmlns-style.css" rel="stylesheet"  type="text/css" />
-  <link about="http://purl.org/ontology/cco/core#"  href="http://danbri.org/foaf.rdf#danbri" />
+  <link about="http://purl.org/ontology/cco/core#" typeof="owl:Ontology" rel="dc:creator" href="http://danbri.org/foaf.rdf#danbri" />
   <link about="http://purl.org/ontology/cco/core#" rel="dc:creator" href="http://semantictweet.com/der42#me" />
   <link about="http://purl.org/ontology/cco/core#" rel="dc:creator" href="http://swordfish.rdfweb.org/people/libby/rdfweb/webwho.xrdf#me" />
-  <link about="http://purl.org/ontology/cco/core# rel="dc:creator" href="http://tobyinkster.co.uk/#i" />
+  <link about="http://purl.org/ontology/cco/core#" rel="dc:creator" href="http://tobyinkster.co.uk/#i" />
   <link about="http://purl.org/ontology/cco/core#" rel="dc:creator" href="http://www.wici-lab.org/wici/~yizeng/" />
   <link about="http://purl.org/ontology/cco/core#" rel="dc:creator" href="http://wiki.larkc.eu/yanwang" />
   <link about="http://purl.org/ontology/cco/core#" rel="dc:creator" href="http://sheffield.academia.edu/DanicaDamljanovic" />
@@ -145,7 +145,7 @@ the Semantic Web. This document contains a RDFa description of the <em>Cognitive
 The <em>Cognitive Characteristics Ontology</em> is built on top of the <a rel="rdfs:seeAlso" href="http://purl.org/ontology/wi/weightedinterests.html"><em>Weighted Interests Vocabulary v0.5</em>
 </a> and should probably substitute this ontology in the near future. That means all concepts and properties are imported from this ontology. Some of them are also redefined and renamed to 
 broaden their meaning. Furthermore, the <em>Cognitive Characteristics Ontology</em> is inspired by the <em><a 
-rel="rdfs:seeAlso" href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.94.9261&rep=rep1&type=pdf">Unified User Context Model</a></em>, the <em><a rel="rdfs:seeAlso"
+rel="rdfs:seeAlso" href="http://bit.ly/9WiJ5g">Unified User Context Model</a></em>, the <em><a rel="rdfs:seeAlso"
 href="http://www.inf.unibz.it/~ricci/ATIS/papers/UM05_Gumo.pdf">General User Model Ontology</a></em>, the <em><a rel="rdfs:seeAlso" 
 href="http://www.media.mit.edu/~chaiwei/papers/usermodeling.pdf">User Modelling for Information Retrieval Language</a></em> and all their fundamental sources, and finally, the discussions on 
 the <em><a rel="rdfs:seeAlso" href="http://lists.foaf-project.org/mailman/listinfo/foaf-dev">FOAF developers mailing list</a></em>.<br/>
@@ -155,8 +155,8 @@ href="http://xmlns.notu.be/wi/"><em>Weighted Interest Vocabulary</em></a>, the <
 proper modeled now. The design of this interest ontology is also strongly influenced by the outcome of the <a rel="rdfs:seeAlso" 
 href="http://vocamp.org/wiki/HypiosVoCampParisMay2010#User_.28weighted.29_Interests_Ontology">User (weighted) Interests Ontology working group</a> from <a rel="rdfs:seeAlso" 
 href="http://vocamp.org/wiki/HypiosVoCampParisMay2010">Hypios VoCamp Paris 2010</a>.<br/> 
-The template of this specification is derived from the <a rel="rdfs:seeAlso" href="http://xmlns.com/foaf/spec/">FOAF Vocabulary Specification</a>, which was created by <a rel="rdfs:seeAlso" 
-href="http://danbri.org/">Dan Brickley</a> and <a rel="rdfs:seeAlso" href="http://nicecupoftea.org/">Libby Miller</a>, and the <a rel="rdfs:seeAlso" href="http://musicontology.com/">
+The template of this specification is derived from the <a rel="rdfs:seeAlso" href="http://xmlns.com/foaf/spec/">FOAF Vocabulary Specification</a>, which was created by <a 
+href="http://danbri.org/">Dan Brickley</a> and <a href="http://nicecupoftea.org/">Libby Miller</a>, and the <a rel="rdfs:seeAlso" href="http://musicontology.com/">
 Music Ontology Specification</a>, which was created by <a rel="rdfs:seeAlso" href="http://moustaki.org/">Yves Raimond</a>. It was modified and extended by Bob Ferris. Furthermore, a modified 
 and extended version of <a rel="rdfs:seeAlso" href="http://svn.foaf-project.org/foaftown/specgen/">Danbri's SpecGen version</a> was used to generate most of the RDFa statements of the 
 Cognitive Characteristics Ontology for this specification (see <a rel="rdfs:seeAlso" href="http://smiy.svn.sourceforge.net/viewvc/smiy/specgen/trunk/">here</a> for SpecGen version 6 by Bob Ferris).
@@ -256,7 +256,7 @@ href="http://smiy.sourceforge.net/cco/examples/N3/cco_-_preference_example.n3">N
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:scale ex:AScale 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:characteristic_dynamics ex:Working ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbspcco:activity &lt;http://dbpedia.org/resource/Listening&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:activity &lt;http://dbpedia.org/resource/Listening&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
 &nbsp;&nbsp;&nbsp;cco:habit [
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a cco:CognitiveCharacteristic ;
@@ -273,7 +273,7 @@ href="http://smiy.sourceforge.net/cco/examples/N3/cco_-_preference_example.n3">N
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:scale ex:AScale 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:characteristic_dynamics ex:Working ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbspcco:activity &lt;http://dbpedia.org/resource/Listening&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:activity &lt;http://dbpedia.org/resource/Listening&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] .
 &nbsp;
 ex:AScale a wo:Scale ;
@@ -915,8 +915,8 @@ football, programming languages or music</li>
 	<li><em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#belief">cco:belief</a></em>, an uncertain relation for competence representation, that means beliefs, 
 persuasions or opinions, which can also be misconceptions</li>
 </ul>
-<p about="http://purl.org/ontology/cco/cognitivecharacteristics.html">Dynamics of a <em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CognitiveCharacteristic">cco:CognitiveCharacteristic</a></em> instance can be described with help of 
-the <em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CharacteristicDynamics">cco:CharacteristicDynamics</a></em> concept, which is a sub class of <a rel="rdfs:seeAlso" 
+<p>Dynamics of a <em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CognitiveCharacteristic">cco:CognitiveCharacteristic</a></em> instance can be described with help of 
+the <em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CharacteristicDynamics">cco:CharacteristicDynamics</a></em> concept, which is a sub class of <a 
 href="http://purl.org/ontology/wo/weightingontology.html#Weight"><em>wo:Weight</em></a>, and can be related by using the property <em><a 
 href="http://purl.org/ontology/cco/cognitivecharacteristics.html#characteristic_dynamics">cco:characteristic_dynamics</a></em> to it. Besides concrete appear times (time instants or intervals, 
 by using the property <em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#appear_time">cco:appear_time</a></em>), when a cognitive pattern gets attetion by someone, one can 
@@ -1035,7 +1035,7 @@ Note that this mechanism is itself somewhat experimental and evolvin. The defini
 
   <p>I would like to thank very much the creators of the different interest ontologies, where this multiple purpose cognitive charateristics ontology is based on. That means, Dan Brickley, 
 Dave Reynolds, Libby Miller, Toby Inkster, Yi Zeng, Yan Wang, Danica Damljanovic, Zhisheng Huang, Alexandre Passant, Sheila Kinsella and John Breslin. Furthermore, the creators of the 
-<em><a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.94.9261&rep=rep1&type=pdf">Unified User Context Model</a></em>, of the <em><a 
+<em><a href="http://bit.ly/9WiJ5g">Unified User Context Model</a></em>, of the <em><a 
 href="http://www.inf.unibz.it/~ricci/ATIS/papers/UM05_Gumo.pdf">General User Model Ontology</a></em>, of the <em><a href="http://www.media.mit.edu/~chaiwei/papers/usermodeling.pdf">User 
 Modelling for Information Retrieval Language</a></em> and all their fundamental sources, and finally, the people from the <em><a href="http://lists.foaf-project.org/mailman/listinfo/foaf-dev">
 FOAF developers mailing list</a></em>, especially Nima Dokoohaki.</p>
