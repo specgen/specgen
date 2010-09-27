@@ -160,7 +160,7 @@ Property Reification Vocabulary for this specification (see <a rel="rdfs:seeAlso
   <a id="sec-glance"></a>
   <h2 id="glance">The Property Reification Vocabulary at a glance</h2>
 
-<p>The <a href="http://purl.org/ontology/prv/propertyreification.html#cognitive_characteristic"><em>prv:PropertyReification</em></a> concept as graph with relations:</p>
+<p>The <a href="http://purl.org/ontology/prv/propertyreification.html#PropertyReification"><em>prv:PropertyReification</em></a> concept as graph with relations:</p>
 <div about="http://purl.org/ontology/prv/core#" rel="rdfs:seeAlso">
 <img src="http://smiy.sourceforge.net/prv/gfx/prv_-_property_reification.gif" title="The property reification concept as graph with relations" alt="The property reification as graph with 
 relations" /></div>
@@ -181,7 +181,7 @@ relations" /></div>
   <h3 id="sec-cco-example">Cognitive Characteristics Ontology Example</h3>
 
    <p about="http://purl.org/ontology/prv/propertyreification.html">RDF/Turtle representation of a property reification example of the <a rel="rdfs:seeAlso" 
-href="http://purl.org/ontology/cco/cognitivecharacteristics.html#topic"><em>Cognitive Characteristics Ontology</em></a> created with help of the <em>Property Reification Vocabulary</em> (see 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html"><em>Cognitive Characteristics Ontology</em></a> created with help of the <em>Property Reification Vocabulary</em> (see 
 also <a rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/prv/examples/RDF/prv_-_cco_example.rdf">RDF</a> and <a rel="rdfs:seeAlso" 
 href="http://smiy.sourceforge.net/prv/examples/N3/prv_-_cco_example.n3">N3</a> for downloadable representations of this example):</p>
 
@@ -238,9 +238,10 @@ ex:SettingReification a prv:PropertyReification ;
 
   <h2 id="sec-for">What's the Property Reification Vocabulary for?</h2>
 
-  <p about="http://purl.org/ontology/prv/propertyreification.html">The <em>Property Reification Vocabulary</em> should enable a reasoning engine to apply the following implication, which is 
-represented as <a rel="rdfs:seeAlso" href="http://www.w3.org/DesignIssues/Notation3"><em>N3</em></a> rule (see also <a rel="rdfs:seeAlso" 
-href="http://smiy.sourceforge.net/prv/rdf/property_reification_rule.n3">N3</a> for a downloadable representation of this rule):</p>
+  <p about="http://purl.org/ontology/prv/propertyreification.html">The <em>Property Reification Vocabulary</em> should enable a reasoning engine to apply the following implications, which are 
+represented as <a rel="rdfs:seeAlso" href="http://www.w3.org/DesignIssues/Notation3"><em>N3</em></a> rules (see also <a rel="rdfs:seeAlso" 
+href="http://smiy.sourceforge.net/prv/rdf/property_reification_rule.n3">property reification rule</a> and <a rel="rdfs:seeAlso" 
+href="http://smiy.sourceforge.net/prv/rdf/shortcut_relation_rule.n3">shortcut relation rule</a> for downloadable representations of these rules):</p>
 
 <div class="example">
 <pre>
@@ -263,6 +264,78 @@ href="http://smiy.sourceforge.net/prv/rdf/property_reification_rule.n3">N3</a> f
 { ?s ?sc ?o } .
 </pre>
 </div>
+
+<p>That means, if a <a href="http://purl.org/ontology/prv/propertyreification.html#PropertyReification"><em>prv:PropertyReification</em></a> instance <strong>?pr</strong> exists, which 
+includes</p>
+<ul>
+    <li>the <strong>shortcut relation</strong> property <strong>?sc</strong> (associated by <a href="http://purl.org/ontology/prv/propertyreification.html#shortcut"><em>prv:shortcut</em></a>), </li>
+    <li>and an instance of a <em>reification class</em> <strong>?rc</strong> (associated by <a 
+    href="http://purl.org/ontology/prv/propertyreification.html#reification_class"><em>prv:reification_class</em></a> of the <a 
+    href="http://purl.org/ontology/prv/propertyreification.html#PropertyReification"><em>prv:PropertyReification</em></a> instance <strong>?pr</strong>) exists, where
+        <ul>
+            <li>the <strong>shortcut relation</strong> <em>prediate</em> <strong>?sc</strong> is associated by the definied <em>shortcut property</em> <strong>?scp</strong> (associated by <a 
+            href="http://purl.org/ontology/prv/propertyreification.html#shortcut_property"><em>prv:shortcut_property</em></a> of the <a 
+            href="http://purl.org/ontology/prv/propertyreification.html#PropertyReification"><em>prv:PropertyReification</em></a> instance <strong>?pr</strong>), </li>
+            <li>the <strong>shortcut relation</strong> <em>subject</em> <strong>?s</strong> is associated by the defined <em>subject property</em> <strong>?sp</strong> (associated by <a 
+            href="http://purl.org/ontology/prv/propertyreification.html#subject_property"><em>prv:subject_property</em></a> of the <a 
+            href="http://purl.org/ontology/prv/propertyreification.html#PropertyReification"><em>prv:PropertyReification</em></a> instance <strong>?pr</strong>) and</li>
+            <li>the <strong>shortcut relation</strong> <em>object</em> <strong>?o</strong> is associated by the defined <em>object property</em> <strong>?op</strong> (associated by <a 
+            href="http://purl.org/ontology/prv/propertyreification.html#object_property"><em>prv:object_property</em></a> of the <a 
+            href="http://purl.org/ontology/prv/propertyreification.html#PropertyReification"><em>prv:PropertyReification</em></a> instance <strong>?pr</strong>), </li>
+        </ul>
+    </li>
+</ul>
+<p>then a <strong>shortcut relation</strong> can be constructed, which has</p>
+<ul>
+    <li>as its <em>subject</em> the particular <strong>?s</strong>,</li>
+    <li> as its <em>predicate</em> the property <strong>?sc</strong> and </li>
+    <li> as its <em>object</em> the particular <strong>?o</strong>.</li>
+</ul>
+
+<div class="example">
+<pre>
+@prefix prv: &lt;http://purl.org/ontology/prv/core#&gt; .
+&nbsp;
+{ 
+&nbsp;&nbsp;&nbsp;?s ?sc ?o .
+
+&nbsp;&nbsp;&nbsp;?pr a prv:PropertyReification ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prv:shortcut ?sc ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prv:reification_class ?rc ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prv:shortcut_property ?scp ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prv:subject_property ?sp ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prv:object_property ?op .
+}
+=>
+{
+&nbsp;&nbsp;&nbsp;?r a ?rc ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?scp ?sc ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?sp ?s ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?op ?o .
+} .
+</pre>
+</div>
+
+<p>That means, if a <strong>shortcut relation</strong> exists, which has</p>
+<ul>
+    <li>as its <em>subject</em> the particular <strong>?s</strong>,</li>
+    <li> as its <em>predicate</em> the property <strong>?sc</strong> and </li>
+    <li> as its <em>object</em> the particular <strong>?o</strong>,</li>
+</ul>
+<p>and a <a href="http://purl.org/ontology/prv/propertyreification.html#PropertyReification"><em>prv:PropertyReification</em></a> instance <strong>?pr</strong> exists, which relates</p>
+<ul>
+    <li>the <strong>shortcut relation</strong> property <strong>?sc</strong> (associated by <a href="http://purl.org/ontology/prv/propertyreification.html#shortcut"><em>prv:shortcut</em></a>), </li>
+    <li>the <em>reification class</em> <strong>?rc</strong> (associated by <a href="http://purl.org/ontology/prv/propertyreification.html#reification_class"><em>prv:reification_class</em></a></li>
+    <li>the <em>shortcut property</em> <strong>?scp</strong> (associated by <a href="http://purl.org/ontology/prv/propertyreification.html#shortcut_property"><em>prv:shortcut_property</em></a>), </li>
+    <li>the <em>subject property</em> <strong>?sp</strong> (associated by <a href="http://purl.org/ontology/prv/propertyreification.html#subject_property"><em>prv:subject_property</em></a>) and </li>
+    <li>the <em>object property</em> <strong>?op</strong> (associated by <a href="http://purl.org/ontology/prv/propertyreification.html#object_property"><em>prv:object_property</em></a>, </li>
+</ul>
+<p>then an instance <strong>?r</strong> of a <em>reification class</em> <strong>?rc</strong> can be constructed, which relates</p>
+<ul>
+    <li>the <strong>shortcut relation</strong> <em>prediate</em> <strong>?sc</strong> (associated by the definied <em>shortcut property</em> <strong>?scp</strong>), </li>
+    <li>the <strong>shortcut relation</strong> <em>subject</em> <strong>?s</strong> (associated by the defined <em>subject property</em> <strong>?sp</strong>) and</li>
+    <li>the <strong>shortcut relation</strong> <em>object</em> <strong>?o</strong> (associated by the defined  <em>object property</em> <strong>?op</strong>).</li>
+</ul>
 
   <h2 id="sec-bg">Background</h2>
 
