@@ -192,12 +192,17 @@ Cognitive Characteristics Ontology for this specification (see <a rel="rdfs:seeA
   <h2 id="glance">The Cognitive Characteristics Ontology at a glance</h2>
 
 <p>The <a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#cognitive_characteristic"><em>cco:cognitive_characteristic</em></a> property as graph with relations:</p>
-<div about="http://purl.org/ontology/cco/core#" rel="rdfs:seeAlso">
+<div id="cognitivecharacteristicproperty" about="http://purl.org/ontology/cco/core#" rel="rdfs:seeAlso">
 <img src="http://smiy.sourceforge.net/cco/gfx/cco_-_cognitive_characteristic.gif" title="The cognitive characteristic property as graph with relations" alt="The cognitive characteristic 
 property as graph with relations" /></div>
 
+<p>The <a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CognitiveCharacteristic"><em>cco:CognitiveCharacteristic</em></a> concept as simplified graph with relations:</p>
+<div id="cognitivecharacteristicconceptsimplified" about="http://purl.org/ontology/cco/core#" rel="rdfs:seeAlso">
+<img src="http://smiy.sourceforge.net/cco/gfx/cco_-_cognitive_characteristic_concept.png" title="The cognitive characteristic concept as simplified graph with relations" alt="The cognitive 
+characteristic concept as simplified graph with relations" /></div>
+
 <p>The <a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CognitiveCharacteristic"><em>cco:CognitiveCharacteristic</em></a> concept as graph with relations:</p>
-<div about="http://purl.org/ontology/cco/core#" rel="rdfs:seeAlso">
+<div id="cognitivecharacteristicconcept" about="http://purl.org/ontology/cco/core#" rel="rdfs:seeAlso">
 <img src="http://smiy.sourceforge.net/cco/gfx/cco_-_cognitive_characteristic_concept.gif" title="The cognitive characteristic concept as graph with relations" alt="The cognitive characteristic 
 concept as graph with relations" /></div>
 
@@ -307,7 +312,7 @@ href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CognitiveCharac
 The topics of the weights are both a <a href="http://www.bbc.co.uk/"><em>BBC</em></a> radio program. Every weight is modeled as a <a rel="rdfs:seeAlso" 
 href="http://purl.org/ontology/wo/weightingontology.html#Weight"><em>wo:Weight</em></a> instance, which consists here of the weight value (<a rel="rdfs:seeAlso" 
 href="http://purl.org/ontology/wo/weightingontology.html#weight_value"><em>wo:weight_value</em></a>) and a link to a scale description (<a rel="rdfs:seeAlso" 
-href="http://purl.org/ontology/wo/weightingontology.html#Scale"><em>wo:Scale</em></a>). A <a href="http://purl.org/ontology/wo/weightingontology.html#Scale"><em>wo:Scale</em></a> instance 
+href="http://purl.org/ontology/wo/weightingontology.html#scale"><em>wo:scale</em></a>). A <a rel="rdfs:seeAlso" href="http://purl.org/ontology/wo/weightingontology.html#Scale"><em>wo:Scale</em></a> instance 
 describes the range (<a rel="rdfs:seeAlso" href="http://purl.org/ontology/wo/weightingontology.html#min_weight"><em>wo:min_weight</em></a> and <a rel="rdfs:seeAlso"
 href="http://purl.org/ontology/wo/weightingontology.html#max_weight"><em>wo:max_weight</em></a>) for the groups of weights, which are linked to it, and furthermore, the step size (<a 
 rel="rdfs:seeAlso" href="http://purl.org/ontology/wo/weightingontology.html#step_size"><em>wo:step_size</em></a>), which is possible in this range. <br/>
@@ -687,13 +692,13 @@ ex:APerson
 &nbsp;&nbsp;&nbsp;cco:skill &lt;http://dbpedia.org/resource/Piano&gt; ;
 &nbsp;&nbsp;&nbsp;cco:skill &lt;http://dbpedia.org/resource/Vocal&gt; ;
 &nbsp;&nbsp;&nbsp;cco:expertise &lt;http://dbpedia.org/resource/Music&gt; ;
-&nbsp;&nbsp;&nbsp;cco:interest &lt;http://dbpedia.org/page/Category:Classical_music&gt; ;
-&nbsp;&nbsp;&nbsp;cco:interest &lt;http://dbpedia.org/page/Category:Blues&gt; ;
-&nbsp;&nbsp;&nbsp;cco:interest &lt;http://dbpedia.org/page/Category:Pop_music&gt; ;
-&nbsp;&nbsp;&nbsp;cco:interest &lt;http://dbpedia.org/page/Category:Rock_music&gt; ;
+&nbsp;&nbsp;&nbsp;cco:interest &lt;http://dbpedia.org/resource/Category:Classical_music&gt; ;
+&nbsp;&nbsp;&nbsp;cco:interest &lt;http://dbpedia.org/resource/Category:Blues&gt; ;
+&nbsp;&nbsp;&nbsp;cco:interest &lt;http://dbpedia.org/resource/Category:Pop_music&gt; ;
+&nbsp;&nbsp;&nbsp;cco:interest &lt;http://dbpedia.org/resource/Category:Rock_music&gt; ;
 &nbsp;&nbsp;&nbsp;cco:interest &lt;http://dbpedia.org/resource/Wolfgang_Amadeus_Mozart&gt; ;
 &nbsp;&nbsp;&nbsp;cco:interest &lt;http://dbpedia.org/resource/The_Beatles&gt; ;
-&nbsp;&nbsp;&nbsp;cco:interest  &lt;http://dbtune.org/musicbrainz/page/signal/8aefa373-2858-4643-b691-cad4ac7c971a&gt; ;
+&nbsp;&nbsp;&nbsp;cco:interest  &lt;http://dbtune.org/musicbrainz/resource/signal/8aefa373-2858-4643-b691-cad4ac7c971a&gt; ;
 &nbsp;&nbsp;&nbsp;cco:interest ex:IdiosyncraticGenre1 ;
 &nbsp;&nbsp;&nbsp;cco:interest ex:IdiosyncraticGenre2 ;
 &nbsp;&nbsp;&nbsp;cco:habit [
@@ -730,7 +735,7 @@ ex:APerson
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
 &nbsp;&nbsp;&nbsp;cco:habit [
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a cco:CognitiveCharacteristic ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:topic &lt;http://dbpedia.org/page/Category:Classical_music&gt; ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:topic &lt;http://dbpedia.org/resource/Category:Classical_music&gt; ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:characteristic cco:interest ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight [ 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wo:Weight ;
@@ -740,7 +745,7 @@ ex:APerson
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
 &nbsp;&nbsp;&nbsp;cco:habit [
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a cco:CognitiveCharacteristic ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:topic &lt;http://dbpedia.org/page/Category:Blues&gt; ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:topic &lt;http://dbpedia.org/resource/Category:Blues&gt; ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:characteristic cco:interest ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight [ 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wo:Weight ;
@@ -750,7 +755,7 @@ ex:APerson
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
 &nbsp;&nbsp;&nbsp;cco:habit [
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a cco:CognitiveCharacteristic ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:topic &lt;http://dbpedia.org/page/Category:Pop_music&gt; ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:topic &lt;http://dbpedia.org/resource/Category:Pop_music&gt; ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:characteristic cco:interest ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight [ 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wo:Weight ;
@@ -760,7 +765,7 @@ ex:APerson
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ;
 &nbsp;&nbsp;&nbsp;cco:habit [
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a cco:CognitiveCharacteristic ;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:topic &lt;http://dbpedia.org/page/Category:Rock_music&gt; ;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:topic &lt;http://dbpedia.org/resource/Category:Rock_music&gt; ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cco:characteristic cco:interest ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wo:weight [ 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a wo:Weight ;
@@ -805,7 +810,7 @@ ex:tempo
 ex:IdiosyncraticGenre1
 &nbsp;&nbsp;&nbsp;a sim:Association ;
 &nbsp;&nbsp;&nbsp;dc:title "happy music" ;
-&nbsp;&nbsp;&nbsp;ao:genre &lt;http://dbpedia.org/page/Category:Pop_music&gt; ;
+&nbsp;&nbsp;&nbsp;ao:genre &lt;http://dbpedia.org/resource/Category:Pop_music&gt; ;
 &nbsp;&nbsp;&nbsp;ex:tempo "allegro" ;
 &nbsp;&nbsp;&nbsp;ao:mood "happy" .
 &nbsp;
@@ -821,7 +826,36 @@ ex:AScale a wo:Scale ;
 </pre>
   </div>
 
-  <p>TODO</p>
+  <p about="http://purl.org/ontology/cco/cognitivecharacteristics.html">This example shows a part of a user profile as it can be taken from a user account of a <em>personal music knowledge base</em>. The user profile is from the person John White, who can 
+<a rel="rdfs:seeAlso" href="http://sw.opencyc.org/concept/Mx4rvVjUJ5wpEbGdrcN5Y29ycA">play</a> the <a rel="rdfs:seeAlso" href="http://dbpedia.org/resource/Piano">piano</a> and <a 
+rel="rdfs:seeAlso" href="http://dbpedia.org/resource/Category:Singing">sing</a> by having no education in <a rel="rdfs:seeAlso" href="http://dbpedia.org/resource/Music">music</a>. Furthermore, 
+he is interested in several music genres, the music artist <a rel="rdfs:seeAlso" href="http://dbpedia.org/resource/Wolfgang_Amadeus_Mozart">Wolfgang Amadeus Mozart</a>, the music group the <a 
+rel="rdfs:seeAlso" href="http://dbpedia.org/resource/The_Beatles">Beatles</a>, the music song <a rel="rdfs:seeAlso" 
+href="http://dbtune.org/musicbrainz/resource/signal/8aefa373-2858-4643-b691-cad4ac7c971a">"Yesterday"</a> from the <a href="http://dbpedia.org/resource/The_Beatles">Beatles</a> and some 
+self-defined idiosyncratic music genres.<br/>
+At the beginning, all cognitive patterns of this user are described by simple semantic relations, which are sub properties of <em><a 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#cognitive_characteristic">cco:cognitive_characteristic</a></em>. Thereby, the most of the topics of the cognitive 
+characteristic relations are information resources from the information service <a href="http://dbpedia.org/"><em>DBPedia</em></a> and one topic is a information resource from <a 
+rel="rdfs:seeAlso" href="http://dbtune.org/"><em>DBTune</em></a>. Afterwards, some of these "shortcut relations" are described more in detail with help of <em><a 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CognitiveCharacteristic">cco:CognitiveCharacteristic</a></em> instances.<br/>
+Each of these cognitive characteristic descriptions is related to a weighting with a different weight value (related by <a 
+href="http://purl.org/ontology/wo/weightingontology.html#weight_value"><em>wo:weight_value</em></a>) and the same scale (related by <a 
+href="http://purl.org/ontology/wo/weightingontology.html#scale"><em>wo:scale</em></a>). Due to these weightings, we can conclude that John White can <a 
+href="http://dbpedia.org/resource/Category:Singing">sing</a> and <a href="http://sw.opencyc.org/concept/Mx4rvVjUJ5wpEbGdrcN5Y29ycA">play</a> the <a 
+href="http://dbpedia.org/resource/Piano">piano</a> quite good. However, he has no knowledge in <a href="http://dbpedia.org/resource/Music">musical foundations</a>. Furthermore, a <em><a 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CognitiveCharacteristic">cco:CognitiveCharacteristic</a></em> instance is associated with a topic (by <em><a 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#topic">cco:topic</a></em>) of a "shortcut relation" and 
+a property (by <em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#characteristic">cco:characteristic</a></em>) of such a relation. Besides these information some of them are also related with an activity (associated by <em><a 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#activity">cco:activity</a></em>), which are information resources from <a rel="rdfs:seeAlso" 
+href="http://opencyc.org/"><em>OpenCyc</em></a> (<a href="http://sw.opencyc.org/concept/Mx4rvVjUJ5wpEbGdrcN5Y29ycA">playing a musical instrument</a>) or <a 
+href="http://dbpedia.org/"><em>DBPedia</em></a> (<a href="http://dbpedia.org/resource/Category:Singing">singing</a>).<br/>
+This user profile example includes especially detailed descriptions of John White's interest in specific music genres. Thereby, we can conclude (besides other things) that he is a big fan of 
+<a rel="rdfs:seeAlso" href="ttp://dbpedia.org/resource/Category:Blues"><em>Blues</em></a> and <a rel="rdfs:seeAlso" href="http://dbpedia.org/resource/Category:Rock_music"><em>Rock</em></a> 
+music and quite interested in romantic music (<em>ex:IdiosyncraticGenre2</em>). The last music genre is defined as <em>music context</em>, which he prefers weekdays (represented by 
+<a rel="rdfs:seeAlso" href="http://ontologi.es/days#WeekdaysInterval"><em>days:WeekdayInterval</em></a>) at "bedtime" (ca. 11 pm). This idiosyncratic genre is itself defined as a 
+<a rel="rdfs:seeAlso" href="http://purl.org/ontology/similarity/Association"><em>sim:Association</em></a> instance, which is titled as "romantic music" and should be very slow (<a 
+rel="rdfs:seeAlso" href="http://en.wikipedia.org/wiki/Tempo#Basic_tempo_markings"><em>largo</em></a>, associated by <em>ex:tempo</em> as sub property of <a rel="rdfs:seeAlso" 
+href="http://purl.org/ontology/ao/associationontology.html#context"><em>ao:context</em></a>).</p>
 
   <h3 id="sec-soccer-example">Soccer Example</h3>
 
@@ -892,50 +926,83 @@ ex:AScale a wo:Scale ;
 
   <h2 id="sec-for">What's the Cognitive Characteristics Ontology for?</h2>
 
-  <p about="http://purl.org/ontology/cco/cognitivecharacteristics.html">The <em>Cognitive Characteristics Ontology</em> includes a general multiple purpose cognitive characteristic concept to 
-describe cognitive patterns more in detail for a specific user or user group. This concept can be used to associate any <a rel="rdfs:seeAlso" href="http://xmlns.com/foaf/spec/#term_Agent">
-<em>foaf:Agent</em></a> instance to a <em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CognitiveCharacteristic">cco:CognitiveCharacteristic</a></em> instance(s) with help 
-the properties <em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#habit">cco:habit</a></em> and <em><a 
-href="http://purl.org/ontology/cco/cognitivecharacteristics.html#agent">cco:agent</a></em>. It represents an <em>object-oriented context reification</em> of its related property <em><a 
-href="http://purl.org/ontology/cco/cognitivecharacteristics.html#cognitive_characteristic">cco:cognitive_characteristic</a></em>, which can easily be associated with a topic of a specific 
-cognitive pattern, e.g. an interest (<em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#interest">cco:interest</a></em>, which is equivalent to <a rel="rdfs:seeAlso" 
-href="http://xmlns.com/foaf/spec/#term_topic_interest"><em>foaf:topic_interest</em></a>), a compentence (<em><a 
-href="http://purl.org/ontology/cco/cognitivecharacteristics.html#competence">cco:competence</a></em>) or a setting (<em><a 
-href="http://purl.org/ontology/cco/cognitivecharacteristics.html#setting">cco:setting</a></em>), to an user or an user group. The topics of a <em><a 
-href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CognitiveCharacteristic">cco:CognitiveCharacteristic</a></em> instance are related to it by using the property <em><a 
-href="http://purl.org/ontology/cco/cognitivecharacteristics.html#topic">cco:topic</a></em>, so that a property chain of <em><a 
-href="http://purl.org/ontology/cco/cognitivecharacteristics.html#habit">cco:habit</a></em> and <em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#topic">cco:topic</a></em> 
-will also direct to topics of a cognitive pattern of an user or user group. To be a bit more concrete re. a competence association, one can use the sub properties of <em><a 
+  <p>The <em>Cognitive Characteristics Ontology</em> includes two opportunities to model cognitive patterns. The first one 
+is the representation of cognitive characteristics by using the semantic relation <em><a 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#cognitive_characteristic">cco:cognitive_characteristic</a></em> or better its more specialised sub properties (see graphic 
+<a href="#cognitivecharacteristicproperty"><em>cco:cognitive_characteristic</em> property as graph with relations</a>) to associate the topics of the cognitive patterns to the users. The 
+second opportunity is the <em>object-oriented context reification</em> of <em><a 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#cognitive_characteristic">cco:cognitive_characteristic</a></em>, <em><a 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CognitiveCharacteristic">cco:CognitiveCharacteristic</a></em>, which is a general multiple purpose cognitive characteristic 
+concept to describe cognitive patterns more in detail for a specific user or user group. <br/>
+As one can see in graphic <a href="#cognitivecharacteristicconcept"><em>cco:CognitiveCharacteristic</em> concept as graph with relations</a>, the specialised sub properties of 
+<em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#cognitive_characteristic">cco:cognitive_characteristic</a></em>, the cognitive patterns, currently are</p>
+<ul about="http://purl.org/ontology/cco/cognitivecharacteristics.html">
+    <li>interest (<em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#interest">cco:interest</a></em>), that means, a certain area of interest or preference, which is 
+equivalent to <a rel="rdfs:seeAlso" href="http://xmlns.com/foaf/spec/#term_topic_interest"><em>foaf:topic_interest</em></a>,</li>
+    <li>compentence (<em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#competence">cco:competence</a></em>), that means, the compentence to (be able to) do or know 
+something or</li>
+    <li>setting (<em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#setting">cco:setting</a></em>), often regarding a specific environment, e.g. an application.</li>
+</ul> 
+<p>
+One can also refine the semantic relation of a competence association by using the sub properties of <em><a 
 href="http://purl.org/ontology/cco/cognitivecharacteristics.html#competence">cco:competence</a></em>, which are currently:</p>
 <ul>
-	<li><em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#skill">cco:skill</a></em> - the ability or skill to (be able to) do something, e.g. to walk, to play the piano 
+    <li><em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#skill">cco:skill</a></em>: the ability or skill to (be able to) do something, e.g. to walk, to play the piano 
 or to work in a team</li>
-	<li><em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#expertise">cco:expertise</a></em> - the knowledge or expertise in a certain domain or a specific topic, e.g. 
+    <li><em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#expertise">cco:expertise</a></em>: the knowledge or expertise in a certain domain or a specific topic, e.g. 
 football, programming languages or music</li>
-	<li><em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#belief">cco:belief</a></em>, an uncertain relation for competence representation, that means beliefs, 
+    <li><em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#belief">cco:belief</a></em>: an uncertain relation for competence representation, that means beliefs, 
 persuasions or opinions, which can also be misconceptions</li>
 </ul>
-<p>Dynamics of a <em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CognitiveCharacteristic">cco:CognitiveCharacteristic</a></em> instance can be described with help of 
-the <em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CharacteristicDynamics">cco:CharacteristicDynamics</a></em> concept, which is a sub class of <a 
-href="http://purl.org/ontology/wo/weightingontology.html#Weight"><em>wo:Weight</em></a>, and can be related by using the property <em><a 
-href="http://purl.org/ontology/cco/cognitivecharacteristics.html#characteristic_dynamics">cco:characteristic_dynamics</a></em> to it. Besides concrete appear times (time instants or intervals, 
-by using the property <em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#appear_time">cco:appear_time</a></em>), when a cognitive pattern gets attetion by someone, one can 
-also relate an evidence description (by using the property <em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#evidence">cco:evidence</a></em>), where this characteristic or 
-dynamic was derived from, to a <em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CognitiveCharacteristic">cco:CognitiveCharacteristic</a></em> or <em><a 
-href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CharacteristicDynamics">cco:CharacteristicDynamics</a></em> instance.<br/>
+<p about="http://purl.org/ontology/cco/cognitivecharacteristics.html">
+One can see the second opportunity to model cognitive patterns, <em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CognitiveCharacteristic">cco:CognitiveCharacteristic</a></em>
+in graphic <a href="#cognitivecharacteristicconceptsimplified"><em>cco:CognitiveCharacteristic</em> concept as simplified graph with relations</a>. This concept can be used to associate 
+any <a rel="rdfs:seeAlso" href="http://xmlns.com/foaf/spec/#term_Agent"><em>foaf:Agent</em></a> instance to (a) <em><a 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CognitiveCharacteristic">cco:CognitiveCharacteristic</a></em> instance(s) with help of the properties <em><a 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#habit">cco:habit</a></em> and <em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#agent">cco:agent</a></em>. 
+The topics of a <em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CognitiveCharacteristic">cco:CognitiveCharacteristic</a></em> instance are related to it by using the 
+property <em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#topic">cco:topic</a></em>, so that a property chain of <em><a 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#habit">cco:habit</a></em> and <em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#topic">cco:topic</a></em> 
+will also direct to topics of a cognitive pattern of an user or user group. That means, a statement that is modelled with the simple semantic relation approach based on
+<em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#cognitive_characteristic">cco:cognitive_characteristic</a></em> can also be represented by an instance of <em><a 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CognitiveCharacteristic">cco:CognitiveCharacteristic</a></em>,
+which has a <em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#agent">cco:agent</a></em> or <em><a 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#habit">cco:habit</a></em>, a <em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#topic">cco:topic</a></em> 
+and a <em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#characteristic">cco:characteristic</a></em> relation.
+The last property in this row is used to associate the applied cognitive pattern relation (sub properties of <em><a 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#cognitive_characteristic">cco:cognitive_characteristic</a></em>).<br/>
 Different statistics can be made on cognitive characteristics. These are currently:</p>
 <ul>
-<li><em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#overall_weight">cco:overall_weight</a></em>, which reflects the overall interest in a topic and should be different 
-from the actual weight of a cognitive characteristic</li>
-<li><em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#longest_duration">cco:longest_duration</a></em>, which is the longest continuous interval of attention for a 
+    <li><em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#overall_weight">cco:overall_weight</a></em>, which reflects the overall interest in a topic and should be 
+different from the actual weight (associated by the property <a href="http://purl.org/ontology/wo/weightingontology.html#weight"><em>wo:weight</em></a>) of a cognitive characteristic</li>
+    <li><em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#longest_duration">cco:longest_duration</a></em>, which is the longest continuous interval of attention for a 
 cognitive pattern, e.g. for an interest, if it appears in the following years: 1990, 1991, 1995, 1996, 1997, 1998, 2001, then the longest duration is 4 years</li>
-<li><em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#ultimative_duration">cco:ultimative_duration</a></em>, which is the overall duration of attention for a cognitive 
-pattern, e.g. for an interest, if it appears in the following years: 1990, 1991, 1995, 1996, 1997, 1998, 2001, then the longest duration is 7 years</li>
+    <li><em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#ultimative_duration">cco:ultimative_duration</a></em>, which is the overall duration of attention for a 
+cognitive pattern, e.g. for an interest, if it appears in the following years: 1990, 1991, 1995, 1996, 1997, 1998, 2001, then the longest duration is 7 years</li>
 </ul>
-<p>Finally, one can also associate a concrete activity (by using the property <em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#activity">cco:activity</a></em>), to 
-differetiate e.g. between football playing (topic = football; activity = playing) and football watching (topic = football; activity = watching), and further statistical items (by using the 
-property <em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#statistical_item">cco:statistical_item</a></em>) to a cognitive pattern description, which is itself also 
-a sub class of <a rel="rdfs:seeAlso" href="http://vocab.deri.ie/scovo#Item"><em>scovo:Item</em></a>.</p>
+<p about="http://purl.org/ontology/cco/cognitivecharacteristics.html">
+Besides these statistics, one can also associate a concrete activity (by using the property <em><a 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#activity">cco:activity</a></em>), to differentiate e.g. between football playing (topic = football; activity = playing) and 
+football watching (topic = football; activity = watching), and further statistical items (by using the property <em><a 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#statistical_item">cco:statistical_item</a></em>) to a cognitive pattern description, which is itself also a sub class of <a 
+rel="rdfs:seeAlso" href="http://vocab.deri.ie/scovo#Item"><em>scovo:Item</em></a>.<br/>
+It is also important, to be able to describe dynamics of a cognitive characteristic. In the <em>Cognitive Characteristics Ontology</em> they can be described with help of the <em><a 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CharacteristicDynamics">cco:CharacteristicDynamics</a></em> concept, which is a sub class of <a 
+href="http://purl.org/ontology/wo/weightingontology.html#Weight"><em>wo:Weight</em></a>, and can be related to a <em><a 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CognitiveCharacteristic">cco:CognitiveCharacteristic</a></em> instance by using the property <em><a 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#characteristic_dynamics">cco:characteristic_dynamics</a></em>. Thereby, one can relate</p>
+<ul>
+    <li>concrete appear times (time instants or intervals, by using the property <em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#appear_time">cco:appear_time</a></em>), 
+when a cognitive pattern gets attention by someone, or</li>
+    <li>an evidence description (by using the property <em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#evidence">cco:evidence</a></em>), where this characteristic or 
+dynamics was derived from.</li>
+</ul>
+<p about="http://purl.org/ontology/cco/cognitivecharacteristics.html">to a <em><a href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CognitiveCharacteristic">cco:CognitiveCharacteristic</a></em> or <em><a 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#characteristic_dynamics">cco:characteristic_dynamics</a></em> instance.<br/>
+Due to the two modelling opportunities of cognitive pattern in the <em>Cognotive Characteristics Ontology</em>, there is a need for formal semantics to associate statements with a "shortcut 
+relation" and instances of the reification class that belonging together or to infer such knowledge with a reasoning engine. The <a rel="rdfs:seeAlso" 
+href="http://purl.org/ontology/prv/propertyreification.html"><em>Property Reification Vocabulary</em></a> fulfil these requirements.
+</p>
 
   <h2 id="sec-bg">Background</h2>
 
