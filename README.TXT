@@ -19,9 +19,12 @@ and if you have problems there, update easy_install etc with:
 Inputs: RDF, HTML and OWL description(s) of an RDF vocabulary
 Output: an XHTML+RDFa specification designed for human users
 
-example: specgen6.py --indir=onto/co/ --ns=http://purl.org/ontology/co/core# 
---prefix=co --ontofile=counterontology.owl --outdir=spec/co/ --templatedir=onto/co/ 
---outfile=counterontology.html
+example: specgen6.py --indir=onto/olo/ --ns=http://purl.org/ontology/olo/core# 
+--prefix=olo --ontofile=orderedlistontology.owl --outdir=spec/olo/ --templatedir=onto/olo/ 
+--outfile=orderedlistontology.html
+
+-> the template of this example can also be found in the folder: onto/olo
+-> the output of this example can also be found in the folder: spec/olo
 
 See libvocab.py and specgen6.py for details.
 
