@@ -1,3 +1,9 @@
+SpecGen v6
+==========
+
+About
+-----
+
 This is an experimental new codebase for specgen tools based on danbri's
 specgen5 version (http://svn.foaf-project.org/foaftown/specgen/).
 
