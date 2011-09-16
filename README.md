@@ -26,7 +26,7 @@ It depends utterly upon
 
 * [rdflib](http://rdflib.net/)
 * [rdfextras](http://code.google.com/p/rdfextras/)
-* [pyparsing](http://pyparsing.wikispaces.com/) (easy_install pyparsing)
+* [pyparsing](http://pyparsing.wikispaces.com/) (`easy_install pyparsing`)
 	
 (at least I had to install these packages additionally ;) )
 
