@@ -1,8 +1,8 @@
 This is an experimental new codebase for specgen tools based on danbri's
 specgen5 version (http://svn.foaf-project.org/foaftown/specgen/).
 
-		heavily updated by Bob Ferris, July 2010
-		<http://smiy.wordpress.com/author/zazi0815/>
+		heavily updated by Bo Ferri, July 2010
+		<http://github.com/zazi/>
 		
 It depends utterly upon rdflib. See http://rdflib.net/
 		+ http://code.google.com/p/rdfextras/
@@ -62,3 +62,6 @@ q= 'SELECT distinct ?x ?l ?c WHERE { ?x rdfs:label ?l . ?x rdfs:comment ?c . ?x 
 
 3. Be more explicit and careful re defaulting to English, and more robust when
 multilingual labels are found.
+
+
+PS: The old project repository location at SourceForge (http://smiy.svn.sourceforge.net/viewvc/smiy/specgen/) is now deprecated. All new developments will pushed to this repository location here at GitHub.
