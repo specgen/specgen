@@ -61,6 +61,12 @@ Status
 * we populate Vocab, Term (Class, Property or Individual) instances
 * able to generate a XHTML/RDFa ontology specification with common concepts and properties from OWL, [RDFS](http://www.w3.org/TR/rdf-schema/), RDF
 
+Known Forks
+-----------
+
+* [WebID fork](http://dvcs.w3.org/hg/WebID/file/c54341c6f890/ontologies/specgen)
+
+
 PS
 --
 
