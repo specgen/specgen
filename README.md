@@ -64,7 +64,7 @@ Status
 Known Forks
 -----------
 
-* [WebID fork](http://dvcs.w3.org/hg/WebID/file/c54341c6f890/ontologies/specgen)
+* [WebID fork](http://dvcs.w3.org/hg/WebID/file/029f115c08a5/ontologies/specgen) (note this link is only a reference to a specific revision of that fork; to ensure that you'll utilise the most recent one, go to summary and walk that path to the specgen directory again from the most recent revision ;) )
 
 
 PS
