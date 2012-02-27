@@ -66,6 +66,31 @@ Known Forks
 
 * [WebID fork](http://dvcs.w3.org/hg/WebID/file/029f115c08a5/ontologies/specgen) (note this link is only a reference to a specific revision of that fork; to ensure that you'll utilise the most recent one, go to summary and walk that path to the specgen directory again from the most recent revision ;) )
 
+TODO
+----
+
+* enable more OWL features, especially an automated construction of owl:Ontology (currently this must be done manually in the template)
+* enable more support for other namespaces (super classes and super properties from other namespaces already possible)
+* restructure the code !!!
+* write a cool parser for the "\n"'s and "\t"'s etc. in the parsed comments (e.g. "\n" to \<br\/\> ...)
+
+Known Issues
+------------
+
+<ol>
+	<li>librdf doesn't seem to like abbreviations in FILTER clauses.
+
+<ul>
+	<li>this worked:
+<pre><code>q= 'SELECT ?x ?l ?c ?type WHERE { ?x rdfs:label ?l . ?x rdfs:comment ?c . ?x a ?type .  FILTER (?type = <http://www.w3.org/2002/07/owl#ObjectProperty>)  } '</code></pre></li>
+<li>while this failed:
+<pre><code>q= 'PREFIX owl: <http://www.w3.org/2002/07/owl#> SELECT ?x ?l ?c ?type WHERE { ?x rdfs:label ?l . ?x rdfs:comment ?c . ?x a ?type .  FILTER (?type = owl:ObjectProperty)  } '</pre></code>
+(even when passing in bindings)</li>
+<li>This forces us to be verbose, ie.
+<pre><code>q= 'SELECT distinct ?x ?l ?c WHERE { ?x rdfs:label ?l . ?x rdfs:comment ?c . ?x a ?type . FILTER (?type = <http://www.w3.org/2002/07/owl#ObjectProperty> || ?type = <http://www.w3.org/2002/07/owl#DatatypeProperty> || ?type = <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> || ?type = <http://www.w3.org/2002/07/owl#FunctionalProperty> || ?type = <http://www.w3.org/2002/07/owl#InverseFunctionalProperty>) } '</pre></code></li>
+</ul></li>	
+<li>TODO: work out how to do ".encode('UTF-8')" everywhere</li>
+<li>Be more explicit and careful re defaulting to English, and more robust when multilingual labels are found.</li></ol>
 
 PS
 --
