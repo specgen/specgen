@@ -48,18 +48,24 @@ from libvocab import Vocab, VocabReport
 from libvocab import Term
 from libvocab import Class
 from libvocab import Property
+from libgroups import Grouping
 import sys
 import os.path
 import getopt
 
 
 # Make a spec
-def makeSpec(indir, uri, shortName,outdir,outfile, template, templatedir,indexrdfdir, ontofile):
+def makeSpec(indir, uri, shortName,outdir,outfile, template, templatedir, indexrdfdir, ontofile,addGroups):
   spec = Vocab( indexrdfdir, ontofile, uri)
   spec.addShortName(shortName)
   spec.index() # slurp info from sources
 
-  out = VocabReport( spec, indir, template, templatedir ) 
+  htmlgroups = None
+  if (addGroups):
+      groups = Grouping(spec,uri)
+      htmlgroups = groups.getHTMLGroups();
+
+  out = VocabReport( spec, indir, template, templatedir,htmlgroups ) 
 
   filename = os.path.join(outdir, outfile)
   print "Printing to ",filename
@@ -79,12 +85,13 @@ def usage():
   print sys.argv[0], " --indir=examples/foaf/ --ns=http://xmlns.com/foaf/0.1/ --prefix=foaf --ontofile=index.rdf"
   print "or "
   print sys.argv[0], " --indir=../../xmlns.com/htdocs/foaf/ --ns=http://xmlns.com/foaf/0.1/ --prefix=foaf --ontofile=index.rdf --templatedir=../../xmlns.com/htdocs/foaf/spec/ --indexrdfdir=../../xmlns.com/htdocs/foaf/spec/ --outdir=../../xmlns.com/htdocs/foaf/spec/"
+  print "add Groups with --groups parameter"
 
 def main():
   ##looking for outdir, outfile, indir, namespace, shortns
 
   try:
-        opts, args = getopt.getopt(sys.argv[1:], None, ["outdir=", "outfile=", "indir=", "ns=", "prefix=", "templatedir=", "indexrdfdir=", "ontofile="])
+        opts, args = getopt.getopt(sys.argv[1:], None, ["outdir=", "outfile=", "indir=", "ns=", "prefix=", "templatedir=", "indexrdfdir=", "ontofile=","groups"])
         #print opts
   except getopt.GetoptError, err:
         # print help information and exit:
@@ -101,6 +108,7 @@ def main():
   templatedir = None
   indexrdfdir = None
   ontofile = None
+  groups = False
 
   if len(opts) ==0:
       print "No arguments found"
@@ -125,6 +133,8 @@ def main():
             indexrdfdir = a
       elif o == "--ontofile":
       		ontofile = a
+      elif o == "--groups":
+              groups = True
 
 #first check all the essentials are there
 
@@ -231,9 +241,16 @@ def main():
   except:
     print "Cannot write to ",outfile," in",outdir
     usage()
-    sys.exit(2)   
+    sys.exit(2)
+    
+    
+   # print group status
+  if (groups):
+    print "Adding Groups: Yes"
+  else: 
+    print "Adding Groups: No" 
 
-  makeSpec(indir,uri,shortName,outdir,outfile,"template.html",templatedir,indexrdfdir, ontofile)
+  makeSpec(indir,uri,shortName,outdir,outfile,"template.html",templatedir,indexrdfdir, ontofile,groups)
   
 
 if __name__ == "__main__":

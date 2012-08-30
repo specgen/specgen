@@ -500,12 +500,12 @@ class Vocab(object):
 
 class VocabReport(object):
 
-	def __init__(self, vocab, basedir = './examples/', temploc = 'template.html', templatedir = './examples/'):
+	def __init__(self, vocab, basedir = './examples/', temploc = 'template.html', templatedir = './examples/',groups=None):
 		self.vocab = vocab
 		self.basedir = basedir
 		self.temploc = temploc
 		self.templatedir = templatedir
-
+		self.groups = groups
 		self._template = "no template loaded"
 
 	# text.gsub(/<code>foaf:(\w+)<\/code>/){ defurl($1) } return "<code><a href=\"#term_#{term}\">foaf:#{term}</a></code>"
@@ -542,14 +542,15 @@ class VocabReport(object):
   		##    tpl = tpl % (azlist.encode("utf-8"), termlist.encode("utf-8"), rdfdata)
   		#
   		# IMPORTANT: this is the code, which is responsible for write code fragments to the template
-  		tpl = tpl % (self.concepttypes.encode("utf-8"), 
-					self.concepttypes2.encode("utf-8"), 
-					azlist.encode("utf-8"), 
-					self.concepttypes.encode("utf-8"), 
-					self.concepttypes3.encode("utf-8"), 
-					azlist.encode("utf-8"), 
-					termlist.encode("utf-8"))
+  		#tpl = tpl % (self.concepttypes.encode("utf-8"), 
+		#			self.concepttypes2.encode("utf-8"), 
+		#			azlist.encode("utf-8"),
+		#			self.concepttypes.encode("utf-8"), 
+		#			self.concepttypes3.encode("utf-8"), 
+		#			azlist.encode("utf-8"), 
+		#			termlist.encode("utf-8"))
   		#    tpl = tpl % (azlist.encode("utf-8"), termlist.encode("utf-8"))
+  		tpl = tpl % (azlist.encode("utf-8"),self.groups.encode("utf-8"),termlist.encode("utf-8"))
   		return(tpl)
 
   	def az(self):
@@ -702,19 +703,20 @@ class VocabReport(object):
   			
   			relations = g.query(q1)
   			ordone = False
-  			for (subclass) in relations:
+  			for (row) in relations:
+  				subclass = row[0]
   				subclassnice = self.vocab.niceName(subclass)
   				# print "subclass ",subclass
   				# print "subclassnice ",subclassnice
   				# check niceName result
   				# TODO: handle other sub class types (...) currently owl:Restriction only
   				colon = subclassnice.find(':')
-  				print "ns uri ", str(self.vocab._get_uri())
+  				#print "ns uri ", str(self.vocab._get_uri())
   				if(subclass.find(str(self.vocab._get_uri())) < 0):
   					if (colon > 0):
   						termStr = """<span rel="rdfs:subClassOf" href="%s"><a href="%s">%s</a></span>\n""" % (subclass, subclass, subclassnice)
   						contentStr = "%s %s" % (contentStr, termStr)
-  						print "must be super class from another ns: ", subclassnice
+  						#print "must be super class from another ns: ", subclassnice
   					elif (ordone == False):
   						# with that query I get all restrictions of a concept :\
   						# TODO: enable a query with bnodes (_:bnode currently doesn't work :( )
@@ -836,13 +838,14 @@ class VocabReport(object):
   			q = 'SELECT ?sc WHERE {?sc rdfs:subClassOf <%s> } ' % (term.uri)
 
   			relations = g.query(q)
-  			for (subclass) in relations:
+  			for (row) in relations:
+  				subclass = row[0]
   				subclassnice = self.vocab.niceName(subclass)
-  				print "has subclass ", subclass
-  				print "has subclassnice ", subclassnice
+  				#print "has subclass ", subclass
+  				#print "has subclassnice ", subclassnice
   				# check niceName result
   				colon = subclassnice.find(':')
-  				if(subclass.find(str(self.vocab._get_uri())) < 0):
+  				if(subclass[0].find(str(self.vocab._get_uri())) < 0):
   					if colon > 0:
   						termStr = """<a href="%s">%s</a>\n""" % (subclass, subclassnice)
   						contentStr = "%s %s" % (contentStr, termStr)
@@ -997,7 +1000,8 @@ class VocabReport(object):
   			q = 'SELECT ?d WHERE {<%s> rdfs:domain ?d } ' % (term.uri)
 
   			relations = g.query(q)
-  			for (domain) in relations:
+  			for (row) in relations:
+  				domain = row[0]
   				domainnice = self.vocab.niceName(domain)
   				# print "domain ",domain
   				# print "domainnice ",domainnice
@@ -1097,7 +1101,8 @@ class VocabReport(object):
   			q = 'SELECT ?r WHERE {<%s> rdfs:range ?r } ' % (term.uri)
 
   			relations = g.query(q)
-  			for (range) in relations:
+  			for (row) in relations:
+  				range = row[0]
   				rangenice = self.vocab.niceName(range)
   				# print "range ",range
   				# print "rangenice ",rangenice
@@ -1202,7 +1207,8 @@ class VocabReport(object):
   			q1 = 'SELECT ?sp WHERE {<%s> rdfs:subPropertyOf ?sp } ' % (term.uri)
   				
   			relations = g.query(q1)
-  			for (subproperty) in relations:
+  			for (row) in relations:
+  				subproperty = row[0]
   				subpropertynice = self.vocab.niceName(subproperty)
   				# check niceName result
   				colon = subpropertynice.find(':')
@@ -1210,7 +1216,7 @@ class VocabReport(object):
   					if colon > 0:
   						termStr = """<span rel="rdfs:subPropertyOf" href="%s"><a href="%s">%s</a></span>\n""" % (subproperty, subproperty, subpropertynice)
   						contentStr = "%s %s" % (contentStr, termStr)
-  						print "must be super property from another ns"
+  						#print "must be super property from another ns"
   				
   				if contentStr != "":
   					subPropertyOf = "%s <td> %s </td></tr>" % (startStr, contentStr)
@@ -1248,7 +1254,7 @@ class VocabReport(object):
   				if colon > 0:
   					inverse = Term(inverseproperty)
   					termStr = """<span rel="owl:inverseOf" href="%s"><a href="#%s">%s</a></span>\n""" % (inverseproperty, inverse.id, label)
-  					print "inverse property must be explicitly defined"
+  					#print "inverse property must be explicitly defined"
   				else:
   					q2 = 'SELECT ?ipt WHERE {<%s> <http://www.w3.org/2002/07/owl#inverseOf> ?ip . ?ip rdfs:label ?l . ?ip rdf:type ?ipt } ' % (term.uri)
   					relations2 = g.query(q2)
@@ -1332,7 +1338,8 @@ class VocabReport(object):
   			startStr = '<tr><th>Equivalent Property</th>'
 
   			contentStr = ''
-  			for (equiprop) in relations:
+  			for (row) in relations:
+  				equiprop = row[0]
   				equipropnice = self.vocab.niceName(equiprop)
   				termStr = """<span rel="owl:equivalentProperty" href="%s"><a href="%s">%s</a></span>\n""" % (equiprop, equiprop, equipropnice)
   				contentStr = "%s %s" % (contentStr, termStr)
