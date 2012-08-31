@@ -1,0 +1,1855 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Id: swc_2009-05-09.rdf 895 2009-05-11 16:50:14Z knumoe $ -->
+<!DOCTYPE rdf:RDF [
+<!ENTITY dc "http://purl.org/dc/elements/1.1/">
+<!ENTITY dcterms "http://purl.org/dc/terms/">
+<!ENTITY onto "http://data.semanticweb.org/ns/swc/ontology#">
+<!ENTITY foaf "http://xmlns.com/foaf/0.1/">
+<!ENTITY ical "http://www.w3.org/2002/12/cal/ical#">
+<!ENTITY wordnet "http://xmlns.com/wordnet/1.6/">
+<!ENTITY bibtex "http://swrc.ontoware.org/ontology#">
+<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+<!ENTITY doap "http://usefulinc.com/ns/doap#">
+<!ENTITY geo "http://www.w3.org/2003/01/geo/wgs84_pos#">
+<!ENTITY vs "http://www.w3.org/2003/06/sw-vocab-status/ns#">
+<!ENTITY sioc "http://rdfs.org/sioc/ns#">
+<!ENTITY misc "http://data.semanticweb.org/ns/misc#">
+<!ENTITY swrc_ext "http://www.cs.vu.nl/~mcaklein/onto/swrc_ext/2005/05#">
+]>
+<rdf:RDF xml:base="&onto;"
+	xmlns:swc="&onto;"
+	xmlns:dc="&dc;"
+	xmlns:dcterms="&dcterms;"
+	xmlns:owl="&owl;"
+	xmlns:foaf="&foaf;"
+	xmlns:ical="&ical;"
+	xmlns:wordnet="&wordnet;"
+	xmlns:rdf="&rdf;"
+	xmlns:rdfs="&rdfs;"
+	xmlns:bibtex="&bibtex;"
+	xmlns:doap="&doap;"
+	xmlns:geo="&geo;"
+	xmlns:xsd="&xsd;"
+	xmlns:vs="&vs;"
+	xmlns:sioc="&sioc;"
+	xmlns:misc="&misc;"
+	xmlns:swrc_ext="&swrc_ext;">
+
+	<!-- Ontology Information -->
+	<owl:Ontology rdf:about=""
+		dcterms:created="2007/05/31"
+		dcterms:modified="$Date: 2009-05-11 17:50:14 +0100 (Mon, 11 May 2009) $"
+		dcterms:title="Semantic Web Conference Ontology"
+		rdfs:label="Semantic Web Conference Ontology">
+		<dcterms:creator rdf:resource="http://kantenwerk.org/metadata/foaf.rdf#me"/>
+		<dcterms:creator rdf:resource="http://data.semanticweb.org/person/sean-bechhofer"/>
+		<dcterms:creator rdf:resource="http://tomheath.com/id/me"/>
+		<sioc:earlier_version rdf:resource="http://data.semanticweb.org/ns/swc/swc_2009-03-02.rdf"/>
+		<dcterms:hasVersion rdf:resource="http://data.semanticweb.org/ns/swc/swc_2009-02-27.rdf"/>
+		<dcterms:hasVersion rdf:resource="http://data.semanticweb.org/ns/swc/swc_2009-03-02.rdf"/>
+		<foaf:maker rdf:resource="http://kantenwerk.org/metadata/foaf.rdf#me"/>
+		<foaf:maker rdf:resource="http://data.semanticweb.org/person/sean-bechhofer"/>
+		<foaf:maker rdf:resource="http://tomheath.com/id/me"/>
+        <swrc_ext:authorList rdf:parseType="Resource">
+            <rdf:_1 rdf:resource="http://kantenwerk.org/metadata/foaf.rdf#me"/>
+            <rdf:_2 rdf:resource="http://data.semanticweb.org/person/sean-bechhofer"/>
+            <rdf:_3 rdf:resource="http://tomheath.com/id/me"/>
+        </swrc_ext:authorList>
+		<foaf:logo rdf:resource="http://data.semanticweb.org/images/bones_256.png"/>
+
+		<!-- the actual license: -->
+		<dcterms:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+
+		<!-- a bit of RDF containing human-readable info on the license: -->
+		<misc:licenseDoc rdf:resource="#license_doc"/>
+		
+		<!-- documentation about the ontology: -->
+		<vs:userdocs rdf:parseType="Collection">
+			<rdf:Description rdf:about="#01_introduction"/>
+			<rdf:Description rdf:about="#02_describing_papers"/>
+			<rdf:Description rdf:about="#03_roles"/>
+		</vs:userdocs>
+
+		<doap:revision><![CDATA[
+			$Revision: 895 $ - <i>Slim Version</i>
+			]]></doap:revision>
+		<owl:imports>
+			<!--       <owl:Ontology rdf:about="&bibtex;"/> -->
+			<owl:Ontology rdf:about="swrc"/> 
+		</owl:imports>
+		<owl:imports>
+			<!--       <owl:Ontology rdf:about="&bibtex;"/> -->
+			<owl:Ontology rdf:about="swrc-topics"/> 
+		</owl:imports>
+	</owl:Ontology>
+	<!-- Classes -->
+
+	<!-- Documentation -->
+	
+	<rdf:Description rdf:about="#01_introduction">
+		<rdfs:label>Introduction</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>
+				The Semantic Web Conference ontology (SWC) is an ontology for describing academic conferences. 
+				It was initially designed to support the European Semantic Web Conference,
+				ESWC2007, and later extended for both the following conferences in the ESWC series,
+				as well as in the ISWC series.
+				Historically, the SWC ontology also draws heavily on ontologies developed for
+				ESWC2006 and ISWC2006.
+			</p>
+			<p>
+				SWC is mainly a convention of how to use classes and properties from other ontologies, most prominently 
+				<a href="http://xmlns.com/foaf/0.1">FOAF</a> (for people) and <a href="http://ontoware.org/projects/swrc/">SWRC</a> 
+				(their BibTeX elements, for the papers). We are also throwing in some <a href="http://sioc-project.org/">SIOC</a>, 
+				<a href="http://dublincore.org/documents/dc-rdf/index.shtml">Dublin Core</a> and 
+				<a href="http://www.w3.org/TR/rdfcal/">iCal/RDF Calendar</a>. Our own 
+				<a href="http://data.semanticweb.org/ns/swc/ontology">swc namespace</a> provides the glue for all this, as well as 
+				specialised classes for things that have to do with conferences.
+			</p>
+			<p>
+				This version of SWC has been slimmed down significantly (hence the revision name). A total of 59 classes and 19 properties have been deprecated (deprecated terms can be found at the bottom of this document). This was mostly done with the intention to remove the countless sub-classes of generic classes such as <a href="#Chair">Chair</a> or <a href="#SessionEvent">SessionEvent</a>, which were deemed to be too specific for a general-purpose conference ontology such as SWC. Elsewhere, classes and properties which had never been used and seemed to fall under the heading of "over-engineering" were removed. Finally, all CfP related terms were removed. Instead, we suggest to use a dedicated ontology such as the <a href="http://sw.deri.org/2005/08/conf/cfp">CfP ontology</a>.
+			</p>
+			]]>
+		</rdfs:comment>
+	</rdf:Description>
+	
+	<rdf:Description rdf:about="#02_describing_papers">
+		<rdfs:label>Describing Papers</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>For the basic use case of describing papers, the figure below shows how the main kinds of resources are connected: the paper itself, the authors and their affiliations, and the talk where the paper was presented.
+			</p>
+			<div align="center">
+				<a href="documentation/20070921-ISWC+ASWC2007PublicationGraph.pdf"><img src="documentation/20070921-ISWC+ASWC2007PublicationGraph.png" /></a>
+			</div>
+			<p>
+				The next figure shows in more detail the kinds of things that can be said about each of the four main entities surrounding a paper.
+			</p>
+			<div align="center">
+				<a href="documentation/20071002-Properties.pdf"><img src="documentation/20071002-Properties.png" /></a>
+			</div>
+			]]>
+		</rdfs:comment>
+	</rdf:Description>
+	
+	<rdf:Description rdf:about="#03_roles">
+		<rdfs:label>Roles</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>
+				One of the basic design choices in SWC is to use role modelling for describing the different functions at a conference, such as chairs, reviewers, etc. For any particular role at a given conference, the <code>swc:Role</code> class or a sub-class will be instantiated. This role instance stands in relation to a person (who plays the role) and an event. The figure below gives an example showing how to model the role of the metadata chair (or "dog food tsar") at ISWC+ASWC2007, which was held by Knud Möller (together with Tom Heath, not shown in the figure).
+			</p>
+			<p>
+				Note that the metadata chair role is not modelled with its own dedicated class (although it could have been). Instead, an instance of the generic <a href="#Chair">Chair</a> class is used and labelled accordingly.
+			</p>
+			<div align="center">
+				<a href="documentation/20090510-Roles_new.pdf"><img src="documentation/20090510-Roles_new.png" /></a>
+			</div>
+			]]>
+		</rdfs:comment>
+	</rdf:Description>
+	
+	<rdf:Description rdf:about="#license_doc">
+		<rdfs:label>License Statement</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<!-- Creative Commons License -->
+			<p class="copyright">
+				Copyright &copy; 2007-2009 Knud Möller, Sean Bechhofer and Tom Heath.<br/>
+				<br/>
+				<a href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border: 0; float: right; padding: 10px;" src="somerights.gif" /></a>
+				This work is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution License</a>. 
+				This copyright applies to the <em>Semantic Web Conference Ontology (SWC) Specification</em> and accompanying documentation in RDF.
+				Regarding underlying technology, SWC uses W3C's <a href="http://www.w3.org/RDF/">RDF</a> technology, an
+				open Web standard that can be freely used by anyone.
+			</p>
+			]]>
+		</rdfs:comment>
+	</rdf:Description>
+
+	<!-- Metadata -->
+	<foaf:Person rdf:about="http://kantenwerk.org/metadata/foaf.rdf#me">
+		<foaf:name>Knud Möller</foaf:name>
+		<foaf:surname>Möller</foaf:surname>
+		<foaf:homepage rdf:resource="http://kantenwerk.org"/>
+		<rdfs:seeAlso rdf:resource="http://kantenwerk.org/metadata/foaf.rdf"/>
+	</foaf:Person>
+
+	<foaf:Person rdf:about="http://tomheath.com/id/me">
+		<foaf:name>Tom Heath</foaf:name>
+		<foaf:surname>Heath</foaf:surname>
+		<foaf:homepage rdf:resource="http://tomheath.com/home/html"/>
+		<rdfs:seeAlso rdf:resource="http://tomheath.com/home/rdf"/>
+	</foaf:Person>
+
+	<foaf:Person rdf:about="http://data.semanticweb.org/person/sean-bechhofer">
+		<foaf:name>Sean Bechhofer</foaf:name>
+		<foaf:surname>Bechhofer</foaf:surname>
+		<foaf:homepage rdf:resource="http://www.cs.man.ac.uk/~seanb/"/>
+	</foaf:Person>
+
+	<foaf:Organization rdf:about="http://data.semanticweb.org/organization/deri-nui-galway">
+		<foaf:name>DERI</foaf:name>
+		<foaf:homepage rdf:resource="http://www.deri.ie"/>
+		<foaf:member rdf:resource="http://kantenwerk.org/metadata/foaf.rdf#me"/>
+	</foaf:Organization>
+
+	<foaf:Organization rdf:about="http://data.semanticweb.org/organization/talis-information-limited">
+		<foaf:name>Talis Information Limited</foaf:name>
+		<foaf:homepage rdf:resource="http://www.talis.com/"/>
+		<foaf:member rdf:resource="http://tomheath.com/id/me"/>
+	</foaf:Organization>
+
+	<foaf:Organization rdf:about="http://data.semanticweb.org/organization/university-of-manchester-uk">
+		<foaf:name>University of Manchester</foaf:name>
+		<foaf:homepage rdf:resource="http://www.manchester.ac.uk/"/>
+		<foaf:member rdf:resource="http://data.semanticweb.org/person/sean-bechhofer"/>
+	</foaf:Organization>
+
+	<!-- Document Classes -->
+
+	<rdf:Description rdf:about="http://dbpedia.org/resource/Document">
+		<rdfs:label>Document</rdfs:label>
+	</rdf:Description>
+
+	<owl:Class rdf:about="#ArgumentativeDocument"
+		rdfs:label="Argumentative Document">
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:comment><![CDATA[
+			<p>An argumentative document is a document which uses analytical reasoning and evidence in order to argue for a point of view. Typical examples are scientific papers or political pamphlets. Negative examples are novels or plays (even though a novel might also try to sway the reader to a certain point of view).</p>
+			<p>According to <a href="http://en.wikipedia.org/wiki/Text_types">Text Types</a>, an argumentative document is based "on the evaluation and the subsequent subjective judgement in answer to a problem. It refers to the reasons advanced for or against a matter".</p>
+			]]>
+		</rdfs:comment>
+		<rdfs:seeAlso rdf:resource="http://en.wikipedia.org/wiki/Text_types"/>
+		<rdfs:subClassOf rdf:resource="&foaf;Document"/>
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Document"/>
+	</owl:Class>
+
+	<owl:Class rdf:ID="Artefact">
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:subClassOf rdf:resource="http://xmlns.com/wordnet/1.6/Document"/>
+		<rdfs:label>Artefact</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p><emph>Artefact</emph> here means a document which can have a physical manifestation, like a paper or the proceedings of a conference.</p>
+			]]>
+		</rdfs:comment>
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Document"/>
+	</owl:Class>
+
+	<owl:Class rdf:about="#Paper">
+		<rdfs:label>Paper</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>A scientific/scholarly paper, e.g., an article in a scientific journal, or a paper at a conference or workshop. A paper could also be unpublished formally, as long as it has the form of a scientific paper (introduction, conclusion, related work, etc.).</p>
+			]]>
+		</rdfs:comment>
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#ArgumentativeDocument"/>
+		<rdfs:subClassOf rdf:resource="#Artefact"/>
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Document"/>
+	</owl:Class>
+
+	<owl:Class rdf:about="#Poster">
+		<rdfs:label>Poster</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>A scientific poster at a conference or workshop.</p>
+			]]>
+		</rdfs:comment>
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#ArgumentativeDocument"/>
+		<rdfs:subClassOf rdf:resource="#Artefact"/>
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Document"/>
+	</owl:Class>
+
+	<owl:Class rdf:about="#SlideSet">
+		<rdfs:label>Slide Set</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>A set of slides used for a presentation of e.g. a paper at a conference.</p>
+			]]>
+		</rdfs:comment>
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#ArgumentativeDocument"/>
+		<rdfs:subClassOf rdf:resource="#Artefact"/>
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Document"/>
+	</owl:Class>
+
+	<owl:Class rdf:about="#Proceedings">
+		<rdfs:label>Proceedings</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>The proceedings of a conference or workshop, which contain the papers presented there.</p>
+			]]>
+		</rdfs:comment>
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:subClassOf rdf:resource="&foaf;Document"/>
+		<rdfs:subClassOf rdf:resource="#Artefact"/>
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Document"/>
+	</owl:Class>
+
+	<owl:Class rdf:about="#Programme">
+		<rdfs:label>Programme</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>A document containing the programme of an event such as a conference or workshop. Typically, the programme would list the times and dates for the individual sub-events, e.g., talks, dinners, panel discussions, etc.</p>
+			]]>
+		</rdfs:comment>
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:subClassOf rdf:resource="&foaf;Document"/>
+		<rdfs:subClassOf rdf:resource="#Artefact"/>
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Document"/>
+	</owl:Class>
+
+	<owl:Class rdf:about="&bibtex;Proceedings">
+		<rdfs:subClassOf rdf:resource="#Proceedings"/>
+	</owl:Class>
+
+	<owl:Class rdf:about="&bibtex;InProceedings">
+		<rdfs:subClassOf rdf:resource="#Paper"/>
+	</owl:Class>
+
+	<!-- Event Classes -->
+
+	<rdf:Description rdf:about="http://dbpedia.org/resource/Event">
+		<rdfs:label>Event, other</rdfs:label>
+	</rdf:Description>
+
+	<owl:Class rdf:ID="OrganisedEvent">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Event"/>
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:subClassOf rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+		<rdfs:subClassOf rdf:resource="&ical;Vevent"/>
+		<rdfs:label>Organised Event</rdfs:label>
+		<rdfs:comment>
+			<![CDATA[
+			<p>An event in time and space which is planned and organised, as opposed to something which 'just happens', such as a car accident or sunset.</p>
+			]]>
+		</rdfs:comment>
+	</owl:Class>
+
+	<owl:Class rdf:ID="AcademicEvent">
+		<dcterms:subject rdf:resource="#AcademicEvent"/>
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#OrganisedEvent"/>
+		<rdfs:label>Academic Event</rdfs:label>
+		<rdfs:comment>
+			<![CDATA[
+			<p>Academic events are e.g. conferences and conference-like events, and all the sub-events of those which are about the topic or theme of the conference, such as talks or panels.</p>
+			]]>
+		</rdfs:comment>
+	</owl:Class>
+
+	<owl:Class rdf:about="#PanelEvent"
+		rdfs:label="Panel Event">
+		<dcterms:subject rdf:resource="#AcademicEvent"/>
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#AcademicEvent"/>
+		<rdfs:comment>
+			<![CDATA[
+			<p>A panel discussion at a conference or conference-like event, usually involving several speakers.</p>
+			]]>
+		</rdfs:comment>
+	</owl:Class>
+
+	<owl:Class rdf:ID="ConferenceEvent">
+		<dcterms:subject rdf:resource="#AcademicEvent"/>
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#AcademicEvent"/>
+		<rdfs:label>Conference Event</rdfs:label>
+		<rdfs:comment>
+			<![CDATA[
+			<p>
+				A scientific conference.
+			</p>
+			<p>
+				TODO: Maybe this should be opened up - why only scientific conferences?
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:Class>
+
+	<owl:Class rdf:ID="WorkshopEvent">
+		<dcterms:subject rdf:resource="#AcademicEvent"/>
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#AcademicEvent"/>
+		<rdfs:label>Workshop Event</rdfs:label>
+		<rdfs:comment>
+			<![CDATA[
+			<p>
+				A scientific workshop. Workshops are often co-located with <a href="#ConferenceEvent">ConferenceEvent</a>s.
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:Class>
+
+	<owl:Class rdf:ID="TutorialEvent">
+		<dcterms:subject rdf:resource="#AcademicEvent"/>
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#AcademicEvent"/>
+		<rdfs:label>Tutorial Event</rdfs:label>
+		<rdfs:comment>
+			<![CDATA[
+			<p>
+				A tutorial is a special session at a conference or workshop, somewhat like a long lecture on a specific topic.
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:Class>
+
+	<owl:Class rdf:ID="TrackEvent">
+		<dcterms:subject rdf:resource="#AcademicEvent"/>
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#AcademicEvent"/>
+		<rdfs:label>Track Event</rdfs:label>
+		<rdfs:comment>
+			<![CDATA[
+			<p>
+				A track groups all those sessions or events at a conference or workshop that belong to a common, overall theme. Depending on the conference, tracks can be quite generic, such as "Research" or "Industrial", but can also be more specific, such as "Semantic Web" or "Numismatics". SWC does not define any specific tracks, since conferences often differ so much with respect to how they structure their tracks, that it would be pointless to try and find a set of tracks that would suit all conferences.
+			</p>
+			<p>Sub-classes of TrackEvent which were defined in previous versions of the SWC ontology are now deprecated.</p>
+			]]>
+		</rdfs:comment>
+	</owl:Class>
+
+	<owl:Class rdf:ID="SessionEvent">
+		<dcterms:subject rdf:resource="#AcademicEvent"/>
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#AcademicEvent"/>
+		<rdfs:label>Session Event</rdfs:label>
+		<rdfs:comment>
+			<![CDATA[
+			<p>
+				A session dedicated to a specific topic at a conference. This could be a session with talks, or also a poster session, a demo session, or any other kind of session.
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:Class>
+
+	<owl:Class rdf:ID="TalkEvent">
+		<dcterms:subject rdf:resource="#AcademicEvent"/>
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#AcademicEvent"/>
+		<rdfs:label>Talk Event</rdfs:label>
+		<rdfs:comment>
+			<![CDATA[
+			<p>
+				A speaker giving a talk. This could be the presentation of a paper, but also keynote speech or any other kind of talk.
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:Class>
+
+
+	<owl:Class rdf:ID="NonAcademicEvent">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Event"/>
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#OrganisedEvent"/>
+		<rdfs:label>Non-academic Event</rdfs:label>
+		<rdfs:comment>
+			<![CDATA[
+			<p>
+				In the context of SWC, a non-academic event is any kind or <a href="#OrganisedEvent">organised event</a> which does not concern the topic or theme of the conference as such. Examples are breaks, dinners, parties, etc.
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:Class>
+
+
+	<owl:Class rdf:ID="BreakEvent">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Event"/>
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#NonAcademicEvent"/>
+		<rdfs:label>Break Event</rdfs:label>
+		<rdfs:comment>
+			<![CDATA[
+			<p>
+				Any kind of break at the super-event, such as a coffee break.
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:Class>
+
+	<owl:Class rdf:ID="SocialEvent">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Event"/>
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#NonAcademicEvent"/>
+		<rdfs:label>Social Event</rdfs:label>
+		<rdfs:comment>
+			<![CDATA[
+			<p>
+				Examples for social events are parties or excursions.
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:Class>
+
+	<owl:Class rdf:ID="MealEvent">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Event"/>
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#NonAcademicEvent"/>
+		<rdfs:label>Meal Event</rdfs:label>
+		<rdfs:comment>
+			<![CDATA[
+			<p>
+				A lunch, dinner or similar event at a conference or conference-like event.
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:Class>
+
+	<!-- Place Classes -->
+
+	<rdf:Description rdf:about="http://dbpedia.org/resource/Place">
+		<rdfs:label>Place</rdfs:label>
+	</rdf:Description>
+
+	<owl:Class rdf:ID="ConferenceVenuePlace">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Place"/>
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:subClassOf rdf:resource="&geo;SpatialThing"/>
+		<rdfs:label>Conference Venue Place</rdfs:label>
+		<rdfs:comment>
+			<![CDATA[
+			<p>
+				The location of a conference or conference-like event. Ideally, this would be more specific than just the city. Instead it should  be the hotel, convention centre, university or similar place where the event is held.
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:Class>
+
+	<owl:Class rdf:ID="MeetingRoomPlace">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Place"/>
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:subClassOf rdf:resource="&geo;SpatialThing"/>
+		<rdfs:label>Meeting Room Place</rdfs:label>
+		<rdfs:comment>
+			<![CDATA[
+			<p>
+				A particular room at the <a href="#ConferenceVenuePlace">conference venue</a> (or elsewhere). E.g., the room where a particular <a href="#SessionEvent">SessionEvent</a> takes place. 
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:Class>
+
+	<owl:Class rdf:ID="CommunalPlace">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Place"/>
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:subClassOf rdf:resource="&geo;SpatialThing"/>
+		<rdfs:label>Communal Place</rdfs:label>
+		<rdfs:comment>
+			<![CDATA[
+			<p>
+				A location at the <a href="#ConferenceVenuePlace">conference venue</a> (or elsewhere), which is not a meeting room. 
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:Class>
+
+	<owl:Class rdf:ID="AccommodationPlace">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Place"/>
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:subClassOf rdf:resource="&geo;SpatialThing"/>
+		<rdfs:label>Accommodation Place</rdfs:label>
+		<rdfs:comment>
+			<![CDATA[
+			<p>
+				A hotel, hostel, BnB or similar. 
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:Class>
+
+
+	<!--  Role Classes  -->
+
+	<!-- from DBPedia -->
+
+	<rdf:Description rdf:about="http://dbpedia.org/resource/Role">
+		<rdfs:label>Role</rdfs:label>
+	</rdf:Description>
+
+
+	<!-- local things -->
+
+	<owl:Class rdf:ID="Role">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Role"/>
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:subClassOf rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+		<rdfs:label>Role</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>
+				Role is the super-class of all the different roles performed at a conference or workshop. Examples are the various conference chairs, the delegates, presenters, PC members, etc. The intended use of this class is that an instance of Role will be related to the event at which it is performed, and to the person which performs it.
+			</p>
+			<p>
+				Since the set of roles is slightly different for each event, and since it would therefore be impossible to provide sub-classes for all needs and circumstances, the SWC ontology only contains a very basic set of Role classes. Rather than diversifying the set of Role classes to cater for all needs, users should instead instantiate the small set of different Role classes and cover the roles at a specific event in this way. E.g., instead of sub-classing the Chair role with MainChair, WorkshopChair, TutorialChair, etc., the different kinds of chairs should simply be instances of the generic Chair class and be labelled appropriately.
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:Class>
+
+	<owl:Class rdf:ID="Chair">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Role"/>
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#Role"/>
+		<rdfs:label>Chair</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>
+				A sub-class of Role for various kinds of chair functions. Examples are the main chair of a conference, the tutorials chair, the proceedings chair, etc. Instead of introducing a large amount of sub-classes of Chair, we suggest to model all the different chair functions as instances of Chair with appropriate labels.
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:Class>
+
+	<owl:Class rdf:ID="Delegate">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Role"/>
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#Role"/>
+		<rdfs:label>Delegate</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>
+				A delegate is someone who attends a conference or conference-like event.
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:Class>
+
+	<owl:Class rdf:ID="Presenter">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Role"/>
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#Role"/>
+		<rdfs:label>Presenter</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>
+				A presenter is someone who presents matter in front of an audience. Examples of events to which this role applies are paper presentations, tutorials, or talks. A keynote speaker could also be modelled as an instance of this class.
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:Class>
+
+	<owl:Class rdf:ID="ProgrammeCommitteeMember">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Role"/>
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#Role"/>
+		<rdfs:label>Programme Committee Member</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>
+				This role is played by the members of the programme committee of a conference or conference-like event. We found this role to be so significant that it justifies to be represented by its own class.
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:Class>
+
+
+	<!-- Properties -->
+
+	<!-- Document Properties -->
+
+	<owl:ObjectProperty rdf:about="#relatedToEvent"
+		rdfs:label="related to Event">
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:domain rdf:resource="#ArgumentativeDocument"/>
+		<rdfs:range rdf:resource="#AcademicEvent"/>
+		<owl:inverseOf rdf:resource="#hasRelatedDocument"/>
+		<rdfs:label>related to event</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>
+				Relates a <a href="#ArgumentativeDocument">document</a> to an <a href="#AcademicEvent">event</a> such as a conference, workshop, etc.
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:ObjectProperty>
+
+	<!-- Event Properties -->
+
+	<owl:ObjectProperty rdf:about="#hasRelatedDocument"
+		rdfs:label="has related document">
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:domain rdf:resource="#AcademicEvent"/>
+		<rdfs:range rdf:resource="#ArgumentativeDocument"/>
+		<owl:inverseOf rdf:resource="#relatedToEvent"/>
+		<rdfs:label>has related document</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>
+				Relates an <a href="#AcademicEvent">event</a> such as a conference, workshop, etc. to a <a href="#ArgumentativeDocument">document</a>.
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:ObjectProperty>
+
+	<owl:TransitiveProperty rdf:about="#isSubEventOf"
+		rdfs:label="is a sub-event of">
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:domain rdf:resource="&ical;Vevent"/>
+		<rdfs:range rdf:resource="&ical;Vevent"/>
+		<owl:inverseOf rdf:resource="#isSuperEventOf"/>
+		<rdfs:label>is sub-event of</rdfs:label>
+		<rdfs:comment>Events can be sub-events of other events. E.g., a talk can be a sub-event of a session, which in turn can be a sub-event of a conference. The relation is transitive - the talk is also a sub-event of the conference.</rdfs:comment>
+	</owl:TransitiveProperty>
+
+	<owl:TransitiveProperty rdf:about="#isSuperEventOf"
+		rdfs:label="is the super-event of">
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:domain rdf:resource="&ical;Vevent"/>
+		<rdfs:range rdf:resource="&ical;Vevent"/>
+		<owl:inverseOf rdf:resource="#isSubEventOf"/>
+		<rdfs:label>is super-event of</rdfs:label>
+		<rdfs:comment>Events can be super-events of other events. E.g., a conference can be the super-event of a session, which in turn can be the super-event of a talk. The relation is transitive - the conference is also the super-event of the talk.</rdfs:comment>
+	</owl:TransitiveProperty>
+
+	<!-- People Properties -->
+
+	<owl:ObjectProperty rdf:ID="memberOf">
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:domain rdf:resource="&foaf;Person"/>
+		<rdfs:range rdf:resource="&foaf;Group"/>
+		<owl:inverseOf rdf:resource="&foaf;member"/>
+		<rdfs:label>member of</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>FOAF does not define an inverse of <code>foaf:member</code>, so SWC does it.</p>
+			]]>
+		</rdfs:comment>
+	</owl:ObjectProperty>
+
+
+	<owl:ObjectProperty rdf:ID="relatedToEvent">
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:domain rdf:resource="#Artefact"/>
+		<rdfs:range rdf:resource="#AcademicEvent"/>
+		<rdfs:label>related to event</rdfs:label>
+	</owl:ObjectProperty>
+
+	<owl:ObjectProperty rdf:ID="hasLocation">
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:domain rdf:resource="#OrganisedEvent"/>
+		<rdfs:range rdf:resource="&geo;SpatialThing"/>
+		<rdfs:label>has location</rdfs:label>
+		<!-- has inverse isLocationFor -->
+		<rdfs:comment><![CDATA[
+			<p>
+				Relates an event such as a conference or any sub-event thereof to a location where it takes place. 
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:ObjectProperty>
+
+	<owl:ObjectProperty rdf:ID="hasProgramme">
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:domain rdf:resource="#OrganisedEvent"/>
+		<rdfs:range rdf:resource="#Programme"/>
+		<rdfs:label>has programme</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>
+				Relates an event such as a conference to its <a href="#Programme">Programme</a>. 
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:ObjectProperty>
+
+	<owl:ObjectProperty rdf:ID="plansToAttend">
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+		<rdfs:range rdf:resource="#OrganisedEvent"/>
+		<rdfs:label>plans to attend</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>
+				A person might plan to attend a talk or session at a conference or similar event. This property could be used to prepare a delegate's conference experience with respect to who they want to meet, etc.
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:ObjectProperty>
+
+
+
+	<owl:ObjectProperty rdf:ID="hasRole">
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:domain rdf:resource="#AcademicEvent"/>
+		<rdfs:range rdf:resource="#Role"/>
+		<rdfs:label>has role</rdfs:label>
+		<owl:inverseOf rdf:resource="#isRoleAt"/>
+		<rdfs:comment><![CDATA[
+			<p>
+				Part of the <a href="#Role">role</a> modelling machinery of SWC. This property relates an event (e.g. a conference) to a role at the event (e.g. a conference chair).
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:ObjectProperty>
+
+	<owl:ObjectProperty rdf:ID="hasRelatedArtefact">
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:domain rdf:resource="#AcademicEvent"/>
+		<rdfs:range rdf:resource="#Artefact"/>
+		<rdfs:label>has related artefact</rdfs:label>
+		<!-- inverse of #relatedToEvent -->
+		<rdfs:comment><![CDATA[
+			<p>
+				Relates an <a href="#AcademicEvent">event</a> such as a conference, workshop, etc. to a physical <a href="#Artefact">artefact</a>.
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:ObjectProperty>
+
+	<owl:ObjectProperty rdf:ID="isLocationFor">
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:domain rdf:resource="&geo;SpatialThing"/>
+		<rdfs:range rdf:resource="#OrganisedEvent"/>
+		<rdfs:label>is location of</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>
+				Relates a location to a conference or sub-event thereof which takes place at it.
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:ObjectProperty>
+
+
+
+
+	<owl:ObjectProperty rdf:ID="isRoleAt">
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:domain rdf:resource="#Role"/>
+		<rdfs:range rdf:resource="#AcademicEvent"/>
+		<rdfs:label>is role at</rdfs:label>
+		<owl:inverseOf rdf:resource="#hasRole"/>
+		<rdfs:comment><![CDATA[
+			<p>
+				Part of the <a href="#Role">role</a> modelling machinery of SWC. This property relates a role at an event (e.g. a conference chair) to the event (e.g. a conference).
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:ObjectProperty>
+
+	<owl:ObjectProperty rdf:ID="heldBy">
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:domain rdf:resource="#Role"/>
+		<rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+		<rdfs:label>held by</rdfs:label>
+		<owl:inverseOf rdf:resource="#holdsRole"/>
+		<rdfs:comment><![CDATA[
+			<p>
+				Part of the <a href="#Role">role</a> modelling machinery of SWC. This property relates a role at an event (e.g. a conference chair) to the person who actually holds the role.
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:ObjectProperty>
+
+	<owl:ObjectProperty rdf:ID="holdsRole">
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+		<rdfs:range rdf:resource="#Role"/>
+		<rdfs:label>holds role</rdfs:label>
+		<owl:inverseOf rdf:resource="#heldBy"/>
+		<rdfs:comment><![CDATA[
+			<p>
+				Part of the <a href="#Role">role</a> modelling machinery of SWC. This property relates a person to the role (e.g. a conference chair) it holds at an event.
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:ObjectProperty>
+
+	<!-- additional generic properties -->
+
+	<!-- Artefacts, Events, Places expected to use hasPart/isPartOf relations -->
+	<owl:ObjectProperty rdf:ID="hasPart">
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+		<rdfs:label>has part</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>
+				A generic property to model part-of relationships. In SWC this property is used to relate a <a href="#Proceedings">proceedings document</a> to the papers and articles contained in it.
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:ObjectProperty>
+
+	<owl:ObjectProperty rdf:ID="isPartOf">
+		<vs:term_status>testing</vs:term_status>
+		<rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+		<rdfs:label>is part of</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>
+				A generic property to model part-of relationships. In SWC this property is used to relate papers or articles to the <a href="#Proceedings">proceedings document</a> in which they are contained.
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:ObjectProperty>
+
+	<!-- end of additional properties -->
+
+	<!-- OWL hacks -->
+
+	<owl:Class rdf:about="http://swrc.ontoware.org/ontology#ResearchTopic"/>
+	<owl:Class rdf:about="&geo;SpatialThing"/>
+
+	<!-- FOAF definitions -->
+	<owl:Class rdf:about="http://xmlns.com/foaf/0.1/Organization"/>
+	<owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+	<owl:Class rdf:about="http://xmlns.com/foaf/0.1/Document"/>
+	<owl:Class rdf:about="http://xmlns.com/foaf/0.1/Group"/>
+	<owl:Class rdf:about="http://xmlns.com/foaf/0.1/Project"/>
+
+	<owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/member"/>
+	<owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/homepage"/>
+	<owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/based_near"/>
+	<owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/title"/>
+	<owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/firstName"/>
+	<owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/family_name"/>
+	<owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/surname"/>
+	<owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/mbox_sha1sum"/>
+	<owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/mbox"/>
+	<owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/maker"/>
+
+	<!-- Wordnet definitions -->
+	<owl:Class rdf:about="http://xmlns.com/wordnet/1.6/Announcement"/>
+	<owl:Class rdf:about="http://xmlns.com/wordnet/1.6/Document"/>
+	<owl:Class rdf:about="http://xmlns.com/wordnet/1.6/Event-1"/>
+	<owl:Class rdf:about="http://xmlns.com/wordnet/1.6/Menu"/>
+	<owl:Class rdf:about="http://xmlns.com/wordnet/1.6/Role-1"/>
+	<owl:Class rdf:about="http://xmlns.com/wordnet/1.6/Sponsorship"/>
+
+
+	<!-- ical not imported due to problems with the ical ontology being
+	OWL Full. Declarations are given here. -->
+	<owl:Class rdf:about="&ical;Vevent"/>
+	<owl:Class rdf:about="&ical;Vcalendar"/>
+	<owl:ObjectProperty rdf:about="&ical;dtstart"/>
+	<owl:ObjectProperty rdf:about="&ical;dtend"/>
+	<owl:ObjectProperty rdf:about="&ical;dtstamp"/>
+	<owl:ObjectProperty rdf:about="&ical;component"/>
+	<owl:DatatypeProperty rdf:about="&ical;date"/>
+	<owl:DatatypeProperty rdf:about="&ical;duration"/>
+	<owl:DatatypeProperty rdf:about="&ical;description"/>
+	<owl:DatatypeProperty rdf:about="&ical;tzid"/>
+	<owl:DatatypeProperty rdf:about="&ical;calscale"/>
+	<owl:DatatypeProperty rdf:about="&ical;prodid"/>
+	<owl:DatatypeProperty rdf:about="&ical;version"/>
+	<owl:DatatypeProperty rdf:about="&ical;location"/>
+	<owl:DatatypeProperty rdf:about="&ical;dateTime"/>
+	<owl:DatatypeProperty rdf:about="&ical;sequence"/>
+
+	<owl:DatatypeProperty rdf:about="&ical;url"/>
+
+
+	<!-- bibtex declarations -->
+	<owl:ObjectProperty rdf:about="&bibtex;url"/>
+	<owl:DatatypeProperty rdf:about="&bibtex;doi"/>
+
+	<!--
+		<owl:DatatypeProperty rdf:about="&bibtex;month"/>
+		<owl:DatatypeProperty rdf:about="&bibtex;address"/>
+		<owl:DatatypeProperty rdf:about="&bibtex;abstract"/>
+
+		<owl:ObjectProperty rdf:about="&bibtex;editor"/>
+		<owl:ObjectProperty rdf:about="&bibtex;author"/>
+
+		<owl:DatatypeProperty rdf:about="&bibtex;abstract"/>
+
+	-->
+
+	<!-- DC declarations. Note the use of AnnotationProperty as we are
+	making statements about the Ontology object -->
+	<owl:ObjectProperty rdf:about="http://purl.org/dc/terms/isPartOf"/>
+
+	<owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
+	<owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+	<owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+	<owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+	<owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+	
+	<!-- Deprecated terms -->
+	
+	<owl:DeprecatedClass rdf:ID="ConferenceChair">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Chairman"/>
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#Role"/>
+		<rdfs:label>Conference Chair</rdfs:label>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="TrackChair">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Chairman"/>
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:comment><![CDATA[
+			<p>
+				The chair of a particular track of a conference, responsible for all submissions and actions regarding this track.
+			</p>
+			]]>
+		</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#Role"/>
+		<rdfs:label>Track Chair</rdfs:label>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="ProgrammeChair">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Chairman"/>
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#Role"/>
+		<rdfs:label>Programme Chair</rdfs:label>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="WorkshopsChair">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Chairman"/>
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#Role"/>
+		<rdfs:label>Workshops Chair</rdfs:label>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="TutorialsChair">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Chairman"/>
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#Role"/>
+		<rdfs:label>Tutorials Chair</rdfs:label>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="PostersChair">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Chairman"/>
+		<rdfs:comment><![CDATA[
+			<p>
+				Deprecating this, just use <a href="#TrackChair">TrackChair</a> instead.
+			</p>
+			]]>
+		</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#Role"/>
+		<rdfs:label>Posters Chair</rdfs:label>
+		<vs:term_status>deprecated</vs:term_status>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="DemosChair">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Chairman"/>
+		<rdfs:comment><![CDATA[
+			<p>
+				Deprecating this, just use <a href="#TrackChair">TrackChair</a> instead.
+			</p>
+			]]>
+		</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#Role"/>
+		<rdfs:label>Demos Chair</rdfs:label>
+		<vs:term_status>deprecated</vs:term_status>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="IndustryChair">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Chairman"/>
+		<rdfs:comment><![CDATA[
+			<p>
+				Deprecating this, just use <a href="#TrackChair">TrackChair</a> instead.
+			</p>
+			]]>
+		</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#Role"/>
+		<rdfs:label>Industry Chair or In-Use Chair</rdfs:label>
+		<vs:term_status>deprecated</vs:term_status>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="SponsorshipChair">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Chairman"/>
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#Role"/>
+		<rdfs:label>Sponsorship Chair</rdfs:label>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="PublicityChair">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Chairman"/>
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#Role"/>
+		<rdfs:label>Publicity Chair</rdfs:label>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="PhDSymposiumChair">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Chairman"/>
+		<rdfs:comment><![CDATA[
+			<p>
+				Deprecating this, just use <a href="#TrackChair">TrackChair</a> instead.
+			</p>
+			]]>
+		</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#Role"/>
+		<rdfs:label>PhD Symposium or Doctoral Consortium Chair</rdfs:label>
+		<vs:term_status>deprecated</vs:term_status>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="SWChallengeChair">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Chairman"/>
+		<rdfs:comment><![CDATA[
+			<p>
+				Deprecating this, just use <a href="#TrackChair">TrackChair</a> instead.
+			</p>
+			]]>
+		</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#Role"/>
+		<rdfs:label>Semantic Web Challenge Chair</rdfs:label>
+		<vs:term_status>deprecated</vs:term_status>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="Treasurer">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Role"/>
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#Role"/>
+		<rdfs:label>Treasurer</rdfs:label>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="SubmissionsChair">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Chairman"/>
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#Role"/>
+		<rdfs:label>Submissions Chair</rdfs:label>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="PrintedProceedingsChair">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Chairman"/>
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#Role"/>
+		<rdfs:label>(Printed) Proceedings Chair</rdfs:label>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="ExhibitionChair">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Chairman"/>
+		<rdfs:comment><![CDATA[
+			<p>
+				Deprecating this, just use <a href="#TrackChair">TrackChair</a> instead.
+			</p>
+			]]>
+		</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#Role"/>
+		<rdfs:label>Exhibition Chair</rdfs:label>
+		<vs:term_status>deprecated</vs:term_status>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="LocalOrganiser">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Role"/>
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#Role"/>
+		<rdfs:label>Local Organiser</rdfs:label>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="Administrator">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Role"/>
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#Role"/>
+		<rdfs:label>Administrator</rdfs:label>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="Webmaster">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Role"/>
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#Role"/>
+		<rdfs:label>Webmaster</rdfs:label>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="DogfoodTsar">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Chairman"/>
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#Role"/>
+		<rdfs:label>Dogfood Tsar</rdfs:label>
+		<rdfs:comment>A role that is only relevant in relation to the topic of the conference e.g. Semantic 
+			Web Technologies Coordinator at a Semantic Web Conference.
+		</rdfs:comment>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="OrganisingCommitteeMember">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Role"/>
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#Role"/>
+		<rdfs:label>Organising Committee Member</rdfs:label>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="WorkshopOrganiser">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Role"/>
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#Role"/>
+		<rdfs:label>Workshop Organiser</rdfs:label>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="TutorialPresenter">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Role"/>
+		<rdfs:comment><![CDATA[
+			<p>
+				Deprecating this, just use <a href="#Presenter">Presenter</a> instead.
+			</p>
+			]]>
+		</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#Role"/>
+		<rdfs:label>Tutorial Presenter</rdfs:label>
+		<vs:term_status>deprecated</vs:term_status>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="SessionChair">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Chairman"/>
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#Role"/>
+		<rdfs:label>Session Chair</rdfs:label>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="Tutor">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Role"/>
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#Role"/>
+		<rdfs:label>Tutor</rdfs:label>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="Reviewer">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Role"/>
+		<rdfs:comment><![CDATA[
+			<p>
+				Deprecating this, just use <a href="#ProgrammeCommitteeMember">ProgrammeCommitteeMember</a> instead.
+			</p>
+			]]>
+		</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#Role"/>
+		<rdfs:label>Reviewer</rdfs:label>
+		<vs:term_status>deprecated</vs:term_status>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="AdditionalReviewer">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Role"/>
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#Role"/>
+		<rdfs:label>Additional Reviewer</rdfs:label>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:about="#SystemDescription">
+		<rdfs:label>System Description</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>
+				A type of paper which is mainly describes the properties, implementation or architecture of an system (such as a software system).
+			</p>
+			<p>
+				Deprecating this: it's too specific for, not generic enough to apply for most conferences.
+			]]>
+		</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#Paper"/>
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Document"/>
+		<vs:term_status>deprecated</vs:term_status>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:about="#IndustrialTalk"
+		rdfs:label="Industrial Talk">
+		<dcterms:subject rdf:resource="#AcademicEvent"/>
+		<rdfs:comment>
+			<![CDATA[
+			Deprecating this - we can just as well use <a href="#TalkEvent">TalkEvent</a>.
+			]]>
+		</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#TalkEvent"/>
+		<vs:term_status>deprecated</vs:term_status>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="IndustrialTrack">
+		<dcterms:subject rdf:resource="#AcademicEvent"/>
+		<rdfs:comment>
+			<![CDATA[
+			Deprecating this - we can just as well use <a href="#TrackEvent">TrackEvent</a>.
+			]]>
+		</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#TrackEvent"/>
+		<rdfs:label>Industrial Track</rdfs:label>
+		<vs:term_status>deprecated</vs:term_status>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="ResearchTrack">
+		<dcterms:subject rdf:resource="#AcademicEvent"/>
+		<rdfs:comment>
+			<![CDATA[
+			Deprecating this - we can just as well use <a href="#TrackEvent">TrackEvent</a>.
+			]]>
+		</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#TrackEvent"/>
+		<rdfs:label>Research Track</rdfs:label>
+		<vs:term_status>deprecated</vs:term_status>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="PaperSession">
+		<dcterms:subject rdf:resource="#AcademicEvent"/>
+		<rdfs:comment>
+			<![CDATA[
+			Deprecating this - we can just as well use <a href="#SessionEvent">SessionEvent</a>.
+			]]>
+		</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#SessionEvent"/>
+		<rdfs:label>Paper Session</rdfs:label>
+		<vs:term_status>deprecated</vs:term_status>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="PosterSession">
+		<dcterms:subject rdf:resource="#AcademicEvent"/>
+		<rdfs:comment>
+			<![CDATA[
+			Deprecating this - we can just as well use <a href="#SessionEvent">SessionEvent</a>.
+			]]>
+		</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#SessionEvent"/>
+		<rdfs:label>Poster Session</rdfs:label>
+		<vs:term_status>deprecated</vs:term_status>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="DemoSession">
+		<dcterms:subject rdf:resource="#AcademicEvent"/>
+		<rdfs:comment>
+			<![CDATA[
+			Deprecating this - we can just as well use <a href="#SessionEvent">SessionEvent</a>.
+			]]>
+		</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#SessionEvent"/>
+		<rdfs:label>Demo Session</rdfs:label>
+		<vs:term_status>deprecated</vs:term_status>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="WelcomeTalk">
+		<dcterms:subject rdf:resource="#AcademicEvent"/>
+		<rdfs:comment>
+			<![CDATA[
+			Deprecating this - we can just as well use <a href="#TalkEvent">TalkEvent</a>.
+			]]>
+		</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#TalkEvent"/>
+		<rdfs:label>Welcome Talk</rdfs:label>
+		<vs:term_status>deprecated</vs:term_status>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="KeynoteTalk">
+		<dcterms:subject rdf:resource="#AcademicEvent"/>
+		<rdfs:comment>
+			<![CDATA[
+			Deprecating this - we can just as well use <a href="#TalkEvent">TalkEvent</a>.
+			]]>
+		</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#TalkEvent"/>
+		<rdfs:label>Keynote Talk</rdfs:label>
+		<vs:term_status>deprecated</vs:term_status>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="PaperPresentation">
+		<dcterms:subject rdf:resource="#AcademicEvent"/>
+		<rdfs:comment>
+			<![CDATA[
+			Deprecating this - we can just as well use <a href="#TalkEvent">TalkEvent</a>.
+			]]>
+		</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#TalkEvent"/>
+		<rdfs:label>Paper Presentation</rdfs:label>
+		<vs:term_status>deprecated</vs:term_status>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="PosterPresentation">
+		<dcterms:subject rdf:resource="#AcademicEvent"/>
+		<rdfs:comment>
+			<![CDATA[
+			Deprecating this - we can just as well use <a href="#TalkEvent">TalkEvent</a>.
+			]]>
+		</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#TalkEvent"/>
+		<rdfs:label>Poster Presentation</rdfs:label>
+		<vs:term_status>deprecated</vs:term_status>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="DemoPresentation">
+		<dcterms:subject rdf:resource="#AcademicEvent"/>
+		<rdfs:comment>
+			<![CDATA[
+			Deprecating this - we can just as well use <a href="#TalkEvent">TalkEvent</a>.
+			]]>
+		</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#TalkEvent"/>
+		<rdfs:label>Demo Presentation</rdfs:label>
+		<vs:term_status>deprecated</vs:term_status>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="ConferenceOpeningEvent">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Event"/>
+		<rdfs:comment>
+			<![CDATA[
+			Deprecating this - we can just use <a href="#TalkEvent">TalkEvent</a>.
+			]]>
+		</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#NonAcademicEvent"/>
+		<rdfs:label>Opening Event</rdfs:label>
+		<vs:term_status>deprecated</vs:term_status>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="ConferenceClosingEvent">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Event"/>
+		<rdfs:comment>
+			<![CDATA[
+			Deprecating this - we can just use <a href="#TalkEvent">TalkEvent</a>.
+			]]>
+		</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#NonAcademicEvent"/>
+		<rdfs:label>Closing Event</rdfs:label>
+		<vs:term_status>deprecated</vs:term_status>
+	</owl:DeprecatedClass>	
+	
+	<owl:DeprecatedClass rdf:ID="CoffeeBreak">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Event"/>
+		<rdfs:comment>
+			<![CDATA[
+			Deprecating this - we can just use <a href="#BreakEvent">BreakEvent</a>.
+			]]>
+		</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#BreakEvent"/>
+		<rdfs:label>Coffee Break</rdfs:label>
+		<vs:term_status>deprecated</vs:term_status>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="MealBreak">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Event"/>
+		<rdfs:comment>
+			<![CDATA[
+			Deprecating this - we can just use <a href="#BreakEvent">BreakEvent</a>.
+			]]>
+		</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#BreakEvent"/>
+		<rdfs:label>Meal Break</rdfs:label>
+		<vs:term_status>deprecated</vs:term_status>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="FreeTimeBreak">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Event"/>
+		<rdfs:comment>
+			<![CDATA[
+			Deprecating this - we can just use <a href="#BreakEvent">BreakEvent</a>.
+			]]>
+		</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#BreakEvent"/>
+		<rdfs:label>Free Time Break</rdfs:label>
+		<vs:term_status>deprecated</vs:term_status>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="Excursion">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Event"/>
+		<rdfs:comment>
+			<![CDATA[
+			Deprecating this - we can just use <a href="#SocialEvent">SocialEvent</a>.
+			]]>
+		</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#SocialEvent"/>
+		<rdfs:label>Excursion</rdfs:label>
+		<vs:term_status>deprecated</vs:term_status>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="Reception">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Event"/>
+		<rdfs:comment>
+			<![CDATA[
+			Deprecating this - we can just use <a href="#SocialEvent">SocialEvent</a>.
+			]]>
+		</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#SocialEvent"/>
+		<rdfs:label>Reception</rdfs:label>
+		<vs:term_status>deprecated</vs:term_status>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="ConferenceDinner">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Event"/>
+		<rdfs:comment>
+			<![CDATA[
+			Deprecating this - we can just use <a href="#SocialEvent">SocialEvent</a>.
+			]]>
+		</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#SocialEvent"/>
+		<rdfs:subClassOf rdf:resource="#MealEvent"/>
+		<rdfs:label>Conference Dinner</rdfs:label>
+		<vs:term_status>deprecated</vs:term_status>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:about="#InvitedPaper">
+		<rdfs:label>Invited Paper</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>As opposed to a peer-reviewed paper. This class has been deprecated in order to reduce the inflation of classes.</p>
+			]]>
+		</rdfs:comment>
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:subClassOf rdf:resource="&bibtex;InProceedings"/>
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Document"/>
+	</owl:DeprecatedClass>
+	
+	<owl:DeprecatedClass rdf:about="#SystemDemonstration">
+		<rdfs:label>System Demonstration</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>A type of paper which accompanies the demonstration of software, also known as an extended abstract or demo description. This class has been deprecated in order to reduce the inflation of classes; it is too specific for CS conferences.</p>
+			]]>
+		</rdfs:comment>
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#Paper"/>
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Document"/>
+	</owl:DeprecatedClass>
+
+	<!--  Call Classes  -->
+
+	<rdf:Description rdf:about="http://dbpedia.org/resource/Call">
+		<rdfs:label>Call</rdfs:label>
+	</rdf:Description>
+
+	<owl:DeprecatedClass rdf:ID="Call">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Call"/>
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:subClassOf rdf:resource="http://xmlns.com/wordnet/1.6/Announcement"/>
+		<rdfs:label>Call</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>The call classes have been deprecated in SWC. Instead, we suggest to use the <a href="http://sw.deri.org/2005/08/conf/cfp">CfP ontology</a>.</p>
+			<p>A <emph>call</emph> is a public announcement, asking for contribution of some kind to events such as conferences or workshops, or to a publication such as a journal or book.</p>
+			]]>
+		</rdfs:comment>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="CallForParticipation">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Call"/>
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#Call"/>
+		<rdfs:label>Call for Participation</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>This kind of call usually calls for potential delegates to attend an event such as a conference or a workshop.</p>
+			]]>
+		</rdfs:comment>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="CallForProposals">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Call"/>
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#Call"/>
+		<rdfs:label>Call for Proposals</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>A call which asks for contributions in the form of e.g. workshop or tutorial proposals.</p>
+			]]>
+		</rdfs:comment>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="CallForPapers">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Call"/>
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#Call"/>
+		<rdfs:label>Call for Papers</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>A <emph>call for papers</emph> or <emph>CfP</emph> encourages authors to submit papers for peer-review for a conference or workshop, or a journal or book.</p>
+			]]>
+		</rdfs:comment>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="CallForPosters">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Call"/>
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#Call"/>
+		<rdfs:label>Call for Posters</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>A call for scientific posters at a conference or workshop. Submissions are usually in the form of extended abstracts (~2 page) discussing the research presented on the poster.</p>
+			]]>
+		</rdfs:comment>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="CallForDemos">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Call"/>
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#Call"/>
+		<rdfs:label>Call for Demos</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>A call for demonstrations of software at a conference or workshop. Submissions are usually in the form of extended abstracts (~2 page) discussing the research questions addressed by the software and outlining the content of the demonstration.</p>
+			]]>
+		</rdfs:comment>
+	</owl:DeprecatedClass>
+
+	<!--  Other Classes  -->
+
+
+	<owl:DeprecatedClass rdf:ID="Sponsorship">
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:subClassOf rdf:resource="http://xmlns.com/wordnet/1.6/Sponsorship"/>
+		<rdfs:label>Sponsorship</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>Deprecated because it has never been used and in order to reduce the inflation of ontology terms.</p>
+			]]>
+		</rdfs:comment>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedProperty rdf:ID="isProviderOf">
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Organisation"/>
+		<rdfs:range rdf:resource="#Sponsorship"/>
+		<rdfs:label>is provider of</rdfs:label>
+		<owl:inverseOf rdf:resource="#isProvidedBy"/>
+		<rdfs:comment><![CDATA[
+			<p>Deprecated because it has never been used and in order to reduce the inflation of ontology terms.</p>
+			]]>
+		</rdfs:comment>
+	</owl:DeprecatedProperty>
+
+	<owl:DeprecatedProperty rdf:ID="isProvidedBy">
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:domain rdf:resource="#Sponsorship"/>
+		<rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Organisation"/>
+		<rdfs:label>is provided by</rdfs:label>
+		<owl:inverseOf rdf:resource="#isProviderOf"/>
+		<rdfs:comment><![CDATA[
+			<p>Deprecated because it has never been used and in order to reduce the inflation of ontology terms.</p>
+			]]>
+		</rdfs:comment>
+	</owl:DeprecatedProperty>
+
+	<owl:DeprecatedProperty rdf:ID="hasCostAmount">
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:domain rdf:resource="#Sponsorship"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+		<rdfs:label>has cost amount</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>Deprecated because it has never been used and in order to reduce the inflation of ontology terms.</p>
+			]]>
+		</rdfs:comment>
+	</owl:DeprecatedProperty>
+
+	<owl:DeprecatedProperty rdf:ID="hasCostCurrency">
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:domain rdf:resource="#Sponsorship"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<rdfs:label>has cost currency</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>Deprecated because it has never been used and in order to reduce the inflation of ontology terms.</p>
+			]]>
+		</rdfs:comment>
+	</owl:DeprecatedProperty>
+
+
+	<owl:DeprecatedProperty rdf:ID="hasMenu">
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:domain rdf:resource="#MealEvent"/>
+		<rdfs:range rdf:resource="http://xmlns.com/wordnet/1.6/Menu"/>
+		<rdfs:label>has menu</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>Deprecated because it has never been used and in order to reduce the inflation of ontology terms.</p>
+			]]>
+		</rdfs:comment>
+	</owl:DeprecatedProperty>
+
+	<owl:DeprecatedProperty rdf:ID="biblioReference">
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:domain rdf:resource="#Artefact"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<rdfs:label>bibliographic reference</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>Deprecated because it has never been used and in order to reduce the inflation of ontology terms.</p>
+			]]>
+		</rdfs:comment>
+	</owl:DeprecatedProperty>
+
+
+	<owl:DeprecatedProperty rdf:ID="hasSponsorship">
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:domain rdf:resource="#OrganisedEvent"/>
+		<rdfs:range rdf:resource="#Sponsorship"/>
+		<rdfs:label>has sponsorship</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>Deprecated because it has never been used and in order to reduce the inflation of ontology terms.</p>
+			]]>
+		</rdfs:comment>
+	</owl:DeprecatedProperty>
+
+	<owl:DeprecatedProperty rdf:ID="forEvent">
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:domain rdf:resource="#Call"/>
+		<rdfs:range rdf:resource="#AcademicEvent"/>
+		<rdfs:label>for event</rdfs:label>
+		<owl:inverseOf rdf:resource="#hasCall"/>
+		<rdfs:comment><![CDATA[
+			<p>The call classes have been deprecated in SWC. Instead, we suggest to use the <a href="http://sw.deri.org/2005/08/conf/cfp">CfP ontology</a>.</p>
+			]]>
+		</rdfs:comment>
+	</owl:DeprecatedProperty>
+
+	<owl:DeprecatedProperty rdf:ID="hasCall">
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:domain rdf:resource="#AcademicEvent"/>
+		<rdfs:range rdf:resource="#Call"/>
+		<rdfs:label>has call</rdfs:label>
+		<owl:inverseOf rdf:resource="#forEvent"/>
+		<rdfs:comment><![CDATA[
+			<p>The call classes have been deprecated in SWC. Instead, we suggest to use the <a href="http://sw.deri.org/2005/08/conf/cfp">CfP ontology</a>.</p>
+			]]>
+		</rdfs:comment>
+	</owl:DeprecatedProperty>
+	
+	<owl:DeprecatedProperty rdf:ID="hasSubmissionDeadline">
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:domain rdf:resource="#Call"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+		<rdfs:label>has submission deadline</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>The call classes have been deprecated in SWC. Instead, we suggest to use the <a href="http://sw.deri.org/2005/08/conf/cfp">CfP ontology</a>.</p>
+			]]>
+		</rdfs:comment>
+	</owl:DeprecatedProperty>
+
+	<owl:DeprecatedProperty rdf:ID="hasSubmissionInstructions">
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:domain rdf:resource="#Call"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<rdfs:label>has submission instructions</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>The call classes have been deprecated in SWC. Instead, we suggest to use the <a href="http://sw.deri.org/2005/08/conf/cfp">CfP ontology</a>.</p>
+			]]>
+		</rdfs:comment>
+	</owl:DeprecatedProperty>
+
+	<owl:DeprecatedProperty rdf:ID="hasNotificationDeadline">
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:domain rdf:resource="#Call"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+		<rdfs:label>has notification deadline</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>The call classes have been deprecated in SWC. Instead, we suggest to use the <a href="http://sw.deri.org/2005/08/conf/cfp">CfP ontology</a>.</p>
+			]]>
+		</rdfs:comment>
+	</owl:DeprecatedProperty>
+
+	<owl:DeprecatedProperty rdf:ID="hasCameraReadyDeadline">
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:domain rdf:resource="#Call"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+		<rdfs:label>has camera-ready deadline</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>The call classes have been deprecated in SWC. Instead, we suggest to use the <a href="http://sw.deri.org/2005/08/conf/cfp">CfP ontology</a>.</p>
+			]]>
+		</rdfs:comment>
+	</owl:DeprecatedProperty>
+
+	<owl:DeprecatedProperty rdf:ID="hasAttendee">
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:domain rdf:resource="#OrganisedEvent"/>
+		<rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+		<rdfs:label>has attendee</rdfs:label>
+		<owl:inverseOf rdf:resource="#attendeeAt"/>
+		<rdfs:comment><![CDATA[
+			<p>Instead of this property, use the <a href="#Delegate">Delegate</a> role.</p>
+			]]>
+		</rdfs:comment>
+	</owl:DeprecatedProperty>
+
+	<owl:DeprecatedProperty rdf:ID="attendeeAt">
+		<!-- deliberately avoids tense -->
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+		<rdfs:range rdf:resource="#OrganisedEvent"/>
+		<rdfs:label>attendee at</rdfs:label>
+		<owl:inverseOf rdf:resource="#hasAttendee"/> 
+		<rdfs:comment><![CDATA[
+			<p>Instead of this property, use the <a href="#Delegate">Delegate</a> role.</p>
+			]]>
+		</rdfs:comment>
+	</owl:DeprecatedProperty>
+
+	<!-- Artefacts, AcademicEvents, Calls expected to use hasTopic/isTopicOf relations -->
+	<owl:DeprecatedProperty rdf:ID="isTopicOf">
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:domain rdf:resource="http://swrc.ontoware.org/ontology#ResearchTopic"/>
+		<rdfs:label>is topic of</rdfs:label>
+		<!-- range deliberately left blank -->
+		<!-- inverse of #hasTopic -->
+		<rdfs:comment><![CDATA[
+			<p>Deprecated, instead using terms from FOAF.</p>
+			]]>
+		</rdfs:comment>
+	</owl:DeprecatedProperty>
+
+	<owl:DeprecatedProperty rdf:ID="hasTopic">
+		<!-- domain deliberately left blank -->
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:range rdf:resource="http://swrc.ontoware.org/ontology#ResearchTopic"/>
+		<rdfs:label>has topic</rdfs:label>
+		<!-- inverse of #isTopicOf -->
+		<rdfs:comment><![CDATA[
+			<p>Instead of this property, use <a href="http://xmlns.com/foaf/0.1/topic">foaf:topic</a>.</p>
+			]]>
+		</rdfs:comment>
+	</owl:DeprecatedProperty>
+
+	<!-- Used for unique ids -->
+	<owl:DeprecatedProperty rdf:ID="uuid">
+		<rdfs:label>uuid</rdfs:label>
+		<vs:term_status>deprecated</vs:term_status>
+	</owl:DeprecatedProperty>
+
+
+	<owl:DeprecatedClass rdf:ID="DrinkingPlace">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Place"/>
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#Place"/>
+		<rdfs:label>Drinking Place</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>Deprecated to reduce inflation of terms.</p>
+			]]>
+		</rdfs:comment>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="EatingPlace">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Place"/>
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:subClassOf rdf:resource="#Place"/>
+		<rdfs:label>Eating Place</rdfs:label>
+		<rdfs:comment><![CDATA[
+			<p>Deprecated to reduce inflation of terms.</p>
+			]]>
+		</rdfs:comment>
+	</owl:DeprecatedClass>
+
+	<owl:DeprecatedClass rdf:ID="Place">
+		<dcterms:subject rdf:resource="http://dbpedia.org/resource/Place"/>
+		<vs:term_status>deprecated</vs:term_status>
+		<rdfs:subClassOf rdf:resource="&geo;SpatialThing"/>
+		<rdfs:label>Place</rdfs:label>
+		<rdfs:comment>
+			<![CDATA[
+			<p>
+				Deprecated: no real need to have an internal super-class for locations, we can just use the <a href="&geo;SpatialThing">SpatialThing</a>.
+			</p>
+			]]>
+		</rdfs:comment>
+	</owl:DeprecatedClass>
+
+	<!-- Hack for affiliations -->
+	<owl:DeprecatedProperty rdf:about="#affiliation">
+		<rdfs:label>affiliation</rdfs:label>
+		<vs:term_status>deprecated</vs:term_status>
+	</owl:DeprecatedProperty>
+
+	<!-- Testing ... -->
+	
+	<!--
+	<owl:Class rdf:about="#Testoburger">
+		<owl:intersectionOf>
+	      <rdf:Description>
+	        <rdf:first rdf:resource="#TalkEvent"/>
+	        <rdf:rest>
+	          <rdf:Description>
+	            <rdf:first rdf:resource="#TutorialEvent"/>
+	            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+	          </rdf:Description>
+	        </rdf:rest>
+	      </rdf:Description>
+		</owl:intersectionOf>
+	</owl:Class>
+
+	<owl:ObjectProperty rdf:about="#richtung">
+		<rdfs:superPropertyOf rdf:resource="#links"/>
+		<rdfs:superPropertyOf rdf:resource="#rechts"/>
+		<rdfs:label>wohin?</rdfs:label>
+	</owl:ObjectProperty>
+
+	<owl:ObjectProperty rdf:about="#rechts">
+		<rdfs:subPropertyOf rdf:resource="#richtung"/>
+		<rdfs:label>rechts!</rdfs:label>
+		<owl:inverseOf rdf:resource="#links"/>
+	</owl:ObjectProperty>
+
+	<owl:ObjectProperty rdf:about="#links">
+		<rdfs:subPropertyOf rdf:resource="#richtung"/>
+		<rdfs:label>links!</rdfs:label>
+		<owl:inverseOf rdf:resource="#rechts"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="#interestingProperty">
+		<rdf:type rdf:resource="&owl;FunctionalProperty"/>
+		<rdfs:label>exciting!</rdfs:label>
+	</owl:ObjectProperty>
+
+	<owl:FunctionalProperty rdf:about="#functionalProperty">
+		<rdfs:label>functional!</rdfs:label>
+	</owl:FunctionalProperty>
+
+	<owl:ObjectProperty rdf:about="#deprecatedProperty">
+		<rdf:type rdf:resource="&owl;FunctionalProperty"/>
+		<rdf:type rdf:resource="&owl;DeprecatedProperty"/>
+		<rdfs:label>depressing!</rdfs:label>
+	</owl:ObjectProperty>
+
+-->
+</rdf:RDF>
