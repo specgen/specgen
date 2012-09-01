@@ -704,7 +704,7 @@ class VocabReport(object):
   			ordone = False
   			for (row) in relations:
   				subclass = row[0]
-				subclassnice = self.vocab.niceName(subclass)
+   				subclassnice = self.vocab.niceName(subclass)
   				# print "subclass ",subclass
   				# print "subclassnice ",subclassnice
   				# check niceName result
@@ -838,7 +838,7 @@ class VocabReport(object):
 
   			relations = g.query(q)
   			for (row) in relations:
-				subclass = row[0]
+  				subclass = row[0]
   				subclassnice = self.vocab.niceName(subclass)
   				print "has subclass ", subclass
   				print "has subclassnice ", subclassnice
@@ -1000,7 +1000,7 @@ class VocabReport(object):
 
   			relations = g.query(q)
   			for (row) in relations:
-				domain = row[0]
+  				domain = row[0]
   				domainnice = self.vocab.niceName(domain)
   				# print "domain ",domain
   				# print "domainnice ",domainnice
@@ -1101,7 +1101,7 @@ class VocabReport(object):
 
   			relations = g.query(q)
   			for (row) in relations:
-				range = row[0]
+  				range = row[0]
   				rangenice = self.vocab.niceName(range)
   				# print "range ",range
   				# print "rangenice ",rangenice
@@ -1207,7 +1207,7 @@ class VocabReport(object):
   				
   			relations = g.query(q1)
   			for (row) in relations:
-				subproperty = row[0]
+  				subproperty = row[0]
   				subpropertynice = self.vocab.niceName(subproperty)
   				# check niceName result
   				colon = subpropertynice.find(':')
@@ -1262,7 +1262,7 @@ class VocabReport(object):
   					iptcounter = 0
   					termStr2 = ''
   					for (row) in relations2:
-						inversepropertytype = row[0]
+  						inversepropertytype = row[0]
   						print "inversepropertytype ", inversepropertytype
   						iptype = ''
   						termStr3 = ''
@@ -1323,7 +1323,7 @@ class VocabReport(object):
 
   			contentStr = ''
   			for (row) in relations:
-				isdefinedby = row[0]
+  				isdefinedby = row[0]
   				termStr = """<span rel="rdfs:isDefinedBy" href="%s"></span>\n""" % (isdefinedby)
   				contentStr = "%s %s" % (contentStr, termStr)
 
@@ -1340,7 +1340,7 @@ class VocabReport(object):
 
   			contentStr = ''
   			for (row) in relations:
-				equiprop = row[0]
+  				equiprop = row[0]
   				equipropnice = self.vocab.niceName(equiprop)
   				termStr = """<span rel="owl:equivalentProperty" href="%s"><a href="%s">%s</a></span>\n""" % (equiprop, equiprop, equipropnice)
   				contentStr = "%s %s" % (contentStr, termStr)
