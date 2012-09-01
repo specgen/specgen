@@ -702,8 +702,9 @@ class VocabReport(object):
   			
   			relations = g.query(q1)
   			ordone = False
-  			for (subclass) in relations:
-  				subclassnice = self.vocab.niceName(subclass)
+  			for (row) in relations:
+  				subclass = row[0]
+   				subclassnice = self.vocab.niceName(subclass)
   				# print "subclass ",subclass
   				# print "subclassnice ",subclassnice
   				# check niceName result
@@ -836,13 +837,14 @@ class VocabReport(object):
   			q = 'SELECT ?sc WHERE {?sc rdfs:subClassOf <%s> } ' % (term.uri)
 
   			relations = g.query(q)
-  			for (subclass) in relations:
+  			for (row) in relations:
+  				subclass = row[0]
   				subclassnice = self.vocab.niceName(subclass)
   				print "has subclass ", subclass
   				print "has subclassnice ", subclassnice
   				# check niceName result
   				colon = subclassnice.find(':')
-  				if(subclass.find(str(self.vocab._get_uri())) < 0):
+  				if(subclass[0].find(str(self.vocab._get_uri())) < 0):
   					if colon > 0:
   						termStr = """<a href="%s">%s</a>\n""" % (subclass, subclassnice)
   						contentStr = "%s %s" % (contentStr, termStr)
@@ -997,7 +999,8 @@ class VocabReport(object):
   			q = 'SELECT ?d WHERE {<%s> rdfs:domain ?d } ' % (term.uri)
 
   			relations = g.query(q)
-  			for (domain) in relations:
+  			for (row) in relations:
+  				domain = row[0]
   				domainnice = self.vocab.niceName(domain)
   				# print "domain ",domain
   				# print "domainnice ",domainnice
@@ -1097,7 +1100,8 @@ class VocabReport(object):
   			q = 'SELECT ?r WHERE {<%s> rdfs:range ?r } ' % (term.uri)
 
   			relations = g.query(q)
-  			for (range) in relations:
+  			for (row) in relations:
+  				range = row[0]
   				rangenice = self.vocab.niceName(range)
   				# print "range ",range
   				# print "rangenice ",rangenice
@@ -1202,7 +1206,8 @@ class VocabReport(object):
   			q1 = 'SELECT ?sp WHERE {<%s> rdfs:subPropertyOf ?sp } ' % (term.uri)
   				
   			relations = g.query(q1)
-  			for (subproperty) in relations:
+  			for (row) in relations:
+  				subproperty = row[0]
   				subpropertynice = self.vocab.niceName(subproperty)
   				# check niceName result
   				colon = subpropertynice.find(':')
@@ -1256,7 +1261,8 @@ class VocabReport(object):
   					contentStr2 = ''
   					iptcounter = 0
   					termStr2 = ''
-  					for (inversepropertytype) in relations2:
+  					for (row) in relations2:
+  						inversepropertytype = row[0]
   						print "inversepropertytype ", inversepropertytype
   						iptype = ''
   						termStr3 = ''
@@ -1316,7 +1322,8 @@ class VocabReport(object):
   			startStr = '\n'
 
   			contentStr = ''
-  			for (isdefinedby) in relations:
+  			for (row) in relations:
+  				isdefinedby = row[0]
   				termStr = """<span rel="rdfs:isDefinedBy" href="%s"></span>\n""" % (isdefinedby)
   				contentStr = "%s %s" % (contentStr, termStr)
 
@@ -1332,7 +1339,8 @@ class VocabReport(object):
   			startStr = '<tr><th>Equivalent Property</th>'
 
   			contentStr = ''
-  			for (equiprop) in relations:
+  			for (row) in relations:
+  				equiprop = row[0]
   				equipropnice = self.vocab.niceName(equiprop)
   				termStr = """<span rel="owl:equivalentProperty" href="%s"><a href="%s">%s</a></span>\n""" % (equiprop, equiprop, equipropnice)
   				contentStr = "%s %s" % (contentStr, termStr)
