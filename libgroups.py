@@ -172,15 +172,15 @@ class Grouping(object):
         #create nodes
         for onetype in classtypes:
             for classSub in  graph.subjects(predicate=RDF.type, object=onetype):
-                print("checking: " +str(classSub));
+                #print("checking: " +str(classSub));
                 if not filter(classSub, classlist):
                     uri = str(classSub);
                     classlist.append(uri);
                     classObj.append(classSub);
                     #print("adding node: "+ uri);
                     nlist.append({'node':classSub,'uri':uri,'name':self.gen[uri],'label':str(uri).replace(self.ns, ""),"type":"Class"});
-                else: print("filtered")
-        print classObj
+                #else: print("filtered")
+        #print classObj
         #if class != null create owl:Thing node
         thing = OWL.Thing
         uri = str(thing);
@@ -260,8 +260,8 @@ class Grouping(object):
                 edge['weight'] = weight;
                     
         
-        print nlist;
-        print elist;
+        #print nlist;
+        #print elist;
         g = Graph.DictList(vertices= nlist , edges=elist, directed=True);
         return g,classObj
     
@@ -375,7 +375,7 @@ class Grouping(object):
                 if uri.startswith(self.ns) and not sub in proplist:
                     proplist.append(sub)
         
-        print("found: "+str(len(proplist)) + " properties");
+        #print("found: "+str(len(proplist)) + " properties");
         
         #now we have our local properties
         for p in proplist:
@@ -460,19 +460,20 @@ class Grouping(object):
     
     
     def getHTMLGroups(self):
-           
+        print("creating groups")
         g,clObj = self.createConceptGraph();
         membership = self.processWalktrap(g);
 
         groups = self.getGroupsFromMembership(membership);
-        print(groups);
+        #print(groups);
         groups = self.extendGroupsWithProperties(groups,False);
-        print(groups);
-    
+        #print(groups);
+        print('creating labels for groups')
         l = Labeling(self.spec,groups,clObj,self.ns)
         labels = l.createLCALabels();
-    
+        print("create html for groups")
         html = self.createHTML(groups,labels);
+        print("processing of groups finished")
         return html;
     
     

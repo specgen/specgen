@@ -1,31 +1,12 @@
-div#terms_grouped {
-	overflow:auto;
-}
-
-div.group_table {
-        background-color: #ddf;
-        border: 1px solid black;
-        float: left;
-/*        width: 26%; */
-        margin: 0.3em 1%; 
-}
-
-div.group_table h3 {
-        background-color: #bbf;
-        font-size: 100%;
-        margin: 0;
-        padding: 5px;
-} 
-
-
-
 body {
 
- margin-left: 6em;
- margin-right: 12em;
+ margin-left: 4em;
+ margin-right: 9em;
  text-align: justify;
 }
 
+.termdetails {
+}
 
 div.specterm {
 
@@ -34,15 +15,6 @@ div.specterm {
 	  padding: 1em;
 }
 
-.archaic {
-/*        background: #5E2612; 
-The CSS here could do with some love...
-*/
-color: #5E2612;     
-} 
-
-.termdetails {
-}
 
 div.rdf-proplist {
         background-color: #ddf;
@@ -101,3 +73,29 @@ specterm.h3 {
 	border: solid; 
 	background-color: #ddd;
 }
+
+.restrictions {
+	vertical-align: top;	
+}
+
+.header {
+	width: 100%;
+}
+
+.infobox {
+	border:2px dashed #FFCC00; 
+	font-size:small; 
+	padding:10px;
+	width:400px;
+	height:140px;
+	text-align:right;
+	margin-right:20px;
+}
+
+.infobox_whitespace {
+	width:150px;
+	height:50px;	
+}
+
+
+

@@ -55,23 +55,28 @@ import getopt
 
 
 # Make a spec
-def makeSpec(indir, uri, shortName,outdir,outfile, template, templatedir, indexrdfdir, ontofile,addGroups):
+def makeSpec(indir, uri, shortName,outdir,outfile, template, templatedir, indexrdfdir, ontofile,specurl,name,addGroups):
   spec = Vocab( indexrdfdir, ontofile, uri)
   spec.addShortName(shortName)
   spec.index() # slurp info from sources
 
+  #create a Report
+  out = VocabReport( spec, indir, template, templatedir,specurl,name) 
+  #check template
   htmlgroups = None
   if (addGroups):
-      groups = Grouping(spec,uri)
-      htmlgroups = groups.getHTMLGroups();
+      if out.check_template_for_parameter('%groups%'):
+          groups = Grouping(spec,uri)
+          htmlgroups = groups.getHTMLGroups();
+      else:
+          print "Template doesn't contain %groups% parameter -- skipping groups creation"
 
-  out = VocabReport( spec, indir, template, templatedir,htmlgroups ) 
 
   filename = os.path.join(outdir, outfile)
   print "Printing to ",filename
 
   f = open(filename,"w")
-  result = out.generate()
+  result = out.generate(htmlgroups)
   f.write(result)
 
 # Make FOAF spec
@@ -81,17 +86,18 @@ def makeFoaf():
 
 def usage():
   print "Usage:",sys.argv[0],"--indir=dir --ns=uri --prefix=prefix [--outdir=outdir] [--outfile=outfile] [--templatedir=templatedir] [--indexrdf=indexrdf] [--ontofile=ontofile]"
+  print "[--specurl=urlofspecification] [--name='name of Ontology'] [--groups]"
   print "e.g. "
   print sys.argv[0], " --indir=examples/foaf/ --ns=http://xmlns.com/foaf/0.1/ --prefix=foaf --ontofile=index.rdf"
   print "or "
   print sys.argv[0], " --indir=../../xmlns.com/htdocs/foaf/ --ns=http://xmlns.com/foaf/0.1/ --prefix=foaf --ontofile=index.rdf --templatedir=../../xmlns.com/htdocs/foaf/spec/ --indexrdfdir=../../xmlns.com/htdocs/foaf/spec/ --outdir=../../xmlns.com/htdocs/foaf/spec/"
-  print "add Groups with --groups parameter"
+ 
 
 def main():
   ##looking for outdir, outfile, indir, namespace, shortns
 
   try:
-        opts, args = getopt.getopt(sys.argv[1:], None, ["outdir=", "outfile=", "indir=", "ns=", "prefix=", "templatedir=", "indexrdfdir=", "ontofile=","groups"])
+        opts, args = getopt.getopt(sys.argv[1:], None, ["outdir=", "outfile=", "indir=", "ns=", "prefix=", "templatedir=", "indexrdfdir=", "ontofile=","groups","specurl=","name="])
         #print opts
   except getopt.GetoptError, err:
         # print help information and exit:
@@ -109,6 +115,8 @@ def main():
   indexrdfdir = None
   ontofile = None
   groups = False
+  specurl = None
+  name = None
 
   if len(opts) ==0:
       print "No arguments found"
@@ -135,6 +143,10 @@ def main():
       		ontofile = a
       elif o == "--groups":
               groups = True
+      elif o == "--specurl":
+            specurl = a
+      elif o == "--name":
+            name = a
 
 #first check all the essentials are there
 
@@ -249,8 +261,22 @@ def main():
     print "Adding Groups: Yes"
   else: 
     print "Adding Groups: No" 
+    
+  # check if url of specification is given
+  if (specurl == None or len(specurl)==0):
+      print "No URL for the specification given"
+      specurl = "http://example.org/spec.html";
+   
+  print "Use specification URL ",specurl
+    
+  # check if url of specification is given
+  if (name == None or len(name)==0):
+      print "No Name for the specification given"
+      name = "NAME";
+  print "Using name: ",name 
 
-  makeSpec(indir,uri,shortName,outdir,outfile,"template.html",templatedir,indexrdfdir, ontofile,groups)
+
+  makeSpec(indir,uri,shortName,outdir,outfile,"template.html",templatedir,indexrdfdir, ontofile,specurl,name,groups)
   
 
 if __name__ == "__main__":

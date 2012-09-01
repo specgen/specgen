@@ -1,209 +1,247 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
-<html 
-  xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:mvcb="http://webns.net/mvcb/"
-  xml:lang="en"
-> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+xmlns:owl="http://www.w3.org/2002/07/owl#"
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:olo="http://purl.org/ontology/olo/core#"
+xmlns:vann="http://purl.org/vocab/vann/"
+xmlns:bibo="http://purl.org/ontology/bibo/"
+xmlns:foaf="http://xmlns.com/foaf/0.1/"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+typeof="bibo:Document"
+about="%specurl%"
+version="XHTML+RDFa 1.0">
+<head>
+  <title about="%specurl%" property="dc:title">The %name% Specification</title>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+  <base href="%specurl%" />
+  
+  <link href="http://smiy.sourceforge.net/css/xmlns-style.css" rel="stylesheet"  type="text/css" />
+  <link href="http://smiy.sourceforge.net/css/style.css" rel="stylesheet"  type="text/css" />
+  <link href="http://www.csw.inf.fu-berlin.de/ontdocu/specgen/groups.css" rel="stylesheet"  type="text/css" />
+  
+  <link about="%ns%" typeof="owl:Ontology" rel="dc:creator" href="foaflink" />
+  <link about="%ns%" rel="dc:creator" href="foaflink" />
+  <link about="%specurl%" rel="dc:creator" href="foaflink" />
+  <link about="%specurl%" rel="foaf:primaryTopic" rev="foaf:isPrimaryTopicOf" href="%ns%" />
 
-  <head>
-    <title>NAME: LONG NAME</title>
-    <meta http-equiv="content-type" content="text/xhtml+xml; charset=utf-8" />
-    <link rel="mvcb:generatorAgent" type="application/rdf+xml" title="DOAP" href="http://rdfohloh.wikier.org/project/specgen" />
-    <link rel="stylesheet" type="text/css" href="template.css" />
-  </head>
+  
 
-  <body>
+</head>
 
-    <h1 id="title">NAME</h1>
+<body>
+  <h1><span about="%ns%" property="dc:title">The %name%</span> <span about="%ns%" property="owl:versionInfo" datatype="xsd:decimal">%version%</span></h1>
 
-    <h2 id="subtitle">LONG NAME</h2>
+  <h2>Namespace Document <span about="%ns%" property="dc:date" content="%rdfadate%" datatype="xsd:dateTime">%date%</span></h2>
+<table class="header" border="0">
+  <tr>
+    <td>
+		<dl about="%specurl%">
+			<dt>This version:</dt>
+			<dd><a rel="dc:hasVersion" 
+				rev="dc:isVersionOf" href=Version-URL">Version URL</a> (<a href="Version-File-URI">OWL</a>)</dd>
 
-    <h3 id="mymw-doctype">Working Draft &mdash; DD Month YYYY</h3>
+			<dt>Latest version:</dt>
+			<dd><a href="%ns%">%ns%</a> (<a href="OWL-Link-Here">OWL</a>)</dd>
 
-    <dl>
+			<dt>Previous version:</dt>
+			    ...
+			<dt>Authors:</dt>
+			<dd><a rel="rdfs:seeAlso" href="Link-To-Person-Here">Person</a> (<a rel="rdfs:seeAlso" href="Company-Address">Company Address</a>),<br/>
+				<a rel="rdfs:seeAlso" href="Link-To-Another-Person">another Person</a> (<a rel="rdfs:seeAlso" href="Company-Address">Company Address</a>)</dd>
+		</dl>
 
-      <dt>This version:</dt>
-      <dd><a href="http://example.org/TR/NAME-YYYYMMDD/">http://example.org/TR/NAME-YYYYMMDD/</a></dd>
+		<p class="copyright"><span about="%ns%" property="dc:rights">Copyright &#169; 2012 Copyright holder here</span></p>
+	</td>
+    <td align="right">
+		<table class="infobox">
+			<tr>
+				<td rowspan="2">
+					<img src="http://wfnm.sourceforge.net/images/sourceforge_logo.jpg" width="150" alt="Sourceforge"/>
+				</td>
+				<td align="center">
+					<b>%name% repository</b>
+				</td>
+			</tr>
+			<tr>
+				<td align="center">
+					<a href="LinkToRepo">Source code, examples, graphics, ...</a>
+				</td>
+			</tr>
+			<tr>
+				<td rowspan="2">
+					<img src="http://s.wordpress.org/about/images/buttons/buttonw-blue.png" width="150" alt="Wordpress" />
+				</td>
+				<td align="center">
+					<b>other Infos</b>
+				</td>
+			</tr>
+			<tr>
+				<td align="center">
+					<a href="Another Link">Announcements, descriptions, use cases, ...</a>
+				</td>
+			</tr>
+		</table>
+	</td>
+  </tr>
+</table>
 
-      <dt>Latest version:</dt>
-      <dd><a href="http://example.org/TR/NAME/">http://example.org/TR/NAME/</a></dd>
+  <div about="%specurl%" rel="dc:conformsTo"
+     resource="http://www.w3.org/TR/rdfa-syntax"></div>
+  <p>
+    <a href="http://validator.w3.org/check?uri=referer"><img style="border: 0; float: right; padding: 5px;"
+        src="http://www.w3.org/Icons/valid-xhtml-rdfa"
+        alt="Valid XHTML + RDFa" height="31" width="88" /></a>
 
-      <dt>Last Update:</dt>
-      <dd>Date: </dd>
+  <!-- Creative Commons License -->
+  Example Licencing Information
+   <a href="http://creativecommons.org/licenses/by/1.0/"><img alt=
+  "Creative Commons License" style="border: 0; float: right; padding: 5px;" src=
+  "http://i.creativecommons.org/l/by/3.0/88x31.png" /></a> This work is licensed under a <a about="%specurl%" rel="license dc:license" href= 
+  "http://creativecommons.org/licenses/by/3.0/" title="Creative Commons
+  Attribution License">Creative Commons
+  Attribution License</a>. This copyright applies to the <em>%name% Specification</em> 
+  and accompanying documentation in RDF.
+ Regarding underlying technology, the <em>%name%</em> uses W3C's <a href="http://www.w3.org/RDF/">RDF</a> technology, an
+  open Web standard that can be freely used by anyone.</p>
+  
+  <hr />
 
-      <dt>Editors:</dt>
-      <dd>Name Surname, Company</dd>
 
-      <dt>Authors:</dt>
-      <dd>Name Surname, Company</dd>
+<h2 id="sec-status">Abstract</h2>
+<p about="%ns%" property="dc:description">
+The <em>%name% Specification</em> provides...
+</p>
 
-      <dt>Contributors:</dt>
-      <dd>See <a href="#acknowledgements">acknowledgements</a></dd>
+  <div class="status">
+    <h2>Status of This Document</h2>
 
-    </dl>
+    <p about="%specurl%">The template of this specification is derived from the  <a rel="rdfs:seeAlso" href="http://xmlns.com/foaf/spec/">FOAF 
+Vocabulary Specification</a>, which was created by <a rel="rdfs:seeAlso" href="http://danbri.org/">Dan Brickley</a> and <a rel="rdfs:seeAlso" href="http://nicecupoftea.org/">Libby Miller</a>, 
+and the <a rel="rdfs:seeAlso" href="http://musicontology.com/">Music Ontology Specification</a>, which was created by <a rel="rdfs:seeAlso" href="http://moustaki.org/">Yves Raimond</a>. It was 
+modified and extended by Bob Ferris. Furthermore, a modified and extended version of <a rel="rdfs:seeAlso" href="http://svn.foaf-project.org/foaftown/specgen/">Danbri's SpecGen version</a> was 
+used to generate most of the RDFa statements of the <em>Ordered List Ontology</em> for this specification (see <a rel="rdfs:seeAlso" 
+href="http://smiy.svn.sourceforge.net/viewvc/smiy/specgen/trunk/">here</a> for SpecGen version 6 by Bob Ferris).
+</p>
 
-    <p class="copyright">You are granted a license to use, reproduce and create derivative works of this document.</p>
+...
+  <h2 id="sec-toc">Table of Contents</h2>
 
-    <!-- ===================================================================== -->
+  <ul>
+    <li><a href="#sec-glance">The %name% at a glance</a></li>
+    <li><a href="#sec-example">Examples</a></li>
+    <li><a href="#sec-intro">Introduction</a></li>
+    <li><a href="#sec-for">What's the %name% for?</a></li>
+    <li><a href="#sec-bg">Background</a></li>
+    <li><a href="#sec-standards">The %name% and Standards</a></li>
+    <li><a href="#sec-evolution">Evolution and Extension of the %name%</a></li>
+    <li><a href="#sec-crossref">The %name% cross-reference: Listing the %name% %concepttypes%</a></li>
+    <li><a href="#sec-extrefs">External Vocabulary References</a></li>
+    <li><a href="#sec-ack">Acknowledgments</a></li>
+    <li><a href="#sec-changes">Recent Changes</a></li>
+  </ul>
 
-    <hr />
-    <h2 id="abstract">Abstract</h2>
-    <p>
-      This specification defines the ....
-    </p>
 
-    <h2 id="status">Status of this Document</h2>
-    <p>
-      <strong>This is a work in progress!</strong> This document is changing
-      on a daily if not hourly basis. Comments are very welcome, please send
-      them to <a href="mailto:devel@example.org">devel@example.org</a>. Thank you.
-    </p>
+  <a id="sec-glance"></a>
+  <h2 id="glance">The %name% at a glance</h2>
+  
+   ...
+ <p>An a-z index of <em>%name%</em> terms, by %concepttypes2%.</p>
+ 
+ 
+ %azlist%
+ 
+ 
+  <p> Main <em>%name% <em> terms, grouped in broad categories. </p>
 
-    <h2 id="contents">Table of Contents</h2>    <ol id="toc">
-      <li><a href="#intro">Introduction</a>
-        <ol>
-          <li><a href="#s11">X</a></li>
-          <li><a href="#s12">Y</a></li>
-          <li>
-            <a href="#s13">Z</a>
-            <ol>
-              <li><a href="#s131">K</a></li>
-              <li><a href="#s132">M</a></li>
-            </ol>
-          </li>
-        </ol>
-      </li>
-      <li><a href="#sec-glance">NAME ontology at a glance</a></li>
-      <li>
-        <a href="#overview">NAME ontology overview</a>
-        <ol>
-          <li><a href="#s31">Example</a></li>
-        </ol>
-      </li>
-      <li><a href="#reference">Cross-reference for NAME classes and properties</a></li>
-    </ol>
+    %groups%
+    
+ 
+ 
 
-    <h3>Appendixes</h3>
-    <ol id="appendix" style="list-style-type:upper-alpha;">
-      <li><a href="#references">Normative References</a></li>
-      <li><a href="#changes">Changes in this version</a> (Non-Normative)</li>
-      <li><a href="#acknowledgements">Acknowledgements</a> (Non-Normative)</li>
-    </ol>
+  <div style="clear: left;"></div>
 
-    <hr />
+  <h2 id="sec-example">Example</h2>
+  
+    <p>A graphic of a simple example of an use case of the <em>%name%</em></p>
+  
+    
+  <div class="example">
+  ....
+  </div>
 
-    <!-- ===================================================================== -->
-    <h2 id="intro">1 Introduction</h2>
+ <div style="clear: left;"></div>
 
-    <p>...</p>
 
-    <h3 id="s11">1.1 X</h3>
+  <!-- ================================================================== -->
 
-    <p>...</p>
 
-    <h3 id="s12">1.2 Y</h3>
+ <h2 id="sec-intro">Introduction: %name% Basics</h2>
 
-    <p>...</p>
 
-    <h3 id="s13">1.3 Z</h3>
+  <h2 id="sec-for">What's the %name% for?</h2>
 
-    <p>...</p>
+...
+  <h2 id="sec-bg">Background</h2>
 
-    <h4 id="s131">1.3.1 K</h4>
+  <p>TODO</p>
 
-    <p>...</p>
+  <h2 id="sec-standards">The %name% and Standards</h2>
 
-    <h4 id="s132">1.3.2 M</h4>
+  <p>TODO</p>
 
-    <p>...</p>
+  <p>TODO</p>
 
-    <!-- ===================================================================== -->
+  <h2 id="sec-nsdoc">The %name% Description</h2>
 
-    <h2 id="sec-glance">2. NAME ontology at a glance</h2>
+  <p>This specification serves as the <em>%name%</em> "namespace document". ... </p>
 
-    <p>
-      An alphabetical index of NAME terms, by class (concepts) and by property 
-      (relationships, attributes), are given below. All the terms are hyperlinked 
-      to their detailed description for quick reference.
-    </p>
+  <h3 id="sec-evolution">Evolution and Extension of the %name%</h3>
 
-    <!-- The list of classes and properties goes here -->
-    %s
-    <!-- End of the terms list -->
+  ....
 
-    <p>
-      Main NAME terms, grouped in broad categories.
-    </p>
+  <h2 id="sec-crossref">The %name% cross-reference: Listing the %name% %concepttypes%</h2>
+
+  <p>The <em>%name%</em> introduces the following %concepttypes3%. </p>
+
+  <!-- the following is the script-generated list of classes and properties -->
+ 
+
+<!-- this is the a-z listing -->
+%azlist%
+
 
     <!-- The list of groups starts here -->
-    %s
+%groups%
     <!-- End of the groups -->
 
-    <p>...</p>
 
-    <!-- ===================================================================== -->
+<!-- and this is the bulk of the vocab descriptions -->
+%termlist%
 
-    <h2 id="overview">3. NAME ontology overview</h2>
 
-    <p>The NAME definitions presented here are ...</p>
+<h2 id="sec-extrefs">External Vocabulary References</h2>
 
-    <h3 id="s31">3.1. Example</h3>
+...
 
-    <p>Here is a very basic document describing a foo:</p>
 
-    <div class="example" style="white-space: pre-wrap;">
-      <pre>
-        &lt;rdf:RDF /&gt;
-      </pre>
-    </div>
+<h3 id="extns_status">Status Vocabulary</h3>
 
-    <p>...</p>
+...
 
-    <!-- ===================================================================== -->
+  <h3 id="sec-ack">Acknowledgments</h3>
 
-    <h2 id="reference">4. Cross-reference for NAME classes and properties</h2>
+  ....
 
-    <p>...</p>
+<h2 id="sec-changes">Recent Changes</h2>
 
-    <!-- The following is the script-generated list of classes and properties -->
-    %s
-    <!-- End of the terms list -->
+....
 
-    <p>...</p>
-
-    <!-- ===================================================================== -->
-
-    <h2 id="references">A References</h2>
-
-    <dl>
-      <dt class="label" id="ref-some">name</dt>
-      <dd><em><a href="http://.../">long name</a></em> description...</dd>
-    </dl>
-
-    <h3 id="references-other">A.2 Other references</h3>
-
-    <dl>
-      <dt class="label" id="ref-rfc2119">IETF RFC 2119</dt>
-      <dd>
-        <em><a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119: Key words
-        for use in RFCs to Indicate Requirement Levels</a></em>. Internet
-        Engineering Task Force, 1997 (see http://www.ietf.org/rfc/rfc2119.txt).
-      </dd>
-    </dl>
-
-    <!-- ===================================================================== -->
-
-    <h2 id="changes">B Changes in this version (Non-Normative)</h2>
-
-    <ul>
-      <li><p>changelog</p></li> 
-    </ul>
-
-    <h2><a id="acknowledgements"></a>C Acknowledgements (Non-Normative)</h2>
-
-    <p>...</p>
-
-  </body>
-
+</body>
 </html>
+
 

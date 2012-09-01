@@ -57,6 +57,8 @@ rdflib.plugin.register('sparql', rdflib.query.Processor,
 rdflib.plugin.register('sparql', rdflib.query.Result,
 	'rdfextras.sparql.query', 'SPARQLQueryResult')
 
+import datetime
+
 # pre3: from rdflib.sparql.sparqlGraph  import SPARQLGraph
 #from rdflib.sparql.graphPattern import GraphPattern
 #from rdflib.sparql import Query 
@@ -500,12 +502,13 @@ class Vocab(object):
 
 class VocabReport(object):
 
-	def __init__(self, vocab, basedir = './examples/', temploc = 'template.html', templatedir = './examples/',groups=None):
+	def __init__(self, vocab, basedir = './examples/', temploc = 'template.html', templatedir = './examples/',specurl='http://example.org/',name="NAME"):
 		self.vocab = vocab
 		self.basedir = basedir
 		self.temploc = temploc
 		self.templatedir = templatedir
-		self.groups = groups
+		self.specurl = specurl
+		self.name = name
 		self._template = "no template loaded"
 
 	# text.gsub(/<code>foaf:(\w+)<\/code>/){ defurl($1) } return "<code><a href=\"#term_#{term}\">foaf:#{term}</a></code>"
@@ -528,29 +531,49 @@ class VocabReport(object):
   		f = open(filename, "r")
   		template = f.read()
   		return(template)
+  	
+  	def check_template_for_parameter(self,parameter):
+  		return parameter in self.template
+  			
 
-  	def generate(self):
+  	def generate(self,htmlgroups):
   		tpl = self.template
   		azlist = self.az()
   		termlist = self.termlist()
+  		
+  		date = datetime.datetime.now()
+  		datestring = date.strftime("%d %B %Y")
+  		#2010-07-23T13:30:52+01:00
+  		rdfadatestring = date.strftime("%Y-%m-%dT%H:%M:%S%Z");
+  		#fetching version from owl:versionInfo (if available) not implemented yet
+  		version = "0.01"
 
   		f = open (self.vocab.filename, "r")
   		rdfdata = f.read()
-  		#   print "GENERATING >>>>>>>> "
-  		## having the rdf in there was making it invalid
-  		## removed in favour of RDFa
-  		##    tpl = tpl % (azlist.encode("utf-8"), termlist.encode("utf-8"), rdfdata)
-  		#
+  		#print "GENERATING >>>>>>>> "
   		# IMPORTANT: this is the code, which is responsible for write code fragments to the template
-  		#tpl = tpl % (self.concepttypes.encode("utf-8"), 
-		#			self.concepttypes2.encode("utf-8"), 
-		#			azlist.encode("utf-8"),
-		#			self.concepttypes.encode("utf-8"), 
-		#			self.concepttypes3.encode("utf-8"), 
-		#			azlist.encode("utf-8"), 
-		#			termlist.encode("utf-8"))
-  		#    tpl = tpl % (azlist.encode("utf-8"), termlist.encode("utf-8"))
-  		tpl = tpl % (azlist.encode("utf-8"),self.groups.encode("utf-8"),termlist.encode("utf-8"))
+  		
+  		tpl = tpl.replace("%ns%",self.vocab._uri.encode("utf-8"))
+  		tpl = tpl.replace("%specurl%",self.specurl.encode("utf-8"))
+  		tpl = tpl.replace("%name%",self.name.encode("utf-8"))
+  		
+  		tpl = tpl.replace("%date%",datestring.encode("utf-8"))
+  		tpl = tpl.replace("%rdfadate%",rdfadatestring.encode("utf-8"))
+  		tpl = tpl.replace("%version%",version.encode("utf-8"))
+  		
+  		
+  		tpl = tpl.replace("%concepttypes%",self.concepttypes.encode("utf-8"))
+  		tpl = tpl.replace("%concepttypes2%",self.concepttypes2.encode("utf-8"))
+  		tpl = tpl.replace("%concepttypes3%",self.concepttypes3.encode("utf-8"))
+  		
+  		tpl = tpl.replace("%azlist%",(azlist.encode("utf-8")))
+		tpl = tpl.replace("%termlist%",(termlist.encode("utf-8")))
+		
+		if (htmlgroups != None):
+			tpl = tpl.replace("%groups%",(htmlgroups.encode("utf-8")))
+		else:
+			tpl = tpl.replace("%groups%","")
+  		
   		return(tpl)
 
   	def az(self):
@@ -705,7 +728,7 @@ class VocabReport(object):
   			ordone = False
   			for (row) in relations:
   				subclass = row[0]
-  				subclassnice = self.vocab.niceName(subclass)
+   				subclassnice = self.vocab.niceName(subclass)
   				# print "subclass ",subclass
   				# print "subclassnice ",subclassnice
   				# check niceName result
@@ -1216,7 +1239,7 @@ class VocabReport(object):
   					if colon > 0:
   						termStr = """<span rel="rdfs:subPropertyOf" href="%s"><a href="%s">%s</a></span>\n""" % (subproperty, subproperty, subpropertynice)
   						contentStr = "%s %s" % (contentStr, termStr)
-  						#print "must be super property from another ns"
+  						print "must be super property from another ns"
   				
   				if contentStr != "":
   					subPropertyOf = "%s <td> %s </td></tr>" % (startStr, contentStr)
@@ -1262,7 +1285,8 @@ class VocabReport(object):
   					contentStr2 = ''
   					iptcounter = 0
   					termStr2 = ''
-  					for (inversepropertytype) in relations2:
+  					for (row) in relations2:
+  						inversepropertytype = row[0]
   						print "inversepropertytype ", inversepropertytype
   						iptype = ''
   						termStr3 = ''
@@ -1322,7 +1346,8 @@ class VocabReport(object):
   			startStr = '\n'
 
   			contentStr = ''
-  			for (isdefinedby) in relations:
+  			for (row) in relations:
+  				isdefinedby = row[0]
   				termStr = """<span rel="rdfs:isDefinedBy" href="%s"></span>\n""" % (isdefinedby)
   				contentStr = "%s %s" % (contentStr, termStr)
 

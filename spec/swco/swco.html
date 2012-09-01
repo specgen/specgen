@@ -1,233 +1,349 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
-<html 
-  xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:mvcb="http://webns.net/mvcb/"
-  xml:lang="en"
-> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+xmlns:owl="http://www.w3.org/2002/07/owl#"
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:olo="http://purl.org/ontology/olo/core#"
+xmlns:vann="http://purl.org/vocab/vann/"
+xmlns:bibo="http://purl.org/ontology/bibo/"
+xmlns:foaf="http://xmlns.com/foaf/0.1/"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+typeof="bibo:Document"
+about="http://www.csw.inf.fu-berlin.de/ontdocu/specgen/swco.html"
+version="XHTML+RDFa 1.0">
+<head>
+  <title about="http://www.csw.inf.fu-berlin.de/ontdocu/specgen/swco.html" property="dc:title">The Semantic Web Conference Ontology Specification</title>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+  <base href="http://www.csw.inf.fu-berlin.de/ontdocu/specgen/swco.html" />
+  
+  <link href="http://smiy.sourceforge.net/css/xmlns-style.css" rel="stylesheet"  type="text/css" />
+  <link href="http://smiy.sourceforge.net/css/style.css" rel="stylesheet"  type="text/css" />
+  <link href="http://www.csw.inf.fu-berlin.de/ontdocu/specgen/groups.css" rel="stylesheet"  type="text/css" />
+  
+  <link about="http://data.semanticweb.org/ns/swc/ontology#" typeof="owl:Ontology" rel="dc:creator" href="foaflink" />
+  <link about="http://data.semanticweb.org/ns/swc/ontology#" rel="dc:creator" href="foaflink" />
+  <link about="http://www.csw.inf.fu-berlin.de/ontdocu/specgen/swco.html" rel="dc:creator" href="foaflink" />
+  <link about="http://www.csw.inf.fu-berlin.de/ontdocu/specgen/swco.html" rel="foaf:primaryTopic" rev="foaf:isPrimaryTopicOf" href="http://data.semanticweb.org/ns/swc/ontology#" />
 
-  <head>
-    <title>NAME: LONG NAME</title>
-    <meta http-equiv="content-type" content="text/xhtml+xml; charset=utf-8" />
-    <link rel="mvcb:generatorAgent" type="application/rdf+xml" title="DOAP" href="http://rdfohloh.wikier.org/project/specgen" />
-    <link rel="stylesheet" type="text/css" href="template.css" />
-  </head>
+  
 
-  <body>
+</head>
 
-    <h1 id="title">NAME</h1>
+<body>
+  <h1><span about="http://data.semanticweb.org/ns/swc/ontology#" property="dc:title">The Semantic Web Conference Ontology</span> <span about="http://data.semanticweb.org/ns/swc/ontology#" property="owl:versionInfo" datatype="xsd:decimal">0.01</span></h1>
 
-    <h2 id="subtitle">LONG NAME</h2>
+  <h2>Namespace Document <span about="http://data.semanticweb.org/ns/swc/ontology#" property="dc:date" content="2012-09-01T18:22:44" datatype="xsd:dateTime">01 September 2012</span></h2>
+<table class="header" border="0">
+  <tr>
+    <td>
+		<dl about="http://www.csw.inf.fu-berlin.de/ontdocu/specgen/swco.html">
+			<dt>This version:</dt>
+			<dd><a rel="dc:hasVersion" 
+				rev="dc:isVersionOf" href=Version-URL">Version URL</a> (<a href="Version-File-URI">OWL</a>)</dd>
 
-    <h3 id="mymw-doctype">Working Draft &mdash; DD Month YYYY</h3>
+			<dt>Latest version:</dt>
+			<dd><a href="http://data.semanticweb.org/ns/swc/ontology#">http://data.semanticweb.org/ns/swc/ontology#</a> (<a href="OWL-Link-Here">OWL</a>)</dd>
 
-    <dl>
+			<dt>Previous version:</dt>
+			    ...
+			<dt>Authors:</dt>
+			<dd><a rel="rdfs:seeAlso" href="Link-To-Person-Here">Person</a> (<a rel="rdfs:seeAlso" href="Company-Address">Company Address</a>),<br/>
+				<a rel="rdfs:seeAlso" href="Link-To-Another-Person">another Person</a> (<a rel="rdfs:seeAlso" href="Company-Address">Company Address</a>)</dd>
+		</dl>
 
-      <dt>This version:</dt>
-      <dd><a href="http://example.org/TR/NAME-YYYYMMDD/">http://example.org/TR/NAME-YYYYMMDD/</a></dd>
+		<p class="copyright"><span about="http://data.semanticweb.org/ns/swc/ontology#" property="dc:rights">Copyright &#169; 2012 Copyright holder here</span></p>
+	</td>
+    <td align="right">
+		<table class="infobox">
+			<tr>
+				<td rowspan="2">
+					<img src="http://wfnm.sourceforge.net/images/sourceforge_logo.jpg" width="150" alt="Sourceforge"/>
+				</td>
+				<td align="center">
+					<b>Semantic Web Conference Ontology repository</b>
+				</td>
+			</tr>
+			<tr>
+				<td align="center">
+					<a href="LinkToRepo">Source code, examples, graphics, ...</a>
+				</td>
+			</tr>
+			<tr>
+				<td rowspan="2">
+					<img src="http://s.wordpress.org/about/images/buttons/buttonw-blue.png" width="150" alt="Wordpress" />
+				</td>
+				<td align="center">
+					<b>other Infos</b>
+				</td>
+			</tr>
+			<tr>
+				<td align="center">
+					<a href="Another Link">Announcements, descriptions, use cases, ...</a>
+				</td>
+			</tr>
+		</table>
+	</td>
+  </tr>
+</table>
 
-      <dt>Latest version:</dt>
-      <dd><a href="http://example.org/TR/NAME/">http://example.org/TR/NAME/</a></dd>
+  <div about="http://www.csw.inf.fu-berlin.de/ontdocu/specgen/swco.html" rel="dc:conformsTo"
+     resource="http://www.w3.org/TR/rdfa-syntax"></div>
+  <p>
+    <a href="http://validator.w3.org/check?uri=referer"><img style="border: 0; float: right; padding: 5px;"
+        src="http://www.w3.org/Icons/valid-xhtml-rdfa"
+        alt="Valid XHTML + RDFa" height="31" width="88" /></a>
 
-      <dt>Last Update:</dt>
-      <dd>Date: </dd>
+  <!-- Creative Commons License -->
+  Example Licencing Information
+   <a href="http://creativecommons.org/licenses/by/1.0/"><img alt=
+  "Creative Commons License" style="border: 0; float: right; padding: 5px;" src=
+  "http://i.creativecommons.org/l/by/3.0/88x31.png" /></a> This work is licensed under a <a about="http://www.csw.inf.fu-berlin.de/ontdocu/specgen/swco.html" rel="license dc:license" href= 
+  "http://creativecommons.org/licenses/by/3.0/" title="Creative Commons
+  Attribution License">Creative Commons
+  Attribution License</a>. This copyright applies to the <em>Semantic Web Conference Ontology Specification</em> 
+  and accompanying documentation in RDF.
+ Regarding underlying technology, the <em>Semantic Web Conference Ontology</em> uses W3C's <a href="http://www.w3.org/RDF/">RDF</a> technology, an
+  open Web standard that can be freely used by anyone.</p>
+  
+  <hr />
 
-      <dt>Editors:</dt>
-      <dd>Name Surname, Company</dd>
 
-      <dt>Authors:</dt>
-      <dd>Name Surname, Company</dd>
+<h2 id="sec-status">Abstract</h2>
+<p about="http://data.semanticweb.org/ns/swc/ontology#" property="dc:description">
+The <em>Semantic Web Conference Ontology Specification</em> provides...
+</p>
 
-      <dt>Contributors:</dt>
-      <dd>See <a href="#acknowledgements">acknowledgements</a></dd>
+  <div class="status">
+    <h2>Status of This Document</h2>
 
-    </dl>
+    <p about="http://www.csw.inf.fu-berlin.de/ontdocu/specgen/swco.html">The template of this specification is derived from the  <a rel="rdfs:seeAlso" href="http://xmlns.com/foaf/spec/">FOAF 
+Vocabulary Specification</a>, which was created by <a rel="rdfs:seeAlso" href="http://danbri.org/">Dan Brickley</a> and <a rel="rdfs:seeAlso" href="http://nicecupoftea.org/">Libby Miller</a>, 
+and the <a rel="rdfs:seeAlso" href="http://musicontology.com/">Music Ontology Specification</a>, which was created by <a rel="rdfs:seeAlso" href="http://moustaki.org/">Yves Raimond</a>. It was 
+modified and extended by Bob Ferris. Furthermore, a modified and extended version of <a rel="rdfs:seeAlso" href="http://svn.foaf-project.org/foaftown/specgen/">Danbri's SpecGen version</a> was 
+used to generate most of the RDFa statements of the <em>Ordered List Ontology</em> for this specification (see <a rel="rdfs:seeAlso" 
+href="http://smiy.svn.sourceforge.net/viewvc/smiy/specgen/trunk/">here</a> for SpecGen version 6 by Bob Ferris).
+</p>
 
-    <p class="copyright">You are granted a license to use, reproduce and create derivative works of this document.</p>
+...
+  <h2 id="sec-toc">Table of Contents</h2>
 
-    <!-- ===================================================================== -->
+  <ul>
+    <li><a href="#sec-glance">The Semantic Web Conference Ontology at a glance</a></li>
+    <li><a href="#sec-example">Examples</a></li>
+    <li><a href="#sec-intro">Introduction</a></li>
+    <li><a href="#sec-for">What's the Semantic Web Conference Ontology for?</a></li>
+    <li><a href="#sec-bg">Background</a></li>
+    <li><a href="#sec-standards">The Semantic Web Conference Ontology and Standards</a></li>
+    <li><a href="#sec-evolution">Evolution and Extension of the Semantic Web Conference Ontology</a></li>
+    <li><a href="#sec-crossref">The Semantic Web Conference Ontology cross-reference: Listing the Semantic Web Conference Ontology Classes and Properties</a></li>
+    <li><a href="#sec-extrefs">External Vocabulary References</a></li>
+    <li><a href="#sec-ack">Acknowledgments</a></li>
+    <li><a href="#sec-changes">Recent Changes</a></li>
+  </ul>
 
-    <hr />
-    <h2 id="abstract">Abstract</h2>
-    <p>
-      This specification defines the ....
-    </p>
 
-    <h2 id="status">Status of this Document</h2>
-    <p>
-      <strong>This is a work in progress!</strong> This document is changing
-      on a daily if not hourly basis. Comments are very welcome, please send
-      them to <a href="mailto:devel@example.org">devel@example.org</a>. Thank you.
-    </p>
-
-    <h2 id="contents">Table of Contents</h2>    <ol id="toc">
-      <li><a href="#intro">Introduction</a>
-        <ol>
-          <li><a href="#s11">X</a></li>
-          <li><a href="#s12">Y</a></li>
-          <li>
-            <a href="#s13">Z</a>
-            <ol>
-              <li><a href="#s131">K</a></li>
-              <li><a href="#s132">M</a></li>
-            </ol>
-          </li>
-        </ol>
-      </li>
-      <li><a href="#sec-glance">NAME ontology at a glance</a></li>
-      <li>
-        <a href="#overview">NAME ontology overview</a>
-        <ol>
-          <li><a href="#s31">Example</a></li>
-        </ol>
-      </li>
-      <li><a href="#reference">Cross-reference for NAME classes and properties</a></li>
-    </ol>
-
-    <h3>Appendixes</h3>
-    <ol id="appendix" style="list-style-type:upper-alpha;">
-      <li><a href="#references">Normative References</a></li>
-      <li><a href="#changes">Changes in this version</a> (Non-Normative)</li>
-      <li><a href="#acknowledgements">Acknowledgements</a> (Non-Normative)</li>
-    </ol>
-
-    <hr />
-
-    <!-- ===================================================================== -->
-    <h2 id="intro">1 Introduction</h2>
-
-    <p>...</p>
-
-    <h3 id="s11">1.1 X</h3>
-
-    <p>...</p>
-
-    <h3 id="s12">1.2 Y</h3>
-
-    <p>...</p>
-
-    <h3 id="s13">1.3 Z</h3>
-
-    <p>...</p>
-
-    <h4 id="s131">1.3.1 K</h4>
-
-    <p>...</p>
-
-    <h4 id="s132">1.3.2 M</h4>
-
-    <p>...</p>
-
-    <!-- ===================================================================== -->
-
-    <h2 id="sec-glance">2. NAME ontology at a glance</h2>
-
-    <p>
-      An alphabetical index of NAME terms, by class (concepts) and by property 
-      (relationships, attributes), are given below. All the terms are hyperlinked 
-      to their detailed description for quick reference.
-    </p>
-
-    <!-- The list of classes and properties goes here -->
-    <div class="azlist">
+  <a id="sec-glance"></a>
+  <h2 id="glance">The Semantic Web Conference Ontology at a glance</h2>
+  
+   ...
+ <p>An a-z index of <em>Semantic Web Conference Ontology</em> terms, by class (categories or types) and by property.</p>
+ 
+ 
+ <div class="azlist">
 <p>Classes: | <a href="#AcademicEvent">AcademicEvent</a> |  <a href="#AccommodationPlace">AccommodationPlace</a> |  <a href="#ArgumentativeDocument">ArgumentativeDocument</a> |  <a href="#Artefact">Artefact</a> |  <a href="#BreakEvent">BreakEvent</a> |  <a href="#Chair">Chair</a> |  <a href="#CommunalPlace">CommunalPlace</a> |  <a href="#ConferenceEvent">ConferenceEvent</a> |  <a href="#ConferenceVenuePlace">ConferenceVenuePlace</a> |  <a href="#Delegate">Delegate</a> |  <a href="#MealEvent">MealEvent</a> |  <a href="#MeetingRoomPlace">MeetingRoomPlace</a> |  <a href="#NonAcademicEvent">NonAcademicEvent</a> |  <a href="#OrganisedEvent">OrganisedEvent</a> |  <a href="#PanelEvent">PanelEvent</a> |  <a href="#Paper">Paper</a> |  <a href="#Poster">Poster</a> |  <a href="#Presenter">Presenter</a> |  <a href="#Proceedings">Proceedings</a> |  <a href="#Programme">Programme</a> |  <a href="#ProgrammeCommitteeMember">ProgrammeCommitteeMember</a> |  <a href="#Role">Role</a> |  <a href="#SessionEvent">SessionEvent</a> |  <a href="#SlideSet">SlideSet</a> |  <a href="#SocialEvent">SocialEvent</a> |  <a href="#TalkEvent">TalkEvent</a> |  <a href="#TrackEvent">TrackEvent</a> |  <a href="#TutorialEvent">TutorialEvent</a> |  <a href="#WorkshopEvent">WorkshopEvent</a> | 
 </p>
 <p>Properties: | <a href="#hasLocation">hasLocation</a> |  <a href="#hasPart">hasPart</a> |  <a href="#hasProgramme">hasProgramme</a> |  <a href="#hasRelatedArtefact">hasRelatedArtefact</a> |  <a href="#hasRelatedDocument">hasRelatedDocument</a> |  <a href="#hasRole">hasRole</a> |  <a href="#heldBy">heldBy</a> |  <a href="#holdsRole">holdsRole</a> |  <a href="#isLocationFor">isLocationFor</a> |  <a href="#isPartOf">isPartOf</a> |  <a href="#isRoleAt">isRoleAt</a> |  <a href="#memberOf">memberOf</a> |  <a href="#plansToAttend">plansToAttend</a> |  <a href="#relatedToEvent">relatedToEvent</a> | 
 </p>
 </div>
-    <!-- End of the terms list -->
+ 
+ 
+  <p> Main <em>Semantic Web Conference Ontology <em> terms, grouped in broad categories. </p>
 
-    <p>
-      Main NAME terms, grouped in broad categories.
-    </p>
-
-    <!-- The list of groups starts here -->
     <div id="terms_grouped"> <div class="group_table">
 <h3>Artefact and Document</h3><ul>
-<li><a href="#Programme">Programme</a></li>
-<li><a href="#Proceedings">Proceedings</a></li>
-<li><a href="#SlideSet">SlideSet</a></li>
 <li><a href="#ArgumentativeDocument">ArgumentativeDocument</a></li>
-<li><a href="#Artefact">Artefact</a></li>
+<li><a href="#Programme">Programme</a></li>
 <li><a href="#Poster">Poster</a></li>
+<li><a href="#SlideSet">SlideSet</a></li>
+<li><a href="#Artefact">Artefact</a></li>
 <li><a href="#Paper">Paper</a></li>
+<li><a href="#Proceedings">Proceedings</a></li>
 <li><a href="#relatedToEvent">relatedToEvent</a></li>
 </ul></div>
 <div class="group_table">
 <h3>OrganisedEvent</h3><ul>
+<li><a href="#MealEvent">MealEvent</a></li>
 <li><a href="#SocialEvent">SocialEvent</a></li>
+<li><a href="#NonAcademicEvent">NonAcademicEvent</a></li>
 <li><a href="#BreakEvent">BreakEvent</a></li>
 <li><a href="#OrganisedEvent">OrganisedEvent</a></li>
-<li><a href="#MealEvent">MealEvent</a></li>
-<li><a href="#NonAcademicEvent">NonAcademicEvent</a></li>
-<li><a href="#hasLocation">hasLocation</a></li>
 <li><a href="#hasProgramme">hasProgramme</a></li>
 <li><a href="#isLocationFor">isLocationFor</a></li>
 <li><a href="#plansToAttend">plansToAttend</a></li>
+<li><a href="#hasLocation">hasLocation</a></li>
 </ul></div>
 <div class="group_table">
 <h3>AcademicEvent</h3><ul>
-<li><a href="#WorkshopEvent">WorkshopEvent</a></li>
-<li><a href="#AcademicEvent">AcademicEvent</a></li>
-<li><a href="#TutorialEvent">TutorialEvent</a></li>
-<li><a href="#ConferenceEvent">ConferenceEvent</a></li>
-<li><a href="#SessionEvent">SessionEvent</a></li>
 <li><a href="#TalkEvent">TalkEvent</a></li>
 <li><a href="#TrackEvent">TrackEvent</a></li>
+<li><a href="#ConferenceEvent">ConferenceEvent</a></li>
+<li><a href="#SessionEvent">SessionEvent</a></li>
+<li><a href="#TutorialEvent">TutorialEvent</a></li>
+<li><a href="#AcademicEvent">AcademicEvent</a></li>
+<li><a href="#WorkshopEvent">WorkshopEvent</a></li>
 <li><a href="#PanelEvent">PanelEvent</a></li>
-<li><a href="#hasRelatedArtefact">hasRelatedArtefact</a></li>
 <li><a href="#hasRole">hasRole</a></li>
 <li><a href="#hasRelatedDocument">hasRelatedDocument</a></li>
+<li><a href="#hasRelatedArtefact">hasRelatedArtefact</a></li>
 </ul></div>
 <div class="group_table">
 <h3>Role</h3><ul>
-<li><a href="#Presenter">Presenter</a></li>
-<li><a href="#Chair">Chair</a></li>
 <li><a href="#Delegate">Delegate</a></li>
+<li><a href="#Chair">Chair</a></li>
+<li><a href="#Presenter">Presenter</a></li>
 <li><a href="#Role">Role</a></li>
 <li><a href="#ProgrammeCommitteeMember">ProgrammeCommitteeMember</a></li>
+<li><a href="#holdsRole">holdsRole</a></li>
 <li><a href="#isRoleAt">isRoleAt</a></li>
 <li><a href="#heldBy">heldBy</a></li>
-<li><a href="#holdsRole">holdsRole</a></li>
 </ul></div>
 <div class="group_table">
 <h3>SpatialThing</h3><ul>
-<li><a href="#ConferenceVenuePlace">ConferenceVenuePlace</a></li>
 <li><a href="#AccommodationPlace">AccommodationPlace</a></li>
-<li><a href="#MeetingRoomPlace">MeetingRoomPlace</a></li>
+<li><a href="#ConferenceVenuePlace">ConferenceVenuePlace</a></li>
 <li><a href="#CommunalPlace">CommunalPlace</a></li>
+<li><a href="#MeetingRoomPlace">MeetingRoomPlace</a></li>
+</ul></div>
+</div>
+
+    
+ 
+ 
+
+  <div style="clear: left;"></div>
+
+  <h2 id="sec-example">Example</h2>
+  
+    <p>A graphic of a simple example of an use case of the <em>Semantic Web Conference Ontology</em></p>
+  
+    
+  <div class="example">
+  ....
+  </div>
+
+ <div style="clear: left;"></div>
+
+
+  <!-- ================================================================== -->
+
+
+ <h2 id="sec-intro">Introduction: Semantic Web Conference Ontology Basics</h2>
+
+
+  <h2 id="sec-for">What's the Semantic Web Conference Ontology for?</h2>
+
+...
+  <h2 id="sec-bg">Background</h2>
+
+  <p>TODO</p>
+
+  <h2 id="sec-standards">The Semantic Web Conference Ontology and Standards</h2>
+
+  <p>TODO</p>
+
+  <p>TODO</p>
+
+  <h2 id="sec-nsdoc">The Semantic Web Conference Ontology Description</h2>
+
+  <p>This specification serves as the <em>Semantic Web Conference Ontology</em> "namespace document". ... </p>
+
+  <h3 id="sec-evolution">Evolution and Extension of the Semantic Web Conference Ontology</h3>
+
+  ....
+
+  <h2 id="sec-crossref">The Semantic Web Conference Ontology cross-reference: Listing the Semantic Web Conference Ontology Classes and Properties</h2>
+
+  <p>The <em>Semantic Web Conference Ontology</em> introduces the following classes and properties. </p>
+
+  <!-- the following is the script-generated list of classes and properties -->
+ 
+
+<!-- this is the a-z listing -->
+<div class="azlist">
+<p>Classes: | <a href="#AcademicEvent">AcademicEvent</a> |  <a href="#AccommodationPlace">AccommodationPlace</a> |  <a href="#ArgumentativeDocument">ArgumentativeDocument</a> |  <a href="#Artefact">Artefact</a> |  <a href="#BreakEvent">BreakEvent</a> |  <a href="#Chair">Chair</a> |  <a href="#CommunalPlace">CommunalPlace</a> |  <a href="#ConferenceEvent">ConferenceEvent</a> |  <a href="#ConferenceVenuePlace">ConferenceVenuePlace</a> |  <a href="#Delegate">Delegate</a> |  <a href="#MealEvent">MealEvent</a> |  <a href="#MeetingRoomPlace">MeetingRoomPlace</a> |  <a href="#NonAcademicEvent">NonAcademicEvent</a> |  <a href="#OrganisedEvent">OrganisedEvent</a> |  <a href="#PanelEvent">PanelEvent</a> |  <a href="#Paper">Paper</a> |  <a href="#Poster">Poster</a> |  <a href="#Presenter">Presenter</a> |  <a href="#Proceedings">Proceedings</a> |  <a href="#Programme">Programme</a> |  <a href="#ProgrammeCommitteeMember">ProgrammeCommitteeMember</a> |  <a href="#Role">Role</a> |  <a href="#SessionEvent">SessionEvent</a> |  <a href="#SlideSet">SlideSet</a> |  <a href="#SocialEvent">SocialEvent</a> |  <a href="#TalkEvent">TalkEvent</a> |  <a href="#TrackEvent">TrackEvent</a> |  <a href="#TutorialEvent">TutorialEvent</a> |  <a href="#WorkshopEvent">WorkshopEvent</a> | 
+</p>
+<p>Properties: | <a href="#hasLocation">hasLocation</a> |  <a href="#hasPart">hasPart</a> |  <a href="#hasProgramme">hasProgramme</a> |  <a href="#hasRelatedArtefact">hasRelatedArtefact</a> |  <a href="#hasRelatedDocument">hasRelatedDocument</a> |  <a href="#hasRole">hasRole</a> |  <a href="#heldBy">heldBy</a> |  <a href="#holdsRole">holdsRole</a> |  <a href="#isLocationFor">isLocationFor</a> |  <a href="#isPartOf">isPartOf</a> |  <a href="#isRoleAt">isRoleAt</a> |  <a href="#memberOf">memberOf</a> |  <a href="#plansToAttend">plansToAttend</a> |  <a href="#relatedToEvent">relatedToEvent</a> | 
+</p>
+</div>
+
+
+    <!-- The list of groups starts here -->
+<div id="terms_grouped"> <div class="group_table">
+<h3>Artefact and Document</h3><ul>
+<li><a href="#ArgumentativeDocument">ArgumentativeDocument</a></li>
+<li><a href="#Programme">Programme</a></li>
+<li><a href="#Poster">Poster</a></li>
+<li><a href="#SlideSet">SlideSet</a></li>
+<li><a href="#Artefact">Artefact</a></li>
+<li><a href="#Paper">Paper</a></li>
+<li><a href="#Proceedings">Proceedings</a></li>
+<li><a href="#relatedToEvent">relatedToEvent</a></li>
+</ul></div>
+<div class="group_table">
+<h3>OrganisedEvent</h3><ul>
+<li><a href="#MealEvent">MealEvent</a></li>
+<li><a href="#SocialEvent">SocialEvent</a></li>
+<li><a href="#NonAcademicEvent">NonAcademicEvent</a></li>
+<li><a href="#BreakEvent">BreakEvent</a></li>
+<li><a href="#OrganisedEvent">OrganisedEvent</a></li>
+<li><a href="#hasProgramme">hasProgramme</a></li>
+<li><a href="#isLocationFor">isLocationFor</a></li>
+<li><a href="#plansToAttend">plansToAttend</a></li>
+<li><a href="#hasLocation">hasLocation</a></li>
+</ul></div>
+<div class="group_table">
+<h3>AcademicEvent</h3><ul>
+<li><a href="#TalkEvent">TalkEvent</a></li>
+<li><a href="#TrackEvent">TrackEvent</a></li>
+<li><a href="#ConferenceEvent">ConferenceEvent</a></li>
+<li><a href="#SessionEvent">SessionEvent</a></li>
+<li><a href="#TutorialEvent">TutorialEvent</a></li>
+<li><a href="#AcademicEvent">AcademicEvent</a></li>
+<li><a href="#WorkshopEvent">WorkshopEvent</a></li>
+<li><a href="#PanelEvent">PanelEvent</a></li>
+<li><a href="#hasRole">hasRole</a></li>
+<li><a href="#hasRelatedDocument">hasRelatedDocument</a></li>
+<li><a href="#hasRelatedArtefact">hasRelatedArtefact</a></li>
+</ul></div>
+<div class="group_table">
+<h3>Role</h3><ul>
+<li><a href="#Delegate">Delegate</a></li>
+<li><a href="#Chair">Chair</a></li>
+<li><a href="#Presenter">Presenter</a></li>
+<li><a href="#Role">Role</a></li>
+<li><a href="#ProgrammeCommitteeMember">ProgrammeCommitteeMember</a></li>
+<li><a href="#holdsRole">holdsRole</a></li>
+<li><a href="#isRoleAt">isRoleAt</a></li>
+<li><a href="#heldBy">heldBy</a></li>
+</ul></div>
+<div class="group_table">
+<h3>SpatialThing</h3><ul>
+<li><a href="#AccommodationPlace">AccommodationPlace</a></li>
+<li><a href="#ConferenceVenuePlace">ConferenceVenuePlace</a></li>
+<li><a href="#CommunalPlace">CommunalPlace</a></li>
+<li><a href="#MeetingRoomPlace">MeetingRoomPlace</a></li>
 </ul></div>
 </div>
 
     <!-- End of the groups -->
 
-    <p>...</p>
 
-    <!-- ===================================================================== -->
-
-    <h2 id="overview">3. NAME ontology overview</h2>
-
-    <p>The NAME definitions presented here are ...</p>
-
-    <h3 id="s31">3.1. Example</h3>
-
-    <p>Here is a very basic document describing a foo:</p>
-
-    <div class="example" style="white-space: pre-wrap;">
-      <pre>
-        &lt;rdf:RDF /&gt;
-      </pre>
-    </div>
-
-    <p>...</p>
-
-    <!-- ===================================================================== -->
-
-    <h2 id="reference">4. Cross-reference for NAME classes and properties</h2>
-
-    <p>...</p>
-
-    <!-- The following is the script-generated list of classes and properties -->
-    <div class="termlist"><h3>Classes and Properties (full detail)</h3>
+<!-- and this is the bulk of the vocab descriptions -->
+<div class="termlist"><h3>Classes and Properties (full detail)</h3>
 <div class='termdetails'><br />
 
 <h2>Classes</h2>
@@ -242,31 +358,31 @@
   			<tr><th>Status:</th>
   			<td><span property="vs:status" >testing</span></td></tr>
   			<tr><th>Properties include:</th>
- <td>  <a href="#hasRelatedDocument">hasRelatedDocument</a>
+ <td>  <a href="#hasCall">hasCall</a>
  <a href="#hasRole">hasRole</a>
+ <a href="#hasRelatedDocument">hasRelatedDocument</a>
  <a href="#hasRelatedArtefact">hasRelatedArtefact</a>
- <a href="#hasCall">hasCall</a>
  </td></tr>
   			<tr><th>Used with:</th>
- <td>  <a href="#relatedToEvent">relatedToEvent</a>
+ <td>  <a href="#isRoleAt">isRoleAt</a>
+ <a href="#relatedToEvent">relatedToEvent</a>
  <a href="#relatedToEvent">relatedToEvent</a>
  <a href="#forEvent">forEvent</a>
- <a href="#isRoleAt">isRoleAt</a>
 </td></tr> <tr><th>Sub class of</th>
  <td>  <span rel="rdfs:subClassOf" href="http://data.semanticweb.org/ns/swc/ontology#OrganisedEvent"><a href="#OrganisedEvent">Organised Event</a></span>
  </td></tr><tr><th>Has sub class</th>
- <td>  <a href="#ConferenceEvent">Conference Event</a>
- <a href="#WorkshopEvent">Workshop Event</a>
+ <td>  <a href="#TrackEvent">Track Event</a>
+ <a href="#ConferenceEvent">Conference Event</a>
  <a href="#TalkEvent">Talk Event</a>
- <a href="#TrackEvent">Track Event</a>
  <a href="#SessionEvent">Session Event</a>
+ <a href="#WorkshopEvent">Workshop Event</a>
  <a href="#PanelEvent">Panel Event</a>
  <a href="#TutorialEvent">Tutorial Event</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#ConferenceEvent">swco:ConferenceEvent</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#WorkshopEvent">swco:WorkshopEvent</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#TalkEvent">swco:TalkEvent</a>
  <a href="http://data.semanticweb.org/ns/swc/ontology#TrackEvent">swco:TrackEvent</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#ConferenceEvent">swco:ConferenceEvent</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#TalkEvent">swco:TalkEvent</a>
  <a href="http://data.semanticweb.org/ns/swc/ontology#SessionEvent">swco:SessionEvent</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#WorkshopEvent">swco:WorkshopEvent</a>
  <a href="http://data.semanticweb.org/ns/swc/ontology#PanelEvent">swco:PanelEvent</a>
  <a href="http://data.semanticweb.org/ns/swc/ontology#TutorialEvent">swco:TutorialEvent</a>
  </td></tr>
@@ -311,12 +427,12 @@
 </td></tr> <tr><th>Sub class of</th>
  <td>  <span rel="rdfs:subClassOf" href="http://xmlns.com/foaf/0.1/Document"><a href="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></span>
  </td></tr><tr><th>Has sub class</th>
- <td>  <a href="#Paper">Paper</a>
- <a href="#Poster">Poster</a>
+ <td>  <a href="#Poster">Poster</a>
  <a href="#SlideSet">Slide Set</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#Paper">swco:Paper</a>
+ <a href="#Paper">Paper</a>
  <a href="http://data.semanticweb.org/ns/swc/ontology#Poster">swco:Poster</a>
  <a href="http://data.semanticweb.org/ns/swc/ontology#SlideSet">swco:SlideSet</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#Paper">swco:Paper</a>
  </td></tr>
   			</table>
   			
@@ -331,9 +447,9 @@
   			<tr><th>Status:</th>
   			<td><span property="vs:status" >testing</span></td></tr>
   			<tr><th>Properties include:</th>
- <td>  <a href="#relatedToEvent">relatedToEvent</a>
+ <td>  <a href="#biblioReference">biblioReference</a>
  <a href="#relatedToEvent">relatedToEvent</a>
- <a href="#biblioReference">biblioReference</a>
+ <a href="#relatedToEvent">relatedToEvent</a>
  </td></tr>
   			<tr><th>Used with:</th>
  <td>  <a href="#hasRelatedArtefact">hasRelatedArtefact</a>
@@ -341,15 +457,15 @@
  <td>  <span rel="rdfs:subClassOf" href="http://xmlns.com/wordnet/1.6/Document"><a href="http://xmlns.com/wordnet/1.6/Document">http://xmlns.com/wordnet/1.6/:Document</a></span>
  </td></tr><tr><th>Has sub class</th>
  <td>  <a href="#Programme">Programme</a>
- <a href="#Paper">Paper</a>
  <a href="#Poster">Poster</a>
- <a href="#Proceedings">Proceedings</a>
  <a href="#SlideSet">Slide Set</a>
+ <a href="#Proceedings">Proceedings</a>
+ <a href="#Paper">Paper</a>
  <a href="http://data.semanticweb.org/ns/swc/ontology#Programme">swco:Programme</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#Paper">swco:Paper</a>
  <a href="http://data.semanticweb.org/ns/swc/ontology#Poster">swco:Poster</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#Proceedings">swco:Proceedings</a>
  <a href="http://data.semanticweb.org/ns/swc/ontology#SlideSet">swco:SlideSet</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#Proceedings">swco:Proceedings</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#Paper">swco:Paper</a>
  </td></tr>
   			</table>
   			
@@ -370,12 +486,12 @@
   			<tr><th>Sub class of</th>
  <td>  <span rel="rdfs:subClassOf" href="http://data.semanticweb.org/ns/swc/ontology#NonAcademicEvent"><a href="#NonAcademicEvent">Non-academic Event</a></span>
  </td></tr><tr><th>Has sub class</th>
- <td>  <a href="#MealBreak">Meal Break</a>
+ <td>  <a href="#FreeTimeBreak">Free Time Break</a>
  <a href="#CoffeeBreak">Coffee Break</a>
- <a href="#FreeTimeBreak">Free Time Break</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#MealBreak">swco:MealBreak</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#CoffeeBreak">swco:CoffeeBreak</a>
+ <a href="#MealBreak">Meal Break</a>
  <a href="http://data.semanticweb.org/ns/swc/ontology#FreeTimeBreak">swco:FreeTimeBreak</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#CoffeeBreak">swco:CoffeeBreak</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#MealBreak">swco:MealBreak</a>
  </td></tr>
   			</table>
   			
@@ -535,15 +651,15 @@
   			<tr><th>Sub class of</th>
  <td>  <span rel="rdfs:subClassOf" href="http://data.semanticweb.org/ns/swc/ontology#OrganisedEvent"><a href="#OrganisedEvent">Organised Event</a></span>
  </td></tr><tr><th>Has sub class</th>
- <td>  <a href="#SocialEvent">Social Event</a>
+ <td>  <a href="#MealEvent">Meal Event</a>
  <a href="#ConferenceOpeningEvent">Opening Event</a>
- <a href="#MealEvent">Meal Event</a>
  <a href="#ConferenceClosingEvent">Closing Event</a>
+ <a href="#SocialEvent">Social Event</a>
  <a href="#BreakEvent">Break Event</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#SocialEvent">swco:SocialEvent</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#ConferenceOpeningEvent">swco:ConferenceOpeningEvent</a>
  <a href="http://data.semanticweb.org/ns/swc/ontology#MealEvent">swco:MealEvent</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#ConferenceOpeningEvent">swco:ConferenceOpeningEvent</a>
  <a href="http://data.semanticweb.org/ns/swc/ontology#ConferenceClosingEvent">swco:ConferenceClosingEvent</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#SocialEvent">swco:SocialEvent</a>
  <a href="http://data.semanticweb.org/ns/swc/ontology#BreakEvent">swco:BreakEvent</a>
  </td></tr>
   			</table>
@@ -560,18 +676,18 @@
   			<tr><th>Status:</th>
   			<td><span property="vs:status" >testing</span></td></tr>
   			<tr><th>Properties include:</th>
- <td>  <a href="#hasAttendee">hasAttendee</a>
+ <td>  <a href="#hasProgramme">hasProgramme</a>
  <a href="#hasSponsorship">hasSponsorship</a>
  <a href="#hasLocation">hasLocation</a>
- <a href="#hasProgramme">hasProgramme</a>
+ <a href="#hasAttendee">hasAttendee</a>
  </td></tr>
   			<tr><th>Used with:</th>
- <td>  <a href="#plansToAttend">plansToAttend</a>
- <a href="#attendeeAt">attendeeAt</a>
+ <td>  <a href="#attendeeAt">attendeeAt</a>
  <a href="#isLocationFor">isLocationFor</a>
+ <a href="#plansToAttend">plansToAttend</a>
 </td></tr> <tr><th>Sub class of</th>
- <td>  <span rel="rdfs:subClassOf" href="http://xmlns.com/wordnet/1.6/Event-1"><a href="http://xmlns.com/wordnet/1.6/Event-1">http://xmlns.com/wordnet/1.6/:Event-1</a></span>
- <span rel="rdfs:subClassOf" href="http://www.w3.org/2002/12/cal/ical#Vevent"><a href="http://www.w3.org/2002/12/cal/ical#Vevent">http://www.w3.org/2002/12/cal/ical#:Vevent</a></span>
+ <td>  <span rel="rdfs:subClassOf" href="http://www.w3.org/2002/12/cal/ical#Vevent"><a href="http://www.w3.org/2002/12/cal/ical#Vevent">http://www.w3.org/2002/12/cal/ical#:Vevent</a></span>
+ <span rel="rdfs:subClassOf" href="http://xmlns.com/wordnet/1.6/Event-1"><a href="http://xmlns.com/wordnet/1.6/Event-1">http://xmlns.com/wordnet/1.6/:Event-1</a></span>
  </td></tr><tr><th>Has sub class</th>
  <td>  <a href="#NonAcademicEvent">Non-academic Event</a>
  <a href="#AcademicEvent">Academic Event</a>
@@ -612,11 +728,11 @@
  <td>  <span rel="rdfs:subClassOf" href="http://data.semanticweb.org/ns/swc/ontology#Artefact"><a href="#Artefact">Artefact</a></span>
  <span rel="rdfs:subClassOf" href="http://data.semanticweb.org/ns/swc/ontology#ArgumentativeDocument"><a href="#ArgumentativeDocument">Argumentative Document</a></span>
  </td></tr><tr><th>Has sub class</th>
- <td>  <a href="#SystemDescription">System Description</a>
- <a href="#SystemDemonstration">System Demonstration</a>
+ <td>  <a href="#SystemDemonstration">System Demonstration</a>
+ <a href="#SystemDescription">System Description</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#SystemDemonstration">swco:SystemDemonstration</a>
  <a href="http://swrc.ontoware.org/ontology#InProceedings">http://swrc.ontoware.org/ontology#:InProceedings</a>
  <a href="http://data.semanticweb.org/ns/swc/ontology#SystemDescription">swco:SystemDescription</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#SystemDemonstration">swco:SystemDemonstration</a>
  </td></tr>
   			</table>
   			
@@ -727,8 +843,8 @@
   			<tr><th>Status:</th>
   			<td><span property="vs:status" >testing</span></td></tr>
   			<tr><th>Properties include:</th>
- <td>  <a href="#heldBy">heldBy</a>
- <a href="#isRoleAt">isRoleAt</a>
+ <td>  <a href="#isRoleAt">isRoleAt</a>
+ <a href="#heldBy">heldBy</a>
  </td></tr>
   			<tr><th>Used with:</th>
  <td>  <a href="#hasRole">hasRole</a>
@@ -736,68 +852,68 @@
 </td></tr> <tr><th>Sub class of</th>
  <td>  <span rel="rdfs:subClassOf" href="http://xmlns.com/wordnet/1.6/Role-1"><a href="http://xmlns.com/wordnet/1.6/Role-1">http://xmlns.com/wordnet/1.6/:Role-1</a></span>
  </td></tr><tr><th>Has sub class</th>
- <td>  <a href="#Reviewer">Reviewer</a>
- <a href="#DemosChair">Demos Chair</a>
- <a href="#TutorialsChair">Tutorials Chair</a>
+ <td>  <a href="#LocalOrganiser">Local Organiser</a>
+ <a href="#SubmissionsChair">Submissions Chair</a>
+ <a href="#Presenter">Presenter</a>
+ <a href="#Delegate">Delegate</a>
+ <a href="#AdditionalReviewer">Additional Reviewer</a>
+ <a href="#Webmaster">Webmaster</a>
  <a href="#TutorialPresenter">Tutorial Presenter</a>
+ <a href="#WorkshopsChair">Workshops Chair</a>
+ <a href="#DogfoodTsar">Dogfood Tsar</a>
+ <a href="#SessionChair">Session Chair</a>
  <a href="#PublicityChair">Publicity Chair</a>
- <a href="#PhDSymposiumChair">PhD Symposium or Doctoral Consortium Chair</a>
- <a href="#SWChallengeChair">Semantic Web Challenge Chair</a>
- <a href="#ProgrammeChair">Programme Chair</a>
+ <a href="#Treasurer">Treasurer</a>
  <a href="#Tutor">Tutor</a>
  <a href="#TrackChair">Track Chair</a>
- <a href="#PostersChair">Posters Chair</a>
- <a href="#LocalOrganiser">Local Organiser</a>
- <a href="#WorkshopOrganiser">Workshop Organiser</a>
- <a href="#ConferenceChair">Conference Chair</a>
  <a href="#Chair">Chair</a>
+ <a href="#TutorialsChair">Tutorials Chair</a>
+ <a href="#Reviewer">Reviewer</a>
+ <a href="#ConferenceChair">Conference Chair</a>
+ <a href="#PhDSymposiumChair">PhD Symposium or Doctoral Consortium Chair</a>
  <a href="#ExhibitionChair">Exhibition Chair</a>
- <a href="#Webmaster">Webmaster</a>
- <a href="#WorkshopsChair">Workshops Chair</a>
- <a href="#Delegate">Delegate</a>
- <a href="#SubmissionsChair">Submissions Chair</a>
- <a href="#Treasurer">Treasurer</a>
- <a href="#PrintedProceedingsChair">(Printed) Proceedings Chair</a>
- <a href="#Presenter">Presenter</a>
- <a href="#OrganisingCommitteeMember">Organising Committee Member</a>
- <a href="#DogfoodTsar">Dogfood Tsar</a>
- <a href="#AdditionalReviewer">Additional Reviewer</a>
- <a href="#ProgrammeCommitteeMember">Programme Committee Member</a>
- <a href="#Administrator">Administrator</a>
- <a href="#IndustryChair">Industry Chair or In-Use Chair</a>
  <a href="#SponsorshipChair">Sponsorship Chair</a>
- <a href="#SessionChair">Session Chair</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#Reviewer">swco:Reviewer</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#DemosChair">swco:DemosChair</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#TutorialsChair">swco:TutorialsChair</a>
+ <a href="#ProgrammeChair">Programme Chair</a>
+ <a href="#IndustryChair">Industry Chair or In-Use Chair</a>
+ <a href="#Administrator">Administrator</a>
+ <a href="#ProgrammeCommitteeMember">Programme Committee Member</a>
+ <a href="#DemosChair">Demos Chair</a>
+ <a href="#PostersChair">Posters Chair</a>
+ <a href="#WorkshopOrganiser">Workshop Organiser</a>
+ <a href="#PrintedProceedingsChair">(Printed) Proceedings Chair</a>
+ <a href="#OrganisingCommitteeMember">Organising Committee Member</a>
+ <a href="#SWChallengeChair">Semantic Web Challenge Chair</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#LocalOrganiser">swco:LocalOrganiser</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#SubmissionsChair">swco:SubmissionsChair</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#Presenter">swco:Presenter</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#Delegate">swco:Delegate</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#AdditionalReviewer">swco:AdditionalReviewer</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#Webmaster">swco:Webmaster</a>
  <a href="http://data.semanticweb.org/ns/swc/ontology#TutorialPresenter">swco:TutorialPresenter</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#WorkshopsChair">swco:WorkshopsChair</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#DogfoodTsar">swco:DogfoodTsar</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#SessionChair">swco:SessionChair</a>
  <a href="http://data.semanticweb.org/ns/swc/ontology#PublicityChair">swco:PublicityChair</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#PhDSymposiumChair">swco:PhDSymposiumChair</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#SWChallengeChair">swco:SWChallengeChair</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#ProgrammeChair">swco:ProgrammeChair</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#Treasurer">swco:Treasurer</a>
  <a href="http://data.semanticweb.org/ns/swc/ontology#Tutor">swco:Tutor</a>
  <a href="http://data.semanticweb.org/ns/swc/ontology#TrackChair">swco:TrackChair</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#PostersChair">swco:PostersChair</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#LocalOrganiser">swco:LocalOrganiser</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#WorkshopOrganiser">swco:WorkshopOrganiser</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#ConferenceChair">swco:ConferenceChair</a>
  <a href="http://data.semanticweb.org/ns/swc/ontology#Chair">swco:Chair</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#TutorialsChair">swco:TutorialsChair</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#Reviewer">swco:Reviewer</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#ConferenceChair">swco:ConferenceChair</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#PhDSymposiumChair">swco:PhDSymposiumChair</a>
  <a href="http://data.semanticweb.org/ns/swc/ontology#ExhibitionChair">swco:ExhibitionChair</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#Webmaster">swco:Webmaster</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#WorkshopsChair">swco:WorkshopsChair</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#Delegate">swco:Delegate</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#SubmissionsChair">swco:SubmissionsChair</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#Treasurer">swco:Treasurer</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#PrintedProceedingsChair">swco:PrintedProceedingsChair</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#Presenter">swco:Presenter</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#OrganisingCommitteeMember">swco:OrganisingCommitteeMember</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#DogfoodTsar">swco:DogfoodTsar</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#AdditionalReviewer">swco:AdditionalReviewer</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#ProgrammeCommitteeMember">swco:ProgrammeCommitteeMember</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#Administrator">swco:Administrator</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#IndustryChair">swco:IndustryChair</a>
  <a href="http://data.semanticweb.org/ns/swc/ontology#SponsorshipChair">swco:SponsorshipChair</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#SessionChair">swco:SessionChair</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#ProgrammeChair">swco:ProgrammeChair</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#IndustryChair">swco:IndustryChair</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#Administrator">swco:Administrator</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#ProgrammeCommitteeMember">swco:ProgrammeCommitteeMember</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#DemosChair">swco:DemosChair</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#PostersChair">swco:PostersChair</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#WorkshopOrganiser">swco:WorkshopOrganiser</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#PrintedProceedingsChair">swco:PrintedProceedingsChair</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#OrganisingCommitteeMember">swco:OrganisingCommitteeMember</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#SWChallengeChair">swco:SWChallengeChair</a>
  </td></tr>
   			</table>
   			
@@ -818,12 +934,12 @@
   			<tr><th>Sub class of</th>
  <td>  <span rel="rdfs:subClassOf" href="http://data.semanticweb.org/ns/swc/ontology#AcademicEvent"><a href="#AcademicEvent">Academic Event</a></span>
  </td></tr><tr><th>Has sub class</th>
- <td>  <a href="#DemoSession">Demo Session</a>
- <a href="#PosterSession">Poster Session</a>
+ <td>  <a href="#PosterSession">Poster Session</a>
  <a href="#PaperSession">Paper Session</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#DemoSession">swco:DemoSession</a>
+ <a href="#DemoSession">Demo Session</a>
  <a href="http://data.semanticweb.org/ns/swc/ontology#PosterSession">swco:PosterSession</a>
  <a href="http://data.semanticweb.org/ns/swc/ontology#PaperSession">swco:PaperSession</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#DemoSession">swco:DemoSession</a>
  </td></tr>
   			</table>
   			
@@ -861,12 +977,12 @@
   			<tr><th>Sub class of</th>
  <td>  <span rel="rdfs:subClassOf" href="http://data.semanticweb.org/ns/swc/ontology#NonAcademicEvent"><a href="#NonAcademicEvent">Non-academic Event</a></span>
  </td></tr><tr><th>Has sub class</th>
- <td>  <a href="#Excursion">Excursion</a>
+ <td>  <a href="#Reception">Reception</a>
+ <a href="#Excursion">Excursion</a>
  <a href="#ConferenceDinner">Conference Dinner</a>
- <a href="#Reception">Reception</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#Reception">swco:Reception</a>
  <a href="http://data.semanticweb.org/ns/swc/ontology#Excursion">swco:Excursion</a>
  <a href="http://data.semanticweb.org/ns/swc/ontology#ConferenceDinner">swco:ConferenceDinner</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#Reception">swco:Reception</a>
  </td></tr>
   			</table>
   			
@@ -887,18 +1003,18 @@
   			<tr><th>Sub class of</th>
  <td>  <span rel="rdfs:subClassOf" href="http://data.semanticweb.org/ns/swc/ontology#AcademicEvent"><a href="#AcademicEvent">Academic Event</a></span>
  </td></tr><tr><th>Has sub class</th>
- <td>  <a href="#PaperPresentation">Paper Presentation</a>
- <a href="#DemoPresentation">Demo Presentation</a>
+ <td>  <a href="#KeynoteTalk">Keynote Talk</a>
+ <a href="#PaperPresentation">Paper Presentation</a>
  <a href="#WelcomeTalk">Welcome Talk</a>
- <a href="#KeynoteTalk">Keynote Talk</a>
- <a href="#PosterPresentation">Poster Presentation</a>
+ <a href="#DemoPresentation">Demo Presentation</a>
  <a href="#IndustrialTalk">Industrial Talk</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#PaperPresentation">swco:PaperPresentation</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#DemoPresentation">swco:DemoPresentation</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#WelcomeTalk">swco:WelcomeTalk</a>
+ <a href="#PosterPresentation">Poster Presentation</a>
  <a href="http://data.semanticweb.org/ns/swc/ontology#KeynoteTalk">swco:KeynoteTalk</a>
- <a href="http://data.semanticweb.org/ns/swc/ontology#PosterPresentation">swco:PosterPresentation</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#PaperPresentation">swco:PaperPresentation</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#WelcomeTalk">swco:WelcomeTalk</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#DemoPresentation">swco:DemoPresentation</a>
  <a href="http://data.semanticweb.org/ns/swc/ontology#IndustrialTalk">swco:IndustrialTalk</a>
+ <a href="http://data.semanticweb.org/ns/swc/ontology#PosterPresentation">swco:PosterPresentation</a>
  </td></tr>
   			</table>
   			
@@ -1067,11 +1183,11 @@
   			<tr><th>Range:</th>
  <td>  <span rel="rdfs:range" href="http://data.semanticweb.org/ns/swc/ontology#ArgumentativeDocument"><a href="#ArgumentativeDocument">Argumentative Document</a></span>
  </td></tr><tr><th>Inverse property of</th>
- <td>  <span rel="owl:inverseOf" href="http://data.semanticweb.org/ns/swc/ontology#relatedToEvent"><a href="#relatedToEvent">related to Event</a></span>
- <span rel="owl:inverseOf" href="http://data.semanticweb.org/ns/swc/ontology#relatedToEvent"><a href="#relatedToEvent">related to event</a></span>
+ <td>  <span rel="owl:inverseOf" href="http://data.semanticweb.org/ns/swc/ontology#relatedToEvent"><a href="#relatedToEvent">related to event</a></span>
+ <span rel="owl:inverseOf" href="http://data.semanticweb.org/ns/swc/ontology#relatedToEvent"><a href="#relatedToEvent">related to Event</a></span>
  </td></tr><tr><th>Has inverse property</th>
- <td>  <a href="#relatedToEvent">related to Event</a>
- <a href="#relatedToEvent">related to event</a>
+ <td>  <a href="#relatedToEvent">related to event</a>
+ <a href="#relatedToEvent">related to Event</a>
  </td></tr>
   			</table>
   			
@@ -1253,7 +1369,7 @@
   			<br/>
   			</div><div class="specterm" id="relatedToEvent" about="http://data.semanticweb.org/ns/swc/ontology#relatedToEvent" typeof="owl:ObjectProperty">
   			<h3>Property: swco:relatedToEvent</h3> 
-  			<em property="rdfs:label" >related to Event</em> - <span property="rdfs:comment" >
+  			<em property="rdfs:label" >related to event</em> - <span property="rdfs:comment" >
 			<p>
 				Relates a <a href="#ArgumentativeDocument">document</a> to an <a href="#AcademicEvent">event</a> such as a conference, workshop, etc.
 			</p>
@@ -1310,43 +1426,26 @@
 
 </div>
 </div>
-    <!-- End of the terms list -->
 
-    <p>...</p>
 
-    <!-- ===================================================================== -->
+<h2 id="sec-extrefs">External Vocabulary References</h2>
 
-    <h2 id="references">A References</h2>
+...
 
-    <dl>
-      <dt class="label" id="ref-some">name</dt>
-      <dd><em><a href="http://.../">long name</a></em> description...</dd>
-    </dl>
 
-    <h3 id="references-other">A.2 Other references</h3>
+<h3 id="extns_status">Status Vocabulary</h3>
 
-    <dl>
-      <dt class="label" id="ref-rfc2119">IETF RFC 2119</dt>
-      <dd>
-        <em><a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119: Key words
-        for use in RFCs to Indicate Requirement Levels</a></em>. Internet
-        Engineering Task Force, 1997 (see http://www.ietf.org/rfc/rfc2119.txt).
-      </dd>
-    </dl>
+...
 
-    <!-- ===================================================================== -->
+  <h3 id="sec-ack">Acknowledgments</h3>
 
-    <h2 id="changes">B Changes in this version (Non-Normative)</h2>
+  ....
 
-    <ul>
-      <li><p>changelog</p></li> 
-    </ul>
+<h2 id="sec-changes">Recent Changes</h2>
 
-    <h2><a id="acknowledgements"></a>C Acknowledgements (Non-Normative)</h2>
+....
 
-    <p>...</p>
-
-  </body>
-
+</body>
 </html>
+
 
