@@ -1,0 +1,2 @@
+This is the following Version of the Semantic Web Conference Ontology
+http://data.semanticweb.org/ns/swc/swc_2009-05-09.html

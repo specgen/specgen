@@ -1,0 +1,1802 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+xmlns:owl="http://www.w3.org/2002/07/owl#"
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:olo="http://purl.org/ontology/olo/core#"
+xmlns:vann="http://purl.org/vocab/vann/"
+xmlns:bibo="http://purl.org/ontology/bibo/"
+xmlns:foaf="http://xmlns.com/foaf/0.1/"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+typeof="bibo:Document"
+about="http://www.csw.inf.fu-berlin.de/ontdocu/specgen/foaf.html"
+version="XHTML+RDFa 1.0">
+<head>
+  <title about="http://www.csw.inf.fu-berlin.de/ontdocu/specgen/foaf.html" property="dc:title">The FOAF Ontology Specification</title>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+  <base href="http://www.csw.inf.fu-berlin.de/ontdocu/specgen/foaf.html" />
+  
+  <link href="http://smiy.sourceforge.net/css/xmlns-style.css" rel="stylesheet"  type="text/css" />
+  <link href="http://smiy.sourceforge.net/css/style.css" rel="stylesheet"  type="text/css" />
+  <link href="http://www.csw.inf.fu-berlin.de/ontdocu/specgen/groups.css" rel="stylesheet"  type="text/css" />
+  
+  <link about="http://xmlns.com/foaf/0.1/" typeof="owl:Ontology" rel="dc:creator" href="foaflink" />
+  <link about="http://xmlns.com/foaf/0.1/" rel="dc:creator" href="foaflink" />
+  <link about="http://www.csw.inf.fu-berlin.de/ontdocu/specgen/foaf.html" rel="dc:creator" href="foaflink" />
+  <link about="http://www.csw.inf.fu-berlin.de/ontdocu/specgen/foaf.html" rel="foaf:primaryTopic" rev="foaf:isPrimaryTopicOf" href="http://xmlns.com/foaf/0.1/" />
+
+  
+
+</head>
+
+<body>
+  <h1><span about="http://xmlns.com/foaf/0.1/" property="dc:title">The FOAF Ontology</span> <span about="http://xmlns.com/foaf/0.1/" property="owl:versionInfo" datatype="xsd:decimal">0.01</span></h1>
+
+  <h2>Namespace Document <span about="http://xmlns.com/foaf/0.1/" property="dc:date" content="2012-09-01T19:34:05" datatype="xsd:dateTime">01 September 2012</span></h2>
+<table class="header" border="0">
+  <tr>
+    <td>
+		<dl about="http://www.csw.inf.fu-berlin.de/ontdocu/specgen/foaf.html">
+			<dt>This version:</dt>
+			<dd><a rel="dc:hasVersion" 
+				rev="dc:isVersionOf" href=Version-URL">Version URL</a> (<a href="Version-File-URI">OWL</a>)</dd>
+
+			<dt>Latest version:</dt>
+			<dd><a href="http://xmlns.com/foaf/0.1/">http://xmlns.com/foaf/0.1/</a> (<a href="OWL-Link-Here">OWL</a>)</dd>
+
+			<dt>Previous version:</dt>
+			    ...
+			<dt>Authors:</dt>
+			<dd><a rel="rdfs:seeAlso" href="Link-To-Person-Here">Person</a> (<a rel="rdfs:seeAlso" href="Company-Address">Company Address</a>),<br/>
+				<a rel="rdfs:seeAlso" href="Link-To-Another-Person">another Person</a> (<a rel="rdfs:seeAlso" href="Company-Address">Company Address</a>)</dd>
+		</dl>
+
+		<p class="copyright"><span about="http://xmlns.com/foaf/0.1/" property="dc:rights">Copyright &#169; 2012 Copyright holder here</span></p>
+	</td>
+    <td align="right">
+		<table class="infobox">
+			<tr>
+				<td rowspan="2">
+					<img src="http://wfnm.sourceforge.net/images/sourceforge_logo.jpg" width="150" alt="Sourceforge"/>
+				</td>
+				<td align="center">
+					<b>FOAF Ontology repository</b>
+				</td>
+			</tr>
+			<tr>
+				<td align="center">
+					<a href="LinkToRepo">Source code, examples, graphics, ...</a>
+				</td>
+			</tr>
+			<tr>
+				<td rowspan="2">
+					<img src="http://s.wordpress.org/about/images/buttons/buttonw-blue.png" width="150" alt="Wordpress" />
+				</td>
+				<td align="center">
+					<b>other Infos</b>
+				</td>
+			</tr>
+			<tr>
+				<td align="center">
+					<a href="Another Link">Announcements, descriptions, use cases, ...</a>
+				</td>
+			</tr>
+		</table>
+	</td>
+  </tr>
+</table>
+
+  <div about="http://www.csw.inf.fu-berlin.de/ontdocu/specgen/foaf.html" rel="dc:conformsTo"
+     resource="http://www.w3.org/TR/rdfa-syntax"></div>
+  <p>
+    <a href="http://validator.w3.org/check?uri=referer"><img style="border: 0; float: right; padding: 5px;"
+        src="http://www.w3.org/Icons/valid-xhtml-rdfa"
+        alt="Valid XHTML + RDFa" height="31" width="88" /></a>
+
+  <!-- Creative Commons License -->
+  Example Licencing Information
+   <a href="http://creativecommons.org/licenses/by/1.0/"><img alt=
+  "Creative Commons License" style="border: 0; float: right; padding: 5px;" src=
+  "http://i.creativecommons.org/l/by/3.0/88x31.png" /></a> This work is licensed under a <a about="http://www.csw.inf.fu-berlin.de/ontdocu/specgen/foaf.html" rel="license dc:license" href= 
+  "http://creativecommons.org/licenses/by/3.0/" title="Creative Commons
+  Attribution License">Creative Commons
+  Attribution License</a>. This copyright applies to the <em>FOAF Ontology Specification</em> 
+  and accompanying documentation in RDF.
+ Regarding underlying technology, the <em>FOAF Ontology</em> uses W3C's <a href="http://www.w3.org/RDF/">RDF</a> technology, an
+  open Web standard that can be freely used by anyone.</p>
+  
+  <hr />
+
+
+<h2 id="sec-status">Abstract</h2>
+<p about="http://xmlns.com/foaf/0.1/" property="dc:description">
+The <em>FOAF Ontology Specification</em> provides...
+</p>
+
+  <div class="status">
+    <h2>Status of This Document</h2>
+
+    <p about="http://www.csw.inf.fu-berlin.de/ontdocu/specgen/foaf.html">The template of this specification is derived from the  <a rel="rdfs:seeAlso" href="http://xmlns.com/foaf/spec/">FOAF 
+Vocabulary Specification</a>, which was created by <a rel="rdfs:seeAlso" href="http://danbri.org/">Dan Brickley</a> and <a rel="rdfs:seeAlso" href="http://nicecupoftea.org/">Libby Miller</a>, 
+and the <a rel="rdfs:seeAlso" href="http://musicontology.com/">Music Ontology Specification</a>, which was created by <a rel="rdfs:seeAlso" href="http://moustaki.org/">Yves Raimond</a>. It was 
+modified and extended by Bob Ferris. Furthermore, a modified and extended version of <a rel="rdfs:seeAlso" href="http://svn.foaf-project.org/foaftown/specgen/">Danbri's SpecGen version</a> was 
+used to generate most of the RDFa statements of the <em>Ordered List Ontology</em> for this specification (see <a rel="rdfs:seeAlso" 
+href="http://smiy.svn.sourceforge.net/viewvc/smiy/specgen/trunk/">here</a> for SpecGen version 6 by Bob Ferris).
+</p>
+
+...
+  <h2 id="sec-toc">Table of Contents</h2>
+
+  <ul>
+    <li><a href="#sec-glance">The FOAF Ontology at a glance</a></li>
+    <li><a href="#sec-example">Examples</a></li>
+    <li><a href="#sec-intro">Introduction</a></li>
+    <li><a href="#sec-for">What's the FOAF Ontology for?</a></li>
+    <li><a href="#sec-bg">Background</a></li>
+    <li><a href="#sec-standards">The FOAF Ontology and Standards</a></li>
+    <li><a href="#sec-evolution">Evolution and Extension of the FOAF Ontology</a></li>
+    <li><a href="#sec-crossref">The FOAF Ontology cross-reference: Listing the FOAF Ontology Classes and Properties</a></li>
+    <li><a href="#sec-extrefs">External Vocabulary References</a></li>
+    <li><a href="#sec-ack">Acknowledgments</a></li>
+    <li><a href="#sec-changes">Recent Changes</a></li>
+  </ul>
+
+
+  <a id="sec-glance"></a>
+  <h2 id="glance">The FOAF Ontology at a glance</h2>
+  
+   ...
+ <p>An a-z index of <em>FOAF Ontology</em> terms, by class (categories or types) and by property.</p>
+ 
+ 
+ <div class="azlist">
+<p>Classes: | <a href="#Agent">Agent</a> |  <a href="#Document">Document</a> |  <a href="#Group">Group</a> |  <a href="#Image">Image</a> |  <a href="#LabelProperty">LabelProperty</a> |  <a href="#OnlineAccount">OnlineAccount</a> |  <a href="#OnlineChatAccount">OnlineChatAccount</a> |  <a href="#OnlineEcommerceAccount">OnlineEcommerceAccount</a> |  <a href="#OnlineGamingAccount">OnlineGamingAccount</a> |  <a href="#Organization">Organization</a> |  <a href="#Person">Person</a> |  <a href="#PersonalProfileDocument">PersonalProfileDocument</a> |  <a href="#Project">Project</a> | 
+</p>
+<p>Properties: | <a href="#account">account</a> |  <a href="#accountName">accountName</a> |  <a href="#accountServiceHomepage">accountServiceHomepage</a> |  <a href="#age">age</a> |  <a href="#aimChatID">aimChatID</a> |  <a href="#based_near">based_near</a> |  <a href="#birthday">birthday</a> |  <a href="#currentProject">currentProject</a> |  <a href="#depiction">depiction</a> |  <a href="#depicts">depicts</a> |  <a href="#dnaChecksum">dnaChecksum</a> |  <a href="#familyName">familyName</a> |  <a href="#family_name">family_name</a> |  <a href="#firstName">firstName</a> |  <a href="#fundedBy">fundedBy</a> |  <a href="#geekcode">geekcode</a> |  <a href="#gender">gender</a> |  <a href="#givenName">givenName</a> |  <a href="#givenname">givenname</a> |  <a href="#holdsAccount">holdsAccount</a> |  <a href="#homepage">homepage</a> |  <a href="#icqChatID">icqChatID</a> |  <a href="#img">img</a> |  <a href="#interest">interest</a> |  <a href="#isPrimaryTopicOf">isPrimaryTopicOf</a> |  <a href="#jabberID">jabberID</a> |  <a href="#knows">knows</a> |  <a href="#logo">logo</a> |  <a href="#made">made</a> |  <a href="#maker">maker</a> |  <a href="#mbox">mbox</a> |  <a href="#mbox_sha1sum">mbox_sha1sum</a> |  <a href="#member">member</a> |  <a href="#membershipClass">membershipClass</a> |  <a href="#msnChatID">msnChatID</a> |  <a href="#myersBriggs">myersBriggs</a> |  <a href="#name">name</a> |  <a href="#nick">nick</a> |  <a href="#openid">openid</a> |  <a href="#page">page</a> |  <a href="#pastProject">pastProject</a> |  <a href="#phone">phone</a> |  <a href="#plan">plan</a> |  <a href="#primaryTopic">primaryTopic</a> |  <a href="#publications">publications</a> |  <a href="#schoolHomepage">schoolHomepage</a> |  <a href="#sha1">sha1</a> |  <a href="#skypeID">skypeID</a> |  <a href="#status">status</a> |  <a href="#surname">surname</a> |  <a href="#theme">theme</a> |  <a href="#thumbnail">thumbnail</a> |  <a href="#tipjar">tipjar</a> |  <a href="#title">title</a> |  <a href="#topic">topic</a> |  <a href="#topic_interest">topic_interest</a> |  <a href="#weblog">weblog</a> |  <a href="#workInfoHomepage">workInfoHomepage</a> |  <a href="#workplaceHomepage">workplaceHomepage</a> |  <a href="#yahooChatID">yahooChatID</a> | 
+</p>
+</div>
+ 
+ 
+  <p> Main <em>FOAF Ontology </em> terms, grouped in broad categories. </p>
+
+    <div id="terms_grouped"> <div class="group_table">
+<h3>OnlineAccount</h3><ul>
+<li><a href="#OnlineEcommerceAccount">OnlineEcommerceAccount</a></li>
+<li><a href="#OnlineAccount">OnlineAccount</a></li>
+<li><a href="#OnlineChatAccount">OnlineChatAccount</a></li>
+<li><a href="#OnlineGamingAccount">OnlineGamingAccount</a></li>
+<li><a href="#accountName">accountName</a></li>
+<li><a href="#accountServiceHomepage">accountServiceHomepage</a></li>
+</ul></div>
+<div class="group_table">
+<h3>Image, Project, Person, LabelProperty and Document</h3><ul>
+<li><a href="#Image">Image</a></li>
+<li><a href="#Project">Project</a></li>
+<li><a href="#PersonalProfileDocument">PersonalProfileDocument</a></li>
+<li><a href="#Person">Person</a></li>
+<li><a href="#LabelProperty">LabelProperty</a></li>
+<li><a href="#Document">Document</a></li>
+<li><a href="#homepage">homepage</a></li>
+<li><a href="#geekcode">geekcode</a></li>
+<li><a href="#primaryTopic">primaryTopic</a></li>
+<li><a href="#plan">plan</a></li>
+<li><a href="#firstName">firstName</a></li>
+<li><a href="#thumbnail">thumbnail</a></li>
+<li><a href="#publications">publications</a></li>
+<li><a href="#surname">surname</a></li>
+<li><a href="#pastProject">pastProject</a></li>
+<li><a href="#currentProject">currentProject</a></li>
+<li><a href="#sha1">sha1</a></li>
+<li><a href="#isPrimaryTopicOf">isPrimaryTopicOf</a></li>
+<li><a href="#knows">knows</a></li>
+<li><a href="#familyName">familyName</a></li>
+<li><a href="#myersBriggs">myersBriggs</a></li>
+<li><a href="#schoolHomepage">schoolHomepage</a></li>
+<li><a href="#family_name">family_name</a></li>
+<li><a href="#img">img</a></li>
+<li><a href="#depiction">depiction</a></li>
+<li><a href="#page">page</a></li>
+<li><a href="#workInfoHomepage">workInfoHomepage</a></li>
+<li><a href="#topic">topic</a></li>
+<li><a href="#interest">interest</a></li>
+<li><a href="#depicts">depicts</a></li>
+<li><a href="#workplaceHomepage">workplaceHomepage</a></li>
+<li><a href="#topic_interest">topic_interest</a></li>
+</ul></div>
+<div class="group_table">
+<h3>Agent</h3><ul>
+<li><a href="#Organization">Organization</a></li>
+<li><a href="#Group">Group</a></li>
+<li><a href="#Agent">Agent</a></li>
+<li><a href="#jabberID">jabberID</a></li>
+<li><a href="#aimChatID">aimChatID</a></li>
+<li><a href="#msnChatID">msnChatID</a></li>
+<li><a href="#age">age</a></li>
+<li><a href="#gender">gender</a></li>
+<li><a href="#holdsAccount">holdsAccount</a></li>
+<li><a href="#account">account</a></li>
+<li><a href="#member">member</a></li>
+<li><a href="#made">made</a></li>
+<li><a href="#weblog">weblog</a></li>
+<li><a href="#yahooChatID">yahooChatID</a></li>
+<li><a href="#birthday">birthday</a></li>
+<li><a href="#skypeID">skypeID</a></li>
+<li><a href="#openid">openid</a></li>
+<li><a href="#icqChatID">icqChatID</a></li>
+<li><a href="#tipjar">tipjar</a></li>
+<li><a href="#maker">maker</a></li>
+<li><a href="#status">status</a></li>
+<li><a href="#mbox_sha1sum">mbox_sha1sum</a></li>
+<li><a href="#mbox">mbox</a></li>
+</ul></div>
+</div>
+
+    
+ 
+ 
+
+  <div style="clear: left;"></div>
+
+  <h2 id="sec-example">Example</h2>
+  
+    <p>A graphic of a simple example of an use case of the <em>FOAF Ontology</em></p>
+  
+    
+  <div class="example">
+  ....
+  </div>
+
+ <div style="clear: left;"></div>
+
+
+  <!-- ================================================================== -->
+
+
+ <h2 id="sec-intro">Introduction: FOAF Ontology Basics</h2>
+
+
+  <h2 id="sec-for">What's the FOAF Ontology for?</h2>
+
+...
+  <h2 id="sec-bg">Background</h2>
+
+  <p>TODO</p>
+
+  <h2 id="sec-standards">The FOAF Ontology and Standards</h2>
+
+  <p>TODO</p>
+
+  <p>TODO</p>
+
+  <h2 id="sec-nsdoc">The FOAF Ontology Description</h2>
+
+  <p>This specification serves as the <em>FOAF Ontology</em> "namespace document". ... </p>
+
+  <h3 id="sec-evolution">Evolution and Extension of the FOAF Ontology</h3>
+
+  ....
+
+  <h2 id="sec-crossref">The FOAF Ontology cross-reference: Listing the FOAF Ontology Classes and Properties</h2>
+
+  <p>The <em>FOAF Ontology</em> introduces the following classes and properties. </p>
+
+  <!-- the following is the script-generated list of classes and properties -->
+ 
+
+<!-- this is the a-z listing -->
+<div class="azlist">
+<p>Classes: | <a href="#Agent">Agent</a> |  <a href="#Document">Document</a> |  <a href="#Group">Group</a> |  <a href="#Image">Image</a> |  <a href="#LabelProperty">LabelProperty</a> |  <a href="#OnlineAccount">OnlineAccount</a> |  <a href="#OnlineChatAccount">OnlineChatAccount</a> |  <a href="#OnlineEcommerceAccount">OnlineEcommerceAccount</a> |  <a href="#OnlineGamingAccount">OnlineGamingAccount</a> |  <a href="#Organization">Organization</a> |  <a href="#Person">Person</a> |  <a href="#PersonalProfileDocument">PersonalProfileDocument</a> |  <a href="#Project">Project</a> | 
+</p>
+<p>Properties: | <a href="#account">account</a> |  <a href="#accountName">accountName</a> |  <a href="#accountServiceHomepage">accountServiceHomepage</a> |  <a href="#age">age</a> |  <a href="#aimChatID">aimChatID</a> |  <a href="#based_near">based_near</a> |  <a href="#birthday">birthday</a> |  <a href="#currentProject">currentProject</a> |  <a href="#depiction">depiction</a> |  <a href="#depicts">depicts</a> |  <a href="#dnaChecksum">dnaChecksum</a> |  <a href="#familyName">familyName</a> |  <a href="#family_name">family_name</a> |  <a href="#firstName">firstName</a> |  <a href="#fundedBy">fundedBy</a> |  <a href="#geekcode">geekcode</a> |  <a href="#gender">gender</a> |  <a href="#givenName">givenName</a> |  <a href="#givenname">givenname</a> |  <a href="#holdsAccount">holdsAccount</a> |  <a href="#homepage">homepage</a> |  <a href="#icqChatID">icqChatID</a> |  <a href="#img">img</a> |  <a href="#interest">interest</a> |  <a href="#isPrimaryTopicOf">isPrimaryTopicOf</a> |  <a href="#jabberID">jabberID</a> |  <a href="#knows">knows</a> |  <a href="#logo">logo</a> |  <a href="#made">made</a> |  <a href="#maker">maker</a> |  <a href="#mbox">mbox</a> |  <a href="#mbox_sha1sum">mbox_sha1sum</a> |  <a href="#member">member</a> |  <a href="#membershipClass">membershipClass</a> |  <a href="#msnChatID">msnChatID</a> |  <a href="#myersBriggs">myersBriggs</a> |  <a href="#name">name</a> |  <a href="#nick">nick</a> |  <a href="#openid">openid</a> |  <a href="#page">page</a> |  <a href="#pastProject">pastProject</a> |  <a href="#phone">phone</a> |  <a href="#plan">plan</a> |  <a href="#primaryTopic">primaryTopic</a> |  <a href="#publications">publications</a> |  <a href="#schoolHomepage">schoolHomepage</a> |  <a href="#sha1">sha1</a> |  <a href="#skypeID">skypeID</a> |  <a href="#status">status</a> |  <a href="#surname">surname</a> |  <a href="#theme">theme</a> |  <a href="#thumbnail">thumbnail</a> |  <a href="#tipjar">tipjar</a> |  <a href="#title">title</a> |  <a href="#topic">topic</a> |  <a href="#topic_interest">topic_interest</a> |  <a href="#weblog">weblog</a> |  <a href="#workInfoHomepage">workInfoHomepage</a> |  <a href="#workplaceHomepage">workplaceHomepage</a> |  <a href="#yahooChatID">yahooChatID</a> | 
+</p>
+</div>
+
+
+    <!-- The list of groups starts here -->
+<div id="terms_grouped"> <div class="group_table">
+<h3>OnlineAccount</h3><ul>
+<li><a href="#OnlineEcommerceAccount">OnlineEcommerceAccount</a></li>
+<li><a href="#OnlineAccount">OnlineAccount</a></li>
+<li><a href="#OnlineChatAccount">OnlineChatAccount</a></li>
+<li><a href="#OnlineGamingAccount">OnlineGamingAccount</a></li>
+<li><a href="#accountName">accountName</a></li>
+<li><a href="#accountServiceHomepage">accountServiceHomepage</a></li>
+</ul></div>
+<div class="group_table">
+<h3>Image, Project, Person, LabelProperty and Document</h3><ul>
+<li><a href="#Image">Image</a></li>
+<li><a href="#Project">Project</a></li>
+<li><a href="#PersonalProfileDocument">PersonalProfileDocument</a></li>
+<li><a href="#Person">Person</a></li>
+<li><a href="#LabelProperty">LabelProperty</a></li>
+<li><a href="#Document">Document</a></li>
+<li><a href="#homepage">homepage</a></li>
+<li><a href="#geekcode">geekcode</a></li>
+<li><a href="#primaryTopic">primaryTopic</a></li>
+<li><a href="#plan">plan</a></li>
+<li><a href="#firstName">firstName</a></li>
+<li><a href="#thumbnail">thumbnail</a></li>
+<li><a href="#publications">publications</a></li>
+<li><a href="#surname">surname</a></li>
+<li><a href="#pastProject">pastProject</a></li>
+<li><a href="#currentProject">currentProject</a></li>
+<li><a href="#sha1">sha1</a></li>
+<li><a href="#isPrimaryTopicOf">isPrimaryTopicOf</a></li>
+<li><a href="#knows">knows</a></li>
+<li><a href="#familyName">familyName</a></li>
+<li><a href="#myersBriggs">myersBriggs</a></li>
+<li><a href="#schoolHomepage">schoolHomepage</a></li>
+<li><a href="#family_name">family_name</a></li>
+<li><a href="#img">img</a></li>
+<li><a href="#depiction">depiction</a></li>
+<li><a href="#page">page</a></li>
+<li><a href="#workInfoHomepage">workInfoHomepage</a></li>
+<li><a href="#topic">topic</a></li>
+<li><a href="#interest">interest</a></li>
+<li><a href="#depicts">depicts</a></li>
+<li><a href="#workplaceHomepage">workplaceHomepage</a></li>
+<li><a href="#topic_interest">topic_interest</a></li>
+</ul></div>
+<div class="group_table">
+<h3>Agent</h3><ul>
+<li><a href="#Organization">Organization</a></li>
+<li><a href="#Group">Group</a></li>
+<li><a href="#Agent">Agent</a></li>
+<li><a href="#jabberID">jabberID</a></li>
+<li><a href="#aimChatID">aimChatID</a></li>
+<li><a href="#msnChatID">msnChatID</a></li>
+<li><a href="#age">age</a></li>
+<li><a href="#gender">gender</a></li>
+<li><a href="#holdsAccount">holdsAccount</a></li>
+<li><a href="#account">account</a></li>
+<li><a href="#member">member</a></li>
+<li><a href="#made">made</a></li>
+<li><a href="#weblog">weblog</a></li>
+<li><a href="#yahooChatID">yahooChatID</a></li>
+<li><a href="#birthday">birthday</a></li>
+<li><a href="#skypeID">skypeID</a></li>
+<li><a href="#openid">openid</a></li>
+<li><a href="#icqChatID">icqChatID</a></li>
+<li><a href="#tipjar">tipjar</a></li>
+<li><a href="#maker">maker</a></li>
+<li><a href="#status">status</a></li>
+<li><a href="#mbox_sha1sum">mbox_sha1sum</a></li>
+<li><a href="#mbox">mbox</a></li>
+</ul></div>
+</div>
+
+    <!-- End of the groups -->
+
+
+<!-- and this is the bulk of the vocab descriptions -->
+<div class="termlist"><h3>Classes and Properties (full detail)</h3>
+<div class='termdetails'><br />
+
+<h2>Classes</h2>
+ <div class="specterm" id="Agent" about="http://xmlns.com/foaf/0.1/Agent" typeof="owl:Class">
+  			<h3>Class: foaf:Agent</h3> 
+  			<em property="rdfs:label" >Agent</em> - <span property="rdfs:comment" >An agent (eg. person, group, software or physical artifact).</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#account">account</a>
+ <a href="#icqChatID">icqChatID</a>
+ <a href="#tipjar">tipjar</a>
+ <a href="#gender">gender</a>
+ <a href="#msnChatID">msnChatID</a>
+ <a href="#made">made</a>
+ <a href="#weblog">weblog</a>
+ <a href="#age">age</a>
+ <a href="#skypeID">skypeID</a>
+ <a href="#status">status</a>
+ <a href="#yahooChatID">yahooChatID</a>
+ <a href="#jabberID">jabberID</a>
+ <a href="#aimChatID">aimChatID</a>
+ <a href="#birthday">birthday</a>
+ <a href="#mbox_sha1sum">mbox_sha1sum</a>
+ <a href="#holdsAccount">holdsAccount</a>
+ <a href="#mbox">mbox</a>
+ <a href="#openid">openid</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#maker">maker</a>
+ <a href="#member">member</a>
+</td></tr> <tr><th>Has sub class</th>
+ <td>  <a href="#Person">Person</a>
+ <a href="#Group">Group</a>
+ <a href="#Organization">Organization</a>
+ <a href="http://xmlns.com/foaf/0.1/Person">foaf:Person</a>
+ <a href="http://xmlns.com/foaf/0.1/Group">foaf:Group</a>
+ <a href="http://xmlns.com/foaf/0.1/Organization">foaf:Organization</a>
+ </td></tr><tr><th>Disjoint With:</th>
+ <td>  <span rel="owl:disjointWith" href="http://xmlns.com/foaf/0.1/Document"><a href="#Document">Document</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#Agent">#</a>] <!-- Agent --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Group" about="http://xmlns.com/foaf/0.1/Group" typeof="owl:Class">
+  			<h3>Class: foaf:Group</h3> 
+  			<em property="rdfs:label" >Group</em> - <span property="rdfs:comment" >A class of Agents.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#member">member</a>
+ </td></tr>
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://xmlns.com/foaf/0.1/Agent"><a href="#Agent">Agent</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#Group">#</a>] <!-- Group --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Organization" about="http://xmlns.com/foaf/0.1/Organization" typeof="owl:Class">
+  			<h3>Class: foaf:Organization</h3> 
+  			<em property="rdfs:label" >Organization</em> - <span property="rdfs:comment" >An organization.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://xmlns.com/foaf/0.1/Agent"><a href="#Agent">Agent</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr><tr><th>Disjoint With:</th>
+ <td>  <span rel="owl:disjointWith" href="http://xmlns.com/foaf/0.1/Document"><a href="#Document">Document</a></span>
+ <span rel="owl:disjointWith" href="http://xmlns.com/foaf/0.1/Person"><a href="#Person">Person</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#Organization">#</a>] <!-- Organization --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Person" about="http://xmlns.com/foaf/0.1/Person" typeof="owl:Class">
+  			<h3>Class: foaf:Person</h3> 
+  			<em property="rdfs:label" >Person</em> - <span property="rdfs:comment" >A person.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#family_name">family_name</a>
+ <a href="#pastProject">pastProject</a>
+ <a href="#geekcode">geekcode</a>
+ <a href="#workInfoHomepage">workInfoHomepage</a>
+ <a href="#familyName">familyName</a>
+ <a href="#plan">plan</a>
+ <a href="#firstName">firstName</a>
+ <a href="#myersBriggs">myersBriggs</a>
+ <a href="#interest">interest</a>
+ <a href="#schoolHomepage">schoolHomepage</a>
+ <a href="#currentProject">currentProject</a>
+ <a href="#knows">knows</a>
+ <a href="#workplaceHomepage">workplaceHomepage</a>
+ <a href="#publications">publications</a>
+ <a href="#img">img</a>
+ <a href="#surname">surname</a>
+ <a href="#topic_interest">topic_interest</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#knows">knows</a>
+</td></tr> <tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"><a href="#SpatialThing">Spatial Thing</a></span>
+ <span rel="rdfs:subClassOf" href="http://www.w3.org/2000/10/swap/pim/contact#Person"><a href="#Person">Person</a></span>
+ <span rel="rdfs:subClassOf" href="http://xmlns.com/foaf/0.1/Agent"><a href="#Agent">Agent</a></span>
+ <span rel="rdfs:subClassOf" href="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"><a href="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing">geo:SpatialThing</a></span>
+ <span rel="rdfs:subClassOf" href="http://www.w3.org/2000/10/swap/pim/contact#Person"><a href="http://www.w3.org/2000/10/swap/pim/contact#Person">http://www.w3.org/2000/10/swap/pim/contact#:Person</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr><tr><th>Disjoint With:</th>
+ <td>  <span rel="owl:disjointWith" href="http://xmlns.com/foaf/0.1/Document"><a href="#Document">Document</a></span>
+ <span rel="owl:disjointWith" href="http://xmlns.com/foaf/0.1/Project"><a href="#Project">Project</a></span>
+ <span rel="owl:disjointWith" href="http://xmlns.com/foaf/0.1/Organization"><a href="#Organization">Organization</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#Person">#</a>] <!-- Person --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div>
+<div class="specterm" id="Document" about="http://xmlns.com/foaf/0.1/Document" typeof="owl:Class">
+  			<h3>Class: foaf:Document</h3> 
+  			<em property="rdfs:label" >Document</em> - <span property="rdfs:comment" >A document.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#topic">topic</a>
+ <a href="#sha1">sha1</a>
+ <a href="#primaryTopic">primaryTopic</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#homepage">homepage</a>
+ <a href="#accountServiceHomepage">accountServiceHomepage</a>
+ <a href="#page">page</a>
+ <a href="#workInfoHomepage">workInfoHomepage</a>
+ <a href="#interest">interest</a>
+ <a href="#weblog">weblog</a>
+ <a href="#schoolHomepage">schoolHomepage</a>
+ <a href="#isPrimaryTopicOf">isPrimaryTopicOf</a>
+ <a href="#tipjar">tipjar</a>
+ <a href="#workplaceHomepage">workplaceHomepage</a>
+ <a href="#publications">publications</a>
+ <a href="#openid">openid</a>
+</td></tr> <tr><th>Has sub class</th>
+ <td>  <a href="#PersonalProfileDocument">PersonalProfileDocument</a>
+ <a href="http://xmlns.com/foaf/0.1/PersonalProfileDocument">foaf:PersonalProfileDocument</a>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr><tr><th>Disjoint With:</th>
+ <td>  <span rel="owl:disjointWith" href="http://xmlns.com/foaf/0.1/Project"><a href="#Project">Project</a></span>
+ <span rel="owl:disjointWith" href="http://xmlns.com/foaf/0.1/Person"><a href="#Person">Person</a></span>
+ <span rel="owl:disjointWith" href="http://xmlns.com/foaf/0.1/Organization"><a href="#Organization">Organization</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#Document">#</a>] <!-- Document --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Image" about="http://xmlns.com/foaf/0.1/Image" typeof="owl:Class">
+  			<h3>Class: foaf:Image</h3> 
+  			<em property="rdfs:label" >Image</em> - <span property="rdfs:comment" >An image.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#depicts">depicts</a>
+ <a href="#thumbnail">thumbnail</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#depiction">depiction</a>
+ <a href="#img">img</a>
+ <a href="#thumbnail">thumbnail</a>
+</td></tr> 
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#Image">#</a>] <!-- Image --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="PersonalProfileDocument" about="http://xmlns.com/foaf/0.1/PersonalProfileDocument" typeof="owl:Class">
+  			<h3>Class: foaf:PersonalProfileDocument</h3> 
+  			<em property="rdfs:label" >PersonalProfileDocument</em> - <span property="rdfs:comment" >A personal profile RDF document.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://xmlns.com/foaf/0.1/Document"><a href="#Document">Document</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#PersonalProfileDocument">#</a>] <!-- PersonalProfileDocument --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div>
+<div class="specterm" id="LabelProperty" about="http://xmlns.com/foaf/0.1/LabelProperty" typeof="owl:Class">
+  			<h3>Class: foaf:LabelProperty</h3> 
+  			<em property="rdfs:label" >Label Property</em> - <span property="rdfs:comment" >A foaf:LabelProperty is any RDF property with texual values that serve as labels.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#LabelProperty">#</a>] <!-- LabelProperty --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="OnlineAccount" about="http://xmlns.com/foaf/0.1/OnlineAccount" typeof="owl:Class">
+  			<h3>Class: foaf:OnlineAccount</h3> 
+  			<em property="rdfs:label" >Online Account</em> - <span property="rdfs:comment" >An online account.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			<tr><th>Properties include:</th>
+ <td>  <a href="#accountName">accountName</a>
+ <a href="#accountServiceHomepage">accountServiceHomepage</a>
+ </td></tr>
+  			<tr><th>Used with:</th>
+ <td>  <a href="#account">account</a>
+ <a href="#holdsAccount">holdsAccount</a>
+</td></tr> <tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://www.w3.org/2002/07/owl#Thing"><a href="#Thing">A thing</a></span>
+ <span rel="rdfs:subClassOf" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
+ </td></tr><tr><th>Has sub class</th>
+ <td>  <a href="#OnlineGamingAccount">Online Gaming Account</a>
+ <a href="#OnlineChatAccount">Online Chat Account</a>
+ <a href="#OnlineEcommerceAccount">Online E-commerce Account</a>
+ <a href="http://xmlns.com/foaf/0.1/OnlineGamingAccount">foaf:OnlineGamingAccount</a>
+ <a href="http://xmlns.com/foaf/0.1/OnlineChatAccount">foaf:OnlineChatAccount</a>
+ <a href="http://xmlns.com/foaf/0.1/OnlineEcommerceAccount">foaf:OnlineEcommerceAccount</a>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#OnlineAccount">#</a>] <!-- OnlineAccount --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="OnlineChatAccount" about="http://xmlns.com/foaf/0.1/OnlineChatAccount" typeof="owl:Class">
+  			<h3>Class: foaf:OnlineChatAccount</h3> 
+  			<em property="rdfs:label" >Online Chat Account</em> - <span property="rdfs:comment" >An online chat account.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://xmlns.com/foaf/0.1/OnlineAccount"><a href="#OnlineAccount">Online Account</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#OnlineChatAccount">#</a>] <!-- OnlineChatAccount --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="OnlineEcommerceAccount" about="http://xmlns.com/foaf/0.1/OnlineEcommerceAccount" typeof="owl:Class">
+  			<h3>Class: foaf:OnlineEcommerceAccount</h3> 
+  			<em property="rdfs:label" >Online E-commerce Account</em> - <span property="rdfs:comment" >An online e-commerce account.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://xmlns.com/foaf/0.1/OnlineAccount"><a href="#OnlineAccount">Online Account</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#OnlineEcommerceAccount">#</a>] <!-- OnlineEcommerceAccount --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="OnlineGamingAccount" about="http://xmlns.com/foaf/0.1/OnlineGamingAccount" typeof="owl:Class">
+  			<h3>Class: foaf:OnlineGamingAccount</h3> 
+  			<em property="rdfs:label" >Online Gaming Account</em> - <span property="rdfs:comment" >An online gaming account.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Sub class of</th>
+ <td>  <span rel="rdfs:subClassOf" href="http://xmlns.com/foaf/0.1/OnlineAccount"><a href="#OnlineAccount">Online Account</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#OnlineGamingAccount">#</a>] <!-- OnlineGamingAccount --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="Project" about="http://xmlns.com/foaf/0.1/Project" typeof="owl:Class">
+  			<h3>Class: foaf:Project</h3> 
+  			<em property="rdfs:label" >Project</em> - <span property="rdfs:comment" >A project (a collective endeavour of some kind).</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr><tr><th>Disjoint With:</th>
+ <td>  <span rel="owl:disjointWith" href="http://xmlns.com/foaf/0.1/Document"><a href="#Document">Document</a></span>
+ <span rel="owl:disjointWith" href="http://xmlns.com/foaf/0.1/Person"><a href="#Person">Person</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#Project">#</a>] <!-- Project --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div>
+<h2>Properties</h2>
+ <div class="specterm" id="homepage" about="http://xmlns.com/foaf/0.1/homepage" typeof="rdf:Property">
+  			<h3>Property: foaf:homepage</h3> 
+  			<em property="rdfs:label" >homepage</em> - <span property="rdfs:comment" >A homepage for some thing.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://www.w3.org/2002/07/owl#Thing"><a href="#Thing">A thing</a></span>
+ <span rel="rdfs:domain" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://xmlns.com/foaf/0.1/Document"><a href="#Document">Document</a></span>
+ </td></tr><tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:subPropertyOf" href="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"><a href="#isPrimaryTopicOf">is primary topic of</a></span>
+ <span rel="rdfs:subPropertyOf" href="http://xmlns.com/foaf/0.1/page"><a href="#page">page</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#homepage">#</a>] <!-- homepage --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="made" about="http://xmlns.com/foaf/0.1/made" typeof="rdf:Property">
+  			<h3>Property: foaf:made</h3> 
+  			<em property="rdfs:label" >made</em> - <span property="rdfs:comment" >Something that was made by this agent.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Agent"><a href="#Agent">Agent</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2002/07/owl#Thing"><a href="#Thing">A thing</a></span>
+ <span rel="rdfs:range" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
+ </td></tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" href="http://xmlns.com/foaf/0.1/maker"><a href="#maker">maker</a></span>
+ </td></tr><tr><th>Has inverse property</th>
+ <td>  <a href="#maker">maker</a>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#made">#</a>] <!-- made --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="maker" about="http://xmlns.com/foaf/0.1/maker" typeof="rdf:Property">
+  			<h3>Property: foaf:maker</h3> 
+  			<em property="rdfs:label" >maker</em> - <span property="rdfs:comment" >An agent that  made this thing.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://www.w3.org/2002/07/owl#Thing"><a href="#Thing">A thing</a></span>
+ <span rel="rdfs:domain" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://xmlns.com/foaf/0.1/Agent"><a href="#Agent">Agent</a></span>
+ </td></tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" href="http://xmlns.com/foaf/0.1/made"><a href="#made">made</a></span>
+ </td></tr><tr><th>Has inverse property</th>
+ <td>  <a href="#made">made</a>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr><tr><th>Equivalent Property</th> <td>  <span rel="owl:equivalentProperty" href="http://purl.org/dc/terms/creator"><a href="http://purl.org/dc/terms/creator">dcterms:creator</a></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#maker">#</a>] <!-- maker --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="mbox" about="http://xmlns.com/foaf/0.1/mbox" typeof="rdf:Property">
+  			<h3>Property: foaf:mbox</h3> 
+  			<em property="rdfs:label" >personal mailbox</em> - <span property="rdfs:comment" >A  personal mailbox, ie. an Internet mailbox associated with exactly one owner, the first owner of this mailbox. This is a 'static inverse functional property', in that  there is (across time and change) at most one individual that ever has any particular value for foaf:mbox.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Agent"><a href="#Agent">Agent</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2002/07/owl#Thing"><a href="#Thing">A thing</a></span>
+ <span rel="rdfs:range" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#mbox">#</a>] <!-- mbox --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="member" about="http://xmlns.com/foaf/0.1/member" typeof="rdf:Property">
+  			<h3>Property: foaf:member</h3> 
+  			<em property="rdfs:label" >member</em> - <span property="rdfs:comment" >Indicates a member of a Group</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >stable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Group"><a href="#Group">Group</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://xmlns.com/foaf/0.1/Agent"><a href="#Agent">Agent</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#member">#</a>] <!-- member --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div>
+<div class="specterm" id="aimChatID" about="http://xmlns.com/foaf/0.1/aimChatID" typeof="rdf:Property">
+  			<h3>Property: foaf:aimChatID</h3> 
+  			<em property="rdfs:label" >AIM chat ID</em> - <span property="rdfs:comment" >An AIM chat ID</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Agent"><a href="#Agent">Agent</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2000/01/rdf-schema#Literal"><a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a></span>
+ </td></tr><tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:subPropertyOf" href="http://xmlns.com/foaf/0.1/nick"><a href="#nick">nickname</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#aimChatID">#</a>] <!-- aimChatID --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="currentProject" about="http://xmlns.com/foaf/0.1/currentProject" typeof="rdf:Property">
+  			<h3>Property: foaf:currentProject</h3> 
+  			<em property="rdfs:label" >current project</em> - <span property="rdfs:comment" >A current project this person works on.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Person"><a href="#Person">Person</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2002/07/owl#Thing"><a href="#Thing">A thing</a></span>
+ <span rel="rdfs:range" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#currentProject">#</a>] <!-- currentProject --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="depiction" about="http://xmlns.com/foaf/0.1/depiction" typeof="rdf:Property">
+  			<h3>Property: foaf:depiction</h3> 
+  			<em property="rdfs:label" >depiction</em> - <span property="rdfs:comment" >A depiction of some thing.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://www.w3.org/2002/07/owl#Thing"><a href="#Thing">A thing</a></span>
+ <span rel="rdfs:domain" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://xmlns.com/foaf/0.1/Image"><a href="#Image">Image</a></span>
+ </td></tr><tr><th>Has sub property</th>
+ <td>  <a href="#img">image</a>
+ </td></tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" href="http://xmlns.com/foaf/0.1/depicts"><a href="#depicts">depicts</a></span>
+ </td></tr><tr><th>Has inverse property</th>
+ <td>  <a href="#depicts">depicts</a>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#depiction">#</a>] <!-- depiction --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="depicts" about="http://xmlns.com/foaf/0.1/depicts" typeof="rdf:Property">
+  			<h3>Property: foaf:depicts</h3> 
+  			<em property="rdfs:label" >depicts</em> - <span property="rdfs:comment" >A thing depicted in this representation.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Image"><a href="#Image">Image</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2002/07/owl#Thing"><a href="#Thing">A thing</a></span>
+ <span rel="rdfs:range" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
+ </td></tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" href="http://xmlns.com/foaf/0.1/depiction"><a href="#depiction">depiction</a></span>
+ </td></tr><tr><th>Has inverse property</th>
+ <td>  <a href="#depiction">depiction</a>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#depicts">#</a>] <!-- depicts --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="familyName" about="http://xmlns.com/foaf/0.1/familyName" typeof="rdf:Property">
+  			<h3>Property: foaf:familyName</h3> 
+  			<em property="rdfs:label" >familyName</em> - <span property="rdfs:comment" >The family name of some person.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Person"><a href="#Person">Person</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2000/01/rdf-schema#Literal"><a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#familyName">#</a>] <!-- familyName --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="firstName" about="http://xmlns.com/foaf/0.1/firstName" typeof="rdf:Property">
+  			<h3>Property: foaf:firstName</h3> 
+  			<em property="rdfs:label" >firstName</em> - <span property="rdfs:comment" >The first name of a person.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Person"><a href="#Person">Person</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2000/01/rdf-schema#Literal"><a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#firstName">#</a>] <!-- firstName --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="gender" about="http://xmlns.com/foaf/0.1/gender" typeof="rdf:Property">
+  			<h3>Property: foaf:gender</h3> 
+  			<em property="rdfs:label" >gender</em> - <span property="rdfs:comment" >The gender of this Agent (typically but not necessarily 'male' or 'female').</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Agent"><a href="#Agent">Agent</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2000/01/rdf-schema#Literal"><a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#gender">#</a>] <!-- gender --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="givenName" about="http://xmlns.com/foaf/0.1/givenName" typeof="rdf:Property">
+  			<h3>Property: foaf:givenName</h3> 
+  			<em property="rdfs:label" >Given name</em> - <span property="rdfs:comment" >The given name of some person.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			
+  			
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#givenName">#</a>] <!-- givenName --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="icqChatID" about="http://xmlns.com/foaf/0.1/icqChatID" typeof="rdf:Property">
+  			<h3>Property: foaf:icqChatID</h3> 
+  			<em property="rdfs:label" >ICQ chat ID</em> - <span property="rdfs:comment" >An ICQ chat ID</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Agent"><a href="#Agent">Agent</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2000/01/rdf-schema#Literal"><a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a></span>
+ </td></tr><tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:subPropertyOf" href="http://xmlns.com/foaf/0.1/nick"><a href="#nick">nickname</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#icqChatID">#</a>] <!-- icqChatID --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="img" about="http://xmlns.com/foaf/0.1/img" typeof="rdf:Property">
+  			<h3>Property: foaf:img</h3> 
+  			<em property="rdfs:label" >image</em> - <span property="rdfs:comment" >An image that can be used to represent some thing (ie. those depictions which are particularly representative of something, eg. one's photo on a homepage).</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Person"><a href="#Person">Person</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://xmlns.com/foaf/0.1/Image"><a href="#Image">Image</a></span>
+ </td></tr><tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:subPropertyOf" href="http://xmlns.com/foaf/0.1/depiction"><a href="#depiction">depiction</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#img">#</a>] <!-- img --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="interest" about="http://xmlns.com/foaf/0.1/interest" typeof="rdf:Property">
+  			<h3>Property: foaf:interest</h3> 
+  			<em property="rdfs:label" >interest</em> - <span property="rdfs:comment" >A page about a topic of interest to this person.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Person"><a href="#Person">Person</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://xmlns.com/foaf/0.1/Document"><a href="#Document">Document</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#interest">#</a>] <!-- interest --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="isPrimaryTopicOf" about="http://xmlns.com/foaf/0.1/isPrimaryTopicOf" typeof="rdf:Property">
+  			<h3>Property: foaf:isPrimaryTopicOf</h3> 
+  			<em property="rdfs:label" >is primary topic of</em> - <span property="rdfs:comment" >A document that this thing is the primary topic of.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://www.w3.org/2002/07/owl#Thing"><a href="#Thing">A thing</a></span>
+ <span rel="rdfs:domain" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://xmlns.com/foaf/0.1/Document"><a href="#Document">Document</a></span>
+ </td></tr><tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:subPropertyOf" href="http://xmlns.com/foaf/0.1/page"><a href="#page">page</a></span>
+ </td></tr><tr><th>Has sub property</th>
+ <td>  <a href="#homepage">homepage</a>
+ <a href="#openid">openid</a>
+ </td></tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" href="http://xmlns.com/foaf/0.1/primaryTopic"><a href="#primaryTopic">primary topic</a></span>
+ </td></tr><tr><th>Has inverse property</th>
+ <td>  <a href="#primaryTopic">primary topic</a>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#isPrimaryTopicOf">#</a>] <!-- isPrimaryTopicOf --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="jabberID" about="http://xmlns.com/foaf/0.1/jabberID" typeof="rdf:Property">
+  			<h3>Property: foaf:jabberID</h3> 
+  			<em property="rdfs:label" >jabber ID</em> - <span property="rdfs:comment" >A jabber ID for something.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Agent"><a href="#Agent">Agent</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2000/01/rdf-schema#Literal"><a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#jabberID">#</a>] <!-- jabberID --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="knows" about="http://xmlns.com/foaf/0.1/knows" typeof="rdf:Property">
+  			<h3>Property: foaf:knows</h3> 
+  			<em property="rdfs:label" >knows</em> - <span property="rdfs:comment" >A person known by this person (indicating some level of reciprocated interaction between the parties).</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Person"><a href="#Person">Person</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://xmlns.com/foaf/0.1/Person"><a href="#Person">Person</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#knows">#</a>] <!-- knows --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="logo" about="http://xmlns.com/foaf/0.1/logo" typeof="rdf:Property">
+  			<h3>Property: foaf:logo</h3> 
+  			<em property="rdfs:label" >logo</em> - <span property="rdfs:comment" >A logo representing some thing.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://www.w3.org/2002/07/owl#Thing"><a href="#Thing">A thing</a></span>
+ <span rel="rdfs:domain" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2002/07/owl#Thing"><a href="#Thing">A thing</a></span>
+ <span rel="rdfs:range" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#logo">#</a>] <!-- logo --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="mbox_sha1sum" about="http://xmlns.com/foaf/0.1/mbox_sha1sum" typeof="rdf:Property">
+  			<h3>Property: foaf:mbox_sha1sum</h3> 
+  			<em property="rdfs:label" >sha1sum of a personal mailbox URI name</em> - <span property="rdfs:comment" >The sha1sum of the URI of an Internet mailbox associated with exactly one owner, the  first owner of the mailbox.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Agent"><a href="#Agent">Agent</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2000/01/rdf-schema#Literal"><a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#mbox_sha1sum">#</a>] <!-- mbox_sha1sum --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="msnChatID" about="http://xmlns.com/foaf/0.1/msnChatID" typeof="rdf:Property">
+  			<h3>Property: foaf:msnChatID</h3> 
+  			<em property="rdfs:label" >MSN chat ID</em> - <span property="rdfs:comment" >An MSN chat ID</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Agent"><a href="#Agent">Agent</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2000/01/rdf-schema#Literal"><a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a></span>
+ </td></tr><tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:subPropertyOf" href="http://xmlns.com/foaf/0.1/nick"><a href="#nick">nickname</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#msnChatID">#</a>] <!-- msnChatID --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="myersBriggs" about="http://xmlns.com/foaf/0.1/myersBriggs" typeof="rdf:Property">
+  			<h3>Property: foaf:myersBriggs</h3> 
+  			<em property="rdfs:label" >myersBriggs</em> - <span property="rdfs:comment" >A Myers Briggs (MBTI) personality classification.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Person"><a href="#Person">Person</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2000/01/rdf-schema#Literal"><a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#myersBriggs">#</a>] <!-- myersBriggs --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="name" about="http://xmlns.com/foaf/0.1/name" typeof="rdf:Property">
+  			<h3>Property: foaf:name</h3> 
+  			<em property="rdfs:label" >name</em> - <span property="rdfs:comment" >A name for some thing.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://www.w3.org/2002/07/owl#Thing"><a href="#Thing">A thing</a></span>
+ <span rel="rdfs:domain" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2000/01/rdf-schema#Literal"><a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a></span>
+ </td></tr><tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:subPropertyOf" href="http://www.w3.org/2000/01/rdf-schema#label"><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#name">#</a>] <!-- name --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="nick" about="http://xmlns.com/foaf/0.1/nick" typeof="rdf:Property">
+  			<h3>Property: foaf:nick</h3> 
+  			<em property="rdfs:label" >nickname</em> - <span property="rdfs:comment" >A short informal nickname characterising an agent (includes login identifiers, IRC and other chat nicknames).</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			
+  			<tr><th>Has sub property</th>
+ <td>  <a href="#msnChatID">MSN chat ID</a>
+ <a href="#icqChatID">ICQ chat ID</a>
+ <a href="#aimChatID">AIM chat ID</a>
+ <a href="#skypeID">Skype ID</a>
+ <a href="#yahooChatID">Yahoo chat ID</a>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#nick">#</a>] <!-- nick --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="page" about="http://xmlns.com/foaf/0.1/page" typeof="rdf:Property">
+  			<h3>Property: foaf:page</h3> 
+  			<em property="rdfs:label" >page</em> - <span property="rdfs:comment" >A page or document about this thing.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://www.w3.org/2002/07/owl#Thing"><a href="#Thing">A thing</a></span>
+ <span rel="rdfs:domain" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://xmlns.com/foaf/0.1/Document"><a href="#Document">Document</a></span>
+ </td></tr><tr><th>Has sub property</th>
+ <td>  <a href="#isPrimaryTopicOf">is primary topic of</a>
+ <a href="#homepage">homepage</a>
+ <a href="#tipjar">tipjar</a>
+ <a href="#weblog">weblog</a>
+ </td></tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" href="http://xmlns.com/foaf/0.1/topic"><a href="#topic">topic</a></span>
+ </td></tr><tr><th>Has inverse property</th>
+ <td>  <a href="#topic">topic</a>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#page">#</a>] <!-- page --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="pastProject" about="http://xmlns.com/foaf/0.1/pastProject" typeof="rdf:Property">
+  			<h3>Property: foaf:pastProject</h3> 
+  			<em property="rdfs:label" >past project</em> - <span property="rdfs:comment" >A project this person has previously worked on.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Person"><a href="#Person">Person</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2002/07/owl#Thing"><a href="#Thing">A thing</a></span>
+ <span rel="rdfs:range" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#pastProject">#</a>] <!-- pastProject --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="phone" about="http://xmlns.com/foaf/0.1/phone" typeof="rdf:Property">
+  			<h3>Property: foaf:phone</h3> 
+  			<em property="rdfs:label" >phone</em> - <span property="rdfs:comment" >A phone,  specified using fully qualified tel: URI scheme (refs: http://www.w3.org/Addressing/schemes.html#tel).</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			
+  			
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#phone">#</a>] <!-- phone --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="plan" about="http://xmlns.com/foaf/0.1/plan" typeof="rdf:Property">
+  			<h3>Property: foaf:plan</h3> 
+  			<em property="rdfs:label" >plan</em> - <span property="rdfs:comment" >A .plan comment, in the tradition of finger and '.plan' files.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Person"><a href="#Person">Person</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2000/01/rdf-schema#Literal"><a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#plan">#</a>] <!-- plan --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="primaryTopic" about="http://xmlns.com/foaf/0.1/primaryTopic" typeof="rdf:Property">
+  			<h3>Property: foaf:primaryTopic</h3> 
+  			<em property="rdfs:label" >primary topic</em> - <span property="rdfs:comment" >The primary topic of some page or document.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Document"><a href="#Document">Document</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2002/07/owl#Thing"><a href="#Thing">A thing</a></span>
+ <span rel="rdfs:range" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
+ </td></tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" href="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"><a href="#isPrimaryTopicOf">is primary topic of</a></span>
+ </td></tr><tr><th>Has inverse property</th>
+ <td>  <a href="#isPrimaryTopicOf">is primary topic of</a>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#primaryTopic">#</a>] <!-- primaryTopic --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="publications" about="http://xmlns.com/foaf/0.1/publications" typeof="rdf:Property">
+  			<h3>Property: foaf:publications</h3> 
+  			<em property="rdfs:label" >publications</em> - <span property="rdfs:comment" >A link to the publications of this person.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Person"><a href="#Person">Person</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://xmlns.com/foaf/0.1/Document"><a href="#Document">Document</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#publications">#</a>] <!-- publications --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="schoolHomepage" about="http://xmlns.com/foaf/0.1/schoolHomepage" typeof="rdf:Property">
+  			<h3>Property: foaf:schoolHomepage</h3> 
+  			<em property="rdfs:label" >schoolHomepage</em> - <span property="rdfs:comment" >A homepage of a school attended by the person.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Person"><a href="#Person">Person</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://xmlns.com/foaf/0.1/Document"><a href="#Document">Document</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#schoolHomepage">#</a>] <!-- schoolHomepage --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="surname" about="http://xmlns.com/foaf/0.1/surname" typeof="rdf:Property">
+  			<h3>Property: foaf:surname</h3> 
+  			<em property="rdfs:label" >Surname</em> - <span property="rdfs:comment" >The surname of some person.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Person"><a href="#Person">Person</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2000/01/rdf-schema#Literal"><a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#surname">#</a>] <!-- surname --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="thumbnail" about="http://xmlns.com/foaf/0.1/thumbnail" typeof="rdf:Property">
+  			<h3>Property: foaf:thumbnail</h3> 
+  			<em property="rdfs:label" >thumbnail</em> - <span property="rdfs:comment" >A derived thumbnail image.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Image"><a href="#Image">Image</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://xmlns.com/foaf/0.1/Image"><a href="#Image">Image</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#thumbnail">#</a>] <!-- thumbnail --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="tipjar" about="http://xmlns.com/foaf/0.1/tipjar" typeof="rdf:Property">
+  			<h3>Property: foaf:tipjar</h3> 
+  			<em property="rdfs:label" >tipjar</em> - <span property="rdfs:comment" >A tipjar document for this agent, describing means for payment and reward.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Agent"><a href="#Agent">Agent</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://xmlns.com/foaf/0.1/Document"><a href="#Document">Document</a></span>
+ </td></tr><tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:subPropertyOf" href="http://xmlns.com/foaf/0.1/page"><a href="#page">page</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#tipjar">#</a>] <!-- tipjar --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="topic" about="http://xmlns.com/foaf/0.1/topic" typeof="rdf:Property">
+  			<h3>Property: foaf:topic</h3> 
+  			<em property="rdfs:label" >topic</em> - <span property="rdfs:comment" >A topic of some page or document.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Document"><a href="#Document">Document</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2002/07/owl#Thing"><a href="#Thing">A thing</a></span>
+ <span rel="rdfs:range" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
+ </td></tr><tr><th>Inverse property of</th>
+ <td>  <span rel="owl:inverseOf" href="http://xmlns.com/foaf/0.1/page"><a href="#page">page</a></span>
+ </td></tr><tr><th>Has inverse property</th>
+ <td>  <a href="#page">page</a>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#topic">#</a>] <!-- topic --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="topic_interest" about="http://xmlns.com/foaf/0.1/topic_interest" typeof="rdf:Property">
+  			<h3>Property: foaf:topic_interest</h3> 
+  			<em property="rdfs:label" >interest_topic</em> - <span property="rdfs:comment" >A thing of interest to this person.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Person"><a href="#Person">Person</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2002/07/owl#Thing"><a href="#Thing">A thing</a></span>
+ <span rel="rdfs:range" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#topic_interest">#</a>] <!-- topic_interest --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="weblog" about="http://xmlns.com/foaf/0.1/weblog" typeof="rdf:Property">
+  			<h3>Property: foaf:weblog</h3> 
+  			<em property="rdfs:label" >weblog</em> - <span property="rdfs:comment" >A weblog of some thing (whether person, group, company etc.).</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Agent"><a href="#Agent">Agent</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://xmlns.com/foaf/0.1/Document"><a href="#Document">Document</a></span>
+ </td></tr><tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:subPropertyOf" href="http://xmlns.com/foaf/0.1/page"><a href="#page">page</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#weblog">#</a>] <!-- weblog --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="workInfoHomepage" about="http://xmlns.com/foaf/0.1/workInfoHomepage" typeof="rdf:Property">
+  			<h3>Property: foaf:workInfoHomepage</h3> 
+  			<em property="rdfs:label" >work info homepage</em> - <span property="rdfs:comment" >A work info homepage of some person; a page about their work for some organization.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Person"><a href="#Person">Person</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://xmlns.com/foaf/0.1/Document"><a href="#Document">Document</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#workInfoHomepage">#</a>] <!-- workInfoHomepage --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="workplaceHomepage" about="http://xmlns.com/foaf/0.1/workplaceHomepage" typeof="rdf:Property">
+  			<h3>Property: foaf:workplaceHomepage</h3> 
+  			<em property="rdfs:label" >workplace homepage</em> - <span property="rdfs:comment" >A workplace homepage of some person; the homepage of an organization they work for.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Person"><a href="#Person">Person</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://xmlns.com/foaf/0.1/Document"><a href="#Document">Document</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#workplaceHomepage">#</a>] <!-- workplaceHomepage --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="yahooChatID" about="http://xmlns.com/foaf/0.1/yahooChatID" typeof="rdf:Property">
+  			<h3>Property: foaf:yahooChatID</h3> 
+  			<em property="rdfs:label" >Yahoo chat ID</em> - <span property="rdfs:comment" >A Yahoo chat ID</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >testing</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Agent"><a href="#Agent">Agent</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2000/01/rdf-schema#Literal"><a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a></span>
+ </td></tr><tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:subPropertyOf" href="http://xmlns.com/foaf/0.1/nick"><a href="#nick">nickname</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#yahooChatID">#</a>] <!-- yahooChatID --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div>
+<div class="specterm" id="account" about="http://xmlns.com/foaf/0.1/account" typeof="rdf:Property">
+  			<h3>Property: foaf:account</h3> 
+  			<em property="rdfs:label" >account</em> - <span property="rdfs:comment" >Indicates an account held by this agent.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Agent"><a href="#Agent">Agent</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://xmlns.com/foaf/0.1/OnlineAccount"><a href="#OnlineAccount">Online Account</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#account">#</a>] <!-- account --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="accountName" about="http://xmlns.com/foaf/0.1/accountName" typeof="rdf:Property">
+  			<h3>Property: foaf:accountName</h3> 
+  			<em property="rdfs:label" >account name</em> - <span property="rdfs:comment" >Indicates the name (identifier) associated with this online account.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/OnlineAccount"><a href="#OnlineAccount">Online Account</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2000/01/rdf-schema#Literal"><a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#accountName">#</a>] <!-- accountName --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="accountServiceHomepage" about="http://xmlns.com/foaf/0.1/accountServiceHomepage" typeof="rdf:Property">
+  			<h3>Property: foaf:accountServiceHomepage</h3> 
+  			<em property="rdfs:label" >account service homepage</em> - <span property="rdfs:comment" >Indicates a homepage of the service provide for this online account.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/OnlineAccount"><a href="#OnlineAccount">Online Account</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://xmlns.com/foaf/0.1/Document"><a href="#Document">Document</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#accountServiceHomepage">#</a>] <!-- accountServiceHomepage --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="age" about="http://xmlns.com/foaf/0.1/age" typeof="rdf:Property">
+  			<h3>Property: foaf:age</h3> 
+  			<em property="rdfs:label" >age</em> - <span property="rdfs:comment" >The age in years of some agent.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Agent"><a href="#Agent">Agent</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2000/01/rdf-schema#Literal"><a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#age">#</a>] <!-- age --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="based_near" about="http://xmlns.com/foaf/0.1/based_near" typeof="rdf:Property">
+  			<h3>Property: foaf:based_near</h3> 
+  			<em property="rdfs:label" >based near</em> - <span property="rdfs:comment" >A location that something is based near, for some broadly human notion of near.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"><a href="#SpatialThing">Spatial Thing</a></span>
+ <span rel="rdfs:domain" href="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"><a href="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing">geo:SpatialThing</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"><a href="#SpatialThing">Spatial Thing</a></span>
+ <span rel="rdfs:range" href="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"><a href="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing">geo:SpatialThing</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#based_near">#</a>] <!-- based_near --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="birthday" about="http://xmlns.com/foaf/0.1/birthday" typeof="rdf:Property">
+  			<h3>Property: foaf:birthday</h3> 
+  			<em property="rdfs:label" >birthday</em> - <span property="rdfs:comment" >The birthday of this Agent, represented in mm-dd string form, eg. '12-31'.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Agent"><a href="#Agent">Agent</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2000/01/rdf-schema#Literal"><a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#birthday">#</a>] <!-- birthday --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="dnaChecksum" about="http://xmlns.com/foaf/0.1/dnaChecksum" typeof="rdf:Property">
+  			<h3>Property: foaf:dnaChecksum</h3> 
+  			<em property="rdfs:label" >DNA checksum</em> - <span property="rdfs:comment" >A checksum for the DNA of some thing. Joke.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2000/01/rdf-schema#Literal"><a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#dnaChecksum">#</a>] <!-- dnaChecksum --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="membershipClass" about="http://xmlns.com/foaf/0.1/membershipClass" typeof="rdf:Property">
+  			<h3>Property: foaf:membershipClass</h3> 
+  			<em property="rdfs:label" >membershipClass</em> - <span property="rdfs:comment" >Indicates the class of individuals that are a member of a Group</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#membershipClass">#</a>] <!-- membershipClass --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="openid" about="http://xmlns.com/foaf/0.1/openid" typeof="rdf:Property">
+  			<h3>Property: foaf:openid</h3> 
+  			<em property="rdfs:label" >openid</em> - <span property="rdfs:comment" >An OpenID for an Agent.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Agent"><a href="#Agent">Agent</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://xmlns.com/foaf/0.1/Document"><a href="#Document">Document</a></span>
+ </td></tr><tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:subPropertyOf" href="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"><a href="#isPrimaryTopicOf">is primary topic of</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#openid">#</a>] <!-- openid --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="sha1" about="http://xmlns.com/foaf/0.1/sha1" typeof="rdf:Property">
+  			<h3>Property: foaf:sha1</h3> 
+  			<em property="rdfs:label" >sha1sum (hex)</em> - <span property="rdfs:comment" >A sha1sum hash, in hex.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Document"><a href="#Document">Document</a></span>
+ </td></tr>
+  			
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#sha1">#</a>] <!-- sha1 --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="skypeID" about="http://xmlns.com/foaf/0.1/skypeID" typeof="rdf:Property">
+  			<h3>Property: foaf:skypeID</h3> 
+  			<em property="rdfs:label" >Skype ID</em> - <span property="rdfs:comment" >A Skype ID</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Agent"><a href="#Agent">Agent</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2000/01/rdf-schema#Literal"><a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a></span>
+ </td></tr><tr><th>Sub property of</th>
+ <td>  <span rel="rdfs:subPropertyOf" href="http://xmlns.com/foaf/0.1/nick"><a href="#nick">nickname</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#skypeID">#</a>] <!-- skypeID --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="status" about="http://xmlns.com/foaf/0.1/status" typeof="rdf:Property">
+  			<h3>Property: foaf:status</h3> 
+  			<em property="rdfs:label" >status</em> - <span property="rdfs:comment" >A string expressing what the user is happy for the general public (normally) to know about their current activity.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Agent"><a href="#Agent">Agent</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2000/01/rdf-schema#Literal"><a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#status">#</a>] <!-- status --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="title" about="http://xmlns.com/foaf/0.1/title" typeof="rdf:Property">
+  			<h3>Property: foaf:title</h3> 
+  			<em property="rdfs:label" >title</em> - <span property="rdfs:comment" >Title (Mr, Mrs, Ms, Dr. etc)</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >unstable</span></td></tr>
+  			
+  			
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#title">#</a>] <!-- title --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div>
+<div class="specterm" id="family_name" about="http://xmlns.com/foaf/0.1/family_name" typeof="rdf:Property">
+  			<h3>Property: foaf:family_name</h3> 
+  			<em property="rdfs:label" >family_name</em> - <span property="rdfs:comment" >The family name of some person.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >archaic</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Person"><a href="#Person">Person</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2000/01/rdf-schema#Literal"><a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#family_name">#</a>] <!-- family_name --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="fundedBy" about="http://xmlns.com/foaf/0.1/fundedBy" typeof="rdf:Property">
+  			<h3>Property: foaf:fundedBy</h3> 
+  			<em property="rdfs:label" >funded by</em> - <span property="rdfs:comment" >An organization funding a project or person.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >archaic</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://www.w3.org/2002/07/owl#Thing"><a href="#Thing">A thing</a></span>
+ <span rel="rdfs:domain" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2002/07/owl#Thing"><a href="#Thing">A thing</a></span>
+ <span rel="rdfs:range" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#fundedBy">#</a>] <!-- fundedBy --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="geekcode" about="http://xmlns.com/foaf/0.1/geekcode" typeof="rdf:Property">
+  			<h3>Property: foaf:geekcode</h3> 
+  			<em property="rdfs:label" >geekcode</em> - <span property="rdfs:comment" >A textual geekcode for this person, see http://www.geekcode.com/geek.html</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >archaic</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Person"><a href="#Person">Person</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2000/01/rdf-schema#Literal"><a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#geekcode">#</a>] <!-- geekcode --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="givenname" about="http://xmlns.com/foaf/0.1/givenname" typeof="rdf:Property">
+  			<h3>Property: foaf:givenname</h3> 
+  			<em property="rdfs:label" >Given name</em> - <span property="rdfs:comment" >The given name of some person.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >archaic</span></td></tr>
+  			
+  			
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#givenname">#</a>] <!-- givenname --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="holdsAccount" about="http://xmlns.com/foaf/0.1/holdsAccount" typeof="rdf:Property">
+  			<h3>Property: foaf:holdsAccount</h3> 
+  			<em property="rdfs:label" >account</em> - <span property="rdfs:comment" >Indicates an account held by this agent.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >archaic</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Agent"><a href="#Agent">Agent</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://xmlns.com/foaf/0.1/OnlineAccount"><a href="#OnlineAccount">Online Account</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#holdsAccount">#</a>] <!-- holdsAccount --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div><div class="specterm" id="theme" about="http://xmlns.com/foaf/0.1/theme" typeof="rdf:Property">
+  			<h3>Property: foaf:theme</h3> 
+  			<em property="rdfs:label" >theme</em> - <span property="rdfs:comment" >A theme.</span> <br /><table style="th { float: top; }">
+  			<tr><th>Status:</th>
+  			<td><span property="vs:status" >archaic</span></td></tr>
+  			<tr><th>Domain:</th>
+ <td>  <span rel="rdfs:domain" href="http://www.w3.org/2002/07/owl#Thing"><a href="#Thing">A thing</a></span>
+ <span rel="rdfs:domain" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
+ </td></tr>
+  			<tr><th>Range:</th>
+ <td>  <span rel="rdfs:range" href="http://www.w3.org/2002/07/owl#Thing"><a href="#Thing">A thing</a></span>
+ <span rel="rdfs:range" href="http://www.w3.org/2002/07/owl#Thing"><a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a></span>
+ </td></tr>
+ <tr><td>  <span rel="rdfs:isDefinedBy" href="http://xmlns.com/foaf/0.1/"></span>
+ </td></tr>
+  			</table>
+  			
+  			<p style="float: right; font-size: small;">[<a href="#theme">#</a>] <!-- theme --> [<a href="#glance">back to top</a>]</p>
+  			<br/>
+  			</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<h2 id="sec-extrefs">External Vocabulary References</h2>
+
+...
+
+
+<h3 id="extns_status">Status Vocabulary</h3>
+
+...
+
+  <h3 id="sec-ack">Acknowledgments</h3>
+
+  ....
+
+<h2 id="sec-changes">Recent Changes</h2>
+
+....
+
+</body>
+</html>
+
+
