@@ -82,12 +82,12 @@ Known Issues
 
 <ul>
 	<li>this worked:
-<pre><code>q= 'SELECT ?x ?l ?c ?type WHERE { ?x rdfs:label ?l . ?x rdfs:comment ?c . ?x a ?type .  FILTER (?type = <http://www.w3.org/2002/07/owl#ObjectProperty>)  } '</code></pre></li>
+<pre><code>q= 'SELECT ?x ?l ?c ?type WHERE { ?x rdfs:label ?l . ?x rdfs:comment ?c . ?x a ?type .  FILTER (?type = &lt;http://www.w3.org/2002/07/owl#ObjectProperty\&gt;)  } '</code></pre></li>
 <li>while this failed:
 <pre><code>q= 'PREFIX owl: <http://www.w3.org/2002/07/owl#> SELECT ?x ?l ?c ?type WHERE { ?x rdfs:label ?l . ?x rdfs:comment ?c . ?x a ?type .  FILTER (?type = owl:ObjectProperty)  } '</pre></code>
 (even when passing in bindings)</li>
 <li>This forces us to be verbose, ie.
-<pre><code>q= 'SELECT distinct ?x ?l ?c WHERE { ?x rdfs:label ?l . ?x rdfs:comment ?c . ?x a ?type . FILTER (?type = <http://www.w3.org/2002/07/owl#ObjectProperty> || ?type = <http://www.w3.org/2002/07/owl#DatatypeProperty> || ?type = <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> || ?type = <http://www.w3.org/2002/07/owl#FunctionalProperty> || ?type = <http://www.w3.org/2002/07/owl#InverseFunctionalProperty>) } '</pre></code></li>
+<pre><code>q= 'SELECT distinct ?x ?l ?c WHERE { ?x rdfs:label ?l . ?x rdfs:comment ?c . ?x a ?type . FILTER (?type = &lt;http://www.w3.org/2002/07/owl#ObjectProperty&gt; || ?type = &lt;http://www.w3.org/2002/07/owl#DatatypeProperty&gt; || ?type = &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#Property&gt; || ?type = &lt;http://www.w3.org/2002/07/owl#FunctionalProperty&gt; || ?type = &lt;http://www.w3.org/2002/07/owl#InverseFunctionalProperty&gt;) } '</pre></code></li>
 </ul></li>	
 <li>TODO: work out how to do ".encode('UTF-8')" everywhere</li>
 <li>Be more explicit and careful re defaulting to English, and more robust when multilingual labels are found.</li></ol>
