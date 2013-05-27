@@ -25,7 +25,7 @@ Dependencies
 It depends utterly upon 
 
 * [rdflib](http://rdflib.net/)
-* [rdfextras](http://code.google.com/p/rdfextras/)
+* [rdfextras](http://code.google.com/p/rdfextras/) (`easy_install rdfextras`)
 * [pyparsing](http://pyparsing.wikispaces.com/) (`easy_install pyparsing`)
 	
 (at least I had to install these packages additionally ;) )
