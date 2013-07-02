@@ -52,7 +52,7 @@ Example
 * the template of this example can also be found in the folder: onto/olo
 * the output of this example can also be found in the folder: spec/olo
 
-See [libvocab.py](https://github.com/zazi/specgen/blob/master/libvocab.py) and [specgen6.py](https://github.com/zazi/specgen/blob/master/specgen6.py) for details.
+See [libvocab.py](https://github.com/specgen/specgen/blob/master/libvocab.py) and [specgen6.py](https://github.com/specgen/specgen/blob/master/specgen6.py) for details.
 
 Status
 ------
