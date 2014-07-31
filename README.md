@@ -27,12 +27,13 @@ It depends utterly upon
 * [rdflib](http://rdflib.net/)
 * [rdfextras](http://code.google.com/p/rdfextras/) (`easy_install rdfextras`)
 * [pyparsing](http://pyparsing.wikispaces.com/) (`easy_install pyparsing`)
+* [igraph](http://igraph.org/python/) (`easy_install python-igraph`)
 	
 (at least I had to install these packages additionally ;) )
 
 If you're lucky, typing this is enough:
 
-	easy_install rdflib
+	easy_install rdflib python-igraph
 
 and if you have problems there, update easy_install etc with:
 
