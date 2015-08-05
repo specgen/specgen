@@ -52,11 +52,6 @@ from rdflib import term
 from rdflib.namespace import Namespace
 from rdflib.graph import Graph, ConjunctiveGraph
 
-rdflib.plugin.register('sparql', rdflib.query.Processor,
-	'rdfextras.sparql.processor', 'Processor')
-rdflib.plugin.register('sparql', rdflib.query.Result,
-	'rdfextras.sparql.query', 'SPARQLQueryResult')
-
 import datetime
 
 # pre3: from rdflib.sparql.sparqlGraph  import SPARQLGraph
