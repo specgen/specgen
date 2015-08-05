@@ -170,9 +170,9 @@ def main():
       
   # check we have benn given an ontology file
   if (ontofile == None or len(ontofile)==0):
-  	print "No ontology file given"
-        usage()
-        sys.exit(2)
+      print "No ontology file given"
+      usage()
+      sys.exit(2)
   else:
   	print "Use ontology file ",ontofile    
 
