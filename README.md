@@ -38,6 +38,12 @@ If you're lucky, typing this is enough:
 and if you have problems there, update easy_install etc with:
 
 	easy_install -U setuptools
+
+Ubuntu, you can install the dependencies with pip after installing the relevant libraries
+```
+sudo apt-get install python-dev build-essential libxml2-dev libxslt python-igraph
+sudo pip install -r requirements.txt
+```
 	
 Purpose
 -------

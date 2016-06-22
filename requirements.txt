@@ -1,0 +1,4 @@
+rdflib
+rdfextras
+pyparsing
+python-igraph
